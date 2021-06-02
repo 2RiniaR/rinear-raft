@@ -2,15 +2,15 @@ import { GetStaticPaths, InferGetStaticPropsType } from "next";
 import { ContentType } from "src/contents";
 import { getStaticPathsInContent, getStaticPropsInContent } from "src/lib/contents";
 
-export default function PostPage({ content }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+export default function WorkPage({ content }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
     <div>
-      <h2>Post page</h2>
+      <h2>Work page</h2>
       <div dangerouslySetInnerHTML={{ __html: content.page }} />
     </div>
   );
 }
 
-const contentType: ContentType = "post";
+const contentType: ContentType = "work";
 export const getStaticProps = getStaticPropsInContent(contentType);
 export const getStaticPaths: GetStaticPaths = getStaticPathsInContent(contentType);
