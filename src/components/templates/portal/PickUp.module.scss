@@ -1,0 +1,23 @@
+.pickup {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .title {
+    order: 1;
+    font-size: x-large;
+    color: #999;
+    margin: auto 0;
+  }
+
+  .item {
+    &.item1 {
+      order: 0;
+    }
+
+    &.item2 {
+      order: 2;
+    }
+  }
+}

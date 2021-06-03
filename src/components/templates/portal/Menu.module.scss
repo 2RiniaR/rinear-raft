@@ -1,0 +1,33 @@
+.menu {
+  .title {
+    color: #999;
+    font-size: x-large;
+    text-align: center;
+  }
+
+  .items {
+    width: 80%;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 3rem;
+    height: 16rem;
+
+    .item {
+      &.home {
+        grid-row: 1;
+        grid-column: 1 / 3;
+      }
+
+      &.posts {
+        grid-row: 2;
+        grid-column: 1;
+      }
+
+      &.works {
+        grid-row: 2;
+        grid-column: 2;
+      }
+    }
+  }
+}
