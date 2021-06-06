@@ -2,25 +2,39 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import styles from "./PickUp.module.scss";
+import Title from "src/components/parts/portal/Title";
 
-const pickUp: JSX.Element = (
+export type PickUpParams = {
+  left: PickUpContent;
+  right: PickUpContent;
+};
+
+export type PickUpContent = {
+  imagePath: string;
+  description: string;
+  href: string;
+};
+
+const ContentDisplay = ({ imagePath, description, href }: PickUpContent): JSX.Element => (
+  <div className={styles.item}>
+    <Link href={href}>
+      <a>
+        <Image src={imagePath} layout="intrinsic" width="800" height="600" alt={description} />
+      </a>
+    </Link>
+  </div>
+);
+
+const PickUp = ({ left, right }: PickUpParams): JSX.Element => (
   <div className={styles.pickup}>
-    <h2 className={styles.title}>- Pick up -</h2>
-    <div className={`${styles.item} ${styles.item1}`}>
-      <Link href="/posts/history">
-        <a>
-          <Image src="/gray.jpg" alt="Pick up 1" width={300} height={225} />
-        </a>
-      </Link>
+    <div className={styles.title}>
+      <Title text="Pick up" />
     </div>
-    <div className={`${styles.item} ${styles.item2}`}>
-      <Link href="/posts/history">
-        <a>
-          <Image src="/gray.jpg" alt="Pick up 1" width={300} height={225} />
-        </a>
-      </Link>
+    <div className={styles.content}>
+      <ContentDisplay description={left.description} imagePath={left.imagePath} href={left.href} />
+      <ContentDisplay description={right.description} imagePath={right.imagePath} href={right.href} />
     </div>
   </div>
 );
 
-export default pickUp;
+export default PickUp;

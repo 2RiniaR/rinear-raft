@@ -1,22 +1,30 @@
 import React from "react";
 import styles from "./Menu.module.scss";
 import GlassButton from "src/components/parts/GlassButton";
+import Title from "src/components/parts/portal/Title";
 
-const menu: JSX.Element = (
+export type MenuItemProps = {
+  href: string;
+  text: string;
+};
+
+const MenuItem = ({ href, text }: MenuItemProps): JSX.Element => (
+  <div className={styles.item}>
+    <GlassButton href={href} text={text} />
+  </div>
+);
+
+const Menu = (): JSX.Element => (
   <div className={styles.menu}>
-    <h2 className={styles.title}>- Menu -</h2>
-    <div className={styles.items}>
-      <div className={`${styles.item} ${styles.home}`}>
-        <GlassButton href="/home" text="HOME" />
-      </div>
-      <div className={`${styles.item} ${styles.posts}`}>
-        <GlassButton href="/posts" text="POSTS" />
-      </div>
-      <div className={`${styles.item} ${styles.works}`}>
-        <GlassButton href="/works" text="WORKS" />
-      </div>
+    <div className={styles.title}>
+      <Title text="Menu" />
+    </div>
+    <div className={styles.content}>
+      <MenuItem href="/" text="HOME" />
+      <MenuItem href="/posts" text="TALKS" />
+      <MenuItem href="/works" text="PROJECTS" />
     </div>
   </div>
 );
 
-export default menu;
+export default Menu;

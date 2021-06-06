@@ -1,27 +1,18 @@
-.menu .title {
-  color: #999;
-  font-size: x-large;
-  text-align: center;
+.title {
+  height: 20%;
 }
-.menu .items {
-  width: 80%;
-  margin: 2rem auto 0 auto;
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 3rem;
-  height: 16rem;
+
+.content {
+  width: 90%;
+  margin: 0 auto 0 auto;
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
 }
-.menu .items .item.home {
-  grid-row: 1;
-  grid-column: 1/3;
-}
-.menu .items .item.posts {
-  grid-row: 2;
-  grid-column: 1;
-}
-.menu .items .item.works {
-  grid-row: 2;
-  grid-column: 2;
+.content .item {
+  height: 100%;
+  margin: 0 2rem;
+  flex-grow: 1;
 }
 
 /*# sourceMappingURL=Menu.module.css.map */

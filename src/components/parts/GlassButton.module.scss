@@ -1,13 +1,11 @@
 .button {
-  background-color: #999999;
   height: 100%;
 
   .text {
-    display: block;
-    margin: auto auto;
-    font-size: xxx-large;
-    color: #d6d6d6;
-    opacity: 0.8;
-    font-weight: bolder;
+    fill: #fef9cd;
+    font-family: mrs-eaves, serif;
+    font-size: 3rem;
+    opacity: 0.42;
+    letter-spacing: 0rem;
   }
 }
