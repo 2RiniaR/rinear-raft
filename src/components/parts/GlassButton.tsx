@@ -8,7 +8,12 @@ type GlassButtonProps = {
 };
 
 const ButtonImage = (text: string) => (
-  <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 287 133">
+  <svg
+    className={styles.image}
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 287 133"
+  >
     <defs>
       <clipPath id="b">
         <rect width="287" height="133" />

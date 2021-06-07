@@ -7,8 +7,9 @@ import pickUp from "src/contents/pickup";
 
 const Title = (): JSX.Element => (
   <div className={styles.title}>
-    <Lamp />
-    <div className={styles.headSpace} />
+    <div className={styles.lamp}>
+      <Lamp />
+    </div>
     <h1 className={styles.text}>??????</h1>
   </div>
 );
@@ -19,7 +20,7 @@ const PortalPage = (): JSX.Element => (
     <div className={styles.container}>
       <Title />
       <div className={styles.pickUp}>
-        <PickUp left={pickUp.left} right={pickUp.right} />
+        <PickUp content={pickUp.content} />
       </div>
       <div className={styles.menu}>
         <Menu />

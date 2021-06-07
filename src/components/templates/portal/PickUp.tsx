@@ -5,8 +5,7 @@ import styles from "./PickUp.module.scss";
 import Title from "src/components/parts/portal/Title";
 
 export type PickUpParams = {
-  left: PickUpContent;
-  right: PickUpContent;
+  content: PickUpContent;
 };
 
 export type PickUpContent = {
@@ -17,22 +16,23 @@ export type PickUpContent = {
 
 const ContentDisplay = ({ imagePath, description, href }: PickUpContent): JSX.Element => (
   <div className={styles.item}>
-    <Link href={href}>
-      <a>
-        <Image src={imagePath} layout="intrinsic" width="800" height="600" alt={description} />
-      </a>
-    </Link>
+    <div className={styles.image}>
+      <Link href={href}>
+        <a>
+          <Image src={imagePath} layout="fill" alt={description} />
+        </a>
+      </Link>
+    </div>
   </div>
 );
 
-const PickUp = ({ left, right }: PickUpParams): JSX.Element => (
+const PickUp = ({ content }: PickUpParams): JSX.Element => (
   <div className={styles.pickup}>
     <div className={styles.title}>
       <Title text="Pick up" />
     </div>
     <div className={styles.content}>
-      <ContentDisplay description={left.description} imagePath={left.imagePath} href={left.href} />
-      <ContentDisplay description={right.description} imagePath={right.imagePath} href={right.href} />
+      <ContentDisplay description={content.description} imagePath={content.imagePath} href={content.href} />
     </div>
   </div>
 );

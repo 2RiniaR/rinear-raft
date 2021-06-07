@@ -3,9 +3,11 @@
 }
 
 .content {
+  position: absolute;
+  top: 40%;
+  left: 5%;
   width: 90%;
-  margin: 0 auto 0 auto;
-  height: 70%;
+  height: 60%;
   display: flex;
   justify-content: space-between;
 
