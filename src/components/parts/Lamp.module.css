@@ -9,5 +9,13 @@
 .lamp img {
   object-fit: contain;
 }
+.lamp .light {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 14%;
+  transform: translate(-50%, -50%);
+  z-index: -3;
+}
 
 /*# sourceMappingURL=Lamp.module.css.map */
