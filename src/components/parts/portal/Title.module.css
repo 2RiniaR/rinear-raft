@@ -4,15 +4,15 @@
   align-items: center;
 }
 .title .line {
-  width: 8rem;
+  width: 12%;
   height: 1px;
   background-color: #79713c;
 }
 .title .text {
-  font-size: 2rem;
+  font-size: 1.7vw;
   color: #79713c;
   font-family: mrs-eaves, serif;
-  margin: 0 2rem;
+  margin: 0 3%;
 }
 
 /*# sourceMappingURL=Title.module.css.map */

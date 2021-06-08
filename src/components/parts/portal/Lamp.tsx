@@ -6,7 +6,7 @@ const initialBrightness = 0.5;
 const minBrightness = 0.2;
 const maxBrightness = 0.8;
 const diffBrightnessPerFrame = 0.05;
-const animationFPS = 30;
+const animationFPS = 10;
 
 const LightEffect = (): JSX.Element => {
   const [brightness, setBrightness] = useState(initialBrightness);
