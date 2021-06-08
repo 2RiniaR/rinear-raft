@@ -10,11 +10,11 @@ const ButtonImage = () => (
     viewBox="0 0 126 129"
   >
     <defs>
-      <clipPath id="b">
+      <clipPath id="CloseButton_clip">
         <rect width="126" height="129" />
       </clipPath>
     </defs>
-    <g id="a" clipPath="url(#b)">
+    <g id="CloseButton" clipPath="url(#CloseButton_b)">
       <rect width="122" height="122" fill="#fff" opacity="0.03" />
       <path d="M0,129l4-7V7L0,0Z" fill="#fff" opacity="0.07" />
       <path d="M0,7H126l-4-7H0Z" transform="translate(0 122)" fill="#fff" opacity="0.19" />
@@ -25,9 +25,9 @@ const ButtonImage = () => (
   </svg>
 );
 
-const CloseButton = () => (
+const CloseButton = (): JSX.Element => (
   <>
-    <Link href={""}>
+    <Link href="/">
       <a>
         <div className={styles.button}>
           <ButtonImage />
