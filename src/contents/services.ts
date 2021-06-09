@@ -5,7 +5,7 @@ import { Tags } from "src/contents/tags";
 export async function getContent(type: ContentType, id: string): Promise<Content> {
   const dirPaths: { [type in ContentType]: string } = {
     post: "./talks",
-    work: "./works"
+    work: "./projects"
   };
   const form: ContentForm = (await import(dirPaths[type] + "/" + id + ".tsx")).default;
   return {

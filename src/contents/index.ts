@@ -42,5 +42,5 @@ export type ContentForm = {
 
 export const dirPaths: { [type in ContentType]: string } = {
   post: "src/contents/talks",
-  work: "src/contents/works"
+  work: "src/contents/projects"
 };
