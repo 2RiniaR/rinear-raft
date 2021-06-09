@@ -9,8 +9,8 @@ export type Tag = {
 };
 
 const Contents = {
-  post: "post",
-  work: "work"
+  talk: "talk",
+  project: "project"
 } as const;
 
 export type ContentType = typeof Contents[keyof typeof Contents];
@@ -41,6 +41,6 @@ export type ContentForm = {
 };
 
 export const dirPaths: { [type in ContentType]: string } = {
-  post: "src/contents/talks",
-  work: "src/contents/works"
+  talk: "src/contents/talks",
+  project: "src/contents/project"
 };

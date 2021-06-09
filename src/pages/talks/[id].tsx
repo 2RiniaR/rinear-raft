@@ -2,7 +2,7 @@ import { GetStaticPaths, InferGetStaticPropsType } from "next";
 import { ContentType } from "src/contents";
 import { getStaticPathsInContent, getStaticPropsInContent } from "src/lib/contents";
 
-export default function PostPage({ content }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+export default function TalkPage({ content }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
     <div>
       <h2>Post page</h2>
@@ -11,6 +11,6 @@ export default function PostPage({ content }: InferGetStaticPropsType<typeof get
   );
 }
 
-const contentType: ContentType = "post";
+const contentType: ContentType = "talk";
 export const getStaticProps = getStaticPropsInContent(contentType);
 export const getStaticPaths: GetStaticPaths = getStaticPathsInContent(contentType);
