@@ -1,18 +1,9 @@
 import React from "react";
 import styles from "./Menu.module.scss";
-import GlassButton from "src/components/parts/GlassButton";
 import Title from "src/components/parts/portal/Title";
-
-export type MenuItemProps = {
-  href: string;
-  text: string;
-};
-
-const MenuItem = ({ href, text }: MenuItemProps): JSX.Element => (
-  <div className={styles.item}>
-    <GlassButton href={href} text={text} />
-  </div>
-);
+import TalksButton from "src/components/parts/portal/TalksButton";
+import HomeButton from "src/components/parts/portal/HomeButton";
+import ProjectsButton from "src/components/parts/portal/ProjectsButton";
 
 const Menu = (): JSX.Element => (
   <div className={styles.menu}>
@@ -20,9 +11,9 @@ const Menu = (): JSX.Element => (
       <Title text="Menu" />
     </div>
     <div className={styles.content}>
-      <MenuItem href="/" text="HOME" />
-      <MenuItem href="/posts" text="TALKS" />
-      <MenuItem href="/works" text="PROJECTS" />
+      <TalksButton />
+      <HomeButton />
+      <ProjectsButton />
     </div>
   </div>
 );
