@@ -1,15 +1,10 @@
 import { GetStaticPaths, InferGetStaticPropsType } from "next";
 import { ContentType } from "src/contents";
-import { getStaticPathsInContent, getStaticPropsInContent } from "src/lib/contents";
+import { getStaticPathsInContent, getStaticPropsInContent, toContent } from "src/lib/contents";
+import TalkPage from "src/components/templates/talk";
 
-export default function TalkPage({ content }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
-  return (
-    <div>
-      <h2>Post page</h2>
-      <div dangerouslySetInnerHTML={{ __html: content.page }} />
-    </div>
-  );
-}
+export default ({ content }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element =>
+  TalkPage(toContent(content));
 
 const contentType: ContentType = "talk";
 export const getStaticProps = getStaticPropsInContent(contentType);

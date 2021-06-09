@@ -13,6 +13,7 @@
     "format": "prettier --write \"./**/*.ts\" \"./**/*.tsx\""
   },
   "dependencies": {
+    "dayjs": "^1.10.5",
     "destyle.css": "^2.0.2",
     "next": "10.2.0",
     "react": "17.0.2",

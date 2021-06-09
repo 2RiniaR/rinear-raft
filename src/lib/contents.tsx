@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { renderToString } from "react-dom/server";
 import { GetStaticPathsResult, GetStaticPropsContext, GetStaticPropsResult } from "next";
 import { ContentType, getContent, getContentsID, Content, Tag, getContentsHead, ContentHead } from "src/contents";
@@ -19,6 +20,17 @@ function toContentParams(content: Content): ContentParams {
     updatedAt: content.createdAt.toString(),
     tags: content.tags,
     page: renderToString(content.page)
+  };
+}
+
+export function toContent(params: ContentParams): Content {
+  return {
+    id: params.id,
+    title: params.title,
+    createdAt: dayjs(params.createdAt).toDate(),
+    updatedAt: dayjs(params.updatedAt).toDate(),
+    tags: params.tags,
+    page: <div dangerouslySetInnerHTML={{ __html: params.page }} />
   };
 }
 

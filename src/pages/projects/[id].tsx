@@ -1,15 +1,10 @@
 import { GetStaticPaths, InferGetStaticPropsType } from "next";
 import { ContentType } from "src/contents";
-import { getStaticPathsInContent, getStaticPropsInContent } from "src/lib/contents";
+import { getStaticPathsInContent, getStaticPropsInContent, toContent } from "src/lib/contents";
+import ProjectPage from "src/components/templates/project";
 
-export default function ProjectPage({ content }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
-  return (
-    <div>
-      <h2>Project page</h2>
-      <div dangerouslySetInnerHTML={{ __html: content.page }} />
-    </div>
-  );
-}
+export default ({ content }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element =>
+  ProjectPage(toContent(content));
 
 const contentType: ContentType = "project";
 export const getStaticProps = getStaticPropsInContent(contentType);
