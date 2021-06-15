@@ -1,12 +1,18 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { Content } from "src/contents";
+import { Content, ContentHead } from "src/contents/lib";
+import { ProjectContent } from "src/contents/pages/projects";
 
-const ProjectPage = (content: Content): JSX.Element => (
+export type ProjectPageTemplateParams = {
+  content: ProjectContent;
+  suggestions: ContentHead[];
+};
+
+const ProjectPageTemplate = ({ content, suggestions }: ProjectPageTemplateParams): JSX.Element => (
   <div className={styles.page}>
     <div className={styles.background} />
     <div className={styles.container}>{content.page}</div>
   </div>
 );
 
-export default ProjectPage;
+export default ProjectPageTemplate;

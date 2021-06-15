@@ -1,0 +1,8 @@
+.imageContainer {
+  width: 100%;
+
+  &::before {
+    display: block;
+    padding-top: 67%;
+  }
+}

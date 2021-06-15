@@ -1,4 +1,4 @@
-import { ContentForm } from "src/contents";
+import { ProjectContentForm } from "src/contents/lib/projects/form";
 
 const page: JSX.Element = (
   <div>
@@ -6,12 +6,12 @@ const page: JSX.Element = (
   </div>
 );
 
-const mageSimulator: ContentForm = {
+const mageSimulator = new ProjectContentForm({
   title: "メイジ・シミュレータ",
-  createdAt: new Date(2021, 5, 29),
+  description: "",
   updatedAt: new Date(2021, 5, 29),
   tags: ["game", "mage-simulator"],
   page: page
-};
+});
 
 export default mageSimulator;

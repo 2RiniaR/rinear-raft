@@ -1,9 +1,11 @@
 .imageContainer {
-  z-index: -10;
+  position: fixed;
+  z-index: 20;
+  left: 0;
   width: 100%;
-  height: 5rem;
+  height: 14rem;
 
   img {
-    object-fit: fill;
+    object-fit: cover;
   }
 }
