@@ -1,9 +1,15 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import TalkPageTemplate from "src/components/templates/talk";
-import { TalkContent, TalkContentEncoded } from "src/contents/lib/talks/body";
-import { ContentHeadEncoded } from "src/contents/lib/head";
-import { ContentGenre } from "src/contents/lib/genre";
-import { Content } from "src/contents/lib/body";
+import {
+  decodeTalkContent,
+  encodeTalkContent,
+  getAllTalkContentsName,
+  getTalkContentFromName,
+  TalkContentEncoded
+} from "src/contents/lib/talks/body";
+import { ContentHeadEncoded, getHead } from "src/contents/lib/head";
+import { getContentFromName } from "src/contents/lib/body";
+import { decodeContentHead, encodeContentHead } from "src/contents/lib/serialize";
 
 type TalkPageParams = {
   content: TalkContentEncoded;
@@ -12,27 +18,28 @@ type TalkPageParams = {
 
 const TalkPage = (params: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element =>
   TalkPageTemplate({
-    content: params.content.decode(),
-    suggestions: params.suggestions.map((head) => head.decode())
+    content: decodeTalkContent(params.content),
+    suggestions: params.suggestions.map(decodeContentHead)
   });
 
 export default TalkPage;
-const genre: ContentGenre = "talks";
 
 export const getStaticProps: GetStaticProps<TalkPageParams> = async ({ params }) => {
   if (!params || typeof params.name !== "string") throw new Error("params is invalid type.");
-  const content = await TalkContent.getFromName(params.name);
+  const content = encodeTalkContent(await getTalkContentFromName(params.name));
+
   // 一時的
   const suggestions = [
-    (await Content.getFromName("talks", "history")).getHead().encode(),
-    (await Content.getFromName("projects", "marvelous")).getHead().encode(),
-    (await Content.getFromName("projects", "mage-simulator")).getHead().encode()
+    encodeContentHead(getHead(await getContentFromName("talks", "history"))),
+    encodeContentHead(getHead(await getContentFromName("projects", "marvelous"))),
+    encodeContentHead(getHead(await getContentFromName("projects", "mage-simulator")))
   ];
-  return { props: { content: content.encode(), suggestions } };
+
+  return { props: { content, suggestions } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const names: string[] = await Content.getAllNames(genre);
+  const names: string[] = await getAllTalkContentsName();
   const paths = names.map((name) => ({
     params: { name }
   }));

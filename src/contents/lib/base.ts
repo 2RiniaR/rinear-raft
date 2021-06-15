@@ -1,44 +1,37 @@
+import dayjs from "dayjs";
 import { ContentGenre } from "./genre";
 import { Tag } from "./tags";
 
-export type ContentBaseParams = {
+export type ContentBase = {
+  genre: ContentGenre;
   name: string;
   title: string;
   updatedAt: Date;
   tags: Tag[];
 };
 
-export abstract class ContentBase {
-  abstract genre: ContentGenre;
-  name = "";
-  title = "";
-  updatedAt = new Date();
-  tags: Tag[] = [];
+export type ContentBaseEncoded = {
+  genre: ContentGenre;
+  name: string;
+  title: string;
+  updatedAt: string;
+  tags: Tag[];
+};
 
-  protected constructor(params: ContentBaseParams) {
-    Object.assign(this, params);
-  }
-
-  public getRoute(): string {
-    return `/${this.genre}/${this.name}`;
-  }
-
-  abstract encode(): ContentBaseEncoded;
+export function getRoute({ genre, name }: { genre: ContentGenre; name: string }): string {
+  return `/${genre}/${name}`;
 }
 
-export abstract class ContentBaseEncoded {
-  abstract genre: ContentGenre;
-  name = "";
-  title = "";
-  updatedAt = "";
-  tags: Tag[] = [];
+export function encodeContentBase(original: ContentBase): ContentBaseEncoded {
+  return {
+    ...original,
+    updatedAt: original.updatedAt.toString()
+  };
+}
 
-  protected constructor(original: ContentBase) {
-    this.name = original.name;
-    this.title = original.title;
-    this.updatedAt = original.updatedAt.toString();
-    this.tags = original.tags;
-  }
-
-  abstract decode(): ContentBase;
+export function decodeContentBase(encoded: ContentBaseEncoded): ContentBase {
+  return {
+    ...encoded,
+    updatedAt: dayjs(encoded.updatedAt).toDate()
+  };
 }

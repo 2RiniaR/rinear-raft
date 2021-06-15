@@ -1,40 +1,34 @@
-import dayjs from "dayjs";
+import { ContentHead, ContentHeadEncoded, decodeContentHead, encodeContentHead, getAllContentHeads } from "../head";
 import { ContentGenre } from "../genre";
-import { ContentHead, ContentHeadEncoded, ContentHeadParams } from "../head";
-import { TalkParams, genre } from ".";
-import { Content } from "src/contents/lib/body";
+import { EncodedParams, genre, GenreStrict, Params } from ".";
 
-export type TalkContentHeadParams = ContentHeadParams & TalkParams;
+export type TalkContentHead = ContentHead & GenreStrict & Params;
+export type TalkContentHeadEncoded = ContentHeadEncoded & GenreStrict & EncodedParams;
 
-export class TalkContentHead extends ContentHead {
-  genre: ContentGenre = genre;
-
-  public constructor(params: TalkContentHeadParams) {
-    super(params);
-  }
-
-  public encode(): TalkContentHeadEncoded {
-    return new TalkContentHeadEncoded(this);
-  }
-
-  static async getAll(): Promise<TalkContentHead[]> {
-    const heads = await ContentHead.getAll(genre);
-    if (!heads.every((head) => head instanceof TalkContentHead)) throw new Error("Invalid type content.");
-    return heads as TalkContentHead[];
-  }
+export function isTalkContentHead(arg: ContentHead): arg is TalkContentHead {
+  return arg.genre === genre;
 }
 
-export class TalkContentHeadEncoded extends ContentHeadEncoded {
-  genre: ContentGenre = genre;
+export function isTalkContentHeadEncoded(arg: ContentHeadEncoded): arg is TalkContentHeadEncoded {
+  return arg.genre === genre;
+}
 
-  public constructor(original: TalkContentHead) {
-    super(original);
-  }
+export async function getAllTalkContentHeads(): Promise<TalkContentHead[]> {
+  const heads = await getAllContentHeads(genre);
+  if (!heads.every(isTalkContentHead)) throw new Error("Invalid type content.");
+  return heads as TalkContentHead[];
+}
 
-  public decode(): TalkContentHead {
-    return new TalkContentHead({
-      ...this,
-      updatedAt: dayjs(this.updatedAt).toDate()
-    });
-  }
+export function encodeTalkContentHead(original: TalkContentHead): TalkContentHeadEncoded {
+  return {
+    ...encodeContentHead(original),
+    genre: genre
+  };
+}
+
+export function decodeTalkContentHead(encoded: TalkContentHeadEncoded): TalkContentHead {
+  return {
+    ...decodeContentHead(encoded),
+    genre: genre
+  };
 }

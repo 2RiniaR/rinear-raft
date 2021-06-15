@@ -1,57 +1,57 @@
 import fs from "fs";
 import { renderToString } from "react-dom/server";
-import Fallback from "./fallback";
-import { ContentBase, ContentBaseEncoded, ContentBaseParams } from "./base";
+import { ContentBase, ContentBaseEncoded, decodeContentBase, encodeContentBase } from "./base";
 import { ContentGenre } from "./genre";
-import { ContentHead } from "./head";
 import { ContentForm } from "./form";
+import { Tags } from "src/contents/lib/tags";
+import { getPageFromString } from "src/contents/lib/page";
 
-export type ContentParams = ContentBaseParams & {
-  page: JSX.Element;
-};
+export type Content = ContentBase & { page: JSX.Element };
+export type ContentEncoded = ContentBaseEncoded & { page: string };
 
-export abstract class Content extends ContentBase {
-  abstract genre: ContentGenre;
-  page: JSX.Element = Fallback();
-
-  protected constructor(params: ContentParams) {
-    super(params);
-  }
-
-  abstract getHead(): ContentHead;
-  abstract encode(): ContentEncoded;
-
-  static getSourcePath(genre: ContentGenre, name?: string, refType: "absolute" | "relative" = "absolute"): string {
-    const genrePath = refType === "absolute" ? `src/contents/pages/${genre}` : `../pages/${genre}`;
-    const namePath = !name ? "" : `/${name}`;
-    return genrePath + namePath;
-  }
-
-  static async getFromName(genre: ContentGenre, name: string): Promise<Content> {
-    const sourcePath = Content.getSourcePath(genre, name, "relative");
-    // const form: ContentForm = (await import(`${sourcePath}`)).default;
-    const form: ContentForm = (await import("../pages/talks/history")).default;
-    return form.getContent(name);
-  }
-
-  static async getAllNames(genre: ContentGenre): Promise<string[]> {
-    const dirPath = Content.getSourcePath(genre, undefined, "absolute");
-    const files = await fs.promises.readdir(dirPath);
-    return files
-      .filter((file) => {
-        const isFile = fs.statSync(dirPath + "/" + file).isFile();
-        const isTsx = /.*\.tsx$/.test(file);
-        return isFile && isTsx;
-      })
-      .map((file) => file.slice(0, -".tsx".length));
-  }
+export function getContentSourcePath(
+  genre: ContentGenre,
+  name?: string,
+  refType: "absolute" | "relative" = "absolute"
+): string {
+  const genrePath = refType === "absolute" ? `src/contents/pages/${genre}` : `../pages/${genre}`;
+  const namePath = !name ? "" : `/${name}`;
+  return genrePath + namePath;
 }
 
-export abstract class ContentEncoded extends ContentBaseEncoded {
-  page = "";
+export async function getContentFromName(genre: ContentGenre, name: string): Promise<Content> {
+  const sourcePath = getContentSourcePath(genre, name, "relative");
+  // const form: ContentForm = (await import(`${sourcePath}`)).default;
+  const form: ContentForm = (await import("../pages/talks/history")).default;
+  return {
+    ...form,
+    name,
+    tags: form.tags.map((t) => ({ ...Tags[t], id: t }))
+  };
+}
 
-  protected constructor(original: Content) {
-    super(original);
-    this.page = renderToString(original.page);
-  }
+export async function getAllContentsName(genre: ContentGenre): Promise<string[]> {
+  const dirPath = getContentSourcePath(genre, undefined, "absolute");
+  const files = await fs.promises.readdir(dirPath);
+  return files
+    .filter((file) => {
+      const isFile = fs.statSync(dirPath + "/" + file).isFile();
+      const isTsx = /.*\.tsx$/.test(file);
+      return isFile && isTsx;
+    })
+    .map((file) => file.slice(0, -".tsx".length));
+}
+
+export function encodeContent(original: Content): ContentEncoded {
+  return {
+    ...encodeContentBase(original),
+    page: renderToString(original.page)
+  };
+}
+
+export function decodeContent(encoded: ContentEncoded): Content {
+  return {
+    ...decodeContentBase(encoded),
+    page: getPageFromString(encoded.page)
+  };
 }

@@ -6,12 +6,14 @@ const page: JSX.Element = (
   </div>
 );
 
-const popcornChef = new ProjectContentForm({
+const popcornChef: ProjectContentForm = {
+  genre: "projects",
   title: "ポップコーン職人",
   description: "",
+  releasedAt: new Date(2021, 5, 29),
   updatedAt: new Date(2021, 5, 29),
   tags: ["game", "popcorn-chef"],
   page: page
-});
+};
 
 export default popcornChef;

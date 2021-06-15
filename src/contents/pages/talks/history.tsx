@@ -8,11 +8,12 @@ const page: JSX.Element = (
   </div>
 );
 
-const history = new TalkContentForm({
+const history: TalkContentForm = {
+  genre: "talks",
   title: "ここにタイトルを入力",
   updatedAt: new Date(2021, 5, 29),
   tags: ["rinear"],
   page: page
-});
+};
 
 export default history;

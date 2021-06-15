@@ -1,53 +1,47 @@
 import dayjs from "dayjs";
-import { getPageFromString } from "src/contents/lib/page";
-import { Content, ContentEncoded, ContentParams } from "src/contents/lib/body";
-import { ProjectParams, genre } from "src/contents/lib/projects/index";
-import { ContentGenre } from "src/contents/lib/genre";
-import { ProjectContentHead } from "src/contents/lib/projects/head";
+import { Content, ContentEncoded, decodeContent, encodeContent, getAllContentsName, getContentFromName } from "../body";
+import { ContentGenre } from "../genre";
+import { GenreStrict, Params, EncodedParams, genre } from ".";
 
-export type ProjectContentParams = ContentParams & ProjectParams;
+export type ProjectContent = Content & GenreStrict & Params;
+export type ProjectContentEncoded = ContentEncoded & GenreStrict & EncodedParams;
 
-export class ProjectContent extends Content {
-  genre: ContentGenre = genre;
-  description = "";
-
-  public constructor(params: ProjectContentParams) {
-    super(params);
-  }
-
-  public getThumbnailPath(): string {
-    return `/contents/${this.genre}/${this.name}.jpg`;
-  }
-
-  getHead(): ProjectContentHead {
-    return new ProjectContentHead(this);
-  }
-
-  public encode(): ProjectContentEncoded {
-    return new ProjectContentEncoded(this);
-  }
-
-  static async getFromName(name: string): Promise<ProjectContent> {
-    const content = await Content.getFromName(genre, name);
-    if (!(content instanceof ProjectContent)) throw new Error("Invalid type content.");
-    return content as ProjectContent;
-  }
+export function isProjectContent(arg: Content): arg is ProjectContent {
+  return arg.genre === genre;
 }
 
-export class ProjectContentEncoded extends ContentEncoded {
-  genre: ContentGenre = genre;
-  description = "";
+export function isProjectContentEncoded(arg: ContentEncoded): arg is ProjectContentEncoded {
+  return arg.genre === genre;
+}
 
-  public constructor(original: ProjectContent) {
-    super(original);
-    this.description = original.description;
-  }
+export function getThumbnailPath({ genre, name }: { genre: ContentGenre; name: string }): string {
+  return `/contents/${genre}/${name}.jpg`;
+}
 
-  public decode(): ProjectContent {
-    return new ProjectContent({
-      ...this,
-      updatedAt: dayjs(this.updatedAt).toDate(),
-      page: getPageFromString(this.page)
-    });
-  }
+export async function getProjectContentFromName(name: string): Promise<ProjectContent> {
+  const content = await getContentFromName(genre, name);
+  if (!isProjectContent(content)) throw new Error("Invalid type content.");
+  return content as ProjectContent;
+}
+
+export async function getAllProjectContentsName(): Promise<string[]> {
+  return getAllContentsName(genre);
+}
+
+export function encodeProjectContent(original: ProjectContent): ProjectContentEncoded {
+  return {
+    ...original,
+    ...encodeContent(original),
+    genre: genre,
+    releasedAt: original.releasedAt.toString()
+  };
+}
+
+export function decodeProjectContent(encoded: ProjectContentEncoded): ProjectContent {
+  return {
+    ...encoded,
+    ...decodeContent(encoded),
+    genre: genre,
+    releasedAt: dayjs(encoded.releasedAt).toDate()
+  };
 }

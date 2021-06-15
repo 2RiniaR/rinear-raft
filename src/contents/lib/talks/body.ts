@@ -1,50 +1,42 @@
-import dayjs from "dayjs";
-import { getPageFromString } from "../page";
-import { Content, ContentEncoded, ContentParams } from "../body";
+import { Content, ContentEncoded, decodeContent, encodeContent, getAllContentsName, getContentFromName } from "../body";
 import { ContentGenre } from "../genre";
-import { TalkContentHead } from "./head";
-import { TalkParams, genre } from ".";
+import { GenreStrict, Params, EncodedParams, genre } from ".";
 
-export type TalkContentParams = ContentParams & TalkParams;
+export type TalkContent = Content & GenreStrict & Params;
+export type TalkContentEncoded = ContentEncoded & GenreStrict & EncodedParams;
 
-export class TalkContent extends Content {
-  genre: ContentGenre = genre;
-
-  public constructor(params: TalkContentParams) {
-    super(params);
-  }
-
-  public getThumbnailPath(): string {
-    return `/contents/${this.genre}/${this.name}.jpg`;
-  }
-
-  getHead(): TalkContentHead {
-    return new TalkContentHead(this);
-  }
-
-  public encode(): TalkContentEncoded {
-    return new TalkContentEncoded(this);
-  }
-
-  static async getFromName(name: string): Promise<TalkContent> {
-    const content = await Content.getFromName(genre, name);
-    if (!(content instanceof TalkContent)) throw new Error("Invalid type content.");
-    return content as TalkContent;
-  }
+export function isTalkContent(arg: Content): arg is TalkContent {
+  return arg.genre === genre;
 }
 
-export class TalkContentEncoded extends ContentEncoded {
-  genre: ContentGenre = genre;
+export function isTalkContentEncoded(arg: ContentEncoded): arg is TalkContentEncoded {
+  return arg.genre === genre;
+}
 
-  public constructor(original: TalkContent) {
-    super(original);
-  }
+export function getThumbnailPath({ genre, name }: { genre: ContentGenre; name: string }): string {
+  return `/contents/${genre}/${name}.jpg`;
+}
 
-  public decode(): TalkContent {
-    return new TalkContent({
-      ...this,
-      updatedAt: dayjs(this.updatedAt).toDate(),
-      page: getPageFromString(this.page)
-    });
-  }
+export async function getTalkContentFromName(name: string): Promise<TalkContent> {
+  const content = await getContentFromName(genre, name);
+  if (!isTalkContent(content)) throw new Error("Invalid type content.");
+  return content as TalkContent;
+}
+
+export async function getAllTalkContentsName(): Promise<string[]> {
+  return getAllContentsName(genre);
+}
+
+export function encodeTalkContent(original: TalkContent): TalkContentEncoded {
+  return {
+    ...encodeContent(original),
+    genre: genre
+  };
+}
+
+export function decodeTalkContent(encoded: TalkContentEncoded): TalkContent {
+  return {
+    ...decodeContent(encoded),
+    genre: genre
+  };
 }

@@ -6,12 +6,14 @@ const page: JSX.Element = (
   </div>
 );
 
-const bustersMission = new ProjectContentForm({
+const bustersMission: ProjectContentForm = {
+  genre: "projects",
   title: "Busters Mission",
   description: "",
+  releasedAt: new Date(2021, 5, 29),
   updatedAt: new Date(2021, 5, 29),
   tags: ["game", "busters-mission"],
   page: page
-});
+};
 
 export default bustersMission;

@@ -5,9 +5,9 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Article from "./Article";
 import Background from "./Background";
-import { ContentHead } from "src/contents/lib";
 import EndCard from "src/components/templates/talk/EndCard";
-import { TalkContent } from "src/contents/pages/talks";
+import { TalkContent } from "src/contents/lib/talks/body";
+import { ContentHead } from "src/contents/lib/head";
 
 export type TalkPageTemplateParams = {
   content: TalkContent;

@@ -6,12 +6,14 @@ const page: JSX.Element = (
   </div>
 );
 
-const marvelous = new ProjectContentForm({
+const marvelous: ProjectContentForm = {
+  genre: "projects",
   title: "エライさんbot",
   description: "",
+  releasedAt: new Date(2021, 5, 29),
   updatedAt: new Date(2021, 5, 29),
   tags: ["service", "discord-bot", "marvelous"],
   page: page
-});
+};
 
 export default marvelous;

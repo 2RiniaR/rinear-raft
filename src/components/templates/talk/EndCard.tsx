@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./EndCard.module.scss";
 import Suggestion from "src/components/parts/talkContent/Suggestion";
 import { getElementPosition, getScrollPosition } from "src/lib/helper";
-import { ContentHead } from "src/contents/lib";
+import { ContentHead } from "src/contents/lib/head";
 
 type Params = {
   suggestions: ContentHead[];

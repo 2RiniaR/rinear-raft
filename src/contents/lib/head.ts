@@ -1,29 +1,34 @@
-import { ContentBase, ContentBaseEncoded, ContentBaseParams } from "./base";
+import { ContentBase, ContentBaseEncoded, decodeContentBase, encodeContentBase } from "./base";
 import { ContentGenre } from "src/contents/lib/genre";
-import { Content } from "src/contents/lib/body";
+import { Content, getAllContentsName, getContentFromName } from "src/contents/lib/body";
 
-export type ContentHeadParams = ContentBaseParams;
+export type ContentHead = ContentBase;
+export type ContentHeadEncoded = ContentBaseEncoded;
 
-export abstract class ContentHead extends ContentBase {
-  protected constructor(params: ContentHeadParams) {
-    super(params);
-  }
-
-  abstract encode(): ContentHeadEncoded;
-
-  static async getAll(genre: ContentGenre): Promise<ContentHead[]> {
-    const names = await Content.getAllNames(genre);
-    return await Promise.all(
-      names.map(async (name) => {
-        const content = await Content.getFromName(genre, name);
-        return content.getHead();
-      })
-    );
-  }
+export function getHead(content: Content): ContentHead {
+  return {
+    genre: content.genre,
+    name: content.name,
+    title: content.title,
+    updatedAt: content.updatedAt,
+    tags: content.tags
+  };
 }
 
-export abstract class ContentHeadEncoded extends ContentBaseEncoded {
-  protected constructor(original: ContentHead) {
-    super(original);
-  }
+export async function getAllContentHeads(genre: ContentGenre): Promise<ContentHead[]> {
+  const names = await getAllContentsName(genre);
+  return await Promise.all(
+    names.map(async (name) => {
+      const content = await getContentFromName(genre, name);
+      return getHead(content);
+    })
+  );
+}
+
+export function encodeContentHead(original: ContentHead): ContentHeadEncoded {
+  return encodeContentBase(original);
+}
+
+export function decodeContentHead(encoded: ContentHeadEncoded): ContentHead {
+  return decodeContentBase(encoded);
 }

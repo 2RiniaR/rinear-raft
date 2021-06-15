@@ -1,5 +1,7 @@
 import { ContentGenre } from "../genre";
 
-export const genre: ContentGenre = "talks";
-
-export type TalkParams = {};
+export type GenreType = "talks";
+export const genre: ContentGenre & GenreType = "talks";
+export type GenreStrict = { genre: GenreType };
+export type Params = {};
+export type EncodedParams = {};

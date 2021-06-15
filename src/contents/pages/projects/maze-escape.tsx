@@ -6,12 +6,14 @@ const page: JSX.Element = (
   </div>
 );
 
-const mazeEscape = new ProjectContentForm({
+const mazeEscape: ProjectContentForm = {
+  genre: "projects",
   title: "迷宮脱出",
   description: "",
+  releasedAt: new Date(2021, 5, 29),
   updatedAt: new Date(2021, 5, 29),
   tags: ["game", "maze-escape"],
   page: page
-});
+};
 
 export default mazeEscape;

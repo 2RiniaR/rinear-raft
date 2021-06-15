@@ -1,9 +1,15 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import ProjectPageTemplate from "src/components/templates/project";
-import { ProjectContent, ProjectContentEncoded } from "src/contents/lib/projects/body";
-import { ContentHeadEncoded } from "src/contents/lib/head";
-import { ContentGenre } from "src/contents/lib/genre";
-import { Content } from "src/contents/lib/body";
+import {
+  decodeProjectContent,
+  encodeProjectContent,
+  getAllProjectContentsName,
+  getProjectContentFromName,
+  ProjectContentEncoded
+} from "src/contents/lib/projects/body";
+import { ContentHeadEncoded, getHead } from "src/contents/lib/head";
+import { getContentFromName } from "src/contents/lib/body";
+import { decodeContentHead, encodeContentHead } from "src/contents/lib/serialize";
 
 type ProjectPageParams = {
   content: ProjectContentEncoded;
@@ -12,27 +18,29 @@ type ProjectPageParams = {
 
 const ProjectPage = (params: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element =>
   ProjectPageTemplate({
-    content: params.content.decode(),
-    suggestions: params.suggestions.map((head) => head.decode())
+    content: decodeProjectContent(params.content),
+    suggestions: params.suggestions.map(decodeContentHead)
   });
 
 export default ProjectPage;
-const genre: ContentGenre = "projects";
 
 export const getStaticProps: GetStaticProps<ProjectPageParams> = async ({ params }) => {
   if (!params || typeof params.name !== "string") throw new Error("params is invalid type.");
-  const content = await ProjectContent.getFromName(params.name);
+  const content = encodeProjectContent(await getProjectContentFromName(params.name));
+
   // 一時的
   const suggestions = [
-    (await Content.getFromName("projects", "history")).getHead().encode(),
-    (await Content.getFromName("projects", "marvelous")).getHead().encode(),
-    (await Content.getFromName("projects", "mage-simulator")).getHead().encode()
+    encodeContentHead(getHead(await getContentFromName("talks", "history"))),
+    encodeContentHead(getHead(await getContentFromName("projects", "marvelous"))),
+    encodeContentHead(getHead(await getContentFromName("projects", "mage-simulator")))
   ];
-  return { props: { content: content.encode(), suggestions } };
+  console.log(JSON.stringify(new Date(2020, 3, 12, 4, 0, 0)));
+
+  return { props: { content, suggestions } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const names: string[] = await Content.getAllNames(genre);
+  const names: string[] = await getAllProjectContentsName();
   const paths = names.map((name) => ({
     params: { name }
   }));

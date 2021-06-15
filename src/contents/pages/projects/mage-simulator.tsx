@@ -6,12 +6,14 @@ const page: JSX.Element = (
   </div>
 );
 
-const mageSimulator = new ProjectContentForm({
+const mageSimulator: ProjectContentForm = {
+  genre: "projects",
   title: "メイジ・シミュレータ",
   description: "",
+  releasedAt: new Date(2021, 5, 29),
   updatedAt: new Date(2021, 5, 29),
   tags: ["game", "mage-simulator"],
   page: page
-});
+};
 
 export default mageSimulator;
