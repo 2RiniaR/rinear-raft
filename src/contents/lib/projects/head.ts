@@ -20,11 +20,12 @@ export async function getAllProjectContentHeads(): Promise<ProjectContentHead[]>
 }
 
 export function encodeProjectContentHead(original: ProjectContentHead): ProjectContentHeadEncoded {
+  const releasedAt = original.releasedAt.toString();
   return {
     ...original,
     ...encodeContentHead(original),
     genre: genre,
-    releasedAt: original.releasedAt.toString()
+    releasedAt
   };
 }
 

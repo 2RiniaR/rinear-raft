@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { Content, ContentEncoded, decodeContent, encodeContent, getAllContentsName, getContentFromName } from "../body";
 import { ContentGenre } from "../genre";
-import { GenreStrict, Params, EncodedParams, genre } from ".";
+import { EncodedParams, genre, GenreStrict, Params } from ".";
 
 export type ProjectContent = Content & GenreStrict & Params;
 export type ProjectContentEncoded = ContentEncoded & GenreStrict & EncodedParams;
@@ -29,11 +29,12 @@ export async function getAllProjectContentsName(): Promise<string[]> {
 }
 
 export function encodeProjectContent(original: ProjectContent): ProjectContentEncoded {
+  const releasedAt = original.releasedAt.toString();
   return {
     ...original,
     ...encodeContent(original),
-    genre: genre,
-    releasedAt: original.releasedAt.toString()
+    releasedAt,
+    genre: genre
   };
 }
 

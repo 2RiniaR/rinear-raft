@@ -6,13 +6,9 @@ export type ContentHead = ContentBase;
 export type ContentHeadEncoded = ContentBaseEncoded;
 
 export function getHead(content: Content): ContentHead {
-  return {
-    genre: content.genre,
-    name: content.name,
-    title: content.title,
-    updatedAt: content.updatedAt,
-    tags: content.tags
-  };
+  const head: ContentHead & { page?: JSX.Element } = { ...content };
+  delete head.page;
+  return head;
 }
 
 export async function getAllContentHeads(genre: ContentGenre): Promise<ContentHead[]> {

@@ -34,7 +34,6 @@ export const getStaticProps: GetStaticProps<ProjectPageParams> = async ({ params
     encodeContentHead(getHead(await getContentFromName("projects", "marvelous"))),
     encodeContentHead(getHead(await getContentFromName("projects", "mage-simulator")))
   ];
-  console.log(JSON.stringify(new Date(2020, 3, 12, 4, 0, 0)));
 
   return { props: { content, suggestions } };
 };

@@ -20,9 +20,7 @@ export function getContentSourcePath(
 }
 
 export async function getContentFromName(genre: ContentGenre, name: string): Promise<Content> {
-  const sourcePath = getContentSourcePath(genre, name, "relative");
-  // const form: ContentForm = (await import(`${sourcePath}`)).default;
-  const form: ContentForm = (await import("../pages/talks/history")).default;
+  const form: ContentForm = (await import(`src/contents/pages/${genre}/${name}`)).default;
   return {
     ...form,
     name,
