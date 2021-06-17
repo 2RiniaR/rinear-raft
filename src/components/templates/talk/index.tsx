@@ -17,21 +17,9 @@ export type TalkPageTemplateParams = {
 const TalkPageTemplate = ({ content, suggestions }: TalkPageTemplateParams): JSX.Element => (
   <div className={styles.page}>
     <TopImage />
-    <div className={styles.main}>
-      <Background />
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <Header title={content.title} updatedAt={content.updatedAt} tags={content.tags} />
-        </div>
-        <div className={styles.talkContent}>
-          <Article>{content.page}</Article>
-        </div>
-        <EndCard suggestions={suggestions} />
-        <div className={styles.footer}>
-          <Footer title={content.title} updatedAt={content.updatedAt} />
-        </div>
-      </div>
-    </div>
+    <Background />
+    <Article content={content} />
+    <EndCard suggestions={suggestions} />
   </div>
 );
 

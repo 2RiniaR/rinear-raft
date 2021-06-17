@@ -2,9 +2,9 @@ import { TalkContentForm } from "src/contents/lib/talks/form";
 
 const page: JSX.Element = (
   <div>
-    <p>{"ここに本文が入ります".repeat(100)}</p>
-    <p>{"ここに本文が入ります".repeat(100)}</p>
-    <p>{"ここに本文が入ります".repeat(100)}</p>
+    <p>{"ここに本文が入ります".repeat(500)}</p>
+    <p>{"ここに本文が入ります".repeat(500)}</p>
+    <p>{"ここに本文が入ります".repeat(500)}</p>
   </div>
 );
 

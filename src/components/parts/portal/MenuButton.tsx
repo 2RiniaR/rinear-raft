@@ -13,9 +13,17 @@ const MenuButton: React.FC<MenuButtonProps> = ({ href, onMouseOver, onMouseOut, 
   <div className={styles.item}>
     <Link href={href}>
       <a>
-        <div className={styles.button} onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={onClick}>
+        <button
+          type="button"
+          className={styles.button}
+          onMouseOver={onMouseOver}
+          onMouseOut={onMouseOut}
+          onClick={onClick}
+          onBlur={() => null}
+          onFocus={() => null}
+        >
           {children}
-        </div>
+        </button>
       </a>
     </Link>
   </div>

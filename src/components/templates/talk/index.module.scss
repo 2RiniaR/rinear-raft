@@ -1,29 +1,5 @@
 .page {
+  position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-
-  .main {
-    width: 100%;
-
-    .container {
-      z-index: 0;
-      margin: 0 16rem;
-      background-color: rgba(255, 255, 255, 0.8);
-      min-height: 100vh;
-      padding: 20rem 3rem 8rem 3rem;
-
-      .header {
-        margin-bottom: 8rem;
-      }
-
-      .talkContent {
-        margin-top: 5rem;
-        margin-bottom: 5rem;
-      }
-
-      .footer {
-        margin-top: 5rem;
-      }
-    }
-  }
 }

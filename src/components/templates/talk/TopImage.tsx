@@ -7,20 +7,25 @@ const TopImage = (): JSX.Element => {
   const [top, setTop] = useState<number>(0);
   const [opacity, setOpacity] = useState<number>(1);
 
-  const onScroll = (): void => {
+  const updatePosition = (): void => {
     const scroll = getScrollPosition();
     setTop(-scroll / 2);
     setOpacity(1 - scroll / 300);
   };
 
+  const onScroll = (): void => {
+    updatePosition();
+  };
+
   useEffect(() => {
+    updatePosition();
     document.addEventListener("scroll", onScroll);
     return (): void => document.removeEventListener("scroll", onScroll);
   });
 
   return (
-    <div className={styles.imageContainer} style={{ top: top, opacity: opacity }}>
-      <Image src="/test.png" layout="fill" />
+    <div className={styles.image} style={{ top: top, opacity: opacity }}>
+      <Image src="/test2.jpg" layout="fill" objectFit="cover" priority={true} />
     </div>
   );
 };

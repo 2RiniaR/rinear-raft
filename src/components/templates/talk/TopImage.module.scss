@@ -1,11 +1,7 @@
-.imageContainer {
+.image {
   position: fixed;
   z-index: 20;
   left: 0;
   width: 100%;
-  height: 14rem;
-
-  img {
-    object-fit: cover;
-  }
+  height: 30vh;
 }

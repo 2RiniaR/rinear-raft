@@ -12,7 +12,7 @@ const EndCard = ({ suggestions }: Params): JSX.Element => {
   const [visible, setVisible] = useState(false);
   const frameRef = useRef<HTMLDivElement>(null);
 
-  const onScroll = (): void => {
+  const updateVisible = (): void => {
     if (!frameRef.current) return;
     const element = frameRef.current;
     const position = getElementPosition(element).y;
@@ -21,7 +21,12 @@ const EndCard = ({ suggestions }: Params): JSX.Element => {
     if (scroll > position + offset) setVisible(true);
   };
 
+  const onScroll = (): void => {
+    updateVisible();
+  };
+
   useEffect(() => {
+    updateVisible();
     document.addEventListener("scroll", onScroll);
     return (): void => document.removeEventListener("scroll", onScroll);
   });

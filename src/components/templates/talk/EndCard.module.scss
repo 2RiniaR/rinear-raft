@@ -1,8 +1,24 @@
+@use "src/styles/responsive";
+
 .frame {
-  position: relative;
+  position: absolute;
   width: 100vw;
   left: 50%;
-  transform: translateX(-50%);
+  bottom: 50vh;
+  transform: translate(-50%, 50%);
+
+  @include responsive.mq(sm) {
+    height: 60vh;
+  }
+
+  @include responsive.mq(md) {
+    height: 50vh;
+  }
+
+  @include responsive.mq(lg) {
+    min-height: 25vw;
+    height: 50vh;
+  }
 }
 
 .background {
@@ -21,9 +37,22 @@
 }
 
 .content {
-  padding: 3rem 12rem;
   overflow: hidden;
   z-index: 5;
+
+  @include responsive.mq(sm) {
+    margin: 3rem 1rem;
+  }
+
+  @include responsive.mq(md) {
+    margin: 3rem 3rem;
+  }
+
+  @include responsive.mq(lg) {
+    max-width: 1200px;
+    width: calc(100vw - 12rem);
+    margin: 3rem auto;
+  }
 }
 
 .message {
