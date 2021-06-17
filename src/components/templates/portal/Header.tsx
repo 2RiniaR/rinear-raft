@@ -12,7 +12,7 @@ const Header = (): JSX.Element => (
       <div className={styles.close}>
         <CloseButton />
       </div>
-      <h1 className={styles.text}>??????</h1>
+      <h1 className={styles.text}>RineaR</h1>
     </div>
   </div>
 );

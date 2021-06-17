@@ -11,7 +11,7 @@ export type SuggestionParams = {
 const Suggestion = ({ suggestions }: SuggestionParams): JSX.Element => (
   <div className={styles.container}>
     <button type="button" className={styles.button}>
-      <div className={styles.image}>{"<"}</div>
+      <div className={styles.image} />
     </button>
     <div className={styles.content}>
       {suggestions.map((suggestion) => (
@@ -21,7 +21,7 @@ const Suggestion = ({ suggestions }: SuggestionParams): JSX.Element => (
       ))}
     </div>
     <button type="button" className={styles.button}>
-      <div className={styles.image}>{">"}</div>
+      <div className={styles.image} />
     </button>
   </div>
 );

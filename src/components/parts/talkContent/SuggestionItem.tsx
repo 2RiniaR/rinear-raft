@@ -14,13 +14,13 @@ const SuggestionItem = ({ suggestion }: SuggestionItemParams): JSX.Element => (
   <Link href={getRoute(suggestion)}>
     <a>
       <div className={styles.imageContainer}>
-        <Image src="/test.png" width={800} height={600} />
+        <Image src="/test.png" layout="fill" objectFit="cover" className={styles.image} />
       </div>
-      <div>
-        <h2>{suggestion.title}</h2>
+      <div className={styles.title}>
+        <h2 className={styles.text}>{suggestion.title}</h2>
       </div>
-      <div>
-        <h4>{formatDisplayDate(suggestion.updatedAt)}</h4>
+      <div className={styles.date}>
+        <h4 className={styles.text}>{formatDisplayDate(suggestion.updatedAt)}</h4>
       </div>
     </a>
   </Link>

@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+
+  .button {
+    display: block;
+    flex-grow: 0;
+    width: 3rem;
+    margin: 0 1rem;
+
+    .image {
+      width: 100%;
+      height: 100%;
+      background-color: #bbbbbb;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+
+    .item {
+      display: inline-block;
+      flex-basis: 25%;
+      height: 100%;
+      margin: 0 1rem;
+    }
+  }
+}

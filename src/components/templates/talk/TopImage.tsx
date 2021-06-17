@@ -23,6 +23,6 @@ const TopImage = (): JSX.Element => {
       <Image src="/test.png" layout="fill" />
     </div>
   );
-}
+};
 
 export default TopImage;
