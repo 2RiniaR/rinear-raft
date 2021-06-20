@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./EndCard.module.scss";
-import Suggestion from "src/components/parts/talkContent/Suggestion";
+import Suggestion from "src/components/parts/common/suggestion";
 import { getElementPosition, getScrollPosition } from "src/lib/helper";
 import { ContentHead } from "src/contents/lib/head";
 

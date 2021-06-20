@@ -32,7 +32,10 @@ export const getStaticProps: GetStaticProps<TalkPageParams> = async ({ params })
   const suggestions = [
     encodeContentHead(getHead(await getContentFromName("talks", "history"))),
     encodeContentHead(getHead(await getContentFromName("projects", "marvelous"))),
-    encodeContentHead(getHead(await getContentFromName("projects", "mage-simulator")))
+    encodeContentHead(getHead(await getContentFromName("projects", "mage-simulator"))),
+    encodeContentHead(getHead(await getContentFromName("projects", "busters-mission"))),
+    encodeContentHead(getHead(await getContentFromName("projects", "popcorn-chef"))),
+    encodeContentHead(getHead(await getContentFromName("projects", "maze-escape")))
   ];
 
   return { props: { content, suggestions } };

@@ -33,11 +33,11 @@
     }
 
     @include responsive.mq(md) {
-      padding: 0 3rem 0 3rem;
+      padding: 0 1rem 0 1rem;
     }
 
     @include responsive.mq(lg) {
-      padding: 0 3rem 0 3rem;
+      padding: 0 1rem 0 1rem;
     }
 
     .topSpace {
@@ -56,15 +56,15 @@
         margin: 0 0;
       }
       @include responsive.mq(md) {
-        margin: 0 2rem;
+        margin: 0 1rem;
       }
       @include responsive.mq(lg) {
-        margin: 0 4rem;
+        margin: 0 2rem;
       }
     }
 
     .bottomSpace {
-      height: 80vh;
+      height: 90vh;
     }
   }
 
