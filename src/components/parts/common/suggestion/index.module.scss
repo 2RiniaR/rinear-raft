@@ -7,7 +7,8 @@
   overflow: hidden;
 
   .items {
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     height: 100%;
   }
 
@@ -16,16 +17,29 @@
     position: absolute;
     top: 37.5%;
     transform: translateY(-50%);
-    width: 8rem;
-    height: 8rem;
+    width: 10%;
     z-index: 5;
 
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+
+    .inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
     &.prev {
-      left: 1rem;
+      left: 0;
     }
 
     &.next {
-      right: 1rem;
+      right: 0;
     }
   }
 }

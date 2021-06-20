@@ -53,8 +53,7 @@
   }
 
   @include responsive.mq(lg) {
-    max-width: 1200px;
-    width: calc(100vw - 12rem);
+    width: calc(100vw - 24rem);
     padding: 3rem 0;
   }
 }

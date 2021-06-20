@@ -26,10 +26,14 @@ const Suggestion = ({ suggestions }: SuggestionParams): JSX.Element => {
         <ItemsView suggestions={suggestions} selecting={selecting} onNumberOfActiveItemChanged={setActiveItems} />
       </div>
       <div className={`${styles.button} ${styles.prev}`}>
-        <ScrollButton onClick={onPrev} active={0 < selecting} />
+        <div className={styles.inner}>
+          <ScrollButton onClick={onPrev} active={0 < selecting} />
+        </div>
       </div>
       <div className={`${styles.button} ${styles.next}`}>
-        <ScrollButton onClick={onNext} active={selecting < suggestions.length - activeItems} />
+        <div className={styles.inner}>
+          <ScrollButton onClick={onNext} active={selecting < suggestions.length - activeItems} />
+        </div>
       </div>
     </div>
   );

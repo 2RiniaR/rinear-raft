@@ -8,19 +8,25 @@ export type ItemsViewParams = {
   suggestions: ContentHead[];
   selecting: number;
   onNumberOfActiveItemChanged: (num: number) => void;
+  itemGapWidthRate?: number;
+  activeDisplayPartWidthRate?: number;
+  itemWidthPerHeight?: number;
 };
 
-const activeDisplayPartWidthRate = 0.8;
-const itemGapRate = 0.08;
-const itemWidthPerHeight = 1;
-
-const ItemsView = ({ suggestions, selecting, onNumberOfActiveItemChanged }: ItemsViewParams): JSX.Element => {
+const ItemsView = ({
+  suggestions,
+  selecting,
+  onNumberOfActiveItemChanged,
+  activeDisplayPartWidthRate = 0.8,
+  itemGapWidthRate = 0.05,
+  itemWidthPerHeight = 1
+}: ItemsViewParams): JSX.Element => {
   const [containerWidth, setContainerWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const getItemWidth = useCallback(() => containerHeight * itemWidthPerHeight, [containerHeight]);
-  const getItemGap = useCallback(() => containerWidth * itemGapRate, [containerWidth]);
+  const getItemGap = useCallback(() => containerWidth * itemGapWidthRate, [containerWidth]);
 
   const getNumberOfActiveItem = useCallback(() => {
     const totalWidth = containerWidth * activeDisplayPartWidthRate;
