@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "eslint": "eslint --ignore-path .gitignore \"src/**/*.{js,jsx,ts,tsx}\"",
     "eslint:fix": "eslint --ignore-path .gitignore \"src/**/*.{js,jsx,ts,tsx}\" --fix",
@@ -13,10 +13,11 @@
     "format": "prettier --write \"./**/*.ts\" \"./**/*.tsx\""
   },
   "dependencies": {
+    "dayjs": "^1.10.5",
     "destyle.css": "^2.0.2",
-    "next": "10.2.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "^11.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "sass-loader": "^12.0.0"
   },
   "devDependencies": {
@@ -27,6 +28,7 @@
     "@typescript-eslint/parser": "^4.24.0",
     "autoprefixer": "^10.2.5",
     "eslint": "^7.26.0",
+    "eslint-config-next": "^11.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.23.2",
@@ -42,7 +44,7 @@
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-prettier": "^1.2.0",
     "stylelint-scss": "^3.19.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.2"
   },
   "browser": {
     "fs": false

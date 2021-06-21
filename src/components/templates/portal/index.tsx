@@ -3,7 +3,7 @@ import PickUp from "./PickUp";
 import Menu from "./Menu";
 import Header from "./Header";
 import styles from "./index.module.scss";
-import pickUp from "src/contents/pickup";
+import pickUp from "src/contents/lib/pickup";
 
 const PortalPage = (): JSX.Element => (
   <div className={styles.page}>
