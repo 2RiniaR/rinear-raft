@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./Menu.module.scss";
-import Title from "src/components/parts/portal/Title";
-import TalksButton from "src/components/parts/portal/TalksButton";
-import HomeButton from "src/components/parts/portal/HomeButton";
-import ProjectsButton from "src/components/parts/portal/ProjectsButton";
+import styles from "./index.module.scss";
+import Title from "./Title";
+import TalksButton from "./Buttons/TalksButton";
+import HomeButton from "./Buttons/HomeButton";
+import ProjectsButton from "./Buttons/ProjectsButton";
 
 const Menu = (): JSX.Element => (
   <div className={styles.menu}>

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Header.module.scss";
-import Lamp from "src/components/parts/portal/Lamp";
-import CloseButton from "src/components/parts/portal/CloseButton";
+import styles from "./index.module.scss";
+import Lamp from "./Lamp";
+import CloseButton from "./CloseButton";
 
 const Header = (): JSX.Element => (
   <div className={styles.header}>

@@ -1,7 +1,7 @@
 import React from "react";
 import PickUp from "./PickUp";
-import Menu from "./Menu";
-import Header from "./Header";
+import Menu from "./Menu/Menu";
+import Header from "./Header/Header";
 import styles from "./index.module.scss";
 import pickUp from "src/contents/lib/pickup";
 

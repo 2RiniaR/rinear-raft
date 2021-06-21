@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import styles from "./ItemsView.module.scss";
+import styles from "./index.module.scss";
 import Item from "./Item";
 import { ContentHead } from "src/contents/lib/head";
 import { getRoute } from "src/contents/lib/base";
 
-export type ItemsViewParams = {
+export type ItemContainerParams = {
   suggestions: ContentHead[];
   selecting: number;
   onNumberOfActiveItemChanged: (num: number) => void;
@@ -13,14 +13,14 @@ export type ItemsViewParams = {
   itemWidthPerHeight?: number;
 };
 
-const ItemsView = ({
+const ItemContainer = ({
   suggestions,
   selecting,
   onNumberOfActiveItemChanged,
   activeDisplayPartWidthRate = 0.8,
   itemGapWidthRate = 0.05,
   itemWidthPerHeight = 1
-}: ItemsViewParams): JSX.Element => {
+}: ItemContainerParams): JSX.Element => {
   const [containerWidth, setContainerWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -78,4 +78,4 @@ const ItemsView = ({
   );
 };
 
-export default ItemsView;
+export default ItemContainer;

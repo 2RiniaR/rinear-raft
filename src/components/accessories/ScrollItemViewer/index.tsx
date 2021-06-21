@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
+import ItemContainer from "./ItemContainer";
 import { ContentHead } from "src/contents/lib/head";
-import ScrollButton from "src/components/parts/common/suggestion/ScrollButton";
-import ItemsView from "src/components/parts/common/suggestion/ItemsView";
+import ScrollButton from "src/components/accessories/ScrollItemViewer/ScrollButton";
 
-export type SuggestionParams = {
+export type ScrollItemViewerParams = {
   suggestions: ContentHead[];
 };
 
-const Suggestion = ({ suggestions }: SuggestionParams): JSX.Element => {
+const ScrollItemViewer = ({ suggestions }: ScrollItemViewerParams): JSX.Element => {
   const [activeItems, setActiveItems] = useState(0);
   const [selecting, setSelecting] = useState(0);
 
@@ -23,7 +23,7 @@ const Suggestion = ({ suggestions }: SuggestionParams): JSX.Element => {
   return (
     <div className={styles.container}>
       <div className={styles.items}>
-        <ItemsView suggestions={suggestions} selecting={selecting} onNumberOfActiveItemChanged={setActiveItems} />
+        <ItemContainer suggestions={suggestions} selecting={selecting} onNumberOfActiveItemChanged={setActiveItems} />
       </div>
       <div className={`${styles.button} ${styles.prev}`}>
         <div className={styles.inner}>
@@ -39,4 +39,4 @@ const Suggestion = ({ suggestions }: SuggestionParams): JSX.Element => {
   );
 };
 
-export default Suggestion;
+export default ScrollItemViewer;

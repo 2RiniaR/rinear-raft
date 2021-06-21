@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import TopImage from "./TopImage";
 import Article from "./Article";
 import Background from "./Background";
-import EndCard from "src/components/templates/talk/EndCard";
+import EndCard from "./EndCard";
 import { TalkContent } from "src/contents/lib/talks/body";
 import { ContentHead } from "src/contents/lib/head";
 

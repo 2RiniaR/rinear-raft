@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import styles from "./PickUp.module.scss";
-import Title from "src/components/parts/portal/Title";
+import Title from "src/components/templates/portal/Menu/Title";
 
 export type PickUpParams = {
   content: PickUpContent;

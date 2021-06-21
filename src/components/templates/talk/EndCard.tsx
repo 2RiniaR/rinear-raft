@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./EndCard.module.scss";
-import Suggestion from "src/components/parts/common/suggestion";
+import ScrollItemViewer from "src/components/accessories/ScrollItemViewer";
 import { getElementPosition, getScrollPosition } from "src/lib/helper";
 import { ContentHead } from "src/contents/lib/head";
 
@@ -39,7 +39,7 @@ const EndCard = ({ suggestions }: Params): JSX.Element => {
           <h1 className={styles.text}>Thanks for reading!</h1>
         </div>
         <div className={styles.suggestions}>
-          <Suggestion suggestions={suggestions} />
+          <ScrollItemViewer suggestions={suggestions} />
         </div>
       </div>
     </div>

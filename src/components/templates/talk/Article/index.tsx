@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Article.module.scss";
-import Header from "src/components/templates/talk/Header";
-import Footer from "src/components/templates/talk/Footer";
+import styles from "./index.module.scss";
+import Header from "./Header";
+import Footer from "./Footer";
 import { TalkContent } from "src/contents/lib/talks/body";
 
 export type ArticleParams = {
