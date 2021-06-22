@@ -1,5 +1,5 @@
 import { TagType } from "./tags";
-import { ContentGenre } from "./genre";
+import { ContentGenre } from "src/lib/contents";
 
 export type ContentForm = {
   genre: ContentGenre;

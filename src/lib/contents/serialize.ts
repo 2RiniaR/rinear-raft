@@ -1,24 +1,24 @@
-import { ContentHead, ContentHeadEncoded } from "src/contents/lib/head";
-import { Content, ContentEncoded } from "src/contents/lib/body";
+import { ContentHead, ContentHeadEncoded } from "src/lib/contents/head";
+import { Content, ContentEncoded } from "src/lib/contents/body";
 import {
   decodeTalkContentHead,
   encodeTalkContentHead,
   isTalkContentHead,
   isTalkContentHeadEncoded
-} from "src/contents/lib/talks/head";
+} from "src/lib/contents/talks/head";
 import {
   decodeProjectContentHead,
   encodeProjectContentHead,
   isProjectContentHead,
   isProjectContentHeadEncoded
-} from "src/contents/lib/projects/head";
-import { decodeTalkContent, encodeTalkContent, isTalkContent, isTalkContentEncoded } from "src/contents/lib/talks/body";
+} from "src/lib/contents/projects/head";
+import { decodeTalkContent, encodeTalkContent, isTalkContent, isTalkContentEncoded } from "src/lib/contents/talks/body";
 import {
   decodeProjectContent,
   encodeProjectContent,
   isProjectContent,
   isProjectContentEncoded
-} from "src/contents/lib/projects/body";
+} from "src/lib/contents/projects/body";
 
 export function encodeContentHead(original: ContentHead): ContentHeadEncoded {
   if (isTalkContentHead(original)) {

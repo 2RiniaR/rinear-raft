@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./EndCard.module.scss";
 import ScrollItemViewer from "src/components/accessories/ScrollItemViewer";
 import { getElementPosition, getScrollPosition } from "src/lib/helper";
-import { ContentHead } from "src/contents/lib/head";
+import { ContentHead } from "src/lib/contents/head";
 
 type Params = {
   suggestions: ContentHead[];

@@ -5,3 +5,6 @@ export const genre: ContentGenre & GenreType = "projects";
 export type GenreStrict = { genre: GenreType };
 export type Params = { description: string; releasedAt: Date };
 export type EncodedParams = { description: string; releasedAt: string };
+
+export type { ProjectContentHead, ProjectContentHeadEncoded } from "./head";
+export type { ProjectContent, ProjectContentEncoded } from "./body";

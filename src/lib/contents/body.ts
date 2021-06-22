@@ -2,9 +2,9 @@ import fs from "fs";
 import { renderToString } from "react-dom/server";
 import { ContentBase, ContentBaseEncoded, decodeContentBase, encodeContentBase } from "./base";
 import { ContentGenre } from "./genre";
-import { ContentForm } from "./form";
-import { Tags } from "src/contents/lib/tags";
-import { getPageFromString } from "src/contents/lib/page";
+import { ContentForm } from "../../data/contents/form";
+import { Tags } from "src/lib/contents/tags";
+import { getPageFromString } from "src/lib/contents/page";
 
 export type Content = ContentBase & { page: JSX.Element };
 export type ContentEncoded = ContentBaseEncoded & { page: string };
@@ -20,7 +20,7 @@ export function getContentSourcePath(
 }
 
 export async function getContentFromName(genre: ContentGenre, name: string): Promise<Content> {
-  const form: ContentForm = (await import(`src/contents/pages/${genre}/${name}`)).default;
+  const form: ContentForm = (await import(`src/data/contents/${genre}/${name}`)).default;
   return {
     ...form,
     name,

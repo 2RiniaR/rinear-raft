@@ -1,6 +1,6 @@
 import { ContentBase, ContentBaseEncoded, decodeContentBase, encodeContentBase } from "./base";
-import { ContentGenre } from "src/contents/lib/genre";
-import { Content, getAllContentsName, getContentFromName } from "src/contents/lib/body";
+import { ContentGenre } from "src/lib/contents/genre";
+import { Content, getAllContentsName, getContentFromName } from "src/lib/contents/body";
 
 export type ContentHead = ContentBase;
 export type ContentHeadEncoded = ContentBaseEncoded;

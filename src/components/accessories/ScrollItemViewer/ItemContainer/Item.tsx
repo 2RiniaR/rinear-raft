@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Item.module.scss";
 import { formatDisplayDate } from "src/lib/helper";
-import { ContentHead } from "src/contents/lib/head";
-import { getRoute } from "src/contents/lib/base";
+import { ContentHead } from "src/lib/contents/head";
+import { getRoute } from "src/lib/contents/base";
 
 export type ItemParams = {
   active: boolean;

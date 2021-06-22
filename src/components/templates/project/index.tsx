@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { ProjectContent } from "src/contents/lib/projects/body";
-import { ContentHead } from "src/contents/lib/head";
+import { ProjectContent } from "src/lib/contents/projects/body";
+import { ContentHead } from "src/lib/contents/head";
 
 export type ProjectPageTemplateParams = {
   content: ProjectContent;

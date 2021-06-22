@@ -6,10 +6,10 @@ import {
   getAllProjectContentsName,
   getProjectContentFromName,
   ProjectContentEncoded
-} from "src/contents/lib/projects/body";
-import { ContentHeadEncoded, getHead } from "src/contents/lib/head";
-import { getContentFromName } from "src/contents/lib/body";
-import { decodeContentHead, encodeContentHead } from "src/contents/lib/serialize";
+} from "src/lib/contents/projects/body";
+import { ContentHeadEncoded, getHead } from "src/lib/contents/head";
+import { getContentFromName } from "src/lib/contents/body";
+import { decodeContentHead, encodeContentHead } from "src/lib/contents/serialize";
 
 type ProjectPageParams = {
   content: ProjectContentEncoded;

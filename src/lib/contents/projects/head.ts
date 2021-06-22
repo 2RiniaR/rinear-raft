@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { ContentHead, ContentHeadEncoded, decodeContentHead, encodeContentHead, getAllContentHeads } from "../head";
-import { EncodedParams, genre, GenreStrict, Params } from ".";
+import { EncodedParams, genre, GenreStrict, Params } from "./index";
 
 export type ProjectContentHead = ContentHead & GenreStrict & Params;
 export type ProjectContentHeadEncoded = ContentHeadEncoded & GenreStrict & EncodedParams;

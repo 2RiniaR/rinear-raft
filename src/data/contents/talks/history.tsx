@@ -1,4 +1,4 @@
-import { TalkContentForm } from "src/contents/lib/talks/form";
+import { TalkContentForm } from ".";
 
 const page: JSX.Element = (
   <div>

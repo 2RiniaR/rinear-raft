@@ -1,6 +1,6 @@
 import { Content, ContentEncoded, decodeContent, encodeContent, getAllContentsName, getContentFromName } from "../body";
 import { ContentGenre } from "../genre";
-import { GenreStrict, Params, EncodedParams, genre } from ".";
+import { GenreStrict, Params, EncodedParams, genre } from "./index";
 
 export type TalkContent = Content & GenreStrict & Params;
 export type TalkContentEncoded = ContentEncoded & GenreStrict & EncodedParams;

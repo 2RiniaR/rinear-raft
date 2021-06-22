@@ -1,5 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { encodeTalkContentHead, getAllTalkContentHeads, TalkContentHeadEncoded } from "src/contents/lib/talks/head";
+import { encodeTalkContentHead, getAllTalkContentHeads, TalkContentHeadEncoded } from "src/lib/contents/talks/head";
 
 type TalksIndexPageParams = {
   heads: TalkContentHeadEncoded[];

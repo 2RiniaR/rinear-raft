@@ -1,9 +1,3 @@
-export type Tag = {
-  id: string;
-  name: string;
-  color: string;
-};
-
 export const Tags = {
   rinear: { name: "Rinear", color: "#fff" },
   service: { name: "サービス", color: "#fff" },

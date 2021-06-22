@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Header.module.scss";
 import { formatDisplayDate } from "src/lib/helper";
-import { Tag } from "src/contents/lib/tags";
+import { Tag } from "src/lib/contents/tags";
 
 type Params = {
   title: string;

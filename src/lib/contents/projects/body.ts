@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { Content, ContentEncoded, decodeContent, encodeContent, getAllContentsName, getContentFromName } from "../body";
 import { ContentGenre } from "../genre";
-import { EncodedParams, genre, GenreStrict, Params } from ".";
+import { EncodedParams, genre, GenreStrict, Params } from "./index";
 
 export type ProjectContent = Content & GenreStrict & Params;
 export type ProjectContentEncoded = ContentEncoded & GenreStrict & EncodedParams;

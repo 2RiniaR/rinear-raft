@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
 import ItemContainer from "./ItemContainer";
-import { ContentHead } from "src/contents/lib/head";
+import { ContentHead } from "src/lib/contents/head";
 import ScrollButton from "src/components/accessories/ScrollItemViewer/ScrollButton";
 
 export type ScrollItemViewerParams = {

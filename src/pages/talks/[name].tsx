@@ -6,10 +6,10 @@ import {
   getAllTalkContentsName,
   getTalkContentFromName,
   TalkContentEncoded
-} from "src/contents/lib/talks/body";
-import { ContentHeadEncoded, getHead } from "src/contents/lib/head";
-import { getContentFromName } from "src/contents/lib/body";
-import { decodeContentHead, encodeContentHead } from "src/contents/lib/serialize";
+} from "src/lib/contents/talks/body";
+import { ContentHeadEncoded, getHead } from "src/lib/contents/head";
+import { getContentFromName } from "src/lib/contents/body";
+import { decodeContentHead, encodeContentHead } from "src/lib/contents/serialize";
 
 type TalkPageParams = {
   content: TalkContentEncoded;

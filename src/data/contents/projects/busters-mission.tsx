@@ -1,4 +1,4 @@
-import { ProjectContentForm } from "src/contents/lib/projects/form";
+import { ProjectContentForm } from ".";
 
 const page: JSX.Element = (
   <div>

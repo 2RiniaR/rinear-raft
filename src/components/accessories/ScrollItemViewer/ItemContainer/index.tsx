@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
 import Item from "./Item";
-import { ContentHead } from "src/contents/lib/head";
-import { getRoute } from "src/contents/lib/base";
+import { ContentHead } from "src/lib/contents/head";
+import { getRoute } from "src/lib/contents/base";
 
 export type ItemContainerParams = {
   suggestions: ContentHead[];

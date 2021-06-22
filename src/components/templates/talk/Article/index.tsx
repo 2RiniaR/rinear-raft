@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./index.module.scss";
 import Header from "./Header";
 import Footer from "./Footer";
-import { TalkContent } from "src/contents/lib/talks/body";
+import { TalkContent } from "src/lib/contents/talks/body";
 
 export type ArticleParams = {
   content: TalkContent;

@@ -3,7 +3,7 @@ import {
   encodeProjectContentHead,
   getAllProjectContentHeads,
   ProjectContentHeadEncoded
-} from "src/contents/lib/projects/head";
+} from "src/lib/contents/projects/head";
 
 type ProjectsIndexPageParams = {
   heads: ProjectContentHeadEncoded[];

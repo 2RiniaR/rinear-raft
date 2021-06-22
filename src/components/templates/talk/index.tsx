@@ -3,8 +3,8 @@ import styles from "./index.module.scss";
 import TopImage from "./TopImage";
 import Article from "./Article";
 import EndCard from "./EndCard";
-import { TalkContent } from "src/contents/lib/talks/body";
-import { ContentHead } from "src/contents/lib/head";
+import { TalkContent } from "src/lib/contents/talks/body";
+import { ContentHead } from "src/lib/contents/head";
 import FarVisionBackground from "src/components/accessories/FarVisionBackground";
 
 export type TalkPageTemplateParams = {
