@@ -1,9 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import styles from "./Background.module.scss";
+import styles from "./index.module.scss";
 import { getScrollPosition } from "src/lib/helper";
 
-const Background = (): JSX.Element => {
+export type FarVisionBackgroundParams = {
+  src: string;
+};
+
+const FarVisionBackground = ({ src }: FarVisionBackgroundParams): JSX.Element => {
   const [imageScroll, setImageScroll] = useState(0);
   const imageRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +34,7 @@ const Background = (): JSX.Element => {
   return (
     <div className={styles.view}>
       <div className={styles.image} ref={imageRef} style={{ top: imageScroll }}>
-        <Image src="/test2.jpg" layout="fill" objectFit="cover" priority={true} />
+        <Image src={src} layout="fill" objectFit="cover" priority={true} />
       </div>
       <div className={styles.mask} />
       <div className={styles.fade} />
@@ -38,4 +42,4 @@ const Background = (): JSX.Element => {
   );
 };
 
-export default Background;
+export default FarVisionBackground;

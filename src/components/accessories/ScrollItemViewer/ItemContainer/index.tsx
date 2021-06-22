@@ -21,8 +21,8 @@ const ItemContainer = ({
   itemGapWidthRate = 0.05,
   itemWidthPerHeight = 1
 }: ItemContainerParams): JSX.Element => {
-  const [containerWidth, setContainerWidth] = useState(0);
-  const [containerHeight, setContainerHeight] = useState(0);
+  const [containerWidth, setContainerWidth] = useState(1);
+  const [containerHeight, setContainerHeight] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const getItemWidth = useCallback(() => containerHeight * itemWidthPerHeight, [containerHeight]);

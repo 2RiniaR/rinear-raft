@@ -1,6 +1,8 @@
-import Link from "next/link";
+import React from "react";
+import styles from "./index.module.scss";
 import { TalkContentHead } from "src/contents/lib/talks/head";
 import { ProjectContentHead } from "src/contents/lib/projects/head";
+import FarVisionBackground from "src/components/accessories/FarVisionBackground";
 
 export type HomePageTemplateParams = {
   talks: TalkContentHead[];
@@ -9,11 +11,8 @@ export type HomePageTemplateParams = {
 
 export default function HomePageTemplate(): JSX.Element {
   return (
-    <div>
-      <h2>Home page</h2>
-      <Link href="/portal">
-        <a>Go to portal</a>
-      </Link>
+    <div className={styles.page}>
+      <FarVisionBackground src="/test3.jpg" />
     </div>
   );
 }

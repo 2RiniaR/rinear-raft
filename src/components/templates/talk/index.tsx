@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./index.module.scss";
 import TopImage from "./TopImage";
 import Article from "./Article";
-import Background from "./Background";
 import EndCard from "./EndCard";
 import { TalkContent } from "src/contents/lib/talks/body";
 import { ContentHead } from "src/contents/lib/head";
+import FarVisionBackground from "src/components/accessories/FarVisionBackground";
 
 export type TalkPageTemplateParams = {
   content: TalkContent;
@@ -15,7 +15,7 @@ export type TalkPageTemplateParams = {
 const TalkPageTemplate = ({ content, suggestions }: TalkPageTemplateParams): JSX.Element => (
   <div className={styles.page}>
     <TopImage />
-    <Background />
+    <FarVisionBackground src="/test2.jpg" />
     <Article content={content} />
     <EndCard suggestions={suggestions} />
   </div>
