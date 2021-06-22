@@ -1,55 +1,25 @@
-import fs from "fs";
 import { renderToString } from "react-dom/server";
-import { ContentBase, ContentBaseEncoded, decodeContentBase, encodeContentBase } from "./base";
-import { ContentGenre } from "./genre";
-import { ContentForm } from "../../data/contents/form";
-import { Tags } from "src/lib/contents/tags";
-import { getPageFromString } from "src/lib/contents/page";
+import { ContentBase, ContentBaseEncoded, ContentBaseParams } from "./base";
+import { getPageFromString } from "./page";
 
-export type Content = ContentBase & { page: JSX.Element };
 export type ContentEncoded = ContentBaseEncoded & { page: string };
+export type ContentParams = ContentBaseParams & { page: JSX.Element };
 
-export function getContentSourcePath(
-  genre: ContentGenre,
-  name?: string,
-  refType: "absolute" | "relative" = "absolute"
-): string {
-  const genrePath = refType === "absolute" ? `src/contents/pages/${genre}` : `../pages/${genre}`;
-  const namePath = !name ? "" : `/${name}`;
-  return genrePath + namePath;
-}
+export abstract class Content extends ContentBase {
+  public readonly page: JSX.Element;
 
-export async function getContentFromName(genre: ContentGenre, name: string): Promise<Content> {
-  const form: ContentForm = (await import(`src/data/contents/${genre}/${name}`)).default;
-  return {
-    ...form,
-    name,
-    tags: form.tags.map((t) => ({ ...Tags[t], id: t }))
-  };
-}
+  protected constructor(init: ContentParams);
+  protected constructor(init: ContentEncoded);
+  protected constructor(init: ContentParams | ContentEncoded);
+  protected constructor(init: ContentParams | ContentEncoded) {
+    super(init);
+    this.page = typeof init.page == "string" ? getPageFromString(init.page) : init.page;
+  }
 
-export async function getAllContentsName(genre: ContentGenre): Promise<string[]> {
-  const dirPath = getContentSourcePath(genre, undefined, "absolute");
-  const files = await fs.promises.readdir(dirPath);
-  return files
-    .filter((file) => {
-      const isFile = fs.statSync(dirPath + "/" + file).isFile();
-      const isTsx = /.*\.tsx$/.test(file);
-      return isFile && isTsx;
-    })
-    .map((file) => file.slice(0, -".tsx".length));
-}
-
-export function encodeContent(original: Content): ContentEncoded {
-  return {
-    ...encodeContentBase(original),
-    page: renderToString(original.page)
-  };
-}
-
-export function decodeContent(encoded: ContentEncoded): Content {
-  return {
-    ...decodeContentBase(encoded),
-    page: getPageFromString(encoded.page)
-  };
+  public encode(): ContentEncoded {
+    return {
+      ...super.encode(),
+      page: renderToString(this.page)
+    };
+  }
 }

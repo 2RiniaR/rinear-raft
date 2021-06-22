@@ -1,34 +1,27 @@
-import { ContentHead, ContentHeadEncoded, decodeContentHead, encodeContentHead, getAllContentHeads } from "../head";
-import { ContentGenre } from "../genre";
-import { EncodedParams, genre, GenreStrict, Params } from "./index";
+import { ContentHead, ContentHeadEncoded, ContentHeadParams } from "..";
+import { EncodedParams, genre, GenreStrict, Params } from ".";
 
-export type TalkContentHead = ContentHead & GenreStrict & Params;
+export type TalkContentHeadParams = ContentHeadParams & GenreStrict & Params;
 export type TalkContentHeadEncoded = ContentHeadEncoded & GenreStrict & EncodedParams;
 
-export function isTalkContentHead(arg: ContentHead): arg is TalkContentHead {
+export function isTalkHead(arg: ContentHeadEncoded): arg is TalkContentHeadEncoded {
   return arg.genre === genre;
 }
 
-export function isTalkContentHeadEncoded(arg: ContentHeadEncoded): arg is TalkContentHeadEncoded {
-  return arg.genre === genre;
-}
+export class TalkContentHead extends ContentHead {
+  public readonly genre = genre;
 
-export async function getAllTalkContentHeads(): Promise<TalkContentHead[]> {
-  const heads = await getAllContentHeads(genre);
-  if (!heads.every(isTalkContentHead)) throw new Error("Invalid type content.");
-  return heads as TalkContentHead[];
-}
+  public constructor(init: TalkContentHeadParams);
+  public constructor(init: TalkContentHeadEncoded);
+  public constructor(init: TalkContentHeadParams | TalkContentHeadEncoded);
+  public constructor(init: TalkContentHeadParams | TalkContentHeadEncoded) {
+    super(init);
+  }
 
-export function encodeTalkContentHead(original: TalkContentHead): TalkContentHeadEncoded {
-  return {
-    ...encodeContentHead(original),
-    genre: genre
-  };
-}
-
-export function decodeTalkContentHead(encoded: TalkContentHeadEncoded): TalkContentHead {
-  return {
-    ...decodeContentHead(encoded),
-    genre: genre
-  };
+  public encode(): TalkContentHeadEncoded {
+    return {
+      ...super.encode(),
+      genre: this.genre
+    };
+  }
 }

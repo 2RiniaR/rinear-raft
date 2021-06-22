@@ -4,7 +4,6 @@ import Image from "next/image";
 import styles from "./Item.module.scss";
 import { formatDisplayDate } from "src/lib/helper";
 import { ContentHead } from "src/lib/contents/head";
-import { getRoute } from "src/lib/contents/base";
 
 export type ItemParams = {
   active: boolean;
@@ -13,7 +12,7 @@ export type ItemParams = {
 
 const Item = ({ active, suggestion }: ItemParams): JSX.Element => (
   <div className={`${styles.container} ${active ? styles.active : styles.inactive}`}>
-    <Link href={getRoute(suggestion)}>
+    <Link href={suggestion.getRoute()}>
       <a>
         <div className={styles.imageContainer}>
           <Image src="/test.png" layout="fill" objectFit="cover" className={styles.image} />

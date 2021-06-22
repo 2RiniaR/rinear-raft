@@ -1,39 +1,34 @@
 import dayjs from "dayjs";
-import { ContentHead, ContentHeadEncoded, decodeContentHead, encodeContentHead, getAllContentHeads } from "../head";
-import { EncodedParams, genre, GenreStrict, Params } from "./index";
+import { ContentHead, ContentHeadEncoded, ContentHeadParams } from "..";
+import { EncodedParams, genre, GenreStrict, Params } from ".";
 
-export type ProjectContentHead = ContentHead & GenreStrict & Params;
+export type ProjectContentHeadParams = ContentHeadParams & GenreStrict & Params;
 export type ProjectContentHeadEncoded = ContentHeadEncoded & GenreStrict & EncodedParams;
 
-export function isProjectContentHead(arg: ContentHead): arg is ProjectContentHead {
+export function isProjectHead(arg: ContentHeadEncoded): arg is ProjectContentHeadEncoded {
   return arg.genre === genre;
 }
 
-export function isProjectContentHeadEncoded(arg: ContentHeadEncoded): arg is ProjectContentHeadEncoded {
-  return arg.genre === genre;
-}
+export class ProjectContentHead extends ContentHead {
+  public readonly genre = genre;
+  public readonly description: string;
+  public readonly releasedAt: Date;
 
-export async function getAllProjectContentHeads(): Promise<ProjectContentHead[]> {
-  const heads = await getAllContentHeads(genre);
-  if (!heads.every(isProjectContentHead)) throw new Error("Invalid type content.");
-  return heads as ProjectContentHead[];
-}
+  public constructor(init: ProjectContentHeadParams);
+  public constructor(init: ProjectContentHeadEncoded);
+  public constructor(init: ProjectContentHeadParams | ProjectContentHeadEncoded);
+  public constructor(init: ProjectContentHeadParams | ProjectContentHeadEncoded) {
+    super(init);
+    this.description = init.description;
+    this.releasedAt = dayjs(init.releasedAt).toDate();
+  }
 
-export function encodeProjectContentHead(original: ProjectContentHead): ProjectContentHeadEncoded {
-  const releasedAt = original.releasedAt.toString();
-  return {
-    ...original,
-    ...encodeContentHead(original),
-    genre: genre,
-    releasedAt
-  };
-}
-
-export function decodeProjectContentHead(encoded: ProjectContentHeadEncoded): ProjectContentHead {
-  return {
-    ...encoded,
-    ...decodeContentHead(encoded),
-    genre: genre,
-    releasedAt: dayjs(encoded.releasedAt).toDate()
-  };
+  public encode(): ProjectContentHeadEncoded {
+    return {
+      ...super.encode(),
+      description: this.description,
+      releasedAt: this.releasedAt.toString(),
+      genre: this.genre
+    };
+  }
 }

@@ -1,7 +1,11 @@
-export { encodeContent, decodeContent, encodeContentHead, decodeContentHead } from "./serialize";
-export type { Content, ContentEncoded } from "./body";
-export type { ContentHead, ContentHeadEncoded } from "./head";
+export { Content } from "./body";
+export type { ContentEncoded, ContentParams } from "./body";
+export { ContentHead } from "./head";
+export type { ContentHeadEncoded, ContentHeadParams } from "./head";
 export type { ContentGenre } from "./genre";
+export { decodeContent, decodeContentHead } from "./decode";
 
-export type { ProjectContentHead, ProjectContentHeadEncoded, ProjectContent, ProjectContentEncoded } from "./projects";
-export type { TalkContentHead, TalkContentHeadEncoded, TalkContent, TalkContentEncoded } from "./talks";
+export { ProjectContentHead, ProjectContent } from "./projects";
+export type { ProjectContentHeadEncoded, ProjectContentEncoded } from "./projects";
+export { TalkContentHead, TalkContent } from "./talks";
+export type { TalkContentHeadEncoded, TalkContentEncoded } from "./talks";

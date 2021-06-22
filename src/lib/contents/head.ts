@@ -1,30 +1,6 @@
-import { ContentBase, ContentBaseEncoded, decodeContentBase, encodeContentBase } from "./base";
-import { ContentGenre } from "src/lib/contents/genre";
-import { Content, getAllContentsName, getContentFromName } from "src/lib/contents/body";
+import { ContentBase, ContentBaseEncoded, ContentBaseParams } from "./base";
 
-export type ContentHead = ContentBase;
 export type ContentHeadEncoded = ContentBaseEncoded;
+export type ContentHeadParams = ContentBaseParams;
 
-export function getHead(content: Content): ContentHead {
-  const head: ContentHead & { page?: JSX.Element } = { ...content };
-  delete head.page;
-  return head;
-}
-
-export async function getAllContentHeads(genre: ContentGenre): Promise<ContentHead[]> {
-  const names = await getAllContentsName(genre);
-  return await Promise.all(
-    names.map(async (name) => {
-      const content = await getContentFromName(genre, name);
-      return getHead(content);
-    })
-  );
-}
-
-export function encodeContentHead(original: ContentHead): ContentHeadEncoded {
-  return encodeContentBase(original);
-}
-
-export function decodeContentHead(encoded: ContentHeadEncoded): ContentHead {
-  return decodeContentBase(encoded);
-}
+export abstract class ContentHead extends ContentBase {}

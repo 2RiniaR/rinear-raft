@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
 import Item from "./Item";
 import { ContentHead } from "src/lib/contents/head";
-import { getRoute } from "src/lib/contents/base";
 
 export type ItemContainerParams = {
   suggestions: ContentHead[];
@@ -62,7 +61,7 @@ const ItemContainer = ({
       <div className={styles.content} style={{ left: getContentPosition() }}>
         {suggestions.map((suggestion, index) => (
           <div
-            key={getRoute(suggestion)}
+            key={suggestion.getRoute()}
             className={styles.item}
             style={{
               width: getItemWidth(),

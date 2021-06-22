@@ -1,42 +1,27 @@
-import { Content, ContentEncoded, decodeContent, encodeContent, getAllContentsName, getContentFromName } from "../body";
-import { ContentGenre } from "../genre";
-import { GenreStrict, Params, EncodedParams, genre } from "./index";
+import { Content, ContentEncoded, ContentParams } from "..";
+import { EncodedParams, genre, GenreStrict, Params } from ".";
 
-export type TalkContent = Content & GenreStrict & Params;
+export type TalkContentParams = ContentParams & GenreStrict & Params;
 export type TalkContentEncoded = ContentEncoded & GenreStrict & EncodedParams;
 
-export function isTalkContent(arg: Content): arg is TalkContent {
+export function isTalk(arg: ContentEncoded): arg is TalkContentEncoded {
   return arg.genre === genre;
 }
 
-export function isTalkContentEncoded(arg: ContentEncoded): arg is TalkContentEncoded {
-  return arg.genre === genre;
-}
+export class TalkContent extends Content {
+  public readonly genre = genre;
 
-export function getThumbnailPath({ genre, name }: { genre: ContentGenre; name: string }): string {
-  return `/contents/${genre}/${name}.jpg`;
-}
+  public constructor(init: TalkContentParams);
+  public constructor(init: TalkContentEncoded);
+  public constructor(init: TalkContentParams | TalkContentEncoded);
+  public constructor(init: TalkContentParams | TalkContentEncoded) {
+    super(init);
+  }
 
-export async function getTalkContentFromName(name: string): Promise<TalkContent> {
-  const content = await getContentFromName(genre, name);
-  if (!isTalkContent(content)) throw new Error("Invalid type content.");
-  return content as TalkContent;
-}
-
-export async function getAllTalkContentsName(): Promise<string[]> {
-  return getAllContentsName(genre);
-}
-
-export function encodeTalkContent(original: TalkContent): TalkContentEncoded {
-  return {
-    ...encodeContent(original),
-    genre: genre
-  };
-}
-
-export function decodeTalkContent(encoded: TalkContentEncoded): TalkContent {
-  return {
-    ...decodeContent(encoded),
-    genre: genre
-  };
+  public encode(): TalkContentEncoded {
+    return {
+      ...super.encode(),
+      genre: this.genre
+    };
+  }
 }
