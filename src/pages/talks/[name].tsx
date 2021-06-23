@@ -7,8 +7,7 @@ import {
   TalkContent,
   TalkContentEncoded
 } from "src/lib/contents";
-import { getAllContentsName, getContentHead } from "src/data/contents";
-import { getTalkContent } from "src/data/contents/talks";
+import { getAllContentsName, getContent, getContentHead } from "src/data/contents";
 
 type TalkPageParams = {
   content: TalkContentEncoded;
@@ -17,7 +16,7 @@ type TalkPageParams = {
 
 const TalkPage = (params: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element =>
   TalkPageTemplate({
-    content: decodeContent(params.content) as TalkContent,
+    content: decodeContent<TalkContent>(params.content),
     suggestions: params.suggestions.map(decodeContentHead)
   });
 
@@ -25,7 +24,7 @@ export default TalkPage;
 
 export const getStaticProps: GetStaticProps<TalkPageParams> = async ({ params }) => {
   if (!params || typeof params.name !== "string") throw new Error("params is invalid type.");
-  const content = (await getTalkContent(params.name)).encode();
+  const content = (await getContent<TalkContent>("talks", params.name)).encode();
 
   // 一時的
   const suggestions = [

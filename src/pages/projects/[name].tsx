@@ -7,8 +7,7 @@ import {
   ProjectContent,
   ProjectContentEncoded
 } from "src/lib/contents";
-import { getAllContentsName, getContentHead } from "src/data/contents";
-import { getProjectContent } from "src/data/contents/projects";
+import { getAllContentsName, getContent, getContentHead } from "src/data/contents";
 
 type ProjectPageParams = {
   content: ProjectContentEncoded;
@@ -17,7 +16,7 @@ type ProjectPageParams = {
 
 const ProjectPage = (params: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element =>
   ProjectPageTemplate({
-    content: decodeContent(params.content) as ProjectContent,
+    content: decodeContent<ProjectContent>(params.content),
     suggestions: params.suggestions.map(decodeContentHead)
   });
 
@@ -25,7 +24,7 @@ export default ProjectPage;
 
 export const getStaticProps: GetStaticProps<ProjectPageParams> = async ({ params }) => {
   if (!params || typeof params.name !== "string") throw new Error("params is invalid type.");
-  const content = (await getProjectContent(params.name)).encode();
+  const content = (await getContent<ProjectContent>("projects", params.name)).encode();
 
   // 一時的
   const suggestions = [

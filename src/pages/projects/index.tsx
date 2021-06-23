@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { ProjectContentHeadEncoded } from "src/lib/contents/projects/head";
-import { getAllProjectContentHeads } from "src/data/contents/projects";
+import { ProjectContentHead, ProjectContentHeadEncoded } from "src/lib/contents/projects/head";
+import { getAllContentHeads } from "src/data/contents";
 
 type ProjectsIndexPageParams = {
   heads: ProjectContentHeadEncoded[];
@@ -16,6 +16,6 @@ export default function ProjectsIndexPage({ heads }: InferGetStaticPropsType<typ
 }
 
 export const getStaticProps: GetStaticProps<ProjectsIndexPageParams> = async () => {
-  const heads = await getAllProjectContentHeads();
+  const heads = await getAllContentHeads<ProjectContentHead>("projects");
   return { props: { heads: heads.map((head) => head.encode()) } };
 };

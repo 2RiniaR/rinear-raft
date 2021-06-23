@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { TalkContentHeadEncoded } from "src/lib/contents/talks/head";
-import { getAllTalkContentHeads } from "src/data/contents/talks";
+import { TalkContentHead, TalkContentHeadEncoded } from "src/lib/contents/talks/head";
+import { getAllContentHeads } from "src/data/contents";
 
 type TalksIndexPageParams = {
   heads: TalkContentHeadEncoded[];
@@ -16,6 +16,6 @@ export default function TalksIndexPage({ heads }: InferGetStaticPropsType<typeof
 }
 
 export const getStaticProps: GetStaticProps<TalksIndexPageParams> = async () => {
-  const heads = await getAllTalkContentHeads();
+  const heads = await getAllContentHeads<TalkContentHead>("talks");
   return { props: { heads: heads.map((head) => head.encode()) } };
 };
