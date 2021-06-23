@@ -4,8 +4,10 @@ import {
   ContentHeadEncoded,
   decodeContent,
   decodeContentHead,
+  ProjectContentHead,
   TalkContent,
-  TalkContentEncoded
+  TalkContentEncoded,
+  TalkContentHead
 } from "src/lib/contents";
 import { getAllContentsName, getContent, getContentHead } from "src/data/contents";
 
@@ -24,13 +26,13 @@ export default TalkPage;
 
 export const getStaticProps: GetStaticProps<TalkPageParams> = async ({ params }) => {
   if (!params || typeof params.name !== "string") throw new Error("params is invalid type.");
-  const content = (await getContent<TalkContent>("talks", params.name)).encode();
+  const content = (await getContent(TalkContent, params.name)).encode();
 
   // 一時的
   const suggestions = [
-    (await getContentHead("talks", "history")).encode(),
-    (await getContentHead("projects", "marvelous")).encode(),
-    (await getContentHead("projects", "mage-simulator")).encode()
+    (await getContentHead(TalkContentHead, "history")).encode(),
+    (await getContentHead(ProjectContentHead, "marvelous")).encode(),
+    (await getContentHead(ProjectContentHead, "mage-simulator")).encode()
   ];
 
   return { props: { content, suggestions } };

@@ -11,6 +11,7 @@ import {
   ProjectContentHead,
   ProjectContent
 } from "src/lib/contents";
+import { Constructor } from "src/lib/helper";
 
 export type ContentForm = {
   genre: ContentGenre;
@@ -20,7 +21,19 @@ export type ContentForm = {
   page: JSX.Element;
 };
 
-export async function getContentHead<T extends ContentHead>(genre: ContentGenre, name: string): Promise<T> {
+function getGenreFromConstructor<T>(ctor: Constructor<T>): ContentGenre {
+  const typeToGenre: { [type: string]: ContentGenre } = {
+    TalkContentHead: "talks",
+    TalkContent: "talks",
+    ProjectContentHead: "projects",
+    ProjectContent: "projects"
+  };
+  if (!typeToGenre[ctor.name]) throw new Error();
+  return typeToGenre[ctor.name];
+}
+
+export async function getContentHead<T extends ContentHead>(ctor: Constructor<T>, name: string): Promise<T> {
+  const genre: ContentGenre = getGenreFromConstructor(ctor);
   const form: ContentForm = (await import(`src/data/contents/${genre}/${name}`)).default;
   if (genre == "talks" && isTalkForm(form))
     return new TalkContentHead({
@@ -37,7 +50,8 @@ export async function getContentHead<T extends ContentHead>(genre: ContentGenre,
   throw new Error();
 }
 
-export async function getContent<T extends Content>(genre: ContentGenre, name: string): Promise<T> {
+export async function getContent<T extends Content>(ctor: Constructor<T>, name: string): Promise<T> {
+  const genre: ContentGenre = getGenreFromConstructor(ctor);
   const form: ContentForm = (await import(`src/data/contents/${genre}/${name}`)).default;
   if (genre == "talks" && isTalkForm(form))
     return new TalkContent({
@@ -66,7 +80,8 @@ export async function getAllContentsName(genre: ContentGenre): Promise<string[]>
     .map((file) => file.slice(0, -".tsx".length));
 }
 
-export async function getAllContentHeads<T extends ContentHead>(genre: ContentGenre): Promise<T[]> {
+export async function getAllContentHeads<T extends ContentHead>(ctor: Constructor<T>): Promise<T[]> {
+  const genre: ContentGenre = getGenreFromConstructor(ctor);
   const names = await getAllContentsName(genre);
-  return await Promise.all(names.map((name) => getContentHead<T>(genre, name)));
+  return await Promise.all(names.map((name) => getContentHead<T>(ctor, name)));
 }

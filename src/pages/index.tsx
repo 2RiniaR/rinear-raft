@@ -24,8 +24,8 @@ const HomePage = ({ talks, projects }: InferGetStaticPropsType<typeof getStaticP
 export default HomePage;
 
 export const getStaticProps: GetStaticProps<HomePageParams> = async () => {
-  const talks = await getAllContentHeads<TalkContentHead>("talks");
-  const projects = await getAllContentHeads<ProjectContentHead>("projects");
+  const talks = await getAllContentHeads(TalkContentHead);
+  const projects = await getAllContentHeads(ProjectContentHead);
   return {
     props: {
       talks: talks.map((head) => head.encode()),
