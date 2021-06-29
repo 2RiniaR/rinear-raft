@@ -1,0 +1,28 @@
+@use "src/styles/responsive";
+
+.container {
+  @include responsive.mq(sm) {
+    margin: 0 1rem;
+    padding: 6rem 0;
+  }
+
+  @include responsive.mq(md) {
+    margin: 0 3rem;
+    padding: 6rem 0;
+  }
+
+  @include responsive.mq(lg) {
+    margin: 0 auto;
+    max-width: 70rem;
+    width: calc(100% - 16rem);
+    padding: 6rem 0;
+  }
+
+  .contents {
+    margin-bottom: 6rem;
+  }
+
+  .contact {
+    margin: 6rem 0;
+  }
+}

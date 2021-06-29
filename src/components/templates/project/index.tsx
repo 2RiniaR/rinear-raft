@@ -8,7 +8,7 @@ export type ProjectPageTemplateParams = {
   suggestions: ContentHead[];
 };
 
-const ProjectPageTemplate = ({ content, suggestions }: ProjectPageTemplateParams): JSX.Element => (
+const ProjectPageTemplate = ({ content }: ProjectPageTemplateParams): JSX.Element => (
   <div className={styles.page}>
     <div className={styles.background} />
     <div className={styles.container}>{content.page}</div>

@@ -1,10 +1,8 @@
 import React from "react";
-import styles from "./index.module.scss";
+import Head from "next/head";
 import Top from "./Top";
-import About from "./About";
-import Contents from "./Contents";
-import Contact from "./Contact";
-import FarVisionBackground from "src/components/accessories/FarVisionBackground";
+import Body from "./Body";
+import styles from "./index.module.scss";
 import { TalkContentHead, ProjectContentHead } from "src/lib/contents";
 
 export type HomePageTemplateParams = {
@@ -15,11 +13,16 @@ export type HomePageTemplateParams = {
 export default function HomePageTemplate({ talks, projects }: HomePageTemplateParams): JSX.Element {
   return (
     <div className={styles.page}>
-      <FarVisionBackground src="/test3.jpg" />
-      <Top />
-      <About />
-      <Contents talks={talks} projects={projects} />
-      <Contact />
+      <Head>
+        <title>RineaR</title>
+        <link rel="stylesheet" href="https://use.typekit.net/swm7wqw.css" />
+      </Head>
+      <div className={styles.top}>
+        <Top />
+      </div>
+      <div className={styles.body}>
+        <Body talks={talks} projects={projects} />
+      </div>
     </div>
   );
 }

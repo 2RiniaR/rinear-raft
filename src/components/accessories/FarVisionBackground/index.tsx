@@ -5,6 +5,7 @@ import { getScrollPosition } from "src/lib/helper";
 
 export type FarVisionBackgroundParams = {
   src: string;
+  scrollRate: number;
 };
 
 const FarVisionBackground = ({ src }: FarVisionBackgroundParams): JSX.Element => {

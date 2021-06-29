@@ -2,18 +2,18 @@ import { ProjectContentForm } from ".";
 
 const page: JSX.Element = (
   <div>
-    <h2>ポップコーン職人</h2>
+    <h2>デバッグ用6</h2>
   </div>
 );
 
-const popcornChef: ProjectContentForm = {
+const debug6: ProjectContentForm = {
   genre: "projects",
-  title: "ポップコーン職人",
+  title: "デバッグ用6",
   description: "",
   releasedAt: new Date(2021, 5, 29),
-  updatedAt: new Date(2021, 7, 1),
+  updatedAt: new Date(2021, 2, 6),
   tags: ["game", "popcorn-chef"],
   page: page
 };
 
-export default popcornChef;
+export default debug6;

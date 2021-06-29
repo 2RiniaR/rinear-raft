@@ -1,0 +1,28 @@
+@use "src/styles/responsive";
+
+.page {
+  position: relative;
+  background: #dfdfe5;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .top {
+    width: 100%;
+
+    @include responsive.mq(sm) {
+      height: 60vh;
+    }
+
+    @include responsive.mq(md) {
+      height: 60vh;
+    }
+
+    @include responsive.mq(lg) {
+      height: 70vh;
+    }
+  }
+
+  .body {
+    width: 100%;
+  }
+}

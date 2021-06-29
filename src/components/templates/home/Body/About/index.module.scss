@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+
+  .background {
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  .content {
+    position: relative;
+    transform: scale(1);
+    z-index: 2;
+    padding: 2rem;
+
+    .title {
+      padding: 2rem 0;
+    }
+
+    .body {
+      padding: 2rem 3rem;
+    }
+  }
+}

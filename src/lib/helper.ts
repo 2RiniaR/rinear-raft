@@ -1,7 +1,7 @@
 export type Constructor<T> = { new (...args: never[]): T } | ((...args: never[]) => T);
 
 export function formatDisplayDate(date: Date): string {
-  return [date.getFullYear().toString(), date.getMonth().toString(), date.getDay().toString()].join(".");
+  return [date.getFullYear().toString(), (date.getMonth() + 1).toString(), date.getDate().toString()].join(".");
 }
 
 export function getScrollPosition(): number {

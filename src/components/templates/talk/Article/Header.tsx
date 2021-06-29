@@ -21,7 +21,7 @@ const DateDisplay = ({ text }: { text: string }): JSX.Element => (
   </div>
 );
 
-const Header = ({ title, updatedAt, tags }: Params): JSX.Element => (
+const Header = ({ title, updatedAt }: Params): JSX.Element => (
   <div className={styles.frame}>
     <div className={styles.band} />
     <div className={styles.content}>

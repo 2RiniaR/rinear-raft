@@ -28,8 +28,8 @@ export const getStaticProps: GetStaticProps<HomePageParams> = async () => {
   const projects = await getAllContentHeads(ProjectContentHead);
   return {
     props: {
-      talks: talks.map((head) => head.encode()),
-      projects: projects.map((head) => head.encode())
+      talks: talks.sort((a, b) => b.updatedAt.valueOf() - a.updatedAt.valueOf()).map((head) => head.encode()),
+      projects: projects.sort((a, b) => b.updatedAt.valueOf() - a.updatedAt.valueOf()).map((head) => head.encode())
     }
   };
 };

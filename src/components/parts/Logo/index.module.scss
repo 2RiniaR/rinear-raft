@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 0;
+
+  .inner {
+    position: absolute;
+
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 20%;
+    }
+
+    .dummyImage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: #777777;
+    }
+  }
+}
