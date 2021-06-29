@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<TalkPageParams> = async ({ params })
 
   // 一時的
   const suggestions = [
-    (await getContentHead(TalkContentHead, "history")).encode(),
+    (await getContentHead(TalkContentHead, "introduction")).encode(),
     (await getContentHead(ProjectContentHead, "marvelous")).encode(),
     (await getContentHead(ProjectContentHead, "mage-simulator")).encode()
   ];

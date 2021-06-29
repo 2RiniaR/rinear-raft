@@ -5,7 +5,9 @@ import {
   decodeContent,
   decodeContentHead,
   ProjectContent,
-  ProjectContentEncoded
+  ProjectContentEncoded,
+  ProjectContentHead,
+  TalkContentHead
 } from "src/lib/contents";
 import { getAllContentsName, getContent, getContentHead } from "src/data/contents";
 
@@ -24,13 +26,13 @@ export default ProjectPage;
 
 export const getStaticProps: GetStaticProps<ProjectPageParams> = async ({ params }) => {
   if (!params || typeof params.name !== "string") throw new Error("params is invalid type.");
-  const content = (await getContent<ProjectContent>("projects", params.name)).encode();
+  const content = (await getContent<ProjectContent>(ProjectContent, params.name)).encode();
 
   // 一時的
   const suggestions = [
-    (await getContentHead("talks", "history")).encode(),
-    (await getContentHead("projects", "marvelous")).encode(),
-    (await getContentHead("projects", "mage-simulator")).encode()
+    (await getContentHead(TalkContentHead, "introduction")).encode(),
+    (await getContentHead(ProjectContentHead, "marvelous")).encode(),
+    (await getContentHead(ProjectContentHead, "mage-simulator")).encode()
   ];
 
   return { props: { content, suggestions } };
