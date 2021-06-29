@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import dayjs from "dayjs";
 import styles from "./index.module.scss";
 import ItemContainer from "./Scroller";
 import { ContentHead } from "src/lib/contents/head";
@@ -9,7 +10,7 @@ export type ScrollViewerTitleParams = {
 export type ScrollViewerTitle = ({ title }: ScrollViewerTitleParams) => JSX.Element;
 
 export type ScrollViewerDateParams = {
-  date: Date;
+  date: dayjs.Dayjs;
 };
 export type ScrollViewerDate = ({ date }: ScrollViewerDateParams) => JSX.Element;
 

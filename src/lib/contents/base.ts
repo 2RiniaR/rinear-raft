@@ -6,7 +6,7 @@ export type ContentBaseParams = {
   genre: ContentGenre;
   name: string;
   title: string;
-  updatedAt: Date;
+  updatedAt: dayjs.Dayjs;
   tags: Tag[];
 };
 
@@ -22,7 +22,7 @@ export abstract class ContentBase {
   public abstract readonly genre: ContentGenre;
   public readonly name: string;
   public readonly title: string;
-  public readonly updatedAt: Date;
+  public readonly updatedAt: dayjs.Dayjs;
   public readonly tags: Tag[];
 
   protected constructor(init: ContentBaseParams);
@@ -31,7 +31,7 @@ export abstract class ContentBase {
   protected constructor(init: ContentBaseParams | ContentBaseEncoded) {
     this.name = init.name;
     this.title = init.title;
-    this.updatedAt = dayjs(init.updatedAt).toDate();
+    this.updatedAt = dayjs(init.updatedAt);
     this.tags = init.tags;
   }
 

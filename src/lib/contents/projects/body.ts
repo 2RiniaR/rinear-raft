@@ -12,7 +12,7 @@ export function isProject(arg: ContentEncoded): arg is ProjectContentEncoded {
 export class ProjectContent extends Content {
   public readonly genre = genre;
   public readonly description: string;
-  public readonly releasedAt: Date;
+  public readonly releasedAt: dayjs.Dayjs;
 
   public constructor(init: ProjectContentParams);
   public constructor(init: ProjectContentEncoded);
@@ -20,7 +20,7 @@ export class ProjectContent extends Content {
   public constructor(init: ProjectContentParams | ProjectContentEncoded) {
     super(init);
     this.description = init.description;
-    this.releasedAt = dayjs(init.releasedAt).toDate();
+    this.releasedAt = dayjs(init.releasedAt);
   }
 
   public encode(): ProjectContentEncoded {

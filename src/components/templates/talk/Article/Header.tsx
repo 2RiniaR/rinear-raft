@@ -1,11 +1,12 @@
 import React from "react";
+import dayjs from "dayjs";
 import styles from "./Header.module.scss";
 import { formatDisplayDate } from "src/lib/helper";
 import { Tag } from "src/lib/contents/tags";
 
 type Params = {
   title: string;
-  updatedAt: Date;
+  updatedAt: dayjs.Dayjs;
   tags: Tag[];
 };
 

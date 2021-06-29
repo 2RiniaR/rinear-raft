@@ -1,10 +1,11 @@
 import React from "react";
+import dayjs from "dayjs";
 import styles from "./Footer.module.scss";
 import { formatDisplayDate } from "src/lib/helper";
 
 type Params = {
   title: string;
-  updatedAt: Date;
+  updatedAt: dayjs.Dayjs;
 };
 
 const Footer = ({ title, updatedAt }: Params): JSX.Element => (

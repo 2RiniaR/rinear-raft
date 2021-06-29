@@ -1,7 +1,9 @@
+import dayjs from "dayjs";
+
 export type Constructor<T> = { new (...args: never[]): T } | ((...args: never[]) => T);
 
-export function formatDisplayDate(date: Date): string {
-  return [date.getFullYear().toString(), (date.getMonth() + 1).toString(), date.getDate().toString()].join(".");
+export function formatDisplayDate(date: dayjs.Dayjs): string {
+  return date.format("YYYY.MM.DD");
 }
 
 export function getScrollPosition(): number {

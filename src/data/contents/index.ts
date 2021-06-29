@@ -1,4 +1,5 @@
 import fs from "fs";
+import dayjs from "dayjs";
 import { Tags, TagType } from "./tags";
 import { isTalkForm } from "./talks";
 import { isProjectForm } from "./projects";
@@ -16,7 +17,7 @@ import { Constructor } from "src/lib/helper";
 export type ContentForm = {
   genre: ContentGenre;
   title: string;
-  updatedAt: Date;
+  updatedAt: dayjs.Dayjs;
   tags: TagType[];
   page: JSX.Element;
 };

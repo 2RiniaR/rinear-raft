@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { ProjectContentForm } from "..";
 
 const page: JSX.Element = (
@@ -10,8 +11,8 @@ const rinearOfficialSite: ProjectContentForm = {
   genre: "projects",
   title: "Rinear公式サイト",
   description: "",
-  releasedAt: new Date(2021, 5, 29),
-  updatedAt: new Date(2021, 7, 2),
+  releasedAt: dayjs("2021-05-29"),
+  updatedAt: dayjs("2021-05-29"),
   tags: ["web-site", "rinear-official-site"],
   page: page
 };

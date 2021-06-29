@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { TalkContentForm } from "..";
 
 const page: JSX.Element = (
@@ -11,7 +12,7 @@ const page: JSX.Element = (
 const introduction: TalkContentForm = {
   genre: "talks",
   title: "この〇〇は私を、どこへ連れて行くんだろう。",
-  updatedAt: new Date(2021, 5, 29),
+  updatedAt: dayjs("2021-05-29"),
   tags: ["rinear"],
   page: page
 };
