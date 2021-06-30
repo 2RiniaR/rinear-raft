@@ -1,6 +1,5 @@
 .container {
   transition: opacity 200ms ease 0s, transform 200ms ease 0s;
-  font-size: 1rem;
 
   &.active {
     opacity: 1;
@@ -15,7 +14,7 @@
     position: relative;
     height: 0;
     width: 100%;
-    padding-top: 75%;
+    padding-top: (100% * 9 / 16);
     margin-bottom: 1rem;
 
     &:before {

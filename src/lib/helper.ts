@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import styles from "src/components/parts/Logo/index.module.scss";
 
 export type Constructor<T> = { new (...args: never[]): T } | ((...args: never[]) => T);
 

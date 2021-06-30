@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import Viewer from "./Viewer";
+import Background from "./Background";
 import { ContentHead } from "src/lib/contents";
 
 export type GenreParams = {
@@ -10,6 +11,9 @@ export type GenreParams = {
 export default function Genre({ title, heads }: GenreParams): JSX.Element {
   return (
     <div className={styles.container}>
+      <div className={styles.background}>
+        <Background />
+      </div>
       <div className={styles.title}>
         <h2>{title}</h2>
       </div>

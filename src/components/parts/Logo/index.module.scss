@@ -1,24 +1,13 @@
 .container {
   position: relative;
   width: 100%;
+  margin-top: auto;
+  padding-bottom: 20%;
   height: 0;
 
-  .inner {
-    position: absolute;
-
-    &:before {
-      content: "";
-      display: block;
-      padding-top: 20%;
-    }
-
-    .dummyImage {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: #777777;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
