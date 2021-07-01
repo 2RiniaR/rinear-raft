@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import Logo from "src/components/parts/Logo";
+import Logo from "src/components/templates/home/Top/Logo";
 
 export default function Title(): JSX.Element {
   return (

@@ -4,8 +4,8 @@ import styles from "./index.module.scss";
 import { getComponentTemplate } from "src/lib/component";
 
 const Logo = getComponentTemplate(() => (
-  <div className={styles.container}>
-    <Image src="/logo.jpg" layout="fill" objectFit="contain" className={styles.image} />
+  <div className={styles.fixer}>
+    <Image src="/logo.png" layout="fill" objectFit="cover" objectPosition="left top" className={styles.image} />
   </div>
 ));
 

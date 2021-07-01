@@ -5,7 +5,7 @@ import Article from "./Article";
 import Index from "./EndCard";
 import { TalkContent } from "src/lib/contents/talks/body";
 import { ContentHead } from "src/lib/contents/head";
-import FarVisionBackground from "src/components/accessories/FarVisionBackground";
+import FarVisionBackground from "src/components/accessories/Parallax";
 
 export type TalkPageTemplateParams = {
   content: TalkContent;

@@ -1,18 +1,12 @@
-.container {
-  position: relative;
-  height: 100%;
+.image {
+  position: absolute;
   width: 100%;
+  height: 100%;
+}
 
-  .image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  .mask {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(#000, 40%);
-  }
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000014, 80%);
 }

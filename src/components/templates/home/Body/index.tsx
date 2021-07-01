@@ -3,21 +3,21 @@ import Contents from "./Contents";
 import styles from "./index.module.scss";
 import About from "./About";
 import { TalkContentHead, ProjectContentHead } from "src/lib/contents";
+import { getComponentTemplate } from "src/lib/component";
 
 export type BodyParams = {
   talks: TalkContentHead[];
   projects: ProjectContentHead[];
 };
 
-export default function Body({ talks, projects }: BodyParams): JSX.Element {
-  return (
-    <div className={styles.container}>
-      <div className={styles.contents}>
-        <Contents talks={talks} projects={projects} />
-      </div>
-      <div className={styles.about}>
-        <About />
-      </div>
+const Body = getComponentTemplate(({ talks, projects }: BodyParams) => (
+  <>
+    <div className={styles.spacer} />
+    <Contents className={styles.contents} talks={talks} projects={projects} />
+    <div className={styles.about}>
+      <About />
     </div>
-  );
-}
+  </>
+));
+
+export default Body;

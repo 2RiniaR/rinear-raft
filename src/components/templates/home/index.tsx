@@ -17,12 +17,8 @@ export default function HomePageTemplate({ talks, projects }: HomePageTemplatePa
         <title>RineaR</title>
         <link rel="stylesheet" href="https://use.typekit.net/swm7wqw.css" />
       </Head>
-      <div className={styles.top}>
-        <Top />
-      </div>
-      <div className={styles.body}>
-        <Body talks={talks} projects={projects} />
-      </div>
+      <Top className={styles.top} />
+      <Body className={styles.body} talks={talks} projects={projects} />
     </div>
   );
 }
