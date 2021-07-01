@@ -8,21 +8,12 @@
 
   .top {
     width: 100%;
-
-    @include responsive.mq(sm) {
-      height: 60vh;
-    }
-
-    @include responsive.mq(md) {
-      height: 60vh;
-    }
-
-    @include responsive.mq(lg) {
-      height: 100vh;
-    }
+    height: 100vh;
   }
 
   .body {
+    z-index: 4;
     width: 100%;
+    position: relative;
   }
 }

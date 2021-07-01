@@ -1,11 +1,16 @@
-.spacer {
-  height: 50vh;
-}
+.container {
+  width: 100%;
+  background: #ddd;
 
-.contents {
-  margin-bottom: 6rem;
-}
+  .spacer {
+    height: 50vh;
+  }
 
-.contact {
-  margin: 9rem 0;
+  .contents {
+    margin-bottom: 6rem;
+  }
+
+  .contact {
+    margin: 9rem 0;
+  }
 }

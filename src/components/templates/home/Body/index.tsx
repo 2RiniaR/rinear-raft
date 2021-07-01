@@ -11,13 +11,13 @@ export type BodyParams = {
 };
 
 const Body = getComponentTemplate(({ talks, projects }: BodyParams) => (
-  <>
+  <div className={styles.container}>
     <div className={styles.spacer} />
     <Contents className={styles.contents} talks={talks} projects={projects} />
     <div className={styles.about}>
       <About />
     </div>
-  </>
+  </div>
 ));
 
 export default Body;
