@@ -5,7 +5,7 @@ import { getComponentTemplate } from "src/lib/component";
 
 const Logo = getComponentTemplate(() => (
   <div className={styles.fixer}>
-    <Image src="/logo.png" layout="fill" objectFit="cover" objectPosition="left top" className={styles.image} />
+    <Image src="/logo4.png" layout="fill" objectFit="cover" objectPosition="left top" className={styles.image} />
   </div>
 ));
 

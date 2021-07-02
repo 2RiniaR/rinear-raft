@@ -1,23 +1,24 @@
 import React from "react";
-import styles from "./index.module.scss";
 import NextButton from "./NextButton";
 import PreviousButton from "./PreviousButton";
-import DateText from "./DateText";
-import TitleText from "./TitleText";
 import { ContentHead } from "src/lib/contents";
 import ScrollViewer from "src/components/accessories/ScrollViewer";
 import { getComponentTemplate } from "src/lib/component";
+import getTitleText from "./TitleText";
+import getDateText from "./DateText";
 
 export type ViewerParams = {
   heads: ContentHead[];
+  primaryTextColor: string;
+  secondaryTextColor: string;
 };
 
-const Viewer = getComponentTemplate(({ heads }: ViewerParams) => (
+const Viewer = getComponentTemplate(({ heads, primaryTextColor, secondaryTextColor }: ViewerParams) => (
   <ScrollViewer
     items={heads}
     rows={2}
-    TitleText={TitleText}
-    DateText={DateText}
+    TitleText={getTitleText(primaryTextColor)}
+    DateText={getDateText(secondaryTextColor)}
     PreviousButton={PreviousButton}
     NextButton={NextButton}
     rowGap={50}

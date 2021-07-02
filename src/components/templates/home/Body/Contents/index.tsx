@@ -10,8 +10,26 @@ export type ContentsParams = {
 
 const Contents = getComponentTemplate(({ talks, projects }: ContentsParams) => (
   <div className={styles.container}>
-    <Genre className={styles.genre} heads={talks} title="TALKS" />
-    <Genre className={styles.genre} heads={projects} title="PROJECTS" />
+    <Genre
+      className={styles.genre}
+      heads={projects}
+      title="PROJECTS"
+      backgroundImage="/top.jpg"
+      backgroundMaskColor="#babadf"
+      backgroundMaskOpacity={0.8}
+      primaryTextColor="#000014"
+      secondaryTextColor="#808080"
+    />
+    <Genre
+      className={styles.genre}
+      heads={talks}
+      title="TALKS"
+      backgroundImage="/top.jpg"
+      backgroundMaskColor="#000014"
+      backgroundMaskOpacity={0.8}
+      primaryTextColor="#babadf"
+      secondaryTextColor="#808080"
+    />
   </div>
 ));
 

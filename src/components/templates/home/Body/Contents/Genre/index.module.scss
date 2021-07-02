@@ -1,42 +1,36 @@
 .container {
+  position: relative;
   width: 100vw;
   height: 100%;
 
-  .header {
+  .background {
+    z-index: 0;
+    position: absolute;
     width: 100%;
-    padding: 3rem 0;
-    text-align: center;
+    height: 100%;
 
-    .text {
-      display: inline-block;
-      height: 100%;
-      font-size: 2rem;
-      line-height: 1.5rem;
-      color: #15152a;
-      letter-spacing: 1rem;
-      border-bottom: #15152a solid 2px;
-      font-family: freight-text-pro, serif;
-      font-weight: 500;
-      font-style: normal;
-
-      &:after {
-        content: "";
-        margin-right: -1rem;
-      }
-    }
-  }
-
-  .content {
-    position: relative;
-
-    .background {
+    .inner {
       position: absolute;
       width: 100%;
       height: 100%;
     }
+  }
+
+  .content {
+    width: 100%;
+    padding: 8rem 0;
+
+    .header {
+      z-index: 4;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      margin-bottom: 5rem;
+    }
 
     .viewer {
-      padding: 4rem 4rem;
+      position: relative;
+      padding: 0 4rem;
       margin: 0 0;
       height: 36rem;
     }

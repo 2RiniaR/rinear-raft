@@ -1,0 +1,16 @@
+.text {
+  display: inline-block;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  letter-spacing: 2rem;
+  border-bottom: solid 2px;
+  font-family: freight-text-pro, serif;
+  font-weight: 500;
+  font-style: normal;
+
+  &:after {
+    content: "";
+    margin-right: -2rem;
+  }
+}

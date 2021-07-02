@@ -65,7 +65,6 @@ const Parallax = getComponentTemplate<ParallaxParams>(
     return (
       <div ref={viewRef} className={styles.view}>
         <div className={styles.image} style={{ height: `${100 * (Math.abs(speed) + 1)}%`, top: `${imageScroll}px` }}>
-          {/*<Image src={src} layout="fill" objectFit="cover" priority={true} />*/}
           {children}
         </div>
       </div>
