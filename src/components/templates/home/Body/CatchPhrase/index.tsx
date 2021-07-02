@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./index.module.scss";
 import { getComponentTemplate } from "src/lib/component";
 
-const Spacer = getComponentTemplate(() => (
+const CatchPhrase = getComponentTemplate(() => (
   <div className={styles.container}>
     <div className={styles.inner}>
       <Image src="/spacer2.svg" layout="fill" objectFit="contain" />
@@ -11,4 +11,4 @@ const Spacer = getComponentTemplate(() => (
   </div>
 ));
 
-export default Spacer;
+export default CatchPhrase;

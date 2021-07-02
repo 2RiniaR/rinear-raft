@@ -22,6 +22,7 @@ export type ScrollViewerButton = ({ onClick, active }: ScrollViewerButtonParams)
 
 export type ScrollViewerParams = {
   items: ContentHead[];
+  columns?: number;
   rows?: number;
   activeDisplayPartWidthRate?: number;
   columnGapRate?: number;
