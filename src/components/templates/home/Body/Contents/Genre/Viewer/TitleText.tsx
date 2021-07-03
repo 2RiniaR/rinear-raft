@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "./TitleText.module.scss";
-import { ScrollViewerTitle } from "src/components/accessories/ScrollViewer";
+import { TitleText, TitleTextParams } from "./Item";
+import { getComponentTemplate } from "src/lib/component";
 
-const getTitleText = (color: string): ScrollViewerTitle =>
-  function TitleText({ title }) {
-    return (
-      <h2 className={styles.title} style={{ color: color }}>
-        {title}
-      </h2>
-    );
-  };
+const getTitleText = (color: string): TitleText =>
+  getComponentTemplate(({ text }: TitleTextParams) => (
+    <h2 className={styles.title} style={{ color: color }}>
+      {text}
+    </h2>
+  ));
 
 export default getTitleText;

@@ -6,7 +6,7 @@ import PreviousButton from "./PreviousButton";
 import TitleText from "./TitleText";
 import { ContentHead } from "src/lib/contents/head";
 import { getElementPosition, getScrollPosition } from "src/lib/helper";
-import ScrollViewer from "src/components/accessories/ScrollViewer";
+import ScrollViewer from "src/components/accessories/IncrementalSeeker";
 
 type Params = {
   suggestions: ContentHead[];
