@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import styles from "src/components/templates/home/Top/Logo/index.module.scss";
 
 export type Constructor<T> = { new (...args: never[]): T } | ((...args: never[]) => T);
 
@@ -22,9 +21,4 @@ export function getElementPosition(element: HTMLElement): { x: number; y: number
     /* do nothing */
   }
   return { x, y };
-}
-
-export function convertRemToPx(rem: number): number {
-  const fontSize = getComputedStyle(document.documentElement).fontSize;
-  return rem * parseFloat(fontSize);
 }

@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { TalkContentForm } from "..";
+import { TalkContent } from "src/lib/contents";
 
 const page: JSX.Element = (
   <div>
@@ -9,11 +9,11 @@ const page: JSX.Element = (
   </div>
 );
 
-const lookBackBackups2: TalkContentForm = {
+const lookBackBackups2: TalkContent = {
   genre: "talks",
+  id: "look-back-backups-2",
   title: "これまでの活動を、バックアップデータを掘り起こして振り返る 後編",
   updatedAt: dayjs("2021-05-29"),
-  tags: [],
   page: page
 };
 

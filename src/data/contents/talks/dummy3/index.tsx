@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { TalkContentForm } from "..";
+import { TalkContent } from "src/lib/contents";
 
 const page: JSX.Element = (
   <div>
@@ -9,11 +9,11 @@ const page: JSX.Element = (
   </div>
 );
 
-const dummy3: TalkContentForm = {
+const dummy3: TalkContent = {
   genre: "talks",
+  id: "dummy3",
   title: "ダミー3",
   updatedAt: dayjs("2021-05-29"),
-  tags: [],
   page: page
 };
 

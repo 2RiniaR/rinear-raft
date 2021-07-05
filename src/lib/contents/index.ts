@@ -1,11 +1,22 @@
-export { Content } from "./body";
-export type { ContentEncoded, ContentParams } from "./body";
-export { ContentHead } from "./head";
-export type { ContentHeadEncoded, ContentHeadParams } from "./head";
-export type { ContentGenre } from "./genre";
-export { decodeContent, decodeContentHead } from "./decode";
+import dayjs from "dayjs";
 
-export { ProjectContentHead, ProjectContent } from "./projects";
-export type { ProjectContentHeadEncoded, ProjectContentEncoded } from "./projects";
-export { TalkContentHead, TalkContent } from "./talks";
-export type { TalkContentHeadEncoded, TalkContentEncoded } from "./talks";
+export type { ProjectContentHead, ProjectContent } from "./projects";
+export type { TalkContentHead, TalkContent } from "./talks";
+
+const ContentGenres = {
+  talks: "talks",
+  projects: "projects"
+} as const;
+
+export type ContentGenre = typeof ContentGenres[keyof typeof ContentGenres];
+
+export type ContentHead = {
+  genre: ContentGenre;
+  id: string;
+  title: string;
+  updatedAt: dayjs.Dayjs;
+};
+
+export type Content = ContentHead & {
+  page: JSX.Element;
+};

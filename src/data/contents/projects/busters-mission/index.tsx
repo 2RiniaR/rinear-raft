@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { ProjectContentForm } from "..";
+import { ProjectContent } from "src/lib/contents";
 
 const page: JSX.Element = (
   <div>
@@ -7,13 +7,11 @@ const page: JSX.Element = (
   </div>
 );
 
-const bustersMission: ProjectContentForm = {
+const bustersMission: ProjectContent = {
   genre: "projects",
+  id: "busters-mission",
   title: "Busters Mission",
-  description: "",
-  releasedAt: dayjs("2021-05-29"),
   updatedAt: dayjs("2021-05-29"),
-  tags: ["game", "busters-mission"],
   page: page
 };
 

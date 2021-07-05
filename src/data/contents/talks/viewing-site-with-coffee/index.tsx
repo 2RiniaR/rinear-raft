@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { TalkContentForm } from "..";
+import { TalkContent } from "src/lib/contents";
 
 const page: JSX.Element = (
   <div>
@@ -9,11 +9,11 @@ const page: JSX.Element = (
   </div>
 );
 
-const viewingSiteWithCoffee: TalkContentForm = {
+const viewingSiteWithCoffee: TalkContent = {
   genre: "talks",
+  id: "viewing-site-with-coffee",
   title: "Webサイトを開設したので、コーヒーを片手に改めて眺めてみる",
   updatedAt: dayjs("2021-05-29"),
-  tags: ["rinear"],
   page: page
 };
 

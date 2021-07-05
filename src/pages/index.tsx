@@ -1,35 +1,8 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { getAllContentHeads } from "src/data/contents";
 import HomePageTemplate from "src/components/templates/home";
-import {
-  decodeContentHead,
-  ProjectContentHead,
-  ProjectContentHeadEncoded,
-  TalkContentHead,
-  TalkContentHeadEncoded
-} from "src/lib/contents";
+import { contentsRepository } from "src/data/contents";
 
-type HomePageParams = {
-  talks: TalkContentHeadEncoded[];
-  projects: ProjectContentHeadEncoded[];
-};
-
-const HomePage = ({ talks, projects }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => (
-  <HomePageTemplate
-    talks={talks.map((talk) => decodeContentHead<TalkContentHead>(talk))}
-    projects={projects.map((project) => decodeContentHead<ProjectContentHead>(project))}
-  />
+const HomePage = (): JSX.Element => (
+  <HomePageTemplate talks={contentsRepository.getTalkContents()} projects={contentsRepository.getProjectContents()} />
 );
 
 export default HomePage;
-
-export const getStaticProps: GetStaticProps<HomePageParams> = async () => {
-  const talks = await getAllContentHeads(TalkContentHead);
-  const projects = await getAllContentHeads(ProjectContentHead);
-  return {
-    props: {
-      talks: talks.sort((a, b) => b.updatedAt.valueOf() - a.updatedAt.valueOf()).map((head) => head.encode()),
-      projects: projects.sort((a, b) => b.updatedAt.valueOf() - a.updatedAt.valueOf()).map((head) => head.encode())
-    }
-  };
-};

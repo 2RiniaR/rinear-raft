@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { ProjectContentForm } from "..";
+import { ProjectContent } from "src/lib/contents";
 
 const page: JSX.Element = (
   <div>
@@ -7,13 +7,11 @@ const page: JSX.Element = (
   </div>
 );
 
-const mageSimulator: ProjectContentForm = {
+const mageSimulator: ProjectContent = {
   genre: "projects",
+  id: "mage-simulator",
   title: "メイジ・シミュレータ",
-  description: "",
-  releasedAt: dayjs("2021-05-29"),
   updatedAt: dayjs("2021-05-29"),
-  tags: ["game", "mage-simulator"],
   page: page
 };
 

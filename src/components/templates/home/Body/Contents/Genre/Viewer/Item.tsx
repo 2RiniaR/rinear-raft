@@ -3,9 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
 import styles from "./Item.module.scss";
-import { ContentHead } from "src/lib/contents/head";
 import { ClassedParams } from "src/lib/component";
 import { SeekGridViewerItem, SeekGridViewerItemParams } from "src/components/accessories/SeekGridViewer";
+import { getRoute } from "src/data/contents";
+import { ContentHead } from "src/lib/contents";
 
 export type TitleTextParams = { text: string };
 export type TitleText = React.FC<ClassedParams<TitleTextParams>>;
@@ -23,7 +24,7 @@ export default function getItem({ head, TitleText, DateText }: ItemParams): Seek
   return function Item({ active }: SeekGridViewerItemParams): JSX.Element {
     return (
       <div className={`${styles.container} ${active ? styles.active : styles.inactive}`}>
-        <Link href={head.getRoute()}>
+        <Link href={getRoute(head)}>
           <a>
             <div className={styles.imageContainer}>
               <Image src="/test.png" layout="fill" objectFit="cover" className={styles.image} />

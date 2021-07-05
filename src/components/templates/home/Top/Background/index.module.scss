@@ -5,11 +5,16 @@
   width: 100%;
   height: 100%;
 
-  .imageWrapper {
-    @include templates.absoluteFill;
+  .parallax {
+    width: 100%;
+    height: 100%;
 
-    img {
-      object-fit: cover;
+    .imageWrapper {
+      @include templates.absoluteFill;
+
+      img {
+        object-fit: cover;
+      }
     }
   }
 }

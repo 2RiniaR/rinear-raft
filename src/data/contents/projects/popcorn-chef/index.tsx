@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { ProjectContentForm } from "..";
+import { ProjectContent } from "src/lib/contents";
 
 const page: JSX.Element = (
   <div>
@@ -7,13 +7,11 @@ const page: JSX.Element = (
   </div>
 );
 
-const popcornChef: ProjectContentForm = {
+const popcornChef: ProjectContent = {
   genre: "projects",
+  id: "popcorn-chef",
   title: "ポップコーン職人",
-  description: "",
-  releasedAt: dayjs("2021-05-29"),
   updatedAt: dayjs("2021-05-29"),
-  tags: ["game", "popcorn-chef"],
   page: page
 };
 
