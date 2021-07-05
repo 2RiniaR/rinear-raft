@@ -1,10 +1,11 @@
+import Image from "next/image";
 import styles from "./index.module.scss";
 import { getComponentTemplate } from "src/lib/component";
 
-const Background = getComponentTemplate(() => (
+const Title = getComponentTemplate(() => (
   <div className={styles.container}>
-    <div className={styles.smog} />
+    <Image className={styles.image} src="/logo4.png" layout="fill" objectFit="contain" objectPosition="top left" />
   </div>
 ));
 
-export default Background;
+export default Title;

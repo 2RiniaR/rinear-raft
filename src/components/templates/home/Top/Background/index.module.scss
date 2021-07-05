@@ -1,5 +1,15 @@
-.image {
+@use "src/styles/templates";
+
+.container {
   position: absolute;
   width: 100%;
   height: 100%;
+
+  .imageWrapper {
+    @include templates.absoluteFill;
+
+    img {
+      object-fit: cover;
+    }
+  }
 }

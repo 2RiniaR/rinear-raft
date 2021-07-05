@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
+import { getComponentTemplate } from "src/lib/component";
 
-export default function Contact(): JSX.Element {
-  return <div className={styles.container}>Contact</div>;
-}
+const Contact = getComponentTemplate(() => <div className={styles.container}></div>);
+
+export default Contact;
