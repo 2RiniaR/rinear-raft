@@ -11,7 +11,7 @@ export type BackgroundParams = {
 const Background = getComponentTemplate(({ src, maskColor, maskOpacity }: BackgroundParams) => (
   <>
     <div className={styles.image}>
-      <Image src={src} layout="fill" objectFit="cover" priority={true} />
+      <img src={src} alt="" />
     </div>
     <div className={styles.mask} style={{ backgroundColor: maskColor, opacity: maskOpacity }} />
   </>

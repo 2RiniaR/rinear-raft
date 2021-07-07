@@ -13,6 +13,7 @@ const introduction: TalkContent = {
   genre: "talks",
   id: "introduction",
   title: "この〇〇は私を、どこへ連れて行くんだろう。",
+  thumbnailPath: "/test.png",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };

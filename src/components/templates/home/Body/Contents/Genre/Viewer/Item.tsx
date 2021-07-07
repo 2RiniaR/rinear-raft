@@ -27,7 +27,7 @@ export default function getItem({ head, TitleText, DateText }: ItemParams): Seek
         <Link href={getRoute(head)}>
           <a>
             <div className={styles.imageContainer}>
-              <Image src="/test.png" layout="fill" objectFit="cover" className={styles.image} />
+              <img src="/test.png" className={styles.image} alt="" />
             </div>
             <TitleText className={styles.title} text={head.title} />
             <DateText className={styles.date} date={head.updatedAt} />

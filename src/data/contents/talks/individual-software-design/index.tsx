@@ -13,6 +13,7 @@ const individualSoftwareDesign: TalkContent = {
   genre: "talks",
   id: "individual-software-design",
   title: "個人制作を続けてわかった、プログラム設計のコト",
+  thumbnailPath: "/test.png",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };

@@ -1,24 +1,24 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import { getScrollPosition } from "src/lib/helper";
 import { getComponentTemplate } from "src/lib/component";
 
 export type FixedParallaxParams = {
-  startScrollPos: number;
-  endScrollPos: number;
-  startWindowPos: number;
-  endWindowPos: number;
+  startInnerOrigin: number;
+  endInnerOrigin: number;
 };
 
 const FixedParallax = getComponentTemplate<FixedParallaxParams>(
-  ({ startScrollPos, endScrollPos, startWindowPos, endWindowPos, children }): JSX.Element => {
+  ({ startInnerOrigin, endInnerOrigin, children }): JSX.Element => {
     const [scroll, setScroll] = useState(0);
-    const [imageScroll, setImageScroll] = useState(0);
+    const [innerPosition, setInnerPosition] = useState(0);
+    const [top, setTop] = useState(0);
+    const [height, setHeight] = useState(1);
 
-    const getImageTop = useCallback(() => {
-      const scrollPercent = (scroll - startScrollPos) / (endScrollPos - startScrollPos);
-      return (endWindowPos - startWindowPos) * scrollPercent + startWindowPos;
-    }, [scroll]);
+    const getInnerPosition = useCallback(() => {
+      const scrollPercent = (scroll - top) / height;
+      return ((endInnerOrigin - startInnerOrigin) * scrollPercent + startInnerOrigin) * height;
+    }, [scroll, top, height]);
 
     const onScroll = () => setScroll(getScrollPosition());
 
@@ -28,12 +28,20 @@ const FixedParallax = getComponentTemplate<FixedParallaxParams>(
     }, []);
 
     useEffect(() => {
-      setImageScroll(getImageTop());
+      setInnerPosition(getInnerPosition());
     }, [scroll]);
 
+    const setContainerSize = (container: HTMLDivElement) => {
+      if (!container) return;
+      setTop(container.scrollTop);
+      setHeight(container.scrollHeight);
+    };
+
     return (
-      <div className={styles.view} style={{ transform: `translate(0, ${imageScroll}px)` }}>
-        {children}
+      <div className={styles.container} ref={setContainerSize}>
+        <div className={styles.view} style={{ transform: `translate(0, ${innerPosition}px)`, height: height }}>
+          {children}
+        </div>
       </div>
     );
   }

@@ -20,8 +20,8 @@ const Background = getComponentTemplate(() => {
         className={styles.parallax}
         startScrollPos={startScroll}
         endScrollPos={endScroll}
-        startWindowPos={0}
-        endWindowPos={-endScroll / 2}
+        startInnerOrigin={0}
+        endInnerOrigin={-endScroll / 2}
       >
         <div className={styles.imageWrapper}>
           <img src="/top.jpg" alt="トップ画像" />

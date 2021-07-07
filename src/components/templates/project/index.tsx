@@ -1,5 +1,8 @@
 import React from "react";
+import Head from "next/head";
 import styles from "./index.module.scss";
+import Article from "./Article";
+import Background from "./Background";
 import { ContentHead, ProjectContent } from "src/lib/contents";
 
 export type ProjectPageTemplateParams = {
@@ -9,8 +12,11 @@ export type ProjectPageTemplateParams = {
 
 const ProjectPageTemplate = ({ content }: ProjectPageTemplateParams): JSX.Element => (
   <div className={styles.container}>
-    <div className={styles.background} />
-    <div className={styles.content}>{content.page}</div>
+    <Head>
+      <title>{content.title} - RineaR</title>
+    </Head>
+    <Background className={styles.background} />
+    <Article className={styles.article} content={content} />
   </div>
 );
 

@@ -11,6 +11,7 @@ const bustersMission: ProjectContent = {
   genre: "projects",
   id: "busters-mission",
   title: "Busters Mission",
+  thumbnailPath: "/test.png",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };

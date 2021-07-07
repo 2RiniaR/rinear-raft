@@ -13,6 +13,7 @@ const popcornChefNewModes: TalkContent = {
   genre: "talks",
   id: "popcorn-chef-new-modes",
   title: "『ポップコーン職人』に、3つのゲームモードが...！？",
+  thumbnailPath: "/test.png",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };

@@ -1,13 +1,9 @@
 import dayjs from "dayjs";
-import Head from "next/head";
 import styles from "./index.module.scss";
 import { ProjectContent } from "src/lib/contents";
 
 const page: JSX.Element = (
   <div>
-    <Head>
-      <title>エライさん - RineaR</title>
-    </Head>
     <h1 className={styles.title}>ここにタイトルを入力</h1>
     <div className={styles.images}>
       <img src="/articles/projects/marvelous/top1.png" alt="トップ画像1" />
@@ -32,6 +28,7 @@ const marvelous: ProjectContent = {
   genre: "projects",
   id: "marvelous",
   title: "エライさんbot",
+  thumbnailPath: "/articles/projects/marvelous/thumbnail.jpg",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };

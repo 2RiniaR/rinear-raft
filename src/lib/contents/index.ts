@@ -14,6 +14,7 @@ export type ContentHead = {
   genre: ContentGenre;
   id: string;
   title: string;
+  thumbnailPath: string;
   updatedAt: dayjs.Dayjs;
 };
 

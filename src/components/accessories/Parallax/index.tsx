@@ -27,19 +27,19 @@ const Parallax = getComponentTemplate<ParallaxParams>(
       const imageStartPos = speed < 0 ? -imageBottomPos : imageTopPos;
       const imageEndPos = speed < 0 ? imageTopPos : -imageBottomPos;
       const imageCurrentPos = -(imageEndPos - imageStartPos) * (1 - scrollPercent);
-      console.log(
-        [
-          `viewHeight: ${viewHeight}`,
-          `scrollStartPos: ${scrollStartPos}`,
-          `scrollEndPos: ${scrollEndPos}`,
-          `scrollPercent: ${scrollPercent}`,
-          `imageTopPos: ${imageTopPos}`,
-          `imageBottomPos: ${imageBottomPos}`,
-          `imageStartPos: ${imageStartPos}`,
-          `imageEndPos: ${imageEndPos}`,
-          `imageCurrentPos: ${imageCurrentPos}`
-        ].join("\n")
-      );
+      // console.log(
+      //   [
+      //     `viewHeight: ${viewHeight}`,
+      //     `scrollStartPos: ${scrollStartPos}`,
+      //     `scrollEndPos: ${scrollEndPos}`,
+      //     `scrollPercent: ${scrollPercent}`,
+      //     `imageTopPos: ${imageTopPos}`,
+      //     `imageBottomPos: ${imageBottomPos}`,
+      //     `imageStartPos: ${imageStartPos}`,
+      //     `imageEndPos: ${imageEndPos}`,
+      //     `imageCurrentPos: ${imageCurrentPos}`
+      //   ].join("\n")
+      // );
       return imageCurrentPos;
     }, [viewHeight, scroll]);
 

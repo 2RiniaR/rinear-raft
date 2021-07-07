@@ -13,6 +13,7 @@ const lookBackBackups2: TalkContent = {
   genre: "talks",
   id: "look-back-backups-2",
   title: "これまでの活動を、バックアップデータを掘り起こして振り返る 後編",
+  thumbnailPath: "/test.png",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };

@@ -11,6 +11,7 @@ const rinearOfficialSite: ProjectContent = {
   genre: "projects",
   id: "rinear-official-site",
   title: "Rinear公式サイト",
+  thumbnailPath: "/test.png",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };

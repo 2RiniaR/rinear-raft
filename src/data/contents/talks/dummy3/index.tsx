@@ -13,6 +13,7 @@ const dummy3: TalkContent = {
   genre: "talks",
   id: "dummy3",
   title: "ダミー3",
+  thumbnailPath: "/test.png",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };

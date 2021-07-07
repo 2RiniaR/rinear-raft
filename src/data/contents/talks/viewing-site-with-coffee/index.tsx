@@ -13,6 +13,7 @@ const viewingSiteWithCoffee: TalkContent = {
   genre: "talks",
   id: "viewing-site-with-coffee",
   title: "Webサイトを開設したので、コーヒーを片手に改めて眺めてみる",
+  thumbnailPath: "/test.png",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };

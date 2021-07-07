@@ -11,6 +11,7 @@ const popcornChef: ProjectContent = {
   genre: "projects",
   id: "popcorn-chef",
   title: "ポップコーン職人",
+  thumbnailPath: "/test.png",
   updatedAt: dayjs("2021-05-29"),
   page: page
 };
