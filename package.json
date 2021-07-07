@@ -39,6 +39,7 @@
     "postcss": "^8.2.15",
     "postcss-easings": "^3.0.1",
     "prettier": "^2.3.0",
+    "react-visibility-sensor": "^5.1.1",
     "sass": "^1.32.13",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
