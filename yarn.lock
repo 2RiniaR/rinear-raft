@@ -3247,6 +3247,13 @@ pnp-webpack-plugin@1.6.4:
   dependencies:
     ts-pnp "^1.1.6"
 
+postcss-easings@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-easings/-/postcss-easings-3.0.1.tgz#97f9512cd0326c3c9a80b1ae14b78c60f7b43755"
+  integrity sha512-n3bG/X3iB0m8d845vhFg/62/ECeT8jY8gE8F2A41z8Mty41spYA4vzMLezha7icVjtGjqlxgO3QE+uOzpDqeww==
+  dependencies:
+    postcss-value-parser "^4.1.0"
+
 postcss-html@^0.36.0:
   version "0.36.0"
   resolved "https://registry.yarnpkg.com/postcss-html/-/postcss-html-0.36.0.tgz#b40913f94eaacc2453fd30a1327ad6ee1f88b204"
