@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./index.module.scss";
-import { getComponentTemplate } from "src/lib/component";
+import { assignClasses, getComponentTemplate } from "src/lib/component";
 
-const Logo = getComponentTemplate(() => (
-  <div className={styles.fixer}>
-    <img src="/logo4.png" className={styles.image} alt="" />
-  </div>
-));
+const Logo = getComponentTemplate(() => {
+  const [display, setDisplay] = useState<boolean>(false);
+  const onDisplay = () => setDisplay(true);
+
+  return (
+    <div className={assignClasses(styles.fixer, display ? styles.active : styles.inactive)} ref={onDisplay}>
+      <img src="/logo4.png" className={styles.image} alt="" />
+    </div>
+  );
+});
 
 export default Logo;
