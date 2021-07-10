@@ -1,0 +1,25 @@
+.parallax {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .image {
+    position: absolute;
+    width: 100%;
+    height: 200vh;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .effect {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(#16162c, 70%);
+  }
+}

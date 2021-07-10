@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./index.module.scss";
-import TopImage from "./TopImage";
+import Top from "./Top";
 import Article from "./Article";
-import Background from "./Background";
-import EndCard from "src/components/templates/talk/EndCard";
-import { TalkContent } from "src/contents/lib/talks/body";
-import { ContentHead } from "src/contents/lib/head";
+import Index from "./EndCard";
+import { ContentHead, TalkContent } from "src/lib/contents/";
+import Head from "next/head";
 
 export type TalkPageTemplateParams = {
   content: TalkContent;
@@ -14,10 +13,12 @@ export type TalkPageTemplateParams = {
 
 const TalkPageTemplate = ({ content, suggestions }: TalkPageTemplateParams): JSX.Element => (
   <div className={styles.page}>
-    <TopImage />
-    <Background />
+    <Head>
+      <title>{content.title} - RineaR</title>
+    </Head>
+    <Top />
     <Article content={content} />
-    <EndCard suggestions={suggestions} />
+    <Index suggestions={suggestions} />
   </div>
 );
 
