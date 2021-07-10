@@ -5,10 +5,13 @@
   height: 100%;
   overflow: hidden;
 
+  .fill {
+    width: 100%;
+  }
+
   .content {
-    position: relative;
+    position: absolute;
     width: auto;
-    height: 100%;
     display: grid;
     grid-auto-flow: column;
     transition: left 200ms ease-out 0s;

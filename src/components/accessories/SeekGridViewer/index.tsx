@@ -17,7 +17,9 @@ export type SeekGridViewerParams = {
   activeDisplayPartWidthRate?: number;
 };
 
-export const getTotalColumns = (items: object[], rows: number): number => Math.ceil(items.length / rows);
+export function getTotalColumns<T>(items: Array<T>, rows: number): number {
+  return Math.ceil(items.length / rows);
+}
 
 const SeekGridViewer = getComponentTemplate(
   ({
@@ -30,10 +32,14 @@ const SeekGridViewer = getComponentTemplate(
     activeDisplayPartWidthRate = 1
   }: SeekGridViewerParams): JSX.Element => {
     const [containerWidth, setContainerWidth] = useState(1);
+    const [contentHeight, setContentHeight] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+
     const totalColumns = useMemo(() => getTotalColumns(items, rows), [items, rows]);
     const gridWidth = useMemo(
       () => (containerWidth * activeDisplayPartWidthRate - columnGap * (columns - 1)) / columns,
+      // [activeDisplayPartWidthRate, columns]
       [containerWidth, activeDisplayPartWidthRate, columns]
     );
 
@@ -51,9 +57,20 @@ const SeekGridViewer = getComponentTemplate(
       return () => onContainerResized.disconnect();
     }, []);
 
+    useEffect(() => {
+      const onContentResized = new ResizeObserver((entries) => {
+        setContentHeight(entries[0].contentRect.height);
+      });
+      contentRef.current && onContentResized.observe(contentRef.current);
+      return () => onContentResized.disconnect();
+    }, []);
+
+    useEffect(() => console.log(containerWidth), [containerWidth]);
+
     return (
       <div ref={containerRef} className={styles.container}>
         <div
+          ref={contentRef}
           className={styles.content}
           style={{
             left: getContentPosition(),
@@ -70,6 +87,7 @@ const SeekGridViewer = getComponentTemplate(
             />
           ))}
         </div>
+        <div className={styles.fill} style={{ height: contentHeight }} />
       </div>
     );
   }
