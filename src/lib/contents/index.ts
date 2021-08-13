@@ -1,4 +1,6 @@
 import dayjs from "dayjs";
+import React from "react";
+import { ClassedParams } from "src/lib/component";
 
 export type { ProjectContentHead, ProjectContent } from "./projects";
 export type { TalkContentHead, TalkContent } from "./talks";
@@ -16,8 +18,9 @@ export type ContentHead = {
   title: string;
   thumbnailPath: string;
   updatedAt: dayjs.Dayjs;
+  description: string;
 };
 
 export type Content = ContentHead & {
-  page: JSX.Element;
+  Page: React.FC<ClassedParams>;
 };

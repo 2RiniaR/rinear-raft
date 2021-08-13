@@ -1,12 +1,12 @@
 .divider {
   width: 100%;
   margin: 0 auto;
-  height: 2px;
+  height: 1px;
   background: #16162c;
 }
 
 .logo {
-  margin: 4rem auto 3rem auto;
+  margin: 2rem auto 1rem auto;
   width: 50%;
 
   .image {
@@ -22,7 +22,8 @@
   margin: 0 auto;
   flex-direction: row;
   justify-content: space-around;
-  height: 3rem;
+  height: 1.5rem;
+  opacity: 40%;
 
   .element {
     display: block;

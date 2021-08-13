@@ -2,7 +2,7 @@
   display: inline-block;
 
   .title {
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
     display: inline-block;
     padding-left: 2rem;
     border-left: #16162c solid 2px;
@@ -43,7 +43,6 @@
 
     .section {
       display: block;
-      margin: 3rem 0;
       font-size: 1rem;
       color: #16162c;
 
@@ -57,7 +56,7 @@
       height: 1px;
       width: 50%;
       background-color: #16162c;
-      margin: 0 auto;
+      margin: 3rem auto;
     }
   }
 }

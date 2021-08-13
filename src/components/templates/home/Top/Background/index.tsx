@@ -12,7 +12,7 @@ const Background = getComponentTemplate(() => {
       <div className={styles.inner} ref={onDisplay}>
         <img
           className={assignClasses(styles.image, display ? styles.active : styles.inactive)}
-          src="/top.jpg"
+          src="/img/top.jpg"
           alt="トップ画像"
         />
         <div className={assignClasses(styles.effect, display ? styles.active : styles.inactive)} />

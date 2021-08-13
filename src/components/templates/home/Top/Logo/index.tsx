@@ -8,7 +8,7 @@ const Logo = getComponentTemplate(() => {
 
   return (
     <div className={assignClasses(styles.fixer, display ? styles.active : styles.inactive)} ref={onDisplay}>
-      <img src="/logo4.png" className={styles.image} alt="" />
+      <img src="/img/logo.png" className={styles.image} alt="" />
     </div>
   );
 });

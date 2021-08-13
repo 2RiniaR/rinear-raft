@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./index.module.scss";
 import { ClassedParams, getComponentTemplate } from "src/lib/component";
 

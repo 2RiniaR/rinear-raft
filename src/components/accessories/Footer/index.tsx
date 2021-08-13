@@ -7,14 +7,14 @@ const Footer = getComponentTemplate(
     <>
       <div className={styles.divider} />
       <div className={styles.logo}>
-        <img className={styles.image} src="/logo4.png" alt="RineaR" />
+        <img className={styles.image} src="/img/logo.png" alt="RineaR" />
       </div>
       <div className={styles.links}>
         <a className={assignClasses(styles.element, styles.twitter)} href={"https://twitter.com/14RineaR"}>
-          <img className={styles.image} src="/twitter.svg" alt="Twitter" />
+          <img className={styles.image} src="/img/twitter.svg" alt="Twitter" />
         </a>
         <a className={assignClasses(styles.element, styles.mail)} href={"https://twitter.com/14RineaR"}>
-          <img className={styles.image} src="/mail.svg" alt="Mail" />
+          <img className={styles.image} src="/img/mail.svg" alt="Mail" />
         </a>
       </div>
     </>

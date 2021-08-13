@@ -1,21 +1,23 @@
 import dayjs from "dayjs";
 import { TalkContent } from "src/lib/contents";
+import { getComponentTemplate } from "src/lib/component";
 
-const page: JSX.Element = (
+const Page = getComponentTemplate(() => (
   <div>
     <p>{"ここに本文が入ります".repeat(500)}</p>
     <p>{"ここに本文が入ります".repeat(500)}</p>
     <p>{"ここに本文が入ります".repeat(500)}</p>
   </div>
-);
+));
 
 const lookBackBackups2: TalkContent = {
   genre: "talks",
   id: "look-back-backups-2",
   title: "これまでの活動を、バックアップデータを掘り起こして振り返る 後編",
-  thumbnailPath: "/test.png",
+  thumbnailPath: "/img/test.png",
   updatedAt: dayjs("2021-05-29"),
-  page: page
+  description: "",
+  Page
 };
 
 export default lookBackBackups2;

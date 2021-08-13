@@ -8,7 +8,7 @@ export type TopParams = {
 
 const Body = getComponentTemplate(({ content }: TopParams) => (
   <>
-    {content.page}
+    {content.Page}
     <div className={styles.spacer} />
   </>
 ));
