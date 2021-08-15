@@ -16,7 +16,7 @@ export default function HomePageTemplate({ news }: HomePageTemplateParams): JSX.
         <title>RineaR</title>
       </Head>
       <Top className={styles.top} />
-      <Body className={styles.body} news={news} />
+      {/*<Body className={styles.body} news={news} />*/}
     </div>
   );
 }

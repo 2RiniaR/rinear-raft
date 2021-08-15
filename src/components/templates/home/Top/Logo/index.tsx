@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./index.module.scss";
-import { assignClasses, getComponentTemplate } from "src/lib/component";
+import { getComponentTemplate } from "src/lib/component";
 
-const Logo = getComponentTemplate(() => {
-  const [display, setDisplay] = useState<boolean>(false);
-  const onDisplay = () => setDisplay(true);
-
-  return (
-    <div className={assignClasses(styles.fixer, display ? styles.active : styles.inactive)} ref={onDisplay}>
-      <img src="/img/logo.png" className={styles.image} alt="" />
+const Logo = getComponentTemplate(() => (
+  <div className={styles.container}>
+    <div className={styles.background}>
+      <img className={styles.image} src="/img/top/logo_back.svg" alt="" />
     </div>
-  );
-});
+    <div className={styles.main}>
+      <img className={styles.logo} src="/img/logo.png" alt="" />
+      <h1 className={styles.name}>RineaR</h1>
+    </div>
+  </div>
+));
 
 export default Logo;
