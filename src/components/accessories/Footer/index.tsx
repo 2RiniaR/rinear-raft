@@ -1,23 +1,27 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { assignClasses, getComponentTemplate } from "src/lib/component";
+import { getComponentTemplate } from "src/lib/component";
 
 const Footer = getComponentTemplate(
   (): JSX.Element => (
-    <>
-      <div className={styles.divider} />
+    <div className={styles.container}>
       <div className={styles.logo}>
         <img className={styles.image} src="/img/logo.png" alt="RineaR" />
+        <h1 className={styles.text}>RineaR</h1>
       </div>
       <div className={styles.links}>
-        <a className={assignClasses(styles.element, styles.twitter)} href={"https://twitter.com/14RineaR"}>
-          <img className={styles.image} src="/img/twitter.svg" alt="Twitter" />
+        <a className={styles.element} href={"https://twitter.com/14RineaR"}>
+          <h3 className={styles.text}>Twitter</h3>
         </a>
-        <a className={assignClasses(styles.element, styles.mail)} href={"https://twitter.com/14RineaR"}>
-          <img className={styles.image} src="/img/mail.svg" alt="Mail" />
+        <a className={styles.element} href={"https://twitter.com/14RineaR"}>
+          <h3 className={styles.text}>Mail</h3>
+        </a>
+        <a className={styles.element} href={"https://twitter.com/14RineaR"}>
+          <h3 className={styles.text}>YouTube</h3>
         </a>
       </div>
-    </>
+      <h3 className={styles.copyright}>Copyright © 2021 RineaR All rights reserved.</h3>
+    </div>
   )
 );
 

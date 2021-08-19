@@ -9,7 +9,7 @@ import FixedParallax from "src/components/accessories/FixedParallax";
 
 const Top = getComponentTemplate(() => (
   <div className={styles.container}>
-    <FixedParallax className={styles.parallax} startInnerOrigin={0} endInnerOrigin={-0.8}>
+    <FixedParallax className={styles.parallax} startInnerOrigin={0} endInnerOrigin={-0.7}>
       <div className={styles.inner}>
         <Background className={styles.background} />
         <HoleEffect className={styles.holeEffect} />

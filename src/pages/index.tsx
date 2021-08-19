@@ -1,6 +1,5 @@
 import HomePageTemplate from "src/components/templates/home";
-import { contentsRepository } from "src/data/contents";
 
-const HomePage = (): JSX.Element => <HomePageTemplate news={contentsRepository.getNews()} />;
+const HomePage = (): JSX.Element => <HomePageTemplate />;
 
 export default HomePage;

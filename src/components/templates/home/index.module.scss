@@ -2,17 +2,34 @@
 
 .page {
   position: relative;
-  background: #ddd;
+  background: #666666;
   overflow-x: hidden;
   overflow-y: hidden;
 
   .top {
     width: 100%;
+    margin-bottom: -4rem;
   }
 
-  .body {
-    z-index: 4;
+  .about {
+    background: linear-gradient(to bottom, transparent 0%, #666666 30%, #666666 100%);
+    padding-top: 30vh;
+    padding-bottom: 15vh;
     width: 100%;
     position: relative;
+  }
+
+  .menu {
+    background: #666666;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    width: 100%;
+    position: relative;
+  }
+
+  .footer {
+    background: #666666;
+    padding-top: 15vh;
+    padding-bottom: 2rem;
   }
 }
