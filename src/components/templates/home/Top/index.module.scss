@@ -1,10 +1,10 @@
 .container {
   position: relative;
   width: 100%;
-  height: calc(100vw * 0.9);
+  height: 100vw;
 }
 
-.parallax {
+.parallax1 {
   position: absolute;
   height: 100%;
 
@@ -24,6 +24,11 @@
       height: 100%;
     }
   }
+}
+
+.parallax2 {
+  position: absolute;
+  height: 100%;
 }
 
 .element {

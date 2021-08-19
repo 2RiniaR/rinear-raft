@@ -9,14 +9,16 @@ import FixedParallax from "src/components/accessories/FixedParallax";
 
 const Top = getComponentTemplate(() => (
   <div className={styles.container}>
-    <FixedParallax className={styles.parallax} startInnerOrigin={0} endInnerOrigin={-0.7}>
+    <FixedParallax className={styles.parallax1} startInnerOrigin={0} endInnerOrigin={-0.7}>
       <div className={styles.inner}>
         <Background className={styles.background} />
         <HoleEffect className={styles.holeEffect} />
       </div>
     </FixedParallax>
     <WindEffect className={assignClasses(styles.windEffect, styles.element)} />
-    <Shadow className={assignClasses(styles.shadow, styles.element)} />
+    <FixedParallax className={styles.parallax2} startInnerOrigin={0} endInnerOrigin={-0.9}>
+      <Shadow className={assignClasses(styles.shadow, styles.element)} />
+    </FixedParallax>
     <Logo className={assignClasses(styles.logo, styles.element)} />
   </div>
 ));
