@@ -15,9 +15,7 @@ export type ContentGenre = typeof ContentGenres[keyof typeof ContentGenres];
 export type ContentHead = {
   genre: ContentGenre;
   id: string;
-  index: number;
   title: string;
-  thumbnailPath: string;
   updatedAt: dayjs.Dayjs;
   description: string;
 };

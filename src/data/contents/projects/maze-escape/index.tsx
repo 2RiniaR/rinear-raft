@@ -34,8 +34,14 @@ const mazeEscape: ProjectContent = {
   genre: "projects",
   id: "maze-escape",
   title: "迷宮脱出",
-  thumbnailPath: "/contents/projects/maze-escape/stage1.jpg",
+  thumbnailsPath: [
+    "/contents/projects/maze-escape/stage1.jpg",
+    "/contents/projects/maze-escape/title.jpg",
+    "/contents/projects/maze-escape/stage2.jpg",
+    "/contents/projects/maze-escape/result.jpg"
+  ],
   updatedAt: dayjs("2016-10-18"),
+  releasedAt: dayjs("2021-04-30"),
   description: "上下左右にプレイヤーを移動し、制限時間以内にゴールを目指す2Dアクション脱出ゲーム。",
   Page
 };

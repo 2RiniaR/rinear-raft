@@ -1,0 +1,28 @@
+.container {
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    height: 4rem;
+    margin-right: 2rem;
+  }
+
+  .title {
+    font-family: fot-tsukubrdgothic-std, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #a7b0c1;
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    align-self: center;
+
+    &::after {
+      content: "";
+      margin-right: -1rem;
+    }
+  }
+}
