@@ -1,0 +1,14 @@
+.container {
+  margin-left: 12rem;
+  margin-right: 12rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+
+  .element {
+    width: calc(25% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2.5rem;
+  }
+}

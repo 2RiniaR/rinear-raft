@@ -2,12 +2,6 @@
   position: relative;
   width: 100%;
 
-  &::before {
-    content: "";
-    padding-top: calc(100% * 9 / 16);
-    display: block;
-  }
-
   .image {
     position: absolute;
     background-color: #16162c;

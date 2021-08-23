@@ -13,6 +13,7 @@ const Page = getComponentTemplate(() => (
 const lookBackBackups1: TalkContent = {
   genre: "talks",
   id: "look-back-backups-1",
+  index: 2,
   title: "これまでの活動を、バックアップデータを掘り起こして振り返る 前編",
   thumbnailPath: "/img/test.png",
   updatedAt: dayjs("2021-05-29"),

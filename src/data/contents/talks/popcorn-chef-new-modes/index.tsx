@@ -13,6 +13,7 @@ const Page = getComponentTemplate(() => (
 const popcornChefNewModes: TalkContent = {
   genre: "talks",
   id: "popcorn-chef-new-modes",
+  index: 4,
   title: "『ポップコーン職人』に、3つのゲームモードが...！？",
   thumbnailPath: "/img/test.png",
   updatedAt: dayjs("2021-05-29"),
