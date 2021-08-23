@@ -21,7 +21,7 @@ export function formatExceededTime(from: dayjs.Dayjs, to: dayjs.Dayjs): string {
 }
 
 export function formatDisplayDate(date: dayjs.Dayjs): string {
-  return date.format("YYYY.MM.DD");
+  return date.format("YYYY.M.D");
 }
 
 export function getScrollPosition(): number {

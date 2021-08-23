@@ -18,7 +18,7 @@ const FixedParallax = getComponentTemplate<FixedParallaxParams>(
     const getInnerPosition = useCallback(() => {
       const scrollPercent = (scroll - top) / height;
       return ((endInnerOrigin - startInnerOrigin) * scrollPercent + startInnerOrigin) * height;
-    }, [scroll, top, height]);
+    }, [scroll, top, height, startInnerOrigin, endInnerOrigin]);
 
     const onScroll = () => setScroll(getScrollPosition());
 
@@ -29,7 +29,7 @@ const FixedParallax = getComponentTemplate<FixedParallaxParams>(
 
     useEffect(() => {
       setInnerPosition(getInnerPosition());
-    }, [scroll]);
+    }, [scroll, top, height, startInnerOrigin, endInnerOrigin]);
 
     const setContainerSize = (container: HTMLDivElement) => {
       if (!container) return;

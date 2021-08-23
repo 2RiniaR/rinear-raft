@@ -4,8 +4,8 @@
   font-weight: 400;
   font-style: normal;
   display: grid;
-  grid-template-rows: auto auto auto min-content;
-  grid-template-columns: 40% auto auto;
+  grid-template-rows: auto auto 1fr 50%;
+  grid-template-columns: 40% 10rem auto;
 
   .mainThumbnail {
     grid-column: 1;
@@ -21,22 +21,22 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     background: rgba(#141a24, 70%);
-    padding: 0.5rem 3rem;
+    padding: 0.6rem 2rem 0.6rem 1rem;
 
     .subThumbnail {
-      width: calc(100% / 3 - 1rem);
       border: #a7b0c1 solid 2px;
+      margin-left: 1rem;
     }
   }
 
   .title {
-    grid-column: 2 / 4;
+    grid-column: 3;
     grid-row: 1;
     font-size: 2rem;
     text-align: right;
-    border-bottom: #a7b0c1 solid 2px;
+    padding-bottom: 0.3rem;
     color: #ddd;
-    margin-left: 3rem;
+    border-bottom: #a7b0c1 solid 2px;
   }
 
   .description {
@@ -46,24 +46,33 @@
     font-size: 1rem;
     margin-bottom: 0.5rem;
     margin-left: 3rem;
+    margin-top: 0.5rem;
   }
 
   .updatedAt {
-    grid-column: 3;
+    grid-column: 2 / 4;
     grid-row: 2;
     font-size: 1rem;
     text-align: right;
     padding: 0.3rem;
     color: #a7b0c1;
+    margin-left: 3rem;
   }
 
   .releasedAt {
     grid-column: 2;
-    grid-row: 2;
-    font-size: 1rem;
-    text-align: left;
-    padding: 0.3rem;
-    color: #a7b0c1;
+    grid-row: 1;
     margin-left: 3rem;
+    margin-top: auto;
+    border-bottom: #a7b0c1 solid 2px;
+
+    .text {
+      display: inline-block;
+      padding: 0.3rem 0.8rem 0.3rem 0.3rem;
+      font-size: 1rem;
+      text-align: left;
+      color: #333;
+      background: #a7b0c1;
+    }
   }
 }

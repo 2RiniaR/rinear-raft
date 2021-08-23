@@ -16,10 +16,6 @@ const ParallaxBackground = getComponentTemplate<ParallaxBackgroundParams>(
     const innerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-      setViewHeight(window.innerHeight);
-    }, []);
-
-    useEffect(() => {
       const onContainerResized = new ResizeObserver((entries) => {
         setContainerHeight(entries[0].contentRect.height);
       });
@@ -35,9 +31,18 @@ const ParallaxBackground = getComponentTemplate<ParallaxBackgroundParams>(
       return () => onInnerResized.disconnect();
     }, []);
 
+    useEffect(() => {
+      setViewHeight(window.innerHeight);
+      const onWindowResized = () => {
+        setViewHeight(window.innerHeight);
+      };
+      window.addEventListener("resize", onWindowResized);
+      return () => window.removeEventListener("resize", onWindowResized);
+    }, []);
+
     const getEndInnerOrigin = useCallback(() => {
       return Math.max(-(innerHeight - viewHeight) / (containerHeight - viewHeight), maxSpeed ? -maxSpeed : -Infinity);
-    }, [containerHeight, innerHeight]);
+    }, [containerHeight, innerHeight, viewHeight]);
 
     return (
       <div className={styles.container} ref={containerRef}>
