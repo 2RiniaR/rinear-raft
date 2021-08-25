@@ -1,16 +1,15 @@
 import dayjs from "dayjs";
 import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./ProjectHeading.module.scss";
-import { getComponentTemplate } from "src/lib/component";
 import { ProjectContentHead } from "src/lib/contents";
 import FixedImage from "src/components/functions/FixedImage";
 import { formatDisplayDate, formatExceededTime } from "src/lib/helper";
 
-export type ProjectHeadingParams = {
+type Props = {
   head: ProjectContentHead;
 };
 
-const ProjectHeading = getComponentTemplate(({ head }: ProjectHeadingParams) => {
+const ProjectHeading = ({ head }: Props): JSX.Element => {
   const [width, setWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const thumbnailWidthRate = 0.4;
@@ -37,14 +36,18 @@ const ProjectHeading = getComponentTemplate(({ head }: ProjectHeadingParams) => 
       <h5 className={styles.releasedAt}>
         <span className={styles.text}>{head.releasedAt ? formatDisplayDate(head.releasedAt) : "---"}</span>
       </h5>
-      <FixedImage className={styles.mainThumbnail} src={head.thumbnailsPath[0]} alt={head.title} />
+      <div className={styles.mainThumbnail}>
+        <FixedImage src={head.thumbnailsPath[0]} alt={head.title} />
+      </div>
       <div className={styles.subThumbnailsContainer}>
-        <FixedImage className={styles.subThumbnail} src={head.thumbnailsPath[1]} alt={head.title} lock={"height"} />
-        <FixedImage className={styles.subThumbnail} src={head.thumbnailsPath[2]} alt={head.title} lock={"height"} />
-        <FixedImage className={styles.subThumbnail} src={head.thumbnailsPath[3]} alt={head.title} lock={"height"} />
+        {head.thumbnailsPath.slice(1).map((thumbnailPath) => (
+          <div className={styles.subThumbnail} key={thumbnailPath}>
+            <FixedImage src={thumbnailPath} alt={head.title} lock={"height"} />
+          </div>
+        ))}
       </div>
     </div>
   );
-});
+};
 
 export default ProjectHeading;

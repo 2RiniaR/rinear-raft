@@ -1,12 +1,11 @@
 import dayjs from "dayjs";
 import { ProjectContent } from "src/lib/contents";
-import { getComponentTemplate } from "src/lib/component";
 
-const Page = getComponentTemplate(() => (
+const Page = (): JSX.Element => (
   <div>
     <h2>メイジ・シミュレータ</h2>
   </div>
-));
+);
 
 const mageSimulator: ProjectContent = {
   genre: "projects",

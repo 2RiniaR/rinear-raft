@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { getComponentTemplate } from "src/lib/component";
 
-const Logo = getComponentTemplate(() => (
+const Logo = (): JSX.Element => (
   <div className={styles.container}>
     <div className={styles.background}>
       <img className={styles.image} src="/img/logo_back.svg" alt="" />
@@ -12,6 +11,6 @@ const Logo = getComponentTemplate(() => (
       <h1 className={styles.name}>RineaR</h1>
     </div>
   </div>
-));
+);
 
 export default Logo;

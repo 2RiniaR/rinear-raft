@@ -1,9 +1,8 @@
 import dayjs from "dayjs";
 import styles from "./index.module.scss";
 import { ProjectContent } from "src/lib/contents";
-import { getComponentTemplate } from "src/lib/component";
 
-const Page = getComponentTemplate(() => (
+const Page = (): JSX.Element => (
   <div>
     <h1 className={styles.title}>制限時間以内に脱出せよ！ハラハラ2D脱出ゲーム！</h1>
     <div className={styles.images}>
@@ -28,7 +27,7 @@ const Page = getComponentTemplate(() => (
       </div>
     </div>
   </div>
-));
+);
 
 const mazeEscape: ProjectContent = {
   genre: "projects",

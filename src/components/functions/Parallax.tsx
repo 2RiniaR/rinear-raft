@@ -1,14 +1,14 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import styles from "./Parallax.module.scss";
 import { getScrollPosition } from "src/lib/helper";
-import { getComponentTemplate } from "src/lib/component";
 
-export type ParallaxParams = {
+type Props = {
+  children: ReactNode;
   startInnerOrigin: number;
   endInnerOrigin: number;
 };
 
-const Parallax = getComponentTemplate<ParallaxParams>(({ startInnerOrigin, endInnerOrigin, children }): JSX.Element => {
+const Parallax = ({ startInnerOrigin, endInnerOrigin, children }: Props): JSX.Element => {
   const [scroll, setScroll] = useState(0);
   const [innerPosition, setInnerPosition] = useState(0);
   const [top, setTop] = useState(0);
@@ -43,6 +43,6 @@ const Parallax = getComponentTemplate<ParallaxParams>(({ startInnerOrigin, endIn
       </div>
     </div>
   );
-});
+};
 
 export default Parallax;

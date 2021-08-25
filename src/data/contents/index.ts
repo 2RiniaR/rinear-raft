@@ -38,11 +38,6 @@ class ContentsRepository {
   public getTalkContents(sort: "none" | "updatedAt" = "none"): TalkContent[] {
     const contents = [...this.contents.talks];
     if (sort === "updatedAt")
-      // contents.sort((a, b) => {
-      //   if (b.updatedAt.isAfter(a.updatedAt)) return 1;
-      //   if (b.updatedAt.isSame(a.updatedAt)) return 0;
-      //   return -1;
-      // });
       contents.sort((a, b) => {
         if (b.index > a.index) return 1;
         if (b.index == a.index) return 0;
@@ -54,14 +49,9 @@ class ContentsRepository {
   public getProjectContents(sort: "none" | "updatedAt" = "none"): ProjectContent[] {
     const contents = [...this.contents.projects];
     if (sort === "updatedAt")
-      // contents.sort((a, b) => {
-      //   if (b.updatedAt.isAfter(a.updatedAt)) return 1;
-      //   if (b.updatedAt.isSame(a.updatedAt)) return 0;
-      //   return -1;
-      // });
       contents.sort((a, b) => {
-        if (b.index > a.index) return 1;
-        if (b.index == a.index) return 0;
+        if (b.updatedAt.isAfter(a.updatedAt)) return 1;
+        if (b.updatedAt.isSame(a.updatedAt)) return 0;
         return -1;
       });
     return contents;

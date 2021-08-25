@@ -32,9 +32,18 @@ const Layout = ({ children }: Props): JSX.Element => {
         <title />
       </Head>
       {children}
-      <SideMenuButton className={styles.sideMenuButton} onClick={() => setSideMenuOpened(true)} />
-      <TopButton className={styles.topButton} />
-      <SideMenu className={styles.sideMenu} open={sideMenuOpened} setOpen={setSideMenuOpened} />
+
+      <div className={styles.sideMenuButton}>
+        <SideMenuButton onClick={() => setSideMenuOpened(true)} />
+      </div>
+
+      <div className={styles.topButton}>
+        <TopButton />
+      </div>
+
+      <div className={styles.sideMenu}>
+        <SideMenu open={sideMenuOpened} setOpen={setSideMenuOpened} />
+      </div>
     </>
   );
 };

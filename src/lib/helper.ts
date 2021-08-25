@@ -1,7 +1,5 @@
 import dayjs, { OpUnitType, QUnitType } from "dayjs";
 
-export type Constructor<T> = { new (...args: never[]): T } | ((...args: never[]) => T);
-
 export function formatExceededTime(from: dayjs.Dayjs, to: dayjs.Dayjs): string {
   if (from.diff(to) < 0) return "---";
   const expressions: { unit: QUnitType | OpUnitType; display: (x: number) => string }[] = [
@@ -28,19 +26,6 @@ export function getScrollPosition(): number {
   return Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
 }
 
-export function getElementPosition(element: HTMLElement): { x: number; y: number } {
-  let x = 0,
-    y = 0;
-  for (
-    let currentElement: HTMLElement | Element | null = element;
-    currentElement instanceof HTMLElement;
-    x += currentElement.offsetLeft, y += currentElement.offsetTop, currentElement = currentElement.offsetParent
-  ) {
-    /* do nothing */
-  }
-  return { x, y };
-}
-
-export function getDistance(...args: number[]): number {
-  return Math.sqrt(args.map((x) => x * x).reduce((sum, x) => sum + x, 0));
+export function assignClasses(...values: string[]): string {
+  return values.join(" ");
 }

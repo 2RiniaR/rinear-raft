@@ -1,12 +1,11 @@
 import dayjs from "dayjs";
 import { ProjectContent } from "src/lib/contents";
-import { getComponentTemplate } from "src/lib/component";
 
-const Page = getComponentTemplate(() => (
+const Page = (): JSX.Element => (
   <div>
     <h2>RineaR公式サイト</h2>
   </div>
-));
+);
 
 const rinearOfficialSite: ProjectContent = {
   genre: "projects",

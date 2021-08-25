@@ -1,9 +1,8 @@
 import dayjs from "dayjs";
 import styles from "./index.module.scss";
 import { ProjectContent } from "src/lib/contents";
-import { getComponentTemplate } from "src/lib/component";
 
-const Page = getComponentTemplate(() => (
+const Page = (): JSX.Element => (
   <div>
     <h1 className={styles.title}>ここにタイトルを入力</h1>
     <div className={styles.images}>
@@ -23,7 +22,7 @@ const Page = getComponentTemplate(() => (
       </div>
     </div>
   </div>
-));
+);
 
 const marvelous: ProjectContent = {
   genre: "projects",

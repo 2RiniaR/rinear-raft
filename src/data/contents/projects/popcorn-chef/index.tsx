@@ -1,12 +1,11 @@
 import dayjs from "dayjs";
 import { ProjectContent } from "src/lib/contents";
-import { getComponentTemplate } from "src/lib/component";
 
-const Page = getComponentTemplate(() => (
+const Page = (): JSX.Element => (
   <div>
     <h2>ポップコーン職人</h2>
   </div>
-));
+);
 
 const popcornChef: ProjectContent = {
   genre: "projects",

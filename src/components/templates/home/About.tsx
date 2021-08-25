@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 import styles from "./About.module.scss";
-import { assignClasses, getComponentTemplate } from "src/lib/component";
+import { assignClasses } from "src/lib/helper";
 
-const About = getComponentTemplate(() => {
+const About = (): JSX.Element => {
   const [display, setDisplay] = useState(false);
 
   return (
@@ -38,6 +38,6 @@ const About = getComponentTemplate(() => {
       </div>
     </div>
   );
-});
+};
 
 export default About;

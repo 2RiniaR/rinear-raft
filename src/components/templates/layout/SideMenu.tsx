@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { TransitionEventHandler, useEffect, useState } from "react";
 import styles from "./SideMenu.module.scss";
-import { assignClasses, getComponentTemplate } from "src/lib/component";
+import { assignClasses } from "src/lib/helper";
 
 type Props = {
   open: boolean;
   setOpen: (value: boolean) => void;
 };
 
-const SideMenu = getComponentTemplate(({ open, setOpen }: Props) => {
+const SideMenu = ({ open, setOpen }: Props): JSX.Element => {
   const [display, setDisplay] = useState(false);
 
   const onCloseTransitionEnd: TransitionEventHandler<HTMLDivElement> = () => {
@@ -37,13 +37,13 @@ const SideMenu = getComponentTemplate(({ open, setOpen }: Props) => {
             <h2 className={styles.title}>HOME</h2>
           </a>
         </Link>
-        <Link href="/talks">
+        <Link href={"/talks"}>
           <a className={styles.element}>
             <img className={styles.logo} src="/img/talks.png" alt="Talks" />
             <h2 className={styles.title}>TALKS</h2>
           </a>
         </Link>
-        <Link href="/projects">
+        <Link href={"/projects"}>
           <a className={styles.element}>
             <img className={styles.logo} src="/img/projects.png" alt="Projects" />
             <h2 className={styles.title}>PROJECTS</h2>
@@ -52,6 +52,6 @@ const SideMenu = getComponentTemplate(({ open, setOpen }: Props) => {
       </div>
     </div>
   );
-});
+};
 
 export default SideMenu;

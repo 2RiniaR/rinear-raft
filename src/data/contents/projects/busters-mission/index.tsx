@@ -1,12 +1,11 @@
 import dayjs from "dayjs";
 import { ProjectContent } from "src/lib/contents";
-import { getComponentTemplate } from "src/lib/component";
 
-const Page = getComponentTemplate(() => (
+const Page = (): JSX.Element => (
   <div>
     <h2>Busters Mission</h2>
   </div>
-));
+);
 
 const bustersMission: ProjectContent = {
   genre: "projects",
