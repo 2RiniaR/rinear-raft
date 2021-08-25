@@ -1,0 +1,30 @@
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .inner {
+    position: relative;
+    height: 100vw;
+    width: 100vw;
+
+    .background {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+
+    .holeEffect {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .colorMask {
+      background: rgba(#141a24, 70%);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

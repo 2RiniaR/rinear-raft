@@ -1,10 +1,11 @@
 import React from "react";
+import Head from "next/head";
 import styles from "./index.module.scss";
 import Top from "./Top";
 import Article from "./Article";
 import Index from "./EndCard";
 import { ContentHead, TalkContent } from "src/lib/contents/";
-import Head from "next/head";
+import Background from "src/components/parts/Background";
 
 export type TalkPageTemplateParams = {
   content: TalkContent;
@@ -16,6 +17,7 @@ const TalkPageTemplate = ({ content, suggestions }: TalkPageTemplateParams): JSX
     <Head>
       <title>{content.title} - RineaR</title>
     </Head>
+    <Background />
     <Top />
     <Article content={content} />
     <Index suggestions={suggestions} />

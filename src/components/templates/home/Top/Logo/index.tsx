@@ -5,7 +5,7 @@ import { getComponentTemplate } from "src/lib/component";
 const Logo = getComponentTemplate(() => (
   <div className={styles.container}>
     <div className={styles.background}>
-      <img className={styles.image} src="/img/top/logo_back.svg" alt="" />
+      <img className={styles.image} src="/img/logo_back.svg" alt="" />
     </div>
     <div className={styles.main}>
       <img className={styles.logo} src="/img/logo.png" alt="" />

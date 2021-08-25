@@ -1,5 +1,5 @@
-import HomePageTemplate from "src/components/templates/home";
+import HomePage from "src/components/templates/home/HomePage";
 
-const HomePage = (): JSX.Element => <HomePageTemplate />;
+const Page = (): JSX.Element => <HomePage />;
 
-export default HomePage;
+export default Page;

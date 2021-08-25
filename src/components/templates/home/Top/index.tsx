@@ -5,7 +5,7 @@ import Shadow from "./Shadow";
 import WindEffect from "./WindEffect";
 import Logo from "./Logo";
 import { assignClasses, getComponentTemplate } from "src/lib/component";
-import FixedParallax from "src/components/accessories/FixedParallax";
+import FixedParallax from "src/components/functions/Parallax";
 
 const Top = getComponentTemplate(() => (
   <div className={styles.container}>

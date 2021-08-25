@@ -1,0 +1,30 @@
+@use "src/styles/responsive";
+
+.page {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .top {
+    position: relative;
+    background: rgba(#141a24, 0.5);
+    margin-top: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 6rem;
+    width: 100%;
+  }
+
+  .viewer {
+    position: relative;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+    width: 100%;
+  }
+
+  .footer {
+    position: relative;
+    margin-top: 15vh;
+    padding-bottom: 2rem;
+  }
+}

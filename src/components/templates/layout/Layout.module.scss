@@ -1,0 +1,23 @@
+.sideMenuButton {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.topButton {
+  position: fixed;
+  z-index: 4;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.sideMenu {
+  position: fixed;
+  z-index: 6;
+  left: 0;
+  top: 0;
+}

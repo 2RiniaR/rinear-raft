@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
 import { getComponentTemplate } from "src/lib/component";
-import FixedParallax from "src/components/accessories/FixedParallax";
+import FixedParallax from "src/components/functions/Parallax";
 
 const Background = getComponentTemplate(() => {
   const containerRef = useRef<HTMLDivElement>(null);
