@@ -1,18 +1,40 @@
+@use "/src/styles/responsive";
+
 .sideMenuButton {
   position: fixed;
-  top: 1.5rem;
-  left: 1.5rem;
-  width: 3.33rem;
-  height: 3.33rem;
+
+  @include responsive.mq(phone) {
+    bottom: calc(20vh + 4rem);
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  @include responsive.mq(desktop) {
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 3.33rem;
+    height: 3.33rem;
+  }
 }
 
 .topButton {
   position: fixed;
   z-index: 4;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 3.33rem;
-  height: 3.33rem;
+
+  @include responsive.mq(phone) {
+    bottom: 20vh;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  @include responsive.mq(desktop) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3.33rem;
+    height: 3.33rem;
+  }
 }
 
 .sideMenu {
