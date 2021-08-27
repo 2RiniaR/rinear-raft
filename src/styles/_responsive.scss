@@ -1,13 +1,22 @@
-$sizes: sm, md, lg;
+$sizes: phone, tablet, desktop;
 
-$breakpoints: (
-  "sm": "screen and (min-width: 300px)",
-  "md": "screen and (min-width: 480px)",
-  "lg": "screen and (min-width: 960px)"
-) !default;
+@mixin mq($breakpoint: phone) {
+  $tablet-border: 600px;
+  $desktop-border: 1025px;
 
-@mixin mq($breakpoint: md) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    @content;
+  @if $breakpoint == phone {
+    @media (max-width: #{$tablet-border - 1}) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: $tablet-border) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $desktop-border) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint #{$breakpoint}.";
   }
 }
