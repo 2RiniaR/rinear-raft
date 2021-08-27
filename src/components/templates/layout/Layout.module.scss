@@ -10,11 +10,11 @@
     height: 3rem;
   }
 
-  @include responsive.mq(desktop) {
-    top: 1.5rem;
-    left: 1.5rem;
-    width: 3.33rem;
-    height: 3.33rem;
+  @include responsive.mq(tablet) {
+    top: 2rem;
+    left: 2rem;
+    width: 4rem;
+    height: 4rem;
   }
 }
 
@@ -29,11 +29,11 @@
     height: 3rem;
   }
 
-  @include responsive.mq(desktop) {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 3.33rem;
-    height: 3.33rem;
+  @include responsive.mq(tablet) {
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
   }
 }
 

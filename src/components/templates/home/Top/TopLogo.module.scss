@@ -1,9 +1,18 @@
+@use "/src/styles/responsive";
+
 .container {
   position: absolute;
-  width: 50%;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+
+  @include responsive.mq(phone) {
+    width: 140vw;
+  }
+
+  @include responsive.mq(desktop) {
+    width: 50vw;
+  }
 
   .background {
     width: 100%;
