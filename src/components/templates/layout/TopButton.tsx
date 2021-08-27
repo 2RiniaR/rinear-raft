@@ -1,12 +1,13 @@
-import Link from "next/link";
 import styles from "./TopButton.module.scss";
 
-const TopButton = (): JSX.Element => (
-  <Link href="/">
-    <a className={styles.link}>
-      <img className={styles.logo} src="/img/logo.png" alt="ホームへ" />
-    </a>
-  </Link>
+type Props = {
+  onClick: () => void;
+};
+
+const TopButton = ({ onClick }: Props): JSX.Element => (
+  <button className={styles.button} onClick={onClick}>
+    <img className={styles.logo} src="/img/UpArrow.png" alt="トップへ" />
+  </button>
 );
 
 export default TopButton;

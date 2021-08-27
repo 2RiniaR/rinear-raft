@@ -34,7 +34,7 @@ const marvelous: ProjectContent = {
     "/contents/projects/marvelous/top3.png",
     "/contents/projects/marvelous/top4.png"
   ],
-  updatedAt: dayjs("2021-04-30"),
+  updatedAt: dayjs("2021-08-27"),
   releasedAt: dayjs("2021-04-30"),
   description: "みんなの「えらい！」をカウントしてくれるDiscord Bot。#限界開発鯖 にて運用中！",
   Page

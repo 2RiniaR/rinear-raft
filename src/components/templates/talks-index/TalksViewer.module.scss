@@ -6,9 +6,20 @@
   justify-content: left;
 
   .element {
-    width: calc(25% - 2rem);
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 2.5rem;
+    width: calc(25% - 0.6rem);
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    margin-bottom: 1.9rem;
+
+    .link {
+      display: block;
+      padding: 0.7rem;
+      transition: background-color 200ms 0s ease;
+      height: 100%;
+
+      &:hover {
+        background-color: rgba(#ddd, 0.2);
+      }
+    }
   }
 }

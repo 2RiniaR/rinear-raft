@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import Head from "next/head";
 import styles from "./Layout.module.scss";
 import SideMenuButton from "src/components/templates/layout/SideMenuButton";
@@ -11,6 +11,13 @@ type Props = {
 
 const Layout = ({ children }: Props): JSX.Element => {
   const [sideMenuOpened, setSideMenuOpened] = useState(false);
+  const topRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTop = useCallback(() => {
+    topRef?.current?.scrollIntoView({
+      behavior: "smooth"
+    });
+  }, [topRef]);
 
   return (
     <>
@@ -31,6 +38,9 @@ const Layout = ({ children }: Props): JSX.Element => {
         />
         <title />
       </Head>
+
+      <div ref={topRef} />
+
       {children}
 
       <div className={styles.sideMenuButton}>
@@ -38,7 +48,7 @@ const Layout = ({ children }: Props): JSX.Element => {
       </div>
 
       <div className={styles.topButton}>
-        <TopButton />
+        <TopButton onClick={() => scrollToTop()} />
       </div>
 
       <div className={styles.sideMenu}>

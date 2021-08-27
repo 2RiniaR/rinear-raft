@@ -24,32 +24,35 @@ const SideMenu = ({ open, setOpen }: Props): JSX.Element => {
   return (
     <div
       className={assignClasses(styles.container, open ? styles.opened : "")}
-      style={{ left: display ? "0" : "-32rem" }}
+      style={{ left: display ? "0" : "-100vw" }}
       onTransitionEnd={onCloseTransitionEnd}
     >
-      <button className={styles.back} onClick={() => setOpen(false)}>
-        <h2 className={styles.title}>＜</h2>
-      </button>
-      <div className={styles.index}>
-        <Link href="/">
-          <a className={styles.element}>
-            <img className={styles.logo} src="/img/logo.png" alt="Home" />
-            <h2 className={styles.title}>HOME</h2>
-          </a>
-        </Link>
-        <Link href={"/talks"}>
-          <a className={styles.element}>
-            <img className={styles.logo} src="/img/talks.png" alt="Talks" />
-            <h2 className={styles.title}>TALKS</h2>
-          </a>
-        </Link>
-        <Link href={"/projects"}>
-          <a className={styles.element}>
-            <img className={styles.logo} src="/img/projects.png" alt="Projects" />
-            <h2 className={styles.title}>PROJECTS</h2>
-          </a>
-        </Link>
+      <div className={styles.menu}>
+        <button className={styles.back} onClick={() => setOpen(false)}>
+          <img className={styles.logo} src="/img/LeftArrow.png" alt="戻る" />
+        </button>
+        <div className={styles.index}>
+          <Link href="/">
+            <a className={styles.element}>
+              <img className={styles.logo} src="/img/logo.png" alt="Home" />
+              <h2 className={styles.title}>HOME</h2>
+            </a>
+          </Link>
+          <Link href={"/talks"}>
+            <a className={styles.element}>
+              <img className={styles.logo} src="/img/talks.png" alt="Talks" />
+              <h2 className={styles.title}>TALKS</h2>
+            </a>
+          </Link>
+          <Link href={"/projects"}>
+            <a className={styles.element}>
+              <img className={styles.logo} src="/img/projects.png" alt="Projects" />
+              <h2 className={styles.title}>PROJECTS</h2>
+            </a>
+          </Link>
+        </div>
       </div>
+      <button className={styles.outside} onClick={() => setOpen(false)} />
     </div>
   );
 };

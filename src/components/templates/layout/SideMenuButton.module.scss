@@ -1,5 +1,15 @@
 .button {
   display: block;
+  background: #141a24;
+  padding: 20%;
+  border-radius: 50%;
+  opacity: 60%;
+  transition: opacity 200ms 0s ease, transform 200ms 0s ease;
+
+  &:hover {
+    opacity: 100%;
+    transform: scale(1.05);
+  }
 
   .logo {
     width: 100%;

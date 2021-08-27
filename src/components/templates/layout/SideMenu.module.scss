@@ -1,7 +1,13 @@
 .container {
   position: absolute;
-  width: 32rem;
+  width: 100vw;
   height: 100vh;
+}
+
+.menu {
+  position: absolute;
+  width: 32rem;
+  height: 100%;
   background: linear-gradient(to right, rgba(#ddd, 100%) 0%, rgba(#ddd, 90%) 60%, transparent 100%);
   padding-top: 2rem;
   padding-left: 2rem;
@@ -9,17 +15,23 @@
   transition: transform 200ms 0s ease-out, opacity 200ms 0s ease-out;
   transform: translateX(-2rem);
   opacity: 0;
+}
 
-  &.opened {
+.opened {
+  .menu {
     transform: translateX(0rem);
     opacity: 1;
   }
 }
 
 .back {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #838a96;
+  margin-bottom: 7vh;
+
+  .logo {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+  }
 }
 
 .index {
@@ -56,4 +68,12 @@
       }
     }
   }
+}
+
+.outside {
+  position: absolute;
+  height: 100vh;
+  width: calc(100vw - 26rem);
+  right: 0;
+  cursor: default;
 }

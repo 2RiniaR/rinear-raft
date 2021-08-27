@@ -1,12 +1,22 @@
 .container {
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
 
   .element {
     width: 100%;
-    margin-bottom: 8rem;
+    margin-bottom: 6rem;
+
+    .link {
+      display: block;
+      padding: 1rem 4rem;
+      transition: background-color 200ms 0s ease;
+
+      &:hover {
+        background-color: rgba(#ddd, 0.2);
+      }
+    }
   }
 }

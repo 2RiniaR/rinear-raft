@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import React from "react";
 
 export type { ProjectContentHead, ProjectContent } from "./projects";
 export type { TalkContentHead, TalkContent } from "./talks";
@@ -20,5 +19,9 @@ export type ContentHead = {
 };
 
 export type Content = ContentHead & {
-  Page: React.ReactNode;
+  Page: () => JSX.Element;
 };
+
+export function getContentPath(content: ContentHead): string {
+  return `/${content.genre}/${content.id}`;
+}
