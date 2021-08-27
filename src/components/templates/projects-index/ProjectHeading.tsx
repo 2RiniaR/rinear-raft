@@ -1,32 +1,29 @@
 import dayjs from "dayjs";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef } from "react";
 import styles from "./ProjectHeading.module.scss";
 import { ProjectContentHead } from "src/lib/contents";
 import FixedImage from "src/components/functions/FixedImage";
 import { formatDisplayDate, formatExceededTime } from "src/lib/helper";
+import useElementSize from "src/lib/fooks/element-size";
+
+const thumbnailWidthRate = 0.4;
+const thumbnailBorderWidth = 2;
+const thumbnailAspectRatio = 9 / 16;
 
 type Props = {
   head: ProjectContentHead;
 };
 
 const ProjectHeading = ({ head }: Props): JSX.Element => {
-  const [width, setWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const thumbnailWidthRate = 0.4;
-  const thumbnailBorderWidth = 2;
-  const thumbnailAspectRatio = 9 / 16;
+  const [containerWidth] = useElementSize(containerRef);
 
-  const getContainerHeight = useCallback(() => {
-    return (width * thumbnailWidthRate - thumbnailBorderWidth * 2) * thumbnailAspectRatio + thumbnailBorderWidth * 2;
-  }, [width]);
-
-  useEffect(() => {
-    const onThumbnailResized = new ResizeObserver((entries) => {
-      setWidth(entries[0].contentRect.width);
-    });
-    containerRef.current && onThumbnailResized.observe(containerRef.current);
-    return () => onThumbnailResized.disconnect();
-  }, []);
+  const getContainerHeight = useCallback(
+    () =>
+      (containerWidth * thumbnailWidthRate - thumbnailBorderWidth * 2) * thumbnailAspectRatio +
+      thumbnailBorderWidth * 2,
+    [containerWidth]
+  );
 
   return (
     <div className={styles.container} style={{ height: getContainerHeight() }} ref={containerRef}>

@@ -1,6 +1,8 @@
-import React, { ReactNode, useCallback, useEffect, useState } from "react";
+import React, { ReactNode, useCallback, useRef } from "react";
 import styles from "./Parallax.module.scss";
-import { getScrollPosition } from "src/lib/helper";
+import useScrollValue from "src/lib/fooks/scroll-value";
+import useElementSize from "src/lib/fooks/element-size";
+import useElementPosition from "src/lib/fooks/element-position";
 
 type Props = {
   children: ReactNode;
@@ -9,36 +11,22 @@ type Props = {
 };
 
 const Parallax = ({ startInnerOrigin, endInnerOrigin, children }: Props): JSX.Element => {
-  const [scroll, setScroll] = useState(0);
-  const [innerPosition, setInnerPosition] = useState(0);
-  const [top, setTop] = useState(0);
-  const [height, setHeight] = useState(1);
+  const scroll = useScrollValue();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, containerHeight] = useElementSize(containerRef, 1, 1);
+  const [, top] = useElementPosition(containerRef);
 
   const getInnerPosition = useCallback(() => {
-    const scrollPercent = (scroll - top) / height;
-    return ((endInnerOrigin - startInnerOrigin) * scrollPercent + startInnerOrigin) * height;
-  }, [scroll, top, height, startInnerOrigin, endInnerOrigin]);
-
-  const onScroll = () => setScroll(getScrollPosition());
-
-  useEffect(() => {
-    document.addEventListener("scroll", onScroll);
-    return (): void => document.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    setInnerPosition(getInnerPosition());
-  }, [scroll, top, height, startInnerOrigin, endInnerOrigin]);
-
-  const setContainerSize = (container: HTMLDivElement) => {
-    if (!container) return;
-    setTop(container.scrollTop);
-    setHeight(container.scrollHeight);
-  };
+    const scrollPercent = (scroll - top) / containerHeight;
+    return ((endInnerOrigin - startInnerOrigin) * scrollPercent + startInnerOrigin) * containerHeight;
+  }, [scroll, top, containerHeight, startInnerOrigin, endInnerOrigin]);
 
   return (
-    <div className={styles.container} ref={setContainerSize}>
-      <div className={styles.view} style={{ transform: `translate(0, ${innerPosition}px)`, height: height }}>
+    <div className={styles.container} ref={containerRef}>
+      <div
+        className={styles.view}
+        style={{ transform: `translate(0, ${getInnerPosition()}px)`, height: containerHeight, width: containerWidth }}
+      >
         {children}
       </div>
     </div>

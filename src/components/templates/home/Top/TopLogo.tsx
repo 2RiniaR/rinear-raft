@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./index.module.scss";
+import styles from "./TopLogo.module.scss";
 
-const Logo = (): JSX.Element => (
+const TopLogo = (): JSX.Element => (
   <div className={styles.container}>
     <div className={styles.background}>
       <img className={styles.image} src="/img/logo_back.svg" alt="" />
@@ -13,4 +13,4 @@ const Logo = (): JSX.Element => (
   </div>
 );
 
-export default Logo;
+export default TopLogo;

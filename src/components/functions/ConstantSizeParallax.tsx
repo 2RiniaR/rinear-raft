@@ -1,7 +1,8 @@
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import React, { ReactNode, useCallback, useRef } from "react";
 import styles from "./ConstantSizeParallax.module.scss";
-
 import FixedParallax from "src/components/functions/Parallax";
+import useElementSize from "src/lib/fooks/element-size";
+import useViewSize from "src/lib/fooks/view-size";
 
 type Props = {
   children: ReactNode;
@@ -9,36 +10,11 @@ type Props = {
 };
 
 const ConstantSizeParallax = ({ children, maxSpeed = undefined }: Props): JSX.Element => {
-  const [containerHeight, setContainerHeight] = useState(0);
-  const [innerHeight, setInnerHeight] = useState(0);
-  const [viewHeight, setViewHeight] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const onContainerResized = new ResizeObserver((entries) => {
-      setContainerHeight(entries[0].contentRect.height);
-    });
-    containerRef.current && onContainerResized.observe(containerRef.current);
-    return () => onContainerResized.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const onInnerResized = new ResizeObserver((entries) => {
-      setInnerHeight(entries[0].contentRect.height);
-    });
-    innerRef.current && onInnerResized.observe(innerRef.current);
-    return () => onInnerResized.disconnect();
-  }, []);
-
-  useEffect(() => {
-    setViewHeight(window.innerHeight);
-    const onWindowResized = () => {
-      setViewHeight(window.innerHeight);
-    };
-    window.addEventListener("resize", onWindowResized);
-    return () => window.removeEventListener("resize", onWindowResized);
-  }, []);
+  const [, containerHeight] = useElementSize(containerRef);
+  const [, innerHeight] = useElementSize(innerRef);
+  const [, viewHeight] = useViewSize();
 
   const getEndInnerOrigin = useCallback(() => {
     return Math.max(-(innerHeight - viewHeight) / (containerHeight - viewHeight), maxSpeed ? -maxSpeed : -Infinity);

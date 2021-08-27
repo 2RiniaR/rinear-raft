@@ -1,8 +1,8 @@
-import styles from "./index.module.scss";
+import styles from "./Landscape.module.scss";
 import { assignClasses } from "src/lib/helper";
 
-const Background = (): JSX.Element => (
+const Landscape = (): JSX.Element => (
   <img className={assignClasses(styles.image)} src="/img/background.jpg" alt="背景" />
 );
 
-export default Background;
+export default Landscape;

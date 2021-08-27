@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef } from "react";
 import styles from "./FixedImage.module.scss";
+import useElementSize from "src/lib/fooks/element-size";
 
 type Props = {
   src: string;
@@ -10,28 +11,18 @@ type Props = {
 };
 
 const FixedImage = ({ src, alt, widthRate = 16, heightRate = 9, lock = "width" }: Props): JSX.Element => {
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, containerHeight] = useElementSize(containerRef);
 
   const getWidth = useCallback(() => {
-    if (lock === "width") return width;
-    return (height * widthRate) / heightRate;
-  }, [lock, width, height, widthRate, heightRate]);
+    if (lock === "width") return containerWidth;
+    return (containerHeight * widthRate) / heightRate;
+  }, [lock, containerWidth, containerHeight, widthRate, heightRate]);
 
   const getHeight = useCallback(() => {
-    if (lock === "height") return height;
-    return (width * heightRate) / widthRate;
-  }, [lock, width, height, widthRate, heightRate]);
-
-  useEffect(() => {
-    const onContainerResized = new ResizeObserver((entries) => {
-      setWidth(entries[0].contentRect.width);
-      setHeight(entries[0].contentRect.height);
-    });
-    containerRef.current && onContainerResized.observe(containerRef.current);
-    return () => onContainerResized.disconnect();
-  }, []);
+    if (lock === "height") return containerHeight;
+    return (containerWidth * heightRate) / widthRate;
+  }, [lock, containerWidth, containerHeight, widthRate, heightRate]);
 
   return (
     <div className={styles.container} ref={containerRef}>
