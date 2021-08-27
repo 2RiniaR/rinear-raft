@@ -14,10 +14,14 @@ export type ContentHead = {
   genre: ContentGenre;
   id: string;
   title: string;
-  thumbnailPath: string;
   updatedAt: dayjs.Dayjs;
+  description: string;
 };
 
 export type Content = ContentHead & {
-  page: JSX.Element;
+  Page: () => JSX.Element;
 };
+
+export function getContentPath(content: ContentHead): string {
+  return `/${content.genre}/${content.id}`;
+}

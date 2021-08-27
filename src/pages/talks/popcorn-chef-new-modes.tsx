@@ -1,10 +1,6 @@
-import bustersMission from "src/data/contents/projects/busters-mission";
-import mazeEscape from "src/data/contents/projects/maze-escape";
-import TalkPageTemplate from "src/components/templates/talk";
+import TalkPage from "src/components/templates/talk/TalkPage";
 import popcornChefNewModes from "src/data/contents/talks/popcorn-chef-new-modes";
 
-const Page = (): JSX.Element => (
-  <TalkPageTemplate content={popcornChefNewModes} suggestions={[bustersMission, mazeEscape]} />
-);
+const Page = (): JSX.Element => <TalkPage content={popcornChefNewModes} />;
 
 export default Page;

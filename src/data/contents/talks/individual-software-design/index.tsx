@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { TalkContent } from "src/lib/contents";
 
-const page: JSX.Element = (
+const Page = (): JSX.Element => (
   <div>
     <p>{"ここに本文が入ります".repeat(500)}</p>
     <p>{"ここに本文が入ります".repeat(500)}</p>
@@ -12,10 +12,12 @@ const page: JSX.Element = (
 const individualSoftwareDesign: TalkContent = {
   genre: "talks",
   id: "individual-software-design",
+  index: 5,
   title: "個人制作を続けてわかった、プログラム設計のコト",
-  thumbnailPath: "/test.png",
+  thumbnailPath: "/img/test.png",
   updatedAt: dayjs("2021-05-29"),
-  page: page
+  description: "",
+  Page
 };
 
 export default individualSoftwareDesign;

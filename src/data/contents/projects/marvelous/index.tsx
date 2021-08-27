@@ -2,14 +2,14 @@ import dayjs from "dayjs";
 import styles from "./index.module.scss";
 import { ProjectContent } from "src/lib/contents";
 
-const page: JSX.Element = (
+const Page = (): JSX.Element => (
   <div>
     <h1 className={styles.title}>ここにタイトルを入力</h1>
     <div className={styles.images}>
-      <img src="/articles/projects/marvelous/top1.png" alt="トップ画像1" />
-      <img src="/articles/projects/marvelous/top2.png" alt="トップ画像2" />
-      <img src="/articles/projects/marvelous/top3.png" alt="トップ画像3" />
-      <img src="/articles/projects/marvelous/top4.png" alt="トップ画像4" />
+      <img src="/contents/projects/marvelous/top1.png" alt="トップ画像1" />
+      <img src="/contents/projects/marvelous/top2.png" alt="トップ画像2" />
+      <img src="/contents/projects/marvelous/top3.png" alt="トップ画像3" />
+      <img src="/contents/projects/marvelous/top4.png" alt="トップ画像4" />
     </div>
     <div className={styles.description}>
       <p>詳細</p>
@@ -28,9 +28,16 @@ const marvelous: ProjectContent = {
   genre: "projects",
   id: "marvelous",
   title: "エライさんbot",
-  thumbnailPath: "/articles/projects/marvelous/thumbnail.jpg",
-  updatedAt: dayjs("2021-05-29"),
-  page: page
+  thumbnailsPath: [
+    "/contents/projects/marvelous/top1.png",
+    "/contents/projects/marvelous/top2.png",
+    "/contents/projects/marvelous/top3.png",
+    "/contents/projects/marvelous/top4.png"
+  ],
+  updatedAt: dayjs("2021-08-27"),
+  releasedAt: dayjs("2021-04-30"),
+  description: "みんなの「えらい！」をカウントしてくれるDiscord Bot。#限界開発鯖 にて運用中！",
+  Page
 };
 
 export default marvelous;

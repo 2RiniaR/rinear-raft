@@ -1,10 +1,6 @@
-import bustersMission from "src/data/contents/projects/busters-mission";
-import mazeEscape from "src/data/contents/projects/maze-escape";
-import TalkPageTemplate from "src/components/templates/talk";
+import TalkPage from "src/components/templates/talk/TalkPage";
 import viewingSiteWithCoffee from "src/data/contents/talks/viewing-site-with-coffee";
 
-const Page = (): JSX.Element => (
-  <TalkPageTemplate content={viewingSiteWithCoffee} suggestions={[bustersMission, mazeEscape]} />
-);
+const Page = (): JSX.Element => <TalkPage content={viewingSiteWithCoffee} />;
 
 export default Page;

@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { ProjectContent } from "src/lib/contents";
 
-const page: JSX.Element = (
+const Page = (): JSX.Element => (
   <div>
     <h2>RineaR公式サイト</h2>
   </div>
@@ -10,10 +10,12 @@ const page: JSX.Element = (
 const rinearOfficialSite: ProjectContent = {
   genre: "projects",
   id: "rinear-official-site",
-  title: "Rinear公式サイト",
-  thumbnailPath: "/test.png",
-  updatedAt: dayjs("2021-05-29"),
-  page: page
+  title: "RineaR公式サイト",
+  thumbnailsPath: ["/img/test.png", "/img/test.png", "/img/test.png", "/img/test.png"],
+  updatedAt: dayjs("2021-07-24"),
+  releasedAt: dayjs("2021-04-30"),
+  description: "RineaRのプロジェクトや投稿を公開するホームページ。Riniaが活動拠点とする筏。",
+  Page
 };
 
 export default rinearOfficialSite;

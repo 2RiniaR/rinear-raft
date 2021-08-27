@@ -1,0 +1,70 @@
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(4);
+
+  &.layer1 {
+    left: 0;
+    animation-name: loop1;
+    animation-play-state: running;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-delay: 8s;
+  }
+
+  &.layer2 {
+    right: 0;
+    animation-name: loop2;
+    animation-play-state: running;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-delay: 0s;
+  }
+}
+
+@keyframes loop1 {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+}

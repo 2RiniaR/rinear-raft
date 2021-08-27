@@ -1,10 +1,6 @@
-import ProjectPageTemplate from "src/components/templates/project";
-import bustersMission from "src/data/contents/projects/busters-mission";
-import mageSimulator from "src/data/contents/projects/mage-simulator";
+import ProjectPage from "src/components/templates/project/ProjectPage";
 import rinearOfficialSite from "src/data/contents/projects/rinear-official-site";
 
-const Page = (): JSX.Element => (
-  <ProjectPageTemplate content={rinearOfficialSite} suggestions={[mageSimulator, bustersMission]} />
-);
+const Page = (): JSX.Element => <ProjectPage content={rinearOfficialSite} />;
 
 export default Page;

@@ -1,10 +1,6 @@
-import ProjectPageTemplate from "src/components/templates/project";
+import ProjectPage from "src/components/templates/project/ProjectPage";
 import bustersMission from "src/data/contents/projects/busters-mission";
-import mazeEscape from "src/data/contents/projects/maze-escape";
-import mageSimulator from "src/data/contents/projects/mage-simulator";
 
-const Page = (): JSX.Element => (
-  <ProjectPageTemplate content={bustersMission} suggestions={[mageSimulator, mazeEscape]} />
-);
+const Page = (): JSX.Element => <ProjectPage content={bustersMission} />;
 
 export default Page;
