@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
+import ExternalLink from "src/components/functions/ExternalLink";
 
 const Footer = (): JSX.Element => (
   <div className={styles.container}>
@@ -8,15 +9,15 @@ const Footer = (): JSX.Element => (
       <h1 className={styles.text}>RineaR</h1>
     </div>
     <div className={styles.links}>
-      <a className={styles.element} href={"https://twitter.com/14RineaR"}>
+      <ExternalLink className={styles.element} href={"https://twitter.com/14RineaR"}>
         <h3 className={styles.text}>Twitter</h3>
-      </a>
-      <a className={styles.element} href={"https://twitter.com/14RineaR"}>
+      </ExternalLink>
+      <ExternalLink className={styles.element} href={"https://mail.google.com/mail/?view=cm&to=14rinear@gmail.com"}>
         <h3 className={styles.text}>Mail</h3>
-      </a>
-      <a className={styles.element} href={"https://twitter.com/14RineaR"}>
+      </ExternalLink>
+      <ExternalLink className={styles.element} href={"https://www.youtube.com/channel/UCNqtSTjhp-dWL8dib3KECsQ"}>
         <h3 className={styles.text}>YouTube</h3>
-      </a>
+      </ExternalLink>
     </div>
     <h3 className={styles.copyright}>Copyright © 2021 RineaR All rights reserved.</h3>
   </div>
