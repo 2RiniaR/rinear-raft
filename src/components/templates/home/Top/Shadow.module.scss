@@ -1,6 +1,7 @@
 .image {
   position: absolute;
-  width: 70%;
-  left: 17%;
-  bottom: 5%;
+  width: min(26%, 80vw);
+  left: 50%;
+  transform: translateX(-40%);
+  top: 45%;
 }
