@@ -4,7 +4,6 @@
   position: relative;
   background: #666666;
   overflow-x: hidden;
-  overflow-y: hidden;
 
   .top {
     width: 100%;
@@ -12,24 +11,28 @@
   }
 
   .about {
+    position: relative;
+    width: 100%;
     background: linear-gradient(to bottom, transparent 0%, #666666 30%, #666666 100%);
     padding-top: 30vh;
-    padding-bottom: 15vh;
-    width: 100%;
-    position: relative;
+
+    @include responsive.mq(phone) {
+      margin-bottom: 15vh;
+    }
+
+    @include responsive.mq(tablet) {
+      margin-bottom: 30vh;
+    }
   }
 
   .menu {
-    background: #666666;
-    padding-top: 15vh;
-    padding-bottom: 15vh;
-    width: 100%;
     position: relative;
+    width: 100%;
+    margin-bottom: 15vh;
   }
 
   .footer {
-    background: #666666;
-    padding-top: 15vh;
-    padding-bottom: 2rem;
+    margin-top: 15vh;
+    margin-bottom: 2rem;
   }
 }

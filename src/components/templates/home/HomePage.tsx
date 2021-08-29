@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Top from "./Top";
+import Top from "./Top/Top";
 import styles from "./HomePage.module.scss";
 import About from "src/components/templates/home/About";
 import ContentsMenu from "src/components/templates/home/ContentsMenu";

@@ -1,58 +1,129 @@
+@use "/src/styles/responsive";
+
 .container {
   width: 100%;
-  padding: 5rem 0;
   background: #555;
 
-  .content {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    max-width: 60rem;
-    justify-content: space-around;
+  @include responsive.mq(phone) {
+    padding: 5rem 0;
+  }
 
-    .element {
-      width: 16rem;
+  @include responsive.mq(tablet) {
+    padding: 5rem 0;
+  }
+
+  .content {
+    display: flex;
+
+    @include responsive.mq(phone) {
+      margin: 0 2rem;
+      flex-direction: column;
+
+      .element {
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    @include responsive.mq(tablet) {
+      justify-content: space-between;
+      margin: 0 5rem;
+      max-width: 60rem;
+
+      .element {
+        width: 16rem;
+      }
     }
   }
 }
 
 .linker {
-  display: block;
+  @include responsive.mq(phone) {
+    display: flex;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    background: rgba(#838a96, 0.2);
+    border: #a7b0c1 solid 2px;
 
-  .icon {
-    display: block;
-    width: 6rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
-  }
-
-  .caption {
-    position: relative;
-
-    .background {
-      position: relative;
-      width: 100%;
+    .icon {
+      display: block;
+      height: 4rem;
+      align-self: center;
+      opacity: 60%;
     }
 
-    .inner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: fot-tsukubrdgothic-std, sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      color: #a7b0c1;
-      text-align: center;
+    .caption {
+      padding-top: 1rem;
+      padding-left: 0.7rem;
+      width: 100%;
 
-      .name {
-        font-size: 2rem;
-        margin-bottom: 0.3rem;
+      .background {
+        display: none;
       }
 
-      .description {
-        font-size: 1rem;
+      .inner {
+        color: #a7b0c1;
+
+        .name {
+          text-align: left;
+          font-size: 1.6rem;
+          padding-left: 0.3rem;
+          padding-bottom: 0.3rem;
+          margin-bottom: 0.3rem;
+          border-bottom: #a7b0c1 solid 1px;
+        }
+
+        .description {
+          font-size: 0.8rem;
+          padding-left: 1rem;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  @include responsive.mq(tablet) {
+    display: flex;
+    flex-direction: column;
+
+    .icon {
+      display: block;
+      width: 6rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+    }
+
+    .caption {
+      position: relative;
+
+      .background {
+        position: relative;
+        width: 100%;
+      }
+
+      .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: fot-tsukubrdgothic-std, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #a7b0c1;
+        text-align: center;
+
+        .name {
+          font-size: 2rem;
+          margin-bottom: 0.3rem;
+        }
+
+        .description {
+          font-size: 1rem;
+        }
       }
     }
   }

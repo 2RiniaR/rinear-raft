@@ -1,4 +1,4 @@
-import styles from "./index.module.scss";
+import styles from "./WindEffect.module.scss";
 import { assignClasses } from "src/lib/helper";
 
 const WindEffect = (): JSX.Element => (

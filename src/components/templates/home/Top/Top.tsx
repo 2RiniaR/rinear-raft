@@ -1,9 +1,9 @@
-import styles from "./index.module.scss";
-import Background from "./Background";
+import styles from "./Top.module.scss";
+import Background from "./Landscape";
 import HoleEffect from "./HoleEffect";
 import Shadow from "./Shadow";
 import WindEffect from "./WindEffect";
-import Logo from "./Logo";
+import TopLogo from "./TopLogo";
 import { assignClasses } from "src/lib/helper";
 import FixedParallax from "src/components/functions/Parallax";
 
@@ -35,7 +35,7 @@ const Top = (): JSX.Element => (
     </div>
 
     <div className={assignClasses(styles.logo, styles.element)}>
-      <Logo />
+      <TopLogo />
     </div>
   </div>
 );

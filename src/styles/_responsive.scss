@@ -1,12 +1,12 @@
-$sizes: sm, md, lg;
+$sizes: phone, tablet, desktop;
 
 $breakpoints: (
-  "sm": "screen and (min-width: 300px)",
-  "md": "screen and (min-width: 480px)",
-  "lg": "screen and (min-width: 960px)"
+  "phone": "screen and (max-width: 599px)",
+  "tablet": "screen and (min-width: 600px)",
+  "desktop": "screen and (min-width: 1025px)"
 ) !default;
 
-@mixin mq($breakpoint: md) {
+@mixin mq($breakpoint: phone) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
