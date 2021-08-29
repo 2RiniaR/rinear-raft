@@ -1,32 +1,36 @@
+@use "/src/styles/responsive";
+
 .container {
   margin: 0 auto;
+  color: #a7b0c1;
 }
 
 .logo {
-  margin: 0 auto 0.5rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: #a7b0c1 solid 2px;
-
-  .image {
-    width: 4rem;
-    height: 4rem;
-    object-fit: contain;
-    margin-right: 1rem;
+  @include responsive.mq(phone) {
+    // TODO
   }
 
-  .text {
-    font-family: fot-tsukubrdgothic-std, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #a7b0c1;
-    font-size: 2rem;
-    letter-spacing: 1rem;
+  @include responsive.mq(tablet) {
+    margin: 0 auto 0.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #a7b0c1 solid 2px;
 
-    &::after {
-      content: "";
-      margin-right: -1rem;
+    .image {
+      width: 4rem;
+      height: 4rem;
+      object-fit: contain;
+      margin-right: 1rem;
+    }
+
+    .text {
+      font-size: 2rem;
+      letter-spacing: 1rem;
+      &::after {
+        content: "";
+        margin-right: -1rem;
+      }
     }
   }
 }
@@ -38,7 +42,6 @@
   font-family: fot-tsukubrdgothic-std, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #a7b0c1;
   font-size: 1rem;
   margin: 0 auto 2rem auto;
 
@@ -63,9 +66,5 @@
 
 .copyright {
   text-align: center;
-  font-family: fot-tsukubrdgothic-std, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #a7b0c1;
   font-size: 1rem;
 }
