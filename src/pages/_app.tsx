@@ -7,7 +7,7 @@ import DebugTool from "src/components/debug/DebugTool";
 const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   <Layout>
     <Component {...pageProps} />
-    <DebugTool showScrollValue />
+    <DebugTool />
   </Layout>
 );
 
