@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { getScrollPosition } from "src/lib/helper";
 
 type Props = {
-  showScrollValue: boolean;
+  showScrollValue?: boolean;
 };
 
 const DebugTool = ({ showScrollValue }: Props): JSX.Element => {

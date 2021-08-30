@@ -3,43 +3,33 @@ import VisibilitySensor from "react-visibility-sensor";
 import styles from "./About.module.scss";
 import { assignClasses } from "src/lib/helper";
 import useElementSize from "src/lib/fooks/element-size";
+import FixedImage from "src/components/functions/FixedImage";
 
 const About = (): JSX.Element => {
   const [display, setDisplay] = useState(false);
   const containerRef = useRef(null);
-  const frontRef = useRef(null);
-  const [containerWidth] = useElementSize(containerRef);
-  const [, frontHeight] = useElementSize(frontRef);
+  const [containerWidth, containerHeight] = useElementSize(containerRef);
   const imageAspectRatio = 2104 / 1321;
 
-  const getContainerHeight = useCallback(
-    () => Math.max(containerWidth / imageAspectRatio, frontHeight),
-    [containerWidth, frontHeight]
-  );
+  const getContainerStyle = useCallback(() => {
+    if (containerHeight == 0 || containerHeight >= containerWidth / imageAspectRatio) return {} as React.CSSProperties;
+    return {
+      height: containerWidth / imageAspectRatio
+    } as React.CSSProperties;
+  }, [containerWidth, containerHeight]);
 
-  const getBackgroundStyle = useCallback((): React.CSSProperties => {
-    const containerHeight = getContainerHeight();
+  const getBackgroundWidth = useCallback(() => {
     const containerAspectRatio = containerWidth / containerHeight;
-    if (containerAspectRatio >= imageAspectRatio) {
-      return {
-        width: containerWidth,
-        height: containerWidth / imageAspectRatio
-      };
-    } else {
-      return {
-        width: containerHeight * imageAspectRatio,
-        height: containerHeight
-      };
-    }
-  }, [containerWidth, getContainerHeight()]);
+    return containerAspectRatio >= imageAspectRatio ? containerWidth : containerHeight * imageAspectRatio;
+  }, [containerWidth, containerHeight]);
 
   return (
-    <div className={styles.container} ref={containerRef} style={{ height: getContainerHeight() }}>
-      <div className={styles.background} style={getBackgroundStyle()}>
-        <img className={styles.image} src="/img/note_clipped.png" alt="" />
+    <div className={styles.container} ref={containerRef} style={getContainerStyle()}>
+      <div className={styles.background} style={{ width: getBackgroundWidth() }}>
+        <FixedImage src="/img/note_clipped.png" alt="背景" widthRate={2104} heightRate={1321} />
       </div>
 
-      <div className={styles.front} ref={frontRef}>
+      <div className={styles.front}>
         <div className={styles.title}>
           <VisibilitySensor onChange={(isVisible) => setDisplay(display || isVisible)}>
             <span className={assignClasses(styles.text, display ? styles.active : styles.inactive)}>
