@@ -53,12 +53,12 @@
     overflow-x: visible;
 
     @include responsive.mq(phone) {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       padding-left: 1rem;
     }
 
     @include responsive.mq(tablet) {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       padding-left: 2rem;
     }
 
@@ -88,7 +88,7 @@
       }
 
       @include responsive.mq(phone) {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
 
         .first {
           display: block;
