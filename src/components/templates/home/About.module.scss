@@ -1,4 +1,4 @@
-@use "/src/styles/responsive";
+@use "global";
 
 .container {
   position: relative;
@@ -7,15 +7,15 @@
   justify-content: center;
   margin: 0 auto;
 
-  @include responsive.mq(phone) {
+  @include global.media(phone) {
     width: 100%;
   }
 
-  @include responsive.mq(tablet) {
+  @include global.media(tablet) {
     width: 100%;
   }
 
-  @include responsive.mq(desktop) {
+  @include global.media(desktop) {
     width: 90%;
     max-width: 75rem;
   }
@@ -32,44 +32,44 @@
 .front {
   position: relative;
 
-  @include responsive.mq(phone) {
+  @include global.media(phone) {
     padding: 6rem 0;
     width: 80%;
   }
 
-  @include responsive.mq(tablet) {
+  @include global.media(tablet) {
     padding: 6rem 0;
     width: 75%;
   }
 
-  @include responsive.mq(desktop) {
+  @include global.media(desktop) {
     padding: 8rem 0;
     width: 70%;
   }
 
   .title {
     display: inline-block;
-    border-left: #16162c solid 2px;
+    border-left: global.$dark1 solid 2px;
     overflow-x: visible;
 
-    @include responsive.mq(phone) {
+    @include global.media(phone) {
       margin-bottom: 3rem;
       padding-left: 1rem;
     }
 
-    @include responsive.mq(tablet) {
+    @include global.media(tablet) {
       margin-bottom: 3rem;
       padding-left: 2rem;
     }
 
-    @include responsive.mq(desktop) {
+    @include global.media(desktop) {
       margin-bottom: 4rem;
       padding-left: 2rem;
     }
 
     .text {
       position: relative;
-      color: #16162c;
+      color: global.$dark1;
       transition: opacity 0.8s ease-in-out 0s, left 0.8s ease-in-out 0s;
 
       &.inactive {
@@ -87,7 +87,7 @@
         color: #ba1317;
       }
 
-      @include responsive.mq(phone) {
+      @include global.media(phone) {
         font-size: 1.2rem;
 
         .first {
@@ -106,7 +106,7 @@
         }
       }
 
-      @include responsive.mq(tablet) {
+      @include global.media(tablet) {
         font-size: 1.6rem;
 
         .first {
@@ -125,7 +125,7 @@
         }
       }
 
-      @include responsive.mq(desktop) {
+      @include global.media(desktop) {
         font-size: 2rem;
 
         .strong {
@@ -137,7 +137,7 @@
   }
 
   .body {
-    color: #16162c;
+    color: global.$dark1;
     display: inline-block;
     padding-left: 2rem;
 
@@ -153,10 +153,10 @@
 
     .separator {
       height: 1px;
-      background-color: #16162c;
+      background-color: global.$dark1;
     }
 
-    @include responsive.mq(phone) {
+    @include global.media(phone) {
       padding: 0 1rem;
 
       .section {
@@ -169,7 +169,7 @@
       }
     }
 
-    @include responsive.mq(tablet) {
+    @include global.media(tablet) {
       padding: 0 1rem;
 
       .section {
@@ -182,7 +182,7 @@
       }
     }
 
-    @include responsive.mq(desktop) {
+    @include global.media(desktop) {
       .section {
         font-size: 1.1rem;
       }

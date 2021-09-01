@@ -1,3 +1,5 @@
+@use "global";
+
 .container {
   position: absolute;
   width: 100vw;
@@ -6,31 +8,56 @@
 
 .menu {
   position: absolute;
-  width: 32rem;
-  height: 100%;
-  background: linear-gradient(to right, rgba(#ddd, 100%) 0%, rgba(#ddd, 90%) 60%, transparent 100%);
-  padding-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  transition: transform 200ms 0s ease-out, opacity 200ms 0s ease-out;
-  transform: translateX(-2rem);
   opacity: 0;
-}
+  transition: transform 200ms 0s ease-out, opacity 200ms 0s ease-out;
 
-.opened {
-  .menu {
-    transform: translateX(0rem);
+  .opened & {
+    transform: translate(0, 0);
     opacity: 1;
+  }
+
+  @include global.media(phone) {
+    width: 100%;
+    height: 20rem;
+    background: linear-gradient(to top, rgba(global.$light2, 100%) 0%, rgba(global.$light2, 90%) 60%, transparent 100%);
+    padding: 2rem 0 2rem 2rem;
+    transform: translate(0, 2rem);
+    bottom: 0;
+  }
+
+  @include global.media(desktop) {
+    width: 32rem;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(global.$light2, 100%) 0%,
+      rgba(global.$light2, 90%) 60%,
+      transparent 100%
+    );
+    padding: 2rem 2rem 0 2rem;
+    transform: translate(-2rem, 0);
   }
 }
 
-.back {
-  margin-bottom: 7vh;
+.backButton {
+  @include global.media(phone) {
+    margin-bottom: 7vh;
 
-  .logo {
-    height: 2rem;
-    width: 2rem;
-    margin-right: 1rem;
+    .logo {
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+    }
+  }
+
+  @include global.media(desktop) {
+    margin-bottom: 7vh;
+
+    .logo {
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+    }
   }
 }
 
@@ -64,7 +91,7 @@
     &:hover {
       .title {
         background: linear-gradient(to right, rgba(#838a96, 50%) 0%, rgba(#838a96, 50%) 60%, transparent 100%);
-        color: #ddd;
+        color: global.$light2;
       }
     }
   }
@@ -72,8 +99,17 @@
 
 .outside {
   position: absolute;
-  height: 100vh;
-  width: calc(100vw - 26rem);
-  right: 0;
   cursor: default;
+
+  @include global.media(phone) {
+    width: 100vw;
+    height: 50vh;
+    top: 0;
+  }
+
+  @include global.media(desktop) {
+    height: 100vh;
+    width: calc(100vw - 26rem);
+    right: 0;
+  }
 }

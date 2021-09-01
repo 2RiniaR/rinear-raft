@@ -1,4 +1,4 @@
-@use "src/styles/responsive";
+@use "global";
 
 .page {
   position: relative;
@@ -7,7 +7,7 @@
 
   .top {
     position: relative;
-    background: rgba(#141a24, 0.5);
+    background: rgba(global.$dark1, 0.5);
     margin-top: 5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;

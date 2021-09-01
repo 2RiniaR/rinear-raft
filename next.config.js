@@ -11,5 +11,8 @@ module.exports = {
     };
     return config;
   },
-  reactStrictMode: true
+  reactStrictMode: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, "src/styles")]
+  }
 };

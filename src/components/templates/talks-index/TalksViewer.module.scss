@@ -1,3 +1,5 @@
+@use "global";
+
 .container {
   margin-left: 12rem;
   margin-right: 12rem;
@@ -18,7 +20,7 @@
       height: 100%;
 
       &:hover {
-        background-color: rgba(#ddd, 0.2);
+        background-color: rgba(global.$light2, 0.2);
       }
     }
   }

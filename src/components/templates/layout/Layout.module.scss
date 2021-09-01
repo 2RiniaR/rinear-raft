@@ -1,16 +1,16 @@
-@use "/src/styles/responsive";
+@use "global";
 
 .sideMenuButton {
   position: fixed;
 
-  @include responsive.mq(phone) {
+  @include global.media(phone) {
     bottom: calc(20vh + 4rem);
     right: 1rem;
     width: 3rem;
     height: 3rem;
   }
 
-  @include responsive.mq(tablet) {
+  @include global.media(tablet) {
     top: 2rem;
     left: 2rem;
     width: 4rem;
@@ -22,14 +22,14 @@
   position: fixed;
   z-index: 4;
 
-  @include responsive.mq(phone) {
+  @include global.media(phone) {
     bottom: 20vh;
     right: 1rem;
     width: 3rem;
     height: 3rem;
   }
 
-  @include responsive.mq(tablet) {
+  @include global.media(tablet) {
     bottom: 2rem;
     right: 2rem;
     width: 4rem;
