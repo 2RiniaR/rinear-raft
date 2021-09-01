@@ -4,35 +4,54 @@
   position: relative;
   background: #666666;
   overflow-x: hidden;
+}
 
-  .top {
-    width: 100%;
-    margin-bottom: -4rem;
-  }
+.top {
+  width: 100%;
+  margin-bottom: -4rem;
+}
 
-  .about {
-    position: relative;
-    width: 100%;
-    background: linear-gradient(to bottom, transparent 0%, #666666 30%, #666666 100%);
-    padding-top: 30vh;
+.body {
+  position: relative;
+  background: linear-gradient(to bottom, transparent 0%, #666666 16rem, #666666 100%);
+}
 
-    @include responsive.mq(phone) {
-      margin-bottom: 15vh;
-    }
+.about {
+  position: relative;
+  width: 100%;
+  padding-top: 30vh;
 
-    @include responsive.mq(tablet) {
-      margin-bottom: 30vh;
-    }
-  }
-
-  .menu {
-    position: relative;
-    width: 100%;
+  @include responsive.mq(phone) {
     margin-bottom: 15vh;
   }
 
-  .footer {
-    margin-top: 15vh;
-    margin-bottom: 2rem;
+  @include responsive.mq(tablet) {
+    margin-bottom: 15vh;
   }
+
+  @include responsive.mq(desktop) {
+    margin-bottom: 20vh;
+  }
+}
+
+.menu {
+  position: relative;
+  width: 100%;
+
+  @include responsive.mq(phone) {
+    margin-bottom: 15vh;
+  }
+
+  @include responsive.mq(tablet) {
+    margin-bottom: 15vh;
+  }
+
+  @include responsive.mq(desktop) {
+    margin-bottom: 20vh;
+  }
+}
+
+.footer {
+  margin-top: 10vh;
+  margin-bottom: 2rem;
 }

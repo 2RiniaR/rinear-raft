@@ -16,16 +16,18 @@ const HomePage = (): JSX.Element => (
       <Top />
     </div>
 
-    <div className={styles.about}>
-      <About />
-    </div>
+    <div className={styles.body}>
+      <div className={styles.about}>
+        <About />
+      </div>
 
-    <div className={styles.menu}>
-      <ContentsMenu />
-    </div>
+      <div className={styles.menu}>
+        <ContentsMenu />
+      </div>
 
-    <div className={styles.footer}>
-      <Footer />
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   </div>
 );
