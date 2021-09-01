@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./ContentsMenu.module.scss";
+import CompositeText from "src/components/functions/CompositeText";
 
 type ElementProps = {
   href: string;
@@ -15,8 +16,16 @@ const Element = ({ href, name, iconSrc, description }: ElementProps): JSX.Elemen
       <img className={styles.icon} src={iconSrc} alt="アイコン" />
       <div className={styles.caption}>
         <div className={styles.inner}>
-          <h2 className={styles.name}>{name}</h2>
-          <h2 className={styles.description}>{description}</h2>
+          <h2 className={styles.name}>
+            <CompositeText>
+              <div className={styles.text}>{name}</div>
+            </CompositeText>
+          </h2>
+          <h2 className={styles.description}>
+            <CompositeText>
+              <div className={styles.text}>{description}</div>
+            </CompositeText>
+          </h2>
         </div>
         <img className={styles.background} src="/img/menu_border.svg" alt="" />
       </div>
