@@ -6,7 +6,7 @@ $breakpoints: (
   "desktop": "screen and (min-width: 1025px)"
 ) !default;
 
-@mixin mq($breakpoint: phone) {
+@mixin media($breakpoint: phone) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }

@@ -1,3 +1,5 @@
+@use "global";
+
 .container {
   position: absolute;
   width: 100vw;
@@ -6,65 +8,193 @@
 
 .menu {
   position: absolute;
-  width: 32rem;
-  height: 100%;
-  background: linear-gradient(to right, rgba(#ddd, 100%) 0%, rgba(#ddd, 90%) 60%, transparent 100%);
-  padding-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  transition: transform 200ms 0s ease-out, opacity 200ms 0s ease-out;
-  transform: translateX(-2rem);
   opacity: 0;
-}
+  transition: transform 200ms 0s ease-out, opacity 200ms 0s ease-out;
 
-.opened {
-  .menu {
-    transform: translateX(0rem);
+  .opened & {
+    transform: translate(0, 0);
     opacity: 1;
+  }
+
+  @include global.media(phone) {
+    width: 100%;
+    height: 60vh;
+    background: linear-gradient(to top, rgba(global.$light2, 100%) 0%, rgba(global.$light2, 90%) 60%, transparent 100%);
+    padding: 2rem 1rem 2rem 3rem;
+    transform: translate(0, 2rem);
+    bottom: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+  }
+
+  @include global.media(tablet) {
+    width: 32rem;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(global.$light2, 100%) 0%,
+      rgba(global.$light2, 90%) 60%,
+      transparent 100%
+    );
+    padding: 2rem 2rem 0 2rem;
+    transform: translate(-2rem, 0);
+  }
+
+  @include global.media(desktop) {
+    width: 32rem;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(global.$light2, 100%) 0%,
+      rgba(global.$light2, 90%) 60%,
+      transparent 100%
+    );
+    padding: 2rem 2rem 0 2rem;
+    transform: translate(-2rem, 0);
   }
 }
 
-.back {
-  margin-bottom: 7vh;
+.backButton {
+  @include global.media(phone) {
+    align-self: flex-end;
+    padding: 0.5rem;
 
-  .logo {
-    height: 2rem;
-    width: 2rem;
-    margin-right: 1rem;
+    .logo {
+      height: 2rem;
+      width: 2rem;
+      transform: rotateZ(-90deg);
+    }
+  }
+
+  @include global.media(tablet) {
+    margin-bottom: 7vh;
+
+    .logo {
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+    }
+  }
+
+  @include global.media(desktop) {
+    margin-bottom: 7vh;
+
+    .logo {
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+    }
   }
 }
 
 .index {
-  margin-left: 1rem;
-  width: 70%;
+  @include global.media(phone) {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+
+  @include global.media(tablet) {
+    margin-left: 1rem;
+    width: 70%;
+  }
+
+  @include global.media(desktop) {
+    margin-left: 1rem;
+    width: 70%;
+  }
 
   .element {
     display: flex;
-    margin-bottom: 7vh;
     align-items: center;
 
-    .logo {
-      height: 3rem;
-      width: 3rem;
-      margin-right: 1rem;
-    }
+    @include global.media(phone) {
+      &:not(:last-child) {
+        margin-bottom: 5vh;
+      }
 
-    .title {
-      font-size: 1.7rem;
-      color: #838a96;
-      flex-grow: 1;
-      letter-spacing: 0.2rem;
-      padding-top: 1.1rem;
-      padding-bottom: 0.2rem;
-      padding-left: 1rem;
-      transition: color 300ms 0s ease-out;
-      border-bottom: #838a96 solid 1px;
-    }
+      .logo {
+        height: 3rem;
+        width: 3rem;
+        margin-right: 1rem;
+      }
 
-    &:hover {
       .title {
-        background: linear-gradient(to right, rgba(#838a96, 50%) 0%, rgba(#838a96, 50%) 60%, transparent 100%);
-        color: #ddd;
+        font-size: 1.7rem;
+        color: #838a96;
+        flex-grow: 1;
+        letter-spacing: 0.2rem;
+        padding-top: 1.1rem;
+        padding-bottom: 0.2rem;
+        padding-left: 0.5rem;
+        transition: color 300ms 0s ease-out;
+        border-bottom: #838a96 solid 1px;
+      }
+
+      &:hover {
+        .title {
+          background: linear-gradient(to right, rgba(#838a96, 50%) 0%, rgba(#838a96, 50%) 60%, transparent 100%);
+          color: global.$light2;
+        }
+      }
+    }
+
+    @include global.media(tablet) {
+      margin-bottom: 7vh;
+
+      .logo {
+        height: 3rem;
+        width: 3rem;
+        margin-right: 1rem;
+      }
+
+      .title {
+        font-size: 1.7rem;
+        color: #838a96;
+        flex-grow: 1;
+        letter-spacing: 0.2rem;
+        padding-top: 1.1rem;
+        padding-bottom: 0.2rem;
+        padding-left: 1rem;
+        transition: color 300ms 0s ease-out;
+        border-bottom: #838a96 solid 1px;
+      }
+
+      &:hover {
+        .title {
+          background: linear-gradient(to right, rgba(#838a96, 50%) 0%, rgba(#838a96, 50%) 60%, transparent 100%);
+          color: global.$light2;
+        }
+      }
+    }
+
+    @include global.media(desktop) {
+      margin-bottom: 7vh;
+
+      .logo {
+        height: 3rem;
+        width: 3rem;
+        margin-right: 1rem;
+      }
+
+      .title {
+        font-size: 1.7rem;
+        color: #838a96;
+        flex-grow: 1;
+        letter-spacing: 0.2rem;
+        padding-top: 1.1rem;
+        padding-bottom: 0.2rem;
+        padding-left: 1rem;
+        transition: color 300ms 0s ease-out;
+        border-bottom: #838a96 solid 1px;
+      }
+
+      &:hover {
+        .title {
+          background: linear-gradient(to right, rgba(#838a96, 50%) 0%, rgba(#838a96, 50%) 60%, transparent 100%);
+          color: global.$light2;
+        }
       }
     }
   }
@@ -72,8 +202,23 @@
 
 .outside {
   position: absolute;
-  height: 100vh;
-  width: calc(100vw - 26rem);
-  right: 0;
   cursor: default;
+
+  @include global.media(phone) {
+    width: 100vw;
+    height: 50vh;
+    top: 0;
+  }
+
+  @include global.media(tablet) {
+    height: 100vh;
+    width: calc(100vw - 26rem);
+    right: 0;
+  }
+
+  @include global.media(desktop) {
+    height: 100vh;
+    width: calc(100vw - 26rem);
+    right: 0;
+  }
 }

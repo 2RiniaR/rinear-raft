@@ -1,6 +1,6 @@
-@use "/src/styles/responsive";
+@use "global";
 
-@include responsive.mq(phone) {
+@include global.media(phone) {
   .container {
     width: 100%;
     background: #555;
@@ -26,7 +26,7 @@
     padding: 1rem;
     border-radius: 0.2rem;
     background: rgba(#838a96, 0.2);
-    border: #a7b0c1 solid 2px;
+    border: global.$light1 solid 2px;
 
     .icon {
       display: block;
@@ -44,7 +44,7 @@
       }
 
       .inner {
-        color: #a7b0c1;
+        color: global.$light1;
 
         .name {
           height: 2.2rem;
@@ -52,7 +52,7 @@
           padding-left: 0.3rem;
           padding-bottom: 0.3rem;
           margin-bottom: 0.3rem;
-          border-bottom: #a7b0c1 solid 1px;
+          border-bottom: global.$light1 solid 1px;
 
           .text {
             font-size: 1.6rem;
@@ -73,7 +73,7 @@
   }
 }
 
-@include responsive.mq(tablet) {
+@include global.media(tablet) {
   .container {
     width: 100%;
     background: #555;
@@ -120,7 +120,7 @@
         font-family: fot-tsukubrdgothic-std, sans-serif;
         font-weight: 400;
         font-style: normal;
-        color: #a7b0c1;
+        color: global.$light1;
         text-align: center;
 
         .name {

@@ -1,8 +1,8 @@
-@use "/src/styles/responsive";
+@use "global";
 
 .container {
   margin: 0 auto;
-  color: #a7b0c1;
+  color: global.$light1;
 }
 
 .logo {
@@ -10,23 +10,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: #a7b0c1 solid 2px;
+  border-bottom: global.$light1 solid 2px;
 
   .image {
     object-fit: contain;
     margin-right: 1rem;
 
-    @include responsive.mq(phone) {
+    @include global.media(phone) {
       height: 3rem;
     }
 
-    @include responsive.mq(tablet) {
+    @include global.media(tablet) {
       height: 4rem;
     }
   }
 
   .text {
-    @include responsive.mq(phone) {
+    @include global.media(phone) {
       $letter-spacing: 0.5rem;
       font-size: 1.6rem;
       letter-spacing: $letter-spacing;
@@ -36,7 +36,7 @@
       }
     }
 
-    @include responsive.mq(tablet) {
+    @include global.media(tablet) {
       $letter-spacing: 1rem;
       font-size: 2rem;
       letter-spacing: $letter-spacing;

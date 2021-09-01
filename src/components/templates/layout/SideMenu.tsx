@@ -28,7 +28,7 @@ const SideMenu = ({ open, setOpen }: Props): JSX.Element => {
       onTransitionEnd={onCloseTransitionEnd}
     >
       <div className={styles.menu}>
-        <button className={styles.back} onClick={() => setOpen(false)}>
+        <button className={styles.backButton} onClick={() => setOpen(false)}>
           <img className={styles.logo} src="/img/LeftArrow.png" alt="戻る" />
         </button>
         <div className={styles.index}>

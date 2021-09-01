@@ -1,4 +1,4 @@
-@use "src/styles/responsive";
+@use "global";
 
 .page {
   position: relative;
@@ -21,15 +21,15 @@
   width: 100%;
   padding-top: 30vh;
 
-  @include responsive.mq(phone) {
+  @include global.media(phone) {
     margin-bottom: 15vh;
   }
 
-  @include responsive.mq(tablet) {
+  @include global.media(tablet) {
     margin-bottom: 15vh;
   }
 
-  @include responsive.mq(desktop) {
+  @include global.media(desktop) {
     margin-bottom: 20vh;
   }
 }
@@ -38,15 +38,15 @@
   position: relative;
   width: 100%;
 
-  @include responsive.mq(phone) {
+  @include global.media(phone) {
     margin-bottom: 15vh;
   }
 
-  @include responsive.mq(tablet) {
+  @include global.media(tablet) {
     margin-bottom: 15vh;
   }
 
-  @include responsive.mq(desktop) {
+  @include global.media(desktop) {
     margin-bottom: 20vh;
   }
 }
