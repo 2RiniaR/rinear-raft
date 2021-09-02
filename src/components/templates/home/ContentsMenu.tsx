@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./ContentsMenu.module.scss";
-import CompositeText from "src/components/functions/CompositeText";
+import CompositeText from "components/functions/CompositeText";
 
 type ElementProps = {
   href: string;

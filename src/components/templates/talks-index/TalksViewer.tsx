@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import styles from "./TalksViewer.module.scss";
 import TalkHeading from "./TalkHeading";
-import { getContentPath, TalkContentHead } from "src/lib/contents";
+import { getContentPath, TalkContentHead } from "lib/contents";
 
 type Props = {
   heads: TalkContentHead[];

@@ -1,6 +1,6 @@
 import { useCallback, useRef } from "react";
 import styles from "./FixedImage.module.scss";
-import useElementSize from "src/lib/fooks/element-size";
+import useElementSize from "lib/fooks/element-size";
 
 type Props = {
   src: string;

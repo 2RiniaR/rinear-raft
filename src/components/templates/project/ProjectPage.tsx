@@ -1,10 +1,10 @@
 import React from "react";
 import Head from "next/head";
 import styles from "./ProjectPage.module.scss";
-import { ProjectContent } from "src/lib/contents";
-import Footer from "src/components/parts/Footer";
-import Background from "src/components/parts/Background";
-import ProjectTop from "src/components/templates/project/ProjectTop";
+import { ProjectContent } from "lib/contents";
+import Footer from "components/parts/Footer";
+import Background from "components/parts/Background";
+import ProjectTop from "components/templates/project/ProjectTop";
 
 type Props = {
   content: ProjectContent;

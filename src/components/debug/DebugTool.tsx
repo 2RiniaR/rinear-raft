@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { getScrollPosition } from "src/lib/helper";
+import { getScrollPosition } from "lib/helper";
 
 type Props = {
   showScrollValue?: boolean;

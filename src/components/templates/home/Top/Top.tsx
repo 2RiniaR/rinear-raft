@@ -4,8 +4,8 @@ import HoleEffect from "./HoleEffect";
 import Shadow from "./Shadow";
 import WindEffect from "./WindEffect";
 import TopLogo from "./TopLogo";
-import { assignClasses } from "src/lib/helper";
-import FixedParallax from "src/components/functions/Parallax";
+import { assignClasses } from "lib/helper";
+import FixedParallax from "components/functions/Parallax";
 
 const Top = (): JSX.Element => (
   <div className={styles.container}>

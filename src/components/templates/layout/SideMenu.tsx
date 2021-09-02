@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { TransitionEventHandler, useEffect, useState } from "react";
 import styles from "./SideMenu.module.scss";
-import { assignClasses } from "src/lib/helper";
+import { assignClasses } from "lib/helper";
 
 type Props = {
   open: boolean;

@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { ProjectContent } from "src/lib/contents";
+import { ProjectContent } from "lib/contents";
 
 const Page = (): JSX.Element => (
   <div>

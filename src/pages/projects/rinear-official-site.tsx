@@ -1,5 +1,5 @@
-import ProjectPage from "src/components/templates/project/ProjectPage";
-import rinearOfficialSite from "src/data/contents/projects/rinear-official-site";
+import ProjectPage from "components/templates/project/ProjectPage";
+import rinearOfficialSite from "data/contents/projects/rinear-official-site";
 
 const Page = (): JSX.Element => <ProjectPage content={rinearOfficialSite} />;
 

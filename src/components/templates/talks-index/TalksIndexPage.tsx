@@ -2,10 +2,10 @@ import Head from "next/head";
 import React from "react";
 import styles from "./TalksIndexPage.module.scss";
 import Viewer from "./TalksViewer";
-import { TalkContentHead } from "src/lib/contents";
-import Footer from "src/components/parts/Footer";
-import Background from "src/components/parts/Background";
-import GenreHeader from "src/components/parts/GenreHeader";
+import { TalkContentHead } from "lib/contents";
+import Footer from "components/parts/Footer";
+import Background from "components/parts/Background";
+import GenreHeader from "components/parts/GenreHeader";
 
 type Props = {
   heads: TalkContentHead[];

@@ -1,5 +1,5 @@
 import styles from "./WindEffect.module.scss";
-import { assignClasses } from "src/lib/helper";
+import { assignClasses } from "lib/helper";
 
 const WindEffect = (): JSX.Element => (
   <div className={styles.container}>

@@ -1,5 +1,5 @@
-import ProjectPage from "src/components/templates/project/ProjectPage";
-import mazeEscape from "src/data/contents/projects/maze-escape";
+import ProjectPage from "components/templates/project/ProjectPage";
+import mazeEscape from "data/contents/projects/maze-escape";
 
 const Page = (): JSX.Element => <ProjectPage content={mazeEscape} />;
 

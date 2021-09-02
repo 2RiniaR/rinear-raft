@@ -1,8 +1,8 @@
 import React from "react";
 import dayjs from "dayjs";
 import styles from "./TalkTop.module.scss";
-import { TalkContent } from "src/lib/contents";
-import { formatExceededTime } from "src/lib/helper";
+import { TalkContent } from "lib/contents";
+import { formatExceededTime } from "lib/helper";
 
 type Props = {
   content: TalkContent;

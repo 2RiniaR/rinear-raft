@@ -1,9 +1,9 @@
 import React, { useCallback, useRef, useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 import styles from "./About.module.scss";
-import { assignClasses } from "src/lib/helper";
-import useElementSize from "src/lib/fooks/element-size";
-import FixedImage from "src/components/functions/FixedImage";
+import { assignClasses } from "lib/helper";
+import useElementSize from "lib/fooks/element-size";
+import FixedImage from "components/functions/FixedImage";
 
 const About = (): JSX.Element => {
   const [display, setDisplay] = useState(false);

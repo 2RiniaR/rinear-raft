@@ -1,5 +1,5 @@
-import ProjectPage from "src/components/templates/project/ProjectPage";
-import popcornChef from "src/data/contents/projects/popcorn-chef";
+import ProjectPage from "components/templates/project/ProjectPage";
+import popcornChef from "data/contents/projects/popcorn-chef";
 
 const Page = (): JSX.Element => <ProjectPage content={popcornChef} />;
 

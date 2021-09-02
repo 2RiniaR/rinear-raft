@@ -1,5 +1,5 @@
-import ProjectPage from "src/components/templates/project/ProjectPage";
-import bustersMission from "src/data/contents/projects/busters-mission";
+import ProjectPage from "components/templates/project/ProjectPage";
+import bustersMission from "data/contents/projects/busters-mission";
 
 const Page = (): JSX.Element => <ProjectPage content={bustersMission} />;
 
