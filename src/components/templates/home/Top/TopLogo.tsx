@@ -1,5 +1,8 @@
 import React, { useCallback, useRef } from "react";
 import styles from "./TopLogo.module.scss";
+import StaticImage from "components/functions/image/StaticImage";
+import logoBackPic from "public/img/logo_back.svg";
+import logoPic from "public/img/logo.png";
 import useElementSize from "lib/fooks/element-size";
 
 const TopLogo = (): JSX.Element => {
@@ -11,10 +14,10 @@ const TopLogo = (): JSX.Element => {
   return (
     <div className={styles.container}>
       <div className={styles.background}>
-        <img className={styles.image} src="/img/logo_back.svg" alt="" />
+        <StaticImage className={styles.image} src={logoBackPic} alt="背景画像" />
       </div>
       <div className={styles.front} ref={frontRef}>
-        <img className={styles.logo} src="/img/logo.png" alt="" />
+        <StaticImage className={styles.logo} src={logoPic} alt="ロゴ" />
         <h1 className={styles.name} style={{ fontSize: getFontSize(), letterSpacing: getLetterSpacing() }}>
           RineaR
           <span style={{ marginRight: -getLetterSpacing() }} />

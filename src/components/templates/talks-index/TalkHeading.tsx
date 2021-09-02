@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import styles from "./TalkHeading.module.scss";
 import { TalkContentHead } from "lib/contents";
-import FixedImage from "components/functions/FixedImage";
+import FixedImage from "components/functions/image/FixedImage";
 import { formatExceededTime } from "lib/helper";
 
 type Props = {

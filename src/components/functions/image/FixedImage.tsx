@@ -1,16 +1,15 @@
 import { useCallback, useRef } from "react";
+import Image, { ImageProps } from "next/image";
 import styles from "./FixedImage.module.scss";
 import useElementSize from "lib/fooks/element-size";
 
 type Props = {
-  src: string;
-  alt: string;
   widthRate?: number;
   heightRate?: number;
   lock?: "width" | "height";
-};
+} & Omit<ImageProps, "objectFit">;
 
-const FixedImage = ({ src, alt, widthRate = 16, heightRate = 9, lock = "width" }: Props): JSX.Element => {
+const FixedImage = ({ widthRate = 16, heightRate = 9, lock = "width", ...props }: Props): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, containerHeight] = useElementSize(containerRef);
 
@@ -26,7 +25,7 @@ const FixedImage = ({ src, alt, widthRate = 16, heightRate = 9, lock = "width" }
 
   return (
     <div className={styles.container} ref={containerRef}>
-      <img style={{ width: getWidth(), height: getHeight() }} className={styles.image} src={src} alt={alt} />
+      <Image className={styles.image} width={getWidth()} height={getHeight()} objectFit="contain" {...props} />
     </div>
   );
 };

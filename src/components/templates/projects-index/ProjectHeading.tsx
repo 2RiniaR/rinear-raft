@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { useCallback, useRef } from "react";
 import styles from "./ProjectHeading.module.scss";
 import { ProjectContentHead } from "lib/contents";
-import FixedImage from "components/functions/FixedImage";
+import FixedImage from "components/functions/image/FixedImage";
 import { formatDisplayDate, formatExceededTime } from "lib/helper";
 import useElementSize from "lib/fooks/element-size";
 
