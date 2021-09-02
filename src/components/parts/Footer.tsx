@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import ExternalLink from "src/components/functions/ExternalLink";
+import ExternalLink from "components/functions/ExternalLink";
 
 const Footer = (): JSX.Element => (
   <div className={styles.container}>

@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import styles from "./TopLogo.module.scss";
-import useElementSize from "src/lib/fooks/element-size";
+import useElementSize from "lib/fooks/element-size";
 
 const TopLogo = (): JSX.Element => {
   const frontRef = useRef<HTMLDivElement>(null);

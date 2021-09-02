@@ -1,9 +1,9 @@
 import React from "react";
 import dayjs from "dayjs";
 import styles from "./ProjectTop.module.scss";
-import { ProjectContent } from "src/lib/contents";
-import { formatDisplayDate, formatExceededTime } from "src/lib/helper";
-import FixedImage from "src/components/functions/FixedImage";
+import { ProjectContent } from "lib/contents";
+import { formatDisplayDate, formatExceededTime } from "lib/helper";
+import FixedImage from "components/functions/FixedImage";
 
 type Props = {
   content: ProjectContent;

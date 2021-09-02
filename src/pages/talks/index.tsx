@@ -1,5 +1,5 @@
-import TalksIndexPage from "src/components/templates/talks-index/TalksIndexPage";
-import { contentsRepository } from "src/data/contents";
+import TalksIndexPage from "components/templates/talks-index/TalksIndexPage";
+import { contentsRepository } from "data/contents";
 
 const Page = (): JSX.Element => <TalksIndexPage heads={contentsRepository.getTalkContents("updatedAt")} />;
 

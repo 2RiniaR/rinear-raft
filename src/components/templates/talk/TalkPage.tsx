@@ -2,9 +2,9 @@ import React from "react";
 import Head from "next/head";
 import styles from "./TalkPage.module.scss";
 import TalkTop from "./TalkTop";
-import { TalkContent } from "src/lib/contents";
-import Footer from "src/components/parts/Footer";
-import Background from "src/components/parts/Background";
+import { TalkContent } from "lib/contents";
+import Footer from "components/parts/Footer";
+import Background from "components/parts/Background";
 
 type Props = {
   content: TalkContent;

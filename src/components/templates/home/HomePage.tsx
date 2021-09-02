@@ -2,9 +2,9 @@ import React from "react";
 import Head from "next/head";
 import Top from "./Top/Top";
 import styles from "./HomePage.module.scss";
-import About from "src/components/templates/home/About";
-import ContentsMenu from "src/components/templates/home/ContentsMenu";
-import Footer from "src/components/parts/Footer";
+import About from "components/templates/home/About";
+import ContentsMenu from "components/templates/home/ContentsMenu";
+import Footer from "components/parts/Footer";
 
 const HomePage = (): JSX.Element => (
   <div className={styles.page}>

@@ -1,8 +1,8 @@
 import React, { ReactNode, useCallback, useRef } from "react";
 import styles from "./ConstantSizeParallax.module.scss";
-import FixedParallax from "src/components/functions/Parallax";
-import useElementSize from "src/lib/fooks/element-size";
-import useViewSize from "src/lib/fooks/view-size";
+import FixedParallax from "components/functions/Parallax";
+import useElementSize from "lib/fooks/element-size";
+import useViewSize from "lib/fooks/view-size";
 
 type Props = {
   children: ReactNode;

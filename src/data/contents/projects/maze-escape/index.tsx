@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import styles from "./index.module.scss";
-import { ProjectContent } from "src/lib/contents";
+import { ProjectContent } from "lib/contents";
 
 const Page = (): JSX.Element => (
   <div>

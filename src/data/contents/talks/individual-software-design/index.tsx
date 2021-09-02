@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { TalkContent } from "src/lib/contents";
+import { TalkContent } from "lib/contents";
 
 const Page = (): JSX.Element => (
   <div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getScrollPosition } from "src/lib/helper";
+import { getScrollPosition } from "lib/helper";
 
 export default function useScrollValue(): number {
   const [scroll, setScroll] = useState(0);

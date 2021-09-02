@@ -1,10 +1,10 @@
 import dayjs from "dayjs";
 import { useCallback, useRef } from "react";
 import styles from "./ProjectHeading.module.scss";
-import { ProjectContentHead } from "src/lib/contents";
-import FixedImage from "src/components/functions/FixedImage";
-import { formatDisplayDate, formatExceededTime } from "src/lib/helper";
-import useElementSize from "src/lib/fooks/element-size";
+import { ProjectContentHead } from "lib/contents";
+import FixedImage from "components/functions/FixedImage";
+import { formatDisplayDate, formatExceededTime } from "lib/helper";
+import useElementSize from "lib/fooks/element-size";
 
 const thumbnailWidthRate = 0.4;
 const thumbnailBorderWidth = 2;

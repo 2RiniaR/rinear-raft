@@ -1,17 +1,16 @@
-import { TalkContent, ProjectContent, ContentHead, Content } from "src/lib/contents";
-
-import bustersMission from "src/data/contents/projects/busters-mission";
-import mageSimulator from "src/data/contents/projects/mage-simulator";
-import marvelous from "src/data/contents/projects/marvelous";
-import mazeEscape from "src/data/contents/projects/maze-escape";
-import popcornChef from "src/data/contents/projects/popcorn-chef";
-import rinearOfficialSite from "src/data/contents/projects/rinear-official-site";
-import individualSoftwareDesign from "src/data/contents/talks/individual-software-design";
-import introduction from "src/data/contents/talks/introduction";
-import lookBackBackups1 from "src/data/contents/talks/look-back-backups-1";
-import lookBackBackups2 from "src/data/contents/talks/look-back-backups-2";
-import popcornChefNewModes from "src/data/contents/talks/popcorn-chef-new-modes";
-import viewingSiteWithCoffee from "src/data/contents/talks/viewing-site-with-coffee";
+import bustersMission from "./projects/busters-mission";
+import mageSimulator from "./projects/mage-simulator";
+import marvelous from "./projects/marvelous";
+import mazeEscape from "./projects/maze-escape";
+import popcornChef from "./projects/popcorn-chef";
+import rinearOfficialSite from "./projects/rinear-official-site";
+import individualSoftwareDesign from "./talks/individual-software-design";
+import introduction from "./talks/introduction";
+import lookBackBackups1 from "./talks/look-back-backups-1";
+import lookBackBackups2 from "./talks/look-back-backups-2";
+import popcornChefNewModes from "./talks/popcorn-chef-new-modes";
+import viewingSiteWithCoffee from "./talks/viewing-site-with-coffee";
+import { TalkContent, ProjectContent, ContentHead, Content } from "lib/contents";
 
 class ContentsRepository {
   private news: Content[] = [introduction, viewingSiteWithCoffee, rinearOfficialSite, popcornChef];

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Background.module.scss";
-import ConstantSizeParallax from "src/components/functions/ConstantSizeParallax";
+import ConstantSizeParallax from "components/functions/ConstantSizeParallax";
 
 const Background = (): JSX.Element => (
   <div className={styles.container}>

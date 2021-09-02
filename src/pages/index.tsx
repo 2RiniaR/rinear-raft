@@ -1,4 +1,4 @@
-import HomePage from "src/components/templates/home/HomePage";
+import HomePage from "components/templates/home/HomePage";
 
 const Page = (): JSX.Element => <HomePage />;
 
