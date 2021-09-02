@@ -1,6 +1,6 @@
 import React, { ReactNode, useCallback, useRef } from "react";
 import styles from "./ConstantSizeParallax.module.scss";
-import FixedParallax from "components/functions/Parallax";
+import FixedParallax from "components/functions/parallax/Parallax";
 import useElementSize from "lib/fooks/element-size";
 import useViewSize from "lib/fooks/view-size";
 

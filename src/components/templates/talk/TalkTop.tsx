@@ -1,8 +1,10 @@
 import React from "react";
 import dayjs from "dayjs";
 import styles from "./TalkTop.module.scss";
+import StaticImage from "components/functions/image/StaticImage";
 import { TalkContent } from "lib/contents";
 import { formatExceededTime } from "lib/helper";
+import talksPic from "public/img/talks.png";
 
 type Props = {
   content: TalkContent;
@@ -11,7 +13,7 @@ type Props = {
 const TalkTop = ({ content }: Props): JSX.Element => (
   <div className={styles.container}>
     <div className={styles.title}>
-      <img className={styles.logo} src="/img/talks.png" alt="" />
+      <StaticImage className={styles.logo} src={talksPic} alt="トーク" />
       <div className={styles.display}>
         <h1 className={styles.text}>{content.title}</h1>
         <h3 className={styles.index}>#{content.index}</h3>

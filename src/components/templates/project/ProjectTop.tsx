@@ -1,9 +1,11 @@
 import React from "react";
 import dayjs from "dayjs";
 import styles from "./ProjectTop.module.scss";
+import StaticImage from "components/functions/image/StaticImage";
 import { ProjectContent } from "lib/contents";
 import { formatDisplayDate, formatExceededTime } from "lib/helper";
-import FixedImage from "components/functions/FixedImage";
+import FixedImage from "components/functions/image/FixedImage";
+import projectsPic from "public/img/projects.png";
 
 type Props = {
   content: ProjectContent;
@@ -12,7 +14,7 @@ type Props = {
 const ProjectTop = ({ content }: Props): JSX.Element => (
   <div className={styles.container}>
     <div className={styles.title}>
-      <img className={styles.logo} src="/img/projects.png" alt="" />
+      <StaticImage className={styles.logo} src={projectsPic} alt="プロジェクト" />
       <div className={styles.display}>
         <h1 className={styles.text}>{content.title}</h1>
         <h3 className={styles.releasedAt}>{content.releasedAt ? formatDisplayDate(content.releasedAt) : "---"}</h3>

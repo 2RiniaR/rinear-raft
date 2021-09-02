@@ -18,10 +18,12 @@
 
     @include global.media(phone) {
       height: 3rem;
+      width: 3rem;
     }
 
     @include global.media(tablet) {
       height: 4rem;
+      width: 4rem;
     }
   }
 
