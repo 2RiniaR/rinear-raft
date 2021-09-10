@@ -1,9 +1,7 @@
 @use "global";
 
 .container {
-  max-width: 25rem;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +13,6 @@
   }
 
   .title {
-    @include global.full-area;
     color: global.$light1;
     font-size: 2rem;
     letter-spacing: 1rem;
