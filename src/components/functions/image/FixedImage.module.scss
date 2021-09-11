@@ -1,9 +1,3 @@
-@use "global";
-
 .container {
-  @include global.full-area;
-
-  .image {
-    object-fit: contain;
-  }
+  position: relative;
 }
