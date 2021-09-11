@@ -1,6 +1,6 @@
 import React, { ReactNode, useCallback, useRef } from "react";
 import styles from "./ConstantSizeParallax.module.scss";
-import FixedParallax from "components/functions/parallax/Parallax";
+import Parallax from "components/functions/parallax/Parallax";
 import useElementSize from "lib/fooks/element-size";
 import useViewSize from "lib/fooks/view-size";
 
@@ -23,11 +23,11 @@ const ConstantSizeParallax = ({ children, maxSpeed = undefined }: Props): JSX.El
   return (
     <div className={styles.container} ref={containerRef}>
       <div className={styles.parallax}>
-        <FixedParallax startInnerOrigin={0} endInnerOrigin={getEndInnerOrigin()}>
+        <Parallax startInnerOrigin={0} endInnerOrigin={getEndInnerOrigin()}>
           <div className={styles.inner} ref={innerRef}>
             {children}
           </div>
-        </FixedParallax>
+        </Parallax>
       </div>
     </div>
   );
