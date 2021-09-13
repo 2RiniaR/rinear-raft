@@ -8,8 +8,8 @@
   justify-content: left;
 
   @include global.media(phone) {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @include global.media(tablet) {
@@ -24,7 +24,8 @@
 
   .element {
     @include global.media(phone) {
-      // not implemented yet
+      width: 100%;
+      margin-bottom: 4rem;
     }
 
     @include global.media(tablet) {

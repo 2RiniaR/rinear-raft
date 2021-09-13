@@ -1,15 +1,11 @@
 @use "global";
 
 @include global.media(phone) {
-  // not implemented yet
-}
-
-@include global.media(tablet) {
   .container {
     width: 100%;
     display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 75% 2.5% 22.5%;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 100%;
 
     .mainThumbnail {
       grid-column: 1;
@@ -17,7 +13,97 @@
 
       .place {
         width: 100%;
-        border: global.$light1 solid 2px;
+      }
+    }
+
+    .subThumbnailsContainer {
+      grid-column: 1;
+      grid-row: 2;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      padding-top: 0.3rem;
+
+      .subThumbnail {
+        flex-grow: 1;
+
+        &:not(:last-child) {
+          margin-right: 0.3rem;
+        }
+      }
+    }
+
+    .textContainer {
+      height: 100%;
+      grid-column: 1;
+      grid-row: 3;
+      display: grid;
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto 1fr;
+      padding: 1rem 1rem 0 1rem;
+
+      .title {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 1.4rem;
+        text-align: right;
+        padding-bottom: 0.3rem;
+        color: global.$light2;
+        border-bottom: global.$light1 solid 2px;
+      }
+
+      .description {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        color: global.$light2;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+        text-indent: 1rem;
+      }
+
+      .updatedAt {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        font-size: 1rem;
+        text-align: right;
+        padding: 0.3rem;
+        color: global.$light1;
+      }
+
+      .releasedAt {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: auto;
+        border-bottom: global.$light1 solid 2px;
+
+        .text {
+          display: inline-block;
+          padding: 0.3rem 0.8rem 0.3rem 0.3rem;
+          font-size: 1rem;
+          text-align: left;
+          color: #333;
+          background: global.$light1;
+        }
+      }
+    }
+  }
+}
+
+@include global.media(tablet) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 75.138889% 1% 1fr;
+
+    .mainThumbnail {
+      grid-column: 1;
+      grid-row: 1;
+
+      .place {
+        width: 100%;
       }
     }
 
@@ -31,7 +117,6 @@
 
       .subThumbnail {
         width: 100%;
-        border: global.$light1 solid 2px;
       }
     }
 
@@ -61,6 +146,7 @@
         font-size: 1rem;
         margin-bottom: 1rem;
         margin-top: 0.5rem;
+        text-indent: 1rem;
       }
 
       .updatedAt {
@@ -106,7 +192,6 @@
 
       .place {
         width: 100%;
-        border: global.$light1 solid 2px;
       }
     }
 
@@ -116,17 +201,11 @@
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      justify-content: space-between;
-      background: rgba(global.$dark1, 70%);
-      padding: 0.6rem 2rem 0.6rem 2rem;
+      justify-content: flex-end;
 
       .subThumbnail {
-        width: 30%;
-        border: global.$light1 solid 2px;
-
-        &:not(:last-child) {
-          margin-right: 5%;
-        }
+        width: calc(100% / 3 * 0.97);
+        margin-left: calc(100% / 3 * 0.03);
       }
     }
 
@@ -137,6 +216,7 @@
       display: grid;
       grid-template-rows: auto auto auto;
       grid-template-columns: auto 1fr;
+      padding-bottom: 1rem;
 
       .title {
         grid-column: 2;
@@ -153,9 +233,9 @@
         grid-row: 3;
         color: global.$light2;
         font-size: 1rem;
-        margin-bottom: 1rem;
         margin-left: 3rem;
         margin-top: 0.5rem;
+        text-indent: 1rem;
       }
 
       .updatedAt {
