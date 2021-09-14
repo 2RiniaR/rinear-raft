@@ -22,9 +22,7 @@ const ProjectPage = ({ content }: Props): JSX.Element => (
       <div className={styles.top}>
         <ProjectTop content={content} />
       </div>
-      <div className={styles.body}>
-        <content.Page />
-      </div>
+      <div className={styles.body}>{/*<content.Page setChapters={} />*/}</div>
       <div className={styles.footer}>
         <Footer />
       </div>

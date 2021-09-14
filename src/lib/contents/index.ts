@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import { RefObject } from "react";
 
 export type { ProjectContentHead, ProjectContent } from "./projects";
 export type { TalkContentHead, TalkContent } from "./talks";
@@ -10,6 +11,11 @@ const ContentGenres = {
 
 export type ContentGenre = typeof ContentGenres[keyof typeof ContentGenres];
 
+export type ChapterPoint = {
+  name: string;
+  ref: RefObject<HTMLElement>;
+};
+
 export type ContentHead = {
   genre: ContentGenre;
   id: string;
@@ -18,8 +24,12 @@ export type ContentHead = {
   description: string;
 };
 
+export type ContentPageProps = {
+  setChapters: (chapters: ChapterPoint[]) => void;
+};
+
 export type Content = ContentHead & {
-  Page: () => JSX.Element;
+  Page: (props: ContentPageProps) => JSX.Element;
 };
 
 export function getContentPath(content: ContentHead): string {
