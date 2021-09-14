@@ -25,6 +25,11 @@
       height: 4rem;
       width: 4rem;
     }
+
+    @include global.media(desktop) {
+      height: 4rem;
+      width: 4rem;
+    }
   }
 
   .text {
@@ -39,6 +44,16 @@
     }
 
     @include global.media(tablet) {
+      $letter-spacing: 1rem;
+      font-size: 2rem;
+      letter-spacing: $letter-spacing;
+      &::after {
+        content: "";
+        margin-right: -$letter-spacing;
+      }
+    }
+
+    @include global.media(desktop) {
       $letter-spacing: 1rem;
       font-size: 2rem;
       letter-spacing: $letter-spacing;
