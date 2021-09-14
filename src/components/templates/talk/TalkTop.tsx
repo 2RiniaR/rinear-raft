@@ -37,7 +37,7 @@ const TalkTop = ({ content, chapters }: Props): JSX.Element => (
             onClick={() =>
               chapter.ref?.current?.scrollIntoView({
                 behavior: "smooth",
-                block: "center"
+                block: "start"
               })
             }
           >

@@ -11,6 +11,7 @@
 
   @include global.media(phone) {
     padding-top: 2rem;
+    width: 100%;
   }
 
   @include global.media(tablet) {
@@ -29,11 +30,24 @@
 }
 
 .body {
-  padding-left: 8rem;
-  padding-right: 8rem;
   color: global.$light1;
   font-size: 1rem;
-  margin-bottom: 6rem;
+
+  @include global.media(phone) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  @include global.media(tablet) {
+    // not implemented yet
+  }
+
+  @include global.media(desktop) {
+    padding-left: 8rem;
+    padding-right: 8rem;
+    margin-bottom: 6rem;
+  }
 }
 
 .footer {
@@ -41,5 +55,15 @@
 }
 
 .back {
-  margin: 2rem 0 3rem 3rem;
+  @include global.media(phone) {
+    margin: 2rem 0 3rem 1rem;
+  }
+
+  @include global.media(tablet) {
+    // not implemented yet
+  }
+
+  @include global.media(desktop) {
+    margin: 2rem 0 3rem 3rem;
+  }
 }
