@@ -10,11 +10,9 @@ import lookBackBackups1 from "./talks/look-back-backups-1";
 import lookBackBackups2 from "./talks/look-back-backups-2";
 import popcornChefNewModes from "./talks/popcorn-chef-new-modes";
 import viewingSiteWithCoffee from "./talks/viewing-site-with-coffee";
-import { TalkContent, ProjectContent, ContentHead, Content } from "lib/contents";
+import { TalkContent, ProjectContent, ContentHead } from "lib/contents";
 
 class ContentsRepository {
-  private news: Content[] = [introduction, viewingSiteWithCoffee, rinearOfficialSite, popcornChef];
-
   private contents: {
     talks: TalkContent[];
     projects: ProjectContent[];
@@ -29,10 +27,6 @@ class ContentsRepository {
     ],
     projects: [bustersMission, mageSimulator, marvelous, mazeEscape, popcornChef, rinearOfficialSite]
   };
-
-  public getNews(): Content[] {
-    return this.news;
-  }
 
   public getTalkContents(sort: "none" | "updatedAt" = "none"): TalkContent[] {
     const contents = [...this.contents.talks];

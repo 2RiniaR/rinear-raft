@@ -1,0 +1,56 @@
+@use "global";
+
+.content {
+  section {
+    margin: 8rem 0;
+  }
+
+  h1 {
+    position: relative;
+    font-size: 1.6rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: rgba(global.$light1, 0.3) solid 6px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 4rem;
+      width: 4rem;
+      opacity: 20%;
+      left: -2rem;
+      top: -2rem;
+      background-image: url("/img/talks.png");
+      background-size: contain;
+    }
+  }
+
+  p {
+    margin-left: 1rem;
+    text-indent: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.6rem;
+  }
+
+  strong {
+    font-size: 1.2rem;
+    color: #c4bd92;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 0.5rem;
+      height: 0;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0.5rem;
+      height: 0;
+    }
+  }
+}

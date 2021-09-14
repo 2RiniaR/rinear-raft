@@ -7,10 +7,21 @@
 
 .front {
   position: relative;
-  margin-left: 8rem;
-  margin-right: 8rem;
   background-color: rgba(global.$dark1, 0.7);
-  padding-top: 5rem;
+
+  @include global.media(phone) {
+    padding-top: 2rem;
+  }
+
+  @include global.media(tablet) {
+    // not implemented yet
+  }
+
+  @include global.media(desktop) {
+    margin-left: 8rem;
+    margin-right: 8rem;
+    padding-top: 3rem;
+  }
 }
 
 .top {
@@ -27,4 +38,8 @@
 
 .footer {
   padding-bottom: 2rem;
+}
+
+.back {
+  margin: 2rem 0 3rem 3rem;
 }

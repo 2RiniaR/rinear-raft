@@ -1,0 +1,27 @@
+@use "global";
+
+.container {
+  color: global.$light1;
+  display: inline-block;
+
+  .link {
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+
+    .icon {
+      position: relative;
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-right: 1rem;
+    }
+
+    .text {
+      font-size: 1.2rem;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
