@@ -16,6 +16,13 @@
     width: 4rem;
     height: 4rem;
   }
+
+  @include global.media(desktop) {
+    top: 2rem;
+    left: 2rem;
+    width: 4rem;
+    height: 4rem;
+  }
 }
 
 .topButton {
@@ -30,6 +37,13 @@
   }
 
   @include global.media(tablet) {
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  @include global.media(desktop) {
     bottom: 2rem;
     right: 2rem;
     width: 4rem;
