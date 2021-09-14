@@ -15,18 +15,32 @@
   }
 
   @include global.media(tablet) {
-    // not implemented yet
+    margin-left: 6%;
+    margin-right: 6%;
+    padding-top: 3rem;
   }
 
   @include global.media(desktop) {
-    margin-left: 8rem;
-    margin-right: 8rem;
+    margin-left: 10%;
+    margin-right: 10%;
     padding-top: 3rem;
   }
 }
 
 .top {
   margin-bottom: 6rem;
+
+  @include global.media(phone) {
+    margin-bottom: 6rem;
+  }
+
+  @include global.media(tablet) {
+    margin-bottom: 6rem;
+  }
+
+  @include global.media(desktop) {
+    margin-bottom: 12rem;
+  }
 }
 
 .body {
@@ -40,12 +54,14 @@
   }
 
   @include global.media(tablet) {
-    // not implemented yet
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 6rem;
   }
 
   @include global.media(desktop) {
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding-left: 10%;
+    padding-right: 10%;
     margin-bottom: 6rem;
   }
 }
@@ -60,7 +76,7 @@
   }
 
   @include global.media(tablet) {
-    // not implemented yet
+    margin: 2rem 0 3rem 3rem;
   }
 
   @include global.media(desktop) {
