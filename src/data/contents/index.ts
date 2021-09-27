@@ -1,15 +1,9 @@
 import bustersMission from "./projects/busters-mission";
-import mageSimulator from "./projects/mage-simulator";
 import marvelous from "./projects/marvelous";
 import mazeEscape from "./projects/maze-escape";
 import popcornChef from "./projects/popcorn-chef";
 import rinearOfficialSite from "./projects/rinear-official-site";
-import individualSoftwareDesign from "./talks/individual-software-design";
 import introduction from "./talks/introduction";
-import lookBackBackups1 from "./talks/look-back-backups-1";
-import lookBackBackups2 from "./talks/look-back-backups-2";
-import popcornChefNewModes from "./talks/popcorn-chef-new-modes";
-import viewingSiteWithCoffee from "./talks/viewing-site-with-coffee";
 import { TalkContent, ProjectContent, ContentHead } from "lib/contents";
 
 class ContentsRepository {
@@ -17,15 +11,8 @@ class ContentsRepository {
     talks: TalkContent[];
     projects: ProjectContent[];
   } = {
-    talks: [
-      individualSoftwareDesign,
-      introduction,
-      lookBackBackups1,
-      lookBackBackups2,
-      popcornChefNewModes,
-      viewingSiteWithCoffee
-    ],
-    projects: [bustersMission, mageSimulator, marvelous, mazeEscape, popcornChef, rinearOfficialSite]
+    talks: [introduction],
+    projects: [bustersMission, marvelous, mazeEscape, popcornChef, rinearOfficialSite]
   };
 
   public getTalkContents(sort: "none" | "updatedAt" = "none"): TalkContent[] {
