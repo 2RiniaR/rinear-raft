@@ -4,6 +4,7 @@ import styles from "../projects.module.scss";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
 import ExternalLink from "components/functions/link/ExternalLink";
 import Space from "components/parts/Space";
+import ComingSoon from "components/parts/ComingSoon";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
@@ -19,6 +20,19 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
 
   return (
     <main className={styles.content}>
+      <section ref={refs.movie.ref}>
+        <h1>{refs.movie.name}</h1>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/YzqFIVbV4-c"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </section>
+
       <section ref={refs.download.ref}>
         <h1>{refs.download.name}</h1>
         <p>
@@ -53,6 +67,11 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
         </ul>
       </section>
 
+      <section ref={refs.strategy.ref}>
+        <h1>{refs.strategy.name}</h1>
+        <ComingSoon />
+      </section>
+
       <section ref={refs.tools.ref}>
         <h1>{refs.tools.name}</h1>
         <h2>言語・ライブラリ</h2>
@@ -60,6 +79,11 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
           <li>C++（Microsoft Visual C++）</li>
           <li>DXライブラリ（https://dxlib.xsrv.jp/）</li>
         </ul>
+      </section>
+
+      <section ref={refs.background.ref}>
+        <h1>{refs.background.name}</h1>
+        <ComingSoon />
       </section>
     </main>
   );
