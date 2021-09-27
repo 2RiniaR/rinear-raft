@@ -10,15 +10,15 @@
 
   .header {
     position: relative;
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-bottom: 2rem;
 
     .logo {
       position: absolute;
-      height: 5rem;
-      width: 5rem;
+      height: 4rem;
+      width: 4rem;
       opacity: 40%;
-      right: 1rem;
+      left: -0.5rem;
       top: -4rem;
     }
 
@@ -81,9 +81,7 @@
 
   .description {
     margin-top: 2rem;
-    padding-left: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     border-left: rgba(global.$light1, 30%) solid 0.5rem;
     background-color: rgba(global.$light1, 20%);
     color: global.$light1;
@@ -101,7 +99,9 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-    padding: 2rem 0 0 0;
+    border-left: rgba(global.$light1, 0.2) solid 5px;
+    border-right: rgba(global.$light1, 0.2) solid 5px;
+    padding: 1rem;
 
     .heading {
       text-align: center;
@@ -134,16 +134,16 @@
 
   .header {
     position: relative;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
 
     .logo {
       position: absolute;
-      height: 6rem;
-      width: 6rem;
+      height: 5rem;
+      width: 5rem;
       opacity: 40%;
-      right: 1rem;
-      top: -4rem;
+      left: -0.5rem;
+      top: -5rem;
     }
 
     .display {
@@ -202,9 +202,7 @@
   }
 
   .description {
-    padding-left: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     border-left: rgba(global.$light1, 30%) solid 0.5rem;
     background-color: rgba(global.$light1, 20%);
     color: global.$light1;

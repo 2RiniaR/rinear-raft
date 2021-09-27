@@ -1,0 +1,17 @@
+@use "global";
+
+.container {
+  margin: 0 auto 1.6rem auto;
+
+  @include global.media(phone) {
+    width: 100%;
+  }
+
+  @include global.media(tablet) {
+    width: 100%;
+  }
+
+  @include global.media(desktop) {
+    width: 70%;
+  }
+}
