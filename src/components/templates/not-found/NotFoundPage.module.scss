@@ -1,0 +1,79 @@
+@use "global";
+
+.container {
+  position: relative;
+  @include global.full-area;
+}
+
+.front {
+  position: relative;
+  height: 100vh;
+  background-color: rgba(global.$dark1, 0.7);
+
+  @include global.media(phone) {
+    padding-top: 2rem;
+    width: 100%;
+  }
+
+  @include global.media(tablet) {
+    margin-left: 6%;
+    margin-right: 6%;
+    padding-top: 3rem;
+  }
+
+  @include global.media(desktop) {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 3rem;
+  }
+}
+
+.body {
+  margin-bottom: 6rem;
+  display: flex;
+  width: 100%;
+  color: global.$light1;
+  flex-direction: column;
+  justify-content: center;
+
+  @include global.media(phone) {
+    margin-bottom: 6rem;
+  }
+
+  @include global.media(tablet) {
+    margin-bottom: 6rem;
+  }
+
+  @include global.media(desktop) {
+    margin-bottom: 12rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+.footer {
+  padding-bottom: 2rem;
+}
+
+.back {
+  @include global.media(phone) {
+    margin: 2rem 0 3rem 1rem;
+  }
+
+  @include global.media(tablet) {
+    margin: 2rem 0 3rem 3rem;
+  }
+
+  @include global.media(desktop) {
+    margin: 2rem 0 3rem 3rem;
+  }
+}
