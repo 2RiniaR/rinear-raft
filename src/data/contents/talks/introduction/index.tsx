@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
 import styles from "../talks.module.scss";
 import { ChapterPoint, ContentPageProps, TalkContent } from "lib/contents";
-import Space from "components/parts/talks/Space";
+import Space from "components/parts/Space";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
@@ -16,7 +16,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   useEffect(() => setChapters(Object.values(refs)), []);
 
   return (
-    <div className={styles.content}>
+    <main className={styles.content}>
       <section ref={refs.aboutHomePage.ref}>
         <h1>{refs.aboutHomePage.name}</h1>
         <p>ありがとうございます。前々から作品置き場みたいなのが欲しかったんですよね。</p>
@@ -83,7 +83,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
           ひとまず、私はここを活動拠点としてもっと自分のやりたいことをします。先が見えない冒険感があって良いんですよね。形から入るタイプとも言いますが。
         </p>
       </section>
-    </div>
+    </main>
   );
 };
 
