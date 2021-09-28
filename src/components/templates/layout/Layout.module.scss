@@ -37,14 +37,14 @@
   }
 
   @include global.media(tablet) {
-    bottom: 2rem;
+    bottom: 6rem;
     right: 2rem;
     width: 4rem;
     height: 4rem;
   }
 
   @include global.media(desktop) {
-    bottom: 2rem;
+    bottom: 6rem;
     right: 2rem;
     width: 4rem;
     height: 4rem;
