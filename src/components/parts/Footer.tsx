@@ -3,6 +3,7 @@ import FullImage from "../functions/image/FullImage";
 import styles from "./Footer.module.scss";
 import ExternalLink from "components/functions/link/ExternalLink";
 import logoPic from "public/img/logo.png";
+import packageSettings from "public/../package.json";
 
 const Footer = (): JSX.Element => (
   <div className={styles.container}>
@@ -22,6 +23,7 @@ const Footer = (): JSX.Element => (
       </ExternalLink>
     </div>
     <h3 className={styles.copyright}>Copyright © 2021 RineaR All rights reserved.</h3>
+    <h5 className={styles.version}>version {packageSettings.version}</h5>
   </div>
 );
 
