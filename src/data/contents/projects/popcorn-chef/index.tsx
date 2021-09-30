@@ -61,8 +61,8 @@ const popcornChef: ProjectContent = {
     "/contents/projects/popcorn-chef/game4.jpg",
     "/contents/projects/popcorn-chef/lobby.jpg"
   ],
-  updatedAt: dayjs("2020-04-05"),
-  releasedAt: dayjs("2021-04-30"),
+  updatedAt: dayjs("2021-10-01"),
+  releasedAt: dayjs("2020-04-05"),
   description:
     "2人のプレイヤーがリアルタイムでポップコーンを調理し、調理したポップコーンを食べた量で競う2人通信対戦のカジュアルゲーム。",
   Page

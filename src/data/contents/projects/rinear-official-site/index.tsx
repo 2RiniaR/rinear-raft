@@ -49,8 +49,8 @@ const rinearOfficialSite: ProjectContent = {
     "/contents/projects/rinear-official-site/HomePage3.jpg",
     "/contents/projects/rinear-official-site/HomePage4.jpg"
   ],
-  updatedAt: dayjs("2021-07-24"),
-  releasedAt: dayjs("2021-04-30"),
+  updatedAt: dayjs("2021-10-01"),
+  releasedAt: dayjs("2021-10-11"),
   description: "RineaRのプロジェクトや投稿を公開するホームページ。Riniaが活動拠点とする筏。",
   Page
 };

@@ -61,8 +61,8 @@ const mazeEscape: ProjectContent = {
     "/contents/projects/maze-escape/stage2.jpg",
     "/contents/projects/maze-escape/result.jpg"
   ],
-  updatedAt: dayjs("2016-10-18"),
-  releasedAt: dayjs("2021-04-30"),
+  updatedAt: dayjs("2021-09-28"),
+  releasedAt: dayjs("2016-10-18"),
   description: "上下左右にプレイヤーを移動し、制限時間以内にゴールを目指す2Dアクション脱出ゲーム。",
   Page
 };
