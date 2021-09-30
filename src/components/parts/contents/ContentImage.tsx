@@ -1,15 +1,15 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./ContentImage.module.scss";
-import FixedImage from "components/functions/image/FixedImage";
 
 type Props = {
-  src: string;
+  src: StaticImageData;
   alt: string;
 };
 
 const ContentImage = ({ src, alt }: Props): JSX.Element => (
   <div className={styles.container}>
-    <FixedImage src={src} alt={alt} />
+    <Image src={src} alt={alt} layout="responsive" width={src.width} height={src.height} sizes="100%" />
   </div>
 );
 

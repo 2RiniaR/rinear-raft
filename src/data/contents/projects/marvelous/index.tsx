@@ -1,62 +1,52 @@
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
 import styles from "../projects.module.scss";
+import Point from "./Point";
+import Praise from "./Praise";
+import Howto from "./Howto";
+import Bonuses from "./Bonuses";
+import Tools from "./Tools";
+import Background from "./Background";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
-import ExternalLink from "components/functions/link/ExternalLink";
-import Space from "components/parts/Space";
+import { Chapter } from "components/parts/contents";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
-    download: { name: "ダウンロード", ref: useRef(null) },
-    rule: { name: "ルール", ref: useRef(null) },
-    tools: { name: "使用ツール", ref: useRef(null) }
+    howto: { name: "利用方法", ref: useRef(null) },
+    point: { name: "えらいポイント", ref: useRef(null) },
+    praise: { name: "人を褒める", ref: useRef(null) },
+    bonuses: { name: "えらいことを評価する", ref: useRef(null) },
+    tools: { name: "使用ツール", ref: useRef(null) },
+    background: { name: "裏話", ref: useRef(null) }
   };
 
   useEffect(() => setChapters(Object.values(refs)), []);
 
   return (
     <main className={styles.content}>
-      <section ref={refs.download.ref}>
-        <h1>{refs.download.name}</h1>
-        <p>
-          ゲームのファイルを
-          <ExternalLink href="https://www.dropbox.com/sh/gwrs6nz2tadpmz0/AADOYp5cqjAhW-ZYqsSsYehQa?dl=0">
-            ここ
-          </ExternalLink>
-          からダウンロードしてください。
-        </p>
-      </section>
+      <Chapter title={refs.howto.name} jumpRef={refs.howto.ref}>
+        <Howto />
+      </Chapter>
 
-      <section ref={refs.rule.ref}>
-        <h1>{refs.rule.name}</h1>
-        <p>
-          プレイヤーを上下左右に移動し、制限時間以内にステージのゴールに触ればクリア。
-          ただし、残り時間が0になるか残りライフが0になるとゲームオーバー。ライフは「針山」や「マグマ」に触れると1だけ減少します。
-          ステージ内に散らばっているアイテムを駆使してクリア・高スコアを狙おう！
-        </p>
-        <Space size={2} />
-        <h2>操作方法（メニュー時）</h2>
-        <ul>
-          <li>↑↓←→：カーソル移動</li>
-          <li>Z：決定</li>
-        </ul>
-        <Space size={2} />
-        <h2>操作方法（ゲーム時）</h2>
-        <ul>
-          <li>↑↓←→：移動</li>
-          <li>左Shift + ↑↓←→：低速移動</li>
-          <li>Space：ポーズメニュー</li>
-        </ul>
-      </section>
+      <Chapter title={refs.point.name} jumpRef={refs.point.ref}>
+        <Point />
+      </Chapter>
 
-      <section ref={refs.tools.ref}>
-        <h1>{refs.tools.name}</h1>
-        <h2>言語・ライブラリ</h2>
-        <ul>
-          <li>C++（Microsoft Visual C++）</li>
-          <li>DXライブラリ（https://dxlib.xsrv.jp/）</li>
-        </ul>
-      </section>
+      <Chapter title={refs.praise.name} jumpRef={refs.praise.ref}>
+        <Praise />
+      </Chapter>
+
+      <Chapter title={refs.bonuses.name} jumpRef={refs.bonuses.ref}>
+        <Bonuses />
+      </Chapter>
+
+      <Chapter title={refs.tools.name} jumpRef={refs.tools.ref}>
+        <Tools />
+      </Chapter>
+
+      <Chapter title={refs.background.name} jumpRef={refs.background.ref}>
+        <Background />
+      </Chapter>
     </main>
   );
 };
