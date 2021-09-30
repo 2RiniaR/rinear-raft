@@ -6,17 +6,26 @@ import rinearOfficialSite from "./projects/rinear-official-site";
 import introduction from "./talks/introduction";
 import { TalkContent, ProjectContent, ContentHead } from "lib/contents";
 
+const talks = [introduction];
+const projects = [bustersMission, marvelous, mazeEscape, popcornChef, rinearOfficialSite];
+
 class ContentsRepository {
-  private contents: {
-    talks: TalkContent[];
-    projects: ProjectContent[];
+  public contents: {
+    talks: { [id: string]: TalkContent };
+    projects: { [id: string]: ProjectContent };
   } = {
-    talks: [introduction],
-    projects: [bustersMission, marvelous, mazeEscape, popcornChef, rinearOfficialSite]
+    talks: talks.reduce<{ [id: string]: TalkContent }>((prev, curr) => {
+      prev[curr.id] = curr;
+      return prev;
+    }, {}),
+    projects: projects.reduce<{ [id: string]: ProjectContent }>((prev, curr) => {
+      prev[curr.id] = curr;
+      return prev;
+    }, {})
   };
 
   public getTalkContents(sort: "none" | "updatedAt" = "none"): TalkContent[] {
-    const contents = [...this.contents.talks];
+    const contents = Object.values(this.contents.talks);
     if (sort === "updatedAt")
       contents.sort((a, b) => {
         if (b.index > a.index) return 1;
@@ -26,8 +35,12 @@ class ContentsRepository {
     return contents;
   }
 
+  public getTalk(id: string): TalkContent {
+    return this.contents.talks[id];
+  }
+
   public getProjectContents(sort: "none" | "updatedAt" = "none"): ProjectContent[] {
-    const contents = [...this.contents.projects];
+    const contents = Object.values(this.contents.projects);
     if (sort === "updatedAt")
       contents.sort((a, b) => {
         if (b.updatedAt.isAfter(a.updatedAt)) return 1;
@@ -35,6 +48,10 @@ class ContentsRepository {
         return -1;
       });
     return contents;
+  }
+
+  public getProject(id: string): ProjectContent {
+    return this.contents.projects[id];
   }
 }
 
