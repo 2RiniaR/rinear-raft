@@ -61,7 +61,7 @@ const bustersMission: ProjectContent = {
     "/contents/projects/busters-mission/stage1.jpg",
     "/contents/projects/busters-mission/stage2.jpg"
   ],
-  updatedAt: dayjs("2018-09-05"),
+  updatedAt: dayjs("2021-09-28"),
   releasedAt: dayjs("2018-09-05"),
   description: "敵の攻撃を避けながら、ステージ内にいるすべての敵を倒していく2Dアクションゲーム。",
   Page
