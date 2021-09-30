@@ -1,11 +1,43 @@
 import dayjs from "dayjs";
-import { ProjectContent } from "lib/contents";
+import { useEffect, useRef } from "react";
+import styles from "../projects.module.scss";
+import Tools from "./Tools";
+import Background from "./Background";
+import Story from "./Story";
+import Pages from "./Pages";
+import { Chapter } from "components/parts/contents";
+import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
 
-const Page = (): JSX.Element => (
-  <div>
-    <h2>RineaR公式サイト</h2>
-  </div>
-);
+const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
+  const refs: { [name: string]: ChapterPoint } = {
+    story: { name: "制作経緯", ref: useRef(null) },
+    pages: { name: "ページ構成", ref: useRef(null) },
+    tools: { name: "使用ツール", ref: useRef(null) },
+    background: { name: "裏話", ref: useRef(null) }
+  };
+
+  useEffect(() => setChapters(Object.values(refs)), []);
+
+  return (
+    <main className={styles.content}>
+      <Chapter title={refs.story.name} jumpRef={refs.story.ref}>
+        <Story />
+      </Chapter>
+
+      <Chapter title={refs.pages.name} jumpRef={refs.pages.ref}>
+        <Pages />
+      </Chapter>
+
+      <Chapter title={refs.tools.name} jumpRef={refs.tools.ref}>
+        <Tools />
+      </Chapter>
+
+      <Chapter title={refs.background.name} jumpRef={refs.background.ref}>
+        <Background />
+      </Chapter>
+    </main>
+  );
+};
 
 const rinearOfficialSite: ProjectContent = {
   genre: "projects",
