@@ -4,54 +4,8 @@
   position: relative;
   background: #666666;
   overflow-x: hidden;
-}
-
-.top {
-  width: 100%;
-  margin-bottom: -4rem;
-}
-
-.body {
-  position: relative;
-  background: linear-gradient(to bottom, transparent 0%, #666666 16rem, #666666 100%);
-}
-
-.about {
-  position: relative;
-  width: 100%;
-  padding-top: 30vh;
-
-  @include global.media(phone) {
-    margin-bottom: 15vh;
-  }
-
-  @include global.media(tablet) {
-    margin-bottom: 15vh;
-  }
-
-  @include global.media(desktop) {
-    margin-bottom: 20vh;
-  }
-}
-
-.menu {
-  position: relative;
-  width: 100%;
-
-  @include global.media(phone) {
-    margin-bottom: 15vh;
-  }
-
-  @include global.media(tablet) {
-    margin-bottom: 15vh;
-  }
-
-  @include global.media(desktop) {
-    margin-bottom: 20vh;
-  }
-}
-
-.footer {
-  margin-top: 10vh;
-  margin-bottom: 2rem;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 25vh;
 }

@@ -1,6 +1,7 @@
 @use "global";
 
 .container {
+  width: 100%;
   margin: 0 auto;
   color: global.$light1;
 }

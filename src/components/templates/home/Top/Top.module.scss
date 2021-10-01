@@ -1,39 +1,29 @@
 @use "global";
 
-.container {
+.layer {
   position: relative;
-  $size: max(200vh, 100vw);
-  width: $size;
-  height: $size;
-  left: calc(-1 * #{$size} / 2 + 50vw);
-}
-
-.parallax1 {
-  position: absolute;
   @include global.full-area;
 
-  .inner {
-    position: relative;
-    height: 100%;
-
-    .background {
-      position: absolute;
-      @include global.full-area;
-    }
-
-    .holeEffect {
-      position: absolute;
-      @include global.full-area;
-    }
+  & > * {
+    position: absolute;
   }
 }
 
-.parallax2 {
-  position: absolute;
-  @include global.full-area;
-}
+.view {
+  position: relative;
+  $width: max(200vh, 100vw);
+  width: $width;
+  height: calc(#{$width} * 1.2);
 
-.element {
-  position: absolute;
-  @include global.full-area;
+  .elements {
+    position: relative;
+    width: $width;
+    height: $width;
+    top: 0;
+    left: calc(-1 * #{$width} / 2 + 50vw);
+
+    & > * {
+      position: absolute;
+    }
+  }
 }

@@ -4,38 +4,38 @@ import HoleEffect from "./HoleEffect";
 import Shadow from "./Shadow";
 import WindEffect from "./WindEffect";
 import TopLogo from "./TopLogo";
-import { assignClasses } from "lib/helper";
 import FixedParallax from "components/functions/parallax/Parallax";
 
+const Layer2 = (): JSX.Element => (
+  <div className={styles.layer}>
+    <Background />
+    <HoleEffect />
+  </div>
+);
+
+const Layer1 = (): JSX.Element => (
+  <div className={styles.layer}>
+    <Shadow />
+  </div>
+);
+
+const Layer0 = (): JSX.Element => (
+  <div className={styles.layer}>
+    <WindEffect />
+    <TopLogo />
+  </div>
+);
+
 const Top = (): JSX.Element => (
-  <div className={styles.container}>
-    <div className={styles.parallax1}>
+  <div className={styles.view}>
+    <div className={styles.elements}>
       <FixedParallax startInnerOrigin={0} endInnerOrigin={-0.7}>
-        <div className={styles.inner}>
-          <div className={styles.background}>
-            <Background />
-          </div>
-          <div className={styles.holeEffect}>
-            <HoleEffect />
-          </div>
-        </div>
+        <Layer2 />
       </FixedParallax>
-    </div>
-
-    <div className={assignClasses(styles.windEffect, styles.element)}>
-      <WindEffect />
-    </div>
-
-    <div className={styles.parallax2}>
       <FixedParallax startInnerOrigin={0} endInnerOrigin={-0.9}>
-        <div className={assignClasses(styles.shadow, styles.element)}>
-          <Shadow />
-        </div>
+        <Layer1 />
       </FixedParallax>
-    </div>
-
-    <div className={assignClasses(styles.logo, styles.element)}>
-      <TopLogo />
+      <Layer0 />
     </div>
   </div>
 );
