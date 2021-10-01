@@ -1,27 +1,8 @@
 @use "global";
 
 @include global.media(phone) {
-  .container {
-    width: 100%;
-    background: #555;
-    padding: 3rem 0;
-
-    .content {
-      display: flex;
-      margin: 0 2rem;
-      flex-direction: column;
-
-      .element {
-        width: 100%;
-
-        &:not(:last-child) {
-          margin-bottom: 2rem;
-        }
-      }
-    }
-  }
-
   .linker {
+    width: 100%;
     display: flex;
     padding: 1rem;
     border-radius: 0.2rem;
@@ -75,24 +56,8 @@
 }
 
 @include global.media(tablet) {
-  .container {
-    width: 100%;
-    background: #555;
-    padding: 3rem 0;
-
-    .content {
-      display: flex;
-      justify-content: space-between;
-      margin: 0 auto;
-      width: min(50rem, 80%);
-
-      .element {
-        width: min(16rem, calc(50% - 3rem));
-      }
-    }
-  }
-
   .linker {
+    width: min(16rem, calc(50% - 3rem));
     display: flex;
     flex-direction: column;
 
@@ -138,24 +103,8 @@
 }
 
 @include global.media(desktop) {
-  .container {
-    width: 100%;
-    background: #555;
-    padding: 3rem 0;
-
-    .content {
-      display: flex;
-      justify-content: space-between;
-      margin: 0 auto;
-      width: min(50rem, 80%);
-
-      .element {
-        width: min(16rem, calc(50% - 3rem));
-      }
-    }
-  }
-
   .linker {
+    width: min(16rem, calc(50% - 3rem));
     display: flex;
     flex-direction: column;
 

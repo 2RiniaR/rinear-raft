@@ -1,20 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import StaticImage from "../../functions/image/StaticImage";
-import styles from "./ContentsMenu.module.scss";
+import styles from "./MenuItem.module.scss";
+import StaticImage from "components/functions/image/StaticImage";
 import CompositeText from "components/functions/text/CompositeText";
-import talksPic from "public/img/talks.png";
-import projectsPic from "public/img/projects.png";
 import menuBorderPic from "public/img/menu_border.svg";
 
-type ElementProps = {
+export type MenuItemProps = {
   href: string;
   name: string;
   iconSrc: StaticImageData;
   description: string;
 };
 
-const Element = ({ href, name, iconSrc, description }: ElementProps): JSX.Element => (
+const MenuItem = ({ href, name, iconSrc, description }: MenuItemProps): JSX.Element => (
   <Link href={href}>
     <a className={styles.linker}>
       <StaticImage className={styles.icon} src={iconSrc} alt="アイコン" />
@@ -37,17 +35,4 @@ const Element = ({ href, name, iconSrc, description }: ElementProps): JSX.Elemen
   </Link>
 );
 
-const ContentsMenu = (): JSX.Element => (
-  <div className={styles.container}>
-    <div className={styles.content}>
-      <div className={styles.element}>
-        <Element href={"/talks"} name="TALKS" iconSrc={talksPic} description="制作風景" />
-      </div>
-      <div className={styles.element}>
-        <Element href={"/projects"} name="PROJECTS" iconSrc={projectsPic} description="作品一覧" />
-      </div>
-    </div>
-  </div>
-);
-
-export default ContentsMenu;
+export default MenuItem;
