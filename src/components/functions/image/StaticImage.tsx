@@ -1,11 +1,11 @@
 import Image, { ImageProps } from "next/image";
 
-type Props = ImageProps;
+type Props = {
+  src: StaticImageData;
+} & Omit<ImageProps, "src" & "width" & "height">;
 
-const StaticImage = ({ className, ...props }: Props): JSX.Element => (
-  <div className={className}>
-    <Image {...props} />
-  </div>
+const StaticImage = ({ src, ...props }: Props): JSX.Element => (
+  <Image src={src} width={src.width} height={src.height} {...props} />
 );
 
 export default StaticImage;

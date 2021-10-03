@@ -8,48 +8,31 @@
     border-radius: 0.2rem;
     background: rgba(#838a96, 0.2);
     border: global.$light1 solid 2px;
+    align-items: center;
 
     .icon {
-      display: block;
       height: 4rem;
       width: 4rem;
-      align-self: center;
     }
 
     .caption {
       padding-top: 1rem;
       padding-left: 0.7rem;
-      width: 100%;
+      flex-grow: 1;
+      color: global.$light1;
 
-      .background {
-        display: none;
+      .name {
+        text-align: left;
+        padding-left: 0.3rem;
+        padding-bottom: 0.3rem;
+        margin-bottom: 0.3rem;
+        border-bottom: global.$light1 solid 1px;
+        font-size: 1.6rem;
       }
 
-      .inner {
-        color: global.$light1;
-
-        .name {
-          height: 2.2rem;
-          text-align: left;
-          padding-left: 0.3rem;
-          padding-bottom: 0.3rem;
-          margin-bottom: 0.3rem;
-          border-bottom: global.$light1 solid 1px;
-
-          .text {
-            font-size: 1.6rem;
-          }
-        }
-
-        .description {
-          height: 0.8rem;
-          padding-left: 1rem;
-          text-align: right;
-
-          .text {
-            font-size: 0.8rem;
-          }
-        }
+      .description {
+        text-align: right;
+        font-size: 0.8rem;
       }
     }
   }
@@ -60,43 +43,29 @@
     width: min(16rem, calc(50% - 3rem));
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 
     .icon {
-      display: block;
       width: calc(100% * 6 / 16);
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 1.2rem;
     }
 
     .caption {
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: global.$light1;
+      gap: 0.3rem;
+      border-left: #a7b0c1 solid 2px;
+      border-right: #a7b0c1 solid 2px;
+      width: 100%;
 
-      .background {
-        position: relative;
-        width: 100%;
+      .name {
+        font-size: 1.6rem;
       }
 
-      .inner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 100%;
-        font-family: fot-tsukubrdgothic-std, sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: global.$light1;
-        text-align: center;
-
-        .name {
-          height: calc((100% - 0.3rem) * 2 / 3);
-          margin-bottom: 0.3rem;
-        }
-
-        .description {
-          height: calc((100% - 0.3rem) / 3);
-        }
+      .description {
+        font-size: 0.9rem;
       }
     }
   }
@@ -107,43 +76,29 @@
     width: min(16rem, calc(50% - 3rem));
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 
     .icon {
-      display: block;
       width: calc(100% * 6 / 16);
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 1.2rem;
     }
 
     .caption {
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: global.$light1;
+      gap: 0.3rem;
+      border-left: #a7b0c1 solid 2px;
+      border-right: #a7b0c1 solid 2px;
+      width: 100%;
 
-      .background {
-        position: relative;
-        width: 100%;
+      .name {
+        font-size: 1.6rem;
       }
 
-      .inner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 100%;
-        font-family: fot-tsukubrdgothic-std, sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: global.$light1;
-        text-align: center;
-
-        .name {
-          height: calc((100% - 0.3rem) * 2 / 3);
-          margin-bottom: 0.3rem;
-        }
-
-        .description {
-          height: calc((100% - 0.3rem) / 3);
-        }
+      .description {
+        font-size: 0.9rem;
       }
     }
   }
