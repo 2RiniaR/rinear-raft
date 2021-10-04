@@ -1,0 +1,41 @@
+@use "global";
+
+.backButton {
+  @include global.media(phone) {
+    align-self: flex-end;
+    padding: 0.5rem;
+    height: 3rem;
+    width: 3rem;
+    transform: rotateZ(-90deg);
+  }
+
+  @include global.media(tablet) {
+    margin-bottom: 7vh;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  @include global.media(desktop) {
+    margin-bottom: 7vh;
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.index {
+  @include global.media(phone) {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+
+  @include global.media(tablet) {
+    margin-left: 1rem;
+    width: 70%;
+  }
+
+  @include global.media(desktop) {
+    margin-left: 1rem;
+    width: 70%;
+  }
+}
