@@ -1,0 +1,174 @@
+@use "global";
+
+@include global.media(phone) {
+  .layout {
+    height: 100%;
+    grid-column: 1;
+    grid-row: 3;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto 1fr;
+    padding: 1rem 1rem 0 1rem;
+
+    .title {
+      grid-column: 2;
+      grid-row: 1;
+      font-size: 1.4rem;
+      text-align: right;
+      padding-bottom: 0.3rem;
+      color: global.$light2;
+      border-bottom: global.$light1 solid 2px;
+    }
+
+    .description {
+      grid-column: 1 / 3;
+      grid-row: 3;
+      color: global.$light2;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      text-indent: 1rem;
+    }
+
+    .updatedAt {
+      grid-column: 1 / 3;
+      grid-row: 2;
+      font-size: 1rem;
+      text-align: right;
+      padding: 0.3rem;
+      color: global.$light1;
+    }
+
+    .releasedAt {
+      grid-column: 1;
+      grid-row: 1;
+      margin-top: auto;
+      border-bottom: global.$light1 solid 2px;
+
+      .text {
+        display: inline-block;
+        padding: 0.3rem 0.8rem 0.3rem 0.3rem;
+        font-size: 1rem;
+        text-align: left;
+        color: #333;
+        background: global.$light1;
+      }
+    }
+  }
+}
+
+@include global.media(tablet) {
+  .layout {
+    height: 100%;
+    grid-column: 1 / 4;
+    grid-row: 2;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto 1fr;
+
+    .title {
+      grid-column: 2;
+      grid-row: 1;
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      text-align: right;
+      padding-bottom: 0.3rem;
+      color: global.$light2;
+      border-bottom: global.$light1 solid 2px;
+    }
+
+    .description {
+      grid-column: 1 / 3;
+      grid-row: 3;
+      color: global.$light2;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      text-indent: 1rem;
+    }
+
+    .updatedAt {
+      grid-column: 1 / 3;
+      grid-row: 2;
+      font-size: 1rem;
+      text-align: right;
+      padding: 0.3rem;
+      color: global.$light1;
+    }
+
+    .releasedAt {
+      grid-column: 1;
+      grid-row: 1;
+      margin-top: auto;
+      border-bottom: global.$light1 solid 2px;
+
+      .text {
+        display: inline-block;
+        padding: 0.3rem 0.8rem 0.3rem 0.3rem;
+        font-size: 1rem;
+        text-align: left;
+        color: #333;
+        background: global.$light1;
+      }
+    }
+  }
+}
+
+@include global.media(desktop) {
+  .layout {
+    height: 100%;
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto 1fr;
+    padding-bottom: 1rem;
+
+    .title {
+      grid-column: 2;
+      grid-row: 1;
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      text-align: right;
+      padding-bottom: 0.3rem;
+      color: global.$light2;
+      border-bottom: global.$light1 solid 2px;
+    }
+
+    .description {
+      grid-column: 1 / 3;
+      grid-row: 3;
+      color: global.$light2;
+      font-size: 1rem;
+      margin-left: 3rem;
+      margin-top: 0.5rem;
+      text-indent: 1rem;
+    }
+
+    .updatedAt {
+      grid-column: 1 / 3;
+      grid-row: 2;
+      font-size: 1rem;
+      text-align: right;
+      padding: 0.3rem;
+      color: global.$light1;
+      margin-left: 3rem;
+    }
+
+    .releasedAt {
+      grid-column: 1;
+      grid-row: 1;
+      margin-left: 3rem;
+      margin-top: auto;
+      border-bottom: global.$light1 solid 2px;
+
+      .text {
+        display: inline-block;
+        padding: 0.3rem 0.8rem 0.3rem 0.3rem;
+        font-size: 1rem;
+        text-align: left;
+        color: #333;
+        background: global.$light1;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./ProjectsViewer.module.scss";
-import ProjectHeading from "./ProjectHeading";
+import { ProjectHeading } from "./Heading";
 import { getContentPath, ProjectContentHead } from "lib/contents";
 
 type Props = {
