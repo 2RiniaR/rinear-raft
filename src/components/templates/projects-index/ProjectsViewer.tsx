@@ -11,13 +11,11 @@ type Props = {
 const ProjectsViewer = ({ heads }: Props): JSX.Element => (
   <div className={styles.container}>
     {heads.map((head) => (
-      <div className={styles.element} key={head.id}>
-        <Link href={getContentPath(head)}>
-          <a className={styles.link}>
-            <ProjectHeading head={head} />
-          </a>
-        </Link>
-      </div>
+      <Link href={getContentPath(head)} key={head.id}>
+        <a className={styles.element}>
+          <ProjectHeading head={head} />
+        </a>
+      </Link>
     ))}
   </div>
 );

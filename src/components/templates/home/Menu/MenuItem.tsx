@@ -13,9 +13,7 @@ export type MenuItemProps = {
 const MenuItem = ({ href, name, iconSrc, description }: MenuItemProps): JSX.Element => (
   <Link href={href}>
     <a className={styles.linker}>
-      <div className={styles.icon}>
-        <StaticImage src={iconSrc} alt="アイコン" />
-      </div>
+      <StaticImage className={styles.icon} src={iconSrc} alt="アイコン" />
       <div className={styles.caption}>
         <div className={styles.name}>{name}</div>
         <div className={styles.description}>{description}</div>

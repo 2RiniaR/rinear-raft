@@ -8,6 +8,7 @@ import AboutTechnology from "./AboutTechnology";
 import AboutCatchphrase from "./AboutCatchphrase";
 import { Chapter } from "components/parts/contents";
 import { ChapterPoint, ContentPageProps, TalkContent } from "lib/contents";
+import thumbnailPic from "public/img/test.png";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
@@ -50,7 +51,7 @@ const introduction: TalkContent = {
   id: "introduction",
   index: 1,
   title: "ホームページ、爆誕！",
-  thumbnailPath: "/img/test.png",
+  thumbnailPath: thumbnailPic,
   updatedAt: dayjs("2021-09-01"),
   description: "RineaRでの最初のTALK。",
   Page

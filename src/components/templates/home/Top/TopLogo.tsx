@@ -13,9 +13,7 @@ const TopLogo = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.background}>
-        <StaticImage className={styles.image} src={logoBackPic} alt="背景画像" />
-      </div>
+      <StaticImage className={styles.image} src={logoBackPic} alt="背景画像" />
       <div className={styles.front} ref={frontRef}>
         <StaticImage className={styles.logo} src={logoPic} alt="ロゴ" />
         <h1 className={styles.name} style={{ fontSize: getFontSize(), letterSpacing: getLetterSpacing() }}>

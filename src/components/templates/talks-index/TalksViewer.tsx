@@ -25,13 +25,11 @@ const TalksViewer = ({ heads }: Props): JSX.Element => {
   return (
     <div className={styles.container} ref={containerRef}>
       {heads.map((head) => (
-        <div className={styles.element} key={head.id} style={{ width: getItemWidth() }}>
-          <Link href={getContentPath(head)}>
-            <a className={styles.link}>
-              <TalkHeading head={head} />
-            </a>
-          </Link>
-        </div>
+        <Link href={getContentPath(head)} key={head.id}>
+          <a className={styles.element} style={{ width: getItemWidth() }}>
+            <TalkHeading head={head} />
+          </a>
+        </Link>
       ))}
     </div>
   );

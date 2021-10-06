@@ -1,35 +1,28 @@
-import Head from "next/head";
 import React from "react";
 import styles from "./TalksIndexPage.module.scss";
 import Viewer from "./TalksViewer";
+import TalksIndexPageHead from "./TalkIndexPageHead";
 import { TalkContentHead } from "lib/contents";
 import Footer from "components/parts/Footer";
 import Background from "components/parts/Background";
 import GenreHeader from "components/parts/GenreHeader";
+import talksPic from "public/img/talks.png";
 
 type Props = {
   heads: TalkContentHead[];
 };
 
 const TalksIndexPage = ({ heads }: Props): JSX.Element => (
-  <div className={styles.page}>
-    <Head>
-      <title>Talks - RineaR</title>
-    </Head>
-    <Background />
-
-    <div className={styles.top}>
-      <GenreHeader logoSrc="/img/talks.png" name="TALKS" />
-    </div>
-
-    <div className={styles.viewer}>
-      <Viewer heads={heads} />
-    </div>
-
-    <div className={styles.footer}>
-      <Footer />
-    </div>
-  </div>
+  <>
+    <TalksIndexPageHead />
+    <Background>
+      <div className={styles.page}>
+        <GenreHeader logoSrc={talksPic} title="TALKS" />
+        <Viewer heads={heads} />
+        <Footer />
+      </div>
+    </Background>
+  </>
 );
 
 export default TalksIndexPage;

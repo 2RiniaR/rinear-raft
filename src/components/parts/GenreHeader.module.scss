@@ -1,10 +1,12 @@
 @use "global";
 
-.container {
+.layout {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(global.$dark1, 0.5);
+  padding: 1rem 0;
 
   .logo {
     height: 4rem;

@@ -4,27 +4,8 @@
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-
-  .top {
-    position: relative;
-    background: rgba(global.$dark1, 0.5);
-    margin-top: 5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 6rem;
-    width: 100%;
-  }
-
-  .viewer {
-    position: relative;
-    margin-top: 15vh;
-    margin-bottom: 15vh;
-    width: 100%;
-  }
-
-  .footer {
-    position: relative;
-    margin-top: 15vh;
-    padding-bottom: 2rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 15vh;
+  padding: 10vh 0 1rem 0;
 }

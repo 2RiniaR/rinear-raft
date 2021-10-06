@@ -12,7 +12,7 @@ const ProjectHeading = ({ head }: Props): JSX.Element => (
   <div className={styles.container}>
     <div className={styles.textContainer}>
       <h1 className={styles.title}>{head.title}</h1>
-      <h5 className={styles.description}>{head.description}</h5>
+      <p className={styles.description}>{head.description}</p>
       <h5 className={styles.updatedAt}>{"最終更新：" + formatExceededTime(dayjs(), head.updatedAt)}</h5>
       <h5 className={styles.releasedAt}>
         <span className={styles.text}>{head.releasedAt ? formatDisplayDate(head.releasedAt) : "---"}</span>

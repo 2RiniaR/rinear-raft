@@ -1,26 +1,30 @@
 @use "global";
 
 .container {
-  position: absolute;
-  @include global.full-area;
+  position: relative;
 
-  .inner {
-    position: relative;
+  .slideArea {
+    position: absolute;
+    @include global.full-area;
 
-    .background {
-      position: absolute;
-      @include global.full-area;
-    }
+    .inner {
+      position: relative;
 
-    .holeEffect {
-      position: absolute;
-      @include global.full-area;
-    }
+      .background {
+        position: absolute;
+        @include global.full-area;
+      }
 
-    .colorMask {
-      background: rgba(global.$dark1, 70%);
-      position: absolute;
-      @include global.full-area;
+      .holeEffect {
+        position: absolute;
+        @include global.full-area;
+      }
+
+      .colorMask {
+        background: rgba(global.$dark1, 70%);
+        position: absolute;
+        @include global.full-area;
+      }
     }
   }
 }

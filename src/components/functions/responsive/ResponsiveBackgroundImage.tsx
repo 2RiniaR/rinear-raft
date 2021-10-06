@@ -37,9 +37,7 @@ const ResponsiveBackgroundImage = ({ children, src, alt }: Props): JSX.Element =
 
   return (
     <div className={styles.container} ref={containerRef} style={getContainerStyle()}>
-      <div className={styles.background} style={{ width: getBackgroundWidth() }}>
-        <StaticImage src={src} alt={alt} />
-      </div>
+      <StaticImage className={styles.background} style={{ width: getBackgroundWidth() }} src={src} alt={alt} />
       <div className={styles.front}>{children}</div>
     </div>
   );
