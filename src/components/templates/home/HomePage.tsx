@@ -3,7 +3,7 @@ import { Top } from "./Top";
 import styles from "./HomePage.module.scss";
 import HomePageHead from "./HomePageHead";
 import { Menu } from "./Menu";
-import About from "components/templates/home/About";
+import { About } from "./About";
 import Footer from "components/parts/Footer";
 
 const HomePage = (): JSX.Element => (
