@@ -18,9 +18,9 @@ const ProjectHeading = ({ head }: Props): JSX.Element => (
         <span className={styles.text}>{head.releasedAt ? formatDisplayDate(head.releasedAt) : "---"}</span>
       </h5>
     </div>
-    <FixedImage src={head.thumbnailsPath[0]} alt={head.title} className={styles.mainThumbnail} />
+    <FixedImage src={head.thumbnails[0]} alt={head.title} className={styles.mainThumbnail} />
     <div className={styles.subThumbnailsContainer}>
-      {head.thumbnailsPath.slice(1).map((thumbnailPath, index) => (
+      {head.thumbnails.slice(1).map((thumbnailPath, index) => (
         <FixedImage
           src={thumbnailPath}
           alt={head.title}

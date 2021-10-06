@@ -51,7 +51,7 @@ const introduction: TalkContent = {
   id: "introduction",
   index: 1,
   title: "ホームページ、爆誕！",
-  thumbnailPath: thumbnailPic,
+  thumbnail: thumbnailPic,
   updatedAt: dayjs("2021-09-01"),
   description: "RineaRでの最初のTALK。",
   Page

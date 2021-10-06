@@ -59,7 +59,7 @@ const marvelous: ProjectContent = {
   genre: "projects",
   id: "marvelous",
   title: "エライさんbot",
-  thumbnailsPath: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
+  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-09-28"),
   releasedAt: dayjs("2021-04-30"),
   description: "みんなの「えらい！」をカウントしてくれるDiscord Bot。#限界開発鯖 にて運用中！",

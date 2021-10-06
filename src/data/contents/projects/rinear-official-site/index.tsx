@@ -47,7 +47,7 @@ const rinearOfficialSite: ProjectContent = {
   genre: "projects",
   id: "rinear-official-site",
   title: "RineaR公式サイト",
-  thumbnailsPath: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
+  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-10-01"),
   releasedAt: dayjs("2021-10-11"),
   description: "RineaRのプロジェクトや投稿を公開するホームページ。Riniaが活動拠点とする筏。",

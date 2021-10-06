@@ -59,7 +59,7 @@ const popcornChef: ProjectContent = {
   genre: "projects",
   id: "popcorn-chef",
   title: "ポップコーン職人",
-  thumbnailsPath: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
+  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-10-01"),
   releasedAt: dayjs("2020-04-05"),
   description:

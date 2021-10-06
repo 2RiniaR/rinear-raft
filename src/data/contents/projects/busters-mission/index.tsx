@@ -59,7 +59,7 @@ const bustersMission: ProjectContent = {
   genre: "projects",
   id: "busters-mission",
   title: "Busters Mission",
-  thumbnailsPath: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
+  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-09-28"),
   releasedAt: dayjs("2018-09-05"),
   description: "敵の攻撃を避けながら、ステージ内にいるすべての敵を倒していく2Dアクションゲーム。",
