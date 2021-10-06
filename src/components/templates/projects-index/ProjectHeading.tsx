@@ -18,16 +18,15 @@ const ProjectHeading = ({ head }: Props): JSX.Element => (
         <span className={styles.text}>{head.releasedAt ? formatDisplayDate(head.releasedAt) : "---"}</span>
       </h5>
     </div>
-    <div className={styles.mainThumbnail}>
-      <div className={styles.place}>
-        <FixedImage src={head.thumbnailsPath[0]} alt={head.title} className={styles.image} />
-      </div>
-    </div>
+    <FixedImage src={head.thumbnailsPath[0]} alt={head.title} className={styles.mainThumbnail} />
     <div className={styles.subThumbnailsContainer}>
       {head.thumbnailsPath.slice(1).map((thumbnailPath, index) => (
-        <div className={styles.subThumbnail} key={`thumbnailPath-${index}`}>
-          <FixedImage src={thumbnailPath} alt={head.title} />
-        </div>
+        <FixedImage
+          src={thumbnailPath}
+          alt={head.title}
+          className={styles.subThumbnail}
+          key={`thumbnailPath-${index}`}
+        />
       ))}
     </div>
   </article>

@@ -12,9 +12,7 @@ const ProjectAbstract = ({ content }: Props): JSX.Element => (
     <p className={styles.description}>{content.description}</p>
     <div className={styles.thumbnails}>
       {content.thumbnailsPath.map((thumbnailPath) => (
-        <div className={styles.thumbnail} key={thumbnailPath.src}>
-          <FixedImage src={thumbnailPath} alt="サブサムネイル" />
-        </div>
+        <FixedImage src={thumbnailPath} alt="サブサムネイル" className={styles.thumbnail} key={thumbnailPath.src} />
       ))}
     </div>
   </div>

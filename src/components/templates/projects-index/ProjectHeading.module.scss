@@ -10,10 +10,6 @@
     .mainThumbnail {
       grid-column: 1;
       grid-row: 1;
-
-      .place {
-        width: 100%;
-      }
     }
 
     .subThumbnailsContainer {
@@ -101,10 +97,6 @@
     .mainThumbnail {
       grid-column: 1;
       grid-row: 1;
-
-      .place {
-        width: 100%;
-      }
     }
 
     .subThumbnailsContainer {
@@ -189,10 +181,6 @@
       grid-row: 1 / 4;
       display: flex;
       align-items: flex-end;
-
-      .place {
-        width: 100%;
-      }
     }
 
     .subThumbnailsContainer {

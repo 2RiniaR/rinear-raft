@@ -10,9 +10,7 @@ type Props = {
 const TalkAbstract = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
     <p className={styles.description}>{content.description}</p>
-    <div className={styles.thumbnail}>
-      <FixedImage src={content.thumbnailPath} alt="サムネイル" />
-    </div>
+    <FixedImage src={content.thumbnailPath} alt="サムネイル" className={styles.thumbnail} />
   </div>
 );
 
