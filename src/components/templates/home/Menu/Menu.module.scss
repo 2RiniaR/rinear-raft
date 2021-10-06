@@ -1,0 +1,29 @@
+@use "global";
+
+.background {
+  width: 100%;
+  background: #555;
+  padding: 3rem 0;
+
+  .items {
+    display: flex;
+
+    @include global.media(phone) {
+      margin: 0 2rem;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @include global.media(tablet) {
+      justify-content: space-between;
+      margin: 0 auto;
+      width: min(50rem, 80%);
+    }
+
+    @include global.media(desktop) {
+      justify-content: space-between;
+      margin: 0 auto;
+      width: min(50rem, 80%);
+    }
+  }
+}

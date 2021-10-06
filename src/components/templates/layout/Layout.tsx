@@ -1,8 +1,7 @@
 import React, { useCallback, useRef, useState } from "react";
 import styles from "./Layout.module.scss";
-import SideMenuButton from "components/templates/layout/SideMenuButton";
+import { SideMenu, SideMenuButton } from "./SideMenu";
 import TopButton from "components/templates/layout/TopButton";
-import SideMenu from "components/templates/layout/SideMenu";
 
 type Props = {
   children: React.ReactNode;

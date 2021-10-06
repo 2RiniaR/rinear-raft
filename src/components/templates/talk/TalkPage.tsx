@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Head from "next/head";
 import styles from "./TalkPage.module.scss";
-import TalkTop from "./TalkTop";
-import BackToIndex from "components/parts/BackToIndex";
+import TalkPageHead from "./TalkPageHead";
+import { TalkTop } from "./Top";
 import { ChapterPoint, TalkContent } from "lib/contents";
-import Footer from "components/parts/Footer";
-import Background from "components/parts/Background";
+import ContentPageTemplate from "components/parts/pages/ContentPageTemplate";
+import ChaptersView from "components/parts/ChaptersView/ChaptersView";
 
 type Props = {
   content: TalkContent;
@@ -15,31 +14,16 @@ const TalkPage = ({ content }: Props): JSX.Element => {
   const [chapters, setChapters] = useState<ChapterPoint[]>([]);
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{content.title} - RineaR</title>
-      </Head>
-
-      <Background />
-
-      <div className={styles.front}>
-        <div className={styles.back}>
-          <BackToIndex href={"/talks"} text={"TALKS 一覧へ"} />
-        </div>
-        <div className={styles.top}>
-          <TalkTop content={content} chapters={chapters} />
-        </div>
-        <div className={styles.body}>
+    <>
+      <TalkPageHead content={content} />
+      <ContentPageTemplate>
+        <div className={styles.layout}>
+          <TalkTop content={content} />
+          <ChaptersView chapters={chapters} />
           <content.Page setChapters={setChapters} />
         </div>
-        <div className={styles.back}>
-          <BackToIndex href={"/talks"} text={"TALKS 一覧へ"} />
-        </div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
-      </div>
-    </div>
+      </ContentPageTemplate>
+    </>
   );
 };
 

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Head from "next/head";
 import styles from "./ProjectPage.module.scss";
+import ProjectPageHead from "./ProjectPageHead";
+import { ProjectTop } from "./Top";
 import { ChapterPoint, ProjectContent } from "lib/contents";
-import Footer from "components/parts/Footer";
-import Background from "components/parts/Background";
-import ProjectTop from "components/templates/project/ProjectTop";
-import BackToIndex from "components/parts/BackToIndex";
+import ContentPageTemplate from "components/parts/pages/ContentPageTemplate";
+import ChaptersView from "components/parts/ChaptersView/ChaptersView";
 
 type Props = {
   content: ProjectContent;
@@ -15,31 +14,16 @@ const ProjectPage = ({ content }: Props): JSX.Element => {
   const [chapters, setChapters] = useState<ChapterPoint[]>([]);
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{content.title} - RineaR</title>
-      </Head>
-
-      <Background />
-
-      <div className={styles.front}>
-        <div className={styles.back}>
-          <BackToIndex href={"/projects"} text={"PROJECTS 一覧へ"} />
-        </div>
-        <div className={styles.top}>
-          <ProjectTop content={content} chapters={chapters} />
-        </div>
-        <div className={styles.body}>
+    <>
+      <ProjectPageHead content={content} />
+      <ContentPageTemplate>
+        <div className={styles.layout}>
+          <ProjectTop content={content} />
+          <ChaptersView chapters={chapters} />
           <content.Page setChapters={setChapters} />
         </div>
-        <div className={styles.back}>
-          <BackToIndex href={"/projects"} text={"PROJECTS 一覧へ"} />
-        </div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
-      </div>
-    </div>
+      </ContentPageTemplate>
+    </>
   );
 };
 

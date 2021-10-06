@@ -9,6 +9,10 @@ import Tools from "./Tools";
 import Background from "./Background";
 import { Chapter } from "components/parts/contents";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
+import thumbnailPic1 from "public/contents/projects/popcorn-chef/game1.jpg";
+import thumbnailPic2 from "public/contents/projects/popcorn-chef/title.jpg";
+import thumbnailPic3 from "public/contents/projects/popcorn-chef/game4.jpg";
+import thumbnailPic4 from "public/contents/projects/popcorn-chef/lobby.jpg";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
@@ -55,12 +59,7 @@ const popcornChef: ProjectContent = {
   genre: "projects",
   id: "popcorn-chef",
   title: "ポップコーン職人",
-  thumbnailsPath: [
-    "/contents/projects/popcorn-chef/game1.jpg",
-    "/contents/projects/popcorn-chef/title.jpg",
-    "/contents/projects/popcorn-chef/game4.jpg",
-    "/contents/projects/popcorn-chef/lobby.jpg"
-  ],
+  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-10-01"),
   releasedAt: dayjs("2020-04-05"),
   description:

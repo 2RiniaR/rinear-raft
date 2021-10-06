@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "./GenreHeader.module.scss";
-import FullImage from "components/functions/image/FullImage";
+import StaticImage from "components/functions/image/StaticImage";
 
 type GenreHeaderParams = {
-  logoSrc: string;
-  name: string;
+  logoSrc: StaticImageData;
+  title: string;
 };
 
-const GenreHeader = ({ logoSrc, name }: GenreHeaderParams): JSX.Element => (
-  <div className={styles.container}>
-    <FullImage className={styles.logo} src={logoSrc} alt="ロゴ" />
-    <h1 className={styles.title}>{name}</h1>
-  </div>
+const GenreHeader = ({ logoSrc, title }: GenreHeaderParams): JSX.Element => (
+  <header className={styles.layout}>
+    <StaticImage className={styles.logo} src={logoSrc} alt={title} />
+    <h1 className={styles.title}>{title}</h1>
+  </header>
 );
 
 export default GenreHeader;

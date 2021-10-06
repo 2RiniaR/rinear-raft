@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./ProjectsViewer.module.scss";
-import ProjectHeading from "./ProjectHeading";
+import { ProjectHeading } from "./Heading";
 import { getContentPath, ProjectContentHead } from "lib/contents";
 
 type Props = {
@@ -9,17 +9,15 @@ type Props = {
 };
 
 const ProjectsViewer = ({ heads }: Props): JSX.Element => (
-  <div className={styles.container}>
+  <main className={styles.container}>
     {heads.map((head) => (
-      <div className={styles.element} key={head.id}>
-        <Link href={getContentPath(head)}>
-          <a className={styles.link}>
-            <ProjectHeading head={head} />
-          </a>
-        </Link>
-      </div>
+      <Link href={getContentPath(head)} key={head.id}>
+        <a className={styles.element}>
+          <ProjectHeading head={head} />
+        </a>
+      </Link>
     ))}
-  </div>
+  </main>
 );
 
 export default ProjectsViewer;

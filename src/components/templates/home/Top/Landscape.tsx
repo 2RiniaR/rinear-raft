@@ -1,10 +1,10 @@
 import styles from "./Landscape.module.scss";
 import { assignClasses } from "lib/helper";
-import landscapePic from "public/img/background.jpg";
-import FullImage from "components/functions/image/FullImage";
+import landscapePic from "public/img/background.png";
+import StaticImage from "components/functions/image/StaticImage";
 
 const Landscape = (): JSX.Element => (
-  <FullImage className={assignClasses(styles.image)} src={landscapePic} alt="背景" />
+  <StaticImage className={assignClasses(styles.image)} src={landscapePic} alt="背景" />
 );
 
 export default Landscape;

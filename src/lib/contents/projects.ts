@@ -5,7 +5,7 @@ export type GenreType = "projects";
 export const genre: ContentGenre & GenreType = "projects";
 export type GenreStrict = { genre: GenreType };
 export type Params = {
-  thumbnailsPath: string[];
+  thumbnails: StaticImageData[];
   releasedAt: dayjs.Dayjs | undefined;
 };
 

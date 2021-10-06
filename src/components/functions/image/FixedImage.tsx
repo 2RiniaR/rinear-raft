@@ -7,9 +7,17 @@ type Props = {
   widthRate?: number;
   heightRate?: number;
   lock?: "width" | "height";
+  style?: CSSProperties;
 } & Omit<ImageProps, "objectFit">;
 
-const FixedImage = ({ widthRate = 16, heightRate = 9, lock = "width", ...props }: Props): JSX.Element => {
+const FixedImage = ({
+  widthRate = 16,
+  heightRate = 9,
+  lock = "width",
+  className,
+  style,
+  ...props
+}: Props): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, containerHeight] = useElementSize(containerRef);
 
@@ -19,8 +27,10 @@ const FixedImage = ({ widthRate = 16, heightRate = 9, lock = "width", ...props }
   }, [lock, containerWidth, containerHeight, widthRate, heightRate]);
 
   return (
-    <div className={styles.container} ref={containerRef} style={getContainerStyle()}>
-      <Image layout="fill" {...props} />
+    <div className={className} style={style}>
+      <div className={styles.container} ref={containerRef} style={getContainerStyle()}>
+        <Image layout="fill" {...props} />
+      </div>
     </div>
   );
 };

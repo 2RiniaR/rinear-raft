@@ -1,0 +1,105 @@
+@use "global";
+
+@include global.media(phone) {
+  .linker {
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    background: rgba(#838a96, 0.2);
+    border: global.$light1 solid 2px;
+    align-items: center;
+
+    .icon {
+      height: 4rem;
+      width: 4rem;
+    }
+
+    .caption {
+      padding-top: 1rem;
+      padding-left: 0.7rem;
+      flex-grow: 1;
+      color: global.$light1;
+
+      .name {
+        text-align: left;
+        padding-left: 0.3rem;
+        padding-bottom: 0.3rem;
+        margin-bottom: 0.3rem;
+        border-bottom: global.$light1 solid 1px;
+        font-size: 1.6rem;
+      }
+
+      .description {
+        text-align: right;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@include global.media(tablet) {
+  .linker {
+    width: min(16rem, calc(50% - 3rem));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      width: calc(100% * 6 / 16);
+    }
+
+    .caption {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: global.$light1;
+      gap: 0.3rem;
+      border-left: #a7b0c1 solid 2px;
+      border-right: #a7b0c1 solid 2px;
+      width: 100%;
+
+      .name {
+        font-size: 1.6rem;
+      }
+
+      .description {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@include global.media(desktop) {
+  .linker {
+    width: min(16rem, calc(50% - 3rem));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      width: calc(100% * 6 / 16);
+    }
+
+    .caption {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: global.$light1;
+      gap: 0.3rem;
+      border-left: #a7b0c1 solid 2px;
+      border-right: #a7b0c1 solid 2px;
+      width: 100%;
+
+      .name {
+        font-size: 1.6rem;
+      }
+
+      .description {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

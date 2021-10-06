@@ -1,6 +1,7 @@
 @use "global";
 
 .container {
+  width: 100%;
   margin: 0 auto;
   color: global.$light1;
 }
@@ -68,29 +69,16 @@
 .links {
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  font-family: fot-tsukubrdgothic-std, sans-serif;
-  font-weight: 400;
-  font-style: normal;
   font-size: 1rem;
   margin: 0 auto 2rem auto;
+  gap: 1rem;
 
   .element {
-    .text {
-      display: inline;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      text-decoration: underline;
-    }
-
-    &:not(:last-child)::after {
-      content: "-";
-    }
+    display: inline;
+    text-decoration: underline;
 
     &:hover {
-      .text {
-        text-decoration: underline;
-      }
+      text-decoration: underline;
     }
   }
 }

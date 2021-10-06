@@ -1,85 +1,18 @@
 @use "global";
 
-.container {
-  position: relative;
-  @include global.full-area;
-}
-
-.front {
-  position: relative;
-  background-color: rgba(global.$dark1, 0.7);
+.layout {
+  display: flex;
+  flex-direction: column;
 
   @include global.media(phone) {
-    padding-top: 2rem;
-    width: 100%;
+    gap: 4rem;
   }
 
   @include global.media(tablet) {
-    margin-left: 6%;
-    margin-right: 6%;
-    padding-top: 3rem;
+    gap: 6rem;
   }
 
   @include global.media(desktop) {
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-top: 3rem;
-  }
-}
-
-.top {
-  margin-bottom: 6rem;
-
-  @include global.media(phone) {
-    margin-bottom: 6rem;
-  }
-
-  @include global.media(tablet) {
-    margin-bottom: 6rem;
-  }
-
-  @include global.media(desktop) {
-    margin-bottom: 12rem;
-  }
-}
-
-.body {
-  color: global.$light1;
-  font-size: 1rem;
-
-  @include global.media(phone) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin-bottom: 4rem;
-  }
-
-  @include global.media(tablet) {
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-bottom: 6rem;
-  }
-
-  @include global.media(desktop) {
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-bottom: 6rem;
-  }
-}
-
-.footer {
-  padding-bottom: 2rem;
-}
-
-.back {
-  @include global.media(phone) {
-    margin: 2rem 0 3rem 1rem;
-  }
-
-  @include global.media(tablet) {
-    margin: 2rem 0 3rem 3rem;
-  }
-
-  @include global.media(desktop) {
-    margin: 2rem 0 3rem 3rem;
+    gap: 8rem;
   }
 }

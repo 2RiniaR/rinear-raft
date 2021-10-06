@@ -1,0 +1,59 @@
+@use "global";
+
+.body {
+  color: global.$dark1;
+  display: inline-block;
+  padding-left: 2rem;
+
+  .section {
+    display: inline-block;
+
+    p {
+      display: inline-block;
+      text-indent: 1em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .separator {
+    height: 1px;
+    background-color: global.$dark1;
+  }
+
+  @include global.media(phone) {
+    padding: 0 1rem;
+
+    .section {
+      font-size: 1rem;
+    }
+
+    .separator {
+      width: 70%;
+      margin: 1.5rem auto;
+    }
+  }
+
+  @include global.media(tablet) {
+    padding: 0 1rem;
+
+    .section {
+      font-size: 1rem;
+    }
+
+    .separator {
+      width: 70%;
+      margin: 1.5rem auto;
+    }
+  }
+
+  @include global.media(desktop) {
+    .section {
+      font-size: 1.1rem;
+    }
+
+    .separator {
+      width: 50%;
+      margin: 2rem auto;
+    }
+  }
+}

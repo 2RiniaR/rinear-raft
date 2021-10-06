@@ -9,6 +9,10 @@ import Tools from "./Tools";
 import Background from "./Background";
 import { Chapter } from "components/parts/contents";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
+import thumbnailPic1 from "public/contents/projects/maze-escape/stage1.jpg";
+import thumbnailPic2 from "public/contents/projects/maze-escape/title.jpg";
+import thumbnailPic3 from "public/contents/projects/maze-escape/stage2.jpg";
+import thumbnailPic4 from "public/contents/projects/maze-escape/result.jpg";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
@@ -55,12 +59,7 @@ const mazeEscape: ProjectContent = {
   genre: "projects",
   id: "maze-escape",
   title: "迷宮脱出",
-  thumbnailsPath: [
-    "/contents/projects/maze-escape/stage1.jpg",
-    "/contents/projects/maze-escape/title.jpg",
-    "/contents/projects/maze-escape/stage2.jpg",
-    "/contents/projects/maze-escape/result.jpg"
-  ],
+  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-09-28"),
   releasedAt: dayjs("2016-10-18"),
   description: "上下左右にプレイヤーを移動し、制限時間以内にゴールを目指す2Dアクション脱出ゲーム。",

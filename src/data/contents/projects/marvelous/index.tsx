@@ -9,6 +9,10 @@ import Tools from "./Tools";
 import Background from "./Background";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
 import { Chapter } from "components/parts/contents";
+import thumbnailPic1 from "public/contents/projects/marvelous/top1.png";
+import thumbnailPic2 from "public/contents/projects/marvelous/top2.png";
+import thumbnailPic3 from "public/contents/projects/marvelous/top3.png";
+import thumbnailPic4 from "public/contents/projects/marvelous/top4.png";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
@@ -55,12 +59,7 @@ const marvelous: ProjectContent = {
   genre: "projects",
   id: "marvelous",
   title: "エライさんbot",
-  thumbnailsPath: [
-    "/contents/projects/marvelous/top1.png",
-    "/contents/projects/marvelous/top2.png",
-    "/contents/projects/marvelous/top3.png",
-    "/contents/projects/marvelous/top4.png"
-  ],
+  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-09-28"),
   releasedAt: dayjs("2021-04-30"),
   description: "みんなの「えらい！」をカウントしてくれるDiscord Bot。#限界開発鯖 にて運用中！",

@@ -5,7 +5,7 @@ export const genre: ContentGenre & GenreType = "talks";
 export type GenreStrict = { genre: GenreType };
 export type Params = {
   index: number;
-  thumbnailPath: string;
+  thumbnail: StaticImageData;
 };
 
 export type TalkContentHead = ContentHead & GenreStrict & Params;

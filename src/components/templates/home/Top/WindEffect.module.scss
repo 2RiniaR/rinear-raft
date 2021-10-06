@@ -1,10 +1,5 @@
 @use "global";
 
-.container {
-  position: absolute;
-  @include global.full-area;
-}
-
 .effect {
   position: absolute;
   @include global.full-area;
