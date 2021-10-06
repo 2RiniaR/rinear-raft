@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ProjectTop.module.scss";
-import ProjectTitle from "./ProjectTitle";
-import ProjectAbstract from "./ProjectAbstract";
+import Title from "./Title";
+import Abstract from "./Abstract";
 import { ProjectContent } from "lib/contents";
 
 type Props = {
@@ -10,8 +10,8 @@ type Props = {
 
 const ProjectTop = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
-    <ProjectTitle content={content} />
-    <ProjectAbstract content={content} />
+    <Title content={content} />
+    <Abstract content={content} />
   </div>
 );
 

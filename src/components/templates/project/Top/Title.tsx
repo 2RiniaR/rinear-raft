@@ -1,6 +1,6 @@
 import React from "react";
 import dayjs from "dayjs";
-import styles from "./ProjectTitle.module.scss";
+import styles from "./Title.module.scss";
 import StaticImage from "components/functions/image/StaticImage";
 import { ProjectContent } from "lib/contents";
 import { formatDisplayDate, formatExceededTime } from "lib/helper";
@@ -10,7 +10,7 @@ type Props = {
   content: ProjectContent;
 };
 
-const ProjectTitle = ({ content }: Props): JSX.Element => (
+const Title = ({ content }: Props): JSX.Element => (
   <header className={styles.layout}>
     <StaticImage className={styles.logo} src={projectsPic} alt="プロジェクト" />
     <div className={styles.display}>
@@ -22,4 +22,4 @@ const ProjectTitle = ({ content }: Props): JSX.Element => (
   </header>
 );
 
-export default ProjectTitle;
+export default Title;

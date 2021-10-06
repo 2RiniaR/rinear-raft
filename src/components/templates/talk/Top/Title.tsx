@@ -1,6 +1,6 @@
 import React from "react";
 import dayjs from "dayjs";
-import styles from "./TalkTitle.module.scss";
+import styles from "./Title.module.scss";
 import StaticImage from "components/functions/image/StaticImage";
 import { TalkContent } from "lib/contents";
 import { formatExceededTime } from "lib/helper";
@@ -10,7 +10,7 @@ type Props = {
   content: TalkContent;
 };
 
-const TalkTitle = ({ content }: Props): JSX.Element => (
+const Title = ({ content }: Props): JSX.Element => (
   <header className={styles.layout}>
     <StaticImage className={styles.logo} src={talksPic} alt="トーク" />
     <div className={styles.display}>
@@ -22,4 +22,4 @@ const TalkTitle = ({ content }: Props): JSX.Element => (
   </header>
 );
 
-export default TalkTitle;
+export default Title;

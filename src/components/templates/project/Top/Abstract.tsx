@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ProjectAbstract.module.scss";
+import styles from "./Abstract.module.scss";
 import { ProjectContent } from "lib/contents";
 import FixedImage from "components/functions/image/FixedImage";
 
@@ -7,7 +7,7 @@ type Props = {
   content: ProjectContent;
 };
 
-const ProjectAbstract = ({ content }: Props): JSX.Element => (
+const Abstract = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
     <p className={styles.description}>{content.description}</p>
     <div className={styles.thumbnails}>
@@ -18,4 +18,4 @@ const ProjectAbstract = ({ content }: Props): JSX.Element => (
   </div>
 );
 
-export default ProjectAbstract;
+export default Abstract;

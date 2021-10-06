@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./ProjectPage.module.scss";
 import ProjectPageHead from "./ProjectPageHead";
+import { ProjectTop } from "./Top";
 import { ChapterPoint, ProjectContent } from "lib/contents";
-import ProjectTop from "components/templates/project/ProjectTop";
 import ContentPageTemplate from "components/parts/pages/ContentPageTemplate";
 import ChaptersView from "components/parts/ChaptersView/ChaptersView";
 

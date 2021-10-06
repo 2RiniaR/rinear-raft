@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TalkTop.module.scss";
-import TalkTitle from "./TalkTitle";
-import TalkAbstract from "./TalkAbstract";
+import Title from "./Title";
+import Abstract from "./Abstract";
 import { TalkContent } from "lib/contents";
 
 type Props = {
@@ -10,8 +10,8 @@ type Props = {
 
 const TalkTop = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
-    <TalkTitle content={content} />
-    <TalkAbstract content={content} />
+    <Title content={content} />
+    <Abstract content={content} />
   </div>
 );
 
