@@ -1,4 +1,4 @@
-import styles from "./Top.module.scss";
+import styles from "./HomeTop.module.scss";
 import Background from "./Landscape";
 import HoleEffect from "./HoleEffect";
 import Shadow from "./Shadow";
@@ -26,8 +26,8 @@ const Layer0 = (): JSX.Element => (
   </div>
 );
 
-const Top = (): JSX.Element => (
-  <div className={styles.view}>
+const HomeTop = (): JSX.Element => (
+  <header className={styles.view}>
     <div className={styles.elements}>
       <FixedParallax startInnerOrigin={0} endInnerOrigin={-0.7}>
         <Layer2 />
@@ -37,7 +37,7 @@ const Top = (): JSX.Element => (
       </FixedParallax>
       <Layer0 />
     </div>
-  </div>
+  </header>
 );
 
-export default Top;
+export default HomeTop;

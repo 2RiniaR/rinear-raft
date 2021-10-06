@@ -8,10 +8,10 @@ type GenreHeaderParams = {
 };
 
 const GenreHeader = ({ logoSrc, title }: GenreHeaderParams): JSX.Element => (
-  <div className={styles.layout}>
+  <header className={styles.layout}>
     <StaticImage className={styles.logo} src={logoSrc} alt={title} />
     <h1 className={styles.title}>{title}</h1>
-  </div>
+  </header>
 );
 
 export default GenreHeader;

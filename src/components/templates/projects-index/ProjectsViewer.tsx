@@ -9,7 +9,7 @@ type Props = {
 };
 
 const ProjectsViewer = ({ heads }: Props): JSX.Element => (
-  <div className={styles.container}>
+  <main className={styles.container}>
     {heads.map((head) => (
       <Link href={getContentPath(head)} key={head.id}>
         <a className={styles.element}>
@@ -17,7 +17,7 @@ const ProjectsViewer = ({ heads }: Props): JSX.Element => (
         </a>
       </Link>
     ))}
-  </div>
+  </main>
 );
 
 export default ProjectsViewer;

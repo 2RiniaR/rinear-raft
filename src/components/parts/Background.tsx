@@ -26,7 +26,7 @@ const Background = ({ children }: Props): JSX.Element => {
           </div>
         </ConstantSizeParallax>
       </div>
-      {children}
+      <div className={styles.front}>{children}</div>
     </div>
   );
 };

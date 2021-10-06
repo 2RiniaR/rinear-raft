@@ -23,7 +23,7 @@ const TalksViewer = ({ heads }: Props): JSX.Element => {
   const getItemWidth = useCallback(() => containerWidth / getItemsPerRow(), [getItemsPerRow(), containerWidth]);
 
   return (
-    <div className={styles.container} ref={containerRef}>
+    <main className={styles.container} ref={containerRef}>
       {heads.map((head) => (
         <Link href={getContentPath(head)} key={head.id}>
           <a className={styles.element} style={{ width: getItemWidth() }}>
@@ -31,7 +31,7 @@ const TalksViewer = ({ heads }: Props): JSX.Element => {
           </a>
         </Link>
       ))}
-    </div>
+    </main>
   );
 };
 

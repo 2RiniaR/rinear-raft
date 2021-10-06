@@ -1,0 +1,50 @@
+@use "global";
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(global.$dark1, 0.7);
+  padding-bottom: 1rem;
+  min-height: 100vh;
+
+  @include global.media(phone) {
+    width: 100%;
+    gap: 6rem;
+    padding-top: 2rem;
+  }
+
+  @include global.media(tablet) {
+    margin-left: 3%;
+    margin-right: 3%;
+    gap: 6rem;
+    padding-top: 6rem;
+  }
+
+  @include global.media(desktop) {
+    margin-left: 10%;
+    margin-right: 10%;
+    gap: 8rem;
+    padding-top: 15vh;
+  }
+}
+
+.displayArea {
+  color: global.$light1;
+  font-size: 1rem;
+
+  @include global.media(phone) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @include global.media(tablet) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  @include global.media(desktop) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}

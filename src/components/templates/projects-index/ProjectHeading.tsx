@@ -9,7 +9,7 @@ type Props = {
 };
 
 const ProjectHeading = ({ head }: Props): JSX.Element => (
-  <div className={styles.container}>
+  <article className={styles.container}>
     <div className={styles.textContainer}>
       <h1 className={styles.title}>{head.title}</h1>
       <p className={styles.description}>{head.description}</p>
@@ -30,7 +30,7 @@ const ProjectHeading = ({ head }: Props): JSX.Element => (
         </div>
       ))}
     </div>
-  </div>
+  </article>
 );
 
 export default ProjectHeading;

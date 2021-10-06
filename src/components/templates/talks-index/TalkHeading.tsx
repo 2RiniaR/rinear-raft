@@ -9,14 +9,14 @@ type Props = {
 };
 
 const TalkHeading = ({ head }: Props): JSX.Element => (
-  <div className={styles.container}>
+  <article className={styles.container}>
     <div className={styles.thumbnail}>
       <FixedImage src={head.thumbnailPath} alt={head.title} />
     </div>
     <h1 className={styles.index}>#{head.index}</h1>
     <h5 className={styles.updatedAt}>{formatExceededTime(dayjs(), head.updatedAt)}</h5>
     <h1 className={styles.title}>{head.title}</h1>
-  </div>
+  </article>
 );
 
 export default TalkHeading;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Top } from "./Top";
+import { HomeTop } from "./Top";
 import styles from "./HomePage.module.scss";
 import HomePageHead from "./HomePageHead";
 import { Menu } from "./Menu";
@@ -10,7 +10,7 @@ const HomePage = (): JSX.Element => (
   <>
     <HomePageHead />
     <div className={styles.page}>
-      <Top />
+      <HomeTop />
       <About />
       <Menu />
       <Footer />
