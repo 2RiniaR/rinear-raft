@@ -7,6 +7,7 @@ import Footer from "components/parts/Footer";
 import Background from "components/parts/Background";
 import GenreHeader from "components/parts/GenreHeader";
 import talksPic from "public/img/talks.png";
+import BackButton from "components/templates/layout/BackButton";
 
 type Props = {
   heads: TalkContentHead[];
@@ -17,6 +18,7 @@ const TalksIndexPage = ({ heads }: Props): JSX.Element => (
     <TalksIndexPageHead />
     <Background>
       <div className={styles.page}>
+        <BackButton href={"/"} />
         <GenreHeader logoSrc={talksPic} title="TALKS" />
         <Viewer heads={heads} />
         <Footer />

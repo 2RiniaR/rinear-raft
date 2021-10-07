@@ -5,6 +5,7 @@ import { TalkTop } from "./Top";
 import { ChapterPoint, TalkContent } from "lib/contents";
 import ContentPageTemplate from "components/parts/pages/ContentPageTemplate";
 import ChaptersView from "components/parts/ChaptersView/ChaptersView";
+import BackButton from "../layout/BackButton";
 
 type Props = {
   content: TalkContent;
@@ -17,6 +18,7 @@ const TalkPage = ({ content }: Props): JSX.Element => {
     <>
       <TalkPageHead content={content} />
       <ContentPageTemplate>
+        <BackButton href={"/talks"} />
         <div className={styles.layout}>
           <TalkTop content={content} />
           <ChaptersView chapters={chapters} />

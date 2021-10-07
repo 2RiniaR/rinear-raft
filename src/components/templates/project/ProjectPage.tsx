@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BackButton from "../layout/BackButton";
 import styles from "./ProjectPage.module.scss";
 import ProjectPageHead from "./ProjectPageHead";
 import { ProjectTop } from "./Top";
@@ -17,6 +18,7 @@ const ProjectPage = ({ content }: Props): JSX.Element => {
     <>
       <ProjectPageHead content={content} />
       <ContentPageTemplate>
+        <BackButton href={"/projects"} />
         <div className={styles.layout}>
           <ProjectTop content={content} />
           <ChaptersView chapters={chapters} />

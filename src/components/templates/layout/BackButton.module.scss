@@ -5,28 +5,28 @@
   z-index: 100;
 
   @include global.media(phone) {
-    bottom: calc(6rem + 4rem);
+    bottom: calc(6rem + 8rem);
     right: 1rem;
     width: 3rem;
     height: 3rem;
   }
 
   @include global.media(tablet) {
-    bottom: calc(6rem + 6rem);
+    bottom: calc(6rem + 12rem);
     right: 2rem;
     width: 4rem;
     height: 4rem;
   }
 
   @include global.media(desktop) {
-    top: 2rem;
+    top: 8rem;
     left: 2rem;
     width: 4rem;
     height: 4rem;
   }
 }
 
-.button {
+.link {
   display: block;
   background: global.$dark1;
   padding: 20%;
@@ -39,7 +39,7 @@
     transform: scale(1.05);
   }
 
-  .logo {
+  .icon {
     @include global.full-area;
   }
 }
