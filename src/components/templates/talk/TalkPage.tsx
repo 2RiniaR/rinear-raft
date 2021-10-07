@@ -5,7 +5,7 @@ import { TalkTop } from "./Top";
 import { ChapterPoint, TalkContent } from "lib/contents";
 import ContentPageTemplate from "components/parts/pages/ContentPageTemplate";
 import ChaptersView from "components/parts/ChaptersView/ChaptersView";
-import BackButton from "../layout/BackButton";
+import BackButton from "components/templates/layout/BackButton";
 
 type Props = {
   content: TalkContent;

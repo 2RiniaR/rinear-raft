@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import BackButton from "../layout/BackButton";
 import styles from "./ProjectPage.module.scss";
 import ProjectPageHead from "./ProjectPageHead";
 import { ProjectTop } from "./Top";
+import BackButton from "components/templates/layout/BackButton";
 import { ChapterPoint, ProjectContent } from "lib/contents";
 import ContentPageTemplate from "components/parts/pages/ContentPageTemplate";
 import ChaptersView from "components/parts/ChaptersView/ChaptersView";

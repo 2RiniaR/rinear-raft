@@ -1,5 +1,4 @@
 import React, { useCallback, useRef, useState } from "react";
-import styles from "./Layout.module.scss";
 import { SideMenu, SideMenuButton } from "./SideMenu";
 import TopButton from "components/templates/layout/TopButton";
 
