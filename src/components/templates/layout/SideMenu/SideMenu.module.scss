@@ -10,9 +10,11 @@
   }
 
   @include global.media(tablet) {
-    margin-bottom: 7vh;
-    height: 2rem;
-    width: 2rem;
+    align-self: flex-end;
+    padding: 0.5rem;
+    height: 4rem;
+    width: 4rem;
+    transform: rotateZ(-90deg);
   }
 
   @include global.media(desktop) {
@@ -23,19 +25,26 @@
 }
 
 .index {
+  display: flex;
+  flex-direction: column;
+
   @include global.media(phone) {
     margin-right: 2rem;
     margin-bottom: 1rem;
     flex-grow: 1;
+    gap: 5vh;
   }
 
   @include global.media(tablet) {
-    margin-left: 1rem;
-    width: 70%;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    gap: 5vh;
   }
 
   @include global.media(desktop) {
     margin-left: 1rem;
     width: 70%;
+    gap: 7vh;
   }
 }
