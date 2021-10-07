@@ -6,6 +6,7 @@ export default function useScrollValue(): number {
 
   useEffect(() => {
     const onScroll = () => setScroll(getScrollPosition());
+    onScroll();
     document.addEventListener("scroll", onScroll);
     return (): void => document.removeEventListener("scroll", onScroll);
   }, []);
