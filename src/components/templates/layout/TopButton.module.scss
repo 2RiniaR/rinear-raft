@@ -1,5 +1,31 @@
 @use "global";
 
+.screen {
+  position: fixed;
+  z-index: 100;
+
+  @include global.media(phone) {
+    bottom: 6rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  @include global.media(tablet) {
+    bottom: 6rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  @include global.media(desktop) {
+    bottom: 6rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
 .button {
   display: block;
   background: global.$dark1;

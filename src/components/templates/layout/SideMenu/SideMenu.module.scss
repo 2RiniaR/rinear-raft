@@ -1,5 +1,13 @@
 @use "global";
 
+.screen {
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
 .backButton {
   @include global.media(phone) {
     align-self: flex-end;

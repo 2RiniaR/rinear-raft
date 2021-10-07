@@ -1,5 +1,4 @@
 import React, { useCallback, useRef, useState } from "react";
-import styles from "./Layout.module.scss";
 import { SideMenu, SideMenuButton } from "./SideMenu";
 import TopButton from "components/templates/layout/TopButton";
 
@@ -20,20 +19,10 @@ const Layout = ({ children }: Props): JSX.Element => {
   return (
     <>
       <div ref={topRef} />
-
       {children}
-
-      <div className={styles.sideMenuButton}>
-        <SideMenuButton onClick={() => setSideMenuOpened(true)} />
-      </div>
-
-      <div className={styles.topButton}>
-        <TopButton onClick={() => scrollToTop()} />
-      </div>
-
-      <div className={styles.sideMenu}>
-        <SideMenu open={sideMenuOpened} setOpen={setSideMenuOpened} />
-      </div>
+      <SideMenuButton onClick={() => setSideMenuOpened(true)} />
+      <TopButton onClick={() => scrollToTop()} />
+      <SideMenu open={sideMenuOpened} setOpen={setSideMenuOpened} />
     </>
   );
 };

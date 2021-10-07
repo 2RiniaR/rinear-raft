@@ -7,9 +7,11 @@ type Props = {
 };
 
 const SideMenuButton = ({ onClick }: Props): JSX.Element => (
-  <button className={styles.button} onClick={onClick} name="ホームへ" aria-label="ホームへ">
-    <StaticImage className={styles.logo} src={menuButtonPic} alt="ホームへ" />
-  </button>
+  <div className={styles.screen}>
+    <button className={styles.button} onClick={onClick} name="ホームへ" aria-label="ホームへ">
+      <StaticImage className={styles.logo} src={menuButtonPic} alt="ホームへ" />
+    </button>
+  </div>
 );
 
 export default SideMenuButton;

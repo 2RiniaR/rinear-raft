@@ -19,16 +19,18 @@ const items: SideMenuItemProps[] = [
 ];
 
 const SideMenu = ({ open, setOpen }: Props): JSX.Element => (
-  <SideMenuOpener open={open} setOpen={setOpen}>
-    <button className={styles.backButton} onClick={() => setOpen(false)} name="戻る" aria-label="戻る">
-      <StaticImage src={leftArrowPic} alt="戻る" />
-    </button>
-    <div className={styles.index}>
-      {items.map((item) => (
-        <SideMenuItem {...item} key={item.name} />
-      ))}
-    </div>
-  </SideMenuOpener>
+  <div className={styles.screen}>
+    <SideMenuOpener open={open} setOpen={setOpen}>
+      <button className={styles.backButton} onClick={() => setOpen(false)} name="戻る" aria-label="戻る">
+        <StaticImage src={leftArrowPic} alt="戻る" />
+      </button>
+      <div className={styles.index}>
+        {items.map((item) => (
+          <SideMenuItem {...item} key={item.name} />
+        ))}
+      </div>
+    </SideMenuOpener>
+  </div>
 );
 
 export default SideMenu;
