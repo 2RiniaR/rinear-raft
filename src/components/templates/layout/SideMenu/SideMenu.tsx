@@ -12,7 +12,7 @@ type Props = {
   setOpen: (value: boolean) => void;
 };
 
-const items: SideMenuItemProps[] = [
+const items: Omit<SideMenuItemProps, "onClick">[] = [
   { href: "/", markSrc: logoPic, name: "HOME" },
   { href: "/talks", markSrc: talksPic, name: "TALKS" },
   { href: "/projects", markSrc: projectsPic, name: "PROJECTS" }
@@ -26,7 +26,7 @@ const SideMenu = ({ open, setOpen }: Props): JSX.Element => (
       </button>
       <div className={styles.index}>
         {items.map((item) => (
-          <SideMenuItem {...item} key={item.name} />
+          <SideMenuItem {...item} key={item.name} onClick={() => setOpen(false)} />
         ))}
       </div>
     </SideMenuOpener>

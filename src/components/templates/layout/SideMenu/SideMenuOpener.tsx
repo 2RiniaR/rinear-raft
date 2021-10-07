@@ -27,8 +27,8 @@ const SideMenuOpener = ({ open, setOpen, children }: Props): JSX.Element => {
       style={{ left: display ? "0" : "-100vw" }}
       onTransitionEnd={onCloseTransitionEnd}
     >
-      <div className={styles.menu}>{children}</div>
       <button className={styles.outside} onClick={() => setOpen(false)} name="戻る" aria-label="戻る" />
+      <div className={styles.menu}>{children}</div>
     </div>
   );
 };
