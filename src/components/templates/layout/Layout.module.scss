@@ -11,8 +11,8 @@
   }
 
   @include global.media(tablet) {
-    top: 2rem;
-    left: 2rem;
+    bottom: calc(6rem + 6rem);
+    right: 2rem;
     width: 4rem;
     height: 4rem;
   }

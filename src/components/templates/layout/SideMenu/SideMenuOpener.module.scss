@@ -29,16 +29,15 @@
   }
 
   @include global.media(tablet) {
-    width: 32rem;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      rgba(global.$light2, 100%) 0%,
-      rgba(global.$light2, 90%) 60%,
-      transparent 100%
-    );
-    padding: 2rem 2rem 0 2rem;
-    transform: translate(-2rem, 0);
+    width: 100%;
+    height: 60vh;
+    background: linear-gradient(to top, rgba(global.$light2, 100%) 0%, rgba(global.$light2, 90%) 60%, transparent 100%);
+    padding: 2rem 2rem 2rem 3rem;
+    transform: translate(0, 2rem);
+    bottom: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
   }
 
   @include global.media(desktop) {
@@ -66,9 +65,9 @@
   }
 
   @include global.media(tablet) {
-    height: 100vh;
-    width: calc(100vw - 26rem);
-    right: 0;
+    width: 100vw;
+    height: 50vh;
+    top: 0;
   }
 
   @include global.media(desktop) {
