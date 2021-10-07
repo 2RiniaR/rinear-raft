@@ -37,17 +37,13 @@
   flex-direction: column;
 
   @include global.media(phone) {
-    margin-right: 2rem;
-    margin-bottom: 1rem;
     flex-grow: 1;
-    gap: 5vh;
+    gap: 1rem;
   }
 
   @include global.media(tablet) {
-    margin-right: 2rem;
-    margin-bottom: 1rem;
     flex-grow: 1;
-    gap: 5vh;
+    gap: 1.5rem;
   }
 
   @include global.media(desktop) {
