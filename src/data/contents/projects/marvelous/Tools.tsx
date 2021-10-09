@@ -1,7 +1,8 @@
-import { ListItem, UnorderedList } from "content-parts";
+import { Heading, ListItem, UnorderedList } from "content-parts";
 
 const Section = (): JSX.Element => (
   <>
+    <Heading level="sub">言語・ライブラリ等</Heading>
     <UnorderedList>
       <ListItem>Python 3.8</ListItem>
       <ListItem>discord.py</ListItem>

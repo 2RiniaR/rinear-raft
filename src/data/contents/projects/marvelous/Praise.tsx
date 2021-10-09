@@ -17,8 +17,8 @@ const Section = (): JSX.Element => (
       他ユーザーのメッセージに
       <Emoji characters="🙌" label="万歳" />
       のリアクションを付けることで、相手に特殊な褒めるアクションを送ることができます。褒めた相手にはえらいポイントが多く付与されます。
+      ただし、一週間当たりの使用回数には制限があります。
     </Paragraph>
-    <Paragraph>ただし、一週間当たりの使用回数には制限があります。</Paragraph>
 
     <ContentImage src={TutorialPic4} alt="チュートリアル4" />
     <Paragraph>

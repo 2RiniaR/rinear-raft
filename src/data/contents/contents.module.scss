@@ -5,6 +5,7 @@
 
   a {
     color: #77aaff;
+    margin-inline: 0.2em;
 
     @include global.media(phone) {
       text-decoration: underline currentColor;
@@ -21,40 +22,7 @@
     }
 
     &:visited {
-      color: #386bbe;
-    }
-
-    &::before {
-      content: "";
-      display: inline-block;
-      width: 0.2em;
-      height: 0;
-    }
-
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 0.2em;
-      height: 0;
-    }
-  }
-
-  strong {
-    font-size: 1.2rem;
-    color: #ffffff;
-
-    &::before {
-      content: "";
-      display: inline-block;
-      width: 0.2em;
-      height: 0;
-    }
-
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 0.2em;
-      height: 0;
+      color: #9477ff;
     }
   }
 

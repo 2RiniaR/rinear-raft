@@ -1,4 +1,4 @@
-import { Heading, ListItem, Paragraph, Space, UnorderedList } from "content-parts";
+import { Heading, ListItem, Paragraph, UnorderedList } from "content-parts";
 
 const Section = (): JSX.Element => (
   <>
@@ -7,13 +7,11 @@ const Section = (): JSX.Element => (
       ただし、残り時間が0になるか残りライフが0になるとゲームオーバー。ライフは「針山」や「マグマ」に触れると1だけ減少します。
       ステージ内に散らばっているアイテムを駆使してクリア・高スコアを狙おう！
     </Paragraph>
-    <Space size={2} />
     <Heading level="sub">操作方法（メニュー時）</Heading>
     <UnorderedList>
       <ListItem>↑↓←→：カーソル移動</ListItem>
       <ListItem>Z：決定</ListItem>
     </UnorderedList>
-    <Space size={2} />
     <Heading level="sub">操作方法（ゲーム時）</Heading>
     <UnorderedList>
       <ListItem>↑↓←→：移動</ListItem>

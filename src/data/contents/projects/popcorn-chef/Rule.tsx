@@ -3,15 +3,13 @@ import Bomb1Pic from "public/contents/projects/popcorn-chef/game3.jpg";
 import Bomb2Pic from "public/contents/projects/popcorn-chef/game4.jpg";
 import OrderPic from "public/contents/projects/popcorn-chef/game5.jpg";
 import RushPic from "public/contents/projects/popcorn-chef/rush.jpg";
-import { ContentImage, Heading, ListItem, Paragraph, Space, UnorderedList } from "content-parts";
+import { ContentImage, Heading, ListItem, Paragraph, UnorderedList } from "content-parts";
 
 const Section = (): JSX.Element => (
   <>
     <Paragraph>
       ポップコーンを調理して、調理したポップコーンを食べると画面下の満腹ゲージが溜まっていく。満腹ゲージが先に満タンになったほうが勝ち！
     </Paragraph>
-
-    <Space size={2} />
 
     <Heading level="sub">豆の調理について</Heading>
     <Paragraph>
@@ -22,15 +20,11 @@ const Section = (): JSX.Element => (
     <Paragraph>
       コンロの「弱」「中」「強」ボタンを押すと、コンロの火力を調節できる。
       豆はコンロの火力が強いほど、コンロの底面に近いほど早く加熱される。
-    </Paragraph>
-    <Paragraph>
       豆を一定量加熱するとはじけて、食べられるポップコーンの状態になる。
       はじけたポップコーンをクリックすると食べることができる。 食べると、満腹ゲージが溜まっていく。
+      豆にはいくつか種類があり、それぞれの効果は以下の通り。
     </Paragraph>
-    <Paragraph>豆にはいくつか種類があり、それぞれの効果は以下の通り。</Paragraph>
     <ContentImage src={BeansPic} alt="豆の一覧" />
-
-    <Space size={2} />
 
     <Heading level="sub">豆の送り合い</Heading>
     <Paragraph>
@@ -43,8 +37,6 @@ const Section = (): JSX.Element => (
     <ContentImage src={Bomb2Pic} alt="あぶない豆2" />
     <Paragraph>画面下半分の画面外に出た豆やポップコーンは、相手側へ送られることなく廃棄される。</Paragraph>
 
-    <Space size={2} />
-
     <Heading level="sub">注文</Heading>
     <Paragraph>
       ポップコーンを3個食べるごとに、画面右側に注文パネルが出現する。欲しい豆やアイテムをクリックすると、選択したものが画面上から降ってくる。
@@ -53,8 +45,6 @@ const Section = (): JSX.Element => (
     <Paragraph>
       選べるアイテムはランダムで、豆のほかに上記画像にある「フタ」を注文することができる。フタは一定時間鍋の上側をふさぎ、他の豆が鍋の中に落ちないようにできる。
     </Paragraph>
-
-    <Space size={2} />
 
     <Heading level="sub">イベント</Heading>
     <Paragraph>一定時間ごとに、イベントが発生する。 発生するイベントは、以下のうちからランダムで抽選される。</Paragraph>

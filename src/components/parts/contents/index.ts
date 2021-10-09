@@ -13,3 +13,4 @@ export { default as Quotation } from "./Quotation";
 export { default as TextEffect } from "./TextEffect";
 export { default as UnorderedList } from "./UnorderedList";
 export { default as Emoji } from "./Emoji";
+export { default as Strong } from "./Strong";

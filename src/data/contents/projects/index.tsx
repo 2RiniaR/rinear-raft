@@ -1,3 +1,4 @@
+import styles from "../contents.module.scss";
 import { ContentContext, ContentPage, ContentPageProps, ProjectContent } from "lib/contents";
 import { arrayToDict } from "lib/helper";
 
@@ -24,9 +25,11 @@ export class ProjectRepository {
   private static preprocessPage(Children: ContentPage): ContentPage {
     function PreprocessedPage({ ...props }: ContentPageProps): JSX.Element {
       return (
-        <ContentContext.Provider value={{ genre: "projects" }}>
-          <Children {...props} />
-        </ContentContext.Provider>
+        <main className={styles.content}>
+          <ContentContext.Provider value={{ genre: "projects" }}>
+            <Children {...props} />
+          </ContentContext.Provider>
+        </main>
       );
     }
     return PreprocessedPage;

@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import styles from "../../contents.module.scss";
 import Movie from "./Movie";
 import Download from "./Download";
 import Rule from "./Rule";
@@ -27,7 +26,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   useEffect(() => setChapters(Object.values(refs)), []);
 
   return (
-    <main className={styles.content}>
+    <>
       <Chapter title={refs.movie.name} jumpRef={refs.movie.ref}>
         <Movie />
       </Chapter>
@@ -51,7 +50,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
       <Chapter title={refs.background.name} jumpRef={refs.background.ref}>
         <Background />
       </Chapter>
-    </main>
+    </>
   );
 };
 

@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import styles from "../../contents.module.scss";
 import AboutHomePage from "./AboutHomePage";
 import AboutRineaR from "./AboutRineaR";
 import AboutExternalServices from "./AboutExternalServices";
@@ -22,7 +21,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   useEffect(() => setChapters(Object.values(refs)), []);
 
   return (
-    <main className={styles.content}>
+    <>
       <Chapter title={refs.aboutHomePage.name} jumpRef={refs.aboutHomePage.ref}>
         <AboutHomePage />
       </Chapter>
@@ -42,7 +41,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
       <Chapter title={refs.aboutCatchphrase.name} jumpRef={refs.aboutCatchphrase.ref}>
         <AboutCatchphrase />
       </Chapter>
-    </main>
+    </>
   );
 };
 

@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import styles from "../../contents.module.scss";
 import Point from "./Point";
 import Praise from "./Praise";
 import Howto from "./Howto";
@@ -27,7 +26,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   useEffect(() => setChapters(Object.values(refs)), []);
 
   return (
-    <main className={styles.content}>
+    <>
       <Chapter title={refs.howto.name} jumpRef={refs.howto.ref}>
         <Howto />
       </Chapter>
@@ -51,7 +50,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
       <Chapter title={refs.background.name} jumpRef={refs.background.ref}>
         <Background />
       </Chapter>
-    </main>
+    </>
   );
 };
 
