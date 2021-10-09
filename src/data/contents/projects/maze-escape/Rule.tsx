@@ -1,25 +1,25 @@
-import Space from "components/parts/contents/Space";
+import { Heading, ListItem, Paragraph, Space, UnorderedList } from "content-parts";
 
 const Section = (): JSX.Element => (
   <>
-    <p>
+    <Paragraph>
       プレイヤーを上下左右に移動し、制限時間以内にステージのゴールに触ればクリア。
       ただし、残り時間が0になるか残りライフが0になるとゲームオーバー。ライフは「針山」や「マグマ」に触れると1だけ減少します。
       ステージ内に散らばっているアイテムを駆使してクリア・高スコアを狙おう！
-    </p>
+    </Paragraph>
     <Space size={2} />
-    <h2>操作方法（メニュー時）</h2>
-    <ul>
-      <li>↑↓←→：カーソル移動</li>
-      <li>Z：決定</li>
-    </ul>
+    <Heading level="sub">操作方法（メニュー時）</Heading>
+    <UnorderedList>
+      <ListItem>↑↓←→：カーソル移動</ListItem>
+      <ListItem>Z：決定</ListItem>
+    </UnorderedList>
     <Space size={2} />
-    <h2>操作方法（ゲーム時）</h2>
-    <ul>
-      <li>↑↓←→：移動</li>
-      <li>左Shift + ↑↓←→：低速移動</li>
-      <li>Space：ポーズメニュー</li>
-    </ul>
+    <Heading level="sub">操作方法（ゲーム時）</Heading>
+    <UnorderedList>
+      <ListItem>↑↓←→：移動</ListItem>
+      <ListItem>左Shift + ↑↓←→：低速移動</ListItem>
+      <ListItem>Space：ポーズメニュー</ListItem>
+    </UnorderedList>
   </>
 );
 

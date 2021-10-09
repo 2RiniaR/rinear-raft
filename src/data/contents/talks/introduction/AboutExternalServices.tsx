@@ -1,6 +1,8 @@
+import { Paragraph } from "content-parts";
+
 const Section = (): JSX.Element => (
   <>
-    <p>このページの一番下に各サイトへのリンクがあります。</p>
+    <Paragraph>このページの一番下に各サイトへのリンクがあります。</Paragraph>
   </>
 );
 

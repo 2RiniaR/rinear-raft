@@ -1,13 +1,13 @@
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import styles from "../projects.module.scss";
+import styles from "../../contents.module.scss";
 import Movie from "./Movie";
 import Download from "./Download";
 import Rule from "./Rule";
 import Strategy from "./Strategy";
 import Tools from "./Tools";
 import Background from "./Background";
-import { Chapter } from "components/parts/contents";
+import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
 import thumbnailPic1 from "public/contents/projects/maze-escape/stage1.jpg";
 import thumbnailPic2 from "public/contents/projects/maze-escape/title.jpg";

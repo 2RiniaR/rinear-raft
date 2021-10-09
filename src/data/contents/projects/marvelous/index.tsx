@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import styles from "../projects.module.scss";
+import styles from "../../contents.module.scss";
 import Point from "./Point";
 import Praise from "./Praise";
 import Howto from "./Howto";
@@ -8,7 +8,7 @@ import Bonuses from "./Bonuses";
 import Tools from "./Tools";
 import Background from "./Background";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
-import { Chapter } from "components/parts/contents";
+import { Chapter } from "content-parts";
 import thumbnailPic1 from "public/contents/projects/marvelous/top1.png";
 import thumbnailPic2 from "public/contents/projects/marvelous/top2.png";
 import thumbnailPic3 from "public/contents/projects/marvelous/top3.png";

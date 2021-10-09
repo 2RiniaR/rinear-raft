@@ -29,3 +29,10 @@ export function getScrollPosition(): number {
 export function assignClasses(...values: string[]): string {
   return values.join(" ");
 }
+
+export function arrayToDict<T, U>(array: T[], key: (obj: T) => string, value: (obj: T) => U): { [key: string]: U } {
+  return array.reduce<{ [key: string]: U }>((prev, curr) => {
+    prev[key(curr)] = value(curr);
+    return prev;
+  }, {});
+}

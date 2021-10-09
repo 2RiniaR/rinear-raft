@@ -1,12 +1,12 @@
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import styles from "../talks.module.scss";
+import styles from "../../contents.module.scss";
 import AboutHomePage from "./AboutHomePage";
 import AboutRineaR from "./AboutRineaR";
 import AboutExternalServices from "./AboutExternalServices";
 import AboutTechnology from "./AboutTechnology";
 import AboutCatchphrase from "./AboutCatchphrase";
-import { Chapter } from "components/parts/contents";
+import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, TalkContent } from "lib/contents";
 import thumbnailPic from "public/contents/projects/rinear-official-site/HomePage1.jpg";
 

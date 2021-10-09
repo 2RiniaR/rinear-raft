@@ -1,10 +1,12 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import TalkPage from "components/templates/talk/TalkPage";
-import { contentsRepository } from "data/contents";
+import { TalkRepository } from "data/contents/talks";
+import { getContentsId } from "data/contents/talks/fetch";
 
-const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => (
-  <TalkPage content={contentsRepository.getTalk(id)} />
-);
+const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  const repository = new TalkRepository([id]);
+  return <TalkPage content={repository.getContent(id)} />;
+};
 
 export const getStaticProps: GetStaticProps = async (context) => {
   if (typeof context.params?.id !== "string") throw Error();
@@ -14,7 +16,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const contentsId = contentsRepository.getTalkContents().map((content) => content.id);
+  const contentsId = await getContentsId();
   return {
     paths: contentsId.map((id) => ({ params: { id } })),
     fallback: false

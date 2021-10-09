@@ -1,8 +1,10 @@
-import Space from "components/parts/contents/Space";
+import { Paragraph, Space } from "content-parts";
 
 const Section = (): JSX.Element => (
   <>
-    <p>RineaRで活動していく上での、その方針を表したキャッチフレーズとか、スローガンみたいなやつです。</p>
+    <Paragraph>
+      RineaRで活動していく上での、その方針を表したキャッチフレーズとか、スローガンみたいなやつです。
+    </Paragraph>
     <p>
       具体的に言うと、私は「〇〇を成し遂げたい！」みたいな目的を持たずに、ただその時その場でやりたいこと、楽しいと思ったことをやりたいんです。
     </p>

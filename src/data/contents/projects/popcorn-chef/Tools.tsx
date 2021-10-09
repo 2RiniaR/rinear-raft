@@ -1,12 +1,14 @@
+import { Heading, ListItem, UnorderedList } from "content-parts";
+
 const Section = (): JSX.Element => (
   <>
-    <h2>言語・ライブラリ</h2>
-    <ul>
-      <li>Unity 2019.1.9f1</li>
-      <li>UniRx</li>
-      <li>UniTask</li>
-      <li>Photon Unity Network</li>
-    </ul>
+    <Heading level="sub">言語・ライブラリ</Heading>
+    <UnorderedList>
+      <ListItem>Unity 2019.1.9f1</ListItem>
+      <ListItem>UniRx</ListItem>
+      <ListItem>UniTask</ListItem>
+      <ListItem>Photon Unity Network</ListItem>
+    </UnorderedList>
   </>
 );
 

@@ -1,4 +1,4 @@
-import ComingSoon from "components/parts/contents/ComingSoon";
+import { ComingSoon } from "content-parts";
 
 const Section = (): JSX.Element => (
   <>
