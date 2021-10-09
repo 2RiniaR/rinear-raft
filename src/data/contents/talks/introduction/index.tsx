@@ -1,12 +1,11 @@
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import styles from "../talks.module.scss";
 import AboutHomePage from "./AboutHomePage";
 import AboutRineaR from "./AboutRineaR";
 import AboutExternalServices from "./AboutExternalServices";
 import AboutTechnology from "./AboutTechnology";
 import AboutCatchphrase from "./AboutCatchphrase";
-import { Chapter } from "components/parts/contents";
+import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, TalkContent } from "lib/contents";
 import thumbnailPic from "public/contents/projects/rinear-official-site/HomePage1.jpg";
 
@@ -22,7 +21,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   useEffect(() => setChapters(Object.values(refs)), []);
 
   return (
-    <main className={styles.content}>
+    <>
       <Chapter title={refs.aboutHomePage.name} jumpRef={refs.aboutHomePage.ref}>
         <AboutHomePage />
       </Chapter>
@@ -42,7 +41,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
       <Chapter title={refs.aboutCatchphrase.name} jumpRef={refs.aboutCatchphrase.ref}>
         <AboutCatchphrase />
       </Chapter>
-    </main>
+    </>
   );
 };
 

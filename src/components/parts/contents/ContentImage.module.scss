@@ -1,7 +1,7 @@
 @use "global";
 
 .container {
-  margin: 0 auto 1.6rem auto;
+  margin: 1.2rem auto;
 
   @include global.media(phone) {
     width: 100%;

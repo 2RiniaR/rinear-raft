@@ -1,0 +1,20 @@
+@use "global";
+
+.block {
+  background-color: rgba(global.$dark1, 80%);
+  padding: 0.5em;
+  line-height: 1.5;
+}
+
+.inline {
+  background-color: rgba(global.$dark1, 80%);
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-radius: 10%;
+  margin-inline: 0.4em;
+  padding-inline: 0.3em;
+}
+
+.code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}

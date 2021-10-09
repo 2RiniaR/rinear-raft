@@ -1,10 +1,13 @@
+import { Heading, ListItem, UnorderedList } from "content-parts";
+
 const Section = (): JSX.Element => (
   <>
-    <ul>
-      <li>Python 3.8</li>
-      <li>discord.py</li>
-      <li>Heroku</li>
-    </ul>
+    <Heading level="sub">言語・ライブラリ等</Heading>
+    <UnorderedList>
+      <ListItem>Python 3.8</ListItem>
+      <ListItem>discord.py</ListItem>
+      <ListItem>Heroku</ListItem>
+    </UnorderedList>
   </>
 );
 

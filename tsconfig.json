@@ -19,9 +19,8 @@
     "jsx": "preserve",
     "baseUrl": "src",
     "paths": {
-      "public/*": [
-        "../public/*"
-      ]
+      "public/*": ["../public/*"],
+      "content-parts": ["./components/parts/contents"]
     },
     "incremental": true
   },

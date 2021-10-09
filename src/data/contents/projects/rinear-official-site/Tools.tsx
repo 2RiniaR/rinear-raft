@@ -1,21 +1,23 @@
+import { Heading, ListItem, UnorderedList } from "content-parts";
+
 const Section = (): JSX.Element => (
   <>
-    <h2>言語・ライブラリ等</h2>
-    <ul>
-      <li>React</li>
-      <li>Next.js</li>
-      <li>TypeScript</li>
-      <li>SCSS</li>
-    </ul>
+    <Heading level="sub">言語・ライブラリ等</Heading>
+    <UnorderedList>
+      <ListItem>React</ListItem>
+      <ListItem>Next.js</ListItem>
+      <ListItem>TypeScript</ListItem>
+      <ListItem>SCSS</ListItem>
+    </UnorderedList>
 
-    <h2>デザインツール</h2>
-    <ul>
-      <li>Adobe Illustrator</li>
-      <li>Adobe Photoshop</li>
-      <li>Adobe XD</li>
-      <li>Blender</li>
-      <li>CLIP STUDIO PAINT</li>
-    </ul>
+    <Heading level="sub">デザインツール</Heading>
+    <UnorderedList>
+      <ListItem>Adobe Illustrator</ListItem>
+      <ListItem>Adobe Photoshop</ListItem>
+      <ListItem>Adobe XD</ListItem>
+      <ListItem>Blender</ListItem>
+      <ListItem>CLIP STUDIO PAINT</ListItem>
+    </UnorderedList>
   </>
 );
 

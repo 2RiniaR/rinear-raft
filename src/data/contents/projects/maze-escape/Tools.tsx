@@ -1,14 +1,15 @@
 import ExternalLink from "components/functions/link/ExternalLink";
+import { Heading, ListItem, UnorderedList } from "content-parts";
 
 const Section = (): JSX.Element => (
   <>
-    <h2>言語・ライブラリ</h2>
-    <ul>
-      <li>C++（Microsoft Visual C++）</li>
-      <li>
+    <Heading level="sub">言語・ライブラリ等</Heading>
+    <UnorderedList>
+      <ListItem>C++（Microsoft Visual C++）</ListItem>
+      <ListItem>
         <ExternalLink href="https://dxlib.xsrv.jp/">DXライブラリ</ExternalLink>
-      </li>
-    </ul>
+      </ListItem>
+    </UnorderedList>
   </>
 );
 
