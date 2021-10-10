@@ -1,7 +1,7 @@
 import styles from "./Shadow.module.scss";
-import StaticImage from "components/functions/image/StaticImage";
+import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
 import shadowPic from "public/img/shadow.png";
 
-const Shadow = (): JSX.Element => <StaticImage className={styles.image} src={shadowPic} alt="トップ画像1" />;
+const Shadow = (): JSX.Element => <LazyStaticImage className={styles.image} src={shadowPic} alt="トップ画像1" />;
 
 export default Shadow;
