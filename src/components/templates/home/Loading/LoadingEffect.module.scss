@@ -4,4 +4,24 @@
   height: 100%;
   z-index: 500;
   background-color: #ddd;
+  opacity: 1;
+}
+
+.loading {
+  // do nothing
+}
+
+.completed {
+  animation: close 0.8s normal forwards ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
