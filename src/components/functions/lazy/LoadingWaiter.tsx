@@ -4,9 +4,16 @@ import { LoadingContext } from ".";
 type Props = {
   children?: ReactNode;
   onCompleted: () => void;
+  onProgressUpdated?: (percent: number) => void;
 };
 
-const LoadingWaiter = ({ children, onCompleted }: Props): JSX.Element => {
+const LoadingWaiter = ({
+  children,
+  onCompleted,
+  onProgressUpdated = () => {
+    /* do nothing */
+  }
+}: Props): JSX.Element => {
   const [registerCount, setRegisterCount] = useState(0);
   const [completeCount, setCompleteCount] = useState(0);
   const [completeCalled, setCompleteCalled] = useState(false);
@@ -17,6 +24,8 @@ const LoadingWaiter = ({ children, onCompleted }: Props): JSX.Element => {
   }
 
   useEffect(() => {
+    onProgressUpdated(0);
+
     return () => {
       setRegisterCount(0);
       setCompleteCount(0);
@@ -25,11 +34,11 @@ const LoadingWaiter = ({ children, onCompleted }: Props): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    console.log(`${completeCount}/${registerCount} completed`);
-    if (registerCount > 0 && completeCount === registerCount && !completeCalled) {
+    if (registerCount === 0 || completeCalled) return;
+    onProgressUpdated(completeCount / registerCount);
+    if (completeCount === registerCount) {
       onCompleted();
       setCompleteCalled(true);
-      console.log("complete all!");
     }
   }, [registerCount, completeCount]);
 

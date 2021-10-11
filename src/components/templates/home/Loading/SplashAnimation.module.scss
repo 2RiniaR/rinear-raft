@@ -1,0 +1,147 @@
+@use "global";
+
+.aspectKeeper {
+  position: absolute;
+  width: min(100vh, 100vw);
+  margin: auto;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.fall {
+  position: absolute;
+  width: 2px;
+  background-color: global.$light1;
+  left: 50%;
+  transform: translateX(-50%);
+
+  animation-name: loop_fall;
+  animation-timing-function: linear;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+
+  @keyframes loop_fall {
+    0% {
+      top: 0;
+      bottom: 100%;
+    }
+    5% {
+      top: 0;
+      bottom: 70%;
+    }
+    20% {
+      top: 45%;
+      bottom: 25%;
+    }
+    25% {
+      top: 75%;
+      bottom: 25%;
+    }
+  }
+}
+
+.wave1 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  bottom: 0;
+  border-radius: 50% / 50%;
+  border: global.$light1 solid 4px;
+
+  animation-name: loop_wave1;
+  animation-timing-function: ease-out;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+
+  @keyframes loop_wave1 {
+    0% {
+      transform: scale(0);
+    }
+    20% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    70% {
+      transform: scale(1);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+.wave2 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  bottom: 0;
+  border-radius: 50% / 50%;
+  border: global.$light1 solid 4px;
+
+  animation-name: loop_wave2;
+  animation-timing-function: ease-out;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+
+  @keyframes loop_wave2 {
+    0% {
+      transform: scale(0);
+    }
+    35% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    85% {
+      transform: scale(1);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+.wave3 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  bottom: 0;
+  border-radius: 50% / 50%;
+  border: global.$light1 solid 4px;
+
+  animation-name: loop_wave3;
+  animation-timing-function: ease-out;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+
+  @keyframes loop_wave3 {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+}

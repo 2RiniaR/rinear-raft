@@ -12,15 +12,18 @@
 }
 
 .completed {
-  animation: close 0.8s normal forwards ease-in-out;
+  animation: close 1.2s normal forwards ease-in-out;
   pointer-events: none;
 }
 
 @keyframes close {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  30% {
+    opacity: 1;
+  }
+  100% {
     opacity: 0;
     visibility: hidden;
   }

@@ -7,15 +7,18 @@ import { About } from "./About";
 import { LoadingEffect } from "./Loading";
 import Footer from "components/parts/Footer";
 import { LoadingWaiter } from "components/functions/lazy";
+import { assignClasses } from "lib/helper";
 
 const HomePage = (): JSX.Element => {
   const [loadCompleted, setLoadCompleted] = useState(false);
+  const [loadProgress, setLoadProgress] = useState(0);
 
   return (
-    <LoadingWaiter onCompleted={() => setLoadCompleted(true)}>
-      <LoadingEffect loading={!loadCompleted} />
+    <LoadingWaiter onCompleted={() => setLoadCompleted(true)} onProgressUpdated={setLoadProgress}>
       <HomePageHead />
-      <div className={styles.page}>
+      <LoadingEffect loading={!loadCompleted} progress={loadProgress} />
+      {/*<LoadingEffect loading={true} progress={loadProgress} />*/}
+      <div className={assignClasses(styles.page, loadCompleted ? styles.loaded : styles.loading)}>
         <HomeTop />
         <About />
         <Menu />

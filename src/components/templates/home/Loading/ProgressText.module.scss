@@ -1,0 +1,13 @@
+@use "global";
+
+.percent {
+  display: inline-block;
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(2rem, 5vw, 5rem);
+  color: global.$light1;
+  z-index: 5;
+}
