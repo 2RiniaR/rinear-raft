@@ -1,17 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./ProgressText.module.scss";
-import useEaseNumber from "components/functions/number/EaseNumber";
 
 type Props = {
   percent: number;
 };
 
-const percentFormatter = new Intl.NumberFormat("ja", { style: "percent" });
-const ProgressText = ({ percent }: Props): JSX.Element => {
-  const [display, setDisplay] = useEaseNumber(percent);
-  useEffect(() => setDisplay(percent), [percent]);
-
-  return <span className={styles.percent}>{percentFormatter.format(display)}</span>;
-};
+const ProgressText = ({ percent }: Props): JSX.Element => (
+  <div className={styles.layout}>
+    <span className={styles.text}>Now Loading...</span>
+    <div className={styles.progress} style={{ width: `${percent * 100}%` }} />
+  </div>
+);
 
 export default ProgressText;

@@ -5,7 +5,7 @@
   width: min(100vh, 100vw);
   margin: auto;
   left: 50%;
-  top: 45%;
+  top: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
 
@@ -30,6 +30,7 @@
   background-color: global.$light1;
   left: 50%;
   transform: translateX(-50%);
+  opacity: 0.5;
 
   animation-name: loop_fall;
   animation-timing-function: linear;
