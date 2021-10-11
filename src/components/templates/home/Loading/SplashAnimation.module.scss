@@ -2,12 +2,23 @@
 
 .aspectKeeper {
   position: absolute;
-  width: min(100vh, 100vw);
   margin: auto;
+  top: 45%;
   left: 50%;
-  top: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
+
+  @include global.media(phone) {
+    width: 24rem;
+  }
+
+  @include global.media(tablet) {
+    width: 32rem;
+  }
+
+  @include global.media(desktop) {
+    width: 40rem;
+  }
 
   &::before {
     content: "";

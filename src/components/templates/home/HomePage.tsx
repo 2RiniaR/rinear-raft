@@ -17,7 +17,6 @@ const HomePage = (): JSX.Element => {
     <LoadingWaiter onCompleted={() => setLoadCompleted(true)} onProgressUpdated={setLoadProgress}>
       <HomePageHead />
       <LoadingEffect loading={!loadCompleted} progress={loadProgress} />
-      {/*<LoadingEffect loading={true} progress={loadProgress} />*/}
       <div className={assignClasses(styles.page, loadCompleted ? styles.loaded : styles.loading)}>
         <HomeTop />
         <About />
