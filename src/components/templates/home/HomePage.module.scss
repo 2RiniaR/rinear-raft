@@ -5,8 +5,15 @@
   background: #666666;
   overflow-x: hidden;
   overflow-y: hidden;
-  display: flex;
   flex-direction: column;
   gap: 12rem;
   padding-bottom: 1rem;
+
+  &.loaded {
+    display: flex;
+  }
+
+  &.loading {
+    display: none;
+  }
 }

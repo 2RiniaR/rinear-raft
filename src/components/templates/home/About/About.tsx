@@ -3,12 +3,16 @@ import CatchPhrase from "./CatchPhrase";
 import Description from "./Description";
 import ResponsiveBackgroundImage from "components/functions/responsive/ResponsiveBackgroundImage";
 import backgroundPic from "public/img/note_clipped.png";
+import { useLoading } from "components/functions/lazy";
 
-const About = (): JSX.Element => (
-  <ResponsiveBackgroundImage src={backgroundPic} alt="背景">
-    <CatchPhrase />
-    <Description />
-  </ResponsiveBackgroundImage>
-);
+const About = (): JSX.Element => {
+  const onLoadingComplete = useLoading();
+  return (
+    <ResponsiveBackgroundImage src={backgroundPic} alt="背景" onLoadingComplete={onLoadingComplete} loading={"eager"}>
+      <CatchPhrase />
+      <Description />
+    </ResponsiveBackgroundImage>
+  );
+};
 
 export default About;
