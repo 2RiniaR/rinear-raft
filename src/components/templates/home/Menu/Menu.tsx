@@ -21,6 +21,7 @@ const items: MenuItemProps[] = [
 
 const Menu = (): JSX.Element => (
   <div className={styles.background}>
+    <h2 className={styles.title}>MENU</h2>
     <div className={styles.items}>
       {items.map((item) => (
         <MenuItem {...item} key={item.href} />
