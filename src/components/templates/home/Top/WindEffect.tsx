@@ -5,8 +5,18 @@ import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
 
 const WindEffect = (): JSX.Element => (
   <>
-    <LazyStaticImage className={assignClasses(styles.effect, styles.layer1)} src={windEffectPic} alt="風のエフェクト" />
-    <LazyStaticImage className={assignClasses(styles.effect, styles.layer2)} src={windEffectPic} alt="風のエフェクト" />
+    <LazyStaticImage
+      className={assignClasses(styles.effect, styles.layer1)}
+      src={windEffectPic}
+      alt="風のエフェクト"
+      layout="responsive"
+    />
+    <LazyStaticImage
+      className={assignClasses(styles.effect, styles.layer2)}
+      src={windEffectPic}
+      alt="風のエフェクト"
+      layout="responsive"
+    />
   </>
 );
 
