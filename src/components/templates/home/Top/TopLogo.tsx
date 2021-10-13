@@ -13,9 +13,9 @@ const TopLogo = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <LazyStaticImage className={styles.image} src={logoBackPic} alt="背景画像" />
+      <LazyStaticImage className={styles.image} src={logoBackPic} alt="背景画像" layout="responsive" />
       <div className={styles.front} ref={frontRef}>
-        <LazyStaticImage className={styles.logo} src={logoPic} alt="ロゴ" />
+        <LazyStaticImage className={styles.logo} src={logoPic} alt="ロゴ" layout="responsive" />
         <h1 className={styles.name} style={{ fontSize: getFontSize(), letterSpacing: getLetterSpacing() }}>
           RineaR
           <span style={{ marginRight: -getLetterSpacing() }} />
