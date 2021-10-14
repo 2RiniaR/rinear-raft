@@ -20,8 +20,8 @@ const Background = ({ children }: Props): JSX.Element => {
       <div className={styles.slideArea}>
         <ConstantSizeParallax maxSpeed={0.8}>
           <div className={styles.inner} style={{ width: getSize(), height: getSize(), left: getLeft() }}>
-            <StaticImage className={styles.background} src={landscapePic} alt="背景" />
-            <StaticImage className={styles.holeEffect} src={holeEffectPic} alt="背景" />
+            <StaticImage className={styles.background} src={landscapePic} alt="背景" layout="responsive" />
+            <StaticImage className={styles.holeEffect} src={holeEffectPic} alt="背景" layout="responsive" />
             <div className={styles.colorMask} />
           </div>
         </ConstantSizeParallax>
