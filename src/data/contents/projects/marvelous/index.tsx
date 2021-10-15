@@ -8,10 +8,10 @@ import Tools from "./Tools";
 import Background from "./Background";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
 import { Chapter } from "content-parts";
-import thumbnailPic1 from "public/contents/projects/marvelous/top1.png";
-import thumbnailPic2 from "public/contents/projects/marvelous/top2.png";
-import thumbnailPic3 from "public/contents/projects/marvelous/top3.png";
-import thumbnailPic4 from "public/contents/projects/marvelous/top4.png";
+import thumbnailPic1 from "public/contents/projects/marvelous/top1.webp";
+import thumbnailPic2 from "public/contents/projects/marvelous/top2.webp";
+import thumbnailPic3 from "public/contents/projects/marvelous/top3.webp";
+import thumbnailPic4 from "public/contents/projects/marvelous/top4.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {

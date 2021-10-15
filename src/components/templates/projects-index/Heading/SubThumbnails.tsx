@@ -1,6 +1,6 @@
 import styles from "./SubThumbnails.module.scss";
 import { ProjectContentHead } from "lib/contents";
-import FixedImage from "components/functions/image/FixedImage";
+import StaticImage from "components/functions/image/StaticImage";
 
 type Props = {
   head: ProjectContentHead;
@@ -9,7 +9,7 @@ type Props = {
 const SubThumbnails = ({ head }: Props): JSX.Element => (
   <div className={styles.layout}>
     {head.thumbnails.slice(1).map((thumbnailPath, index) => (
-      <FixedImage src={thumbnailPath} alt={head.title} className={styles.item} key={`thumbnailPath-${index}`} />
+      <StaticImage src={thumbnailPath} alt={head.title} className={styles.item} key={`thumbnailPath-${index}`} />
     ))}
   </div>
 );

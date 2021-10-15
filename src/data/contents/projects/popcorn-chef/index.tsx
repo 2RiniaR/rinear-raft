@@ -8,10 +8,10 @@ import Tools from "./Tools";
 import Background from "./Background";
 import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
-import thumbnailPic1 from "public/contents/projects/popcorn-chef/game1.jpg";
-import thumbnailPic2 from "public/contents/projects/popcorn-chef/title.jpg";
-import thumbnailPic3 from "public/contents/projects/popcorn-chef/game4.jpg";
-import thumbnailPic4 from "public/contents/projects/popcorn-chef/lobby.jpg";
+import thumbnailPic1 from "public/contents/projects/popcorn-chef/game1.webp";
+import thumbnailPic2 from "public/contents/projects/popcorn-chef/title.webp";
+import thumbnailPic3 from "public/contents/projects/popcorn-chef/game4.webp";
+import thumbnailPic4 from "public/contents/projects/popcorn-chef/lobby.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {

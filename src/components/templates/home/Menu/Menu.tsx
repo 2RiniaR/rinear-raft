@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import VisibilitySensor from "react-visibility-sensor";
 import styles from "./Menu.module.scss";
 import MenuItem, { MenuItemProps } from "./MenuItem";
 import talksPic from "public/img/talks.png";
@@ -19,15 +20,20 @@ const items: MenuItemProps[] = [
   }
 ];
 
-const Menu = (): JSX.Element => (
-  <div className={styles.background}>
-    <h2 className={styles.title}>MENU</h2>
-    <div className={styles.items}>
-      {items.map((item) => (
-        <MenuItem {...item} key={item.href} />
-      ))}
+const Menu = (): JSX.Element => {
+  const [display, setDisplay] = useState(false);
+
+  return (
+    <div className={styles.background}>
+      <VisibilitySensor onChange={(isVisible) => setDisplay(display || isVisible)}>
+        <div className={styles.items}>
+          {items.map((item) => (
+            <MenuItem {...item} key={item.href} />
+          ))}
+        </div>
+      </VisibilitySensor>
     </div>
-  </div>
-);
+  );
+};
 
 export default Menu;

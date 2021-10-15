@@ -1,6 +1,6 @@
 import styles from "./Landscape.module.scss";
 import { assignClasses } from "lib/helper";
-import landscapePic from "public/img/background.png";
+import landscapePic from "public/img/background.webp";
 import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
 
 const Landscape = (): JSX.Element => (

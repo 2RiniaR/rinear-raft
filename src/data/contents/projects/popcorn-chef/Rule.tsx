@@ -1,8 +1,8 @@
-import BeansPic from "public/contents/projects/popcorn-chef/beans.jpg";
-import Bomb1Pic from "public/contents/projects/popcorn-chef/game3.jpg";
-import Bomb2Pic from "public/contents/projects/popcorn-chef/game4.jpg";
-import OrderPic from "public/contents/projects/popcorn-chef/game5.jpg";
-import RushPic from "public/contents/projects/popcorn-chef/rush.jpg";
+import BeansPic from "public/contents/projects/popcorn-chef/beans.webp";
+import Bomb1Pic from "public/contents/projects/popcorn-chef/game3.webp";
+import Bomb2Pic from "public/contents/projects/popcorn-chef/game4.webp";
+import OrderPic from "public/contents/projects/popcorn-chef/game5.webp";
+import RushPic from "public/contents/projects/popcorn-chef/rush.webp";
 import { ContentImage, Heading, ListItem, Paragraph, UnorderedList } from "content-parts";
 
 const Section = (): JSX.Element => (

@@ -1,6 +1,6 @@
 import { ContentImage, Paragraph } from "content-parts";
-import ExprPic from "public/contents/projects/marvelous/top2.png";
-import TutorialPic from "public/contents/projects/marvelous/Tutorial1.jpg";
+import ExprPic from "public/contents/projects/marvelous/top2.webp";
+import TutorialPic from "public/contents/projects/marvelous/Tutorial1.webp";
 
 const Section = (): JSX.Element => (
   <>

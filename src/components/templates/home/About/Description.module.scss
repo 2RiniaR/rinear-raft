@@ -8,8 +8,8 @@
   p {
     display: inline-block;
     text-indent: 1em;
-    line-height: 1.5;
-    margin-bottom: 1em;
+    line-height: 1.8;
+    margin-top: 1.5em;
   }
 
   @include global.media(phone) {

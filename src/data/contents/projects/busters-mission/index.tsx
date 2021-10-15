@@ -8,10 +8,10 @@ import Tools from "./Tools";
 import Background from "./Background";
 import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
-import thumbnailPic1 from "public/contents/projects/busters-mission/stage3_2.jpg";
-import thumbnailPic2 from "public/contents/projects/busters-mission/title.jpg";
-import thumbnailPic3 from "public/contents/projects/busters-mission/stage1.jpg";
-import thumbnailPic4 from "public/contents/projects/busters-mission/stage2.jpg";
+import thumbnailPic1 from "public/contents/projects/busters-mission/stage3_2.webp";
+import thumbnailPic2 from "public/contents/projects/busters-mission/title.webp";
+import thumbnailPic3 from "public/contents/projects/busters-mission/stage1.webp";
+import thumbnailPic4 from "public/contents/projects/busters-mission/stage2.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {

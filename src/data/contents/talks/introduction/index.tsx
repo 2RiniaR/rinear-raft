@@ -7,7 +7,7 @@ import AboutTechnology from "./AboutTechnology";
 import AboutCatchphrase from "./AboutCatchphrase";
 import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, TalkContent } from "lib/contents";
-import thumbnailPic from "public/contents/projects/rinear-official-site/HomePage1.jpg";
+import thumbnailPic from "public/contents/projects/rinear-official-site/HomePage1.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {

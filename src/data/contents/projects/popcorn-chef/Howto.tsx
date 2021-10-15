@@ -1,6 +1,6 @@
-import TitlePic from "public/contents/projects/popcorn-chef/title.jpg";
-import LobbyPic from "public/contents/projects/popcorn-chef/lobby.jpg";
-import MatchingPic from "public/contents/projects/popcorn-chef/matching.jpg";
+import TitlePic from "public/contents/projects/popcorn-chef/title.webp";
+import LobbyPic from "public/contents/projects/popcorn-chef/lobby.webp";
+import MatchingPic from "public/contents/projects/popcorn-chef/matching.webp";
 import { ContentImage, ListItem, OrderedList, UnorderedList } from "content-parts";
 
 const Section = (): JSX.Element => (

@@ -16,7 +16,7 @@ import {
   UnorderedList
 } from "content-parts";
 import { ChapterPoint, ContentPageProps, TalkContent } from "lib/contents";
-import thumbnailPic from "public/contents/projects/rinear-official-site/HomePage1.jpg";
+import thumbnailPic from "public/contents/projects/rinear-official-site/HomePage1.webp";
 
 const dummyText = "これはダミーテキストです。".repeat(10);
 

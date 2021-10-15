@@ -6,10 +6,10 @@ import Story from "./Story";
 import Pages from "./Pages";
 import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
-import thumbnailPic1 from "public/contents/projects/rinear-official-site/HomePage1.jpg";
-import thumbnailPic2 from "public/contents/projects/rinear-official-site/HomePage2.jpg";
-import thumbnailPic3 from "public/contents/projects/rinear-official-site/HomePage3.jpg";
-import thumbnailPic4 from "public/contents/projects/rinear-official-site/HomePage4.jpg";
+import thumbnailPic1 from "public/contents/projects/rinear-official-site/HomePage1.webp";
+import thumbnailPic2 from "public/contents/projects/rinear-official-site/HomePage2.webp";
+import thumbnailPic3 from "public/contents/projects/rinear-official-site/HomePage3.webp";
+import thumbnailPic4 from "public/contents/projects/rinear-official-site/HomePage4.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {

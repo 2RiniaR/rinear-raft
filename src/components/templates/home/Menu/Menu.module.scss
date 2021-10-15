@@ -8,21 +8,6 @@
   flex-direction: column;
   gap: 3rem;
 
-  .title {
-    color: global.$light1;
-    align-self: center;
-    border-bottom: global.$light1 double 3px;
-    letter-spacing: 2em;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0 4em 0.5em 4em;
-
-    &::after {
-      content: "";
-      margin-right: -2em;
-    }
-  }
-
   .items {
     display: flex;
 
