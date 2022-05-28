@@ -15,7 +15,7 @@ import thumbnailPic4 from "public/contents/projects/popcorn-chef/lobby.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
-    movie: { name: "プレイ動画", ref: useRef(null) },
+    movie: { name: "PV", ref: useRef(null) },
     download: { name: "ゲーム本体", ref: useRef(null) },
     howto: { name: "遊び方", ref: useRef(null) },
     rule: { name: "ルール", ref: useRef(null) },
