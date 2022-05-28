@@ -2,12 +2,11 @@
 
 .page {
   position: relative;
-  background: #666;
+  background: #ddd;
   overflow-x: hidden;
   overflow-y: hidden;
   flex-direction: column;
-  gap: 12rem;
-  padding-bottom: 1rem;
+  padding-bottom: 4rem;
 
   &.loaded {
     display: flex;

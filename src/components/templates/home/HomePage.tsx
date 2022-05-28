@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { HomeTop } from "./Top";
+import { Landscape } from "./Landscape";
 import styles from "./HomePage.module.scss";
 import HomePageHead from "./HomePageHead";
 import { Menu } from "./Menu";
 import { About } from "./About";
 import { LoadingEffect } from "./Loading";
-import Footer from "components/parts/Footer";
 import { LoadingWaiter } from "components/functions/lazy";
 import { assignClasses } from "lib/helper";
+import PageTemplate from "components/parts/pages/PageTemplate";
 
 const HomePage = (): JSX.Element => {
   const [loadCompleted, setLoadCompleted] = useState(false);
@@ -17,12 +17,13 @@ const HomePage = (): JSX.Element => {
     <LoadingWaiter onCompleted={() => setLoadCompleted(true)} onProgressUpdated={setLoadProgress}>
       <HomePageHead />
       <LoadingEffect loading={!loadCompleted} progress={loadProgress} />
-      <div className={assignClasses(styles.page, loadCompleted ? styles.loaded : styles.loading)}>
-        <HomeTop />
-        <About />
-        <Menu />
-        <Footer />
-      </div>
+      <PageTemplate>
+        <div className={assignClasses(styles.page, loadCompleted ? styles.loaded : styles.loading)}>
+          <Landscape />
+          <About />
+          <Menu />
+        </div>
+      </PageTemplate>
     </LoadingWaiter>
   );
 };

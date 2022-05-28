@@ -74,7 +74,18 @@
 
 @include global.media(desktop) {
   .linker {
-    width: min(16rem, calc(50% - 3rem));
+    display: block;
+
+    .background {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 4rem;
+    }
+  }
+
+  .display {
+    width: 16rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,9 +101,6 @@
       align-items: center;
       color: global.$light1;
       gap: 0.3rem;
-      border-left: rgba(#a7b0c1, 50%) solid 4px;
-      border-right: rgba(#a7b0c1, 50%) solid 4px;
-      border-radius: 16px / 6px;
       width: 100%;
 
       .name {

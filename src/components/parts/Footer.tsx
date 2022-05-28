@@ -3,13 +3,14 @@ import styles from "./Footer.module.scss";
 import StaticImage from "components/functions/image/StaticImage";
 import ExternalLink from "components/functions/link/ExternalLink";
 import logoPic from "public/img/logo.png";
+import letterPic from "public/img/RineaR-letters-6.svg";
 import packageSettings from "public/../package.json";
 
 const Footer = (): JSX.Element => (
   <footer className={styles.container}>
     <div className={styles.logo}>
-      <StaticImage className={styles.image} src={logoPic} alt="RineaR" />
-      <h1 className={styles.text}>RineaR</h1>
+      <StaticImage className={styles.image} src={logoPic} alt="RineaR" quality={100} />
+      <StaticImage className={styles.letter} src={letterPic} alt="RineaR" />
     </div>
     <div className={styles.links}>
       <ExternalLink className={styles.element} href={"https://twitter.com/14RineaR"}>

@@ -1,0 +1,11 @@
+@use "global";
+@use "sass:math";
+
+.background {
+  $image-aspect-ratio: math.div(812, 419);
+  width: max(45vw, 45vh * #{$image-aspect-ratio});
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.9;
+}

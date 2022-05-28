@@ -1,0 +1,6 @@
+@use "global";
+
+.white1 {
+  @include global.full-area;
+  background: radial-gradient(at 50% 0%, rgba(#ddd, 0.1) 0%, rgba(#ddd, 0) 30%, rgba(#ddd, 0.9) 80%);
+}

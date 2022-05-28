@@ -4,16 +4,22 @@
   width: 100%;
   margin: 0 auto;
   color: global.$light1;
+  background: #eee;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: global.$dark1 double 7px;
 }
 
 .logo {
-  margin: 0 auto 0.5rem auto;
+  margin: 0 auto 1rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: global.$light1 solid 2px;
+  border-bottom: global.$dark1 solid 2px;
+  position: relative;
 
   .image {
+    position: relative;
     object-fit: contain;
     margin-right: 1rem;
 
@@ -28,40 +34,25 @@
     }
 
     @include global.media(desktop) {
-      height: 4rem;
-      width: 4rem;
+      width: 3.2rem;
+      bottom: -0.5rem;
     }
   }
 
-  .text {
+  .letter {
+    position: relative;
+
     @include global.media(phone) {
-      $letter-spacing: 0.5rem;
-      font-size: 1.6rem;
-      letter-spacing: $letter-spacing;
-      &::after {
-        content: "";
-        margin-right: -$letter-spacing;
-      }
+      height: 3rem;
     }
 
     @include global.media(tablet) {
-      $letter-spacing: 1rem;
-      font-size: 2rem;
-      letter-spacing: $letter-spacing;
-      &::after {
-        content: "";
-        margin-right: -$letter-spacing;
-      }
+      height: 4rem;
     }
 
     @include global.media(desktop) {
-      $letter-spacing: 1rem;
-      font-size: 2rem;
-      letter-spacing: $letter-spacing;
-      &::after {
-        content: "";
-        margin-right: -$letter-spacing;
-      }
+      width: 10rem;
+      bottom: -0.9rem;
     }
   }
 }
@@ -72,6 +63,7 @@
   font-size: 1rem;
   margin: 0 auto 2rem auto;
   gap: 1rem;
+  color: global.$dark1;
 
   .element {
     display: inline;
@@ -84,11 +76,13 @@
 }
 
 .copyright {
+  color: global.$dark1;
   text-align: center;
   font-size: 1rem;
 }
 
 .version {
+  color: global.$dark1;
   text-align: right;
   padding-right: 2rem;
   font-size: 1rem;
