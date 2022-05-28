@@ -20,9 +20,9 @@ const Layout = ({ children }: Props): JSX.Element => {
     <>
       <div ref={topRef} />
       {children}
-      <SideMenuButton onClick={() => setSideMenuOpened(true)} />
+      {/*<SideMenuButton onClick={() => setSideMenuOpened(true)} />*/}
       <TopButton onClick={() => scrollToTop()} />
-      <SideMenu open={sideMenuOpened} setOpen={setSideMenuOpened} />
+      {/*<SideMenu open={sideMenuOpened} setOpen={setSideMenuOpened} />*/}
     </>
   );
 };

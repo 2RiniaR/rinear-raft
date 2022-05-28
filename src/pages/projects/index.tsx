@@ -9,7 +9,7 @@ const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): J
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  return { props: { contentsId: await getContentsId() } };
+  return { props: { contentsId: await getContentsId() }, redirect: { permanent: false, destination: "/the-fog-is-still-too-thick-for-you-to-see-me" } };
 };
 
 export default Page;

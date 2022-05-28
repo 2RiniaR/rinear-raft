@@ -4,10 +4,6 @@
   width: 100%;
   margin: 0 auto;
   color: global.$light1;
-  background: #eee;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-top: global.$dark1 double 7px;
 }
 
 .logo {
@@ -15,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: global.$dark1 solid 2px;
+  border-bottom: global.$light1 solid 2px;
   position: relative;
 
   .image {
@@ -34,8 +30,8 @@
     }
 
     @include global.media(desktop) {
-      width: 3.2rem;
-      bottom: -0.5rem;
+      height: 4rem;
+      width: 4rem;
     }
   }
 
@@ -51,8 +47,8 @@
     }
 
     @include global.media(desktop) {
-      width: 10rem;
-      bottom: -0.9rem;
+      width: 8rem;
+      bottom: -1.2rem;
     }
   }
 }
@@ -63,7 +59,6 @@
   font-size: 1rem;
   margin: 0 auto 2rem auto;
   gap: 1rem;
-  color: global.$dark1;
 
   .element {
     display: inline;
@@ -76,13 +71,11 @@
 }
 
 .copyright {
-  color: global.$dark1;
   text-align: center;
   font-size: 1rem;
 }
 
 .version {
-  color: global.$dark1;
   text-align: right;
   padding-right: 2rem;
   font-size: 1rem;

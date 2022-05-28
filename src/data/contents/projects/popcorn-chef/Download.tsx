@@ -4,9 +4,8 @@ import { Paragraph } from "content-parts";
 const Section = (): JSX.Element => (
   <>
     <Paragraph>
-      ゲームのファイルを
-      <ExternalLink href="https://www.dropbox.com/sh/vv3gc9hj7myd5m6/AAC1eCgIz-Ro8WfOmFbQNIYwa?dl=0">ここ</ExternalLink>
-      からダウンロードしてください。
+      <ExternalLink href="https://unityroom.com/games/pon_bon_rush">ここ</ExternalLink>
+      からプレイ可能です。
     </Paragraph>
   </>
 );

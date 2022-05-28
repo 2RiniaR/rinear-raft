@@ -11,7 +11,7 @@ const ContentPageTemplate = ({ children }: Props): JSX.Element => (
   <Background>
     <div className={styles.page}>
       <div className={styles.displayArea}>{children}</div>
-      <Footer />
+      {/*<Footer />*/}
     </div>
   </Background>
 );

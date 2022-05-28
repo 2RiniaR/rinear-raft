@@ -49,11 +49,11 @@ const Section = (): JSX.Element => (
     <Heading level="sub">イベント</Heading>
     <Paragraph>一定時間ごとに、イベントが発生する。 発生するイベントは、以下のうちからランダムで抽選される。</Paragraph>
     <UnorderedList>
-      <ListItem>「きらきらラッシュ」： とろけるまめが全プレイヤーに3個ずつ降ってくる。逆転のチャンス！</ListItem>
+      <ListItem>「きらきらラッシュ」： きらめくまめが全プレイヤーに3個ずつ降ってくる。逆転のチャンス！</ListItem>
       <ListItem>「ばくだんラッシュ」： ばくだんまめが全プレイヤーに3個ずつ降ってくる。</ListItem>
       <ListItem>「あつあつラッシュ」： もえるまめが全プレイヤーに3個ずつ降ってくる。</ListItem>
       <ListItem>
-        「危険物に注意！」： ぶきみなまめが全プレイヤーに1個ずつ降ってくる。フタやばくだんまめなどで防ごう！
+        「危険物に注意！」： やばいまめが全プレイヤーに1個ずつ降ってくる。フタやばくだんまめなどで防ごう！
       </ListItem>
       <ListItem>「ご注文はなんなりと！」： 一定時間、全プレイヤーが注文し放題になる。</ListItem>
     </UnorderedList>

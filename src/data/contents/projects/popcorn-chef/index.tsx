@@ -16,7 +16,7 @@ import thumbnailPic4 from "public/contents/projects/popcorn-chef/lobby.webp";
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
     movie: { name: "プレイ動画", ref: useRef(null) },
-    download: { name: "ダウンロード", ref: useRef(null) },
+    download: { name: "ゲーム本体", ref: useRef(null) },
     howto: { name: "遊び方", ref: useRef(null) },
     rule: { name: "ルール", ref: useRef(null) },
     tools: { name: "使用ツール", ref: useRef(null) },
@@ -57,9 +57,9 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
 const popcornChef: ProjectContent = {
   genre: "projects",
   id: "popcorn-chef",
-  title: "ポップコーン職人",
+  title: "Pon! Bon! Rush",
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
-  updatedAt: dayjs("2021-10-01"),
+  updatedAt: dayjs("2022-05-28"),
   releasedAt: dayjs("2020-04-05"),
   description:
     "2人のプレイヤーがリアルタイムでポップコーンを調理し、調理したポップコーンを食べた量で競う2人通信対戦のカジュアルゲーム。",

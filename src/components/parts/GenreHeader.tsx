@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./GenreHeader.module.scss";
 import StaticImage from "components/functions/image/StaticImage";
+import { StaticImageData } from "next/image";
 
 type GenreHeaderParams = {
   logoSrc: StaticImageData;

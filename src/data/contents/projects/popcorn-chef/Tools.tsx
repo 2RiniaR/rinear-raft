@@ -4,10 +4,10 @@ const Section = (): JSX.Element => (
   <>
     <Heading level="sub">言語・ライブラリ等</Heading>
     <UnorderedList>
-      <ListItem>Unity 2019.1.9f1</ListItem>
+      <ListItem>Unity 2021.3.0f1</ListItem>
       <ListItem>UniRx</ListItem>
       <ListItem>UniTask</ListItem>
-      <ListItem>Photon Unity Network</ListItem>
+      <ListItem>Photon Unity Network 2</ListItem>
     </UnorderedList>
   </>
 );

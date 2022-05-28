@@ -11,7 +11,7 @@ const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Eleme
 export const getStaticProps: GetStaticProps = async (context) => {
   if (typeof context.params?.id !== "string") throw Error();
   return {
-    props: { id: context.params.id }
+    props: { id: context.params.id }, redirect: { permanent: false, destination: "/the-fog-is-still-too-thick-for-you-to-see-me" }
   };
 };
 
