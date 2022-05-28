@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import { StaticImageData } from "next/image";
 import { Content, ContentGenre, ContentHead } from ".";
 
 export type GenreType = "projects";

@@ -25,7 +25,7 @@ const Menu = (): JSX.Element => {
 
   return (
     <div className={styles.background}>
-      <VisibilitySensor onChange={(isVisible) => setDisplay(display || isVisible)}>
+      <VisibilitySensor onChange={(isVisible: boolean) => setDisplay(display || isVisible)}>
         <div className={styles.items}>
           {items.map((item) => (
             <MenuItem {...item} key={item.href} />

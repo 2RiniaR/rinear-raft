@@ -1,4 +1,4 @@
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps, StaticImageData } from "next/image";
 import { CSSProperties } from "react";
 import styles from "./StaticImageBackground.module.scss";
 

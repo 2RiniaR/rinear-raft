@@ -8,7 +8,7 @@ const CatchPhrase = (): JSX.Element => {
 
   return (
     <div className={styles.title}>
-      <VisibilitySensor onChange={(isVisible) => setDisplay(display || isVisible)}>
+      <VisibilitySensor onChange={(isVisible: boolean) => setDisplay(display || isVisible)}>
         <span className={assignClasses(styles.text, display ? styles.active : styles.inactive)}>
           <span className={styles.first}>
             この<span className={styles.strong}>筏</span>は私を、

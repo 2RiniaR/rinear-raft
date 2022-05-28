@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { StaticImageData } from "next/image";
 import styles from "./MenuItem.module.scss";
 import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
 import backgroundPic from "public/img/PhantomNode_p.png";
