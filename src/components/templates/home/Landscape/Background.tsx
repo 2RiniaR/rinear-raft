@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import styles from "./Background.module.scss";
 import { assignClasses } from "lib/helper";
 import landscapePic from "public/img/background.webp";

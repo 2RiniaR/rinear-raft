@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import styles from "./Landscape.module.scss";
 import Background from "./Background";
 import HoleEffect from "./HoleEffect";

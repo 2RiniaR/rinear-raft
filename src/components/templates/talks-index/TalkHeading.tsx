@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import dayjs from "dayjs";
 import styles from "./TalkHeading.module.scss";
 import { TalkContentHead } from "lib/contents";

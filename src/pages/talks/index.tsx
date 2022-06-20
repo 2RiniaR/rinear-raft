@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import TalkIndexPage from "components/templates/talks-index/TalksIndexPage";
 import { TalkRepository } from "data/contents/talks";

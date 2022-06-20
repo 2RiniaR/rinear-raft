@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import styles from "./TopButton.module.scss";
 import StaticImage from "components/functions/image/StaticImage";
 import upArrowPic from "public/img/UpArrow.png";

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React, { ReactNode } from "react";
 import styles from "./ContentPageTemplate.module.scss";
 import Background from "components/parts/Background";

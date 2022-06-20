@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import ProjectIndexPage from "components/templates/projects-index/ProjectsIndexPage";
 import { ProjectRepository } from "data/contents/projects";

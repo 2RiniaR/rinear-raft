@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import styles from "./Shadow.module.scss";
 import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
 import shadowPic from "public/img/shadow.webp";

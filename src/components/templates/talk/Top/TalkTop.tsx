@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React from "react";
 import styles from "./TalkTop.module.scss";
 import Title from "./Title";

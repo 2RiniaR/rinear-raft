@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import { ReactNode, TransitionEventHandler, useEffect, useState } from "react";
 import styles from "./SideMenuOpener.module.scss";
 import { assignClasses } from "lib/helper";

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React, { ReactNode, useCallback, useRef } from "react";
 import styles from "./ResponsiveBackgroundImage.module.scss";
 import useElementSize from "lib/fooks/element-size";

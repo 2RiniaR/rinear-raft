@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import dayjs, { OpUnitType, QUnitType } from "dayjs";
 
 export function formatExceededTime(from: dayjs.Dayjs, to: dayjs.Dayjs): string {
@@ -18,7 +22,8 @@ export function formatExceededTime(from: dayjs.Dayjs, to: dayjs.Dayjs): string {
   return finalExpression.display(0);
 }
 
-export function formatDisplayDate(date: dayjs.Dayjs): string {
+export function formatDisplayDate(date: dayjs.Dayjs | undefined): string {
+  if (date === undefined) return "----.--.--";
   return date.format("YYYY.M.D");
 }
 

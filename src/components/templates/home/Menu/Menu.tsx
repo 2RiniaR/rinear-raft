@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React, { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 import styles from "./Menu.module.scss";

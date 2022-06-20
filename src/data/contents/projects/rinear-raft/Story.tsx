@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import { Paragraph, Strong } from "content-parts";
 
 const Section = (): JSX.Element => (

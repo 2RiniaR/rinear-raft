@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import ProjectPage from "components/templates/project/ProjectPage";
 import { ProjectRepository } from "data/contents/projects";

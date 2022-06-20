@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 @use "global";
 
 .page {
@@ -22,8 +26,9 @@
   }
 
   @include global.media(desktop) {
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 68rem;
+    margin-left: auto;
+    margin-right: auto;
     gap: 8rem;
     padding-top: 15vh;
   }

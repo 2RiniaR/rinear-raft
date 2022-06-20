@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import { Html, Head, Main, NextScript } from "next/document";
 import React from "react";
 

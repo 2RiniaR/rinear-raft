@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import styles from "./SideMenu.module.scss";
 import SideMenuItem, { SideMenuItemProps } from "./SideMenuItem";
 import SideMenuOpener from "./SideMenuOpener";

@@ -1,15 +1,19 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React from "react";
 import styles from "./Footer.module.scss";
 import StaticImage from "components/functions/image/StaticImage";
 import ExternalLink from "components/functions/link/ExternalLink";
+import letterPic from "public/img/RineaR-letters-transparent.svg";
 import logoPic from "public/img/logo.png";
-import letterPic from "public/img/RineaR-letters-6.svg";
 import packageSettings from "public/../package.json";
 
 const Footer = (): JSX.Element => (
   <footer className={styles.container}>
+    <StaticImage className={styles.back} src={logoPic} alt="Logo" />
     <div className={styles.logo}>
-      <StaticImage className={styles.image} src={logoPic} alt="RineaR" quality={100} />
       <StaticImage className={styles.letter} src={letterPic} alt="RineaR" />
     </div>
     <div className={styles.links}>

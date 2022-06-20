@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import TutorialPic2 from "public/contents/projects/marvelous/Tutorial2.webp";
 import TutorialPic3 from "public/contents/projects/marvelous/Tutorial3.webp";
 import TutorialPic4 from "public/contents/projects/marvelous/Tutorial4.webp";

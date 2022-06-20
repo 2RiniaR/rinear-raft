@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
 import Movie from "./Movie";
@@ -59,7 +63,7 @@ const bustersMission: ProjectContent = {
   id: "busters-mission",
   title: "Busters Mission",
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
-  updatedAt: dayjs("2021-09-28"),
+  updatedAt: dayjs("2022-06-20 15:15:41"),
   releasedAt: dayjs("2018-09-05"),
   description: "敵の攻撃を避けながら、ステージ内にいるすべての敵を倒していく2Dアクションゲーム。",
   Page

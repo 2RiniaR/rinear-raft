@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import dayjs from "dayjs";
 import { useEffect } from "react";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
@@ -17,10 +21,10 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
 const madeHighlow: ProjectContent = {
   genre: "projects",
   id: "made-highlow",
-  title: "メイド・ハイロウ",
+  title: "メイドハイロウ",
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2022-06-20"),
-  releasedAt: dayjs("2020-02-16"),
+  releasedAt: undefined,
   description: "👁👁",
   Page
 };

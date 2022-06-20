@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
 import dayjs from "dayjs";
 import { useEffect } from "react";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
@@ -19,9 +22,9 @@ const eyes: ProjectContent = {
   id: "eyes",
   title: "み　て　る　よ",
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
-  updatedAt: dayjs("2022-06-20"),
-  releasedAt: dayjs("2020-02-25"),
-  description: "👁👁",
+  updatedAt: dayjs("2022-06-20 15:15:41"),
+  releasedAt: dayjs("2022-02-25"),
+  description: "その長考、み　て　る　よ",
   Page
 };
 

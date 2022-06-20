@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React, { useState } from "react";
 import { Landscape } from "./Landscape";
 import styles from "./HomePage.module.scss";

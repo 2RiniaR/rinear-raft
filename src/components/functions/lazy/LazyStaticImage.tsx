@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import { useLoading } from "./index";
 import StaticImage, { StaticImageProps } from "components/functions/image/StaticImage";
 

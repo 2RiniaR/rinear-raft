@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React from "react";
 import Head from "next/head";
 import { ProjectContent } from "lib/contents";

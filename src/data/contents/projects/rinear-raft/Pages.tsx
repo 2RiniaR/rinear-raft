@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import Link from "next/link";
 import { UnorderedList, ListItem } from "content-parts";
 

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React, { useCallback, useRef } from "react";
 import Link from "next/link";
 import styles from "./TalksViewer.module.scss";

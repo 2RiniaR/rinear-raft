@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
 import Tools from "./Tools";
@@ -7,6 +11,7 @@ import Pages from "./Pages";
 import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
 import thumbnailPic1 from "public/contents/projects/rinear-official-site/HomePage1.webp";
+
 import thumbnailPic2 from "public/contents/projects/rinear-official-site/HomePage2.webp";
 import thumbnailPic3 from "public/contents/projects/rinear-official-site/HomePage3.webp";
 import thumbnailPic4 from "public/contents/projects/rinear-official-site/HomePage4.webp";
@@ -48,7 +53,7 @@ const rinearRaft: ProjectContent = {
   title: "RineaRの筏",
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-10-01"),
-  releasedAt: dayjs("2021-10-11"),
+  releasedAt: undefined,
   description: "『RineaR』のプロジェクトや投稿を公開するホームページ。『Rinia』が活動拠点とする筏。",
   Page
 };

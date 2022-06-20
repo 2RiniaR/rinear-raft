@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import ExternalLink from "components/functions/link/ExternalLink";
 import { Heading, ListItem, UnorderedList } from "content-parts";
 

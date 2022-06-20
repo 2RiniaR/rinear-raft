@@ -35,3 +35,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+/tools/image-converter/*.png
+/tools/image-converter/*.jpg
+/tools/image-converter/*.bmp

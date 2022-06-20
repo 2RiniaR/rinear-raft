@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import { createContext, useContext, useEffect, useState } from "react";
 export { default as LoadingWaiter } from "./LoadingWaiter";
 

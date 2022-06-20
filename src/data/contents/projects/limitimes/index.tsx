@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
 import dayjs from "dayjs";
 import { useEffect } from "react";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
@@ -19,9 +22,9 @@ const limitimes: ProjectContent = {
   id: "limitimes",
   title: "limitimes",
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
-  updatedAt: dayjs("2022-06-20"),
-  releasedAt: dayjs("2020-02-16"),
-  description: "👁👁",
+  updatedAt: dayjs("2022-06-20 15:15:41"),
+  releasedAt: dayjs("2021-11-11"),
+  description: "discordのサーバー内でTwitterのような「壁打ちで話せる環境」を提供するdiscord bot。",
   Page
 };
 

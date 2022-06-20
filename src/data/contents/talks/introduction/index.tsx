@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
 import AboutHomePage from "./AboutHomePage";

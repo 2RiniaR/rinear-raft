@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React, { ReactNode, useCallback, useRef } from "react";
 import styles from "./ConstantSizeParallax.module.scss";
 import Parallax from "components/functions/parallax/Parallax";

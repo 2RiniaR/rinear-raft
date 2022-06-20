@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React, { useState } from "react";
 import styles from "./TalkPage.module.scss";
 import TalkPageHead from "./TalkPageHead";

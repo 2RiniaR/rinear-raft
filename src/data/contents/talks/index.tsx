@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import styles from "../contents.module.scss";
 import { TalkContent, ContentContext, ContentPage, ContentPageProps } from "lib/contents";
 import { arrayToDict } from "lib/helper";

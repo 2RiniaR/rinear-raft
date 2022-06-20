@@ -1,9 +1,20 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 @use "global";
 
 .container {
   width: 100%;
   margin: 0 auto;
   color: global.$light1;
+}
+
+.back {
+  position: absolute;
+  opacity: 0.2;
+  width: 12rem;
+  left: calc(50% - 16rem);
 }
 
 .logo {
@@ -47,7 +58,7 @@
     }
 
     @include global.media(desktop) {
-      width: 8rem;
+      width: 12rem;
       bottom: -1.2rem;
     }
   }

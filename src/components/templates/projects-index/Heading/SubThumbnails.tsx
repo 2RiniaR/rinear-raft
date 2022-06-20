@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import styles from "./SubThumbnails.module.scss";
 import { ProjectContentHead } from "lib/contents";
 import StaticImage from "components/functions/image/StaticImage";

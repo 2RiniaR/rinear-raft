@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React, { ReactNode, useCallback } from "react";
 import styles from "./Background.module.scss";
 import useViewSize from "lib/fooks/view-size";

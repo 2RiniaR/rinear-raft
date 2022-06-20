@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import TalkPage from "components/templates/talk/TalkPage";
 import { TalkRepository } from "data/contents/talks";

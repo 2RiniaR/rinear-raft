@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import TitlePic from "public/contents/projects/popcorn-chef/title.webp";
 import LobbyPic from "public/contents/projects/popcorn-chef/lobby.webp";
 import MatchingPic from "public/contents/projects/popcorn-chef/matching.webp";
