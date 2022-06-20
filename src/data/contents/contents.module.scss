@@ -3,6 +3,11 @@
 .content {
   font-size: 1.1rem;
 
+  @include global.media(desktop) {
+    width: 56rem;
+    align-self: center;
+  }
+
   a {
     color: #77aaff;
     margin-inline: 0.2em;

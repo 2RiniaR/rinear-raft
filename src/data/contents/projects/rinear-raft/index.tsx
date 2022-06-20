@@ -42,15 +42,15 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   );
 };
 
-const rinearOfficialSite: ProjectContent = {
+const rinearRaft: ProjectContent = {
   genre: "projects",
-  id: "rinear-official-site",
-  title: "RineaR公式サイト",
+  id: "rinear-raft",
+  title: "RineaRの筏",
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-10-01"),
   releasedAt: dayjs("2021-10-11"),
-  description: "RineaRのプロジェクトや投稿を公開するホームページ。Riniaが活動拠点とする筏。",
+  description: "『RineaR』のプロジェクトや投稿を公開するホームページ。『Rinia』が活動拠点とする筏。",
   Page
 };
 
-export default rinearOfficialSite;
+export default rinearRaft;

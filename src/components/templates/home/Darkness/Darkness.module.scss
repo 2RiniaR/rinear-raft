@@ -1,6 +1,12 @@
-.container {
-  .up {
+@use "global";
 
-  }
+.container {
+  @include global.full-area;
+  position: fixed;
+  background: rgba(global.$dark1, 0%);
+  transition: background 1s;
 }
 
+.enabled {
+  background: rgba(global.$dark1, 70%);
+}

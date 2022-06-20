@@ -54,9 +54,9 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   );
 };
 
-const popcornChef: ProjectContent = {
+const ponBonRush: ProjectContent = {
   genre: "projects",
-  id: "popcorn-chef",
+  id: "pon-bon-rush",
   title: "Pon! Bon! Rush",
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2022-05-28"),
@@ -66,4 +66,4 @@ const popcornChef: ProjectContent = {
   Page
 };
 
-export default popcornChef;
+export default ponBonRush;

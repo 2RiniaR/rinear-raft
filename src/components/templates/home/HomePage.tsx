@@ -5,6 +5,7 @@ import HomePageHead from "./HomePageHead";
 import { Menu } from "./Menu";
 import { About } from "./About";
 import { LoadingEffect } from "./Loading";
+import Darkness from "./Darkness/Darkness";
 import { LoadingWaiter } from "components/functions/lazy";
 import { assignClasses } from "lib/helper";
 import PageTemplate from "components/parts/pages/PageTemplate";
@@ -20,6 +21,7 @@ const HomePage = (): JSX.Element => {
       <PageTemplate>
         <div className={assignClasses(styles.page, loadCompleted ? styles.loaded : styles.loading)}>
           <Landscape />
+          <Darkness enabled={true} />
           <About />
           <Menu />
         </div>

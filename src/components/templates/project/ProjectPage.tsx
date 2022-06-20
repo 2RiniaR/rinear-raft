@@ -18,7 +18,7 @@ const ProjectPage = ({ content }: Props): JSX.Element => {
     <>
       <ProjectPageHead content={content} />
       <ContentPageTemplate>
-        {/*<BackButton href={"/projects"} />*/}
+        <BackButton href={"/projects"} />
         <div className={styles.layout}>
           <ProjectTop content={content} />
           <ChaptersView chapters={chapters} />
