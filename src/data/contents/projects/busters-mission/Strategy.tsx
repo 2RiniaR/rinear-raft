@@ -26,10 +26,6 @@ const Section = (): JSX.Element => (
     <Heading level="sub">ステージ3（ボス）</Heading>
 
     <Paragraph>ボスステージ。ボスの体力を0にするとクリア。</Paragraph>
-    <Paragraph>
-      プレイヤーを追尾し、剣で近接攻撃してくるモンスターが7体いる。
-      なるべくダメージを受けないように、慎重に攻撃していこう。
-    </Paragraph>
 
     <Space size={1} />
   </>

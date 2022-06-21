@@ -4,13 +4,12 @@
 
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import Movie from "./Movie";
-import Download from "./Download";
 import Rule from "./Rule";
 import Howto from "./Howto";
 import Tools from "./Tools";
 import Background from "./Background";
-import { Chapter } from "content-parts";
+import ExternalLink from "components/functions/link/ExternalLink";
+import { Chapter, Video } from "content-parts";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
 import thumbnailPic1 from "public/contents/projects/popcorn-chef/game1.webp";
 import thumbnailPic2 from "public/contents/projects/popcorn-chef/title.webp";
@@ -32,11 +31,12 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   return (
     <>
       <Chapter title={refs.movie.name} jumpRef={refs.movie.ref}>
-        <Movie />
+        <Video src="https://www.youtube.com/embed/qf3eXiC_UrM" />
       </Chapter>
 
       <Chapter title={refs.download.name} jumpRef={refs.download.ref}>
-        <Download />
+        <ExternalLink href="https://unityroom.com/games/pon_bon_rush">ここ</ExternalLink>
+        からプレイ可能です。
       </Chapter>
 
       <Chapter title={refs.howto.name} jumpRef={refs.howto.ref}>

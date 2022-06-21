@@ -4,13 +4,12 @@
 
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import Movie from "./Movie";
-import Download from "./Download";
+import ExternalLink from "../../../../components/functions/link/ExternalLink";
 import Rule from "./Rule";
 import Strategy from "./Strategy";
 import Tools from "./Tools";
 import Background from "./Background";
-import { Chapter } from "content-parts";
+import { Chapter, Paragraph, Video } from "content-parts";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
 import thumbnailPic1 from "public/contents/projects/busters-mission/stage3_2.webp";
 import thumbnailPic2 from "public/contents/projects/busters-mission/title.webp";
@@ -32,11 +31,17 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   return (
     <>
       <Chapter title={refs.movie.name} jumpRef={refs.movie.ref}>
-        <Movie />
+        <Video src={"https://www.youtube.com/embed/YzqFIVbV4-c"}></Video>
       </Chapter>
 
       <Chapter title={refs.download.name} jumpRef={refs.download.ref}>
-        <Download />
+        <Paragraph>
+          ゲームのファイルを
+          <ExternalLink href="https://www.dropbox.com/sh/h23lhcyl0cwjlh5/AADIuiV0vj4hXrInV_j6YmOqa?dl=0">
+            ここ
+          </ExternalLink>
+          からダウンロードしてください。
+        </Paragraph>
       </Chapter>
 
       <Chapter title={refs.rule.name} jumpRef={refs.rule.ref}>
