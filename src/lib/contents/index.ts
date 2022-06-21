@@ -5,12 +5,12 @@
 import dayjs from "dayjs";
 import { createContext, RefObject } from "react";
 
-export type { ProjectContentHead, ProjectContent } from "./projects";
+export type { ScenarioContentHead, ScenarioContent } from "./scenario";
 export type { TalkContentHead, TalkContent } from "./talks";
 
 const ContentGenres = {
   talks: "talks",
-  projects: "projects"
+  scenarios: "scenarios"
 } as const;
 
 export type ContentGenre = typeof ContentGenres[keyof typeof ContentGenres];

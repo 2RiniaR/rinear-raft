@@ -9,7 +9,7 @@ import StaticImage from "components/functions/image/StaticImage";
 import leftArrowPic from "public/img/LeftArrow.png";
 import logoPic from "public/img/logo.png";
 import talksPic from "public/img/talks.png";
-import projectsPic from "public/img/projects.png";
+import scenariosPic from "public/img/scenarios.png";
 
 type Props = {
   open: boolean;
@@ -19,7 +19,7 @@ type Props = {
 const items: Omit<SideMenuItemProps, "onClick">[] = [
   { href: "/", markSrc: logoPic, name: "HOME" },
   { href: "/talks", markSrc: talksPic, name: "TALKS" },
-  { href: "/projects", markSrc: projectsPic, name: "PROJECTS" }
+  { href: "/scenarios", markSrc: scenariosPic, name: "SCENARIOS" }
 ];
 
 const SideMenu = ({ open, setOpen }: Props): JSX.Element => (

@@ -8,7 +8,7 @@ import { assignClasses } from "lib/helper";
 import { ContentContext } from "lib/contents";
 import StaticImage from "components/functions/image/StaticImage";
 import TalkPic from "public/img/talks.png";
-import ProjectPic from "public/img/projects.png";
+import ScenarioPic from "public/img/scenarios.png";
 
 type Props = {
   children?: ReactNode;
@@ -19,7 +19,7 @@ const TopHeading = ({ children }: { children?: ReactNode }) => {
   const content = useContext(ContentContext);
   return (
     <h1 className={assignClasses(styles.heading, styles.top)}>
-      <StaticImage src={content.genre === "talks" ? TalkPic : ProjectPic} alt="アイコン" className={styles.icon} />
+      <StaticImage src={content.genre === "talks" ? TalkPic : ScenarioPic} alt="アイコン" className={styles.icon} />
       {children}
     </h1>
   );
