@@ -2,7 +2,7 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../../parts/Footer";
 import { Landscape } from "./Landscape";
 import styles from "./HomePage.module.scss";
@@ -18,8 +18,12 @@ import useScrollPast from "lib/fooks/scroll-past";
 const HomePage = (): JSX.Element => {
   const [loadCompleted, setLoadCompleted] = useState(false);
   const [loadProgress, setLoadProgress] = useState(0);
-  const [landscapeEndSensor, isBelowOfLandscape] = useScrollPast();
-  const [topSensor, isScrollFromTop] = useScrollPast();
+
+  const landscapeEndRef = useRef<HTMLDivElement>(null);
+  const isBelowOfLandscape = useScrollPast(landscapeEndRef);
+
+  const topEndRef = useRef<HTMLDivElement>(null);
+  const isScrollFromTop = useScrollPast(topEndRef);
 
   return (
     <LoadingWaiter onCompleted={() => setLoadCompleted(true)} onProgressUpdated={setLoadProgress}>
@@ -30,8 +34,8 @@ const HomePage = (): JSX.Element => {
         <Darkness enabled={isBelowOfLandscape} />
         <ScrollIndicator enabled={!isScrollFromTop} />
         <div className={styles.headSpace} />
-        <div ref={topSensor} style={{ position: "absolute", top: "150vh" }} />
-        <div ref={landscapeEndSensor} />
+        <div ref={topEndRef} style={{ position: "absolute", top: "120vh" }} />
+        <div ref={landscapeEndRef} />
         <About />
         <div className={styles.headSpace} />
         <Footer />

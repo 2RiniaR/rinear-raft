@@ -6,7 +6,7 @@
 
 @keyframes loop1 {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-100%) rotate3d(1, 1, -1, 70deg);
     opacity: 0;
   }
   20% {
@@ -16,14 +16,14 @@
     opacity: 1;
   }
   100% {
-    transform: translateX(0%);
+    transform: translateX(0%) rotate3d(1, 1, -1, 0deg);
     opacity: 0;
   }
 }
 
 @keyframes loop2 {
   0% {
-    transform: translateX(100%);
+    transform: translateX(100%) rotate3d(-1, -1, 1, 70deg);
     opacity: 0;
   }
   20% {
@@ -33,7 +33,7 @@
     opacity: 1;
   }
   100% {
-    transform: translateX(0%);
+    transform: translateX(0%) rotate3d(-1, -1, 1, 0deg);
     opacity: 0;
   }
 }

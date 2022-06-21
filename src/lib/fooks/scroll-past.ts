@@ -2,16 +2,17 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-import { useInView } from "react-intersection-observer";
-import { useCallback, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
+import useScrollValue from "./scroll-value";
 
-export default function useScrollPast(): [(node?: Element | null) => void, boolean] {
+export default function useScrollPast(target: RefObject<HTMLElement>): boolean {
+  const scroll = useScrollValue();
   const [isBelow, setIsBelow] = useState(false);
-  const onChange = useCallback((inView: boolean, entry: IntersectionObserverEntry) => {
-    if (entry.boundingClientRect.top < 0) return;
-    setIsBelow(inView);
-  }, []);
 
-  const [ref] = useInView({ onChange });
-  return [ref, isBelow];
+  useEffect(() => {
+    if (target.current == null) return;
+    setIsBelow(scroll > target.current.offsetTop - window.innerHeight);
+  }, [scroll]);
+
+  return isBelow;
 }
