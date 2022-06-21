@@ -10,19 +10,18 @@
   overflow-x: hidden;
   overflow-y: hidden;
   flex-direction: column;
-  padding-bottom: 4rem;
 
   &.loaded {
     display: flex;
   }
 
   &.loading {
-    display: none;
   }
 }
 
 .headSpace {
   position: relative;
+  z-index: 0;
   width: 100%;
-  height: 200vh;
+  height: 250vh;
 }

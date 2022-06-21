@@ -3,14 +3,21 @@
  */
 
 import React from "react";
+import { assignClasses } from "../../../../lib/helper";
 import styles from "./Logo.module.scss";
 import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
-import logoBackPic from "public/img/HomeTopLogo.png";
+import logo1 from "public/img/logo1.webp";
+import logo2 from "public/img/logo2.webp";
 
-const Logo = (): JSX.Element => (
-  <>
-    <LazyStaticImage className={styles.background} src={logoBackPic} alt="" layout="responsive" />
-  </>
+type Props = {
+  active: boolean;
+};
+
+const Logo = ({ active }: Props): JSX.Element => (
+  <div className={assignClasses(styles.container, !active ? styles.hidden : "")}>
+    <LazyStaticImage className={styles.logo1} src={logo1} alt="" layout="responsive" />
+    <LazyStaticImage className={styles.logo2} src={logo2} alt="" layout="responsive" />
+  </div>
 );
 
 export default Logo;

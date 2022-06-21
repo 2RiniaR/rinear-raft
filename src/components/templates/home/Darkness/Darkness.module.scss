@@ -6,6 +6,7 @@
 
 .container {
   @include global.full-area;
+  z-index: 2;
   position: fixed;
   background: rgba(global.$dark1, 0%);
   transition: background 0.6s;

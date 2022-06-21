@@ -5,11 +5,42 @@
 @use "global";
 @use "sass:math";
 
-.background {
-  $image-aspect-ratio: math.div(812, 419);
-  width: max(45vw, 45vh * #{$image-aspect-ratio});
-  top: 0;
+.container {
+  $image-aspect-ratio: math.div(908, 376);
+  $height: 12rem;
+  width: calc(#{$height} * #{$image-aspect-ratio});
+  height: $height;
+  top: 60vh;
   left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.9;
+  transform: translate(-50%, 0);
+  transition: transform 1s, opacity 1s;
+
+  &.hidden {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(1.2);
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 250%;
+    height: 150%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(global.$light2, 100%) 20%, rgba(global.$light2, 80%) 60%, rgba(global.$light2, 0%) 100%);
+  }
+
+  .logo1 {
+    position: absolute;
+    width: $height;
+  }
+
+  .logo2 {
+    position: absolute;
+    width: calc(#{$height} * 655 / 376);
+    top: calc(#{$height} * 69 / 376);
+    right: 0;
+  }
 }
+

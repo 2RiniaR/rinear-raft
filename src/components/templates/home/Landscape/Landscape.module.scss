@@ -16,6 +16,7 @@
 .view {
   position: absolute;
   $width: max(200vh, 100vw);
+  z-index: 1;
   width: $width;
   height: calc(#{$width} * 1 / 0.7);
 
@@ -31,3 +32,28 @@
     }
   }
 }
+
+.letters {
+  top: 45vh;
+  left: 10vw;
+  transform: translateY(-50%);
+  transition: left 2s, top 2s;
+
+  &.hidden {
+    top: 35vh;
+    left: -30vw;
+  }
+}
+
+.scenarios {
+  top: 45vh;
+  right: 10vw;
+  transform: translateY(-50%);
+  transition: right 2s, top 2s;
+
+  &.hidden {
+    top: 35vh;
+    right: -30vw;
+  }
+}
+
