@@ -3,25 +3,25 @@
  */
 
 import styles from "../contents.module.scss";
-import { ContentContext, ContentPage, ContentPageProps, TalkContent } from "lib/contents";
+import { ContentContext, ContentPage, ContentPageProps, LetterContent } from "lib/contents";
 import { arrayToDict } from "lib/helper";
 
-export const dirPath = "src/data/contents/talks";
+export const dirPath = "src/data/contents/letters";
 
-export class TalkRepository {
-  private readonly contents: { [id: string]: TalkContent } = {};
+export class LetterRepository {
+  private readonly contents: { [id: string]: LetterContent } = {};
 
   public constructor(indices: string[]) {
-    const modules: TalkContent[] = indices.map(
+    const modules: LetterContent[] = indices.map(
       // eslint-disable-next-line @typescript-eslint/no-var-requires
-      (id): TalkContent => require(`/src/data/contents/talks/${id}`).default
+      (id): LetterContent => require(`/src/data/contents/letters/${id}`).default
     );
     this.contents = arrayToDict(
       modules,
       (modules) => modules.id,
       (modules) => ({
         ...modules,
-        Page: TalkRepository.preprocessPage(modules.Page)
+        Page: LetterRepository.preprocessPage(modules.Page)
       })
     );
   }
@@ -30,7 +30,7 @@ export class TalkRepository {
     function PreprocessedPage({ ...props }: ContentPageProps): JSX.Element {
       return (
         <main className={styles.content}>
-          <ContentContext.Provider value={{ genre: "talks" }}>
+          <ContentContext.Provider value={{ genre: "letters" }}>
             <Children {...props} />
           </ContentContext.Provider>
         </main>
@@ -44,7 +44,7 @@ export class TalkRepository {
     return Object.keys(this.contents);
   }
 
-  public getAllContents(sort: "none" | "updatedAt" = "none"): TalkContent[] {
+  public getAllContents(sort: "none" | "updatedAt" = "none"): LetterContent[] {
     const contents = Object.values(this.contents);
     if (sort === "updatedAt")
       contents.sort((a, b) => {
@@ -55,7 +55,7 @@ export class TalkRepository {
     return contents;
   }
 
-  public getContent(id: string): TalkContent {
+  public getContent(id: string): LetterContent {
     return this.contents[id];
   }
 }

@@ -6,10 +6,10 @@ import dayjs from "dayjs";
 import { createContext, RefObject } from "react";
 
 export type { ScenarioContentHead, ScenarioContent } from "./scenario";
-export type { TalkContentHead, TalkContent } from "./talks";
+export type { LetterContentHead, LetterContent } from "./letters";
 
 const ContentGenres = {
-  talks: "talks",
+  letters: "letters",
   scenarios: "scenarios"
 } as const;
 
@@ -47,5 +47,5 @@ export type ContentContextProps = {
 };
 
 export const ContentContext = createContext<ContentContextProps>({
-  genre: "talks"
+  genre: "letters"
 });

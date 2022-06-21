@@ -3,16 +3,16 @@
  */
 
 import dayjs from "dayjs";
-import styles from "./TalkHeading.module.scss";
-import { TalkContentHead } from "lib/contents";
+import styles from "./LetterHeading.module.scss";
+import { LetterContentHead } from "lib/contents";
 import StaticImage from "components/functions/image/StaticImage";
 import { formatExceededTime } from "lib/helper";
 
 type Props = {
-  head: TalkContentHead;
+  head: LetterContentHead;
 };
 
-const TalkHeading = ({ head }: Props): JSX.Element => (
+const LetterHeading = ({ head }: Props): JSX.Element => (
   <article className={styles.container}>
     <StaticImage src={head.thumbnail} alt={head.title} className={styles.thumbnail} />
     <h1 className={styles.index}>#{head.index}</h1>
@@ -21,4 +21,4 @@ const TalkHeading = ({ head }: Props): JSX.Element => (
   </article>
 );
 
-export default TalkHeading;
+export default LetterHeading;

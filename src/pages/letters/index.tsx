@@ -3,13 +3,13 @@
  */
 
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import TalkIndexPage from "components/templates/talks-index/TalksIndexPage";
-import { TalkRepository } from "data/contents/talks";
-import { getContentsId } from "data/contents/talks/fetch";
+import LetterIndexPage from "components/templates/letter-index/LetterIndexPage";
+import { LetterRepository } from "data/contents/letters";
+import { getContentsId } from "data/contents/letters/fetch";
 
 const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const repository = new TalkRepository(contentsId);
-  return <TalkIndexPage heads={repository.getAllContents("updatedAt")} />;
+  const repository = new LetterRepository(contentsId);
+  return <LetterIndexPage heads={repository.getAllContents("updatedAt")} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {

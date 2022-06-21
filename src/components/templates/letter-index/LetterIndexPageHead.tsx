@@ -5,10 +5,10 @@
 import Head from "next/head";
 import React from "react";
 
-const TalksIndexPageHead = (): JSX.Element => (
+const LettersIndexPageHead = (): JSX.Element => (
   <Head>
-    <title>Talks - RineaR</title>
+    <title>Letters - RineaR</title>
   </Head>
 );
 
-export default TalksIndexPageHead;
+export default LettersIndexPageHead;

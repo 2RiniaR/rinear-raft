@@ -3,13 +3,13 @@
  */
 
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import TalkPage from "components/templates/talk/TalkPage";
-import { TalkRepository } from "data/contents/talks";
-import { getContentsId } from "data/contents/talks/fetch";
+import LetterPage from "components/templates/letter/LetterPage";
+import { LetterRepository } from "data/contents/letters";
+import { getContentsId } from "data/contents/letters/fetch";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const repository = new TalkRepository([id]);
-  return <TalkPage content={repository.getContent(id)} />;
+  const repository = new LetterRepository([id]);
+  return <LetterPage content={repository.getContent(id)} />;
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {

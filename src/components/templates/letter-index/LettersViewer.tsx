@@ -4,18 +4,18 @@
 
 import React, { useCallback, useRef } from "react";
 import Link from "next/link";
-import styles from "./TalksViewer.module.scss";
-import TalkHeading from "./TalkHeading";
-import { getContentPath, TalkContentHead } from "lib/contents";
+import styles from "./LettersViewer.module.scss";
+import LetterHeading from "./LetterHeading";
+import { getContentPath, LetterContentHead } from "lib/contents";
 import useElementSize from "lib/fooks/element-size";
 import useViewSize from "lib/fooks/view-size";
 import { getMediaQueryDeviceType } from "lib/layout";
 
 type Props = {
-  heads: TalkContentHead[];
+  heads: LetterContentHead[];
 };
 
-const TalksViewer = ({ heads }: Props): JSX.Element => {
+const LettersViewer = ({ heads }: Props): JSX.Element => {
   const itemMinWidth = 280;
   const [viewWidth] = useViewSize();
   const containerRef = useRef(null);
@@ -31,7 +31,7 @@ const TalksViewer = ({ heads }: Props): JSX.Element => {
       {heads.map((head) => (
         <Link href={getContentPath(head)} key={head.id}>
           <a className={styles.element} style={{ width: getItemWidth() }}>
-            <TalkHeading head={head} />
+            <LetterHeading head={head} />
           </a>
         </Link>
       ))}
@@ -39,4 +39,4 @@ const TalksViewer = ({ heads }: Props): JSX.Element => {
   );
 };
 
-export default TalksViewer;
+export default LettersViewer;

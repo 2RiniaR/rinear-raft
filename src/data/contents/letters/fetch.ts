@@ -4,7 +4,7 @@
 
 import fs from "fs";
 import { dirPath } from ".";
-import { TalkContent } from "lib/contents";
+import { LetterContent } from "lib/contents";
 
 export async function getContentsId(): Promise<string[]> {
   const modulesId: string[] = [];
@@ -14,7 +14,7 @@ export async function getContentsId(): Promise<string[]> {
     const isDirectory = item.isDirectory();
     const isModule = fs.existsSync(modulePath);
     if (isDirectory && isModule) {
-      const module: TalkContent = (await import(`src/data/contents/talks/${item.name}`)).default;
+      const module: LetterContent = (await import(`src/data/contents/letters/${item.name}`)).default;
       modulesId.push(module.id);
     }
   }

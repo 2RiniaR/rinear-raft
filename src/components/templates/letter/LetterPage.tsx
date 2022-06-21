@@ -3,28 +3,28 @@
  */
 
 import React, { useState } from "react";
-import styles from "./TalkPage.module.scss";
-import TalkPageHead from "./TalkPageHead";
-import { TalkTop } from "./Top";
-import { ChapterPoint, TalkContent } from "lib/contents";
+import styles from "./LetterPage.module.scss";
+import LetterPageHead from "./LetterPageHead";
+import { LetterTop } from "./Top";
+import { ChapterPoint, LetterContent } from "lib/contents";
 import ContentPageTemplate from "components/parts/pages/ContentPageTemplate";
 import ChaptersView from "components/parts/ChaptersView/ChaptersView";
 import BackButton from "components/templates/layout/BackButton";
 
 type Props = {
-  content: TalkContent;
+  content: LetterContent;
 };
 
-const TalkPage = ({ content }: Props): JSX.Element => {
+const LetterPage = ({ content }: Props): JSX.Element => {
   const [chapters, setChapters] = useState<ChapterPoint[]>([]);
 
   return (
     <>
-      <TalkPageHead content={content} />
+      <LetterPageHead content={content} />
       <ContentPageTemplate>
-        <BackButton href={"/talks"} />
+        <BackButton href={"/letters"} />
         <div className={styles.layout}>
-          <TalkTop content={content} />
+          <LetterTop content={content} />
           <ChaptersView chapters={chapters} />
           <content.Page setChapters={setChapters} />
         </div>
@@ -33,4 +33,4 @@ const TalkPage = ({ content }: Props): JSX.Element => {
   );
 };
 
-export default TalkPage;
+export default LetterPage;

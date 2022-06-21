@@ -8,7 +8,7 @@ import SideMenuOpener from "./SideMenuOpener";
 import StaticImage from "components/functions/image/StaticImage";
 import leftArrowPic from "public/img/LeftArrow.png";
 import logoPic from "public/img/logo.png";
-import talksPic from "public/img/talks.png";
+import lettersPic from "public/img/letters.png";
 import scenariosPic from "public/img/scenarios.png";
 
 type Props = {
@@ -18,7 +18,7 @@ type Props = {
 
 const items: Omit<SideMenuItemProps, "onClick">[] = [
   { href: "/", markSrc: logoPic, name: "HOME" },
-  { href: "/talks", markSrc: talksPic, name: "TALKS" },
+  { href: "/letters", markSrc: lettersPic, name: "LETTERS" },
   { href: "/scenarios", markSrc: scenariosPic, name: "SCENARIOS" }
 ];
 

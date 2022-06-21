@@ -4,11 +4,11 @@
 
 import React from "react";
 import styles from "./Abstract.module.scss";
-import { TalkContent } from "lib/contents";
+import { LetterContent } from "lib/contents";
 import StaticImage from "components/functions/image/StaticImage";
 
 type Props = {
-  content: TalkContent;
+  content: LetterContent;
 };
 
 const Abstract = ({ content }: Props): JSX.Element => (

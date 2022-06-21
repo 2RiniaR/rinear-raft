@@ -3,27 +3,27 @@
  */
 
 import React from "react";
-import styles from "./TalksIndexPage.module.scss";
-import Viewer from "./TalksViewer";
-import TalksIndexPageHead from "./TalkIndexPageHead";
-import { TalkContentHead } from "lib/contents";
+import styles from "./LetterIndexPage.module.scss";
+import Viewer from "./LettersViewer";
+import LettersIndexPageHead from "./LetterIndexPageHead";
+import { LetterContentHead } from "lib/contents";
 import Footer from "components/parts/Footer";
 import Background from "components/parts/Background";
 import GenreHeader from "components/parts/GenreHeader";
-import talksPic from "public/img/talks.png";
+import lettersPic from "public/img/letters.png";
 import BackButton from "components/templates/layout/BackButton";
 
 type Props = {
-  heads: TalkContentHead[];
+  heads: LetterContentHead[];
 };
 
-const TalksIndexPage = ({ heads }: Props): JSX.Element => (
+const LetterIndexPage = ({ heads }: Props): JSX.Element => (
   <>
-    <TalksIndexPageHead />
+    <LettersIndexPageHead />
     <Background>
       <div className={styles.page}>
         <BackButton href={"/"} />
-        <GenreHeader logoSrc={talksPic} title="TALKS" />
+        <GenreHeader logoSrc={lettersPic} title="LETTERS" />
         <Viewer heads={heads} />
         <Footer />
       </div>
@@ -31,4 +31,4 @@ const TalksIndexPage = ({ heads }: Props): JSX.Element => (
   </>
 );
 
-export default TalksIndexPage;
+export default LetterIndexPage;

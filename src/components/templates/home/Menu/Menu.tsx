@@ -5,14 +5,14 @@
 import React from "react";
 import styles from "./Menu.module.scss";
 import MenuItem, { MenuItemProps } from "./MenuItem";
-import talksPic from "public/img/talks.png";
+import lettersPic from "public/img/letters.png";
 import scenariosPic from "public/img/scenarios.png";
 
 const items: MenuItemProps[] = [
   {
-    href: "/talks",
-    name: "TALKS",
-    iconSrc: talksPic,
+    href: "/letters",
+    name: "LETTERS",
+    iconSrc: lettersPic,
     description: "制作風景"
   },
   {

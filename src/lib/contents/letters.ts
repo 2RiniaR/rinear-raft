@@ -5,13 +5,13 @@
 import { StaticImageData } from "next/image";
 import { Content, ContentGenre, ContentHead } from ".";
 
-export type GenreType = "talks";
-export const genre: ContentGenre & GenreType = "talks";
+export type GenreType = "letters";
+export const genre: ContentGenre & GenreType = "letters";
 export type GenreStrict = { genre: GenreType };
 export type Params = {
   index: number;
   thumbnail: StaticImageData;
 };
 
-export type TalkContentHead = ContentHead & GenreStrict & Params;
-export type TalkContent = Content & GenreStrict & Params;
+export type LetterContentHead = ContentHead & GenreStrict & Params;
+export type LetterContent = Content & GenreStrict & Params;

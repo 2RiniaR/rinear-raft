@@ -6,21 +6,21 @@ import React from "react";
 import dayjs from "dayjs";
 import styles from "./Title.module.scss";
 import StaticImage from "components/functions/image/StaticImage";
-import { TalkContent } from "lib/contents";
+import { LetterContent } from "lib/contents";
 import { formatExceededTime } from "lib/helper";
-import talksPic from "public/img/talks.png";
+import lettersPic from "public/img/letters.png";
 
 type Props = {
-  content: TalkContent;
+  content: LetterContent;
 };
 
 const Title = ({ content }: Props): JSX.Element => (
   <header className={styles.layout}>
-    <StaticImage className={styles.logo} src={talksPic} alt="トーク" />
+    <StaticImage className={styles.logo} src={lettersPic} alt="トーク" />
     <div className={styles.display}>
       <h1 className={styles.title}>{content.title}</h1>
       <h3 className={styles.index}>#{content.index}</h3>
-      <h3 className={styles.genre}>TALK</h3>
+      <h3 className={styles.genre}>LETTER</h3>
       <h3 className={styles.updatedAt}>{"最終更新：" + formatExceededTime(dayjs(), content.updatedAt)}</h3>
     </div>
   </header>

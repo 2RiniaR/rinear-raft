@@ -19,7 +19,7 @@ import {
   TextEffect,
   UnorderedList
 } from "content-parts";
-import { ChapterPoint, ContentPageProps, TalkContent } from "lib/contents";
+import { ChapterPoint, ContentPageProps, LetterContent } from "lib/contents";
 import thumbnailPic from "public/contents/scenarios/rinear-official-site/HomePage1.webp";
 
 const dummyText = "これはダミーテキストです。".repeat(10);
@@ -142,8 +142,8 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   );
 };
 
-const designSample: TalkContent = {
-  genre: "talks",
+const designSample: LetterContent = {
+  genre: "letters",
   id: "design-sample",
   index: 0,
   title: "デザインサンプル",

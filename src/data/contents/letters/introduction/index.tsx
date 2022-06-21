@@ -10,7 +10,7 @@ import AboutExternalServices from "./AboutExternalServices";
 import AboutTechnology from "./AboutTechnology";
 import AboutCatchphrase from "./AboutCatchphrase";
 import { Chapter } from "content-parts";
-import { ChapterPoint, ContentPageProps, TalkContent } from "lib/contents";
+import { ChapterPoint, ContentPageProps, LetterContent } from "lib/contents";
 import thumbnailPic from "public/contents/scenarios/rinear-official-site/HomePage1.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
@@ -18,7 +18,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
     aboutHomePage: { name: "ホームページ設立おめでとうございます！", ref: useRef(null) },
     aboutRineaR: { name: "RineaRとは？", ref: useRef(null) },
     aboutExternalServices: { name: "外部サービスのアカウントとかありますか？", ref: useRef(null) },
-    aboutTechnology: { name: "技術的なことって「Talks」で話すんですか？", ref: useRef(null) },
+    aboutTechnology: { name: "技術的なことって「Letters」で話すんですか？", ref: useRef(null) },
     aboutCatchphrase: { name: "「この筏は私を、どこへ連れて行くんだろう。」って何ですか？", ref: useRef(null) }
   };
 
@@ -49,14 +49,14 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   );
 };
 
-const introduction: TalkContent = {
-  genre: "talks",
+const introduction: LetterContent = {
+  genre: "letters",
   id: "introduction",
   index: 1,
   title: "ホームページ、爆誕！",
   thumbnail: thumbnailPic,
   updatedAt: dayjs("2021-09-01"),
-  description: "RineaRでの最初のTALK。",
+  description: "RineaRでの最初のLETTER。",
   Page
 };
 
