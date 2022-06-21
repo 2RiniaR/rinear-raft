@@ -2,8 +2,7 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-import React, { useState } from "react";
-import VisibilitySensor from "react-visibility-sensor";
+import React from "react";
 import styles from "./Menu.module.scss";
 import MenuItem, { MenuItemProps } from "./MenuItem";
 import talksPic from "public/img/talks.png";
@@ -25,17 +24,13 @@ const items: MenuItemProps[] = [
 ];
 
 const Menu = (): JSX.Element => {
-  const [display, setDisplay] = useState(false);
-
   return (
     <div className={styles.background}>
-      <VisibilitySensor onChange={(isVisible: boolean) => setDisplay(display || isVisible)}>
-        <div className={styles.items}>
-          {items.map((item) => (
-            <MenuItem {...item} key={item.href} />
-          ))}
-        </div>
-      </VisibilitySensor>
+      <div className={styles.items}>
+        {items.map((item) => (
+          <MenuItem {...item} key={item.href} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -67,6 +67,7 @@
 .links {
   display: flex;
   justify-content: center;
+  position: relative;
   font-size: 1rem;
   margin: 0 auto 2rem auto;
   gap: 1rem;
@@ -83,11 +84,13 @@
 
 .copyright {
   text-align: center;
+  position: relative;
   font-size: 1rem;
 }
 
 .version {
   text-align: right;
+  position: relative;
   padding-right: 2rem;
   font-size: 1rem;
 }

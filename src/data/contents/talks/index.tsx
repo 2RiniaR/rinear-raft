@@ -3,7 +3,7 @@
  */
 
 import styles from "../contents.module.scss";
-import { TalkContent, ContentContext, ContentPage, ContentPageProps } from "lib/contents";
+import { ContentContext, ContentPage, ContentPageProps, TalkContent } from "lib/contents";
 import { arrayToDict } from "lib/helper";
 
 export const dirPath = "src/data/contents/talks";
@@ -36,6 +36,7 @@ export class TalkRepository {
         </main>
       );
     }
+
     return PreprocessedPage;
   }
 

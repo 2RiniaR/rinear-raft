@@ -11,6 +11,7 @@
 
   &.layer1 {
     left: 0;
+    transform: translateX(-100%);
     animation-name: loop1;
     animation-play-state: running;
     animation-timing-function: ease-out;
@@ -23,6 +24,7 @@
 
   &.layer2 {
     right: 0;
+    transform: translateX(100%);
     animation-name: loop2;
     animation-play-state: running;
     animation-timing-function: ease-out;

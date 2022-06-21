@@ -11,10 +11,10 @@ import Rule from "./Rule";
 import Tools from "./Tools";
 import Background from "./Background";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
-import thumbnailPic1 from "public/contents/projects/popcorn-chef/game1.webp";
-import thumbnailPic2 from "public/contents/projects/popcorn-chef/title.webp";
-import thumbnailPic3 from "public/contents/projects/popcorn-chef/game4.webp";
-import thumbnailPic4 from "public/contents/projects/popcorn-chef/lobby.webp";
+import thumbnailPic1 from "public/contents/projects/piece-to-peace/title.webp";
+import thumbnailPic2 from "public/contents/projects/piece-to-peace/shooting.webp";
+import thumbnailPic3 from "public/contents/projects/piece-to-peace/puzzle.webp";
+import thumbnailPic4 from "public/contents/projects/piece-to-peace/rest.webp";
 import { Chapter } from "content-parts";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {

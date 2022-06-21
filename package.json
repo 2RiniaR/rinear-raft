@@ -19,6 +19,7 @@
     "next": "12.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.3.3",
     "sass-loader": "^13.0.0",
     "sharp": "^0.30.6"
   },
@@ -40,7 +41,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
-    "react-visibility-sensor": "^5.1.1",
     "sass": "^1.52.3",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",

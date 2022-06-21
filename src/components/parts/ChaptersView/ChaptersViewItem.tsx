@@ -19,7 +19,8 @@ const ChaptersViewItem = ({ chapter }: Props): JSX.Element => {
   }
 
   return (
-    <a className={styles.item} role="link" tabIndex={0} onKeyPress={scroll} onClick={scroll}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <a className={styles.item} role="link" tabIndex={0} onClick={scroll}>
       {chapter.name}
     </a>
   );

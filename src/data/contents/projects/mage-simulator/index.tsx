@@ -5,11 +5,10 @@
 import dayjs from "dayjs";
 import { useEffect } from "react";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
-import thumbnailPic1 from "public/contents/projects/popcorn-chef/game1.webp";
-import thumbnailPic2 from "public/contents/projects/popcorn-chef/title.webp";
-import thumbnailPic3 from "public/contents/projects/popcorn-chef/game4.webp";
-
-import thumbnailPic4 from "public/contents/projects/popcorn-chef/lobby.webp";
+import thumbnailPic1 from "public/contents/projects/mage-simulator/title.webp";
+import thumbnailPic2 from "public/contents/projects/mage-simulator/ex1.webp";
+import thumbnailPic3 from "public/contents/projects/mage-simulator/step1.webp";
+import thumbnailPic4 from "public/contents/projects/mage-simulator/step5.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {};

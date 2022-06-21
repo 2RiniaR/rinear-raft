@@ -14,7 +14,7 @@
 }
 
 .view {
-  position: relative;
+  position: absolute;
   $width: max(200vh, 100vw);
   width: $width;
   height: calc(#{$width} * 1 / 0.7);

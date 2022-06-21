@@ -5,10 +5,7 @@
 import dayjs from "dayjs";
 import { useEffect } from "react";
 import { ChapterPoint, ContentPageProps, ProjectContent } from "lib/contents";
-import thumbnailPic1 from "public/contents/projects/popcorn-chef/game1.webp";
-import thumbnailPic2 from "public/contents/projects/popcorn-chef/title.webp";
-import thumbnailPic3 from "public/contents/projects/popcorn-chef/game4.webp";
-import thumbnailPic4 from "public/contents/projects/popcorn-chef/lobby.webp";
+import thumbnailPic1 from "public/img/non-public-thumbnail.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {};
@@ -22,10 +19,10 @@ const madeHighlow: ProjectContent = {
   genre: "projects",
   id: "made-highlow",
   title: "メイドハイロウ",
-  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
+  thumbnails: [thumbnailPic1, thumbnailPic1, thumbnailPic1, thumbnailPic1],
   updatedAt: dayjs("2022-06-20"),
   releasedAt: undefined,
-  description: "👁👁",
+  description: "鋭意制作中。続報をお待ちください。",
   Page
 };
 

@@ -15,7 +15,6 @@ const Video = ({ src, title }: Props): JSX.Element => (
       className={styles.frame}
       src={src}
       title={title !== undefined ? title : "YouTube video player"}
-      frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     />

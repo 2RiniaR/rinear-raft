@@ -3,7 +3,7 @@
  */
 
 import Link from "next/link";
-import { UnorderedList, ListItem } from "content-parts";
+import { ListItem, UnorderedList } from "content-parts";
 
 const Section = (): JSX.Element => (
   <>
