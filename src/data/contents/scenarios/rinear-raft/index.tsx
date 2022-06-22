@@ -51,6 +51,7 @@ const rinearRaft: ScenarioContent = {
   genre: "scenarios",
   id: "rinear-raft",
   title: "RineaRの筏",
+  thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-10-01"),
   releasedAt: dayjs("2022-06-21"),

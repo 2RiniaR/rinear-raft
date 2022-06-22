@@ -2,7 +2,6 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-import { StaticImageData } from "next/image";
 import { Content, ContentGenre, ContentHead } from ".";
 
 export type GenreType = "letters";
@@ -10,7 +9,6 @@ export const genre: ContentGenre & GenreType = "letters";
 export type GenreStrict = { genre: GenreType };
 export type Params = {
   index: number;
-  thumbnail: StaticImageData;
 };
 
 export type LetterContentHead = ContentHead & GenreStrict & Params;

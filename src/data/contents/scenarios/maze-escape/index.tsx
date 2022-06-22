@@ -62,6 +62,7 @@ const mazeEscape: ScenarioContent = {
   genre: "scenarios",
   id: "maze-escape",
   title: "迷宮脱出",
+  thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-09-28"),
   releasedAt: dayjs("2016-10-18"),

@@ -4,6 +4,7 @@
 
 import dayjs from "dayjs";
 import { createContext, RefObject } from "react";
+import { StaticImageData } from "next/image";
 
 export type { ScenarioContentHead, ScenarioContent } from "./scenario";
 export type { LetterContentHead, LetterContent } from "./letters";
@@ -26,6 +27,7 @@ export type ContentHead = {
   title: string;
   updatedAt: dayjs.Dayjs;
   description: string;
+  thumbnail: StaticImageData;
 };
 
 export type ContentPageProps = {

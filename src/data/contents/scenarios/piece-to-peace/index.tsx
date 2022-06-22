@@ -62,6 +62,7 @@ const pieceToPeace: ScenarioContent = {
   genre: "scenarios",
   id: "piece-to-peace",
   title: "Piece to PEACE",
+  thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2022-06-20"),
   releasedAt: dayjs("2021-09-20"),

@@ -67,6 +67,7 @@ const bustersMission: ScenarioContent = {
   genre: "scenarios",
   id: "busters-mission",
   title: "Busters Mission",
+  thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2022-06-20 15:15:41"),
   releasedAt: dayjs("2018-09-05"),

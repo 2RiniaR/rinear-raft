@@ -62,6 +62,7 @@ const ponBonRush: ScenarioContent = {
   genre: "scenarios",
   id: "pon-bon-rush",
   title: "Pon! Bon! Rush",
+  thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2022-05-28"),
   releasedAt: dayjs("2020-04-05"),

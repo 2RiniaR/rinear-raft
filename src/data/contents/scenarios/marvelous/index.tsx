@@ -62,6 +62,7 @@ const marvelous: ScenarioContent = {
   genre: "scenarios",
   id: "marvelous",
   title: "エライさんbot",
+  thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2021-09-28"),
   releasedAt: dayjs("2021-04-30"),

@@ -19,6 +19,7 @@ const eyes: ScenarioContent = {
   genre: "scenarios",
   id: "eyes",
   title: "み　て　る　よ",
+  thumbnail: thumbnailPic,
   thumbnails: [thumbnailPic, thumbnailPic, thumbnailPic, thumbnailPic],
   updatedAt: dayjs("2022-06-20 15:15:41"),
   releasedAt: dayjs("2022-02-25"),

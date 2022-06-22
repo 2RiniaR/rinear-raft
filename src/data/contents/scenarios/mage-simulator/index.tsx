@@ -22,6 +22,7 @@ const mageSimulator: ScenarioContent = {
   genre: "scenarios",
   id: "mage-simulator",
   title: "メイジ・シミュレータ",
+  thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2022-06-20"),
   releasedAt: dayjs("2021-02-25"),

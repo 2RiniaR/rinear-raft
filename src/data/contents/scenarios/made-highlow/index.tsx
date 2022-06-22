@@ -19,6 +19,7 @@ const madeHighlow: ScenarioContent = {
   genre: "scenarios",
   id: "made-highlow",
   title: "メイドハイロウ",
+  thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic1, thumbnailPic1, thumbnailPic1],
   updatedAt: dayjs("2022-06-20"),
   releasedAt: undefined,

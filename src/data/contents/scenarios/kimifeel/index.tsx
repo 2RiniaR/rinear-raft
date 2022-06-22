@@ -22,6 +22,7 @@ const kimifeel: ScenarioContent = {
   genre: "scenarios",
   id: "kimifeel",
   title: "キミフィール",
+  thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2022-06-20 15:15:41"),
   releasedAt: dayjs("2022-02-16"),

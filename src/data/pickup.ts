@@ -3,7 +3,7 @@ import { LetterRepository } from "./contents/letters";
 import { getLettersId } from "./contents/letters/fetch";
 import { getScenariosId } from "./contents/scenarios/fetch";
 import { ScenarioRepository } from "./contents/scenarios";
-import image from "public/img/default-thumbnail.webp";
+import { getRoute } from "./contents";
 
 export async function getLatestContent(count: number): Promise<Pickup[]> {
   const lettersId = await getLettersId();
@@ -24,8 +24,8 @@ export async function getLatestContent(count: number): Promise<Pickup[]> {
     const content = contents[i];
     pickups.push({
       title: content.title,
-      href: "/",
-      thumbnail: image
+      href: getRoute(content),
+      thumbnail: content.thumbnail
     });
   }
 

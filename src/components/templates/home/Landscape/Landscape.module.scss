@@ -4,21 +4,13 @@
 
 @use "global";
 
-.layer {
-  position: relative;
-  @include global.full-area;
-
-  & > * {
-    position: absolute;
-  }
-}
-
 .view {
   position: absolute;
   $width: max(200vh, 100vw);
   z-index: 1;
   width: $width;
   height: calc(#{$width} * 1 / 0.7);
+  pointer-events: none;
 
   .elements {
     position: relative;
