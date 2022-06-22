@@ -37,11 +37,12 @@
   top: 45vh;
   left: 10vw;
   transform: translateY(-50%);
-  transition: left 2s, top 2s;
+  transition: left 2s, top 2s, transform 2s;
 
   &.hidden {
     top: 35vh;
     left: -30vw;
+    transform: translateY(-50%) scale(1.5);
   }
 }
 
@@ -49,11 +50,12 @@
   top: 45vh;
   right: 10vw;
   transform: translateY(-50%);
-  transition: right 2s, top 2s;
+  transition: right 2s, top 2s, transform 2s;
 
   &.hidden {
     top: 35vh;
     right: -30vw;
+    transform: translateY(-50%) scale(1.5);
   }
 }
 

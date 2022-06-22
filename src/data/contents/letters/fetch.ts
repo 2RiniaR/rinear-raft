@@ -6,7 +6,7 @@ import fs from "fs";
 import { dirPath } from ".";
 import { LetterContent } from "lib/contents";
 
-export async function getContentsId(): Promise<string[]> {
+export async function getLettersId(): Promise<string[]> {
   const modulesId: string[] = [];
   const items = await fs.promises.readdir(dirPath, { withFileTypes: true });
   for (const item of items) {

@@ -5,7 +5,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import LetterIndexPage from "components/templates/letter-index/LetterIndexPage";
 import { LetterRepository } from "data/contents/letters";
-import { getContentsId } from "data/contents/letters/fetch";
+import { getLettersId } from "data/contents/letters/fetch";
 
 const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const repository = new LetterRepository(contentsId);
@@ -14,7 +14,7 @@ const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): J
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: { contentsId: await getContentsId() }
+    props: { contentsId: await getLettersId() }
   };
 };
 

@@ -32,17 +32,15 @@ const Phantom = ({ title, subtitle, icon, href }: Props): JSX.Element => {
   return (
     <Link href={href}>
       <a className={styles.container}>
-        <LazyStaticImage
-          className={styles.back}
-          src={back}
-          alt=""
-          layout="responsive"
-          style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
-        />
-        <div className={styles.content}>
-          <LazyStaticImage className={styles.icon} src={icon} alt="" layout="responsive" />
-          <h1 className={styles.title}>{title}</h1>
-          <h2 className={styles.subtitle}>{subtitle}</h2>
+        <div className={styles.sizeFilter}>
+          <div className={styles.positionFilter} style={{ transform: `translate(${position.x}px, ${position.y}px)` }}>
+            <LazyStaticImage className={styles.back} src={back} alt="" layout="responsive" />
+            <div className={styles.content}>
+              <LazyStaticImage className={styles.icon} src={icon} alt="" layout="responsive" />
+              <h1 className={styles.title}>{title}</h1>
+              <h2 className={styles.subtitle}>{subtitle}</h2>
+            </div>
+          </div>
         </div>
       </a>
     </Link>

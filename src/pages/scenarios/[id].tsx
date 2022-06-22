@@ -5,7 +5,7 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import ScenarioPage from "components/templates/scenario/ScenarioPage";
 import { ScenarioRepository } from "data/contents/scenarios";
-import { getContentsId } from "data/contents/scenarios/fetch";
+import { getScenariosId } from "data/contents/scenarios/fetch";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const repository = new ScenarioRepository([id]);
@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const contentsId = await getContentsId();
+  const contentsId = await getScenariosId();
   return {
     paths: contentsId.map((id) => ({ params: { id } })),
     fallback: false
