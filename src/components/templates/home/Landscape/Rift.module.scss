@@ -55,6 +55,18 @@
   }
 }
 
+.link {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s;
+  pointer-events: all;
+
+  .hidden > & {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 .masked {
   position: absolute;
   width: 100%;
@@ -63,12 +75,6 @@
   mask-image: url(/img/RiftMask.webp);
   mask-size: cover;
   filter: saturate(50%);
-  opacity: 1;
-  transition: opacity 0.5s;
-
-  .hidden > & {
-    opacity: 0;
-  }
 }
 
 .rightSide {

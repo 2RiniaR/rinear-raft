@@ -4,6 +4,129 @@
 
 @use "global";
 
-.image {
+.container {
+  position: relative;
   @include global.full-area;
+
+  & > * {
+    position: absolute;
+  }
+}
+
+.picture {
+  @include global.full-area;
+}
+
+.holeEffect {
+  @include global.full-area;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-play-state: running;
+  animation-name: holeEffectLoop;
+
+  @keyframes holeEffectLoop {
+    0% {
+      transform: scale(1) translateY(0);
+    }
+    90% {
+      transform: scale(1.009) translateY(-0.9%);
+    }
+    100% {
+      transform: scale(1.01) translateY(-1%);
+    }
+  }
+}
+
+.smogEffect {
+  @include global.full-area;
+  background: radial-gradient(at 50% 0%, rgba(#ddd, 0.1) 0%, rgba(#ddd, 0) 30%, rgba(#ddd, 0.9) 70%);
+
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-name: smogEffectLoop;
+
+  @keyframes smogEffectLoop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+
+.windEffect {
+  position: absolute;
+  @include global.full-area;
+  transform: scale(4);
+
+  &.layer1 {
+    left: 0;
+    transform: translateX(-100%);
+    animation-name: windEffectLeftLoop;
+    animation-play-state: running;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-delay: 8s;
+
+    @keyframes windEffectLeftLoop {
+      0% {
+        transform: translateX(-100%) rotate3d(1, 1, -1, 70deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0%) rotate3d(1, 1, -1, 0deg);
+        opacity: 0;
+      }
+    }
+  }
+
+  &.layer2 {
+    right: 0;
+    transform: translateX(100%);
+    animation-name: windEffectRightLoop;
+    animation-play-state: running;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-delay: 0s;
+
+    @keyframes windEffectRightLoop {
+      0% {
+        transform: translateX(100%) rotate3d(-1, -1, 1, 70deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0%) rotate3d(-1, -1, 1, 0deg);
+        opacity: 0;
+      }
+    }
+  }
 }

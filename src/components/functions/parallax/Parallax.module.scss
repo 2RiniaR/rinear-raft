@@ -6,6 +6,7 @@
 
 .container {
   @include global.full-area;
+  pointer-events: none;
 
   .view {
     position: fixed;

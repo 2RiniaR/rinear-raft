@@ -6,6 +6,7 @@
 @use "sass:math";
 
 .container {
+  position: absolute;
   $image-aspect-ratio: math.div(908, 376);
   $height: 12rem;
   width: calc(#{$height} * #{$image-aspect-ratio});

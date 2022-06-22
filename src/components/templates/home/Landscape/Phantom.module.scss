@@ -6,6 +6,11 @@
   width: 16rem;
   height: 16rem;
   transition: transform 300ms;
+  pointer-events: all;
+
+  &.hidden {
+    pointer-events: none;
+  }
 
   &:hover {
     transform: scale(1.1);

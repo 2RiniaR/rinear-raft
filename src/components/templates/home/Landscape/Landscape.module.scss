@@ -34,6 +34,7 @@
 }
 
 .letters {
+  position: absolute;
   top: 45vh;
   left: 10vw;
   transform: translateY(-50%);
@@ -47,6 +48,7 @@
 }
 
 .scenarios {
+  position: absolute;
   top: 45vh;
   right: 10vw;
   transform: translateY(-50%);
