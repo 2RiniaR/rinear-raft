@@ -7,7 +7,7 @@
 
 .container {
   $image-aspect-ratio: math.div(812, 419);
-  $height: 50vh;
+  $height: min(50vh, 100vw / #{$image-aspect-ratio});
   width: calc(#{$height} * #{$image-aspect-ratio});
   height: $height;
   position: relative;
@@ -22,10 +22,36 @@
   width: 100%;
   height: 100%;
 
-  transition: transform 1s;
+  .shown & {
+    animation: openBack 1s normal forwards ease-in-out;
+  }
 
-  .hidden > & {
-    transform: scaleX(0);
+  .hidden & {
+    animation: closeBack 1s reverse forwards ease-in-out;
+  }
+
+  @keyframes openBack {
+    0% {
+      transform: scaleX(0);
+    }
+    60% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes closeBack {
+    0% {
+      transform: scaleX(0);
+    }
+    60% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(1);
+    }
   }
 
   .image {
@@ -83,11 +109,37 @@
   height: 100%;
   mask-image: url(/img/RiftMask.webp);
   mask-size: cover;
-  transition: opacity 0.5s;
-  opacity: 1;
 
-  .hidden > & {
-    opacity: 0;
+  .shown & {
+    animation: openImage 1s normal forwards ease-in-out;
+  }
+
+  .hidden & {
+    animation: closeImage 1s reverse forwards ease-in-out;
+  }
+
+  @keyframes openImage {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes closeImage {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -115,11 +167,37 @@
   top: 50%;
   width: 40%;
   transform: translate(-50%, -50%) rotate(45deg) translateY(-100%) translateX(10%);
-  opacity: 1;
-  transition: opacity 0.5s;
 
-  .hidden > & {
-    opacity: 0;
+  .shown & {
+    animation: openLeftSide 1s normal forwards ease-in-out;
+  }
+
+  .hidden & {
+    animation: closeLeftSide 1s reverse forwards ease-in-out;
+  }
+
+  @keyframes openLeftSide {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes closeLeftSide {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -156,11 +234,37 @@
   top: 50%;
   width: 40%;
   transform: translate(-50%, -50%) rotate(-45deg) translateY(-100%) translateX(-10%);
-  opacity: 1;
-  transition: opacity 0.5s;
 
-  .hidden > & {
-    opacity: 0;
+  .shown & {
+    animation: openRightSide 1s normal forwards ease-in-out;
+  }
+
+  .hidden & {
+    animation: closeRightSide 1s reverse forwards ease-in-out;
+  }
+
+  @keyframes openRightSide {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes closeRightSide {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 

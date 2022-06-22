@@ -28,13 +28,13 @@
 .letters {
   position: absolute;
   top: 45vh;
-  left: 10vw;
-  transform: translateY(-50%);
-  transition: left 2s, top 2s, transform 2s;
+  right: calc(50% + max(12rem, 30vw));
+  transform: translate(50%, -50%);
+  transition: right 2s, top 2s, transform 2s;
 
   &.hidden {
     top: 35vh;
-    left: -30vw;
+    right: 130vw;
     transform: translateY(-50%) scale(1.5);
   }
 }
@@ -42,13 +42,13 @@
 .scenarios {
   position: absolute;
   top: 45vh;
-  right: 10vw;
-  transform: translateY(-50%);
-  transition: right 2s, top 2s, transform 2s;
+  left: calc(50% + max(12rem, 30vw));
+  transform: translate(-50%, -50%);
+  transition: left 2s, top 2s, transform 2s;
 
   &.hidden {
     top: 35vh;
-    right: -30vw;
+    left: 130vw;
     transform: translateY(-50%) scale(1.5);
   }
 }

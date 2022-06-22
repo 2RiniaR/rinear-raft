@@ -32,7 +32,7 @@ const Rift = ({ active }: Props): JSX.Element => {
   }, 5000);
 
   return (
-    <div className={assignClasses(styles.container, !active ? styles.hidden : "", hover ? styles.hover : "")}>
+    <div className={assignClasses(styles.container, !active ? styles.hidden : styles.shown, hover ? styles.hover : "")}>
       <div className={styles.back}>
         <LazyStaticImage className={styles.image} src={back} alt="" layout="responsive" />
       </div>

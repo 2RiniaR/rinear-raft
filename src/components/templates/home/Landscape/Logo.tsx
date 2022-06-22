@@ -3,8 +3,8 @@
  */
 
 import React from "react";
-import { assignClasses } from "../../../../lib/helper";
 import styles from "./Logo.module.scss";
+import { assignClasses } from "lib/helper";
 import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
 import logo1 from "public/img/logo1.webp";
 import logo2 from "public/img/logo2.webp";
