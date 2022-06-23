@@ -13,7 +13,7 @@ type Props = {
 const TopButton = ({ onClick }: Props): JSX.Element => (
   <div className={styles.screen}>
     <button className={styles.button} onClick={onClick} name="トップへ" aria-label="トップへ">
-      <StaticImage className={styles.logo} src={upArrowPic} alt="トップへ" />
+      <StaticImage className={styles.logo} src={upArrowPic} alt="トップへ" layout="responsive" />
     </button>
   </div>
 );

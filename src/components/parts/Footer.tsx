@@ -12,9 +12,9 @@ import packageSettings from "public/../package.json";
 
 const Footer = (): JSX.Element => (
   <footer className={styles.container}>
-    <StaticImage className={styles.back} src={logoPic} alt="Logo" />
+    <StaticImage className={styles.back} src={logoPic} alt="Logo" layout="responsive" />
     <div className={styles.logo}>
-      <StaticImage className={styles.letter} src={letterPic} alt="RineaR" />
+      <StaticImage className={styles.letter} src={letterPic} alt="RineaR" layout="responsive" />
     </div>
     <div className={styles.links}>
       <ExternalLink className={styles.element} href={"https://twitter.com/14RineaR"}>

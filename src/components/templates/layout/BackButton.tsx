@@ -15,7 +15,7 @@ const BackButton = ({ href }: Props): JSX.Element => (
   <div className={styles.screen}>
     <Link href={href} scroll={false}>
       <a className={styles.link}>
-        <StaticImage className={styles.icon} src={leftArrowPic} alt="戻る" />
+        <StaticImage className={styles.icon} src={leftArrowPic} alt="戻る" layout="responsive" />
       </a>
     </Link>
   </div>

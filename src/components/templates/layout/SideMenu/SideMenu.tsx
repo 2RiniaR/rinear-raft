@@ -26,7 +26,7 @@ const SideMenu = ({ open, setOpen }: Props): JSX.Element => (
   <div className={styles.screen}>
     <SideMenuOpener open={open} setOpen={setOpen}>
       <button className={styles.backButton} onClick={() => setOpen(false)} name="戻る" aria-label="戻る">
-        <StaticImage src={leftArrowPic} alt="戻る" />
+        <StaticImage src={leftArrowPic} alt="戻る" layout="responsive" />
       </button>
       <div className={styles.index}>
         {items.map((item) => (
