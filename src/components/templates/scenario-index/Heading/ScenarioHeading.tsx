@@ -17,7 +17,7 @@ const ScenarioHeading = ({ head }: Props): JSX.Element => (
     <div className={styles.title}>
       <Title head={head} />
     </div>
-    <StaticImage src={head.thumbnails[0]} alt={head.title} className={styles.mainThumbnail} />
+    <StaticImage src={head.thumbnails[0]} alt={head.title} className={styles.mainThumbnail} layout="responsive" />
     <div className={styles.subThumbnails}>
       <SubThumbnails head={head} />
     </div>

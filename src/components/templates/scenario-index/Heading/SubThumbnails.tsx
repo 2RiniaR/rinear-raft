@@ -13,7 +13,13 @@ type Props = {
 const SubThumbnails = ({ head }: Props): JSX.Element => (
   <div className={styles.layout}>
     {head.thumbnails.slice(1).map((thumbnailPath, index) => (
-      <StaticImage src={thumbnailPath} alt={head.title} className={styles.item} key={`thumbnailPath-${index}`} />
+      <StaticImage
+        src={thumbnailPath}
+        alt={head.title}
+        className={styles.item}
+        key={`thumbnailPath-${index}`}
+        layout="responsive"
+      />
     ))}
   </div>
 );
