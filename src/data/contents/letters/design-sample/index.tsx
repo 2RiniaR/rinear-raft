@@ -20,7 +20,7 @@ import {
   UnorderedList
 } from "content-parts";
 import { ChapterPoint, ContentPageProps, LetterContent } from "lib/contents";
-import thumbnailPic from "public/contents/scenarios/rinear-official-site/HomePage1.webp";
+import thumbnailPic from "public/img/default-thumbnail.webp";
 
 const dummyText = "これはダミーテキストです。".repeat(10);
 

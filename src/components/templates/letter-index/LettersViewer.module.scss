@@ -7,44 +7,33 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  flex-basis: auto;
 
   @include global.media(phone) {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   @include global.media(tablet) {
-    margin-left: 6%;
-    margin-right: 6%;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 
   @include global.media(desktop) {
-    margin-left: 10%;
-    margin-right: 10%;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 
   .element {
     display: block;
+    max-width: 21.4rem;
+    padding: 0.7rem;
+    transition: background-color 200ms 0s ease;
 
-    @include global.media(phone) {
-      // do nothing
-    }
-
-    @include global.media(tablet) {
-      padding: 0.7rem;
-      transition: background-color 200ms 0s ease;
-      &:hover {
-        background-color: rgba(global.$light2, 0.2);
-      }
-    }
-
-    @include global.media(desktop) {
-      padding: 0.7rem;
-      transition: background-color 200ms 0s ease;
-      &:hover {
-        background-color: rgba(global.$light2, 0.2);
-      }
+    &:hover {
+      background-color: rgba(global.$light2, 0.2);
     }
   }
 }

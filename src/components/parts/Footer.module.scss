@@ -16,7 +16,7 @@
   position: absolute;
   opacity: 0.2;
   width: 12rem;
-  left: calc(50% - 16rem);
+  left: max(1rem, calc(50% - 16rem));
 }
 
 .logo {
@@ -27,42 +27,10 @@
   border-bottom: global.$light1 solid 2px;
   position: relative;
 
-  .image {
-    position: relative;
-    object-fit: contain;
-    margin-right: 1rem;
-
-    @include global.media(phone) {
-      height: 3rem;
-      width: 3rem;
-    }
-
-    @include global.media(tablet) {
-      height: 4rem;
-      width: 4rem;
-    }
-
-    @include global.media(desktop) {
-      height: 4rem;
-      width: 4rem;
-    }
-  }
-
   .letter {
     position: relative;
-
-    @include global.media(phone) {
-      height: 3rem;
-    }
-
-    @include global.media(tablet) {
-      height: 4rem;
-    }
-
-    @include global.media(desktop) {
-      width: 12rem;
-      bottom: -1.2rem;
-    }
+    width: 12rem;
+    bottom: -1.2rem;
   }
 }
 
@@ -88,11 +56,12 @@
   text-align: center;
   position: relative;
   font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .version {
   text-align: right;
   position: relative;
-  padding-right: 2rem;
+  padding-right: 1rem;
   font-size: 1rem;
 }

@@ -14,12 +14,12 @@ type Props = {
 
 const ScenarioHeading = ({ head }: Props): JSX.Element => (
   <article className={styles.container}>
-    <div className={styles.title}>
-      <Title head={head} />
-    </div>
     <StaticImage src={head.thumbnails[0]} alt={head.title} className={styles.mainThumbnail} layout="responsive" />
     <div className={styles.subThumbnails}>
       <SubThumbnails head={head} />
+    </div>
+    <div className={styles.title}>
+      <Title head={head} />
     </div>
   </article>
 );
