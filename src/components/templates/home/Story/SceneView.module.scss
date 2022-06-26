@@ -1,0 +1,45 @@
+@use "global";
+
+.container {
+  display: flex;
+  position: relative;
+
+  &.left {
+    flex-direction: row;
+    background: linear-gradient(to right, transparent 0%, global.$dark1 100%);
+    margin-right: 4rem;
+  }
+
+  &.right {
+    flex-direction: row-reverse;
+    background: linear-gradient(to left, transparent 0%, global.$dark1 100%);
+    margin-left: 4rem;
+  }
+}
+
+.title {
+  position: absolute;
+  bottom: 0;
+  margin: 1rem 3rem;
+  opacity: 0.2;
+  color: global.$light1;
+  font-size: 3rem;
+}
+
+.thumbnail {
+  width: 36rem;
+  position: relative;
+  top: -4rem;
+  mask-image: url(/img/StoryMask.png);
+  mask-size: cover;
+}
+
+.document {
+  width: 24rem;
+  padding: 2rem 4rem;
+  color: global.$light1;
+  overflow-wrap: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

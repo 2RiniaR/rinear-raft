@@ -12,10 +12,11 @@
 }
 
 .image {
-  position: absolute;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 108rem;
+  width: 4rem;
+  bottom: 0;
   height: 100%;
   opacity: 0.3;
   transition: opacity 1000ms;

@@ -1,0 +1,17 @@
+@use "global";
+
+.container {
+  z-index: 2;
+  width: 64rem;
+  margin: 12rem auto;
+  display: flex;
+  flex-direction: column;
+
+  .stair {
+    width: 0.5rem;
+    height: 10rem;
+    background: linear-gradient(to bottom, transparent 0%, rgba(global.$light1, 0.7) 50%, transparent 100%);
+
+    margin: 0 auto 2rem auto;
+  }
+}
