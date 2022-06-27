@@ -2,16 +2,27 @@
 
 .container {
   z-index: 2;
-  width: 64rem;
   margin: 12rem auto;
   display: flex;
   flex-direction: column;
+
+  @include global.media(phone) {
+    width: 100%;
+  }
+
+  @include global.media(tablet) {
+    width: calc(100vw - 12rem);
+  }
+
+  @include global.media(desktop) {
+    width: 64rem;
+  }
 
   .stair {
     width: 0.5rem;
     height: 10rem;
     background: linear-gradient(to bottom, transparent 0%, rgba(global.$light1, 0.7) 50%, transparent 100%);
 
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 0 auto;
   }
 }

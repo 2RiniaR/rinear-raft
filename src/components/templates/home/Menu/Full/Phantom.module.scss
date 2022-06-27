@@ -138,6 +138,7 @@
     border: global.$light1 solid 1px;
     border-radius: 1rem;
     background: rgba(global.$dark1, 0.7);
+    pointer-events: all;
   }
 
   .sizeFilter {

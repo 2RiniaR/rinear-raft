@@ -5,7 +5,7 @@
 import React, { useState } from "react";
 import { StaticImageData } from "next/image";
 import Link from "next/link";
-import useInterval from "../../../../lib/fooks/interval";
+import useInterval from "../../../../../lib/fooks/interval";
 import styles from "./Phantom.module.scss";
 import back from "public/img/Node.webp";
 import LazyStaticImage from "components/functions/lazy/LazyStaticImage";

@@ -2,4 +2,5 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-export { default as Menu } from "./Menu";
+export { default as FullMenu } from "./Full/FullMenu";
+export { default as MinimalMenu } from "./Minimal/MinimalMenu";

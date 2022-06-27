@@ -4,32 +4,24 @@
 
 import React, { useContext, useState } from "react";
 import Link from "next/link";
-import { PickupsContext } from "../HomePage";
+import { PickupsContext } from "../../HomePage";
 import styles from "./Rift.module.scss";
-import useInterval from "lib/fooks/interval";
 import { assignClasses } from "lib/helper";
 import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
 import back from "public/img/LogoBack.webp";
+import useContentSwitch from "lib/fooks/content-switch";
 
 type Props = {
   active: boolean;
 };
 
 const Rift = ({ active }: Props): JSX.Element => {
-  const [contentIndex, setContentIndex] = useState(0);
-  const [switching, setSwitching] = useState(false);
   const [hover, setHover] = useState(false);
-  const switchingDuration = 500; // [ms]
-
   const pickups = useContext(PickupsContext);
-  useInterval(async () => {
-    if (hover) return;
-    setSwitching(true);
-    await new Promise((resolve) => setTimeout(resolve, switchingDuration));
-    setContentIndex((current) => (current + 1) % pickups.length);
-    await new Promise((resolve) => setTimeout(resolve, switchingDuration));
-    setSwitching(false);
-  }, 5000);
+  const [content, contentIndex, switching] = useContentSwitch(pickups, hover, {
+    switchingDuration: 500,
+    displayDuration: 5000
+  });
 
   return (
     <div className={assignClasses(styles.container, !active ? styles.hidden : styles.shown, hover ? styles.hover : "")}>
@@ -39,7 +31,7 @@ const Rift = ({ active }: Props): JSX.Element => {
       <div className={styles.mask}>
         <LazyStaticImage
           className={assignClasses(styles.masked, switching ? styles.switching : "")}
-          src={pickups[contentIndex].thumbnail}
+          src={content.thumbnail}
           layout="responsive"
         />
       </div>
@@ -55,11 +47,9 @@ const Rift = ({ active }: Props): JSX.Element => {
         </div>
       </div>
       <div className={styles.rightSide}>
-        <h1 className={assignClasses(styles.title, switching ? styles.switching : "")}>
-          {pickups[contentIndex].title}
-        </h1>
+        <h1 className={assignClasses(styles.title, switching ? styles.switching : "")}>{content.title}</h1>
       </div>
-      <Link href={pickups[contentIndex].href}>
+      <Link href={content.href}>
         <a
           className={styles.link}
           onMouseOver={() => setHover(true)}

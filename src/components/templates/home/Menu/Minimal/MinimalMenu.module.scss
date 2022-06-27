@@ -1,0 +1,78 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
+@use "global";
+
+.view {
+  position: absolute;
+  $width: max(200vh, 100vw);
+  z-index: 1;
+  width: $width;
+  height: calc(#{$width} * 1 / 0.7);
+  pointer-events: none;
+
+  .elements {
+    position: relative;
+    width: $width;
+    height: $width;
+    top: 0;
+    left: calc(-1 * #{$width} / 2 + 50vw);
+
+    & > * {
+      position: absolute;
+    }
+  }
+}
+
+@mixin full {
+  .letters {
+    position: absolute;
+    top: 45vh;
+    right: calc(50% + max(12rem, 30vw));
+    transform: translate(50%, -50%);
+    transition: right 2s, top 2s, transform 2s;
+
+    &.hidden {
+      top: 35vh;
+      right: calc(50% + 80vw);
+      transform: translate(50%, -50%) scale(1.5);
+    }
+  }
+
+  .scenarios {
+    position: absolute;
+    top: 45vh;
+    left: calc(50% + max(12rem, 30vw));
+    transform: translate(-50%, -50%);
+    transition: left 2s, top 2s, transform 2s;
+
+    &.hidden {
+      top: 35vh;
+      left: calc(50% + 80vw);
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+  }
+}
+
+@include global.media(phone) {
+  .letters {
+    position: absolute;
+    top: 16rem;
+    right: calc(50% + 1.5rem);
+  }
+
+  .scenarios {
+    position: absolute;
+    top: 16rem;
+    left: calc(50% + 1.5rem);
+  }
+}
+
+@include global.media(tablet) {
+  @include full
+}
+
+@include global.media(desktop) {
+  @include full
+}

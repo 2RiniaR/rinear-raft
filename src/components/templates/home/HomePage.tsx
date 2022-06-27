@@ -13,6 +13,7 @@ import { LoadingEffect } from "./Loading";
 import Darkness from "./Darkness";
 import ScrollIndicator from "./ScrollIndicator";
 import StoryView from "./Story/StoryView";
+import { FullMenu } from "./Menu";
 import { LoadingWaiter } from "components/functions/lazy";
 import { assignClasses } from "lib/helper";
 import useScrollPast from "lib/fooks/scroll-past";
@@ -41,7 +42,8 @@ const HomePage = ({ pickups, story }: Props): JSX.Element => {
         <HomePageHead />
         <LoadingEffect loading={!loadCompleted} progress={loadProgress} />
         <div className={assignClasses(styles.page, loadCompleted ? styles.loaded : styles.loading)}>
-          <Landscape menuActive={!isScrollFromTop && loadCompleted} />
+          <Landscape />
+          <FullMenu active={!isScrollFromTop && loadCompleted} />
           <Darkness enabled={isBelowOfLandscape} />
           <ScrollIndicator enabled={!isScrollFromTop} />
           <div className={styles.headSpace} />

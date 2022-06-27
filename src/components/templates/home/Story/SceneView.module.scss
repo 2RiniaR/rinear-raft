@@ -1,19 +1,55 @@
 @use "global";
 
 .container {
-  display: flex;
   position: relative;
 
-  &.left {
-    flex-direction: row;
-    background: linear-gradient(to right, transparent 0%, global.$dark1 100%);
-    margin-right: 4rem;
+  @include global.media(desktop) {
+    &.left {
+      margin-right: 4rem;
+    }
+
+    &.right {
+      margin-left: 4rem;
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  top: 4rem;
+  bottom: 0;
+
+  .left & {
+    background-image: linear-gradient(to right, transparent 0%, global.$dark1 100%);
+
+    @include global.media(phone) {
+      background-image: linear-gradient(to right, rgba(global.$dark1, 50%) 0%, global.$dark1 100%);
+    }
   }
 
-  &.right {
-    flex-direction: row-reverse;
-    background: linear-gradient(to left, transparent 0%, global.$dark1 100%);
-    margin-left: 4rem;
+  .right & {
+    background-image: linear-gradient(to left, transparent 0%, global.$dark1 100%);
+
+    @include global.media(phone) {
+      background-image: linear-gradient(to left, rgba(global.$dark1, 50%) 0%, global.$dark1 100%);
+    }
+  }
+}
+
+.content {
+  position: relative;
+
+  @include global.media(desktop) {
+    display: flex;
+
+    .left & {
+      flex-direction: row;
+    }
+
+    .right & {
+      flex-direction: row-reverse;
+    }
   }
 }
 
@@ -24,22 +60,87 @@
   opacity: 0.2;
   color: global.$light1;
   font-size: 3rem;
+
+  @include global.media(phone) {
+    .left & {
+      right: 0;
+    }
+
+    .right & {
+      left: 0;
+    }
+  }
+
+  @include global.media(tablet) {
+    .left & {
+      right: 0;
+    }
+
+    .right & {
+      left: 0;
+    }
+  }
 }
 
 .thumbnail {
-  width: 36rem;
   position: relative;
-  top: -4rem;
   mask-image: url(/img/StoryMask.png);
   mask-size: cover;
+
+  @include global.media(phone) {
+    width: calc(100% + 4rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include global.media(tablet) {
+    width: calc(100% - 4rem);
+
+    .left & {
+      margin-right: auto;
+    }
+
+    .right & {
+      margin-left: auto;
+    }
+  }
+
+  @include global.media(desktop) {
+    position: relative;
+    margin-bottom: 4rem;
+    width: 36rem;
+  }
 }
 
 .document {
-  width: 24rem;
-  padding: 2rem 4rem;
   color: global.$light1;
   overflow-wrap: normal;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include global.media(phone) {
+    padding: 1rem 1.5rem 2rem 1.5rem;
+  }
+
+  @include global.media(tablet) {
+    width: calc(100% - 4rem);
+
+    .left & {
+      margin-left: auto;
+      padding: 1rem 2rem 2rem 0;
+      text-align: end;
+    }
+
+    .right & {
+      margin-right: auto;
+      padding: 1rem 0 2rem 2rem;
+      text-align: start;
+    }
+  }
+
+  @include global.media(desktop) {
+    width: 24rem;
+    padding: 2rem 4rem;
+  }
 }
