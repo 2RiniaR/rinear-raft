@@ -5,7 +5,8 @@
 @use "global";
 
 .content {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.5;
 
   @include global.media(desktop) {
     width: 56rem;

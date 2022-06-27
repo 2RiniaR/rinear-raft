@@ -25,31 +25,54 @@
   }
 }
 
-.letters {
-  position: absolute;
-  top: 45vh;
-  right: calc(50% + max(12rem, 30vw));
-  transform: translate(50%, -50%);
-  transition: right 2s, top 2s, transform 2s;
+@mixin full {
+  .letters {
+    position: absolute;
+    top: 45vh;
+    right: calc(50% + max(12rem, 30vw));
+    transform: translate(50%, -50%);
+    transition: right 2s, top 2s, transform 2s;
 
-  &.hidden {
-    top: 35vh;
-    right: 130vw;
-    transform: translateY(-50%) scale(1.5);
+    &.hidden {
+      top: 35vh;
+      right: calc(50% + 80vw);
+      transform: translate(50%, -50%) scale(1.5);
+    }
+  }
+
+  .scenarios {
+    position: absolute;
+    top: 45vh;
+    left: calc(50% + max(12rem, 30vw));
+    transform: translate(-50%, -50%);
+    transition: left 2s, top 2s, transform 2s;
+
+    &.hidden {
+      top: 35vh;
+      left: calc(50% + 80vw);
+      transform: translate(-50%, -50%) scale(1.5);
+    }
   }
 }
 
-.scenarios {
-  position: absolute;
-  top: 45vh;
-  left: calc(50% + max(12rem, 30vw));
-  transform: translate(-50%, -50%);
-  transition: left 2s, top 2s, transform 2s;
+@include global.media(phone) {
+  .letters {
+    position: absolute;
+    top: 16rem;
+    right: calc(50% + 1.5rem);
+  }
 
-  &.hidden {
-    top: 35vh;
-    left: 130vw;
-    transform: translateY(-50%) scale(1.5);
+  .scenarios {
+    position: absolute;
+    top: 16rem;
+    left: calc(50% + 1.5rem);
   }
 }
 
+@include global.media(tablet) {
+  @include full
+}
+
+@include global.media(desktop) {
+  @include full
+}

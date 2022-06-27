@@ -8,13 +8,61 @@
 .container {
   position: absolute;
   $image-aspect-ratio: math.div(908, 376);
-  $height: 12rem;
-  width: calc(#{$height} * #{$image-aspect-ratio});
-  height: $height;
   top: 60vh;
   left: 50%;
   transform: translate(-50%, 0);
   transition: transform 1s, opacity 1s;
+
+  @include global.media(phone) {
+    $width: 75vw;
+    $height: calc(#{$width} / #{$image-aspect-ratio});
+    height: $height;
+    width: $width;
+    top: calc(88vh - #{$height});
+
+    .logo1 {
+      width: $height;
+    }
+
+    .logo2 {
+      width: calc(#{$width} * 655 / 908);
+      top: calc(#{$height} * 69 / 376);
+    }
+  }
+
+  @include global.media(tablet) {
+    top: 60vh;
+    $width: calc(25vh * #{$image-aspect-ratio});
+    $height: calc(#{$width} / #{$image-aspect-ratio});
+    height: $height;
+    width: $width;
+
+    .logo1 {
+      width: $height;
+    }
+
+    .logo2 {
+      width: calc(#{$width} * 655 / 908);
+      top: calc(#{$height} * 69 / 376);
+    }
+  }
+
+  @include global.media(desktop) {
+    top: 60vh;
+    $width: calc(25vh * #{$image-aspect-ratio});
+    $height: calc(#{$width} / #{$image-aspect-ratio});
+    height: $height;
+    width: $width;
+
+    .logo1 {
+      width: $height;
+    }
+
+    .logo2 {
+      width: calc(#{$width} * 655 / 908);
+      top: calc(#{$height} * 69 / 376);
+    }
+  }
 
   &.hidden {
     opacity: 0;
@@ -34,14 +82,10 @@
 
   .logo1 {
     position: absolute;
-    width: $height;
   }
 
   .logo2 {
     position: absolute;
-    width: calc(#{$height} * 655 / 376);
-    top: calc(#{$height} * 69 / 376);
     right: 0;
   }
 }
-

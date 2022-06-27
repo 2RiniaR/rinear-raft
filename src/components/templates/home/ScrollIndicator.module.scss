@@ -1,3 +1,5 @@
+@use "global";
+
 .container {
   position: fixed;
   z-index: 6;
@@ -15,11 +17,11 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 4rem;
   bottom: 0;
   height: 100%;
   opacity: 0.3;
   transition: opacity 1000ms;
+  width: 3rem;
 }
 
 .hidden {

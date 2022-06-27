@@ -10,27 +10,14 @@
   justify-content: space-between;
   background-color: rgba(global.$dark1, 0.7);
   padding-bottom: 1rem;
+  padding-top: 6rem;
   min-height: 100vh;
-
-  @include global.media(phone) {
-    width: 100%;
-    gap: 6rem;
-    padding-top: 2rem;
-  }
-
-  @include global.media(tablet) {
-    margin-left: 3%;
-    margin-right: 3%;
-    gap: 6rem;
-    padding-top: 6rem;
-  }
+  gap: 6rem;
 
   @include global.media(desktop) {
     width: 68rem;
     margin-left: auto;
     margin-right: auto;
-    gap: 8rem;
-    padding-top: 15vh;
   }
 }
 
@@ -39,17 +26,18 @@
   font-size: 1rem;
 
   @include global.media(phone) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   @include global.media(tablet) {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 
   @include global.media(desktop) {
-    padding-left: 10%;
-    padding-right: 10%;
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

@@ -2,31 +2,4 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-@use "global";
 
-.body {
-  color: global.$dark1;
-  display: inline-block;
-  padding-left: 2rem;
-
-  p {
-    display: inline-block;
-    text-indent: 1em;
-    line-height: 1.8;
-    margin-top: 1.5em;
-  }
-
-  @include global.media(phone) {
-    padding: 0 1rem;
-    font-size: 1rem;
-  }
-
-  @include global.media(tablet) {
-    padding: 0 1rem;
-    font-size: 1rem;
-  }
-
-  @include global.media(desktop) {
-    font-size: 1.1rem;
-  }
-}

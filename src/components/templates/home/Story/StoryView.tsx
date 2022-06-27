@@ -11,7 +11,7 @@ export const StoryView = ({ story }: Props): JSX.Element => (
     {story.scenes.map((scene, index) => (
       <>
         <SceneView scene={scene} layout={index % 2 == 1 ? "left" : "right"} key={scene.title} />
-        {index + 1 != story.scenes.length ? <div className={styles.stair} /> : ""}
+        {index + 1 != story.scenes.length ? <div className={styles.stair} key={`after-${scene.title}`} /> : ""}
       </>
     ))}
   </div>

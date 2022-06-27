@@ -10,13 +10,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
   flex-direction: column;
-
-  &.loaded {
-    display: flex;
-  }
-
-  &.loading {
-  }
+  display: flex;
 }
 
 .headSpace {
@@ -25,4 +19,24 @@
   width: 100%;
   height: 200vh;
   pointer-events: none;
+}
+
+.separator {
+  position: relative;
+  z-index: 2;
+  background-color: global.$light1;
+  height: 2px;
+  margin: 4rem auto;
+
+  @include global.media(phone) {
+    width: 10rem;
+  }
+
+  @include global.media(tablet) {
+    width: 15rem;
+  }
+
+  @include global.media(desktop) {
+    width: 20rem;
+  }
 }

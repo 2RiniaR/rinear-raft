@@ -1,142 +1,193 @@
 @use "global";
 
-.container {
-  display: block;
-  position: relative;
-  width: 16rem;
-  height: 16rem;
-  transition: transform 300ms;
-  pointer-events: all;
-
-  @include global.media(phone) {
-  }
-
-  @include global.media(tablet) {
-    width: 12rem;
-    height: 12rem;
-  }
-
-  @include global.media(desktop) {
+@mixin full {
+  .container {
+    display: block;
+    position: relative;
     width: 16rem;
     height: 16rem;
-  }
+    transition: transform 300ms;
+    pointer-events: all;
 
-  &.hidden {
-    pointer-events: none;
-  }
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
-.sizeFilter {
-  width: 100%;
-  height: 100%;
-  animation-iteration-count: infinite;
-  animation-duration: 4.5s;
-  animation-fill-mode: both;
-  animation-direction: normal;
-  animation-name: loop;
-
-  @keyframes loop {
-    0% {
-      transform: scale(1);
+    @include global.media(tablet) {
+      width: 12rem;
+      height: 12rem;
     }
-    50% {
-      transform: scale(1.05);
+
+    @include global.media(desktop) {
+      width: 16rem;
+      height: 16rem;
     }
-    100% {
-      transform: scale(1);
+
+    &.hidden {
+      pointer-events: none;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
+
+  .sizeFilter {
+    width: 100%;
+    height: 100%;
+    animation-iteration-count: infinite;
+    animation-duration: 4.5s;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-name: loop;
+
+    @keyframes loop {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .positionFilter {
+    width: 100%;
+    height: 100%;
+    transition: transform 4s;
+  }
+
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include global.media(tablet) {
+      width: 7rem;
+      height: 7rem;
+    }
+
+    @include global.media(desktop) {
+      width: 9rem;
+      height: 9rem;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    width: 66%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .title {
+    position: absolute;
+    color: global.$light1;
+    width: 100%;
+    text-align: center;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @include global.media(tablet) {
+      font-size: 1.16rem;
+      line-height: 1.16;
+    }
+
+    @include global.media(desktop) {
+      font-size: 1.4rem;
+      line-height: 1.4;
+    }
+  }
+
+  .subtitle {
+    position: absolute;
+    color: global.$light1;
+    font-size: 1rem;
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @include global.media(tablet) {
+      font-size: 0.85rem;
+      line-height: 0.85;
+    }
+
+    @include global.media(desktop) {
+      font-size: 1rem;
+      line-height: 1;
+    }
+  }
 }
 
-.positionFilter {
-  width: 100%;
-  height: 100%;
-  transition: transform 4s;
-}
-
-
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  @include global.media(phone) {
+@include global.media(phone) {
+  .container {
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    border: global.$light1 solid 1px;
+    border-radius: 1rem;
+    background: rgba(global.$dark1, 0.7);
   }
 
-  @include global.media(tablet) {
-    width: 7rem;
-    height: 7rem;
+  .sizeFilter {
+    width: 100%;
+    height: 100%;
   }
 
-  @include global.media(desktop) {
-    width: 9rem;
-    height: 9rem;
-  }
-}
-
-.icon {
-  position: absolute;
-  width: 66%;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.title {
-  position: absolute;
-  color: global.$light1;
-  width: 100%;
-  text-align: center;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, 0);
-
-  @include global.media(phone) {
+  .positionFilter {
+    width: 100%;
+    height: 100%;
+    transform: none !important;
+    position: relative;
   }
 
-  @include global.media(tablet) {
-    font-size: 1.16rem;
-    line-height: 1.16;
+  .back {
+    display: none;
   }
 
-  @include global.media(desktop) {
-    font-size: 1.4rem;
-    line-height: 1.4;
-  }
-}
-
-.subtitle {
-  position: absolute;
-  color: global.$light1;
-  font-size: 1rem;
-  line-height: 1;
-  width: 100%;
-  text-align: center;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-
-  @include global.media(phone) {
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    align-items: center;
   }
 
-  @include global.media(tablet) {
+  .icon {
+    width: 4rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .title {
+    color: global.$light1;
+    font-size: 1rem;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+
+  .subtitle {
+    color: global.$light1;
     font-size: 0.85rem;
     line-height: 0.85;
   }
+}
 
-  @include global.media(desktop) {
-    font-size: 1rem;
-    line-height: 1;
-  }
+@include global.media(tablet) {
+  @include full
+}
+
+@include global.media(desktop) {
+  @include full
 }

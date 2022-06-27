@@ -48,6 +48,7 @@ const HomePage = ({ pickups, story }: Props): JSX.Element => {
           <div ref={topEndRef} style={{ position: "absolute", top: "120vh" }} />
           <div ref={landscapeEndRef} />
           <About />
+          <div className={styles.separator} />
           <StoryView story={story} />
           <Footer />
         </div>
