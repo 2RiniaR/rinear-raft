@@ -28,6 +28,10 @@
   animation-play-state: running;
   animation-name: holeEffectLoop;
 
+  @include global.media(phone) {
+    animation-name: none;
+  }
+
   @keyframes holeEffectLoop {
     0% {
       transform: scale(1) translateY(0);
@@ -50,6 +54,10 @@
   animation-fill-mode: both;
   animation-direction: normal;
   animation-name: smogEffectLoop;
+
+  @include global.media(phone) {
+    animation-name: none;
+  }
 
   @keyframes smogEffectLoop {
     0% {
@@ -82,6 +90,10 @@
     animation-fill-mode: both;
     animation-delay: 8s;
 
+    @include global.media(phone) {
+      animation-name: none;
+    }
+
     @keyframes windEffectLeftLoop {
       0% {
         transform: translateX(-100%) rotate3d(1, 1, -1, 70deg);
@@ -111,6 +123,10 @@
     animation-direction: normal;
     animation-fill-mode: both;
     animation-delay: 0s;
+
+    @include global.media(phone) {
+      animation-name: none;
+    }
 
     @keyframes windEffectRightLoop {
       0% {

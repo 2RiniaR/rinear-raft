@@ -60,12 +60,24 @@
     position: absolute;
     top: 45vh;
     right: calc(50% + 1.5rem);
+    opacity: 1;
+    transition: opacity 1s;
+
+    &.hidden {
+      opacity: 0;
+    }
   }
 
   .scenarios {
     position: absolute;
     top: 45vh;
     left: calc(50% + 1.5rem);
+    opacity: 1;
+    transition: opacity 1s;
+
+    &.hidden {
+      opacity: 0;
+    }
   }
 }
 

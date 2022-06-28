@@ -2,9 +2,10 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Link from "next/link";
 import { PickupsContext } from "../../HomePage";
+import useElementSize from "../../../../../lib/fooks/element-size";
 import styles from "./Rift.module.scss";
 import { assignClasses } from "lib/helper";
 import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
@@ -22,9 +23,15 @@ const Rift = ({ active }: Props): JSX.Element => {
     switchingDuration: 500,
     displayDuration: 5000
   });
+  const containerRef = useRef(null);
+  const [containerWidth] = useElementSize(containerRef);
+  const labelDisplayWidth = 600;
 
   return (
-    <div className={assignClasses(styles.container, !active ? styles.hidden : styles.shown, hover ? styles.hover : "")}>
+    <div
+      className={assignClasses(styles.container, !active ? styles.hidden : styles.shown, hover ? styles.hover : "")}
+      ref={containerRef}
+    >
       <div className={styles.back}>
         <LazyStaticImage className={styles.image} src={back} alt="" layout="responsive" />
       </div>
@@ -35,7 +42,7 @@ const Rift = ({ active }: Props): JSX.Element => {
           layout="responsive"
         />
       </div>
-      <div className={styles.leftSide}>
+      <div className={styles.leftSide} style={{ display: containerWidth > labelDisplayWidth ? "block" : "none" }}>
         <div className={styles.indexIndicator}>
           {pickups.map((pickup, index) => (
             <div
@@ -45,7 +52,7 @@ const Rift = ({ active }: Props): JSX.Element => {
           ))}
         </div>
       </div>
-      <div className={styles.rightSide}>
+      <div className={styles.rightSide} style={{ display: containerWidth > labelDisplayWidth ? "block" : "none" }}>
         <h1 className={assignClasses(styles.title, switching ? styles.switching : "")}>{content.title}</h1>
       </div>
       <Link href={content.href}>
