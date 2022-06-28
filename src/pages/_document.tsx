@@ -22,6 +22,7 @@ const Document = (): JSX.Element => (
             `
         }}
       />
+      <link rel="preconnect" href="//use.typekit.net/" />
     </Head>
     <body>
       <Main />

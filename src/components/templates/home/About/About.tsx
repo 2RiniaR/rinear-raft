@@ -14,7 +14,7 @@ const About = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <LazyStaticImage src={noteImage} className={styles.background} />
+      <LazyStaticImage src={noteImage} className={styles.background} layout="responsive" />
       <div className={styles.content}>
         <h1 className={styles.title}>
           <span ref={ref} className={assignClasses(styles.text, inView ? styles.active : styles.inactive)}>
@@ -26,7 +26,7 @@ const About = (): JSX.Element => {
         </h1>
         <section className={styles.body}>
           <p>
-            『RineaR（りにあ）』とは、クリエイター『Rinia（りにあ）』による個人活動・個人制作物の総称。明確な目標を持ったプロジェクトや、複数メンバーで活動するサークルではない。
+            『RineaR（りにあ）』とは、クリエイター『Rinia（りにあ）』による個人活動の総称。明確な目標を持ったプロジェクトやサークルではない。
           </p>
           <p>
             そのときに、作りたいと思ったものを作って楽しむ。現在は主にゲームやサービス等を制作しているが、活動範囲は限定していない。制作の途中経過やアイデアなどは当サイトのLETTERSへ投稿し、制作物やプロジェクトはSCENARIOSへ投稿する。

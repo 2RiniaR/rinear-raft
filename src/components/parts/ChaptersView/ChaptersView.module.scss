@@ -16,6 +16,7 @@
   }
 
   .title {
+    @include global.design-font;
     font-size: 1.3rem;
 
     @include global.media(phone) {
@@ -34,7 +35,6 @@
   .chapters {
     display: flex;
     flex-direction: column;
-    font-size: 1.1rem;
 
     @include global.media(phone) {
       gap: 1rem;

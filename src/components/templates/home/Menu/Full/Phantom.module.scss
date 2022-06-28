@@ -8,6 +8,7 @@
     height: 16rem;
     transition: transform 300ms;
     pointer-events: all;
+    @include global.design-font;
 
     @include global.media(tablet) {
       width: 12rem;

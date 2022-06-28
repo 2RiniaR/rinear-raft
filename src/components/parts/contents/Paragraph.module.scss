@@ -2,8 +2,10 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
+@use "global";
+
 .paragraph {
   text-indent: 1em;
-  line-height: 1.2;
+  @include global.readable-font;
   margin: 1em 0;
 }

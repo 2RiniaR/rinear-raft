@@ -7,6 +7,7 @@
 .element {
   display: flex;
   align-items: center;
+  @include global.design-font;
 
   @include global.media(phone) {
     gap: 1rem;

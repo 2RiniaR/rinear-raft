@@ -17,6 +17,8 @@
 }
 
 .text {
+  @include global.design-font;
+
   @include global.media(phone) {
     font-size: 1.6rem;
   }

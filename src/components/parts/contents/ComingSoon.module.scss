@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include global.design-font;
 
   .text {
     font-size: 2rem;

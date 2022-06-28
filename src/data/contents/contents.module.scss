@@ -5,9 +5,6 @@
 @use "global";
 
 .content {
-  font-size: 1rem;
-  line-height: 1.5;
-
   @include global.media(desktop) {
     width: 56rem;
     align-self: center;
@@ -34,9 +31,5 @@
     &:visited {
       color: #9477ff;
     }
-  }
-
-  iframe {
-    max-width: 100%;
   }
 }

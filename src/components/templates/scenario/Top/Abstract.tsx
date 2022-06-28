@@ -15,8 +15,13 @@ const Abstract = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
     <p className={styles.description}>{content.description}</p>
     <div className={styles.thumbnails}>
-      {content.thumbnails.map((thumbnailPath) => (
-        <StaticImage src={thumbnailPath} alt="サブサムネイル" className={styles.thumbnail} key={thumbnailPath.src} />
+      {content.thumbnails.map((thumbnail, index) => (
+        <StaticImage
+          src={thumbnail}
+          alt="サブサムネイル"
+          className={styles.thumbnail}
+          key={`thumbnail-${index}-${thumbnail.src}`}
+        />
       ))}
     </div>
   </div>

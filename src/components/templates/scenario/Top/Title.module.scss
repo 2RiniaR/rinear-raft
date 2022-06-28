@@ -23,6 +23,7 @@
       display: grid;
       grid-template-rows: auto 1px auto;
       grid-template-columns: 1fr auto auto;
+      @include global.design-font;
 
       &::after {
         content: "";
@@ -94,6 +95,7 @@
       display: grid;
       grid-template-rows: auto 1px auto;
       grid-template-columns: 1fr auto auto;
+      @include global.design-font;
 
       &::after {
         content: "";
@@ -163,6 +165,7 @@
       padding: 4rem 0 0 6%;
       grid-template-rows: auto 1px auto;
       grid-template-columns: 1fr auto auto;
+      @include global.design-font;
 
       &::after {
         content: "";

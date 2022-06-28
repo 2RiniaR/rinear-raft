@@ -10,6 +10,7 @@
   grid-template-columns: auto 1fr;
 
   .title {
+    @include global.design-font;
     grid-column: 2;
     grid-row: 1;
     font-size: 1.4rem;
@@ -27,14 +28,14 @@
     grid-column: 1 / 3;
     grid-row: 3;
     color: global.$light2;
-    font-size: 1rem;
-    line-height: 1.5;
+    @include global.readable-font;
     margin-bottom: 1rem;
     margin-top: 0.5rem;
     text-indent: 1rem;
   }
 
   .updatedAt {
+    @include global.design-font;
     grid-column: 1 / 3;
     grid-row: 2;
     font-size: 1rem;
@@ -44,6 +45,7 @@
   }
 
   .releasedAt {
+    @include global.design-font;
     grid-column: 1;
     grid-row: 1;
     margin-top: auto;

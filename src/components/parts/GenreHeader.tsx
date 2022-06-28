@@ -14,7 +14,7 @@ type GenreHeaderParams = {
 
 const GenreHeader = ({ logoSrc, title }: GenreHeaderParams): JSX.Element => (
   <header className={styles.layout}>
-    <StaticImage className={styles.logo} src={logoSrc} alt={title} />
+    <StaticImage className={styles.logo} src={logoSrc} alt={title} layout="responsive" />
     <h1 className={styles.title}>{title}</h1>
   </header>
 );

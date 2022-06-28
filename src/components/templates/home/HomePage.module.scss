@@ -21,12 +21,16 @@
   pointer-events: none;
 }
 
-.separator {
+.storyHeader {
+  @include global.design-font;
+  color: global.$light1;
+  font-size: 2rem;
   position: relative;
   z-index: 2;
-  background-color: global.$light1;
-  height: 2px;
-  margin: 4rem auto;
+  border-bottom: global.$light1 solid 2px;
+  letter-spacing: 0.5rem;
+  margin: 8rem auto 0 auto;
+  text-align: center;
 
   @include global.media(phone) {
     width: 10rem;

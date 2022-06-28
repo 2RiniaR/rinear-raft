@@ -61,6 +61,7 @@
 }
 
 .title {
+  @include global.design-font;
   display: inline-block;
   border-left: global.$dark1 solid 2px;
   overflow-x: visible;
@@ -173,6 +174,6 @@
   }
 
   @include global.media(desktop) {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }

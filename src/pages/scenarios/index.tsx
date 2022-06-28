@@ -3,13 +3,20 @@
  */
 
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import Seo from "../../components/functions/Seo";
+import { rinearDescription } from "../../data/description";
 import ScenarioIndexPage from "components/templates/scenario-index/ScenarioIndexPage";
 import { ScenarioRepository } from "data/contents/scenarios";
 import { getScenariosId } from "data/contents/scenarios/fetch";
 
 const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const repository = new ScenarioRepository(contentsId);
-  return <ScenarioIndexPage heads={repository.getAllContents("releasedAt")} />;
+  return (
+    <>
+      <Seo pageDescription={rinearDescription} pagePath={"/scenarios"} pageImgPath={"/img/main.webp"} />
+      <ScenarioIndexPage heads={repository.getAllContents("releasedAt")} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

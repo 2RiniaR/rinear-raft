@@ -7,7 +7,6 @@ import Footer from "../../parts/Footer";
 import { Story } from "../../../lib/story";
 import { Landscape } from "./Landscape";
 import styles from "./HomePage.module.scss";
-import HomePageHead from "./HomePageHead";
 import { About } from "./About";
 import { LoadingEffect } from "./Loading";
 import Darkness from "./Darkness";
@@ -39,7 +38,6 @@ const HomePage = ({ pickups, story }: Props): JSX.Element => {
   return (
     <PickupsContext.Provider value={pickups}>
       <LoadingWaiter onCompleted={() => setLoadCompleted(true)} onProgressUpdated={setLoadProgress}>
-        <HomePageHead />
         <LoadingEffect loading={!loadCompleted} progress={loadProgress} />
         <div className={assignClasses(styles.page, loadCompleted ? styles.loaded : styles.loading)}>
           <Landscape />
@@ -50,7 +48,7 @@ const HomePage = ({ pickups, story }: Props): JSX.Element => {
           <div ref={topEndRef} style={{ position: "absolute", top: "120vh" }} />
           <div ref={landscapeEndRef} />
           <About />
-          <div className={styles.separator} />
+          <h1 className={styles.storyHeader}>STORY</h1>
           <StoryView story={story} />
           <Footer />
         </div>

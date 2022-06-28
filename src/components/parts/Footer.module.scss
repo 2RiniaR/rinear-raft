@@ -6,10 +6,12 @@
 
 .container {
   width: 100%;
-  margin: 0 auto;
+  margin-top: 8rem;
   color: global.$light1;
   z-index: 100;
   padding: 2rem 0;
+  background: global.$dark1;
+  @include global.design-font;
 }
 
 .back {
