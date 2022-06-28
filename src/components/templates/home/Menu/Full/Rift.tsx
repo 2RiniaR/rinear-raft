@@ -37,7 +37,6 @@ const Rift = ({ active }: Props): JSX.Element => {
       </div>
       <div className={styles.leftSide}>
         <div className={styles.indexIndicator}>
-          <h1 className={styles.news}>- NEWS -</h1>
           {pickups.map((pickup, index) => (
             <div
               className={assignClasses(styles.element, contentIndex == index ? styles.current : "")}

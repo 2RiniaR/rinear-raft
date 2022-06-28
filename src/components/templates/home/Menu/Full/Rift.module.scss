@@ -168,7 +168,7 @@
     left: 25%;
     top: 50%;
     width: 40%;
-    transform: translate(-50%, -50%) rotate(45deg) translateY(-100%) translateX(10%);
+    transform: translate(-50%, -50%) rotate(45deg) translateY(-100%) translateX(20%);
 
     .shown & {
       animation: openLeftSide 1s normal forwards ease-in-out;
@@ -232,10 +232,11 @@
 
   .rightSide {
     position: absolute;
-    left: 75%;
-    top: 50%;
-    width: 40%;
-    transform: translate(-50%, -50%) rotate(-45deg) translateY(-100%) translateX(-10%);
+    left: 50%;
+    top: calc(100% - 2rem);
+    padding-left: 1rem;
+    width: 16rem;
+    transform: translate(-50%, -50%) rotate(-45deg) translateX(8rem);
 
     .shown & {
       animation: openRightSide 1s normal forwards ease-in-out;
@@ -275,7 +276,7 @@
     color: global.$light1;
     font-size: 1rem;
     left: -2rem;
-    padding: 0.1rem 0 0.1rem 2rem;
+    padding: 0.1rem 0 0.1rem 1rem;
     text-overflow: ellipsis;
     letter-spacing: 0.1rem;
     transition: opacity 300ms, transform 300ms, background 300ms, color 300ms;
@@ -498,10 +499,11 @@
 
   .rightSide {
     position: absolute;
-    left: 75%;
-    top: 50%;
-    width: 40%;
-    transform: translate(-50%, -50%) rotate(-45deg) translateY(-100%) translateX(-10%);
+    left: 50%;
+    top: calc(100% - 2rem);
+    padding-left: 1rem;
+    width: 16rem;
+    transform: translate(-50%, -50%) rotate(-45deg) translateX(8rem);
 
     .shown & {
       animation: openRightSide 1s normal forwards ease-in-out;
