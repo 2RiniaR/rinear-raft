@@ -77,7 +77,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(closest-side, rgba(global.$light2, 100%) 20%, rgba(global.$light2, 80%) 60%, rgba(global.$light2, 0%) 100%);
+    background: radial-gradient(
+      closest-side,
+      rgba(global.$light2, 100%) 20%,
+      rgba(global.$light2, 80%) 60%,
+      rgba(global.$light2, 0%) 100%
+    );
   }
 
   .logo1 {

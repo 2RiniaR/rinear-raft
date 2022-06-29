@@ -82,9 +82,9 @@
 }
 
 @include global.media(tablet) {
-  @include full
+  @include full;
 }
 
 @include global.media(desktop) {
-  @include full
+  @include full;
 }
