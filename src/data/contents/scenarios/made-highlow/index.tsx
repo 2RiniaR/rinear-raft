@@ -21,7 +21,7 @@ const madeHighlow: ScenarioContent = {
   title: "メイドハイロウ",
   thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1],
-  updatedAt: dayjs("2022-06-20"),
+  updatedAt: dayjs("2022-06-30 21:00:00"),
   releasedAt: undefined,
   private: true,
   description: "鋭意制作中。続報をお待ちください。",

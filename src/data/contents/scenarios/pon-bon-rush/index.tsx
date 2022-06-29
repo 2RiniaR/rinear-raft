@@ -64,7 +64,7 @@ const ponBonRush: ScenarioContent = {
   title: "Pon! Bon! Rush",
   thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
-  updatedAt: dayjs("2022-05-28"),
+  updatedAt: dayjs("2022-06-30 21:00:00"),
   releasedAt: dayjs("2020-04-05"),
   description:
     "2人のプレイヤーがリアルタイムでポップコーンを調理し、調理したポップコーンを食べた量で競う2人通信対戦のカジュアルゲーム。",

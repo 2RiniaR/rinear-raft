@@ -52,8 +52,8 @@ const rinearRaft: ScenarioContent = {
   title: "RineaRの筏",
   thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
-  updatedAt: dayjs("2021-10-01"),
-  releasedAt: dayjs("2022-06-21"),
+  updatedAt: dayjs("2022-06-30 21:00:00"),
+  releasedAt: dayjs("2022-06-30"),
   description: "『RineaR』のプロジェクトや投稿を公開するホームページ。『Rinia』が活動拠点とする筏。",
   Page
 };

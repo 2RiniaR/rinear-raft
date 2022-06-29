@@ -64,7 +64,7 @@ const mazeEscape: ScenarioContent = {
   title: "迷宮脱出",
   thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
-  updatedAt: dayjs("2021-09-28"),
+  updatedAt: dayjs("2022-06-30 21:00:00"),
   releasedAt: dayjs("2016-10-18"),
   description: "上下左右にプレイヤーを移動し、制限時間以内にゴールを目指す2Dアクション脱出ゲーム。",
   Page

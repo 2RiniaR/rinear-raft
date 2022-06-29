@@ -63,7 +63,7 @@ const marvelous: ScenarioContent = {
   title: "エライさんbot",
   thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3],
-  updatedAt: dayjs("2021-09-28"),
+  updatedAt: dayjs("2022-06-30 21:00:00"),
   releasedAt: dayjs("2021-04-30"),
   description: "みんなの「えらい！」をカウントしてくれるDiscord Bot。",
   Page

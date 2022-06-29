@@ -23,7 +23,7 @@ const kimifeel: ScenarioContent = {
   title: "キミフィール",
   thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3],
-  updatedAt: dayjs("2022-06-20 15:15:41"),
+  updatedAt: dayjs("2022-06-30 21:00:00"),
   releasedAt: dayjs("2022-02-16"),
   description: "周りの人々に自分のプロフィールを書いてもらえるサービス。",
   Page

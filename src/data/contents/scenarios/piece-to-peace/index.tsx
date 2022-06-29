@@ -64,8 +64,9 @@ const pieceToPeace: ScenarioContent = {
   title: "Piece to PEACE",
   thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
-  updatedAt: dayjs("2022-06-20"),
+  updatedAt: dayjs("2022-06-30 21:00:00"),
   releasedAt: dayjs("2021-09-20"),
+  private: true,
   description:
     "パズルで自分を強化していく、2Dの横スクロールシューティングゲーム。株式会社CyberAgentのインターンシップで、3人で共同制作した。",
   Page

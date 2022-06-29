@@ -30,7 +30,7 @@ const introduction: LetterContent = {
   index: 1,
   title: "活動拠点が完成しました。",
   thumbnail: thumbnailPic,
-  updatedAt: dayjs("2021-09-01"),
+  updatedAt: dayjs("2022-06-30 21:00:00"),
   description: "ついに活動拠点が完成しました。",
   Page
 };

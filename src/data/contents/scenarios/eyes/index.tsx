@@ -21,7 +21,7 @@ const eyes: ScenarioContent = {
   title: "み　て　る　よ",
   thumbnail: thumbnailPic,
   thumbnails: [thumbnailPic, thumbnailPic, thumbnailPic, thumbnailPic],
-  updatedAt: dayjs("2022-06-20 15:15:41"),
+  updatedAt: dayjs("2022-06-30 21:00:00"),
   releasedAt: dayjs("2022-02-25"),
   description:
     "誰かがチャットを送ろうとして長考しているのを検知すると、超低確率で目が2つ並んだメッセージを送ってくるDiscord bot。",
