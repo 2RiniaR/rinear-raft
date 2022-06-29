@@ -5,7 +5,7 @@
 import dayjs from "dayjs";
 import styles from "./LetterHeading.module.scss";
 import { LetterContentHead } from "lib/contents";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 import { formatExceededTime } from "lib/helper";
 
 type Props = {

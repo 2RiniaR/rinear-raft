@@ -13,7 +13,12 @@ const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Eleme
   const content = repository.getContent(id);
   return (
     <>
-      <Seo pageDescription={content.description} pagePath={`/scenarios/${id}`} pageImgPath={content.thumbnail.src} />
+      <Seo
+        pageTitle={content.title}
+        pageDescription={content.description}
+        pagePath={`/scenarios/${id}`}
+        pageImgPath={content.thumbnail.src}
+      />
       <ScenarioPage content={content} />
     </>
   );

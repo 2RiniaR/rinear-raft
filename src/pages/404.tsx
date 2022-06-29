@@ -8,7 +8,7 @@ import NotFoundPage from "components/templates/not-found/NotFoundPage";
 
 const Page = (): JSX.Element => (
   <>
-    <Seo pageDescription={rinearDescription} pagePath={"/"} pageImgPath={"/img/main.webp"} />
+    <Seo pageTitle={"Not Found"} pageDescription={rinearDescription} pagePath={"/"} pageImgPath={"/img/main.webp"} />
     <NotFoundPage />
   </>
 );

@@ -8,7 +8,7 @@ import Rule from "./Rule";
 import Howto from "./Howto";
 import Tools from "./Tools";
 import Background from "./Background";
-import ExternalLink from "components/functions/link/ExternalLink";
+import ExternalLink from "components/functions/ExternalLink";
 import { Chapter, Video } from "content-parts";
 import { ChapterPoint, ContentPageProps, ScenarioContent } from "lib/contents";
 import thumbnailPic1 from "public/contents/scenarios/popcorn-chef/game1.webp";

@@ -5,7 +5,6 @@
 import React from "react";
 import styles from "./LetterIndexPage.module.scss";
 import Viewer from "./LettersViewer";
-import LettersIndexPageHead from "./LetterIndexPageHead";
 import { LetterContentHead } from "lib/contents";
 import Footer from "components/parts/Footer";
 import Background from "components/parts/Background";
@@ -18,17 +17,14 @@ type Props = {
 };
 
 const LetterIndexPage = ({ heads }: Props): JSX.Element => (
-  <>
-    <LettersIndexPageHead />
-    <Background>
-      <div className={styles.page}>
-        <BackButton href={"/"} />
-        <GenreHeader logoSrc={lettersPic} title="LETTERS" />
-        <Viewer heads={heads} />
-        <Footer />
-      </div>
-    </Background>
-  </>
+  <Background>
+    <div className={styles.page}>
+      <BackButton href={"/"} />
+      <GenreHeader logoSrc={lettersPic} title="LETTERS" />
+      <Viewer heads={heads} />
+      <Footer />
+    </div>
+  </Background>
 );
 
 export default LetterIndexPage;

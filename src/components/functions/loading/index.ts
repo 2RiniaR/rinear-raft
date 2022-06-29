@@ -5,6 +5,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 export { default as LoadingWaiter } from "./LoadingWaiter";
+export { default as PreloadStaticImage } from "./PreloadStaticImage";
 
 type SetComplete = () => void;
 type LoadingContextProps = {

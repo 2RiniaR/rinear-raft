@@ -5,7 +5,7 @@
 import React from "react";
 import dayjs from "dayjs";
 import styles from "./Title.module.scss";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 import { LetterContent } from "lib/contents";
 import { formatExceededTime } from "lib/helper";
 import lettersPic from "public/img/letters.png";

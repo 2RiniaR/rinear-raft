@@ -1,6 +1,6 @@
 import styles from "./ScrollIndicator.module.scss";
 import { assignClasses } from "lib/helper";
-import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
+import { PreloadStaticImage } from "components/functions/loading";
 import image from "public/img/DownArrow.png";
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 
 export const ScrollIndicator = ({ enabled }: Props): JSX.Element => (
   <div className={styles.container}>
-    <LazyStaticImage
+    <PreloadStaticImage
       src={image}
       className={assignClasses(styles.image, !enabled ? styles.hidden : "")}
       layout="responsive"

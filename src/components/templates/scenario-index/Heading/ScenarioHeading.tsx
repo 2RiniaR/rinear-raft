@@ -6,7 +6,7 @@ import styles from "./ScenarioHeading.module.scss";
 import Title from "./Title";
 import SubThumbnails from "./SubThumbnails";
 import { ScenarioContentHead } from "lib/contents";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 
 type Props = {
   head: ScenarioContentHead;

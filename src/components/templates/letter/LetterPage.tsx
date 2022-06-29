@@ -4,10 +4,9 @@
 
 import React, { useState } from "react";
 import styles from "./LetterPage.module.scss";
-import LetterPageHead from "./LetterPageHead";
 import { LetterTop } from "./Top";
 import { ChapterPoint, LetterContent } from "lib/contents";
-import ContentPageTemplate from "components/parts/pages/ContentPageTemplate";
+import ContentPage from "components/templates/ContentPage";
 import ChaptersView from "components/parts/ChaptersView/ChaptersView";
 import BackButton from "components/templates/layout/BackButton";
 
@@ -19,17 +18,14 @@ const LetterPage = ({ content }: Props): JSX.Element => {
   const [chapters, setChapters] = useState<ChapterPoint[]>([]);
 
   return (
-    <>
-      <LetterPageHead content={content} />
-      <ContentPageTemplate>
-        <BackButton href={"/letters"} />
-        <div className={styles.layout}>
-          <LetterTop content={content} />
-          <ChaptersView chapters={chapters} />
-          <content.Page setChapters={setChapters} />
-        </div>
-      </ContentPageTemplate>
-    </>
+    <ContentPage>
+      <BackButton href={"/letters"} />
+      <div className={styles.layout}>
+        <LetterTop content={content} />
+        <ChaptersView chapters={chapters} />
+        <content.Page setChapters={setChapters} />
+      </div>
+    </ContentPage>
   );
 };
 

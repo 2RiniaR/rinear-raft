@@ -4,8 +4,8 @@
 
 import React from "react";
 import styles from "./Footer.module.scss";
-import StaticImage from "components/functions/image/StaticImage";
-import ExternalLink from "components/functions/link/ExternalLink";
+import StaticImage from "components/functions/StaticImage";
+import ExternalLink from "components/functions/ExternalLink";
 import letterPic from "public/img/RineaR-letters-transparent.svg";
 import logoPic from "public/img/logo.png";
 import packageSettings from "public/../package.json";

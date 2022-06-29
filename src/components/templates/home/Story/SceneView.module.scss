@@ -21,7 +21,7 @@
   bottom: 0;
 
   .left & {
-    background-image: linear-gradient(to right, transparent 0%, global.$dark1 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(global.$dark1, 50%) 25%, global.$dark1 100%);
 
     @include global.media(phone) {
       background-image: linear-gradient(to right, rgba(global.$dark1, 50%) 0%, global.$dark1 100%);
@@ -29,7 +29,7 @@
   }
 
   .right & {
-    background-image: linear-gradient(to left, transparent 0%, global.$dark1 100%);
+    background-image: linear-gradient(to left, transparent 0%, rgba(global.$dark1, 50%) 25%, global.$dark1 100%);
 
     @include global.media(phone) {
       background-image: linear-gradient(to left, rgba(global.$dark1, 50%) 0%, global.$dark1 100%);
@@ -39,6 +39,14 @@
 
 .content {
   position: relative;
+
+  @include global.media(phone) {
+    padding-bottom: 2rem;
+  }
+
+  @include global.media(tablet) {
+    padding-bottom: 2rem;
+  }
 
   @include global.media(desktop) {
     display: flex;
@@ -63,22 +71,27 @@
   font-size: 3rem;
 
   @include global.media(phone) {
+    margin: 1rem 1rem;
+    font-size: 2rem;
+
     .left & {
-      right: 0;
+      left: 0;
     }
 
     .right & {
-      left: 0;
+      right: 0;
     }
   }
 
   @include global.media(tablet) {
+    margin: 1rem 1rem;
+
     .left & {
-      right: 0;
+      left: 0;
     }
 
     .right & {
-      left: 0;
+      right: 0;
     }
   }
 }
@@ -115,11 +128,11 @@
 
 .document {
   color: global.$light1;
-  overflow-wrap: normal;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @include global.readable-font;
+  text-indent: 1em;
+  gap: 1em;
 
   @include global.media(phone) {
     padding: 1rem 1.5rem 2rem 1.5rem;
@@ -131,18 +144,23 @@
     .left & {
       margin-left: auto;
       padding: 1rem 2rem 2rem 0;
-      text-align: end;
     }
 
     .right & {
       margin-right: auto;
       padding: 1rem 0 2rem 2rem;
-      text-align: start;
     }
   }
 
   @include global.media(desktop) {
     width: 24rem;
-    padding: 6rem 4rem 2rem 4rem;
+
+    .left & {
+      padding: 6rem 2rem 2rem 1rem;
+    }
+
+    .right & {
+      padding: 6rem 1rem 2rem 2rem;
+    }
   }
 }

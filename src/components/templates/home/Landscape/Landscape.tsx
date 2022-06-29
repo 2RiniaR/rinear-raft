@@ -5,7 +5,7 @@
 import styles from "./Landscape.module.scss";
 import Background from "./Background";
 import Shadow from "./Shadow";
-import Parallax from "components/functions/parallax/Parallax";
+import Parallax from "components/functions/Parallax";
 
 const Landscape = (): JSX.Element => (
   <header className={styles.view}>

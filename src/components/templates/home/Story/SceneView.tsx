@@ -1,4 +1,4 @@
-import StaticImage from "../../../functions/image/StaticImage";
+import StaticImage from "../../../functions/StaticImage";
 import styles from "./SceneView.module.scss";
 import { assignClasses } from "lib/helper";
 import { Scene } from "lib/story";

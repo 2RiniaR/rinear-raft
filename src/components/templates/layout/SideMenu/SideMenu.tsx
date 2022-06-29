@@ -5,7 +5,7 @@
 import styles from "./SideMenu.module.scss";
 import SideMenuItem, { SideMenuItemProps } from "./SideMenuItem";
 import SideMenuOpener from "./SideMenuOpener";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 import leftArrowPic from "public/img/LeftArrow.png";
 import logoPic from "public/img/logo.png";
 import lettersPic from "public/img/letters.png";

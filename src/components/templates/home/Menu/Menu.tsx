@@ -2,12 +2,12 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-import styles from "./FullMenu.module.scss";
+import styles from "./Menu.module.scss";
 import Logo from "./Logo";
 import Rift from "./Rift";
 import Phantom from "./Phantom";
 import { assignClasses } from "lib/helper";
-import Parallax from "components/functions/parallax/Parallax";
+import Parallax from "components/functions/Parallax";
 import letterIcon from "public/img/letters.png";
 import scenarioIcon from "public/img/scenarios.png";
 
@@ -15,7 +15,7 @@ type Props = {
   active: boolean;
 };
 
-const FullMenu = ({ active }: Props): JSX.Element => (
+const Menu = ({ active }: Props): JSX.Element => (
   <header className={styles.view}>
     <div className={styles.elements}>
       <Parallax startInnerOrigin={0} endInnerOrigin={-0.1}>
@@ -34,4 +34,4 @@ const FullMenu = ({ active }: Props): JSX.Element => (
   </header>
 );
 
-export default FullMenu;
+export default Menu;

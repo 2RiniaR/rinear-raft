@@ -286,6 +286,7 @@
     transition: opacity 300ms, transform 300ms, background 300ms, color 300ms;
     transform: translateX(0);
     opacity: 1;
+    @include global.design-font;
 
     .hover & {
       background: linear-gradient(to right, global.$light1 0%, transparent 100%);

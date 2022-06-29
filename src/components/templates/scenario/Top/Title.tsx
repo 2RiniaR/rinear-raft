@@ -5,7 +5,7 @@
 import React from "react";
 import dayjs from "dayjs";
 import styles from "./Title.module.scss";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 import { ScenarioContent } from "lib/contents";
 import { formatDisplayDate, formatExceededTime } from "lib/helper";
 import scenariosPic from "public/img/scenarios.png";

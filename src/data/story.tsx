@@ -4,38 +4,13 @@ import prologueImage from "public/img/Prologue.png";
 import presentImage from "public/img/Present.png";
 import preludeImage from "public/img/Prelude.png";
 
-/*
-【ストーリー概要】
-
-RineaRが出来上がるまでの道筋を書いたもの。ストーリーと書いているが、要は「どういう経緯でRineaRが出来上がったか」を説明する。
-
-【伝えたいこと】
-（10年以上昔の作品の写真）
-・昔から、独自の世界観を大事にしていた。それと同時に、その世界観をゲームに落とし込んでみんなでコンテンツを作ることも楽しんでいた。
-・だが、その先には技術的な限界があった。
-
-（『RineaRの筏』以前の作品の写真）
-・色々な出会いがあって、道に迷った。
-
-
-・昔を思い出し、漂流を始めた。
-
-・「みんなと一緒にコンテンツ作りを楽しみたい」という側面と、「独自の世界観を大事にしたい、ブラックボックスを解明したい」という側面に分かれている。
-・私はいまだにブラックボックスだらけである。
-・世界観を大事にしつつ、みんなと楽しみを作りたい。
-・RineaRは、そんな活動の軸を確立すべく、命名された。
-
- */
-
 const prologue: Scene = {
   title: "PROLOGUE",
   thumbnail: prologueImage,
   Document: () => (
     <>
-      <p>
-        PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE.
-        PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE. PROLOGUE.
-      </p>
+      <p>かつて、私たちには「みんなで遊びを作る」「独自の世界観を守る」という二面性がありました。</p>
+      <p>基盤のない世界観が目の前に広がっていて、それらはみんなの発想により遊びとして昇華されていきました。</p>
     </>
   )
 };
@@ -45,10 +20,8 @@ const prototype: Scene = {
   thumbnail: prototypeImage,
   Document: () => (
     <>
-      <p>
-        PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE.
-        PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE. PROTOTYPE.
-      </p>
+      <p>時が経って、色んな世界に触れて、色んな知識や経験を得て、色んなものを作りました。</p>
+      <p>しかし同時に、可能性の発散により元の二面性は乖離していき、私はどこでもない場所に取り残されました。</p>
     </>
   )
 };
@@ -58,10 +31,8 @@ const present: Scene = {
   thumbnail: presentImage,
   Document: () => (
     <>
-      <p>
-        PRESENT. PRESENT. PRESENT. PRESENT. PRESENT. PRESENT. PRESENT. PRESENT. PRESENT. PRESENT. PRESENT. PRESENT.
-        PRESENT. PRESENT. PRESENT. PRESENT.
-      </p>
+      <p>しばらく漂い続けた私は、今まで見えたもの、思ったこと、選んだものに潜在的な意図があることに気付きました。</p>
+      <p>まるで「抽象的な何か」が見えて、その意味を知るために行動しているようでした。</p>
     </>
   )
 };
@@ -71,10 +42,8 @@ const prelude: Scene = {
   thumbnail: preludeImage,
   Document: () => (
     <>
-      <p>
-        PRELUDE. PRELUDE. PRELUDE. PRELUDE. PRELUDE. PRELUDE. PRELUDE. PRELUDE. PRELUDE. PRELUDE. PRELUDE. PRELUDE.
-        PRELUDE. PRELUDE. PRELUDE. PRELUDE.
-      </p>
+      <p>それぞれの行き先を辿るため、私たちは見えているものを手掛かりに様々なものを作り続けていくことにしました。</p>
+      <p>この活動はたった今、『RineaR』と名付けられました。</p>
     </>
   )
 };

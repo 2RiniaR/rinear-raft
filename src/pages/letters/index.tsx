@@ -13,7 +13,12 @@ const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): J
   const repository = new LetterRepository(contentsId);
   return (
     <>
-      <Seo pageDescription={rinearDescription} pagePath={"/letters"} pageImgPath={"/img/main.webp"} />
+      <Seo
+        pageTitle={"Letters"}
+        pageDescription={rinearDescription}
+        pagePath={"/letters"}
+        pageImgPath={"/img/main.webp"}
+      />
       <LetterIndexPage heads={repository.getAllContents("updatedAt")} />
     </>
   );

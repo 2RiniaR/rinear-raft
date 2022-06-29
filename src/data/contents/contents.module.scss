@@ -13,19 +13,10 @@
   a {
     color: #77aaff;
     margin-inline: 0.2em;
+    border-bottom: solid 1px currentColor;
 
-    @include global.media(phone) {
-      text-decoration: underline currentColor;
-    }
-
-    @include global.media(tablet) {
-      text-decoration: underline currentColor;
-    }
-
-    @include global.media(desktop) {
-      &:hover {
-        text-decoration: underline currentColor;
-      }
+    &:hover {
+      border-bottom: solid 3px currentColor;
     }
 
     &:visited {

@@ -3,7 +3,7 @@
  */
 
 import styles from "./SideMenuButton.module.scss";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 import menuButtonPic from "public/img/MenuButton.png";
 
 type Props = {

@@ -3,7 +3,7 @@
  */
 
 import React, { ReactNode } from "react";
-import styles from "./ContentPageTemplate.module.scss";
+import styles from "./ContentPage.module.scss";
 import Background from "components/parts/Background";
 import Footer from "components/parts/Footer";
 
@@ -11,7 +11,7 @@ type Props = {
   children?: ReactNode;
 };
 
-const ContentPageTemplate = ({ children }: Props): JSX.Element => (
+const ContentPage = ({ children }: Props): JSX.Element => (
   <Background>
     <div className={styles.page}>
       <div className={styles.displayArea}>{children}</div>
@@ -20,4 +20,4 @@ const ContentPageTemplate = ({ children }: Props): JSX.Element => (
   </Background>
 );
 
-export default ContentPageTemplate;
+export default ContentPage;

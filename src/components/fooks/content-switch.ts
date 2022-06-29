@@ -3,7 +3,7 @@
  */
 
 import { useContext, useState } from "react";
-import { PickupsContext } from "../../components/templates/home/HomePage";
+import { PickupsContext } from "../templates/home/HomePage";
 import useInterval from "./interval";
 
 type Options = {

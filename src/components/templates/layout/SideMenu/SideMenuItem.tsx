@@ -5,7 +5,7 @@
 import Link from "next/link";
 import { StaticImageData } from "next/image";
 import styles from "./SideMenuItem.module.scss";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 
 export type SideMenuItemProps = {
   href: string;

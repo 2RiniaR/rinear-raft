@@ -5,7 +5,6 @@
 import React from "react";
 import styles from "./ScenarioIndexPage.module.scss";
 import Viewer from "./ScenariosViewer";
-import ScenarioIndexPageHead from "./ScenarioIndexPageHead";
 import { ScenarioContentHead } from "lib/contents";
 import Footer from "components/parts/Footer";
 import Background from "components/parts/Background";
@@ -18,17 +17,14 @@ type Props = {
 };
 
 const ScenarioIndexPage = ({ heads }: Props): JSX.Element => (
-  <>
-    <ScenarioIndexPageHead />
-    <Background>
-      <div className={styles.page}>
-        <BackButton href={"/"} />
-        <GenreHeader logoSrc={scenariosPic} title="SCENARIOS" />
-        <Viewer heads={heads} />
-        <Footer />
-      </div>
-    </Background>
-  </>
+  <Background>
+    <div className={styles.page}>
+      <BackButton href={"/"} />
+      <GenreHeader logoSrc={scenariosPic} title="SCENARIOS" />
+      <Viewer heads={heads} />
+      <Footer />
+    </div>
+  </Background>
 );
 
 export default ScenarioIndexPage;

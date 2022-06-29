@@ -4,7 +4,7 @@
 
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import ExternalLink from "../../../../components/functions/link/ExternalLink";
+import ExternalLink from "../../../../components/functions/ExternalLink";
 import Rule from "./Rule";
 import Strategy from "./Strategy";
 import Tools from "./Tools";

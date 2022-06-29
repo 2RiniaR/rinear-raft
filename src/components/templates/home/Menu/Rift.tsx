@@ -4,13 +4,13 @@
 
 import React, { useContext, useRef, useState } from "react";
 import Link from "next/link";
-import { PickupsContext } from "../../HomePage";
-import useElementSize from "../../../../../lib/fooks/element-size";
+import { PickupsContext } from "../HomePage";
+import useElementSize from "../../../fooks/element-size";
 import styles from "./Rift.module.scss";
 import { assignClasses } from "lib/helper";
-import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
+import { PreloadStaticImage } from "components/functions/loading";
 import back from "public/img/LogoBack.webp";
-import useContentSwitch from "lib/fooks/content-switch";
+import useContentSwitch from "components/fooks/content-switch";
 
 type Props = {
   active: boolean;
@@ -33,10 +33,10 @@ const Rift = ({ active }: Props): JSX.Element => {
       ref={containerRef}
     >
       <div className={styles.back}>
-        <LazyStaticImage className={styles.image} src={back} alt="" layout="responsive" />
+        <PreloadStaticImage className={styles.image} src={back} alt="" layout="responsive" />
       </div>
       <div className={styles.mask}>
-        <LazyStaticImage
+        <PreloadStaticImage
           className={assignClasses(styles.masked, switching ? styles.switching : "")}
           src={content.thumbnail}
           layout="responsive"

@@ -3,11 +3,11 @@
  */
 
 import { useLoading } from "./index";
-import StaticImage, { StaticImageProps } from "components/functions/image/StaticImage";
+import StaticImage, { StaticImageProps } from "components/functions/StaticImage";
 
-const LazyStaticImage = ({ ...props }: StaticImageProps): JSX.Element => {
+const PreloadStaticImage = ({ ...props }: StaticImageProps): JSX.Element => {
   const setCompleteLoading = useLoading();
   return <StaticImage {...props} onLoadingComplete={setCompleteLoading} loading={"eager"} />;
 };
 
-export default LazyStaticImage;
+export default PreloadStaticImage;

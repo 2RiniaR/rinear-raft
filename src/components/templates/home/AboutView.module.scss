@@ -156,10 +156,18 @@
   display: inline-block;
   padding-left: 2rem;
 
+  a {
+    margin-inline: 0.2em;
+    border-bottom: solid 1px currentColor;
+
+    &:hover {
+      border-bottom: solid 3px currentColor;
+    }
+  }
+
   p {
     display: inline-block;
     text-indent: 1em;
-    line-height: 1.8;
     margin-top: 1.5em;
   }
 

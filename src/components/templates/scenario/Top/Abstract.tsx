@@ -5,7 +5,7 @@
 import React from "react";
 import styles from "./Abstract.module.scss";
 import { ScenarioContent } from "lib/contents";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 
 type Props = {
   content: ScenarioContent;

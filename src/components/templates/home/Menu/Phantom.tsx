@@ -5,10 +5,10 @@
 import React, { useState } from "react";
 import { StaticImageData } from "next/image";
 import Link from "next/link";
-import useInterval from "../../../../../lib/fooks/interval";
+import useInterval from "../../../fooks/interval";
 import styles from "./Phantom.module.scss";
 import back from "public/img/Node.webp";
-import LazyStaticImage from "components/functions/lazy/LazyStaticImage";
+import { PreloadStaticImage } from "components/functions/loading";
 
 type Props = {
   title: string;
@@ -34,9 +34,9 @@ const Phantom = ({ title, subtitle, icon, href }: Props): JSX.Element => {
       <a className={styles.container}>
         <div className={styles.sizeFilter}>
           <div className={styles.positionFilter} style={{ transform: `translate(${position.x}px, ${position.y}px)` }}>
-            <LazyStaticImage className={styles.back} src={back} alt="" layout="responsive" />
+            <PreloadStaticImage className={styles.back} src={back} alt="" layout="responsive" />
             <div className={styles.content}>
-              <LazyStaticImage className={styles.icon} src={icon} alt="" layout="responsive" />
+              <PreloadStaticImage className={styles.icon} src={icon} alt="" layout="responsive" />
               <h1 className={styles.title}>{title}</h1>
               <h2 className={styles.subtitle}>{subtitle}</h2>
             </div>

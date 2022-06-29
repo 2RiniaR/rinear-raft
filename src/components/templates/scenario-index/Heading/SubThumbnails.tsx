@@ -4,7 +4,7 @@
 
 import styles from "./SubThumbnails.module.scss";
 import { ScenarioContentHead } from "lib/contents";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 
 type Props = {
   head: ScenarioContentHead;

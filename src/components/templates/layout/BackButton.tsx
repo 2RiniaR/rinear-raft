@@ -4,7 +4,7 @@
 
 import Link from "next/link";
 import styles from "./BackButton.module.scss";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 import leftArrowPic from "public/img/LeftArrow.png";
 
 type Props = {

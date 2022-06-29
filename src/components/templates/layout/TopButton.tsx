@@ -3,7 +3,7 @@
  */
 
 import styles from "./TopButton.module.scss";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 import upArrowPic from "public/img/UpArrow.png";
 
 type Props = {

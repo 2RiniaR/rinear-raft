@@ -13,7 +13,12 @@ const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): J
   const repository = new ScenarioRepository(contentsId);
   return (
     <>
-      <Seo pageDescription={rinearDescription} pagePath={"/scenarios"} pageImgPath={"/img/main.webp"} />
+      <Seo
+        pageTitle={"Scenarios"}
+        pageDescription={rinearDescription}
+        pagePath={"/scenarios"}
+        pageImgPath={"/img/main.webp"}
+      />
       <ScenarioIndexPage heads={repository.getAllContents("releasedAt")} />
     </>
   );

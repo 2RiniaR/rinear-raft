@@ -6,7 +6,7 @@ import React, { ReactNode, useContext } from "react";
 import styles from "./Heading.module.scss";
 import { assignClasses } from "lib/helper";
 import { ContentContext } from "lib/contents";
-import StaticImage from "components/functions/image/StaticImage";
+import StaticImage from "components/functions/StaticImage";
 import LetterPic from "public/img/letters.png";
 import ScenarioPic from "public/img/scenarios.png";
 
