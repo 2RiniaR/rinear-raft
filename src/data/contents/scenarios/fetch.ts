@@ -15,6 +15,7 @@ export async function getScenariosId(): Promise<string[]> {
     const isModule = fs.existsSync(modulePath);
     if (isDirectory && isModule) {
       const module: ScenarioContent = (await import(`src/data/contents/scenarios/${item.name}`)).default;
+      if (module.private === true) continue;
       modulesId.push(module.id);
     }
   }

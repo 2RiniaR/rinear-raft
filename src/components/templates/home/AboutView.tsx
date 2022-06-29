@@ -19,7 +19,7 @@ const AboutView = ({ about }: Props): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <PreloadStaticImage src={noteImage} className={styles.background} layout="responsive" />
+      <PreloadStaticImage src={noteImage} className={styles.background} layout="responsive" alt="背景" />
       <div className={styles.content}>
         <h1 className={styles.title}>
           <span ref={ref} className={assignClasses(styles.text, inView ? styles.active : styles.inactive)}>

@@ -7,6 +7,7 @@ import Title from "./Title";
 import SubThumbnails from "./SubThumbnails";
 import { ScenarioContentHead } from "lib/contents";
 import StaticImage from "components/functions/StaticImage";
+import defaultThumbnail from "public/img/default-thumbnail.webp";
 
 type Props = {
   head: ScenarioContentHead;
@@ -14,7 +15,12 @@ type Props = {
 
 const ScenarioHeading = ({ head }: Props): JSX.Element => (
   <article className={styles.container}>
-    <StaticImage src={head.thumbnails[0]} alt={head.title} className={styles.mainThumbnail} layout="responsive" />
+    <StaticImage
+      src={head.thumbnails[0] ?? defaultThumbnail}
+      alt={head.title}
+      className={styles.mainThumbnail}
+      layout="responsive"
+    />
     <div className={styles.subThumbnails}>
       <SubThumbnails head={head} />
     </div>

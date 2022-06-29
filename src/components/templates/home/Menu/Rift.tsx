@@ -40,6 +40,7 @@ const Rift = ({ active }: Props): JSX.Element => {
           className={assignClasses(styles.masked, switching ? styles.switching : "")}
           src={content.thumbnail}
           layout="responsive"
+          alt={content.title}
         />
       </div>
       <div className={styles.leftSide} style={{ display: containerWidth > labelDisplayWidth ? "block" : "none" }}>
@@ -63,6 +64,7 @@ const Rift = ({ active }: Props): JSX.Element => {
           onFocus={() => setHover(true)}
           onBlur={() => setHover(false)}
         >
+          {content.title}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1624"
@@ -70,6 +72,7 @@ const Rift = ({ active }: Props): JSX.Element => {
             viewBox="0 0 1624 838"
             className={styles.shape}
           >
+            <title>{content.title}</title>
             <path
               d="M812,0l812,838H0Z"
               transform="translate(1624 838) rotate(180)"

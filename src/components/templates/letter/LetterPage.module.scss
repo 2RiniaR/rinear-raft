@@ -7,16 +7,5 @@
 .layout {
   display: flex;
   flex-direction: column;
-
-  @include global.media(phone) {
-    gap: 6rem;
-  }
-
-  @include global.media(tablet) {
-    gap: 6rem;
-  }
-
-  @include global.media(desktop) {
-    gap: 8rem;
-  }
+  gap: 6rem;
 }

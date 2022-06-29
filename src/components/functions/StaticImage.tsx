@@ -21,7 +21,7 @@ const StaticImage = ({ src, className, style, ...props }: StaticImageProps): JSX
 
   return (
     <div className={className} style={style} ref={containerRef}>
-      <Image src={src} width={width} height={height} {...props} />
+      <Image src={src} width={width} height={height} {...props} sizes={`${width}px`} />
     </div>
   );
 };

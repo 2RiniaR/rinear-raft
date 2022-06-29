@@ -19,9 +19,9 @@ const Title = ({ content }: Props): JSX.Element => (
     <StaticImage className={styles.logo} src={lettersPic} alt="トーク" />
     <div className={styles.display}>
       <h1 className={styles.title}>{content.title}</h1>
-      <h3 className={styles.index}>#{content.index}</h3>
-      <h3 className={styles.genre}>LETTER</h3>
-      <h3 className={styles.updatedAt}>{"最終更新：" + formatExceededTime(dayjs(), content.updatedAt)}</h3>
+      <p className={styles.index}>#{content.index}</p>
+      <p className={styles.genre}>LETTER</p>
+      <p className={styles.updatedAt}>{"最終更新：" + formatExceededTime(dayjs(), content.updatedAt)}</p>
     </div>
   </header>
 );

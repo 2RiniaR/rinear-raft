@@ -13,12 +13,12 @@ type Props = {
 
 const Title = ({ head }: Props): JSX.Element => (
   <div className={styles.layout}>
-    <h1 className={styles.title}>{head.title}</h1>
+    <h2 className={styles.title}>{head.title}</h2>
     <p className={styles.description}>{head.description}</p>
-    <h5 className={styles.updatedAt}>{"最終更新：" + formatExceededTime(dayjs(), head.updatedAt)}</h5>
-    <h5 className={styles.releasedAt}>
+    <p className={styles.updatedAt}>{"最終更新：" + formatExceededTime(dayjs(), head.updatedAt)}</p>
+    <p className={styles.releasedAt}>
       <span className={styles.text}>{formatDisplayDate(head.releasedAt)}</span>
-    </h5>
+    </p>
   </div>
 );
 

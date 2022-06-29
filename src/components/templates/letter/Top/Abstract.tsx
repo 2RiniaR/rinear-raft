@@ -6,6 +6,7 @@ import React from "react";
 import styles from "./Abstract.module.scss";
 import { LetterContent } from "lib/contents";
 import StaticImage from "components/functions/StaticImage";
+import defaultThumbnail from "public/img/default-thumbnail.webp";
 
 type Props = {
   content: LetterContent;
@@ -14,7 +15,7 @@ type Props = {
 const Abstract = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
     <p className={styles.description}>{content.description}</p>
-    <StaticImage src={content.thumbnail} alt="サムネイル" className={styles.thumbnail} />
+    <StaticImage src={content.thumbnail ?? defaultThumbnail} alt="サムネイル" className={styles.thumbnail} />
   </div>
 );
 

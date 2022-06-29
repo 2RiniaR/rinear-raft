@@ -6,6 +6,7 @@ import React from "react";
 import styles from "./Abstract.module.scss";
 import { ScenarioContent } from "lib/contents";
 import StaticImage from "components/functions/StaticImage";
+import defaultThumbnail from "public/img/default-thumbnail.webp";
 
 type Props = {
   content: ScenarioContent;
@@ -17,7 +18,7 @@ const Abstract = ({ content }: Props): JSX.Element => (
     <div className={styles.thumbnails}>
       {content.thumbnails.map((thumbnail, index) => (
         <StaticImage
-          src={thumbnail}
+          src={thumbnail ?? defaultThumbnail}
           alt="サブサムネイル"
           className={styles.thumbnail}
           key={`thumbnail-${index}-${thumbnail.src}`}

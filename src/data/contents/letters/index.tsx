@@ -4,7 +4,6 @@
 
 import styles from "../contents.module.scss";
 import { ContentContext, ContentPage, ContentPageProps, LetterContent } from "lib/contents";
-import { arrayToDict } from "lib/helper";
 
 export const dirPath = "src/data/contents/letters";
 
@@ -16,19 +15,12 @@ export class LetterRepository {
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       (id): LetterContent => require(`/src/data/contents/letters/${id}`).default
     );
-    this.contents = arrayToDict(
-      modules,
-      (modules) => modules.id,
-      (modules) => ({
-        ...modules,
-        Page: LetterRepository.preprocessPage(modules.Page)
-      })
-    );
 
-    for (const id in this.contents) {
-      if (this.contents[id].private === true) {
-        delete this.contents[id];
-      }
+    for (const module of modules) {
+      this.contents[module.id] = {
+        ...module,
+        Page: LetterRepository.preprocessPage(module.Page)
+      };
     }
   }
 

@@ -4,22 +4,13 @@
 
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
-import AboutHomePage from "./AboutHomePage";
-import AboutRineaR from "./AboutRineaR";
-import AboutExternalServices from "./AboutExternalServices";
-import AboutTechnology from "./AboutTechnology";
-import AboutCatchphrase from "./AboutCatchphrase";
-import { Chapter } from "content-parts";
+import { Chapter, Paragraph } from "content-parts";
 import { ChapterPoint, ContentPageProps, LetterContent } from "lib/contents";
-import thumbnailPic from "public/contents/scenarios/rinear-official-site/HomePage1.webp";
+import thumbnailPic from "public/contents/scenarios/rinear-raft/Top.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
-    aboutHomePage: { name: "ホームページ設立おめでとうございます！", ref: useRef(null) },
-    aboutRineaR: { name: "RineaRとは？", ref: useRef(null) },
-    aboutExternalServices: { name: "外部サービスのアカウントとかありますか？", ref: useRef(null) },
-    aboutTechnology: { name: "技術的なことって「Letters」で話すんですか？", ref: useRef(null) },
-    aboutCatchphrase: { name: "「この筏は私を、どこへ連れて行くんだろう。」って何ですか？", ref: useRef(null) }
+    aboutHomePage: { name: "ひとこと", ref: useRef(null) }
   };
 
   useEffect(() => setChapters(Object.values(refs)), []);
@@ -27,23 +18,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   return (
     <>
       <Chapter title={refs.aboutHomePage.name} jumpRef={refs.aboutHomePage.ref}>
-        <AboutHomePage />
-      </Chapter>
-
-      <Chapter title={refs.aboutRineaR.name} jumpRef={refs.aboutRineaR.ref}>
-        <AboutRineaR />
-      </Chapter>
-
-      <Chapter title={refs.aboutExternalServices.name} jumpRef={refs.aboutExternalServices.ref}>
-        <AboutExternalServices />
-      </Chapter>
-
-      <Chapter title={refs.aboutTechnology.name} jumpRef={refs.aboutTechnology.ref}>
-        <AboutTechnology />
-      </Chapter>
-
-      <Chapter title={refs.aboutCatchphrase.name} jumpRef={refs.aboutCatchphrase.ref}>
-        <AboutCatchphrase />
+        <Paragraph>今日からここが、私のアイデンティティです。</Paragraph>
       </Chapter>
     </>
   );
@@ -53,10 +28,10 @@ const introduction: LetterContent = {
   genre: "letters",
   id: "introduction",
   index: 1,
-  title: "ホームページ、爆誕！",
+  title: "活動拠点が完成しました。",
   thumbnail: thumbnailPic,
   updatedAt: dayjs("2021-09-01"),
-  description: "RineaRでの最初のLETTER。",
+  description: "ついに活動拠点が完成しました。",
   Page
 };
 

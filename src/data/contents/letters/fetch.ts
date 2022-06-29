@@ -15,6 +15,7 @@ export async function getLettersId(): Promise<string[]> {
     const isModule = fs.existsSync(modulePath);
     if (isDirectory && isModule) {
       const module: LetterContent = (await import(`src/data/contents/letters/${item.name}`)).default;
+      if (module.private === true) continue;
       modulesId.push(module.id);
     }
   }

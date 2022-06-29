@@ -4,7 +4,6 @@
 
 import styles from "../contents.module.scss";
 import { ContentContext, ContentPage, ContentPageProps, ScenarioContent } from "lib/contents";
-import { arrayToDict } from "lib/helper";
 
 export const dirPath = "src/data/contents/scenarios";
 
@@ -16,14 +15,13 @@ export class ScenarioRepository {
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       (id): ScenarioContent => require(`/src/data/contents/scenarios/${id}`).default
     );
-    this.contents = arrayToDict(
-      modules,
-      (modules) => modules.id,
-      (modules) => ({
-        ...modules,
-        Page: ScenarioRepository.preprocessPage(modules.Page)
-      })
-    );
+
+    for (const module of modules) {
+      this.contents[module.id] = {
+        ...module,
+        Page: ScenarioRepository.preprocessPage(module.Page)
+      };
+    }
   }
 
   private static preprocessPage(Children: ContentPage): ContentPage {

@@ -5,6 +5,7 @@
 import styles from "./SubThumbnails.module.scss";
 import { ScenarioContentHead } from "lib/contents";
 import StaticImage from "components/functions/StaticImage";
+import defaultThumbnail from "public/img/default-thumbnail.webp";
 
 type Props = {
   head: ScenarioContentHead;
@@ -12,9 +13,9 @@ type Props = {
 
 const SubThumbnails = ({ head }: Props): JSX.Element => (
   <div className={styles.layout}>
-    {head.thumbnails.slice(1).map((thumbnailPath, index) => (
+    {[head.thumbnails[1], head.thumbnails[2], head.thumbnails[3]].map((thumbnail, index) => (
       <StaticImage
-        src={thumbnailPath}
+        src={thumbnail ?? defaultThumbnail}
         alt={head.title}
         className={styles.item}
         key={`thumbnailPath-${index}`}

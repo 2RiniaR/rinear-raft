@@ -10,11 +10,10 @@ import Story from "./Story";
 import Pages from "./Pages";
 import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, ScenarioContent } from "lib/contents";
-import thumbnailPic1 from "public/contents/scenarios/rinear-official-site/HomePage1.webp";
-
-import thumbnailPic2 from "public/contents/scenarios/rinear-official-site/HomePage2.webp";
-import thumbnailPic3 from "public/contents/scenarios/rinear-official-site/HomePage3.webp";
-import thumbnailPic4 from "public/contents/scenarios/rinear-official-site/HomePage4.webp";
+import thumbnailPic1 from "public/contents/scenarios/rinear-raft/Top.webp";
+import thumbnailPic2 from "public/contents/scenarios/rinear-raft/Story.webp";
+import thumbnailPic3 from "public/contents/scenarios/rinear-raft/ScenarioIndex.webp";
+import thumbnailPic4 from "public/contents/scenarios/rinear-raft/Scenario.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {

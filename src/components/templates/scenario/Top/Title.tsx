@@ -19,9 +19,9 @@ const Title = ({ content }: Props): JSX.Element => (
     <StaticImage className={styles.logo} src={scenariosPic} alt="プロジェクト" />
     <div className={styles.display}>
       <h1 className={styles.title}>{content.title}</h1>
-      <h3 className={styles.releasedAt}>{content.releasedAt ? formatDisplayDate(content.releasedAt) : "---"}</h3>
-      <h3 className={styles.genre}>SCENARIO</h3>
-      <h3 className={styles.updatedAt}>{"最終更新：" + formatExceededTime(dayjs(), content.updatedAt)}</h3>
+      <p className={styles.releasedAt}>{content.releasedAt ? formatDisplayDate(content.releasedAt) : "---"}</p>
+      <p className={styles.genre}>SCENARIO</p>
+      <p className={styles.updatedAt}>{"最終更新：" + formatExceededTime(dayjs(), content.updatedAt)}</p>
     </div>
   </header>
 );

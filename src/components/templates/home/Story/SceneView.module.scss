@@ -98,7 +98,7 @@
 
 .thumbnail {
   position: relative;
-  mask-image: url(/img/StoryMask.png);
+  mask-image: url(/img/StoryMask.webp);
   mask-size: cover;
 
   @include global.media(phone) {

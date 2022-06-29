@@ -13,6 +13,7 @@ export const ScrollIndicator = ({ enabled }: Props): JSX.Element => (
       src={image}
       className={assignClasses(styles.image, !enabled ? styles.hidden : "")}
       layout="responsive"
+      alt="下へ"
     />
   </div>
 );

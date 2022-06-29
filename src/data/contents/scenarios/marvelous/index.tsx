@@ -15,7 +15,6 @@ import { Chapter } from "content-parts";
 import thumbnailPic1 from "public/contents/scenarios/marvelous/top1.webp";
 import thumbnailPic2 from "public/contents/scenarios/marvelous/top2.webp";
 import thumbnailPic3 from "public/contents/scenarios/marvelous/top3.webp";
-import thumbnailPic4 from "public/contents/scenarios/marvelous/top4.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
@@ -63,10 +62,10 @@ const marvelous: ScenarioContent = {
   id: "marvelous",
   title: "エライさんbot",
   thumbnail: thumbnailPic1,
-  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
+  thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3],
   updatedAt: dayjs("2021-09-28"),
   releasedAt: dayjs("2021-04-30"),
-  description: "みんなの「えらい！」をカウントしてくれるDiscord Bot。#限界開発鯖 にて運用中！",
+  description: "みんなの「えらい！」をカウントしてくれるDiscord Bot。",
   Page
 };
 
