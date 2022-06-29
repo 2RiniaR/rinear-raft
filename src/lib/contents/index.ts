@@ -1,12 +1,17 @@
-import dayjs from "dayjs";
-import { RefObject, createContext } from "react";
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
 
-export type { ProjectContentHead, ProjectContent } from "./projects";
-export type { TalkContentHead, TalkContent } from "./talks";
+import dayjs from "dayjs";
+import { createContext, RefObject } from "react";
+import { StaticImageData } from "next/image";
+
+export type { ScenarioContentHead, ScenarioContent } from "./scenario";
+export type { LetterContentHead, LetterContent } from "./letters";
 
 const ContentGenres = {
-  talks: "talks",
-  projects: "projects"
+  letters: "letters",
+  scenarios: "scenarios"
 } as const;
 
 export type ContentGenre = typeof ContentGenres[keyof typeof ContentGenres];
@@ -22,6 +27,8 @@ export type ContentHead = {
   title: string;
   updatedAt: dayjs.Dayjs;
   description: string;
+  thumbnail: StaticImageData;
+  private?: boolean;
 };
 
 export type ContentPageProps = {
@@ -43,5 +50,5 @@ export type ContentContextProps = {
 };
 
 export const ContentContext = createContext<ContentContextProps>({
-  genre: "talks"
+  genre: "letters"
 });

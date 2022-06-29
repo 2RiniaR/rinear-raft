@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React from "react";
 import styles from "./LoadingEffect.module.scss";
 import SplashAnimation from "./SplashAnimation";

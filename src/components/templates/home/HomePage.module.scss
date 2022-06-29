@@ -1,19 +1,47 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 @use "global";
 
 .page {
   position: relative;
-  background: #666666;
+  background: #ddd;
   overflow-x: hidden;
   overflow-y: hidden;
   flex-direction: column;
-  gap: 12rem;
-  padding-bottom: 1rem;
+  display: flex;
+}
 
-  &.loaded {
-    display: flex;
+.headSpace {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 200vh;
+  pointer-events: none;
+}
+
+.storyHeader {
+  @include global.design-font;
+  color: global.$light1;
+  font-size: 2rem;
+  position: relative;
+  z-index: 2;
+  padding: 0.5rem 0;
+  letter-spacing: 0.5rem;
+  margin: 8rem auto 0 auto;
+  text-align: center;
+  background: linear-gradient(to right, transparent 0%, global.$dark1 20%, global.$dark1 80%, transparent 100%);
+
+  @include global.media(phone) {
+    width: 10rem;
   }
 
-  &.loading {
-    display: none;
+  @include global.media(tablet) {
+    width: 15rem;
+  }
+
+  @include global.media(desktop) {
+    width: 20rem;
   }
 }

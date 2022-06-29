@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 @use "global";
 
 .layout {
@@ -7,6 +11,7 @@
   justify-content: center;
   background: rgba(global.$dark1, 0.5);
   padding: 1rem 0;
+  @include global.design-font;
 
   .logo {
     height: 4rem;

@@ -1,0 +1,17 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
+@use "global";
+
+.container {
+  @include global.full-area;
+  z-index: 2;
+  position: fixed;
+  background: rgba(global.$dark1, 0%);
+  transition: background 0.6s;
+}
+
+.enabled {
+  background: rgba(global.$dark1, 70%);
+}

@@ -1,0 +1,22 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
+@use "global";
+
+.layout {
+  display: flex;
+  flex-direction: column;
+
+  @include global.media(phone) {
+    gap: 4rem;
+  }
+
+  @include global.media(tablet) {
+    gap: 6rem;
+  }
+
+  @include global.media(desktop) {
+    gap: 8rem;
+  }
+}

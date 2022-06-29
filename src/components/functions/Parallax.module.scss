@@ -1,0 +1,14 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
+@use "global";
+
+.container {
+  @include global.full-area;
+  pointer-events: none;
+
+  .view {
+    position: fixed;
+  }
+}

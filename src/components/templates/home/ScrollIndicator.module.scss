@@ -1,0 +1,44 @@
+@use "global";
+
+.container {
+  position: fixed;
+  z-index: 6;
+  bottom: 5rem;
+  width: 100%;
+
+  animation-iteration-count: infinite;
+  animation-duration: 1200ms;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-name: loop;
+}
+
+.image {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 100%;
+  opacity: 0.3;
+  transition: opacity 1000ms;
+  width: 3rem;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@keyframes loop {
+  0% {
+    opacity: 0;
+    bottom: 5rem;
+  }
+  60% {
+    opacity: 1;
+    bottom: 2rem;
+  }
+  100% {
+    opacity: 0;
+    bottom: 1rem;
+  }
+}

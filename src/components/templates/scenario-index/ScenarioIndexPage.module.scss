@@ -1,0 +1,15 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
+@use "global";
+
+.page {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 5rem 0 0 0;
+}

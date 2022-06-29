@@ -1,74 +1,45 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 @use "global";
 
 .container {
   width: 100%;
-  margin: 0 auto;
+  margin-top: 8rem;
   color: global.$light1;
+  z-index: 100;
+  padding: 2rem 0;
+  background: global.$dark1;
+  @include global.design-font;
+}
+
+.back {
+  position: absolute;
+  opacity: 0.2;
+  width: 12rem;
+  left: max(1rem, calc(50% - 16rem));
 }
 
 .logo {
-  margin: 0 auto 0.5rem auto;
+  margin: 0 auto 1rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: global.$light1 solid 2px;
+  position: relative;
 
-  .image {
-    object-fit: contain;
-    margin-right: 1rem;
-
-    @include global.media(phone) {
-      height: 3rem;
-      width: 3rem;
-    }
-
-    @include global.media(tablet) {
-      height: 4rem;
-      width: 4rem;
-    }
-
-    @include global.media(desktop) {
-      height: 4rem;
-      width: 4rem;
-    }
-  }
-
-  .text {
-    @include global.media(phone) {
-      $letter-spacing: 0.5rem;
-      font-size: 1.6rem;
-      letter-spacing: $letter-spacing;
-      &::after {
-        content: "";
-        margin-right: -$letter-spacing;
-      }
-    }
-
-    @include global.media(tablet) {
-      $letter-spacing: 1rem;
-      font-size: 2rem;
-      letter-spacing: $letter-spacing;
-      &::after {
-        content: "";
-        margin-right: -$letter-spacing;
-      }
-    }
-
-    @include global.media(desktop) {
-      $letter-spacing: 1rem;
-      font-size: 2rem;
-      letter-spacing: $letter-spacing;
-      &::after {
-        content: "";
-        margin-right: -$letter-spacing;
-      }
-    }
+  .letter {
+    position: relative;
+    width: 12rem;
+    bottom: -1.2rem;
   }
 }
 
 .links {
   display: flex;
   justify-content: center;
+  position: relative;
   font-size: 1rem;
   margin: 0 auto 2rem auto;
   gap: 1rem;
@@ -85,11 +56,14 @@
 
 .copyright {
   text-align: center;
+  position: relative;
   font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .version {
   text-align: right;
-  padding-right: 2rem;
+  position: relative;
+  padding-right: 1rem;
   font-size: 1rem;
 }

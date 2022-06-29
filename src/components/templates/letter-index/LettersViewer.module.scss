@@ -1,0 +1,40 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
+@use "global";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  flex-basis: auto;
+  min-height: calc(100vh - 40rem);
+
+  @include global.media(phone) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @include global.media(tablet) {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  @include global.media(desktop) {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .element {
+    display: block;
+    width: 20rem;
+    padding: 0.7rem;
+    transition: background-color 200ms 0s ease;
+
+    &:hover {
+      background-color: rgba(global.$light2, 0.2);
+    }
+  }
+}

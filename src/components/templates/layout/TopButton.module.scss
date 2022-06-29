@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 @use "global";
 
 .screen {
@@ -30,6 +34,7 @@
   display: block;
   background: global.$dark1;
   padding: 20%;
+  width: 100%;
   border-radius: 50%;
   opacity: 60%;
   transition: opacity 200ms 0s ease, transform 200ms 0s ease;

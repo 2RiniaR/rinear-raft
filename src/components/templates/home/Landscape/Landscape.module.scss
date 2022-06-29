@@ -1,0 +1,26 @@
+/*!
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
+@use "global";
+
+.view {
+  position: absolute;
+  $width: max(200vh, 100vw);
+  z-index: 1;
+  width: $width;
+  height: calc(#{$width} * 1 / 0.7);
+  pointer-events: none;
+
+  .elements {
+    position: relative;
+    width: $width;
+    height: $width;
+    top: 0;
+    left: calc(-1 * #{$width} / 2 + 50vw);
+
+    & > * {
+      position: absolute;
+    }
+  }
+}

@@ -1,15 +1,20 @@
+/*
+ * Copyright (c) 2022 RineaR. All rights reserved.
+ */
+
 import React from "react";
 import styles from "./Footer.module.scss";
-import StaticImage from "components/functions/image/StaticImage";
-import ExternalLink from "components/functions/link/ExternalLink";
+import StaticImage from "components/functions/StaticImage";
+import ExternalLink from "components/functions/ExternalLink";
+import letterPic from "public/img/RineaR-letters-transparent.svg";
 import logoPic from "public/img/logo.png";
 import packageSettings from "public/../package.json";
 
 const Footer = (): JSX.Element => (
   <footer className={styles.container}>
+    <StaticImage className={styles.back} src={logoPic} alt="Logo" layout="responsive" />
     <div className={styles.logo}>
-      <StaticImage className={styles.image} src={logoPic} alt="RineaR" />
-      <h1 className={styles.text}>RineaR</h1>
+      <StaticImage className={styles.letter} src={letterPic} alt="RineaR" layout="responsive" />
     </div>
     <div className={styles.links}>
       <ExternalLink className={styles.element} href={"https://twitter.com/14RineaR"}>

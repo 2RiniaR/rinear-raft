@@ -1,9 +1,0 @@
-@use "global";
-
-.container {
-  @include global.full-area;
-
-  .view {
-    position: fixed;
-  }
-}
