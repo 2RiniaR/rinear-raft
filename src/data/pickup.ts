@@ -5,7 +5,11 @@ import { getScenariosId } from "./contents/scenarios/fetch";
 import { ScenarioRepository } from "./contents/scenarios";
 import { getRoute } from "./contents";
 
-export async function getLatestContent(count: number): Promise<Pickup[]> {
+export async function getPickUps(): Promise<Pickup[]> {
+  return getLatestContents(5);
+}
+
+async function getLatestContents(count: number): Promise<Pickup[]> {
   const lettersId = await getLettersId();
   const letters = new LetterRepository(lettersId).getAllContents();
 

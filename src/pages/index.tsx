@@ -3,7 +3,7 @@
  */
 
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { getLatestContent } from "../data/pickup";
+import { getPickUps } from "../data/pickup";
 import { story } from "../data/story";
 import Seo from "../components/functions/Seo";
 import { rinearDescription } from "../data/description";
@@ -19,7 +19,7 @@ const Page = ({ pickups }: InferGetStaticPropsType<typeof getStaticProps>): JSX.
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: { pickups: await getLatestContent(3) }
+    props: { pickups: await getPickUps() }
   };
 };
 

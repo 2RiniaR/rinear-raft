@@ -150,6 +150,7 @@ const designSample: LetterContent = {
   thumbnail: thumbnailPic,
   updatedAt: dayjs("2021-10-10"),
   description: "デザインのサンプル。",
+  private: true,
   Page
 };
 

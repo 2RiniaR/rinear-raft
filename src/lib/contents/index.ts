@@ -28,6 +28,7 @@ export type ContentHead = {
   updatedAt: dayjs.Dayjs;
   description: string;
   thumbnail: StaticImageData;
+  private?: boolean;
 };
 
 export type ContentPageProps = {

@@ -24,6 +24,12 @@ export class LetterRepository {
         Page: LetterRepository.preprocessPage(modules.Page)
       })
     );
+
+    for (const id in this.contents) {
+      if (this.contents[id].private === true) {
+        delete this.contents[id];
+      }
+    }
   }
 
   private static preprocessPage(Children: ContentPage): ContentPage {

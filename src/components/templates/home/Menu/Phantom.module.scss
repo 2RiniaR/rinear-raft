@@ -140,6 +140,7 @@
     border-radius: 1rem;
     background: rgba(global.$dark1, 0.7);
     pointer-events: all;
+    @include global.design-font;
   }
 
   .sizeFilter {
