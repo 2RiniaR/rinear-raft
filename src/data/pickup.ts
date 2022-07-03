@@ -1,12 +1,12 @@
 import { Pickup } from "../lib/contents/pickup";
 import { ContentHead } from "../lib/contents";
 import { getRoute } from "./contents";
-import introduction from "./contents/letters/introduction";
+import declaration from "./contents/letters/declaration";
 import mazeEscape from "./contents/materials/maze-escape";
 import bustersMission from "./contents/materials/busters-mission";
 
 export async function getPickUps(): Promise<Pickup[]> {
-  return [introduction, mazeEscape, bustersMission].map((content) => pickupContent(content));
+  return [declaration, mazeEscape, bustersMission].map((content) => pickupContent(content));
 }
 
 function pickupContent(content: ContentHead): Pickup {

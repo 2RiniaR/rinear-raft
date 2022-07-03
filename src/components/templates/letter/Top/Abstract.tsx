@@ -14,8 +14,8 @@ type Props = {
 
 const Abstract = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
-    <p className={styles.description}>{content.description}</p>
     <StaticImage src={content.thumbnail ?? defaultThumbnail} alt="サムネイル" className={styles.thumbnail} />
+    <p className={styles.description}>{content.description}</p>
   </div>
 );
 
