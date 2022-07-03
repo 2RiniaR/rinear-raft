@@ -18,6 +18,7 @@ const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): J
         pageDescription={rinearDescription}
         pagePath={"/letters"}
         pageImgPath={"/img/main.webp"}
+        pageType="article"
       />
       <LetterIndexPage heads={repository.getAllContents("updatedAt")} />
     </>

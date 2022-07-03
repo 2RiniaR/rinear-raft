@@ -12,7 +12,7 @@ import HomePage from "components/templates/home/HomePage";
 
 const Page = ({ pickups }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => (
   <>
-    <Seo pageDescription={rinearDescription} pagePath={"/"} pageImgPath={"/img/main.webp"} />
+    <Seo pageDescription={rinearDescription} pagePath={"/"} pageImgPath={"/img/main.webp"} pageType="website" />
     <HomePage pickups={pickups} story={story} about={about} />
   </>
 );

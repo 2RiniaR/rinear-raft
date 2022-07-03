@@ -18,6 +18,7 @@ const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): J
         pageDescription={rinearDescription}
         pagePath={"/materials"}
         pageImgPath={"/img/main.webp"}
+        pageType="article"
       />
       <MaterialIndexPage heads={repository.getAllContents("releasedAt")} />
     </>
