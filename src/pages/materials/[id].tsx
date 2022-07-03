@@ -18,6 +18,7 @@ const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Eleme
         pageDescription={content.description}
         pagePath={`/materials/${id}`}
         pageImgPath={content.thumbnail.src}
+        pageType="article"
       />
       <MaterialPage content={content} />
     </>
