@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
 import { Chapter, Paragraph } from "content-parts";
 import { ChapterPoint, ContentPageProps, LetterContent } from "lib/contents";
-import thumbnailPic from "public/contents/scenarios/rinear-raft/Top.webp";
+import thumbnailPic from "public/contents/materials/rinear-raft/Top.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
@@ -30,7 +30,7 @@ const introduction: LetterContent = {
   index: 1,
   title: "活動拠点が完成しました。",
   thumbnail: thumbnailPic,
-  updatedAt: dayjs("2022-06-30 21:00:00"),
+  updatedAt: dayjs("2022-07-03 21:00:00"),
   description: "ついに活動拠点が完成しました。",
   Page
 };

@@ -148,7 +148,7 @@ const designSample: LetterContent = {
   index: 0,
   title: "デザインサンプル",
   thumbnail: thumbnailPic,
-  updatedAt: dayjs("2022-06-30 21:00:00"),
+  updatedAt: dayjs("2022-07-03 21:00:00"),
   description: "デザインのサンプル。",
   private: true,
   Page

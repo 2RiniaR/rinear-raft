@@ -5,11 +5,11 @@
 import styles from "./SideMenu.module.scss";
 import SideMenuItem, { SideMenuItemProps } from "./SideMenuItem";
 import SideMenuOpener from "./SideMenuOpener";
+import materialsPic from "public/img/materials.png";
 import StaticImage from "components/functions/StaticImage";
 import leftArrowPic from "public/img/LeftArrow.png";
 import logoPic from "public/img/logo.png";
 import lettersPic from "public/img/letters.png";
-import scenariosPic from "public/img/scenarios.png";
 
 type Props = {
   open: boolean;
@@ -19,7 +19,7 @@ type Props = {
 const items: Omit<SideMenuItemProps, "onClick">[] = [
   { href: "/", markSrc: logoPic, name: "HOME" },
   { href: "/letters", markSrc: lettersPic, name: "LETTERS" },
-  { href: "/scenarios", markSrc: scenariosPic, name: "SCENARIOS" }
+  { href: "/materials", markSrc: materialsPic, name: "MATERIALS" }
 ];
 
 const SideMenu = ({ open, setOpen }: Props): JSX.Element => (

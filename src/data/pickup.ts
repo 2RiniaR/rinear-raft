@@ -1,8 +1,8 @@
 import { Pickup } from "../lib/contents/pickup";
 import { LetterRepository } from "./contents/letters";
 import { getLettersId } from "./contents/letters/fetch";
-import { getScenariosId } from "./contents/scenarios/fetch";
-import { ScenarioRepository } from "./contents/scenarios";
+import { getMaterialsId } from "./contents/materials/fetch";
+import { MaterialRepository } from "./contents/materials";
 import { getRoute } from "./contents";
 
 export async function getPickUps(): Promise<Pickup[]> {
@@ -13,10 +13,10 @@ async function getLatestContents(count: number): Promise<Pickup[]> {
   const lettersId = await getLettersId();
   const letters = new LetterRepository(lettersId).getAllContents();
 
-  const scenariosId = await getScenariosId();
-  const scenarios = new ScenarioRepository(scenariosId).getAllContents();
+  const materialsId = await getMaterialsId();
+  const materials = new MaterialRepository(materialsId).getAllContents();
 
-  const contents = [...letters, ...scenarios];
+  const contents = [...letters, ...materials];
   contents.sort((a, b) => {
     if (b.updatedAt.isAfter(a.updatedAt)) return 1;
     if (b.updatedAt.isSame(a.updatedAt)) return 0;

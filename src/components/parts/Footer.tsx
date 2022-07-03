@@ -27,7 +27,7 @@ const Footer = (): JSX.Element => (
         YouTube
       </ExternalLink>
     </div>
-    <div className={styles.copyright}>Copyright © 2021 RineaR All rights reserved.</div>
+    <div className={styles.copyright}>Copyright © 2022 RineaR All rights reserved.</div>
     <div className={styles.version}>version {packageSettings.version}</div>
   </footer>
 );
