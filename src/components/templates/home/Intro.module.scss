@@ -19,11 +19,17 @@
   }
 }
 
+.content {
+  height: 100%;
+  padding-top: 6rem;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   color: global.$dark1;
@@ -86,14 +92,13 @@
 }
 
 .skipButton {
-  position: absolute;
   font-size: 1.5rem;
   @include global.design-font;
-  right: 2rem;
-  top: calc(100vh - 3.5rem);
   border-bottom: global.$dark1 solid 1px;
+  transition: padding-left 0.2s, padding-right 0.2s;
 
   &:hover {
-    border-bottom: global.$dark1 solid 4px;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }

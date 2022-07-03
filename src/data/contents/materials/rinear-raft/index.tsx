@@ -48,7 +48,7 @@ const rinearRaft: MaterialContent = {
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3, thumbnailPic4],
   updatedAt: dayjs("2022-07-03 21:00:00"),
   releasedAt: dayjs("2022-07-03"),
-  description: "『RineaR』のプロジェクトや投稿を公開するホームページ。『Rinia』が活動拠点とする筏。",
+  description: "『RineaR』の活動拠点であり、制作物や投稿を公開するホームページ。",
   Page
 };
 

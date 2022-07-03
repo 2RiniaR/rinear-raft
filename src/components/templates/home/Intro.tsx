@@ -33,15 +33,17 @@ export const Intro = ({ playing, setPlaying }: Props): JSX.Element => {
 
   return (
     <div className={assignClasses(styles.container, display ? styles.display : styles.hidden)}>
-      <span className={styles.text}>
-        <span className={styles.first}>
-          この<span className={styles.strong}>筏</span>は私を、
+      <div className={styles.content}>
+        <span className={styles.text}>
+          <span className={styles.first}>
+            この<span className={styles.strong}>筏</span>は私を、
+          </span>
+          <span className={styles.last}>どこへ連れてゆくんだろう。</span>
         </span>
-        <span className={styles.last}>どこへ連れてゆくんだろう。</span>
-      </span>
-      <button onClick={skipAnimation} className={styles.skipButton}>
-        SKIP
-      </button>
+        <button onClick={skipAnimation} className={styles.skipButton}>
+          SKIP
+        </button>
+      </div>
     </div>
   );
 };

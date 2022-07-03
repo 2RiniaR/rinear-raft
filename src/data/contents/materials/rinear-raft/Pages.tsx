@@ -3,25 +3,24 @@
  */
 
 import Link from "next/link";
-import { ListItem, UnorderedList } from "content-parts";
+import { ListItem, Paragraph, UnorderedList } from "content-parts";
 
 const Section = (): JSX.Element => (
   <>
     <UnorderedList>
       <ListItem>
         <Link href={"/"}>HOME</Link>
-        <br />
-        当ホームページのトップページ。トップの画像は、RineaRの活動方針である「漂流」と「観察」が表されている。
+        <Paragraph>
+          当ホームページのトップページ。トップ及び背景の画像は、RineaRの活動方針である「漂流」と「観察」が表されている。
+        </Paragraph>
       </ListItem>
       <ListItem>
         <Link href={"/letters"}>LETTERS</Link>
-        <br />
-        制作の途中経過やアイデア、その他話したいこと等を投稿する。
+        <Paragraph>制作の途中経過やアイデアなど、書き留めておきたいこと等を投稿する。</Paragraph>
       </ListItem>
       <ListItem>
         <Link href={"/materials"}>MATERIALS</Link>
-        <br />
-        作品を投稿する。
+        <Paragraph>制作物を投稿する。</Paragraph>
       </ListItem>
     </UnorderedList>
   </>
