@@ -10,16 +10,6 @@
     pointer-events: all;
     @include global.design-font;
 
-    @include global.media(tablet) {
-      width: 12rem;
-      height: 12rem;
-    }
-
-    @include global.media(desktop) {
-      width: 16rem;
-      height: 16rem;
-    }
-
     &.hidden {
       pointer-events: none;
     }
@@ -68,16 +58,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    @include global.media(tablet) {
-      width: 7rem;
-      height: 7rem;
-    }
-
-    @include global.media(desktop) {
-      width: 9rem;
-      height: 9rem;
-    }
+    width: 9rem;
+    height: 9rem;
   }
 
   .icon {
@@ -96,16 +78,8 @@
     top: 70%;
     left: 50%;
     transform: translate(-50%, 0);
-
-    @include global.media(tablet) {
-      font-size: 1.16rem;
-      line-height: 1.16;
-    }
-
-    @include global.media(desktop) {
-      font-size: 1.4rem;
-      line-height: 1.4;
-    }
+    font-size: 1.4rem;
+    line-height: 1.4;
   }
 
   .subtitle {
@@ -118,16 +92,6 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
-
-    @include global.media(tablet) {
-      font-size: 0.85rem;
-      line-height: 0.85;
-    }
-
-    @include global.media(desktop) {
-      font-size: 1rem;
-      line-height: 1;
-    }
   }
 }
 

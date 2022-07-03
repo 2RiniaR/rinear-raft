@@ -2,7 +2,7 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-import React, { createContext, useRef, useState } from "react";
+import React, { createContext, useEffect, useRef, useState } from "react";
 import Footer from "../../parts/Footer";
 import { Story } from "../../../lib/story";
 import { Landscape } from "./Landscape";
@@ -13,6 +13,7 @@ import Darkness from "./Darkness";
 import ScrollIndicator from "./ScrollIndicator";
 import StoryView from "./Story/StoryView";
 import { Menu } from "./Menu";
+import Intro from "./Intro";
 import { LoadingWaiter } from "components/functions/loading";
 import { assignClasses } from "lib/helper";
 import useScrollPast from "components/fooks/scroll-past";
@@ -30,6 +31,7 @@ export const PickupsContext = createContext<Pickup[]>([]);
 const HomePage = ({ about, pickups, story }: Props): JSX.Element => {
   const [loadCompleted, setLoadCompleted] = useState(false);
   const [loadProgress, setLoadProgress] = useState(0);
+  const [playingIntro, setPlayingIntro] = useState(false);
 
   const landscapeEndRef = useRef<HTMLDivElement>(null);
   const isBelowOfLandscape = useScrollPast(landscapeEndRef);
@@ -37,10 +39,16 @@ const HomePage = ({ about, pickups, story }: Props): JSX.Element => {
   const topEndRef = useRef<HTMLDivElement>(null);
   const isScrollFromTop = useScrollPast(topEndRef);
 
+  useEffect(() => {
+    if (!loadCompleted) return;
+    setPlayingIntro(true);
+  }, [loadCompleted]);
+
   return (
     <PickupsContext.Provider value={pickups}>
       <LoadingWaiter onCompleted={() => setLoadCompleted(true)} onProgressUpdated={setLoadProgress}>
         <LoadingEffect loading={!loadCompleted} progress={loadProgress} />
+        <Intro playing={playingIntro} setPlaying={setPlayingIntro} />
         <div className={assignClasses(styles.page, loadCompleted ? styles.loaded : styles.loading)}>
           <Landscape />
           <Menu active={!isScrollFromTop && loadCompleted} />

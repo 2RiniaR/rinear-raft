@@ -3,7 +3,8 @@
  */
 
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
+import StaticImage from "../../functions/StaticImage";
 import styles from "./ContentImage.module.scss";
 
 type Props = {
@@ -12,9 +13,7 @@ type Props = {
 };
 
 const ContentImage = ({ src, alt }: Props): JSX.Element => (
-  <div className={styles.container}>
-    <Image src={src} alt={alt} layout="responsive" width={src.width} height={src.height} sizes="100%" />
-  </div>
+  <StaticImage className={styles.container} src={src} alt={alt} />
 );
 
 export default ContentImage;
