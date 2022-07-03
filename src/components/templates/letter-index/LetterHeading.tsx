@@ -17,7 +17,9 @@ const LetterHeading = ({ head }: Props): JSX.Element => (
   <article className={styles.container}>
     <StaticImage src={head.thumbnail ?? defaultThumbnail} alt={head.title} className={styles.thumbnail} />
     <p className={styles.index}>#{head.index}</p>
-    <p className={styles.updatedAt}>{formatExceededTime(dayjs(), head.updatedAt)}</p>
+    <p className={styles.updatedAt} suppressHydrationWarning={true}>
+      {formatExceededTime(dayjs(), head.updatedAt)}
+    </p>
     <h2 className={styles.title}>{head.title}</h2>
   </article>
 );

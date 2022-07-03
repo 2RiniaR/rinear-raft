@@ -21,7 +21,9 @@ const Title = ({ content }: Props): JSX.Element => (
       <h1 className={styles.title}>{content.title}</h1>
       <p className={styles.index}>#{content.index}</p>
       <p className={styles.genre}>LETTER</p>
-      <p className={styles.updatedAt}>{"最終更新：" + formatExceededTime(dayjs(), content.updatedAt)}</p>
+      <p className={styles.updatedAt} suppressHydrationWarning={true}>
+        {"最終更新：" + formatExceededTime(dayjs(), content.updatedAt)}
+      </p>
     </div>
   </header>
 );
