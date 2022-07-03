@@ -1,22 +1,31 @@
 import { Pickup } from "../lib/contents/pickup";
-import { LetterRepository } from "./contents/letters";
-import { getLettersId } from "./contents/letters/fetch";
-import { getScenariosId } from "./contents/scenarios/fetch";
-import { ScenarioRepository } from "./contents/scenarios";
+import { ContentHead } from "../lib/contents";
 import { getRoute } from "./contents";
+import declaration from "./contents/letters/declaration";
+import mazeEscape from "./contents/materials/maze-escape";
+import bustersMission from "./contents/materials/busters-mission";
 
 export async function getPickUps(): Promise<Pickup[]> {
-  return getLatestContents(5);
+  return [declaration, mazeEscape, bustersMission].map((content) => pickupContent(content));
 }
 
+function pickupContent(content: ContentHead): Pickup {
+  return {
+    title: content.title,
+    href: getRoute(content),
+    thumbnail: content.thumbnail
+  };
+}
+
+/*
 async function getLatestContents(count: number): Promise<Pickup[]> {
   const lettersId = await getLettersId();
   const letters = new LetterRepository(lettersId).getAllContents();
 
-  const scenariosId = await getScenariosId();
-  const scenarios = new ScenarioRepository(scenariosId).getAllContents();
+  const materialsId = await getMaterialsId();
+  const materials = new MaterialRepository(materialsId).getAllContents();
 
-  const contents = [...letters, ...scenarios];
+  const contents = [...letters, ...materials];
   contents.sort((a, b) => {
     if (b.updatedAt.isAfter(a.updatedAt)) return 1;
     if (b.updatedAt.isSame(a.updatedAt)) return 0;
@@ -26,12 +35,9 @@ async function getLatestContents(count: number): Promise<Pickup[]> {
   const pickups: Pickup[] = [];
   for (let i = 0; i < Math.min(count, contents.length); i++) {
     const content = contents[i];
-    pickups.push({
-      title: content.title,
-      href: getRoute(content),
-      thumbnail: content.thumbnail
-    });
+    pickups.push(pickupContent(content));
   }
 
   return pickups;
 }
+*/

@@ -6,12 +6,12 @@ import dayjs from "dayjs";
 import { createContext, RefObject } from "react";
 import { StaticImageData } from "next/image";
 
-export type { ScenarioContentHead, ScenarioContent } from "./scenario";
+export type { MaterialContentHead, MaterialContent } from "./material";
 export type { LetterContentHead, LetterContent } from "./letters";
 
 const ContentGenres = {
   letters: "letters",
-  scenarios: "scenarios"
+  materials: "materials"
 } as const;
 
 export type ContentGenre = typeof ContentGenres[keyof typeof ContentGenres];

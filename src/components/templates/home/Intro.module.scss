@@ -1,0 +1,104 @@
+@use "global";
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  transition: opacity 0.7s;
+  background-color: #ddd;
+
+  &.display {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.content {
+  height: 100%;
+  padding-top: 6rem;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  color: global.$dark1;
+  transition: opacity 0.8s ease-in-out 0s, left 0.8s ease-in-out 0s;
+  @include global.design-font;
+
+  .strong {
+    font-size: 120%;
+    color: #ba1317;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+
+  .first {
+    transition: opacity 1s;
+    transition-delay: 1s;
+
+    .display & {
+      opacity: 1;
+    }
+
+    .hidden & {
+      opacity: 0;
+    }
+  }
+
+  .last {
+    transition: opacity 1s;
+    transition-delay: 2s;
+
+    .display & {
+      opacity: 1;
+    }
+
+    .hidden & {
+      opacity: 0;
+    }
+  }
+
+  @include global.media(phone) {
+    width: calc(100vw - 3rem);
+    max-width: 20rem;
+    font-size: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @include global.media(tablet) {
+    width: calc(100vw - 7rem);
+    max-width: 40rem;
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @include global.media(desktop) {
+    font-size: 2rem;
+    flex-direction: row;
+  }
+}
+
+.skipButton {
+  font-size: 1.5rem;
+  @include global.design-font;
+  border-bottom: global.$dark1 solid 1px;
+  transition: padding-left 0.2s, padding-right 0.2s;
+
+  &:hover {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

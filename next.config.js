@@ -15,6 +15,5 @@ module.exports = {
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, "src/styles")]
-  },
-  swcMinify: true
+  }
 };

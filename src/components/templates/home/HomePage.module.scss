@@ -31,7 +31,13 @@
   letter-spacing: 0.5rem;
   margin: 8rem auto 0 auto;
   text-align: center;
-  background: linear-gradient(to right, transparent 0%, global.$dark1 20%, global.$dark1 80%, transparent 100%);
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(global.$dark1, 0.7) 20%,
+    rgba(global.$dark1, 0.7) 80%,
+    transparent 100%
+  );
 
   @include global.media(phone) {
     width: 10rem;
