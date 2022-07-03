@@ -7,7 +7,6 @@ import { useEffect, useRef } from "react";
 import Rule from "./Rule";
 import Howto from "./Howto";
 import Tools from "./Tools";
-import Background from "./Background";
 import ExternalLink from "components/functions/ExternalLink";
 import { Chapter, Video } from "content-parts";
 import { ChapterPoint, ContentPageProps, MaterialContent } from "lib/contents";
@@ -22,8 +21,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
     download: { name: "ゲーム本体", ref: useRef(null) },
     howto: { name: "遊び方", ref: useRef(null) },
     rule: { name: "ルール", ref: useRef(null) },
-    tools: { name: "使用ツール", ref: useRef(null) },
-    background: { name: "裏話", ref: useRef(null) }
+    tools: { name: "使用ツール", ref: useRef(null) }
   };
 
   useEffect(() => setChapters(Object.values(refs)), []);
@@ -49,10 +47,6 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
 
       <Chapter title={refs.tools.name} jumpRef={refs.tools.ref}>
         <Tools />
-      </Chapter>
-
-      <Chapter title={refs.background.name} jumpRef={refs.background.ref}>
-        <Background />
       </Chapter>
     </>
   );

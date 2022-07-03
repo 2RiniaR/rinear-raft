@@ -87,8 +87,10 @@
 
 .skipButton {
   position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+  font-size: 1.5rem;
+  @include global.design-font;
+  right: 2rem;
+  top: calc(100vh - 3.5rem);
   border-bottom: global.$dark1 solid 1px;
 
   &:hover {

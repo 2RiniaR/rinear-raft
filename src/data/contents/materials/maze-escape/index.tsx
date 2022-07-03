@@ -9,7 +9,6 @@ import Download from "./Download";
 import Rule from "./Rule";
 import Strategy from "./Strategy";
 import Tools from "./Tools";
-import Background from "./Background";
 import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, MaterialContent } from "lib/contents";
 import thumbnailPic1 from "public/contents/materials/maze-escape/stage1.webp";
@@ -23,8 +22,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
     download: { name: "ダウンロード", ref: useRef(null) },
     rule: { name: "ルール", ref: useRef(null) },
     strategy: { name: "攻略データ", ref: useRef(null) },
-    tools: { name: "使用ツール", ref: useRef(null) },
-    background: { name: "裏話", ref: useRef(null) }
+    tools: { name: "使用ツール", ref: useRef(null) }
   };
 
   useEffect(() => setChapters(Object.values(refs)), []);
@@ -49,10 +47,6 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
 
       <Chapter title={refs.tools.name} jumpRef={refs.tools.ref}>
         <Tools />
-      </Chapter>
-
-      <Chapter title={refs.background.name} jumpRef={refs.background.ref}>
-        <Background />
       </Chapter>
     </>
   );

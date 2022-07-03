@@ -8,13 +8,18 @@ import { ChapterPoint, ContentPageProps, MaterialContent } from "lib/contents";
 import thumbnailPic1 from "public/contents/materials/kimifeel/page1.webp";
 import thumbnailPic2 from "public/contents/materials/kimifeel/page2.webp";
 import thumbnailPic3 from "public/contents/materials/kimifeel/page3.webp";
+import { ComingSoon } from "content-parts";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {};
 
   useEffect(() => setChapters(Object.values(refs)), []);
 
-  return <></>;
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
 };
 
 const kimifeel: MaterialContent = {

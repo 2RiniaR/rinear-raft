@@ -9,7 +9,6 @@ import Praise from "./Praise";
 import Howto from "./Howto";
 import Bonuses from "./Bonuses";
 import Tools from "./Tools";
-import Background from "./Background";
 import { ChapterPoint, ContentPageProps, MaterialContent } from "lib/contents";
 import { Chapter } from "content-parts";
 import thumbnailPic1 from "public/contents/materials/marvelous/top1.webp";
@@ -22,8 +21,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
     point: { name: "えらいポイント", ref: useRef(null) },
     praise: { name: "人を褒める", ref: useRef(null) },
     bonuses: { name: "えらいことを評価する", ref: useRef(null) },
-    tools: { name: "使用ツール", ref: useRef(null) },
-    background: { name: "裏話", ref: useRef(null) }
+    tools: { name: "使用ツール", ref: useRef(null) }
   };
 
   useEffect(() => setChapters(Object.values(refs)), []);
@@ -48,10 +46,6 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
 
       <Chapter title={refs.tools.name} jumpRef={refs.tools.ref}>
         <Tools />
-      </Chapter>
-
-      <Chapter title={refs.background.name} jumpRef={refs.background.ref}>
-        <Background />
       </Chapter>
     </>
   );

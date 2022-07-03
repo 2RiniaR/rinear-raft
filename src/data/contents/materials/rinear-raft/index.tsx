@@ -5,7 +5,6 @@
 import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
 import Tools from "./Tools";
-import Background from "./Background";
 import Story from "./Story";
 import Pages from "./Pages";
 import thumbnailPic4 from "public/contents/materials/rinear-raft/Material.webp";
@@ -19,8 +18,7 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {
     story: { name: "制作経緯", ref: useRef(null) },
     pages: { name: "ページ構成", ref: useRef(null) },
-    tools: { name: "使用ツール", ref: useRef(null) },
-    background: { name: "裏話", ref: useRef(null) }
+    tools: { name: "使用ツール", ref: useRef(null) }
   };
 
   useEffect(() => setChapters(Object.values(refs)), []);
@@ -37,10 +35,6 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
 
       <Chapter title={refs.tools.name} jumpRef={refs.tools.ref}>
         <Tools />
-      </Chapter>
-
-      <Chapter title={refs.background.name} jumpRef={refs.background.ref}>
-        <Background />
       </Chapter>
     </>
   );

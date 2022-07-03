@@ -1,14 +1,23 @@
 import { Pickup } from "../lib/contents/pickup";
-import { LetterRepository } from "./contents/letters";
-import { getLettersId } from "./contents/letters/fetch";
-import { getMaterialsId } from "./contents/materials/fetch";
-import { MaterialRepository } from "./contents/materials";
+import { ContentHead } from "../lib/contents";
 import { getRoute } from "./contents";
+import introduction from "./contents/letters/introduction";
+import mazeEscape from "./contents/materials/maze-escape";
+import bustersMission from "./contents/materials/busters-mission";
 
 export async function getPickUps(): Promise<Pickup[]> {
-  return getLatestContents(5);
+  return [introduction, mazeEscape, bustersMission].map((content) => pickupContent(content));
 }
 
+function pickupContent(content: ContentHead): Pickup {
+  return {
+    title: content.title,
+    href: getRoute(content),
+    thumbnail: content.thumbnail
+  };
+}
+
+/*
 async function getLatestContents(count: number): Promise<Pickup[]> {
   const lettersId = await getLettersId();
   const letters = new LetterRepository(lettersId).getAllContents();
@@ -26,12 +35,9 @@ async function getLatestContents(count: number): Promise<Pickup[]> {
   const pickups: Pickup[] = [];
   for (let i = 0; i < Math.min(count, contents.length); i++) {
     const content = contents[i];
-    pickups.push({
-      title: content.title,
-      href: getRoute(content),
-      thumbnail: content.thumbnail
-    });
+    pickups.push(pickupContent(content));
   }
 
   return pickups;
 }
+*/
