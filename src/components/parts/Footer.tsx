@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import StaticImage from "components/functions/StaticImage";
 import ExternalLink from "components/functions/ExternalLink";
-import letterPic from "public/img/RineaR-letters-transparent.svg";
-import logoPic from "public/img/logo.png";
+import letterPic from "public/general/logo-letters.webp";
+import logoPic from "public/general/logo-icon.webp";
 import packageSettings from "public/../package.json";
 
 const Footer = (): JSX.Element => (

@@ -1,7 +1,7 @@
 import styles from "./SubThumbnails.module.scss";
 import { MaterialContentHead } from "lib/contents";
 import StaticImage from "components/functions/StaticImage";
-import defaultThumbnail from "public/img/default-thumbnail.webp";
+import defaultThumbnail from "public/general/thumbnail-default.webp";
 
 type Props = {
   head: MaterialContentHead;

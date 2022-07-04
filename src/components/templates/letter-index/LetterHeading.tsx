@@ -3,7 +3,7 @@ import styles from "./LetterHeading.module.scss";
 import { LetterContentHead } from "lib/contents";
 import StaticImage from "components/functions/StaticImage";
 import { formatExceededTime } from "lib/helper";
-import defaultThumbnail from "public/img/default-thumbnail.webp";
+import defaultThumbnail from "public/general/thumbnail-default.webp";
 
 type Props = {
   head: LetterContentHead;

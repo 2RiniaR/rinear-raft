@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./BackButton.module.scss";
 import StaticImage from "components/functions/StaticImage";
-import leftArrowPic from "public/img/LeftArrow.png";
+import leftArrowPic from "public/general/back-icon.png";
 
 type Props = {
   href: string;

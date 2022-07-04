@@ -1,6 +1,6 @@
 import styles from "./SideMenuButton.module.scss";
 import StaticImage from "components/functions/StaticImage";
-import menuButtonPic from "public/img/MenuButton.png";
+import menuButtonPic from "public/general/menu-icon.png";
 
 type Props = {
   onClick: () => void;

@@ -1,11 +1,11 @@
 import styles from "./SideMenu.module.scss";
 import SideMenuItem, { SideMenuItemProps } from "./SideMenuItem";
 import SideMenuOpener from "./SideMenuOpener";
-import materialsPic from "public/img/materials.png";
+import materialsPic from "public/general/material-icon.png";
 import StaticImage from "components/functions/StaticImage";
-import leftArrowPic from "public/img/LeftArrow.png";
-import logoPic from "public/img/logo.png";
-import lettersPic from "public/img/letters.png";
+import leftArrowPic from "public/general/back-icon.png";
+import logoPic from "public/general/logo-icon.webp";
+import lettersPic from "public/general/letter-icon.png";
 
 type Props = {
   open: boolean;

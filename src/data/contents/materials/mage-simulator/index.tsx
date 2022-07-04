@@ -2,9 +2,9 @@ import dayjs from "dayjs";
 import { useEffect } from "react";
 import { ChapterPoint, ContentPageProps, MaterialContent } from "lib/contents";
 import thumbnailPic1 from "public/contents/materials/mage-simulator/title.webp";
-import thumbnailPic2 from "public/contents/materials/mage-simulator/ex1.webp";
-import thumbnailPic3 from "public/contents/materials/mage-simulator/step1.webp";
-import thumbnailPic4 from "public/contents/materials/mage-simulator/step5.webp";
+import thumbnailPic2 from "public/contents/materials/mage-simulator/setup.webp";
+import thumbnailPic3 from "public/contents/materials/mage-simulator/ready.webp";
+import thumbnailPic4 from "public/contents/materials/mage-simulator/activate.webp";
 import { ComingSoon } from "content-parts";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {

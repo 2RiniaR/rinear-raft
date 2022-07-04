@@ -6,7 +6,7 @@ import Strategy from "./Strategy";
 import Tools from "./Tools";
 import { Chapter, Paragraph, Video } from "content-parts";
 import { ChapterPoint, ContentPageProps, MaterialContent } from "lib/contents";
-import thumbnailPic1 from "public/contents/materials/busters-mission/stage3_2.webp";
+import thumbnailPic1 from "public/contents/materials/busters-mission/stage3-2.webp";
 import thumbnailPic2 from "public/contents/materials/busters-mission/title.webp";
 import thumbnailPic3 from "public/contents/materials/busters-mission/stage1.webp";
 import thumbnailPic4 from "public/contents/materials/busters-mission/stage2.webp";

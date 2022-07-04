@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./MaterialIndexPage.module.scss";
 import Viewer from "./MaterialsViewer";
-import materialsPic from "public/img/materials.png";
+import materialsPic from "public/general/material-icon.png";
 import { MaterialContentHead } from "lib/contents";
 import Footer from "components/parts/Footer";
 import Background from "components/parts/Background";

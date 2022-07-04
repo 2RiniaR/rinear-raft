@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { useEffect } from "react";
 import { ChapterPoint, ContentPageProps, MaterialContent } from "lib/contents";
-import thumbnailPic1 from "public/img/non-public-thumbnail.webp";
+import thumbnailPic1 from "public/general/thumbnail-locked.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {};

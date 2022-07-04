@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Abstract.module.scss";
 import { MaterialContent } from "lib/contents";
 import StaticImage from "components/functions/StaticImage";
-import defaultThumbnail from "public/img/default-thumbnail.webp";
+import defaultThumbnail from "public/general/thumbnail-default.webp";
 
 type Props = {
   content: MaterialContent;

@@ -1,6 +1,6 @@
 import styles from "./TopButton.module.scss";
 import StaticImage from "components/functions/StaticImage";
-import upArrowPic from "public/img/UpArrow.png";
+import upArrowPic from "public/general/up-icon.png";
 
 type Props = {
   onClick: () => void;

@@ -3,7 +3,7 @@ import Title from "./Title";
 import SubThumbnails from "./SubThumbnails";
 import { MaterialContentHead } from "lib/contents";
 import StaticImage from "components/functions/StaticImage";
-import defaultThumbnail from "public/img/default-thumbnail.webp";
+import defaultThumbnail from "public/general/thumbnail-default.webp";
 
 type Props = {
   head: MaterialContentHead;

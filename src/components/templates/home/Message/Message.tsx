@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import styles from "./Message.module.scss";
 import { PreloadStaticImage } from "components/functions/loading";
 import { assignClasses } from "lib/helper";
-import noteImage from "public/img/note_clipped.webp";
+import noteImage from "public/home/message-background.webp";
 import { About } from "lib/about";
 
 type Props = {

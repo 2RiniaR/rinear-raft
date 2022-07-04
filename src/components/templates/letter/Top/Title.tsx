@@ -4,7 +4,7 @@ import styles from "./Title.module.scss";
 import StaticImage from "components/functions/StaticImage";
 import { LetterContent } from "lib/contents";
 import { formatExceededTime } from "lib/helper";
-import lettersPic from "public/img/letters.png";
+import lettersPic from "public/general/letter-icon.png";
 
 type Props = {
   content: LetterContent;

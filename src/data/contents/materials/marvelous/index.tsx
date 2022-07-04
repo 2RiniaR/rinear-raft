@@ -7,9 +7,9 @@ import Bonuses from "./Bonuses";
 import Tools from "./Tools";
 import { ChapterPoint, ContentPageProps, MaterialContent } from "lib/contents";
 import { Chapter } from "content-parts";
-import thumbnailPic1 from "public/contents/materials/marvelous/top1.webp";
-import thumbnailPic2 from "public/contents/materials/marvelous/top2.webp";
-import thumbnailPic3 from "public/contents/materials/marvelous/top3.webp";
+import thumbnailPic1 from "public/contents/materials/marvelous/page1.webp";
+import thumbnailPic2 from "public/contents/materials/marvelous/page2.webp";
+import thumbnailPic3 from "public/contents/materials/marvelous/page3.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {

@@ -1,10 +1,10 @@
 import React, { ReactNode, useContext } from "react";
 import styles from "./Heading.module.scss";
-import MaterialPic from "public/img/materials.png";
+import MaterialPic from "public/general/material-icon.png";
 import { assignClasses } from "lib/helper";
 import { ContentContext } from "lib/contents";
 import StaticImage from "components/functions/StaticImage";
-import LetterPic from "public/img/letters.png";
+import LetterPic from "public/general/letter-icon.png";
 
 type Props = {
   children?: ReactNode;

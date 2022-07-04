@@ -3,7 +3,7 @@ import { StaticImageData } from "next/image";
 import Link from "next/link";
 import useInterval from "../../../fooks/interval";
 import styles from "./Phantom.module.scss";
-import back from "public/img/Node.webp";
+import back from "public/home/phantom.webp";
 import { PreloadStaticImage } from "components/functions/loading";
 
 type Props = {

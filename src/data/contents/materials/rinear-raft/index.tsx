@@ -3,12 +3,12 @@ import { useEffect, useRef } from "react";
 import Tools from "./Tools";
 import Story from "./Story";
 import Pages from "./Pages";
-import thumbnailPic4 from "public/contents/materials/rinear-raft/Material.webp";
-import thumbnailPic3 from "public/contents/materials/rinear-raft/MaterialIndex.webp";
+import thumbnailPic4 from "public/contents/materials/rinear-raft/material.webp";
+import thumbnailPic3 from "public/contents/materials/rinear-raft/material-index.webp";
 import { Chapter } from "content-parts";
 import { ChapterPoint, ContentPageProps, MaterialContent } from "lib/contents";
-import thumbnailPic1 from "public/contents/materials/rinear-raft/Top.webp";
-import thumbnailPic2 from "public/contents/materials/rinear-raft/Story.webp";
+import thumbnailPic1 from "public/contents/materials/rinear-raft/top.webp";
+import thumbnailPic2 from "public/contents/materials/rinear-raft/story.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {

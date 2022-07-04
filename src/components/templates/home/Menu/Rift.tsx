@@ -4,7 +4,7 @@ import useElementSize from "../../../fooks/element-size";
 import styles from "./Rift.module.scss";
 import { assignClasses } from "lib/helper";
 import { PreloadStaticImage } from "components/functions/loading";
-import back from "public/img/LogoBack.webp";
+import back from "public/home/rift.webp";
 import useContentSwitch from "components/fooks/content-switch";
 import { Pickup } from "lib/contents/pickup";
 

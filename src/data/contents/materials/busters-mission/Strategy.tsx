@@ -1,9 +1,9 @@
 import { ContentImage, Heading, ListItem, Paragraph, Space, UnorderedList } from "content-parts";
 import stage1Pic from "public/contents/materials/busters-mission/stage1.webp";
 import stage2Pic from "public/contents/materials/busters-mission/stage2.webp";
-import stage3Pic from "public/contents/materials/busters-mission/stage3.webp";
-import stage3_2Pic from "public/contents/materials/busters-mission/stage3_2.webp";
-import stage3_3Pic from "public/contents/materials/busters-mission/stage3_3.webp";
+import stage3Pic from "public/contents/materials/busters-mission/stage3-1.webp";
+import stage3_2Pic from "public/contents/materials/busters-mission/stage3-2.webp";
+import stage3_3Pic from "public/contents/materials/busters-mission/stage3-3.webp";
 import resultPic from "public/contents/materials/busters-mission/result.webp";
 
 const Section = (): JSX.Element => (

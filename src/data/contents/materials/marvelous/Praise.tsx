@@ -1,6 +1,6 @@
-import TutorialPic2 from "public/contents/materials/marvelous/Tutorial2.webp";
-import TutorialPic3 from "public/contents/materials/marvelous/Tutorial3.webp";
-import TutorialPic4 from "public/contents/materials/marvelous/Tutorial4.webp";
+import TutorialPic2 from "public/contents/materials/marvelous/tutorial2.webp";
+import TutorialPic3 from "public/contents/materials/marvelous/tutorial3.webp";
+import TutorialPic4 from "public/contents/materials/marvelous/tutorial4.webp";
 import { ContentImage, Emoji, Paragraph } from "content-parts";
 
 const Section = (): JSX.Element => (

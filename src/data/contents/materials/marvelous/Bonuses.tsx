@@ -1,7 +1,7 @@
-import TutorialPic5 from "public/contents/materials/marvelous/Tutorial5.webp";
-import TutorialPic6 from "public/contents/materials/marvelous/Tutorial6.webp";
-import TutorialPic7 from "public/contents/materials/marvelous/Tutorial7.webp";
-import TutorialPic8 from "public/contents/materials/marvelous/Tutorial8.webp";
+import TutorialPic5 from "public/contents/materials/marvelous/tutorial5.webp";
+import TutorialPic6 from "public/contents/materials/marvelous/tutorial6.webp";
+import TutorialPic7 from "public/contents/materials/marvelous/tutorial7.webp";
+import TutorialPic8 from "public/contents/materials/marvelous/tutorial8.webp";
 import { ContentImage, Paragraph } from "content-parts";
 
 const Section = (): JSX.Element => (

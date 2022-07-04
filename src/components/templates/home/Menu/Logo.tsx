@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./Logo.module.scss";
 import { assignClasses } from "lib/helper";
 import { PreloadStaticImage } from "components/functions/loading";
-import logo1 from "public/img/logo1.webp";
-import logo2 from "public/img/logo2.webp";
+import logo1 from "public/general/logo-icon.webp";
+import logo2 from "public/general/logo-letters.webp";
 
 type Props = {
   active: boolean;

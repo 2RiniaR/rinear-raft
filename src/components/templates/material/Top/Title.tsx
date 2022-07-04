@@ -1,7 +1,7 @@
 import React from "react";
 import dayjs from "dayjs";
 import styles from "./Title.module.scss";
-import materialsPic from "public/img/materials.png";
+import materialsPic from "public/general/material-icon.png";
 import StaticImage from "components/functions/StaticImage";
 import { MaterialContent } from "lib/contents";
 import { formatDisplayDate, formatExceededTime } from "lib/helper";

@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { useEffect, useRef } from "react";
 import { Chapter, Paragraph } from "content-parts";
 import { ChapterPoint, ContentPageProps, LetterContent } from "lib/contents";
-import thumbnailPic from "public/contents/materials/rinear-raft/Top.webp";
+import thumbnailPic from "public/contents/materials/rinear-raft/top.webp";
 
 const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   const refs: { [name: string]: ChapterPoint } = {

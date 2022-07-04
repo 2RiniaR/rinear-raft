@@ -1,7 +1,7 @@
 import styles from "./ScrollIndicator.module.scss";
 import { assignClasses } from "lib/helper";
 import { PreloadStaticImage } from "components/functions/loading";
-import image from "public/img/DownArrow.png";
+import image from "public/home/scroll-indicator.png";
 
 type Props = {
   enabled: boolean;

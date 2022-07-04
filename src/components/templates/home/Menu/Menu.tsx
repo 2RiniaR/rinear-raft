@@ -6,10 +6,10 @@ import Rift from "./Rift";
 import Phantom from "./Phantom";
 import ScrollIndicator from "./ScrollIndicator";
 import { Pickup } from "lib/contents/pickup";
-import materialIcon from "public/img/materials.png";
+import materialIcon from "public/general/material-icon.png";
 import { assignClasses } from "lib/helper";
 import Parallax from "components/functions/Parallax";
-import letterIcon from "public/img/letters.png";
+import letterIcon from "public/general/letter-icon.png";
 
 type Props = {
   pickups: Pickup[];

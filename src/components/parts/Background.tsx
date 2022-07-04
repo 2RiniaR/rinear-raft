@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import styles from "./Background.module.scss";
-import backgroundPic from "public/img/RineaR-back.webp";
+import backgroundPic from "public/contents/background.webp";
 import StaticImage from "components/functions/StaticImage";
 
 type Props = {

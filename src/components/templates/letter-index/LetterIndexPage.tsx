@@ -5,7 +5,7 @@ import { LetterContentHead } from "lib/contents";
 import Footer from "components/parts/Footer";
 import Background from "components/parts/Background";
 import GenreHeader from "components/parts/GenreHeader";
-import lettersPic from "public/img/letters.png";
+import lettersPic from "public/general/letter-icon.png";
 import BackButton from "components/templates/layout/BackButton";
 
 type Props = {

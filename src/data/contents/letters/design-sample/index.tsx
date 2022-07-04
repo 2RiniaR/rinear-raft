@@ -16,7 +16,7 @@ import {
   UnorderedList
 } from "content-parts";
 import { ChapterPoint, ContentPageProps, LetterContent } from "lib/contents";
-import thumbnailPic from "public/img/default-thumbnail.webp";
+import thumbnailPic from "public/general/thumbnail-default.webp";
 
 const dummyText = "これはダミーテキストです。".repeat(10);
 

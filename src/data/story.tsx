@@ -1,8 +1,8 @@
 import { Scene, Story } from "../lib/story";
-import prototypeImage from "public/img/Prototype.png";
-import prologueImage from "public/img/Prologue.png";
-import presentImage from "public/img/Present.png";
-import preludeImage from "public/img/Prelude.png";
+import prototypeImage from "public/story/prototype.png";
+import prologueImage from "public/story/prologue.png";
+import presentImage from "public/story/present.png";
+import preludeImage from "public/story/prelude.png";
 
 const prologue: Scene = {
   title: "PROLOGUE",

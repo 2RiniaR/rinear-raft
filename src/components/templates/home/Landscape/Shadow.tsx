@@ -1,9 +1,9 @@
 import styles from "./Shadow.module.scss";
 import { PreloadStaticImage } from "components/functions/loading";
-import shadowPic from "public/img/shadow.webp";
-import shadow2Pic from "public/img/shadow2.webp";
-import shadow3Pic from "public/img/shadow3.webp";
-import shadow4Pic from "public/img/shadow4.webp";
+import shadowPic from "public/home/shadow1.webp";
+import shadow2Pic from "public/home/shadow2.webp";
+import shadow3Pic from "public/home/shadow3.webp";
+import shadow4Pic from "public/home/shadow4.webp";
 import { assignClasses } from "lib/helper";
 
 const Shadow = (): JSX.Element => (
