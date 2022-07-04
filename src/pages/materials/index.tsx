@@ -1,17 +1,15 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { rinearDescription } from "../../data/description";
-import Seo from "../../components/functions/Seo";
-import MaterialIndexPage from "components/templates/material-index/MaterialIndexPage";
-import { MaterialRepository } from "data/contents/materials";
-import { getMaterialsId } from "data/contents/materials/fetch";
+import { PageSettings } from "components/functions";
+import { description, getMaterialsId, MaterialRepository } from "data";
+import { MaterialIndexPage } from "components/templates";
 
 const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const repository = new MaterialRepository(contentsId);
   return (
     <>
-      <Seo
+      <PageSettings
         pageTitle={"Materials"}
-        pageDescription={rinearDescription}
+        pageDescription={description}
         pagePath={"/materials"}
         pageImgPath={"/img/main.webp"}
         pageType="article"

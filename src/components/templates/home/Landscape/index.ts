@@ -1,1 +1,1 @@
-export { default as Landscape } from "./Landscape";
+export { Landscape } from "./Landscape";

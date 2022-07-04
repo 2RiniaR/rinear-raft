@@ -1,18 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import Footer from "../../parts/Footer";
-import { Story } from "../../../lib/story";
 import { Landscape } from "./Landscape";
 import styles from "./HomePage.module.scss";
-import Message from "./Message/Message";
+import { Message } from "./Message";
 import { LoadingEffect } from "./Loading";
-import StoryView from "./Story/StoryView";
+import { StoryView } from "./Story";
 import { Menu } from "./Menu";
-import Intro from "./Intro/Intro";
-import { LoadingWaiter } from "components/functions/loading";
+import { Intro } from "./Intro";
+import { Footer } from "components/parts";
+import { About, Pickup, Story } from "lib";
+import { LoadingWaiter } from "components/functions";
 import { assignClasses } from "lib/helper";
-import useScrollPast from "components/fooks/scroll-past";
-import { Pickup } from "lib/contents/pickup";
-import { About } from "lib/about";
+import { useScrollPast } from "fooks";
 
 type Props = {
   about: About;
@@ -20,7 +18,7 @@ type Props = {
   story: Story;
 };
 
-const HomePage = ({ about, pickups, story }: Props): JSX.Element => {
+export const HomePage = ({ about, pickups, story }: Props): JSX.Element => {
   const [loadCompleted, setLoadCompleted] = useState(false);
   const [loadProgress, setLoadProgress] = useState(0);
   const [playingIntro, setPlayingIntro] = useState(false);
@@ -49,5 +47,3 @@ const HomePage = ({ about, pickups, story }: Props): JSX.Element => {
     </LoadingWaiter>
   );
 };
-
-export default HomePage;

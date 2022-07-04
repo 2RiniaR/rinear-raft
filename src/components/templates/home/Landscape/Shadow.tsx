@@ -6,7 +6,7 @@ import shadow3Pic from "public/home/shadow3.webp";
 import shadow4Pic from "public/home/shadow4.webp";
 import { assignClasses } from "lib/helper";
 
-const Shadow = (): JSX.Element => (
+export const Shadow = (): JSX.Element => (
   <>
     <PreloadStaticImage
       className={assignClasses(styles.image, styles.frame1)}
@@ -34,5 +34,3 @@ const Shadow = (): JSX.Element => (
     />
   </>
 );
-
-export default Shadow;

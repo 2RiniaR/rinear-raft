@@ -1,21 +1,21 @@
 import React, { useRef } from "react";
-import useScrollPast from "../../../fooks/scroll-past";
 import styles from "./Menu.module.scss";
-import Logo from "./Logo";
-import Rift from "./Rift";
-import Phantom from "./Phantom";
-import ScrollIndicator from "./ScrollIndicator";
-import { Pickup } from "lib/contents/pickup";
+import { Logo } from "./Logo";
+import { Rift } from "./Rift";
+import { Phantom } from "./Phantom";
+import { ScrollIndicator } from "./ScrollIndicator";
+import { useScrollPast } from "fooks";
+import { Pickup } from "lib";
 import materialIcon from "public/general/material-icon.png";
 import { assignClasses } from "lib/helper";
-import Parallax from "components/functions/Parallax";
+import { Parallax } from "components/functions";
 import letterIcon from "public/general/letter-icon.png";
 
 type Props = {
   pickups: Pickup[];
 };
 
-const Menu = ({ pickups }: Props): JSX.Element => {
+export const Menu = ({ pickups }: Props): JSX.Element => {
   const topEndRef = useRef<HTMLDivElement>(null);
   const hidden = useScrollPast(topEndRef);
 
@@ -42,5 +42,3 @@ const Menu = ({ pickups }: Props): JSX.Element => {
     </>
   );
 };
-
-export default Menu;

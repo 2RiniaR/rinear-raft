@@ -17,5 +17,3 @@ export const ScrollIndicator = ({ enabled }: Props): JSX.Element => (
     />
   </div>
 );
-
-export default ScrollIndicator;

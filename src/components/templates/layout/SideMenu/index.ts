@@ -1,2 +1,2 @@
-export { default as SideMenu } from "./SideMenu";
-export { default as SideMenuButton } from "./SideMenuButton";
+export { SideMenu } from "./SideMenu";
+export { SideMenuButton } from "./SideMenuButton";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { StaticImageData } from "next/image";
 import styles from "./SideMenuItem.module.scss";
-import StaticImage from "components/functions/StaticImage";
+import { StaticImage } from "components/functions";
 
 export type SideMenuItemProps = {
   href: string;
@@ -10,7 +10,7 @@ export type SideMenuItemProps = {
   onClick: () => void;
 };
 
-const SideMenuItem = ({ href, markSrc, name, onClick }: SideMenuItemProps): JSX.Element => (
+export const SideMenuItem = ({ href, markSrc, name, onClick }: SideMenuItemProps): JSX.Element => (
   <Link href={href}>
     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
     <a className={styles.element} onClick={onClick} role="link" tabIndex={0}>
@@ -21,5 +21,3 @@ const SideMenuItem = ({ href, markSrc, name, onClick }: SideMenuItemProps): JSX.
     </a>
   </Link>
 );
-
-export default SideMenuItem;

@@ -1,17 +1,15 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import Seo from "../../components/functions/Seo";
-import { rinearDescription } from "../../data/description";
-import LetterIndexPage from "components/templates/letter-index/LetterIndexPage";
-import { LetterRepository } from "data/contents/letters";
-import { getLettersId } from "data/contents/letters/fetch";
+import { PageSettings } from "components/functions";
+import { LetterIndexPage } from "components/templates";
+import { description, getLettersId, LetterRepository } from "data";
 
 const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const repository = new LetterRepository(contentsId);
   return (
     <>
-      <Seo
+      <PageSettings
         pageTitle={"Letters"}
-        pageDescription={rinearDescription}
+        pageDescription={description}
         pagePath={"/letters"}
         pageImgPath={"/img/main.webp"}
         pageType="article"

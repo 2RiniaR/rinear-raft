@@ -1,19 +1,18 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
-import useElementSize from "../../../fooks/element-size";
 import styles from "./Rift.module.scss";
+import { useContentSwitch, useElementSize } from "fooks";
 import { assignClasses } from "lib/helper";
 import { PreloadStaticImage } from "components/functions/loading";
 import back from "public/home/rift.webp";
-import useContentSwitch from "components/fooks/content-switch";
-import { Pickup } from "lib/contents/pickup";
+import { Pickup } from "lib";
 
 type Props = {
   active: boolean;
   pickups: Pickup[];
 };
 
-const Rift = ({ active, pickups }: Props): JSX.Element => {
+export const Rift = ({ active, pickups }: Props): JSX.Element => {
   const [hover, setHover] = useState(false);
   const [content, contentIndex, switching] = useContentSwitch(pickups, hover, {
     switchingDuration: 500,
@@ -81,5 +80,3 @@ const Rift = ({ active, pickups }: Props): JSX.Element => {
     </div>
   );
 };
-
-export default Rift;

@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./LettersViewer.module.scss";
-import LetterHeading from "./LetterHeading";
+import { LetterHeading } from "./LetterHeading";
 import { getContentPath, LetterContentHead } from "lib/contents";
 
 type Props = {
   heads: LetterContentHead[];
 };
 
-const LettersViewer = ({ heads }: Props): JSX.Element => (
+export const LettersViewer = ({ heads }: Props): JSX.Element => (
   <main className={styles.container}>
     {heads.map((head) => (
       <Link href={getContentPath(head)} key={head.id}>
@@ -19,5 +19,3 @@ const LettersViewer = ({ heads }: Props): JSX.Element => (
     ))}
   </main>
 );
-
-export default LettersViewer;

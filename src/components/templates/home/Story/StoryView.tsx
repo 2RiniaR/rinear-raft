@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styles from "./StoryView.module.scss";
-import SceneView from "./SceneView";
-import { Story } from "lib/story";
+import { SceneView } from "./SceneView";
+import { Story } from "lib";
 
 type Props = {
   story: Story;
@@ -20,5 +20,3 @@ export const StoryView = ({ story }: Props): JSX.Element => (
     </div>
   </>
 );
-
-export default StoryView;

@@ -1,15 +1,14 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import Seo from "../../components/functions/Seo";
-import LetterPage from "components/templates/letter/LetterPage";
-import { LetterRepository } from "data/contents/letters";
-import { getLettersId } from "data/contents/letters/fetch";
+import { PageSettings } from "components/functions";
+import { LetterPage } from "components/templates";
+import { getLettersId, LetterRepository } from "data";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const repository = new LetterRepository([id]);
   const content = repository.getContent(id);
   return (
     <>
-      <Seo
+      <PageSettings
         pageTitle={content.title}
         pageDescription={content.description}
         pagePath={`/letters/${id}`}

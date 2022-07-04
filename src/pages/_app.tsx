@@ -1,7 +1,7 @@
 import React from "react";
 import { AppProps } from "next/app";
 import "styles/default.scss";
-import Layout from "components/templates/layout/Layout";
+import { Layout } from "components/templates";
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   <Layout>

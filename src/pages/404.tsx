@@ -1,10 +1,10 @@
-import Seo from "../components/functions/Seo";
-import { rinearDescription } from "../data/description";
-import NotFoundPage from "components/templates/not-found/NotFoundPage";
+import { PageSettings } from "components/functions";
+import { description } from "data";
+import { NotFoundPage } from "components/templates";
 
 const Page = (): JSX.Element => (
   <>
-    <Seo pageTitle={"Not Found"} pageDescription={rinearDescription} pagePath={"/"} pageImgPath={"/img/main.webp"} />
+    <PageSettings pageTitle={"Not Found"} pageDescription={description} pagePath={"/"} pageImgPath={"/img/main.webp"} />
     <NotFoundPage />
   </>
 );

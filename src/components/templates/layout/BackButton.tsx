@@ -1,13 +1,13 @@
 import Link from "next/link";
 import styles from "./BackButton.module.scss";
-import StaticImage from "components/functions/StaticImage";
+import { StaticImage } from "components/functions";
 import leftArrowPic from "public/general/back-icon.png";
 
 type Props = {
   href: string;
 };
 
-const BackButton = ({ href }: Props): JSX.Element => (
+export const BackButton = ({ href }: Props): JSX.Element => (
   <div className={styles.screen}>
     <Link href={href} scroll={false}>
       <a className={styles.link}>
@@ -16,5 +16,3 @@ const BackButton = ({ href }: Props): JSX.Element => (
     </Link>
   </div>
 );
-
-export default BackButton;

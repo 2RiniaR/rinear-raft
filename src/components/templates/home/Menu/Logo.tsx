@@ -9,11 +9,9 @@ type Props = {
   active: boolean;
 };
 
-const Logo = ({ active }: Props): JSX.Element => (
+export const Logo = ({ active }: Props): JSX.Element => (
   <div className={assignClasses(styles.container, !active ? styles.hidden : "")}>
     <PreloadStaticImage className={styles.logo1} src={logo1} alt="" layout="responsive" />
     <PreloadStaticImage className={styles.logo2} src={logo2} alt="" layout="responsive" />
   </div>
 );
-
-export default Logo;

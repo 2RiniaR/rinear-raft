@@ -1,1 +1,1 @@
-export { default as LoadingEffect } from "./LoadingEffect";
+export { LoadingEffect } from "./LoadingEffect";

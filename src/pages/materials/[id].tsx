@@ -1,15 +1,14 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import Seo from "../../components/functions/Seo";
-import MaterialPage from "components/templates/material/MaterialPage";
-import { MaterialRepository } from "data/contents/materials";
-import { getMaterialsId } from "data/contents/materials/fetch";
+import { PageSettings } from "components/functions";
+import { getMaterialsId, MaterialRepository } from "data";
+import { MaterialPage } from "components/templates";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const repository = new MaterialRepository([id]);
   const content = repository.getContent(id);
   return (
     <>
-      <Seo
+      <PageSettings
         pageTitle={content.title}
         pageDescription={content.description}
         pagePath={`/materials/${id}`}

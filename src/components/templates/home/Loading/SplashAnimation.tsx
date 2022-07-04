@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SplashAnimation.module.scss";
 
-const SplashAnimation = (): JSX.Element => (
+export const SplashAnimation = (): JSX.Element => (
   <div className={styles.aspectKeeper}>
     <div className={styles.animation}>
       <div className={styles.fall} />
@@ -11,5 +11,3 @@ const SplashAnimation = (): JSX.Element => (
     </div>
   </div>
 );
-
-export default SplashAnimation;

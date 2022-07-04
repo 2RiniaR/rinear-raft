@@ -8,7 +8,7 @@ type Props = {
   heads: MaterialContentHead[];
 };
 
-const MaterialsViewer = ({ heads }: Props): JSX.Element => (
+export const MaterialsViewer = ({ heads }: Props): JSX.Element => (
   <main className={styles.container}>
     {heads.map((head) => (
       <Link href={getContentPath(head)} key={head.id}>
@@ -19,5 +19,3 @@ const MaterialsViewer = ({ heads }: Props): JSX.Element => (
     ))}
   </main>
 );
-
-export default MaterialsViewer;

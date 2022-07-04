@@ -1,15 +1,15 @@
 import styles from "./MaterialHeading.module.scss";
-import Title from "./Title";
-import SubThumbnails from "./SubThumbnails";
+import { Title } from "./Title";
+import { SubThumbnails } from "./SubThumbnails";
 import { MaterialContentHead } from "lib/contents";
-import StaticImage from "components/functions/StaticImage";
+import { StaticImage } from "components/functions";
 import defaultThumbnail from "public/general/thumbnail-default.webp";
 
 type Props = {
   head: MaterialContentHead;
 };
 
-const MaterialHeading = ({ head }: Props): JSX.Element => (
+export const MaterialHeading = ({ head }: Props): JSX.Element => (
   <article className={styles.container}>
     <StaticImage
       src={head.thumbnails[0] ?? defaultThumbnail}
@@ -25,5 +25,3 @@ const MaterialHeading = ({ head }: Props): JSX.Element => (
     </div>
   </article>
 );
-
-export default MaterialHeading;

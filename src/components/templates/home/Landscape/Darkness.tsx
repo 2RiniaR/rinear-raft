@@ -6,7 +6,7 @@ type Props = {
   enabled: boolean;
 };
 
-const Darkness = ({ enabled }: Props): JSX.Element => {
+export const Darkness = ({ enabled }: Props): JSX.Element => {
   const [display, setDisplay] = useState(false);
 
   const onCloseTransitionEnd: TransitionEventHandler<HTMLDivElement> = () => {
@@ -27,5 +27,3 @@ const Darkness = ({ enabled }: Props): JSX.Element => {
     />
   );
 };
-
-export default Darkness;

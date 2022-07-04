@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import StaticImage from "components/functions/StaticImage";
-import ExternalLink from "components/functions/ExternalLink";
+import { ExternalLink, StaticImage } from "components/functions";
 import letterPic from "public/general/logo-letters.webp";
 import logoPic from "public/general/logo-icon.webp";
 import packageSettings from "public/../package.json";
 
-const Footer = (): JSX.Element => (
+export const Footer = (): JSX.Element => (
   <footer className={styles.container}>
     <StaticImage className={styles.back} src={logoPic} alt="Logo" layout="responsive" />
     <div className={styles.logo}>
@@ -27,5 +26,3 @@ const Footer = (): JSX.Element => (
     <div className={styles.version}>version {packageSettings.version}</div>
   </footer>
 );
-
-export default Footer;

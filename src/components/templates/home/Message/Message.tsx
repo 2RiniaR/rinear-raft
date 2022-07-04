@@ -4,13 +4,13 @@ import styles from "./Message.module.scss";
 import { PreloadStaticImage } from "components/functions/loading";
 import { assignClasses } from "lib/helper";
 import noteImage from "public/home/message-background.webp";
-import { About } from "lib/about";
+import { About } from "lib";
 
 type Props = {
   about: About;
 };
 
-const Message = ({ about }: Props): JSX.Element => {
+export const Message = ({ about }: Props): JSX.Element => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
   return (
@@ -32,5 +32,3 @@ const Message = ({ about }: Props): JSX.Element => {
     </div>
   );
 };
-
-export default Message;

@@ -1,7 +1,7 @@
 import React from "react";
 import dayjs from "dayjs";
 import styles from "./Title.module.scss";
-import StaticImage from "components/functions/StaticImage";
+import { StaticImage } from "components/functions";
 import { LetterContent } from "lib/contents";
 import { formatExceededTime } from "lib/helper";
 import lettersPic from "public/general/letter-icon.png";
@@ -10,7 +10,7 @@ type Props = {
   content: LetterContent;
 };
 
-const Title = ({ content }: Props): JSX.Element => (
+export const Title = ({ content }: Props): JSX.Element => (
   <header className={styles.layout}>
     <StaticImage className={styles.logo} src={lettersPic} alt="トーク" />
     <div className={styles.display}>
@@ -23,5 +23,3 @@ const Title = ({ content }: Props): JSX.Element => (
     </div>
   </header>
 );
-
-export default Title;

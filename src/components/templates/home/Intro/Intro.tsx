@@ -47,5 +47,3 @@ export const Intro = ({ playing, setPlaying }: Props): JSX.Element => {
     </div>
   );
 };
-
-export default Intro;

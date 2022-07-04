@@ -8,7 +8,7 @@ type Props = {
   children?: ReactNode;
 };
 
-const SideMenuOpener = ({ open, setOpen, children }: Props): JSX.Element => {
+export const SideMenuOpener = ({ open, setOpen, children }: Props): JSX.Element => {
   const [display, setDisplay] = useState(false);
 
   const onCloseTransitionEnd: TransitionEventHandler<HTMLDivElement> = () => {
@@ -32,5 +32,3 @@ const SideMenuOpener = ({ open, setOpen, children }: Props): JSX.Element => {
     </div>
   );
 };
-
-export default SideMenuOpener;

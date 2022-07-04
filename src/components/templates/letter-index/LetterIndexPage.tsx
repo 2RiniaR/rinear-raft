@@ -1,18 +1,16 @@
 import React from "react";
 import styles from "./LetterIndexPage.module.scss";
-import LettersViewer from "./LettersViewer";
+import { LettersViewer } from "./LettersViewer";
 import { LetterContentHead } from "lib/contents";
-import Footer from "components/parts/Footer";
-import Background from "components/parts/Background";
-import GenreHeader from "components/parts/GenreHeader";
+import { Background, Footer, GenreHeader } from "components/parts";
 import lettersPic from "public/general/letter-icon.png";
-import BackButton from "components/templates/layout/BackButton";
+import { BackButton } from "components/templates";
 
 type Props = {
   heads: LetterContentHead[];
 };
 
-const LetterIndexPage = ({ heads }: Props): JSX.Element => (
+export const LetterIndexPage = ({ heads }: Props): JSX.Element => (
   <Background>
     <div className={styles.page}>
       <BackButton href={"/"} />
@@ -22,5 +20,3 @@ const LetterIndexPage = ({ heads }: Props): JSX.Element => (
     </div>
   </Background>
 );
-
-export default LetterIndexPage;

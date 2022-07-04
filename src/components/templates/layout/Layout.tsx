@@ -1,12 +1,12 @@
 import React, { useCallback, useRef, useState } from "react";
 import { SideMenu, SideMenuButton } from "./SideMenu";
-import TopButton from "components/templates/layout/TopButton";
+import { TopButton } from "./TopButton";
 
 type Props = {
   children: React.ReactNode;
 };
 
-const Layout = ({ children }: Props): JSX.Element => {
+export const Layout = ({ children }: Props): JSX.Element => {
   const [sideMenuOpened, setSideMenuOpened] = useState(false);
   const topRef = useRef<HTMLDivElement>(null);
 
@@ -26,5 +26,3 @@ const Layout = ({ children }: Props): JSX.Element => {
     </>
   );
 };
-
-export default Layout;

@@ -1,1 +1,1 @@
-export { default as MaterialHeading } from "./MaterialHeading";
+export { MaterialHeading } from "./MaterialHeading";

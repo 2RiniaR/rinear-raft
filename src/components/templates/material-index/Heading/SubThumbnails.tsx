@@ -1,13 +1,13 @@
 import styles from "./SubThumbnails.module.scss";
 import { MaterialContentHead } from "lib/contents";
-import StaticImage from "components/functions/StaticImage";
+import { StaticImage } from "components/functions";
 import defaultThumbnail from "public/general/thumbnail-default.webp";
 
 type Props = {
   head: MaterialContentHead;
 };
 
-const SubThumbnails = ({ head }: Props): JSX.Element => (
+export const SubThumbnails = ({ head }: Props): JSX.Element => (
   <div className={styles.layout}>
     {[head.thumbnails[1], head.thumbnails[2], head.thumbnails[3]].map((thumbnail, index) => (
       <StaticImage
@@ -20,5 +20,3 @@ const SubThumbnails = ({ head }: Props): JSX.Element => (
     ))}
   </div>
 );
-
-export default SubThumbnails;

@@ -7,7 +7,7 @@ type Props = {
   head: MaterialContentHead;
 };
 
-const Title = ({ head }: Props): JSX.Element => (
+export const Title = ({ head }: Props): JSX.Element => (
   <div className={styles.layout}>
     <h2 className={styles.title}>{head.title}</h2>
     <p className={styles.description}>{head.description}</p>
@@ -19,5 +19,3 @@ const Title = ({ head }: Props): JSX.Element => (
     </p>
   </div>
 );
-
-export default Title;

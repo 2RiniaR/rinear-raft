@@ -7,7 +7,7 @@ type Props = {
   onProgressUpdated?: (percent: number) => void;
 };
 
-const LoadingWaiter = ({
+export const LoadingWaiter = ({
   children,
   onCompleted,
   onProgressUpdated = () => {
@@ -44,5 +44,3 @@ const LoadingWaiter = ({
 
   return <LoadingContext.Provider value={{ register }}>{children}</LoadingContext.Provider>;
 };
-
-export default LoadingWaiter;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StaticImageData } from "next/image";
 import Link from "next/link";
-import useInterval from "../../../fooks/interval";
 import styles from "./Phantom.module.scss";
+import { useInterval } from "fooks/interval";
 import back from "public/home/phantom.webp";
 import { PreloadStaticImage } from "components/functions/loading";
 
@@ -18,7 +18,7 @@ type Position = {
   y: number;
 };
 
-const Phantom = ({ title, subtitle, icon, href }: Props): JSX.Element => {
+export const Phantom = ({ title, subtitle, icon, href }: Props): JSX.Element => {
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
 
   useInterval(() => {
@@ -42,5 +42,3 @@ const Phantom = ({ title, subtitle, icon, href }: Props): JSX.Element => {
     </Link>
   );
 };
-
-export default Phantom;

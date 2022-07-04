@@ -2,7 +2,7 @@ import React from "react";
 import dayjs from "dayjs";
 import styles from "./Title.module.scss";
 import materialsPic from "public/general/material-icon.png";
-import StaticImage from "components/functions/StaticImage";
+import { StaticImage } from "components/functions";
 import { MaterialContent } from "lib/contents";
 import { formatDisplayDate, formatExceededTime } from "lib/helper";
 
@@ -10,7 +10,7 @@ type Props = {
   content: MaterialContent;
 };
 
-const Title = ({ content }: Props): JSX.Element => (
+export const Title = ({ content }: Props): JSX.Element => (
   <header className={styles.layout}>
     <StaticImage className={styles.logo} src={materialsPic} alt="プロジェクト" />
     <div className={styles.display}>
@@ -23,5 +23,3 @@ const Title = ({ content }: Props): JSX.Element => (
     </div>
   </header>
 );
-
-export default Title;

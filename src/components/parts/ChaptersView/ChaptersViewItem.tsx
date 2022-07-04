@@ -6,7 +6,7 @@ type Props = {
   chapter: ChapterPoint;
 };
 
-const ChaptersViewItem = ({ chapter }: Props): JSX.Element => {
+export const ChaptersViewItem = ({ chapter }: Props): JSX.Element => {
   function scroll() {
     chapter.ref?.current?.scrollIntoView({
       behavior: "smooth",
@@ -21,5 +21,3 @@ const ChaptersViewItem = ({ chapter }: Props): JSX.Element => {
     </a>
   );
 };
-
-export default ChaptersViewItem;

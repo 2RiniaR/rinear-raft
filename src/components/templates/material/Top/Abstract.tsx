@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./Abstract.module.scss";
 import { MaterialContent } from "lib/contents";
-import StaticImage from "components/functions/StaticImage";
+import { StaticImage } from "components/functions";
 import defaultThumbnail from "public/general/thumbnail-default.webp";
 
 type Props = {
   content: MaterialContent;
 };
 
-const Abstract = ({ content }: Props): JSX.Element => (
+export const Abstract = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
     <p className={styles.description}>{content.description}</p>
     <div className={styles.thumbnails}>
@@ -23,5 +23,3 @@ const Abstract = ({ content }: Props): JSX.Element => (
     </div>
   </div>
 );
-
-export default Abstract;

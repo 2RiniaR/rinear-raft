@@ -5,7 +5,7 @@ import { PreloadStaticImage } from "components/functions/loading";
 import holeEffectPic from "public/home/hole-effect.webp";
 import windEffectPic from "public/home/wind.png";
 
-const Background = (): JSX.Element => (
+export const Background = (): JSX.Element => (
   <div className={styles.container}>
     <PreloadStaticImage
       className={assignClasses(styles.picture)}
@@ -36,5 +36,3 @@ const Background = (): JSX.Element => (
     <div className={styles.smogEffect} />
   </div>
 );
-
-export default Background;

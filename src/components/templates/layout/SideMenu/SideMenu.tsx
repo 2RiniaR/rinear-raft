@@ -1,8 +1,8 @@
 import styles from "./SideMenu.module.scss";
-import SideMenuItem, { SideMenuItemProps } from "./SideMenuItem";
-import SideMenuOpener from "./SideMenuOpener";
+import { SideMenuItem, SideMenuItemProps } from "./SideMenuItem";
+import { SideMenuOpener } from "./SideMenuOpener";
+import { StaticImage } from "components/functions";
 import materialsPic from "public/general/material-icon.png";
-import StaticImage from "components/functions/StaticImage";
 import leftArrowPic from "public/general/back-icon.png";
 import logoPic from "public/general/logo-icon.webp";
 import lettersPic from "public/general/letter-icon.png";
@@ -18,7 +18,7 @@ const items: Omit<SideMenuItemProps, "onClick">[] = [
   { href: "/materials", markSrc: materialsPic, name: "MATERIALS" }
 ];
 
-const SideMenu = ({ open, setOpen }: Props): JSX.Element => (
+export const SideMenu = ({ open, setOpen }: Props): JSX.Element => (
   <div className={styles.screen}>
     <SideMenuOpener open={open} setOpen={setOpen}>
       <button className={styles.backButton} onClick={() => setOpen(false)} name="戻る" aria-label="戻る">
@@ -32,5 +32,3 @@ const SideMenu = ({ open, setOpen }: Props): JSX.Element => (
     </SideMenuOpener>
   </div>
 );
-
-export default SideMenu;

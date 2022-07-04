@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import styles from "./MaterialPage.module.scss";
 import { MaterialTop } from "./Top";
-import BackButton from "components/templates/layout/BackButton";
+import { BackButton, ContentPage } from "components/templates";
+import { ChaptersView } from "components/parts";
 import { ChapterPoint, MaterialContent } from "lib/contents";
-import ContentPage from "components/templates/ContentPage";
-import ChaptersView from "components/parts/ChaptersView/ChaptersView";
 
 type Props = {
   content: MaterialContent;
 };
 
-const MaterialPage = ({ content }: Props): JSX.Element => {
+export const MaterialPage = ({ content }: Props): JSX.Element => {
   const [chapters, setChapters] = useState<ChapterPoint[]>([]);
 
   return (
@@ -24,5 +23,3 @@ const MaterialPage = ({ content }: Props): JSX.Element => {
     </ContentPage>
   );
 };
-
-export default MaterialPage;

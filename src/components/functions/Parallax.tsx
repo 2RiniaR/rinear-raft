@@ -1,8 +1,6 @@
 import React, { ReactNode, useCallback, useRef } from "react";
 import styles from "./Parallax.module.scss";
-import useScrollValue from "components/fooks/scroll-value";
-import useElementSize from "components/fooks/element-size";
-import useElementPosition from "components/fooks/element-position";
+import { useElementPosition, useElementSize, useScrollValue } from "fooks";
 
 type Props = {
   children: ReactNode;
@@ -10,7 +8,7 @@ type Props = {
   endInnerOrigin: number;
 };
 
-const Parallax = ({ startInnerOrigin, endInnerOrigin, children }: Props): JSX.Element => {
+export const Parallax = ({ startInnerOrigin, endInnerOrigin, children }: Props): JSX.Element => {
   const scroll = useScrollValue();
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, containerHeight] = useElementSize(containerRef, 1, 1);
@@ -32,5 +30,3 @@ const Parallax = ({ startInnerOrigin, endInnerOrigin, children }: Props): JSX.El
     </div>
   );
 };
-
-export default Parallax;
