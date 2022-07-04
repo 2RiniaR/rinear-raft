@@ -2,23 +2,23 @@
  * Copyright (c) 2022 RineaR. All rights reserved.
  */
 
-import React, { useContext, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { PickupsContext } from "../HomePage";
 import useElementSize from "../../../fooks/element-size";
 import styles from "./Rift.module.scss";
 import { assignClasses } from "lib/helper";
 import { PreloadStaticImage } from "components/functions/loading";
 import back from "public/img/LogoBack.webp";
 import useContentSwitch from "components/fooks/content-switch";
+import { Pickup } from "lib/contents/pickup";
 
 type Props = {
   active: boolean;
+  pickups: Pickup[];
 };
 
-const Rift = ({ active }: Props): JSX.Element => {
+const Rift = ({ active, pickups }: Props): JSX.Element => {
   const [hover, setHover] = useState(false);
-  const pickups = useContext(PickupsContext);
   const [content, contentIndex, switching] = useContentSwitch(pickups, hover, {
     switchingDuration: 500,
     displayDuration: 5000

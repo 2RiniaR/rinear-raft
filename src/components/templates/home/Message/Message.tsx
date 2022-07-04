@@ -4,7 +4,7 @@
 
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import styles from "./AboutView.module.scss";
+import styles from "./Message.module.scss";
 import { PreloadStaticImage } from "components/functions/loading";
 import { assignClasses } from "lib/helper";
 import noteImage from "public/img/note_clipped.webp";
@@ -14,7 +14,7 @@ type Props = {
   about: About;
 };
 
-const AboutView = ({ about }: Props): JSX.Element => {
+const Message = ({ about }: Props): JSX.Element => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
   return (
@@ -37,4 +37,4 @@ const AboutView = ({ about }: Props): JSX.Element => {
   );
 };
 
-export default AboutView;
+export default Message;
