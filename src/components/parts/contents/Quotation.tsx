@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { ReactNode } from "react";
 import styles from "./Quotation.module.scss";
 import { assignClasses } from "lib/helper";

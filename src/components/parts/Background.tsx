@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { ReactNode } from "react";
 import styles from "./Background.module.scss";
 import backgroundPic from "public/img/RineaR-back.webp";

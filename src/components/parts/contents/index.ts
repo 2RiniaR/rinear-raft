@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 export { default as Chapter } from "./Chapter";
 export { default as ComingSoon } from "./ComingSoon";
 export { default as ContentImage } from "./ContentImage";

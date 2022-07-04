@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { useState } from "react";
 import styles from "./LetterPage.module.scss";
 import { LetterTop } from "./Top";

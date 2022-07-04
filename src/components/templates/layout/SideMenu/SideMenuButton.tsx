@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import styles from "./SideMenuButton.module.scss";
 import StaticImage from "components/functions/StaticImage";
 import menuButtonPic from "public/img/MenuButton.png";

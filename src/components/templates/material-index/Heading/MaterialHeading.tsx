@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import styles from "./MaterialHeading.module.scss";
 import Title from "./Title";
 import SubThumbnails from "./SubThumbnails";

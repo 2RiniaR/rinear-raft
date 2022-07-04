@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import { useState } from "react";
 import useInterval from "./interval";
 

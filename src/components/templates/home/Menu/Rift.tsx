@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import useElementSize from "../../../fooks/element-size";

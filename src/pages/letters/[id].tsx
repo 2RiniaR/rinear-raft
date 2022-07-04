@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Seo from "../../components/functions/Seo";
 import LetterPage from "components/templates/letter/LetterPage";

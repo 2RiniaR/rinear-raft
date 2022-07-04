@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import fs from "fs";
 import { dirPath } from ".";
 import { MaterialContent } from "lib/contents";

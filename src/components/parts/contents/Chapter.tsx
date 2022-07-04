@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { RefObject } from "react";
 import Heading from "./Heading";
 import styles from "./Chapter.module.scss";

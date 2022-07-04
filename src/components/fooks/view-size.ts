@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import { useEffect, useState } from "react";
 
 export default function useViewSize(): [number, number] {

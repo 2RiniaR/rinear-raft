@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import styles from "./Message.module.scss";

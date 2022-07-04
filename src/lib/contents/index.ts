@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import dayjs from "dayjs";
 import { createContext, RefObject } from "react";
 import { StaticImageData } from "next/image";

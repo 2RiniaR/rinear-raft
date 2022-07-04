@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import Link from "next/link";
 import styles from "./BackButton.module.scss";
 import StaticImage from "components/functions/StaticImage";

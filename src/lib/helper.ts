@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import dayjs, { OpUnitType, QUnitType } from "dayjs";
 
 export function formatExceededTime(from: dayjs.Dayjs, to: dayjs.Dayjs): string {

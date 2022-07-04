@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 const mediaQueryBreakPoint: { [device: string]: number } = {
   phone: 599,
   tablet: 600,

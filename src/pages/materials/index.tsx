@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { rinearDescription } from "../../data/description";
 import Seo from "../../components/functions/Seo";

@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import dayjs from "dayjs";
 import styles from "./Title.module.scss";
 import { MaterialContentHead } from "lib/contents";

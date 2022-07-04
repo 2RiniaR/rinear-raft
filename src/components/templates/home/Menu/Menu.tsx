@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { useRef } from "react";
 import useScrollPast from "../../../fooks/scroll-past";
 import styles from "./Menu.module.scss";

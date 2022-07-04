@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import { ReactNode, useEffect, useState } from "react";
 import { LoadingContext } from ".";
 

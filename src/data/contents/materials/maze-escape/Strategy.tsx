@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import { ContentImage, Heading, Paragraph, Space } from "content-parts";
 import stage1Pic from "public/contents/materials/maze-escape/stage1.webp";
 import stage2Pic from "public/contents/materials/maze-escape/stage2.webp";

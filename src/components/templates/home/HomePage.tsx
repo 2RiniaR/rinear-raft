@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { useEffect, useRef, useState } from "react";
 import Footer from "../../parts/Footer";
 import { Story } from "../../../lib/story";

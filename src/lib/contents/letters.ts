@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import { Content, ContentGenre, ContentHead } from ".";
 
 export type GenreType = "letters";

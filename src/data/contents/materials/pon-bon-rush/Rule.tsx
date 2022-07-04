@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import BeansPic from "public/contents/materials/popcorn-chef/beans.webp";
 import Bomb1Pic from "public/contents/materials/popcorn-chef/game3.webp";
 import Bomb2Pic from "public/contents/materials/popcorn-chef/game4.webp";

@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import { StaticImageData } from "next/image";
 import StaticImage from "../../functions/StaticImage";

@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import Link from "next/link";
 import styles from "./LettersViewer.module.scss";

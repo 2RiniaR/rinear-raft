@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import ExternalLink from "components/functions/ExternalLink";
 import { Paragraph } from "content-parts";
 

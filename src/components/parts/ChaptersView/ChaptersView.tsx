@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import styles from "./ChaptersView.module.scss";
 import ChaptersViewItem from "./ChaptersViewItem";

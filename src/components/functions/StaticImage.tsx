@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import Image, { ImageProps, StaticImageData } from "next/image";
 import { CSSProperties, useMemo, useRef } from "react";
 import useElementSize from "components/fooks/element-size";

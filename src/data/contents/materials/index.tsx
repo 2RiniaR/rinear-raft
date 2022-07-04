@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import styles from "../contents.module.scss";
 import { ContentContext, ContentPage, ContentPageProps, MaterialContent } from "lib/contents";
 

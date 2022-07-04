@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { ReactNode, useContext } from "react";
 import styles from "./Heading.module.scss";
 import MaterialPic from "public/img/materials.png";

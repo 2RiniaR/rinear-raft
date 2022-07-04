@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { useCallback, useRef, useState } from "react";
 import { SideMenu, SideMenuButton } from "./SideMenu";
 import TopButton from "components/templates/layout/TopButton";

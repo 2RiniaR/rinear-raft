@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import { ContentImage, Heading, ListItem, Paragraph, Space, UnorderedList } from "content-parts";
 import stage1Pic from "public/contents/materials/busters-mission/stage1.webp";
 import stage2Pic from "public/contents/materials/busters-mission/stage2.webp";

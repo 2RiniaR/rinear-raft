@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import styles from "./Shadow.module.scss";
 import { PreloadStaticImage } from "components/functions/loading";
 import shadowPic from "public/img/shadow.webp";

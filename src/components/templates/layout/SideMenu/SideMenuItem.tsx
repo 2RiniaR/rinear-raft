@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import Link from "next/link";
 import { StaticImageData } from "next/image";
 import styles from "./SideMenuItem.module.scss";
