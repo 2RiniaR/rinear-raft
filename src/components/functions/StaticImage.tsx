@@ -1,6 +1,6 @@
 import Image, { ImageProps, StaticImageData } from "next/image";
 import { CSSProperties, useMemo, useRef } from "react";
-import { useElementSize } from "fooks";
+import { useElementSize } from "hooks";
 
 export type StaticImageProps = {
   src: StaticImageData;

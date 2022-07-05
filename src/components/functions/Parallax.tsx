@@ -1,6 +1,6 @@
 import React, { ReactNode, useCallback, useRef } from "react";
 import styles from "./Parallax.module.scss";
-import { useElementPosition, useElementSize, useScrollValue } from "fooks";
+import { useElementPosition, useElementSize, useScrollValue } from "hooks";
 
 type Props = {
   children: ReactNode;

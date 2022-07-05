@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StaticImageData } from "next/image";
 import Link from "next/link";
 import styles from "./Phantom.module.scss";
-import { useInterval } from "fooks/interval";
+import { useInterval } from "hooks/interval";
 import { PreloadStaticImage } from "components/functions/loading";
 import backgroundPic from "public/home/phantom.webp";
 

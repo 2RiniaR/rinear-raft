@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Rift.module.scss";
 import { assignClasses } from "utils/dom";
-import { useContentSwitch, useElementSize } from "fooks";
+import { useContentSwitch, useElementSize } from "hooks";
 import { PreloadStaticImage } from "components/functions/loading";
 import backgroundPic from "public/home/rift.webp";
 import { Pickup } from "models/home";

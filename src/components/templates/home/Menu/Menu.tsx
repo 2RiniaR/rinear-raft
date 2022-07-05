@@ -5,7 +5,7 @@ import { Rift } from "./Rift";
 import { Phantom } from "./Phantom";
 import { ScrollIndicator } from "./ScrollIndicator";
 import { assignClasses } from "utils/dom";
-import { useScrollPast } from "fooks";
+import { useScrollPast } from "hooks";
 import { Pickup } from "models/home";
 import { Parallax } from "components/functions";
 import materialIconPic from "public/general/material-icon.png";
