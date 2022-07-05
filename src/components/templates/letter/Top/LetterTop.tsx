@@ -5,12 +5,12 @@ import { Abstract } from "./Abstract";
 import { Letter } from "models/content";
 
 type Props = {
-  content: Letter;
+  letter: Letter;
 };
 
-export const LetterTop = ({ content }: Props): JSX.Element => (
+export const LetterTop = ({ letter }: Props): JSX.Element => (
   <div className={styles.layout}>
-    <Title content={content} />
-    <Abstract content={content} />
+    <Title letter={letter} />
+    <Abstract letter={letter} />
   </div>
 );

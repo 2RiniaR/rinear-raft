@@ -4,7 +4,7 @@ import { fetchAllMaterialsId, fetchMaterial, fetchSite } from "repositories";
 import { MaterialIndexPage } from "components/templates";
 
 const Page = ({ site, materialsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const contents = materialsId.map((id) => fetchMaterial(id));
+  const materials = materialsId.map((id) => fetchMaterial(id));
   return (
     <>
       <PageSettings
@@ -14,7 +14,7 @@ const Page = ({ site, materialsId }: InferGetStaticPropsType<typeof getStaticPro
         pageImgPath={"/img/main.webp"}
         pageType="article"
       />
-      <MaterialIndexPage heads={contents} />
+      <MaterialIndexPage materials={materials} />
     </>
   );
 };

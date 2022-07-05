@@ -8,21 +8,21 @@ import { BackButton } from "components/templates/layout";
 import { ContentContext } from "constants/content";
 
 type Props = {
-  content: Letter;
+  letter: Letter;
 };
 
-export const LetterPage = ({ content }: Props): JSX.Element => {
+export const LetterPage = ({ letter }: Props): JSX.Element => {
   const [chapters, setChapters] = useState<Chapter[]>([]);
 
   return (
     <ContentPage>
       <BackButton href={"/letters"} />
       <div className={styles.layout}>
-        <LetterTop content={content} />
+        <LetterTop letter={letter} />
         <ChaptersView chapters={chapters} />
         <main className={styles.content}>
           <ContentContext.Provider value={{ genre: "material" }}>
-            <content.Page setChapters={setChapters} />
+            <letter.Page setChapters={setChapters} />
           </ContentContext.Provider>
         </main>
       </div>

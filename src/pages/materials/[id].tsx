@@ -4,17 +4,17 @@ import { fetchAllMaterialsId, fetchMaterial, fetchSite } from "repositories";
 import { MaterialPage } from "components/templates";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const content = fetchMaterial(id);
+  const material = fetchMaterial(id);
   return (
     <>
       <PageSettings
-        pageTitle={content.title}
-        pageDescription={content.description}
+        pageTitle={material.title}
+        pageDescription={material.description}
         pagePath={`/materials/${id}`}
-        pageImgPath={content.thumbnail.src}
+        pageImgPath={material.thumbnail.src}
         pageType="article"
       />
-      <MaterialPage content={content} />
+      <MaterialPage material={material} />
     </>
   );
 };

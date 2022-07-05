@@ -4,17 +4,17 @@ import { fetchAllLettersId, fetchLetter, fetchSite } from "repositories";
 import { LetterPage } from "components/templates";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const content = fetchLetter(id);
+  const letter = fetchLetter(id);
   return (
     <>
       <PageSettings
-        pageTitle={content.title}
-        pageDescription={content.description}
+        pageTitle={letter.title}
+        pageDescription={letter.description}
         pagePath={`/letters/${id}`}
-        pageImgPath={content.thumbnail.src}
+        pageImgPath={letter.thumbnail.src}
         pageType="article"
       />
-      <LetterPage content={content} />
+      <LetterPage letter={letter} />
     </>
   );
 };

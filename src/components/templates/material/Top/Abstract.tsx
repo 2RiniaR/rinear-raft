@@ -5,14 +5,14 @@ import { StaticImage } from "components/functions";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
-  content: Material;
+  material: Material;
 };
 
-export const Abstract = ({ content }: Props): JSX.Element => (
+export const Abstract = ({ material }: Props): JSX.Element => (
   <div className={styles.layout}>
-    <p className={styles.description}>{content.description}</p>
+    <p className={styles.description}>{material.description}</p>
     <div className={styles.thumbnails}>
-      {content.thumbnails.map((thumbnail, index) => (
+      {material.thumbnails.map((thumbnail, index) => (
         <StaticImage
           src={thumbnail ?? defaultThumbnailPic}
           alt="サブサムネイル"

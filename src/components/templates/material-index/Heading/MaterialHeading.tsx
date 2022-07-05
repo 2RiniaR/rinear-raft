@@ -6,22 +6,22 @@ import { StaticImage } from "components/functions";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
-  head: WithoutPage<Material>;
+  material: WithoutPage<Material>;
 };
 
-export const MaterialHeading = ({ head }: Props): JSX.Element => (
+export const MaterialHeading = ({ material }: Props): JSX.Element => (
   <article className={styles.container}>
     <StaticImage
-      src={head.thumbnails[0] ?? defaultThumbnailPic}
-      alt={head.title}
+      src={material.thumbnails[0] ?? defaultThumbnailPic}
+      alt={material.title}
       className={styles.mainThumbnail}
       layout="responsive"
     />
     <div className={styles.subThumbnails}>
-      <SubThumbnails head={head} />
+      <SubThumbnails material={material} />
     </div>
     <div className={styles.title}>
-      <Title head={head} />
+      <Title material={material} />
     </div>
   </article>
 );

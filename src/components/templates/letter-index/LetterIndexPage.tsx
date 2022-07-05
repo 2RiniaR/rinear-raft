@@ -5,17 +5,18 @@ import { Letter, WithoutPage } from "models/content";
 import { Background, Footer, GenreHeader } from "components/parts";
 import letterIconPic from "public/general/letter-icon.png";
 import { BackButton } from "components/templates";
+import { sortWithDatetime } from "utils/datetime";
 
 type Props = {
-  heads: WithoutPage<Letter>[];
+  letters: WithoutPage<Letter>[];
 };
 
-export const LetterIndexPage = ({ heads }: Props): JSX.Element => (
+export const LetterIndexPage = ({ letters }: Props): JSX.Element => (
   <Background>
     <div className={styles.page}>
       <BackButton href={"/"} />
       <GenreHeader logoSrc={letterIconPic} title="LETTERS" />
-      <LettersViewer heads={heads} />
+      <LettersViewer letters={sortWithDatetime(letters, (letters) => letters.updatedAt)} />
       <Footer />
     </div>
   </Background>

@@ -5,16 +5,16 @@ import { StaticImage } from "components/functions";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
-  head: WithoutPage<Letter>;
+  letters: WithoutPage<Letter>;
 };
 
-export const LetterHeading = ({ head }: Props): JSX.Element => (
+export const LetterHeading = ({ letters }: Props): JSX.Element => (
   <article className={styles.container}>
-    <StaticImage src={head.thumbnail ?? defaultThumbnailPic} alt={head.title} className={styles.thumbnail} />
-    <p className={styles.index}>#{head.index}</p>
+    <StaticImage src={letters.thumbnail ?? defaultThumbnailPic} alt={letters.title} className={styles.thumbnail} />
+    <p className={styles.index}>#{letters.index}</p>
     <p className={styles.updatedAt} suppressHydrationWarning={true}>
-      {formatExceededTime(new Date(), head.updatedAt)}
+      {formatExceededTime(new Date(), letters.updatedAt)}
     </p>
-    <h2 className={styles.title}>{head.title}</h2>
+    <h2 className={styles.title}>{letters.title}</h2>
   </article>
 );

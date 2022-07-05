@@ -7,21 +7,21 @@ import { ContentContext } from "constants/content";
 import { Chapter, Material } from "models/content";
 
 type Props = {
-  content: Material;
+  material: Material;
 };
 
-export const MaterialPage = ({ content }: Props): JSX.Element => {
+export const MaterialPage = ({ material }: Props): JSX.Element => {
   const [chapters, setChapters] = useState<Chapter[]>([]);
 
   return (
     <ContentPage>
       <BackButton href={"/materials"} />
       <div className={styles.layout}>
-        <MaterialTop content={content} />
+        <MaterialTop material={material} />
         <ChaptersView chapters={chapters} />
         <main className={styles.content}>
           <ContentContext.Provider value={{ genre: "letter" }}>
-            <content.Page setChapters={setChapters} />
+            <material.Page setChapters={setChapters} />
           </ContentContext.Provider>
         </main>
       </div>
