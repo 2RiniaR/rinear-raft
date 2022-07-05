@@ -10,7 +10,7 @@ import { assignClasses } from "utils/dom";
 import { Footer } from "components/parts";
 import { About, Pickup, Story } from "models/home";
 import { LoadingWaiter } from "components/functions";
-import { useScrollPast } from "fooks";
+import { useScrollPast } from "hooks";
 
 type Props = {
   about: About;
