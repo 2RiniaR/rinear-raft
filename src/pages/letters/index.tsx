@@ -1,28 +1,33 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { InferGetStaticPropsType } from "next";
+import { useAsyncInitialize } from "fooks";
+import { mapAsync } from "utils/promise";
 import { PageSettings } from "components/functions";
-import { LetterIndexPage } from "components/templates";
-import { getSiteSettings, LetterRepository } from "repositories";
+import { fetchAllLettersId, fetchLetter, fetchSite } from "repositories";
+import { FallbackPage, LetterIndexPage } from "components/templates";
 
-const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const { description } = getSiteSettings();
-  const repository = new LetterRepository(contentsId);
+const Page = ({ site, lettersId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  const contents = useAsyncInitialize(() => mapAsync(lettersId, (id) => fetchLetter(id)));
+  if (contents === undefined) return <FallbackPage />;
   return (
     <>
       <PageSettings
         pageTitle={"Letters"}
-        pageDescription={description}
+        pageDescription={site.description}
         pagePath={"/letters"}
         pageImgPath={"/img/main.webp"}
         pageType="article"
       />
-      <LetterIndexPage heads={repository.getAllContents("updatedAt")} />
+      <LetterIndexPage heads={contents} />
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   return {
-    props: { contentsId: await LetterRepository.fetchContentsId() }
+    props: {
+      site: await fetchSite(),
+      lettersId: await fetchAllLettersId()
+    }
   };
 };
 

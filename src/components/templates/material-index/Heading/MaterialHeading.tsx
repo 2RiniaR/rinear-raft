@@ -1,12 +1,12 @@
 import styles from "./MaterialHeading.module.scss";
 import { Title } from "./Title";
 import { SubThumbnails } from "./SubThumbnails";
-import { MaterialContentHead } from "types/content";
+import { Material, WithoutPage } from "models/content";
 import { StaticImage } from "components/functions";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
-  head: MaterialContentHead;
+  head: WithoutPage<Material>;
 };
 
 export const MaterialHeading = ({ head }: Props): JSX.Element => (

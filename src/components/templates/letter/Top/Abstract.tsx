@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Abstract.module.scss";
-import { LetterContent } from "types/content";
+import { Letter } from "models/content";
 import { StaticImage } from "components/functions";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
-  content: LetterContent;
+  content: Letter;
 };
 
 export const Abstract = ({ content }: Props): JSX.Element => (

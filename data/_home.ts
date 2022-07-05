@@ -1,11 +1,7 @@
-import { about } from "./about";
-import { story } from "./story";
-import { HomeSettings } from "types";
+import { HomeSettings } from "repositories";
 
 const settings: HomeSettings = {
-  pickups: { type: "latest", count: 3 },
-  about,
-  story
+  pickups: { type: "latest", count: 3 }
 };
 
 export default settings;

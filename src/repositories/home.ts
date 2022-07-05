@@ -1,38 +1,30 @@
-import { getAllContents, getRoute } from "./content";
-import settings from "data/_home";
-import { ContentHead } from "types/content";
-import { HomeSettings, Pickup } from "types";
+import { sortWithDatetime } from "../utils/datetime";
+import { fetchAllContents } from "./content";
+import { pathOf } from "routes";
+import { Home, Pickup } from "models/home";
 
-export function getHomeSettings(): HomeSettings {
-  return settings;
+export type HomeSettings = Omit<Home, "pickups"> & {
+  pickups: { type: "latest"; count: number } | { type: "custom"; items: Pickup[] };
+};
+
+export async function fetchHome(): Promise<Home> {
+  const settings: HomeSettings = (await import(`data/_home`)).default;
+  return {
+    ...settings,
+    pickups: await fetchPickups(settings)
+  };
 }
 
-export async function fetchPickupContents(): Promise<Pickup[]> {
+export async function fetchPickups(settings: HomeSettings): Promise<Pickup[]> {
   if (settings.pickups.type === "custom") return settings.pickups.items;
   return getLatestContents(settings.pickups.count);
 }
 
-function pickupContent(content: ContentHead): Pickup {
-  return {
-    title: content.title,
-    href: getRoute(content),
-    thumbnail: content.thumbnail
-  };
-}
-
 async function getLatestContents(count: number): Promise<Pickup[]> {
-  const contents = await getAllContents();
-  contents.sort((a, b) => {
-    if (b.updatedAt.isAfter(a.updatedAt)) return 1;
-    if (b.updatedAt.isSame(a.updatedAt)) return 0;
-    return -1;
-  });
-
-  const pickups: Pickup[] = [];
-  for (let i = 0; i < Math.min(count, contents.length); i++) {
-    const content = contents[i];
-    pickups.push(pickupContent(content));
-  }
-
-  return pickups;
+  const contents = sortWithDatetime(await fetchAllContents(), (content) => content.updatedAt);
+  return contents.slice(0, count).map((content) => ({
+    title: content.title,
+    href: pathOf(content),
+    thumbnail: content.thumbnail
+  }));
 }

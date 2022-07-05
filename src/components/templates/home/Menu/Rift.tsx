@@ -5,7 +5,7 @@ import { assignClasses } from "utils/dom";
 import { useContentSwitch, useElementSize } from "fooks";
 import { PreloadStaticImage } from "components/functions/loading";
 import backgroundPic from "public/home/rift.webp";
-import { Pickup } from "types";
+import { Pickup } from "models/home";
 
 type Props = {
   active: boolean;

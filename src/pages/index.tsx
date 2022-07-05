@@ -1,22 +1,22 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { InferGetStaticPropsType } from "next";
 import { PageSettings } from "components/functions";
 import { HomePage } from "components/templates";
-import { fetchPickupContents, getHomeSettings, getSiteSettings } from "repositories";
+import { fetchHome, fetchSite } from "repositories";
+import { about, story } from "constants/home";
 
-const Page = ({ pickups }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const { description } = getSiteSettings();
-  const { story, about } = getHomeSettings();
-  return (
-    <>
-      <PageSettings pageDescription={description} pagePath={"/"} pageImgPath={"/img/main.webp"} pageType="website" />
-      <HomePage pickups={pickups} story={story} about={about} />
-    </>
-  );
-};
+const Page = ({ site, home }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => (
+  <>
+    <PageSettings pageDescription={site.description} pagePath={"/"} pageImgPath={"/img/main.webp"} pageType="website" />
+    <HomePage pickups={home.pickups} story={story} about={about} />
+  </>
+);
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   return {
-    props: { pickups: await fetchPickupContents() }
+    props: {
+      site: await fetchSite(),
+      home: await fetchHome()
+    }
   };
 };
 

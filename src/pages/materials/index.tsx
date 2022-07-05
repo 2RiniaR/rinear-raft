@@ -1,28 +1,33 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { InferGetStaticPropsType } from "next";
+import { mapAsync } from "utils/promise";
 import { PageSettings } from "components/functions";
-import { getSiteSettings, MaterialRepository } from "repositories";
-import { MaterialIndexPage } from "components/templates";
+import { fetchAllMaterialsId, fetchMaterial, fetchSite } from "repositories";
+import { FallbackPage, MaterialIndexPage } from "components/templates";
+import { useAsyncInitialize } from "fooks";
 
-const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const { description } = getSiteSettings();
-  const repository = new MaterialRepository(contentsId);
+const Page = ({ site, materialsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  const contents = useAsyncInitialize(() => mapAsync(materialsId, (id) => fetchMaterial(id)));
+  if (contents === undefined) return <FallbackPage />;
   return (
     <>
       <PageSettings
         pageTitle={"Materials"}
-        pageDescription={description}
+        pageDescription={site.description}
         pagePath={"/materials"}
         pageImgPath={"/img/main.webp"}
         pageType="article"
       />
-      <MaterialIndexPage heads={repository.getAllContents("releasedAt")} />
+      <MaterialIndexPage heads={contents} />
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   return {
-    props: { contentsId: await MaterialRepository.fetchContentsId() }
+    props: {
+      site: await fetchSite(),
+      materialsId: await fetchAllMaterialsId()
+    }
   };
 };
 

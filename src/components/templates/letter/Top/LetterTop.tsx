@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./LetterTop.module.scss";
 import { Title } from "./Title";
 import { Abstract } from "./Abstract";
-import { LetterContent } from "types/content";
+import { Letter } from "models/content";
 
 type Props = {
-  content: LetterContent;
+  content: Letter;
 };
 
 export const LetterTop = ({ content }: Props): JSX.Element => (

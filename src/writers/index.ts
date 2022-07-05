@@ -1,4 +1,4 @@
-export { Chapter } from "./Chapter";
+export { ChapterPoint } from "./ChapterPoint";
 export { ComingSoon } from "./ComingSoon";
 export { ContentImage } from "./ContentImage";
 export { Space } from "./Space";

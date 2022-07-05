@@ -6,3 +6,4 @@ export { LetterIndexPage } from "./letter-index";
 export { MaterialPage } from "./material";
 export { MaterialIndexPage } from "./material-index";
 export { NotFoundPage } from "./not-found";
+export { FallbackPage } from "./FallbackPage";

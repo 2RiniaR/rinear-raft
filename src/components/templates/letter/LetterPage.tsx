@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import styles from "./LetterPage.module.scss";
 import { LetterTop } from "./Top";
-import { ChapterPoint, LetterContent } from "types/content";
+import { Chapter, Letter } from "models/content";
 import { ChaptersView } from "components/parts";
 import { ContentPage } from "components/templates";
 import { BackButton } from "components/templates/layout";
 import { ContentContext } from "constants/content";
 
 type Props = {
-  content: LetterContent;
+  content: Letter;
 };
 
 export const LetterPage = ({ content }: Props): JSX.Element => {
-  const [chapters, setChapters] = useState<ChapterPoint[]>([]);
+  const [chapters, setChapters] = useState<Chapter[]>([]);
 
   return (
     <ContentPage>

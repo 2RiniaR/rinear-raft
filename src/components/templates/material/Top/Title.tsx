@@ -1,13 +1,12 @@
 import React from "react";
-import dayjs from "dayjs";
 import styles from "./Title.module.scss";
 import { formatDisplayDate, formatExceededTime } from "utils/datetime";
 import materialIconPic from "public/general/material-icon.png";
 import { StaticImage } from "components/functions";
-import { MaterialContent } from "types/content";
+import { Material } from "models/content";
 
 type Props = {
-  content: MaterialContent;
+  content: Material;
 };
 
 export const Title = ({ content }: Props): JSX.Element => (
@@ -18,7 +17,7 @@ export const Title = ({ content }: Props): JSX.Element => (
       <p className={styles.releasedAt}>{content.releasedAt ? formatDisplayDate(content.releasedAt) : "---"}</p>
       <p className={styles.genre}>MATERIAL</p>
       <p className={styles.updatedAt} suppressHydrationWarning={true}>
-        {"最終更新：" + formatExceededTime(dayjs(), content.updatedAt)}
+        {"最終更新：" + formatExceededTime(new Date(), content.updatedAt)}
       </p>
     </div>
   </header>

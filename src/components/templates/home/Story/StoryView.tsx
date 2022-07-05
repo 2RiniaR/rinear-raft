@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styles from "./StoryView.module.scss";
 import { SceneView } from "./SceneView";
-import { Story } from "types";
+import { Story } from "models/home";
 
 type Props = {
   story: Story;

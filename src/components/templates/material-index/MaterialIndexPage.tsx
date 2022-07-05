@@ -2,12 +2,12 @@ import React from "react";
 import styles from "./MaterialIndexPage.module.scss";
 import { MaterialsViewer } from "./MaterialsViewer";
 import materialIconPic from "public/general/material-icon.png";
-import { MaterialContentHead } from "types/content";
+import { Material, WithoutPage } from "models/content";
 import { Background, Footer, GenreHeader } from "components/parts";
 import { BackButton } from "components/templates";
 
 type Props = {
-  heads: MaterialContentHead[];
+  heads: WithoutPage<Material>[];
 };
 
 export const MaterialIndexPage = ({ heads }: Props): JSX.Element => (

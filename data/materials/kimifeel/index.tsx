@@ -1,13 +1,14 @@
 import dayjs from "dayjs";
 import { useEffect } from "react";
-import { ChapterPoint, ContentPageProps, MaterialContent } from "types/content";
+import { Chapter, ContentPage } from "models/content";
+import { MaterialSettings } from "repositories";
 import thumbnailPic1 from "public/contents/materials/kimifeel/page1.webp";
 import thumbnailPic2 from "public/contents/materials/kimifeel/page2.webp";
 import thumbnailPic3 from "public/contents/materials/kimifeel/page3.webp";
 import { ComingSoon } from "writers";
 
-const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
-  const refs: { [name: string]: ChapterPoint } = {};
+const Page: ContentPage = ({ setChapters }) => {
+  const refs: { [name: string]: Chapter } = {};
 
   useEffect(() => setChapters(Object.values(refs)), []);
 
@@ -18,14 +19,14 @@ const Page = ({ setChapters }: ContentPageProps): JSX.Element => {
   );
 };
 
-const kimifeel: MaterialContent = {
+const kimifeel: MaterialSettings = {
   genre: "material",
   id: "kimifeel",
   title: "キミフィール",
   thumbnail: thumbnailPic1,
   thumbnails: [thumbnailPic1, thumbnailPic2, thumbnailPic3],
-  updatedAt: dayjs("2022-07-03 21:00:00"),
-  releasedAt: dayjs("2022-02-16"),
+  updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
+  releasedAt: dayjs("2022-02-16").toDate(),
   description: "周りの人々に自分のプロフィールを書いてもらえるサービス。",
   Page
 };

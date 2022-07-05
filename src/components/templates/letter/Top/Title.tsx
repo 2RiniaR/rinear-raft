@@ -1,13 +1,12 @@
 import React from "react";
-import dayjs from "dayjs";
 import styles from "./Title.module.scss";
 import { formatExceededTime } from "utils/datetime";
 import { StaticImage } from "components/functions";
-import { LetterContent } from "types/content";
+import { Letter } from "models/content";
 import letterIconPic from "public/general/letter-icon.png";
 
 type Props = {
-  content: LetterContent;
+  content: Letter;
 };
 
 export const Title = ({ content }: Props): JSX.Element => (
@@ -18,7 +17,7 @@ export const Title = ({ content }: Props): JSX.Element => (
       <p className={styles.index}>#{content.index}</p>
       <p className={styles.genre}>LETTER</p>
       <p className={styles.updatedAt} suppressHydrationWarning={true}>
-        {"最終更新：" + formatExceededTime(dayjs(), content.updatedAt)}
+        {"最終更新：" + formatExceededTime(new Date(), content.updatedAt)}
       </p>
     </div>
   </header>

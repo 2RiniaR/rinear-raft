@@ -1,10 +1,10 @@
 import styles from "./SubThumbnails.module.scss";
-import { MaterialContentHead } from "types/content";
+import { Material, WithoutPage } from "models/content";
 import { StaticImage } from "components/functions";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
-  head: MaterialContentHead;
+  head: WithoutPage<Material>;
 };
 
 export const SubThumbnails = ({ head }: Props): JSX.Element => (

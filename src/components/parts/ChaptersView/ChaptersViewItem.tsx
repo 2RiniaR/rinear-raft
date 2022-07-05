@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./ChaptersViewItem.module.scss";
-import { ChapterPoint } from "types/content";
+import { Chapter } from "models/content";
 
 type Props = {
-  chapter: ChapterPoint;
+  chapter: Chapter;
 };
 
 export const ChaptersViewItem = ({ chapter }: Props): JSX.Element => {

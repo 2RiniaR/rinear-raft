@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./MaterialTop.module.scss";
 import { Title } from "./Title";
 import { Abstract } from "./Abstract";
-import { MaterialContent } from "types/content";
+import { Material } from "models/content";
 
 type Props = {
-  content: MaterialContent;
+  content: Material;
 };
 
 export const MaterialTop = ({ content }: Props): JSX.Element => (

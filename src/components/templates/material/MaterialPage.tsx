@@ -4,14 +4,14 @@ import { MaterialTop } from "./Top";
 import { BackButton, ContentPage } from "components/templates";
 import { ChaptersView } from "components/parts";
 import { ContentContext } from "constants/content";
-import { ChapterPoint, MaterialContent } from "types/content";
+import { Chapter, Material } from "models/content";
 
 type Props = {
-  content: MaterialContent;
+  content: Material;
 };
 
 export const MaterialPage = ({ content }: Props): JSX.Element => {
-  const [chapters, setChapters] = useState<ChapterPoint[]>([]);
+  const [chapters, setChapters] = useState<Chapter[]>([]);
 
   return (
     <ContentPage>

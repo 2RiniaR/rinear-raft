@@ -4,7 +4,7 @@ import styles from "./Message.module.scss";
 import { assignClasses } from "utils/dom";
 import { PreloadStaticImage } from "components/functions/loading";
 import backgroundPic from "public/home/message-background.webp";
-import { About } from "types";
+import { About } from "models/home";
 
 type Props = {
   about: About;

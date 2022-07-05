@@ -6,7 +6,7 @@ import { Phantom } from "./Phantom";
 import { ScrollIndicator } from "./ScrollIndicator";
 import { assignClasses } from "utils/dom";
 import { useScrollPast } from "fooks";
-import { Pickup } from "types";
+import { Pickup } from "models/home";
 import { Parallax } from "components/functions";
 import materialIconPic from "public/general/material-icon.png";
 import letterIconPic from "public/general/letter-icon.png";

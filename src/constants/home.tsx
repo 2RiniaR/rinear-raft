@@ -1,14 +1,31 @@
-import { Story } from "types";
-import prototypeImage from "public/story/prototype.png";
-import prologueImage from "public/story/prologue.png";
-import presentImage from "public/story/present.png";
-import preludeImage from "public/story/prelude.png";
+import React from "react";
+import { InternalLink } from "components/functions";
+import { About, Story } from "models/home";
+import prologuePic from "public/story/prologue.png";
+import prototypePic from "public/story/prototype.png";
+import presentPic from "public/story/present.png";
+import preludePic from "public/story/prelude.png";
+
+export const about: About = {
+  Document: () => (
+    <>
+      <p>
+        『RineaR（りにあ）』とは、クリエイター『Rinia（りにあ）』による個人活動の総称です。その過程で書き留めておきたいことは
+        <InternalLink href={"/letters"}>Letters</InternalLink>へ、一連の活動は
+        <InternalLink href={"/materials"}>Materials</InternalLink>へ投稿します。
+      </p>
+      <p>
+        見える抽象を辿るために、漂うように制作をしています。ここまでの経緯を知るために、まずは以下のストーリーをご覧ください。
+      </p>
+    </>
+  )
+};
 
 export const story: Story = {
   scenes: [
     {
       title: "PROLOGUE",
-      thumbnail: prologueImage,
+      thumbnail: prologuePic,
       Document: () => (
         <>
           <p>かつて、私たちには「みんなで遊びを作る」「独自の世界観を守る」という二面性がありました。</p>
@@ -18,7 +35,7 @@ export const story: Story = {
     },
     {
       title: "PROTOTYPE",
-      thumbnail: prototypeImage,
+      thumbnail: prototypePic,
       Document: () => (
         <>
           <p>時が経って、色んな世界に触れて、色んな知識や経験を得て、色んなものを作りました。</p>
@@ -30,7 +47,7 @@ export const story: Story = {
     },
     {
       title: "PRESENT",
-      thumbnail: presentImage,
+      thumbnail: presentPic,
       Document: () => (
         <>
           <p>
@@ -42,7 +59,7 @@ export const story: Story = {
     },
     {
       title: "PRELUDE",
-      thumbnail: preludeImage,
+      thumbnail: preludePic,
       Document: () => (
         <>
           <p>

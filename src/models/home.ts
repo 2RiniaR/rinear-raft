@@ -20,15 +20,6 @@ export type Story = {
   scenes: StoryScene[];
 };
 
-export type HomeSettings = {
-  pickups: { type: "latest"; count: number } | { type: "custom"; items: Pickup[] };
-  story: Story;
-  about: About;
-};
-
-export type SiteSettings = {
-  name: string;
-  description: string;
-  url: string;
-  version: string;
+export type Home = {
+  pickups: Pickup[];
 };

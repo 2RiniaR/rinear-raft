@@ -8,7 +8,7 @@ import { Menu } from "./Menu";
 import { Intro } from "./Intro";
 import { assignClasses } from "utils/dom";
 import { Footer } from "components/parts";
-import { About, Pickup, Story } from "types";
+import { About, Pickup, Story } from "models/home";
 import { LoadingWaiter } from "components/functions";
 import { useScrollPast } from "fooks";
 

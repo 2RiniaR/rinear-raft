@@ -1,4 +1,4 @@
-import { SiteSettings } from "types";
+import { SiteSettings } from "repositories";
 
 const settings: SiteSettings = {
   name: "RineaRの筏",

@@ -1,6 +1,7 @@
-import settings from "data/_site";
-import { SiteSettings } from "types";
+import { Site } from "models";
 
-export function getSiteSettings(): SiteSettings {
-  return settings;
+export type SiteSettings = Site;
+
+export async function fetchSite(): Promise<Site> {
+  return (await import(`data/_site`)).default;
 }

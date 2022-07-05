@@ -1,7 +1,7 @@
 import styles from "./SceneView.module.scss";
 import { assignClasses } from "utils/dom";
 import { StaticImage } from "components/functions";
-import { StoryScene } from "types";
+import { StoryScene } from "models/home";
 
 type Props = {
   scene: StoryScene;

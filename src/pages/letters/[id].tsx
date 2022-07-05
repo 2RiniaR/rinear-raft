@@ -1,11 +1,12 @@
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { LetterRepository } from "repositories";
+import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { PageSettings } from "components/functions";
-import { LetterPage } from "components/templates";
+import { fetchAllLettersId, fetchLetter, fetchSite } from "repositories";
+import { FallbackPage, LetterPage } from "components/templates";
+import { useAsyncInitialize } from "fooks";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const repository = new LetterRepository([id]);
-  const content = repository.getContent(id);
+  const content = useAsyncInitialize(() => fetchLetter(id));
+  if (content === undefined) return <FallbackPage />;
   return (
     <>
       <PageSettings
@@ -20,15 +21,18 @@ const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Eleme
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   if (typeof context.params?.id !== "string") throw Error();
   return {
-    props: { id: context.params.id }
+    props: {
+      site: await fetchSite(),
+      id: context.params.id
+    }
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const contentsId = await LetterRepository.fetchContentsId();
+  const contentsId = await fetchAllLettersId();
   return {
     paths: contentsId.map((id) => ({ params: { id } })),
     fallback: false

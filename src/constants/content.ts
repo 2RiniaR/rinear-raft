@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import { ContentContextProps } from "types/content";
 
+type ContentContextProps = { genre: "letter" | "material" };
 export const ContentContext = createContext<ContentContextProps>({ genre: "letter" });
