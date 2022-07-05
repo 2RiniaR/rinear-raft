@@ -1,4 +1,3 @@
-export { useAsyncInitialize } from "./async-initialize";
 export { useContentSwitch } from "./content-switch";
 export { useElementPosition } from "./element-position";
 export { useElementSize } from "./element-size";

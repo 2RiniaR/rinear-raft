@@ -1,5 +1,4 @@
 import fs from "fs";
-import { mapAsync } from "../utils/promise";
 import { Letter, Material } from "models/content";
 
 export type LetterSettings = Letter;
@@ -24,8 +23,9 @@ async function fetchItemsIdFromDirectory<T extends LetterSettings | MaterialSett
   return modulesId;
 }
 
-export async function fetchLetter(id: string): Promise<Letter> {
-  return (await import(`data/letters/${id}`)).default;
+export function fetchLetter(id: string): Letter {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  return require(`data/letters/${id}`).default;
 }
 
 export async function fetchAllLettersId(): Promise<string[]> {
@@ -35,14 +35,9 @@ export async function fetchAllLettersId(): Promise<string[]> {
   );
 }
 
-// export function fetchMaterial(id: string): Material {
-//   // eslint-disable-next-line @typescript-eslint/no-var-requires
-//   return require(`data/materials/${id}`).default;
-// }
-
-export async function fetchMaterial(id: string): Promise<Material> {
+export function fetchMaterial(id: string): Material {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  return (await import(`data/materials/${id}`)).default;
+  return require(`data/materials/${id}`).default;
 }
 
 export async function fetchAllMaterialsId(): Promise<string[]> {
@@ -54,7 +49,7 @@ export async function fetchAllMaterialsId(): Promise<string[]> {
 
 export async function fetchAllContents(): Promise<(Letter | Material)[]> {
   return [
-    ...(await mapAsync(await fetchAllLettersId(), (id) => fetchLetter(id))),
-    ...(await mapAsync(await fetchAllMaterialsId(), (id) => fetchMaterial(id)))
+    ...(await fetchAllLettersId()).map((id) => fetchLetter(id)),
+    ...(await fetchAllMaterialsId()).map((id) => fetchMaterial(id))
   ];
 }

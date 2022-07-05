@@ -1,12 +1,10 @@
 import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { PageSettings } from "components/functions";
 import { fetchAllLettersId, fetchLetter, fetchSite } from "repositories";
-import { FallbackPage, LetterPage } from "components/templates";
-import { useAsyncInitialize } from "fooks";
+import { LetterPage } from "components/templates";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const content = useAsyncInitialize(() => fetchLetter(id));
-  if (content === undefined) return <FallbackPage />;
+  const content = fetchLetter(id);
   return (
     <>
       <PageSettings
