@@ -4,7 +4,7 @@ import { fetchAllLettersId, fetchLetter, fetchSite } from "repositories";
 import { LetterIndexPage } from "components/templates";
 
 const Page = ({ site, lettersId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const contents = lettersId.map((id) => fetchLetter(id));
+  const letters = lettersId.map((id) => fetchLetter(id));
   return (
     <>
       <PageSettings
@@ -14,7 +14,7 @@ const Page = ({ site, lettersId }: InferGetStaticPropsType<typeof getStaticProps
         pageImgPath={"/img/main.webp"}
         pageType="article"
       />
-      <LetterIndexPage heads={contents} />
+      <LetterIndexPage letters={letters} />
     </>
   );
 };

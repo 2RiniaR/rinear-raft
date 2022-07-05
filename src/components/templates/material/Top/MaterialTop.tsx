@@ -5,12 +5,12 @@ import { Abstract } from "./Abstract";
 import { Material } from "models/content";
 
 type Props = {
-  content: Material;
+  material: Material;
 };
 
-export const MaterialTop = ({ content }: Props): JSX.Element => (
+export const MaterialTop = ({ material }: Props): JSX.Element => (
   <div className={styles.layout}>
-    <Title content={content} />
-    <Abstract content={content} />
+    <Title material={material} />
+    <Abstract material={material} />
   </div>
 );
