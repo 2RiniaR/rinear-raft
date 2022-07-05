@@ -1,9 +1,9 @@
 import styles from "./MaterialHeading.module.scss";
 import { Title } from "./Title";
 import { SubThumbnails } from "./SubThumbnails";
-import { MaterialContentHead } from "lib/contents";
+import { MaterialContentHead } from "types/content";
 import { StaticImage } from "components/functions";
-import defaultThumbnail from "public/general/thumbnail-default.webp";
+import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
   head: MaterialContentHead;
@@ -12,7 +12,7 @@ type Props = {
 export const MaterialHeading = ({ head }: Props): JSX.Element => (
   <article className={styles.container}>
     <StaticImage
-      src={head.thumbnails[0] ?? defaultThumbnail}
+      src={head.thumbnails[0] ?? defaultThumbnailPic}
       alt={head.title}
       className={styles.mainThumbnail}
       layout="responsive"

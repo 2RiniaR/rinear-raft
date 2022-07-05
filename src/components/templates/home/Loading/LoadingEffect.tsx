@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./LoadingEffect.module.scss";
 import { SplashAnimation } from "./SplashAnimation";
 import { ProgressText } from "./ProgressText";
-import { assignClasses } from "lib/helper";
+import { assignClasses } from "utils/dom";
 
 type Props = {
   loading: boolean;

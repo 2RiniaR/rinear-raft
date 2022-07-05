@@ -1,10 +1,10 @@
 import styles from "./SceneView.module.scss";
+import { assignClasses } from "utils/dom";
 import { StaticImage } from "components/functions";
-import { assignClasses } from "lib/helper";
-import { Scene } from "lib";
+import { StoryScene } from "types";
 
 type Props = {
-  scene: Scene;
+  scene: StoryScene;
   layout: "left" | "right";
 };
 

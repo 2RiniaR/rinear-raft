@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ChaptersView.module.scss";
 import { ChaptersViewItem } from "./ChaptersViewItem";
-import { ChapterPoint } from "lib/contents";
+import { ChapterPoint } from "types/content";
 
 type Props = {
   chapters: ChapterPoint[];

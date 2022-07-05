@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Intro.module.scss";
-import { assignClasses } from "lib/helper";
+import { assignClasses } from "utils/dom";
 
 type Props = {
   playing: boolean;

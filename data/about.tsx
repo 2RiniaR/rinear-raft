@@ -1,6 +1,6 @@
 import React from "react";
+import { About } from "types";
 import { InternalLink } from "components/functions";
-import { About } from "lib/about";
 
 export const about: About = {
   Document: () => (

@@ -1,9 +1,10 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { PageSettings } from "components/functions";
-import { description, getMaterialsId, MaterialRepository } from "data";
+import { getSiteSettings, MaterialRepository } from "repositories";
 import { MaterialIndexPage } from "components/templates";
 
 const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  const { description } = getSiteSettings();
   const repository = new MaterialRepository(contentsId);
   return (
     <>
@@ -21,7 +22,7 @@ const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): J
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: { contentsId: await getMaterialsId() }
+    props: { contentsId: await MaterialRepository.fetchContentsId() }
   };
 };
 

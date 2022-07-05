@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./MaterialTop.module.scss";
 import { Title } from "./Title";
 import { Abstract } from "./Abstract";
-import { MaterialContent } from "lib/contents";
+import { MaterialContent } from "types/content";
 
 type Props = {
   content: MaterialContent;

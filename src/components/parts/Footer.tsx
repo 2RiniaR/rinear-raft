@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 import { ExternalLink, StaticImage } from "components/functions";
-import letterPic from "public/general/logo-letters.webp";
-import logoPic from "public/general/logo-icon.webp";
+import logoLettersPic from "public/general/logo-letters.webp";
+import logoIconPic from "public/general/logo-icon.webp";
 import packageSettings from "public/../package.json";
 
 export const Footer = (): JSX.Element => (
   <footer className={styles.container}>
-    <StaticImage className={styles.back} src={logoPic} alt="Logo" layout="responsive" />
+    <StaticImage className={styles.back} src={logoIconPic} alt="Logo" layout="responsive" />
     <div className={styles.logo}>
-      <StaticImage className={styles.letter} src={letterPic} alt="RineaR" layout="responsive" />
+      <StaticImage className={styles.letter} src={logoLettersPic} alt="RineaR" layout="responsive" />
     </div>
     <div className={styles.links}>
       <ExternalLink className={styles.element} href={"https://twitter.com/14RineaR"}>

@@ -6,10 +6,10 @@ import { LoadingEffect } from "./Loading";
 import { StoryView } from "./Story";
 import { Menu } from "./Menu";
 import { Intro } from "./Intro";
+import { assignClasses } from "utils/dom";
 import { Footer } from "components/parts";
-import { About, Pickup, Story } from "lib";
+import { About, Pickup, Story } from "types";
 import { LoadingWaiter } from "components/functions";
-import { assignClasses } from "lib/helper";
 import { useScrollPast } from "fooks";
 
 type Props = {

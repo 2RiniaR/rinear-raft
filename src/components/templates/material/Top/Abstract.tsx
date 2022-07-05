@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Abstract.module.scss";
-import { MaterialContent } from "lib/contents";
+import { MaterialContent } from "types/content";
 import { StaticImage } from "components/functions";
-import defaultThumbnail from "public/general/thumbnail-default.webp";
+import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
   content: MaterialContent;
@@ -14,7 +14,7 @@ export const Abstract = ({ content }: Props): JSX.Element => (
     <div className={styles.thumbnails}>
       {content.thumbnails.map((thumbnail, index) => (
         <StaticImage
-          src={thumbnail ?? defaultThumbnail}
+          src={thumbnail ?? defaultThumbnailPic}
           alt="サブサムネイル"
           className={styles.thumbnail}
           key={`thumbnail-${index}-${thumbnail.src}`}

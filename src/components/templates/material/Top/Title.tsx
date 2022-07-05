@@ -1,10 +1,10 @@
 import React from "react";
 import dayjs from "dayjs";
 import styles from "./Title.module.scss";
-import materialsPic from "public/general/material-icon.png";
+import { formatDisplayDate, formatExceededTime } from "utils/datetime";
+import materialIconPic from "public/general/material-icon.png";
 import { StaticImage } from "components/functions";
-import { MaterialContent } from "lib/contents";
-import { formatDisplayDate, formatExceededTime } from "lib/helper";
+import { MaterialContent } from "types/content";
 
 type Props = {
   content: MaterialContent;
@@ -12,7 +12,7 @@ type Props = {
 
 export const Title = ({ content }: Props): JSX.Element => (
   <header className={styles.layout}>
-    <StaticImage className={styles.logo} src={materialsPic} alt="プロジェクト" />
+    <StaticImage className={styles.logo} src={materialIconPic} alt="プロジェクト" />
     <div className={styles.display}>
       <h1 className={styles.title}>{content.title}</h1>
       <p className={styles.releasedAt}>{content.releasedAt ? formatDisplayDate(content.releasedAt) : "---"}</p>

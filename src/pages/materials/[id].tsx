@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { PageSettings } from "components/functions";
-import { getMaterialsId, MaterialRepository } from "data";
+import { MaterialRepository } from "repositories";
 import { MaterialPage } from "components/templates";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const contentsId = await getMaterialsId();
+  const contentsId = await MaterialRepository.fetchContentsId();
   return {
     paths: contentsId.map((id) => ({ params: { id } })),
     fallback: false

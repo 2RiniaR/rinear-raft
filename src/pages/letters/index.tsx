@@ -1,9 +1,10 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { PageSettings } from "components/functions";
 import { LetterIndexPage } from "components/templates";
-import { description, getLettersId, LetterRepository } from "data";
+import { getSiteSettings, LetterRepository } from "repositories";
 
 const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  const { description } = getSiteSettings();
   const repository = new LetterRepository(contentsId);
   return (
     <>
@@ -21,7 +22,7 @@ const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): J
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: { contentsId: await getLettersId() }
+    props: { contentsId: await LetterRepository.fetchContentsId() }
   };
 };
 

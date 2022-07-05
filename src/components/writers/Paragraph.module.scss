@@ -1,7 +1,0 @@
-@use "global";
-
-.paragraph {
-  text-indent: 1em;
-  @include global.readable-font;
-  margin: 1em 0;
-}

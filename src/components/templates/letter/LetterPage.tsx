@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styles from "./LetterPage.module.scss";
 import { LetterTop } from "./Top";
-import { ChapterPoint, LetterContent } from "lib/contents";
+import { ChapterPoint, LetterContent } from "types/content";
 import { ChaptersView } from "components/parts";
 import { ContentPage } from "components/templates";
 import { BackButton } from "components/templates/layout";
+import { ContentContext } from "constants/content";
 
 type Props = {
   content: LetterContent;
@@ -19,7 +20,11 @@ export const LetterPage = ({ content }: Props): JSX.Element => {
       <div className={styles.layout}>
         <LetterTop content={content} />
         <ChaptersView chapters={chapters} />
-        <content.Page setChapters={setChapters} />
+        <main className={styles.content}>
+          <ContentContext.Provider value={{ genre: "material" }}>
+            <content.Page setChapters={setChapters} />
+          </ContentContext.Provider>
+        </main>
       </div>
     </ContentPage>
   );

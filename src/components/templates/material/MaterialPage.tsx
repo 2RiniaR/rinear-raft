@@ -3,7 +3,8 @@ import styles from "./MaterialPage.module.scss";
 import { MaterialTop } from "./Top";
 import { BackButton, ContentPage } from "components/templates";
 import { ChaptersView } from "components/parts";
-import { ChapterPoint, MaterialContent } from "lib/contents";
+import { ContentContext } from "constants/content";
+import { ChapterPoint, MaterialContent } from "types/content";
 
 type Props = {
   content: MaterialContent;
@@ -18,7 +19,11 @@ export const MaterialPage = ({ content }: Props): JSX.Element => {
       <div className={styles.layout}>
         <MaterialTop content={content} />
         <ChaptersView chapters={chapters} />
-        <content.Page setChapters={setChapters} />
+        <main className={styles.content}>
+          <ContentContext.Provider value={{ genre: "letter" }}>
+            <content.Page setChapters={setChapters} />
+          </ContentContext.Provider>
+        </main>
       </div>
     </ContentPage>
   );

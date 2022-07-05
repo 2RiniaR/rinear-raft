@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { LetterRepository } from "repositories";
 import { PageSettings } from "components/functions";
 import { LetterPage } from "components/templates";
-import { getLettersId, LetterRepository } from "data";
 
 const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const repository = new LetterRepository([id]);
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const contentsId = await getLettersId();
+  const contentsId = await LetterRepository.fetchContentsId();
   return {
     paths: contentsId.map((id) => ({ params: { id } })),
     fallback: false

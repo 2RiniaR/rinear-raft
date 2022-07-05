@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Rift.module.scss";
+import { assignClasses } from "utils/dom";
 import { useContentSwitch, useElementSize } from "fooks";
-import { assignClasses } from "lib/helper";
 import { PreloadStaticImage } from "components/functions/loading";
-import back from "public/home/rift.webp";
-import { Pickup } from "lib";
+import backgroundPic from "public/home/rift.webp";
+import { Pickup } from "types";
 
 type Props = {
   active: boolean;
@@ -28,7 +28,7 @@ export const Rift = ({ active, pickups }: Props): JSX.Element => {
       ref={containerRef}
     >
       <div className={styles.back}>
-        <PreloadStaticImage className={styles.image} src={back} alt="" layout="responsive" />
+        <PreloadStaticImage className={styles.image} src={backgroundPic} alt="" layout="responsive" />
       </div>
       <div className={styles.mask}>
         <PreloadStaticImage

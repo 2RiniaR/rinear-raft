@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import styles from "./Title.module.scss";
-import { MaterialContentHead } from "lib/contents";
-import { formatDisplayDate, formatExceededTime } from "lib/helper";
+import { formatDisplayDate, formatExceededTime } from "utils/datetime";
+import { MaterialContentHead } from "types/content";
 
 type Props = {
   head: MaterialContentHead;

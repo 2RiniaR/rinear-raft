@@ -4,12 +4,12 @@ import { Logo } from "./Logo";
 import { Rift } from "./Rift";
 import { Phantom } from "./Phantom";
 import { ScrollIndicator } from "./ScrollIndicator";
+import { assignClasses } from "utils/dom";
 import { useScrollPast } from "fooks";
-import { Pickup } from "lib";
-import materialIcon from "public/general/material-icon.png";
-import { assignClasses } from "lib/helper";
+import { Pickup } from "types";
 import { Parallax } from "components/functions";
-import letterIcon from "public/general/letter-icon.png";
+import materialIconPic from "public/general/material-icon.png";
+import letterIconPic from "public/general/letter-icon.png";
 
 type Props = {
   pickups: Pickup[];
@@ -28,10 +28,10 @@ export const Menu = ({ pickups }: Props): JSX.Element => {
           </Parallax>
           <Parallax startInnerOrigin={0} endInnerOrigin={-0.2}>
             <div className={assignClasses(styles.letters, hidden ? styles.hidden : "")}>
-              <Phantom title="LETTERS" subtitle="制作状況" icon={letterIcon} href="/letters" />
+              <Phantom title="LETTERS" subtitle="制作状況" icon={letterIconPic} href="/letters" />
             </div>
             <div className={assignClasses(styles.materials, hidden ? styles.hidden : "")}>
-              <Phantom title="MATERIALS" subtitle="企画／作品" icon={materialIcon} href="/materials" />
+              <Phantom title="MATERIALS" subtitle="企画／作品" icon={materialIconPic} href="/materials" />
             </div>
             <Logo active={!hidden} />
           </Parallax>

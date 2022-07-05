@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
 import styles from "./LetterHeading.module.scss";
-import { LetterContentHead } from "lib/contents";
+import { formatExceededTime } from "utils/datetime";
+import { LetterContentHead } from "types/content";
 import { StaticImage } from "components/functions";
-import { formatExceededTime } from "lib/helper";
-import defaultThumbnail from "public/general/thumbnail-default.webp";
+import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
   head: LetterContentHead;
@@ -11,7 +11,7 @@ type Props = {
 
 export const LetterHeading = ({ head }: Props): JSX.Element => (
   <article className={styles.container}>
-    <StaticImage src={head.thumbnail ?? defaultThumbnail} alt={head.title} className={styles.thumbnail} />
+    <StaticImage src={head.thumbnail ?? defaultThumbnailPic} alt={head.title} className={styles.thumbnail} />
     <p className={styles.index}>#{head.index}</p>
     <p className={styles.updatedAt} suppressHydrationWarning={true}>
       {formatExceededTime(dayjs(), head.updatedAt)}

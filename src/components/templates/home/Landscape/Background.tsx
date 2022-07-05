@@ -1,7 +1,7 @@
 import styles from "./Background.module.scss";
-import { assignClasses } from "lib/helper";
-import landscapePic from "public/home/background.webp";
+import { assignClasses } from "utils/dom";
 import { PreloadStaticImage } from "components/functions/loading";
+import landscapePic from "public/home/background.webp";
 import holeEffectPic from "public/home/hole-effect.webp";
 import windEffectPic from "public/home/wind.png";
 

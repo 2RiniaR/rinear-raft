@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./MaterialIndexPage.module.scss";
 import { MaterialsViewer } from "./MaterialsViewer";
-import materialsPic from "public/general/material-icon.png";
-import { MaterialContentHead } from "lib/contents";
+import materialIconPic from "public/general/material-icon.png";
+import { MaterialContentHead } from "types/content";
 import { Background, Footer, GenreHeader } from "components/parts";
 import { BackButton } from "components/templates";
 
@@ -14,7 +14,7 @@ export const MaterialIndexPage = ({ heads }: Props): JSX.Element => (
   <Background>
     <div className={styles.page}>
       <BackButton href={"/"} />
-      <GenreHeader logoSrc={materialsPic} title="MATERIALS" />
+      <GenreHeader logoSrc={materialIconPic} title="MATERIALS" />
       <MaterialsViewer heads={heads} />
       <Footer />
     </div>

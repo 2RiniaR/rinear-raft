@@ -1,6 +1,6 @@
 import { ReactNode, TransitionEventHandler, useEffect, useState } from "react";
 import styles from "./SideMenuOpener.module.scss";
-import { assignClasses } from "lib/helper";
+import { assignClasses } from "utils/dom";
 
 type Props = {
   open: boolean;

@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { getScrollPosition } from "lib/helper";
+
+function getScrollPosition(): number {
+  return Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+}
 
 export function useScrollValue(): number {
   const [scroll, setScroll] = useState(0);

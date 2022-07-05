@@ -22,8 +22,8 @@
       "public/*": [
         "../public/*"
       ],
-      "data": [
-        "../data"
+      "data/*": [
+        "../data/*"
       ]
     },
     "incremental": true
