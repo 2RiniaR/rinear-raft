@@ -1,22 +1,16 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import styles from "./Abstract.module.scss";
-import { LetterContent } from "lib/contents";
-import StaticImage from "components/functions/StaticImage";
-import defaultThumbnail from "public/img/default-thumbnail.webp";
+import { Letter } from "models/content";
+import { StaticImage } from "components/functions";
+import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
-  content: LetterContent;
+  content: Letter;
 };
 
-const Abstract = ({ content }: Props): JSX.Element => (
+export const Abstract = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
-    <StaticImage src={content.thumbnail ?? defaultThumbnail} alt="サムネイル" className={styles.thumbnail} />
+    <StaticImage src={content.thumbnail ?? defaultThumbnailPic} alt="サムネイル" className={styles.thumbnail} />
     <p className={styles.description}>{content.description}</p>
   </div>
 );
-
-export default Abstract;

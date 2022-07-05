@@ -1,20 +1,15 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import styles from "./Footer.module.scss";
-import StaticImage from "components/functions/StaticImage";
-import ExternalLink from "components/functions/ExternalLink";
-import letterPic from "public/img/RineaR-letters-transparent.svg";
-import logoPic from "public/img/logo.png";
+import { ExternalLink, StaticImage } from "components/functions";
+import logoLettersPic from "public/general/logo-letters.webp";
+import logoIconPic from "public/general/logo-icon.webp";
 import packageSettings from "public/../package.json";
 
-const Footer = (): JSX.Element => (
+export const Footer = (): JSX.Element => (
   <footer className={styles.container}>
-    <StaticImage className={styles.back} src={logoPic} alt="Logo" layout="responsive" />
+    <StaticImage className={styles.back} src={logoIconPic} alt="Logo" layout="responsive" />
     <div className={styles.logo}>
-      <StaticImage className={styles.letter} src={letterPic} alt="RineaR" layout="responsive" />
+      <StaticImage className={styles.letter} src={logoLettersPic} alt="RineaR" layout="responsive" />
     </div>
     <div className={styles.links}>
       <ExternalLink className={styles.element} href={"https://twitter.com/14RineaR"}>
@@ -31,5 +26,3 @@ const Footer = (): JSX.Element => (
     <div className={styles.version}>version {packageSettings.version}</div>
   </footer>
 );
-
-export default Footer;

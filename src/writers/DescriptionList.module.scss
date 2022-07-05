@@ -1,0 +1,11 @@
+@use "global";
+
+.list {
+  border-radius: 0.5rem;
+  border: global.$light1 solid 1px;
+  padding: 1.2rem;
+  margin: 1.2em 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}

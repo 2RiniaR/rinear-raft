@@ -1,23 +1,26 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
+import React from "react";
 import styles from "./Landscape.module.scss";
-import Background from "./Background";
-import Shadow from "./Shadow";
-import Parallax from "components/functions/Parallax";
+import { Background } from "./Background";
+import { Shadow } from "./Shadow";
+import { Darkness } from "./Darkness";
+import { Parallax } from "components/functions";
 
-const Landscape = (): JSX.Element => (
-  <header className={styles.view}>
-    <div className={styles.elements}>
-      <Parallax startInnerOrigin={0} endInnerOrigin={-0.1}>
-        <Background />
-      </Parallax>
-      <Parallax startInnerOrigin={0} endInnerOrigin={-0.2}>
-        <Shadow />
-      </Parallax>
+type Props = {
+  enableDarkness: boolean;
+};
+
+export const Landscape = ({ enableDarkness }: Props): JSX.Element => (
+  <>
+    <div className={styles.view}>
+      <div className={styles.elements}>
+        <Parallax startInnerOrigin={0} endInnerOrigin={-0.1}>
+          <Background />
+        </Parallax>
+        <Parallax startInnerOrigin={0} endInnerOrigin={-0.2}>
+          <Shadow />
+        </Parallax>
+      </div>
     </div>
-  </header>
+    <Darkness enabled={enableDarkness} />
+  </>
 );
-
-export default Landscape;

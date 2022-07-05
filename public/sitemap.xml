@@ -9,52 +9,62 @@
 
 <url>
   <loc>https://www.rinear.net/</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.rinear.net/talks</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <loc>https://www.rinear.net/letters/declaration</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.rinear.net/projects</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <loc>https://www.rinear.net/letters</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.rinear.net/talks/design-sample</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <loc>https://www.rinear.net/materials</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rinear.net/materials/rinear-raft</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.rinear.net/talks/introduction</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <loc>https://www.rinear.net/materials/eyes</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.rinear.net/projects/rinear-official-site</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <loc>https://www.rinear.net/materials/kimifeel</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.rinear.net/projects/marvelous</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <loc>https://www.rinear.net/materials/marvelous</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.rinear.net/projects/popcorn-chef</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <loc>https://www.rinear.net/materials/mage-simulator</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.rinear.net/projects/busters-mission</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <loc>https://www.rinear.net/materials/pon-bon-rush</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.rinear.net/projects/maze-escape</loc>
-  <lastmod>2021-10-11T17:05:47+00:00</lastmod>
+  <loc>https://www.rinear.net/materials/busters-mission</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.rinear.net/materials/maze-escape</loc>
+  <lastmod>2022-07-04T04:45:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 

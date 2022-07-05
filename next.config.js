@@ -8,7 +8,7 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       src: path.join(__dirname, "src/"),
-      "content-parts": path.join(__dirname, "src/components/parts/contents/")
+      data: path.join(__dirname, "data/")
     };
     return config;
   },

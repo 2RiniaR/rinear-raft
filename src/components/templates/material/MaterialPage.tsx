@@ -1,21 +1,17 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { useState } from "react";
 import styles from "./MaterialPage.module.scss";
 import { MaterialTop } from "./Top";
-import BackButton from "components/templates/layout/BackButton";
-import { ChapterPoint, MaterialContent } from "lib/contents";
-import ContentPage from "components/templates/ContentPage";
-import ChaptersView from "components/parts/ChaptersView/ChaptersView";
+import { BackButton, ContentPage } from "components/templates";
+import { ChaptersView } from "components/parts";
+import { ContentContext } from "constants/content";
+import { Chapter, Material } from "models/content";
 
 type Props = {
-  content: MaterialContent;
+  content: Material;
 };
 
-const MaterialPage = ({ content }: Props): JSX.Element => {
-  const [chapters, setChapters] = useState<ChapterPoint[]>([]);
+export const MaterialPage = ({ content }: Props): JSX.Element => {
+  const [chapters, setChapters] = useState<Chapter[]>([]);
 
   return (
     <ContentPage>
@@ -23,10 +19,12 @@ const MaterialPage = ({ content }: Props): JSX.Element => {
       <div className={styles.layout}>
         <MaterialTop content={content} />
         <ChaptersView chapters={chapters} />
-        <content.Page setChapters={setChapters} />
+        <main className={styles.content}>
+          <ContentContext.Provider value={{ genre: "letter" }}>
+            <content.Page setChapters={setChapters} />
+          </ContentContext.Provider>
+        </main>
       </div>
     </ContentPage>
   );
 };
-
-export default MaterialPage;

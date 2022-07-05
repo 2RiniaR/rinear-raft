@@ -1,17 +1,13 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import Image, { ImageProps, StaticImageData } from "next/image";
 import { CSSProperties, useMemo, useRef } from "react";
-import useElementSize from "components/fooks/element-size";
+import { useElementSize } from "fooks";
 
 export type StaticImageProps = {
   src: StaticImageData;
   style?: CSSProperties;
 } & Omit<ImageProps, "src" & "width" & "height">;
 
-const StaticImage = ({ src, className, style, ...props }: StaticImageProps): JSX.Element => {
+export const StaticImage = ({ src, className, style, ...props }: StaticImageProps): JSX.Element => {
   const containerRef = useRef(null);
   const [width] = useElementSize(containerRef);
   const height = useMemo(() => {
@@ -25,5 +21,3 @@ const StaticImage = ({ src, className, style, ...props }: StaticImageProps): JSX
     </div>
   );
 };
-
-export default StaticImage;

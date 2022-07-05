@@ -1,0 +1,1 @@
+export { MaterialIndexPage } from "./MaterialIndexPage";

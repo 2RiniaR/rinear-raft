@@ -1,22 +1,18 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import styles from "./MaterialHeading.module.scss";
-import Title from "./Title";
-import SubThumbnails from "./SubThumbnails";
-import { MaterialContentHead } from "lib/contents";
-import StaticImage from "components/functions/StaticImage";
-import defaultThumbnail from "public/img/default-thumbnail.webp";
+import { Title } from "./Title";
+import { SubThumbnails } from "./SubThumbnails";
+import { Material, WithoutPage } from "models/content";
+import { StaticImage } from "components/functions";
+import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
-  head: MaterialContentHead;
+  head: WithoutPage<Material>;
 };
 
-const MaterialHeading = ({ head }: Props): JSX.Element => (
+export const MaterialHeading = ({ head }: Props): JSX.Element => (
   <article className={styles.container}>
     <StaticImage
-      src={head.thumbnails[0] ?? defaultThumbnail}
+      src={head.thumbnails[0] ?? defaultThumbnailPic}
       alt={head.title}
       className={styles.mainThumbnail}
       layout="responsive"
@@ -29,5 +25,3 @@ const MaterialHeading = ({ head }: Props): JSX.Element => (
     </div>
   </article>
 );
-
-export default MaterialHeading;

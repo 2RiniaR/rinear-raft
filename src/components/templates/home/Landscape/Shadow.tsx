@@ -1,20 +1,16 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import styles from "./Shadow.module.scss";
+import { assignClasses } from "utils/dom";
 import { PreloadStaticImage } from "components/functions/loading";
-import shadowPic from "public/img/shadow.webp";
-import shadow2Pic from "public/img/shadow2.webp";
-import shadow3Pic from "public/img/shadow3.webp";
-import shadow4Pic from "public/img/shadow4.webp";
-import { assignClasses } from "lib/helper";
+import shadow1Pic from "public/home/shadow1.webp";
+import shadow2Pic from "public/home/shadow2.webp";
+import shadow3Pic from "public/home/shadow3.webp";
+import shadow4Pic from "public/home/shadow4.webp";
 
-const Shadow = (): JSX.Element => (
+export const Shadow = (): JSX.Element => (
   <>
     <PreloadStaticImage
       className={assignClasses(styles.image, styles.frame1)}
-      src={shadowPic}
+      src={shadow1Pic}
       alt=""
       layout="responsive"
     />
@@ -38,5 +34,3 @@ const Shadow = (): JSX.Element => (
     />
   </>
 );
-
-export default Shadow;

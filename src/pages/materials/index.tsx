@@ -1,33 +1,30 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
+import { InferGetStaticPropsType } from "next";
+import { PageSettings } from "components/functions";
+import { fetchAllMaterialsId, fetchMaterial, fetchSite } from "repositories";
+import { MaterialIndexPage } from "components/templates";
 
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { rinearDescription } from "../../data/description";
-import Seo from "../../components/functions/Seo";
-import MaterialIndexPage from "components/templates/material-index/MaterialIndexPage";
-import { MaterialRepository } from "data/contents/materials";
-import { getMaterialsId } from "data/contents/materials/fetch";
-
-const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const repository = new MaterialRepository(contentsId);
+const Page = ({ site, materialsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  const contents = materialsId.map((id) => fetchMaterial(id));
   return (
     <>
-      <Seo
+      <PageSettings
         pageTitle={"Materials"}
-        pageDescription={rinearDescription}
+        pageDescription={site.description}
         pagePath={"/materials"}
         pageImgPath={"/img/main.webp"}
         pageType="article"
       />
-      <MaterialIndexPage heads={repository.getAllContents("releasedAt")} />
+      <MaterialIndexPage heads={contents} />
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   return {
-    props: { contentsId: await getMaterialsId() }
+    props: {
+      site: await fetchSite(),
+      materialsId: await fetchAllMaterialsId()
+    }
   };
 };
 

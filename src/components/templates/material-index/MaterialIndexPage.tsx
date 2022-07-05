@@ -1,30 +1,22 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import styles from "./MaterialIndexPage.module.scss";
-import Viewer from "./MaterialsViewer";
-import materialsPic from "public/img/materials.png";
-import { MaterialContentHead } from "lib/contents";
-import Footer from "components/parts/Footer";
-import Background from "components/parts/Background";
-import GenreHeader from "components/parts/GenreHeader";
-import BackButton from "components/templates/layout/BackButton";
+import { MaterialsViewer } from "./MaterialsViewer";
+import materialIconPic from "public/general/material-icon.png";
+import { Material, WithoutPage } from "models/content";
+import { Background, Footer, GenreHeader } from "components/parts";
+import { BackButton } from "components/templates";
 
 type Props = {
-  heads: MaterialContentHead[];
+  heads: WithoutPage<Material>[];
 };
 
-const MaterialIndexPage = ({ heads }: Props): JSX.Element => (
+export const MaterialIndexPage = ({ heads }: Props): JSX.Element => (
   <Background>
     <div className={styles.page}>
       <BackButton href={"/"} />
-      <GenreHeader logoSrc={materialsPic} title="MATERIALS" />
-      <Viewer heads={heads} />
+      <GenreHeader logoSrc={materialIconPic} title="MATERIALS" />
+      <MaterialsViewer heads={heads} />
       <Footer />
     </div>
   </Background>
 );
-
-export default MaterialIndexPage;

@@ -1,21 +1,18 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import Link from "next/link";
 import styles from "./LettersViewer.module.scss";
-import LetterHeading from "./LetterHeading";
-import { getContentPath, LetterContentHead } from "lib/contents";
+import { LetterHeading } from "./LetterHeading";
+import { Letter, WithoutPage } from "models/content";
+import { pathOf } from "routes";
 
 type Props = {
-  heads: LetterContentHead[];
+  heads: WithoutPage<Letter>[];
 };
 
-const LettersViewer = ({ heads }: Props): JSX.Element => (
+export const LettersViewer = ({ heads }: Props): JSX.Element => (
   <main className={styles.container}>
     {heads.map((head) => (
-      <Link href={getContentPath(head)} key={head.id}>
+      <Link href={pathOf(head)} key={head.id}>
         <a className={styles.element}>
           <LetterHeading head={head} />
         </a>
@@ -23,5 +20,3 @@ const LettersViewer = ({ heads }: Props): JSX.Element => (
     ))}
   </main>
 );
-
-export default LettersViewer;

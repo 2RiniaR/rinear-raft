@@ -1,15 +1,11 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import styles from "./SideMenu.module.scss";
-import SideMenuItem, { SideMenuItemProps } from "./SideMenuItem";
-import SideMenuOpener from "./SideMenuOpener";
-import materialsPic from "public/img/materials.png";
-import StaticImage from "components/functions/StaticImage";
-import leftArrowPic from "public/img/LeftArrow.png";
-import logoPic from "public/img/logo.png";
-import lettersPic from "public/img/letters.png";
+import { SideMenuItem, SideMenuItemProps } from "./SideMenuItem";
+import { SideMenuOpener } from "./SideMenuOpener";
+import { StaticImage } from "components/functions";
+import backIconPic from "public/general/back-icon.png";
+import homeIconPic from "public/general/logo-icon.webp";
+import letterIconPic from "public/general/letter-icon.png";
+import materialIconPic from "public/general/material-icon.png";
 
 type Props = {
   open: boolean;
@@ -17,16 +13,16 @@ type Props = {
 };
 
 const items: Omit<SideMenuItemProps, "onClick">[] = [
-  { href: "/", markSrc: logoPic, name: "HOME" },
-  { href: "/letters", markSrc: lettersPic, name: "LETTERS" },
-  { href: "/materials", markSrc: materialsPic, name: "MATERIALS" }
+  { href: "/", markSrc: homeIconPic, name: "HOME" },
+  { href: "/letters", markSrc: letterIconPic, name: "LETTERS" },
+  { href: "/materials", markSrc: materialIconPic, name: "MATERIALS" }
 ];
 
-const SideMenu = ({ open, setOpen }: Props): JSX.Element => (
+export const SideMenu = ({ open, setOpen }: Props): JSX.Element => (
   <div className={styles.screen}>
     <SideMenuOpener open={open} setOpen={setOpen}>
       <button className={styles.backButton} onClick={() => setOpen(false)} name="戻る" aria-label="戻る">
-        <StaticImage src={leftArrowPic} alt="戻る" layout="responsive" />
+        <StaticImage src={backIconPic} alt="戻る" layout="responsive" />
       </button>
       <div className={styles.index}>
         {items.map((item) => (
@@ -36,5 +32,3 @@ const SideMenu = ({ open, setOpen }: Props): JSX.Element => (
     </SideMenuOpener>
   </div>
 );
-
-export default SideMenu;

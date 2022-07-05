@@ -1,10 +1,10 @@
-import StaticImage from "../../../functions/StaticImage";
 import styles from "./SceneView.module.scss";
-import { assignClasses } from "lib/helper";
-import { Scene } from "lib/story";
+import { assignClasses } from "utils/dom";
+import { StaticImage } from "components/functions";
+import { StoryScene } from "models/home";
 
 type Props = {
-  scene: Scene;
+  scene: StoryScene;
   layout: "left" | "right";
 };
 
@@ -20,5 +20,3 @@ export const SceneView = ({ scene, layout }: Props): JSX.Element => (
     </div>
   </div>
 );
-
-export default SceneView;

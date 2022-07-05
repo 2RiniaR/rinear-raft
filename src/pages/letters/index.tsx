@@ -1,33 +1,30 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
+import { InferGetStaticPropsType } from "next";
+import { PageSettings } from "components/functions";
+import { fetchAllLettersId, fetchLetter, fetchSite } from "repositories";
+import { LetterIndexPage } from "components/templates";
 
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import Seo from "../../components/functions/Seo";
-import { rinearDescription } from "../../data/description";
-import LetterIndexPage from "components/templates/letter-index/LetterIndexPage";
-import { LetterRepository } from "data/contents/letters";
-import { getLettersId } from "data/contents/letters/fetch";
-
-const Page = ({ contentsId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const repository = new LetterRepository(contentsId);
+const Page = ({ site, lettersId }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  const contents = lettersId.map((id) => fetchLetter(id));
   return (
     <>
-      <Seo
+      <PageSettings
         pageTitle={"Letters"}
-        pageDescription={rinearDescription}
+        pageDescription={site.description}
         pagePath={"/letters"}
         pageImgPath={"/img/main.webp"}
         pageType="article"
       />
-      <LetterIndexPage heads={repository.getAllContents("updatedAt")} />
+      <LetterIndexPage heads={contents} />
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   return {
-    props: { contentsId: await getLettersId() }
+    props: {
+      site: await fetchSite(),
+      lettersId: await fetchAllLettersId()
+    }
   };
 };
 

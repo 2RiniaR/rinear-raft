@@ -1,6 +1,6 @@
 {
   "name": "rinear-raft",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0",
@@ -14,7 +14,6 @@
     "format": "prettier --write \"./**/*.ts\" \"./**/*.tsx\""
   },
   "dependencies": {
-    "body-scroll-lock": "^4.0.0-beta.0",
     "dayjs": "^1.11.3",
     "destyle.css": "^3.0.2",
     "next": "12.1.6",

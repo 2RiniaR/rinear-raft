@@ -1,14 +1,10 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { useState } from "react";
 import { StaticImageData } from "next/image";
 import Link from "next/link";
-import useInterval from "../../../fooks/interval";
 import styles from "./Phantom.module.scss";
-import back from "public/img/Node.webp";
+import { useInterval } from "fooks/interval";
 import { PreloadStaticImage } from "components/functions/loading";
+import backgroundPic from "public/home/phantom.webp";
 
 type Props = {
   title: string;
@@ -22,7 +18,7 @@ type Position = {
   y: number;
 };
 
-const Phantom = ({ title, subtitle, icon, href }: Props): JSX.Element => {
+export const Phantom = ({ title, subtitle, icon, href }: Props): JSX.Element => {
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
 
   useInterval(() => {
@@ -34,7 +30,7 @@ const Phantom = ({ title, subtitle, icon, href }: Props): JSX.Element => {
       <a className={styles.container}>
         <div className={styles.sizeFilter}>
           <div className={styles.positionFilter} style={{ transform: `translate(${position.x}px, ${position.y}px)` }}>
-            <PreloadStaticImage className={styles.back} src={back} alt="" layout="responsive" />
+            <PreloadStaticImage className={styles.back} src={backgroundPic} alt="" layout="responsive" />
             <div className={styles.content}>
               <PreloadStaticImage className={styles.icon} src={icon} alt="" layout="responsive" />
               <h1 className={styles.title}>{title}</h1>
@@ -46,5 +42,3 @@ const Phantom = ({ title, subtitle, icon, href }: Props): JSX.Element => {
     </Link>
   );
 };
-
-export default Phantom;

@@ -1,16 +1,12 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import styles from "./ChaptersViewItem.module.scss";
-import { ChapterPoint } from "lib/contents";
+import { Chapter } from "models/content";
 
 type Props = {
-  chapter: ChapterPoint;
+  chapter: Chapter;
 };
 
-const ChaptersViewItem = ({ chapter }: Props): JSX.Element => {
+export const ChaptersViewItem = ({ chapter }: Props): JSX.Element => {
   function scroll() {
     chapter.ref?.current?.scrollIntoView({
       behavior: "smooth",
@@ -25,5 +21,3 @@ const ChaptersViewItem = ({ chapter }: Props): JSX.Element => {
     </a>
   );
 };
-
-export default ChaptersViewItem;

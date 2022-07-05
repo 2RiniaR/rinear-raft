@@ -1,17 +1,13 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import styles from "./ChaptersView.module.scss";
-import ChaptersViewItem from "./ChaptersViewItem";
-import { ChapterPoint } from "lib/contents";
+import { ChaptersViewItem } from "./ChaptersViewItem";
+import { Chapter } from "models/content";
 
 type Props = {
-  chapters: ChapterPoint[];
+  chapters: Chapter[];
 };
 
-const ChaptersView = ({ chapters }: Props): JSX.Element => (
+export const ChaptersView = ({ chapters }: Props): JSX.Element => (
   <div className={styles.layout}>
     <h2 className={styles.title}>- CHAPTERS -</h2>
     <div className={styles.chapters}>
@@ -21,5 +17,3 @@ const ChaptersView = ({ chapters }: Props): JSX.Element => (
     </div>
   </div>
 );
-
-export default ChaptersView;

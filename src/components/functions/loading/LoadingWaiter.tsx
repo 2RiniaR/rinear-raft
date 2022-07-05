@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import { ReactNode, useEffect, useState } from "react";
 import { LoadingContext } from ".";
 
@@ -11,7 +7,7 @@ type Props = {
   onProgressUpdated?: (percent: number) => void;
 };
 
-const LoadingWaiter = ({
+export const LoadingWaiter = ({
   children,
   onCompleted,
   onProgressUpdated = () => {
@@ -48,5 +44,3 @@ const LoadingWaiter = ({
 
   return <LoadingContext.Provider value={{ register }}>{children}</LoadingContext.Provider>;
 };
-
-export default LoadingWaiter;

@@ -1,24 +1,19 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
-import React, { useContext, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { PickupsContext } from "../HomePage";
-import useElementSize from "../../../fooks/element-size";
 import styles from "./Rift.module.scss";
-import { assignClasses } from "lib/helper";
+import { assignClasses } from "utils/dom";
+import { useContentSwitch, useElementSize } from "fooks";
 import { PreloadStaticImage } from "components/functions/loading";
-import back from "public/img/LogoBack.webp";
-import useContentSwitch from "components/fooks/content-switch";
+import backgroundPic from "public/home/rift.webp";
+import { Pickup } from "models/home";
 
 type Props = {
   active: boolean;
+  pickups: Pickup[];
 };
 
-const Rift = ({ active }: Props): JSX.Element => {
+export const Rift = ({ active, pickups }: Props): JSX.Element => {
   const [hover, setHover] = useState(false);
-  const pickups = useContext(PickupsContext);
   const [content, contentIndex, switching] = useContentSwitch(pickups, hover, {
     switchingDuration: 500,
     displayDuration: 5000
@@ -33,7 +28,7 @@ const Rift = ({ active }: Props): JSX.Element => {
       ref={containerRef}
     >
       <div className={styles.back}>
-        <PreloadStaticImage className={styles.image} src={back} alt="" layout="responsive" />
+        <PreloadStaticImage className={styles.image} src={backgroundPic} alt="" layout="responsive" />
       </div>
       <div className={styles.mask}>
         <PreloadStaticImage
@@ -85,5 +80,3 @@ const Rift = ({ active }: Props): JSX.Element => {
     </div>
   );
 };
-
-export default Rift;

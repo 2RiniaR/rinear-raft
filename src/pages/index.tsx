@@ -1,25 +1,22 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
+import { InferGetStaticPropsType } from "next";
+import { PageSettings } from "components/functions";
+import { HomePage } from "components/templates";
+import { fetchHome, fetchSite } from "repositories";
+import { about, story } from "constants/home";
 
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { getPickUps } from "../data/pickup";
-import { story } from "../data/story";
-import Seo from "../components/functions/Seo";
-import { rinearDescription } from "../data/description";
-import { about } from "../data/about";
-import HomePage from "components/templates/home/HomePage";
-
-const Page = ({ pickups }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => (
+const Page = ({ site, home }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => (
   <>
-    <Seo pageDescription={rinearDescription} pagePath={"/"} pageImgPath={"/img/main.webp"} pageType="website" />
-    <HomePage pickups={pickups} story={story} about={about} />
+    <PageSettings pageDescription={site.description} pagePath={"/"} pageImgPath={"/img/main.webp"} pageType="website" />
+    <HomePage pickups={home.pickups} story={story} about={about} />
   </>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   return {
-    props: { pickups: await getPickUps() }
+    props: {
+      site: await fetchSite(),
+      home: await fetchHome()
+    }
   };
 };
 

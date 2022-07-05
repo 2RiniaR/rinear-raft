@@ -1,16 +1,26 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
+import { InferGetStaticPropsType } from "next";
+import { PageSettings } from "components/functions";
+import { fetchSite } from "repositories";
+import { NotFoundPage } from "components/templates";
 
-import Seo from "../components/functions/Seo";
-import { rinearDescription } from "../data/description";
-import NotFoundPage from "components/templates/not-found/NotFoundPage";
+const Page = ({ site }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  return (
+    <>
+      <PageSettings
+        pageTitle={"Not Found"}
+        pageDescription={site.description}
+        pagePath={"/"}
+        pageImgPath={"/img/main.webp"}
+      />
+      <NotFoundPage />
+    </>
+  );
+};
 
-const Page = (): JSX.Element => (
-  <>
-    <Seo pageTitle={"Not Found"} pageDescription={rinearDescription} pagePath={"/"} pageImgPath={"/img/main.webp"} />
-    <NotFoundPage />
-  </>
-);
+export const getStaticProps = async () => {
+  return {
+    props: { site: await fetchSite() }
+  };
+};
 
 export default Page;

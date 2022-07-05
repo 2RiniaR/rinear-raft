@@ -1,24 +1,20 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React from "react";
 import styles from "./Abstract.module.scss";
-import { MaterialContent } from "lib/contents";
-import StaticImage from "components/functions/StaticImage";
-import defaultThumbnail from "public/img/default-thumbnail.webp";
+import { Material } from "models/content";
+import { StaticImage } from "components/functions";
+import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
 type Props = {
-  content: MaterialContent;
+  content: Material;
 };
 
-const Abstract = ({ content }: Props): JSX.Element => (
+export const Abstract = ({ content }: Props): JSX.Element => (
   <div className={styles.layout}>
     <p className={styles.description}>{content.description}</p>
     <div className={styles.thumbnails}>
       {content.thumbnails.map((thumbnail, index) => (
         <StaticImage
-          src={thumbnail ?? defaultThumbnail}
+          src={thumbnail ?? defaultThumbnailPic}
           alt="サブサムネイル"
           className={styles.thumbnail}
           key={`thumbnail-${index}-${thumbnail.src}`}
@@ -27,5 +23,3 @@ const Abstract = ({ content }: Props): JSX.Element => (
     </div>
   </div>
 );
-
-export default Abstract;

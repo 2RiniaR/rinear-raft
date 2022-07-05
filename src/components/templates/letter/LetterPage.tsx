@@ -1,21 +1,18 @@
-/*
- * Copyright (c) 2022 RineaR. All rights reserved.
- */
-
 import React, { useState } from "react";
 import styles from "./LetterPage.module.scss";
 import { LetterTop } from "./Top";
-import { ChapterPoint, LetterContent } from "lib/contents";
-import ContentPage from "components/templates/ContentPage";
-import ChaptersView from "components/parts/ChaptersView/ChaptersView";
-import BackButton from "components/templates/layout/BackButton";
+import { Chapter, Letter } from "models/content";
+import { ChaptersView } from "components/parts";
+import { ContentPage } from "components/templates";
+import { BackButton } from "components/templates/layout";
+import { ContentContext } from "constants/content";
 
 type Props = {
-  content: LetterContent;
+  content: Letter;
 };
 
-const LetterPage = ({ content }: Props): JSX.Element => {
-  const [chapters, setChapters] = useState<ChapterPoint[]>([]);
+export const LetterPage = ({ content }: Props): JSX.Element => {
+  const [chapters, setChapters] = useState<Chapter[]>([]);
 
   return (
     <ContentPage>
@@ -23,10 +20,12 @@ const LetterPage = ({ content }: Props): JSX.Element => {
       <div className={styles.layout}>
         <LetterTop content={content} />
         <ChaptersView chapters={chapters} />
-        <content.Page setChapters={setChapters} />
+        <main className={styles.content}>
+          <ContentContext.Provider value={{ genre: "material" }}>
+            <content.Page setChapters={setChapters} />
+          </ContentContext.Provider>
+        </main>
       </div>
     </ContentPage>
   );
 };
-
-export default LetterPage;
