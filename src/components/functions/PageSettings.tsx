@@ -10,6 +10,7 @@ type Props = {
 
 export const PageSettings = ({ pageTitle, pageType, pageDescription, pagePath, pageImgPath }: Props) => {
   const siteName = "RineaRの筏";
+  const siteDomain = "rinear.net";
   const siteBaseUrl = "https://rinear.net";
 
   const title = pageTitle ? `${pageTitle} | ${siteName}` : siteName;
@@ -35,7 +36,9 @@ export const PageSettings = ({ pageTitle, pageType, pageDescription, pagePath, p
       <meta property="og:image" content={imgUrl} />
       <meta property="og:image:width" content={String(imgWidth)} />
       <meta property="og:image:height" content={String(imgHeight)} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={`@${twitterId}`} />
+      <meta name="twitter:domain" content={siteDomain} />
     </Head>
   );
 };
