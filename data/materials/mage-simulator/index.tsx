@@ -18,12 +18,16 @@ import architecturePic from "public/contents/materials/mage-simulator/architectu
 import environmentPic from "public/contents/materials/mage-simulator/environment.jpg";
 import voiceRecognitionPic from "public/contents/materials/mage-simulator/voice-recognition.jpg";
 import motionRecognitionPic from "public/contents/materials/mage-simulator/motion-recognition.jpg";
+import grammarPic from "public/contents/materials/mage-simulator/grammar.jpg";
 import {
   ChapterPoint,
   ContentImage,
+  Description,
+  DescriptionList,
   ExternalLink,
   Heading,
   ListItem,
+  OrderedList,
   Paragraph,
   Space,
   Strong,
@@ -37,7 +41,8 @@ const Page: ContentPage = ({ setChapters }) => {
     video: { name: "紹介動画", ref: useRef(null) },
     function: { name: "使い方", ref: useRef(null) },
     about: { name: "この作品について", ref: useRef(null) },
-    implement: { name: "どのように作られているか", ref: useRef(null) }
+    implement: { name: "どのように作られているか", ref: useRef(null) },
+    last: { name: "最後に", ref: useRef(null) }
   };
 
   useEffect(() => setChapters(Object.values(refs)), []);
@@ -213,37 +218,151 @@ const Page: ContentPage = ({ setChapters }) => {
       </ChapterPoint>
 
       <ChapterPoint title={refs.implement.name} jumpRef={refs.implement.ref}>
+        <Paragraph>あまりITに詳しくないよって方も、雰囲気でなんとなく分かるような解説をします。</Paragraph>
+
         <Heading level="sub">全体</Heading>
         <ContentImage src={environmentPic} alt="環境" />
         <Paragraph>
-          今回のアプリケーションは<ExternalLink href="https://unity.com/ja">Unity</ExternalLink>をベースに、音声認識に
-          <ExternalLink href="https://julius.osdn.jp/">Julius</ExternalLink>、Wiiリモコンとの通信に
+          今回のアプリケーションはゲームエンジンの<ExternalLink href="https://unity.com/ja">Unity</ExternalLink>
+          をベースに、音声認識ソフトウェアとして
+          <ExternalLink href="https://julius.osdn.jp/">Julius</ExternalLink>、Wiiリモコンとの通信のために
           <ExternalLink href="https://github.com/Flafla2/Unity-Wiimote">Unity-Wiimote</ExternalLink>を使用しました。
         </Paragraph>
         <Paragraph>
-          なんとなく気付くかもしれませんが、画像は外部で発表したものを丁重に使いまわさせていただいてます。
+          なんとなく気付くかもしれませんが、
+          <Strong>画像は外部で発表したものを丁重に使いまわさせていただいてます。</Strong>
           それよりも、どうですか？素敵で見やすいデザインじゃないですかね。徹夜の脳から生まれたクオリティとは今の自分でもとても思えないです。
+        </Paragraph>
+        <Paragraph>
+          それと、今更ですが英語が変だったらごめんなさい、徹夜だったもので。
+          ちなみに現在は徹夜をすることは無くなりました。健康でおめでたいですね。
         </Paragraph>
         <Space size={1} />
 
         <ContentImage src={architecturePic} alt="構造" />
         <Paragraph>
-          これがアプリケーション全体の構造です。ゲームが外部のデバイスやソフトウェアと通信をしています。
-          この中で、「音声認識」「Wiiリモコンと杖の連動」「セットアップ画面の表示」で色々試行錯誤をしたので、それぞれ紹介したいと思います。
+          これがアプリケーション全体の構造です。そんなにわからなくていいです。ざっくり言うと、ゲームがマイクやらWiiリモコンやらと通信をしています。
+        </Paragraph>
+        <Paragraph>
+          この中で、「音声認識」「Wiiリモコンと杖の連動」で色々試行錯誤をしたので、それぞれ紹介したいと思います。
         </Paragraph>
         <Space size={1} />
 
         <Heading level="sub">音声認識</Heading>
         <ContentImage src={voiceRecognitionPic} alt="音声認識" />
-        <Paragraph>音声認識はこんな感じで行われています。</Paragraph>
+        <Paragraph>音声認識の流れは、こんな感じです。</Paragraph>
+        <OrderedList>
+          <ListItem>「この呪文を認識してくれ！」と指定するためのファイルを、予め用意しておく。</ListItem>
+          <ListItem>
+            『メイジ・シミュレータ』の起動と同時に、音声認識ソフト（Julius）を自動で起動し、通信を開始する。
+          </ListItem>
+          <ListItem>
+            詠唱のタイミングで、「この呪文を認識してくれ！」「認識を開始してくれ！」という信号を送る。
+          </ListItem>
+          <ListItem>呪文をマイクに唱えると、音声認識ソフトが「正しい文章が認識できたか」を判定する。</ListItem>
+          <ListItem>
+            リアルタイムでJuliusから結果が返ってくるため、その中身を解析して呪文詠唱の成功・失敗を判定する。
+          </ListItem>
+        </OrderedList>
         <Space size={1} />
 
-        <Heading level="sub">モーション認識</Heading>
+        <Paragraph>ここからちょっと詳しく解説します。</Paragraph>
+
+        <ContentImage src={grammarPic} alt="音声認識に必要なファイル" />
+        <Paragraph>
+          Juliusでの音声認識には、認識したい単語が書かれたファイルをあらかじめ用意する必要があります。
+          そのため、「ファイアブラスト」のような呪文それぞれに対して、これらのファイルを自動生成するプログラムを書きました。
+        </Paragraph>
+        <DescriptionList>
+          <Description name={"工夫点"}>
+            恐らく本来の使い方は、スマートスピーカーのような汎用的な音声認識を行うために、1つの設定ファイルに多くの単語を記述するというものです。
+            ですが、今回は特定の呪文のみ判定を行いたかったため、1つのファイルには呪文の単語しか記述せず、認識したいときに設定ファイルを適宜切り替えて使うようにしました。
+          </Description>
+        </DescriptionList>
+        <Space size={1} />
+
+        <ContentImage src={grammarPic} alt="音声認識に必要なファイル" />
+        <Paragraph>
+          Juliusの認識結果を他のアプリケーションで利用するには、自分のアプリケーションとJuliusの間で通信を行い、そのうえでメッセージを送り合う必要があります。
+          例えば、音声認識の結果は画像のような形式で受け取ることができます。これを判別すればいいわけです。
+        </Paragraph>
+        <Paragraph>
+          そのため、「メイジ・シミュレータ」には
+          <UnorderedList>
+            <ListItem>通信を開始し、その接続を維持する機能</ListItem>
+            <ListItem>認識する単語の切り替え、認識の開始などの指示を送る機能</ListItem>
+            <ListItem>送られてきた判定結果が成功・失敗のどちらなのかを判別する機能</ListItem>
+          </UnorderedList>
+          が付いています。
+        </Paragraph>
+
+        <Heading level="sub">Wiiリモコンと杖の連動</Heading>
         <ContentImage src={motionRecognitionPic} alt="モーション認識" />
         <Paragraph>
-          これがアプリケーション全体の構造です。ゲームが外部のデバイスやソフトウェアと通信をしています。その他特筆する点はありません。
+          <Strong>Wiiリモコンって実はBluetoothでPCと接続が可能</Strong>なので、今回はこれを使ってPCと接続しました。
         </Paragraph>
         <Space size={1} />
+
+        <Paragraph>
+          Wiiリモコンから受け取れる信号は、大まかに分けて
+          <UnorderedList>
+            <ListItem>各ボタンが押されているかどうか</ListItem>
+            <ListItem>重力がどの方向を向いているか、どの方向に振ったか（厳密には、三軸加速度センサの値）</ListItem>
+            <ListItem>角度がどのくらいの速さで変化しているか（厳密には、ジャイロセンサの値）</ListItem>
+          </UnorderedList>
+          の3つ。これらを使って、あたかも杖を持っているかのようにWiiリモコンの動きをリンクします。
+        </Paragraph>
+        <Space size={1} />
+
+        <Paragraph>
+          このうち「角度がどのくらいの速さで変化しているか」を受け取って、毎フレーム足していけば行けそう！と思いました。
+        </Paragraph>
+        <Paragraph>
+          <Strong>......とんでもないブレ。</Strong>というか静止させてても勝手にあさっての方向を向いていきます。
+        </Paragraph>
+        <Paragraph>
+          それはそうで、当然センサには誤差があります。
+          <Strong>誤差が蓄積されて、勝手に杖が動いていってしまう</Strong>、というのが原因でした。
+        </Paragraph>
+        <Space size={1} />
+
+        <Paragraph>
+          そこでどうしたかというと、<Strong>「重力がどの方向を向いているか」を利用して誤差を補正しよう！</Strong>
+          となりました。
+        </Paragraph>
+        <Paragraph>
+          この時に「重力の向いている方向」から「ゲーム内にある杖との誤差」計算がまあ難しくて、うんうん唸りながらメモ帳に計算式を書いてました。
+          ちょっと難しいことを言うと、行列計算というやつです。
+        </Paragraph>
+        <DescriptionList>
+          <Description name={"最初から「重力がどの方向を向いているか」だけ使うんじゃダメなの？"}>
+            <Paragraph>
+              Aボタンのある面を上にして、Wiiリモコンをディスプレイ側に向けたときには重力はBボタンの方向に向いていますね。
+            </Paragraph>
+            <Paragraph>
+              それでは、Aボタンのある面を上にしたまま、くるっと180度回転させてWiiリモコンを自分の方に向けてみましょう。重力はどの方向に向いていますか？
+            </Paragraph>
+          </Description>
+        </DescriptionList>
+        <Space size={1} />
+
+        <Paragraph>
+          悩んでたことも最終的には解決して、実際にこの方法で誤差を補正してみました。 すると、なんと
+          <Strong>ちゃんとWiiリモコンと杖の動きがリンクする！素晴らしい！</Strong>
+        </Paragraph>
+        <Paragraph>
+          こうして、無事にWiiリモコンを杖として扱う準備ができたわけです。
+          あとは、杖の向きやボタンの入力状態から、魔法の発動が成功したか否かを判定するだけなので、制作はスムーズでした。
+        </Paragraph>
+      </ChapterPoint>
+
+      <ChapterPoint title={refs.last.name} jumpRef={refs.last.ref}>
+        <Paragraph>ここまで読んでいただき、ありがとうございました！</Paragraph>
+        <Paragraph>
+          『メイジ・シミュレータ』は現在公開していませんが、文章中でも触れた通り、いつかゲームとして昇華することがあるかもしれません。
+          そのときは、「あっあの時の！」となってくれると嬉しいです！
+        </Paragraph>
+        <Paragraph>みなさんもよき魔法使いになれますように！</Paragraph>
       </ChapterPoint>
     </>
   );
