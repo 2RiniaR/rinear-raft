@@ -61,7 +61,7 @@ const Page: ContentPage = ({ setChapters }) => {
 
       <ChapterPoint title={refs.function.name} jumpRef={refs.function.ref}>
         <Paragraph>
-          このシステムでは、<Strong>「呪文を唱えて杖を振ることで、ゲーム内で魔法が発動できる」</Strong>
+          今回は、<Strong>「呪文を唱えて杖を振ることで、ゲーム内で魔法が発動できる」</Strong>
           みたいな機能を実現しました。
           Wiiリモコンを杖に見立てて、特定のモーションをしながらマイクに向かって呪文を放つと、ゲーム内で魔法が発動します。
         </Paragraph>
@@ -70,22 +70,22 @@ const Page: ContentPage = ({ setChapters }) => {
         <Heading level="detail">セットアップ</Heading>
         <ContentImage src={setup1Pic} alt="マイクのセットアップ" />
         <Paragraph>
-          まずはタイトル画面から進むと、マイクのセットアップとなります。
+          まずはタイトル画面から進むと、<Strong>マイクのセットアップ</Strong>となります。
           ここで、使用するマイクを選択し、音声の入力感度も調整できます。
         </Paragraph>
         <Space size={1} />
 
         <ContentImage src={setup2Pic} alt="Wiiリモコンのセットアップ" />
         <Paragraph>
-          次に、Wiiリモコンをセットアップします。
+          次に、<Strong>Wiiリモコンをセットアップ</Strong>します。
           4回ほど指定の向きでWiiリモコンを静止させ、内部に搭載されているジャイロセンサを校正していきます。
         </Paragraph>
         <Space size={1} />
 
         <ContentImage src={setup3Pic} alt="音声認識の確認" />
         <Paragraph>
-          次に、音声認識が正常に行われるかどうかをテストします。
-          ここでは、WiiリモコンのAボタンを押しながら画面に表示された文章を話すことで、正しく認識されることを確認します。
+          次に、<Strong>音声認識が正常に行われるかどうかをテスト</Strong>します。
+          WiiリモコンのAボタンを押しながら、画面に表示された文章を話すことで、正しく認識されることを確認します。
           この工程が完了すると、実際に魔法を詠唱する画面に移行します。
         </Paragraph>
         <Space size={1} />
@@ -250,7 +250,8 @@ const Page: ContentPage = ({ setChapters }) => {
           これがアプリケーション全体の構造です。そんなにわからなくていいです。ざっくり言うと、ゲームがマイクやらWiiリモコンやらと通信をしています。
         </Paragraph>
         <Paragraph>
-          この中で、「音声認識」「Wiiリモコンと杖の連動」で色々試行錯誤をしたので、それぞれ紹介したいと思います。
+          この中で、「音声認識」「Wiiリモコンと杖の連動」で色々<Strong>試行錯誤</Strong>
+          をしたので、それぞれ紹介したいと思います。
         </Paragraph>
         <Space size={1} />
 
@@ -259,19 +260,20 @@ const Page: ContentPage = ({ setChapters }) => {
         <Paragraph>音声認識の流れは、こんな感じです。</Paragraph>
         <OrderedList>
           <ListItem>
-            <TextEffect bold>「この呪文を認識してくれ！」</TextEffect>と指定するためのファイルを、予め用意しておく。
+            「この呪文を認識してくれ！」と指定するためのファイを、<Strong>予め用意</Strong>しておく。
           </ListItem>
           <ListItem>
-            起動と同時に、<TextEffect bold>音声認識ソフト（Julius）を自動で起動</TextEffect>し、通信を開始する。
+            起動と同時に、音声認識ソフト（Julius）を自動で起動し、<Strong>通信を開始</Strong>する。
           </ListItem>
           <ListItem>
-            詠唱のタイミングで、<TextEffect bold>「この呪文を認識してくれ！」「認識を開始してくれ！」</TextEffect>
-            という信号を送る。
+            詠唱のタイミングで、「この呪文を認識してくれ！」「認識を開始してくれ！」 という<Strong>信号を送る</Strong>。
           </ListItem>
-          <ListItem>呪文をマイクに唱えると、音声認識ソフトが「正しい文章が認識できたか」を判定する。</ListItem>
+          <ListItem>
+            呪文をマイクに唱えると、音声認識ソフトが「正しい文章が認識できたか」を<Strong>判定</Strong>する。
+          </ListItem>
           <ListItem>
             リアルタイムでJuliusから結果が返ってくるため、その
-            <TextEffect bold>中身を解析して呪文詠唱の成功・失敗を判定</TextEffect>する。
+            <Strong>中身を解析</Strong>して呪文詠唱の成功・失敗を判定する。
           </ListItem>
         </OrderedList>
         <Space size={1} />
@@ -284,7 +286,8 @@ const Page: ContentPage = ({ setChapters }) => {
         </Paragraph>
         <ContentImage src={grammarPic} alt="音声認識に必要なファイル" />
         <Paragraph>
-          そのため、「ファイアブラスト」のような呪文それぞれに対して、これらのファイルを自動生成するプログラムを書きました。
+          そのため、「ファイアブラスト」のような呪文それぞれに対して、これらのファイルを
+          <Strong>自動生成するプログラム</Strong>を書きました。
         </Paragraph>
 
         <Paragraph>
@@ -328,6 +331,7 @@ const Page: ContentPage = ({ setChapters }) => {
           </UnorderedList>
           を実装しました。
         </Paragraph>
+        <Space size={2} />
 
         <Heading level="sub">Wiiリモコンと杖の連動</Heading>
         <ContentImage src={motionRecognitionPic} alt="モーション認識" />
