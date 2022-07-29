@@ -19,6 +19,12 @@ import environmentPic from "public/contents/materials/mage-simulator/environment
 import voiceRecognitionPic from "public/contents/materials/mage-simulator/voice-recognition.jpg";
 import motionRecognitionPic from "public/contents/materials/mage-simulator/motion-recognition.jpg";
 import grammarPic from "public/contents/materials/mage-simulator/grammar.jpg";
+import dummyPic from "public/contents/materials/mage-simulator/dummy.jpg";
+import correctPic from "public/contents/materials/mage-simulator/correct.jpg";
+import syncPic from "public/contents/materials/mage-simulator/sync.jpg";
+import wrongPic from "public/contents/materials/mage-simulator/wrong.jpg";
+import fix1Pic from "public/contents/materials/mage-simulator/fix-error-1.jpg";
+import fix2Pic from "public/contents/materials/mage-simulator/fix-error-2.jpg";
 import {
   ChapterPoint,
   ContentImage,
@@ -252,92 +258,130 @@ const Page: ContentPage = ({ setChapters }) => {
         <ContentImage src={voiceRecognitionPic} alt="音声認識" />
         <Paragraph>音声認識の流れは、こんな感じです。</Paragraph>
         <OrderedList>
-          <ListItem>「この呪文を認識してくれ！」と指定するためのファイルを、予め用意しておく。</ListItem>
           <ListItem>
-            『メイジ・シミュレータ』の起動と同時に、音声認識ソフト（Julius）を自動で起動し、通信を開始する。
+            <TextEffect bold>「この呪文を認識してくれ！」</TextEffect>と指定するためのファイルを、予め用意しておく。
           </ListItem>
           <ListItem>
-            詠唱のタイミングで、「この呪文を認識してくれ！」「認識を開始してくれ！」という信号を送る。
+            起動と同時に、<TextEffect bold>音声認識ソフト（Julius）を自動で起動</TextEffect>し、通信を開始する。
+          </ListItem>
+          <ListItem>
+            詠唱のタイミングで、<TextEffect bold>「この呪文を認識してくれ！」「認識を開始してくれ！」</TextEffect>
+            という信号を送る。
           </ListItem>
           <ListItem>呪文をマイクに唱えると、音声認識ソフトが「正しい文章が認識できたか」を判定する。</ListItem>
           <ListItem>
-            リアルタイムでJuliusから結果が返ってくるため、その中身を解析して呪文詠唱の成功・失敗を判定する。
+            リアルタイムでJuliusから結果が返ってくるため、その
+            <TextEffect bold>中身を解析して呪文詠唱の成功・失敗を判定</TextEffect>する。
           </ListItem>
         </OrderedList>
         <Space size={1} />
 
         <Paragraph>ここからちょっと詳しく解説します。</Paragraph>
 
+        <Paragraph>
+          Juliusでの音声認識には、<Strong>「認識したい単語が書かれたファイル」</Strong>
+          をあらかじめ用意する必要があります。 その中身はこんな感じです。
+        </Paragraph>
         <ContentImage src={grammarPic} alt="音声認識に必要なファイル" />
         <Paragraph>
-          Juliusでの音声認識には、認識したい単語が書かれたファイルをあらかじめ用意する必要があります。
           そのため、「ファイアブラスト」のような呪文それぞれに対して、これらのファイルを自動生成するプログラムを書きました。
         </Paragraph>
-        <DescriptionList>
-          <Description name={"工夫点"}>
-            恐らく本来の使い方は、スマートスピーカーのような汎用的な音声認識を行うために、1つの設定ファイルに多くの単語を記述するというものです。
-            ですが、今回は特定の呪文のみ判定を行いたかったため、1つのファイルには呪文の単語しか記述せず、認識したいときに設定ファイルを適宜切り替えて使うようにしました。
-          </Description>
-        </DescriptionList>
-        <Space size={1} />
 
-        <ContentImage src={grammarPic} alt="音声認識に必要なファイル" />
         <Paragraph>
-          Juliusの認識結果を他のアプリケーションで利用するには、自分のアプリケーションとJuliusの間で通信を行い、そのうえでメッセージを送り合う必要があります。
-          例えば、音声認識の結果は画像のような形式で受け取ることができます。これを判別すればいいわけです。
+          また、<Strong>「全ての五十音が書かれたファイル」</Strong>
+          も別に用意します。これは常時、優先度最下位の認識対象にしておきます。
+        </Paragraph>
+        <ContentImage src={dummyPic} alt="音声認識に必要なファイル" />
+        <Paragraph>
+          なぜかと言うと、例えば「ファイアブラスト」という文章を認識したいとします。このとき、
+          音声認識したい単語として「ファイアブラスト」だけを設定してしまうと、
+          <Strong>何を喋っても「ファイアブラスト」と認識されてしまいます。</Strong>
+          これでは困りますよね。
+        </Paragraph>
+        <Paragraph>そのため、ダミーとして他の五十音をすべて、優先度を下げて認識対象に設定してるわけです。</Paragraph>
+
+        <Space size={2} />
+
+        <Paragraph>
+          次に、Juliusの認識結果を他のアプリケーションで利用するには、自分のアプリケーションとJuliusの間で通信を行い、そのうえで
+          <Strong>メッセージを送り合う</Strong>必要があります。
         </Paragraph>
         <Paragraph>
-          そのため、「メイジ・シミュレータ」には
+          例えば、「これは音声認識のテストです」という文章を認識したいとき、音声認識の結果は次のような形式で受け取ることができます。
+        </Paragraph>
+        <ContentImage src={correctPic} alt="正しい文章を発音したとき" />
+        <Paragraph>
+          成功パターンにはしっかりと<Strong>「これは音声認識のテストです」の文字列があります。</Strong>
+        </Paragraph>
+        <ContentImage src={wrongPic} alt="誤った文章を発音したとき" />
+        <Paragraph>
+          それに対し、失敗パターンでは先ほど設定した<Strong>ダミーの五十音が並んでいます。</Strong>
+          これによって「正しい文章が発音されたか」を判定すればいいわけです。
+        </Paragraph>
+        <Paragraph>
+          まとめると、「メイジ・シミュレータ」の音声認識部分では
           <UnorderedList>
+            <ListItem>音声認識に必要なファイルを生成する機能</ListItem>
             <ListItem>通信を開始し、その接続を維持する機能</ListItem>
             <ListItem>認識する単語の切り替え、認識の開始などの指示を送る機能</ListItem>
             <ListItem>送られてきた判定結果が成功・失敗のどちらなのかを判別する機能</ListItem>
           </UnorderedList>
-          が付いています。
+          を実装しました。
         </Paragraph>
 
         <Heading level="sub">Wiiリモコンと杖の連動</Heading>
         <ContentImage src={motionRecognitionPic} alt="モーション認識" />
         <Paragraph>
-          <Strong>Wiiリモコンって実はBluetoothでPCと接続が可能</Strong>なので、今回はこれを使ってPCと接続しました。
+          実はWiiリモコンって<Strong>BluetoothでPCと接続が可能</Strong>なので、今回はこれを使ってPCと接続しました。
         </Paragraph>
         <Space size={1} />
 
         <Paragraph>
           Wiiリモコンから受け取れる信号は、大まかに分けて
           <UnorderedList>
-            <ListItem>各ボタンが押されているかどうか</ListItem>
-            <ListItem>重力がどの方向を向いているか、どの方向に振ったか（厳密には、三軸加速度センサの値）</ListItem>
-            <ListItem>角度がどのくらいの速さで変化しているか（厳密には、ジャイロセンサの値）</ListItem>
+            <ListItem>
+              <Strong>各ボタン</Strong>が押されているかどうか
+            </ListItem>
+            <ListItem>
+              <Strong>重力</Strong>がどの方向を向いているか、どの方向に振ったか（厳密には、三軸加速度センサの値）
+            </ListItem>
+            <ListItem>
+              <Strong>角度</Strong>がどのくらいの速さで変化しているか（厳密には、ジャイロセンサの値）
+            </ListItem>
           </UnorderedList>
-          の3つ。これらを使って、あたかも杖を持っているかのようにWiiリモコンの動きをリンクします。
+          の3つです。これらを使って、あたかも杖を持っているかのようにWiiリモコンの動きをリンクします。
         </Paragraph>
         <Space size={1} />
+        <ContentImage src={syncPic} alt="杖を降っているかのようにする" />
 
         <Paragraph>
-          このうち「角度がどのくらいの速さで変化しているか」を受け取って、毎フレーム足していけば行けそう！と思いました。
+          手始めに、「角度がどのくらいの速さで変化しているか」を受け取って、毎フレーム足していけば行けそう！と思いました。
         </Paragraph>
+        <Space size={3} />
         <Paragraph>
-          <Strong>......とんでもないブレ。</Strong>というか静止させてても勝手にあさっての方向を向いていきます。
+          <Strong>......とんでもないブレ。</Strong>Wiiリモコンを静止させてても、勝手にあさっての方向を向いていきます。
         </Paragraph>
         <Paragraph>
           それはそうで、当然センサには誤差があります。
-          <Strong>誤差が蓄積されて、勝手に杖が動いていってしまう</Strong>、というのが原因でした。
+          <Strong>誤差が蓄積</Strong>されて、勝手に杖が動いていってしまう、というのが原因でした。
         </Paragraph>
         <Space size={1} />
 
         <Paragraph>
-          そこでどうしたかというと、<Strong>「重力がどの方向を向いているか」を利用して誤差を補正しよう！</Strong>
+          そこでどうしたかというと、<Strong>「重力がどの方向を向いているか」</Strong>を利用して誤差を補正しよう！
           となりました。
         </Paragraph>
+        <ContentImage src={fix1Pic} alt="モーション認識" />
+        <ContentImage src={fix2Pic} alt="モーション認識" />
         <Paragraph>
-          この時に「重力の向いている方向」から「ゲーム内にある杖との誤差」計算がまあ難しくて、うんうん唸りながらメモ帳に計算式を書いてました。
-          ちょっと難しいことを言うと、行列計算というやつです。
+          この時に「実際の重力の向き」から「ゲーム内の杖との誤差」を計算するのがまあ難しくて、
+          うんうん唸りながらメモ帳に計算式を書いてました。 ちょっと難しいことを言うと、行列計算というやつです。
+          <Strong>頭オーバーヒートするかと思った。</Strong>
         </Paragraph>
         <DescriptionList>
           <Description name={"最初から「重力がどの方向を向いているか」だけ使うんじゃダメなの？"}>
             <Paragraph>
-              Aボタンのある面を上にして、Wiiリモコンをディスプレイ側に向けたときには重力はBボタンの方向に向いていますね。
+              Aボタンのある面を上にして、Wiiリモコンをディスプレイ側に向けたとき、重力はBボタン側の方向に向いていますね。
             </Paragraph>
             <Paragraph>
               それでは、Aボタンのある面を上にしたまま、くるっと180度回転させてWiiリモコンを自分の方に向けてみましょう。重力はどの方向に向いていますか？
@@ -347,8 +391,8 @@ const Page: ContentPage = ({ setChapters }) => {
         <Space size={1} />
 
         <Paragraph>
-          悩んでたことも最終的には解決して、実際にこの方法で誤差を補正してみました。 すると、なんと
-          <Strong>ちゃんとWiiリモコンと杖の動きがリンクする！素晴らしい！</Strong>
+          悩んでたことも最終的には解決して、実際にこの方法で誤差を補正してみました。 すると、ちゃんと
+          <Strong>Wiiリモコンと杖の動きがリンクする！素晴らしい！</Strong>
         </Paragraph>
         <Paragraph>
           こうして、無事にWiiリモコンを杖として扱う準備ができたわけです。
