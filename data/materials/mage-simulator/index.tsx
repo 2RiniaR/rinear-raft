@@ -422,7 +422,7 @@ const mageSimulator: MaterialSettings = {
   title: "メイジ・シミュレータ",
   thumbnail: titlePic,
   thumbnails: [titlePic, setup1Pic, readyPic, activatePic],
-  updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
+  updatedAt: dayjs("2022-07-29 12:50:00").toDate(),
   releasedAt: dayjs("2021-02-25").toDate(),
   description: "モーションセンサとマイクを使って、魔法を詠唱し発動できるアプリケーション。",
   Page
