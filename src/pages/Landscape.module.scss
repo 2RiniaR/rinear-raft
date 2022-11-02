@@ -1,0 +1,181 @@
+@use "global";
+
+.landscape {
+  position: fixed;
+  $width: max(100vh, 100vw);
+  width: $width;
+  height: calc(#{$width} * 1 / 0.7);
+  pointer-events: none;
+
+  & > * {
+    position: absolute;
+  }
+}
+
+.picture {
+  @include global.full-area;
+}
+
+.holeEffect {
+  @include global.full-area;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-play-state: running;
+  animation-name: holeEffectLoop;
+
+  @keyframes holeEffectLoop {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.01);
+    }
+  }
+}
+
+.smogEffect {
+  @include global.full-area;
+  background: radial-gradient(at 50% 0%, rgba(#ddd, 0.1) 0%, rgba(#ddd, 0) 30%, rgba(#ddd, 0.9) 70%);
+
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-name: smogEffectLoop;
+
+  @include global.media(phone) {
+    animation-name: none;
+  }
+
+  @keyframes smogEffectLoop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+.windEffect {
+  position: absolute;
+  @include global.full-area;
+  transform: scale(4);
+
+  &.layer1 {
+    left: 0;
+    transform: translateX(-100%);
+    animation-name: windEffectLeftLoop;
+    animation-play-state: running;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-delay: 8s;
+
+    @include global.media(phone) {
+      animation-name: none;
+    }
+
+    @keyframes windEffectLeftLoop {
+      0% {
+        transform: translateX(-100%) rotate3d(1, 1, -1, 70deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0%) rotate3d(1, 1, -1, 0deg);
+        opacity: 0;
+      }
+    }
+  }
+
+  &.layer2 {
+    right: 0;
+    transform: translateX(100%);
+    animation-name: windEffectRightLoop;
+    animation-play-state: running;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-delay: 0s;
+
+    @include global.media(phone) {
+      animation-name: none;
+    }
+
+    @keyframes windEffectRightLoop {
+      0% {
+        transform: translateX(100%) rotate3d(-1, -1, 1, 70deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0%) rotate3d(-1, -1, 1, 0deg);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.shadow {
+  position: absolute;
+  width: min(26%, 80vw);
+  left: 49%;
+  transform: translateX(-40%);
+  top: 50%;
+
+  animation-iteration-count: infinite;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-name: loop;
+
+  .frame1 {
+    animation-delay: 0ms;
+  }
+
+  .frame2 {
+    animation-delay: 200ms;
+  }
+
+  .frame3 {
+    animation-delay: 400ms;
+  }
+
+  .frame4 {
+    animation-delay: 600ms;
+  }
+
+  @keyframes loop {
+    0% {
+      visibility: visible;
+    }
+    25% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: hidden;
+    }
+  }
+}

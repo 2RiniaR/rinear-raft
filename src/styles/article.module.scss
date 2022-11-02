@@ -1,0 +1,155 @@
+@use "global";
+
+.article {
+  pre {
+    background-color: rgba(global.$dark1, 80%);
+    padding: 0.5em;
+    line-height: 1.5;
+  }
+
+  code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  }
+
+  dt {
+    line-height: 1.5;
+    margin-bottom: 0.2rem;
+    text-decoration: underline;
+  }
+
+  dd {
+    text-indent: 1em;
+    margin-inline-start: 1em;
+    line-height: 1.5;
+  }
+
+  dl {
+    border-radius: 0.5rem;
+    border: global.$light1 solid 1px;
+    padding: 1.2rem;
+    margin: 1.2em 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  h1 {
+    position: relative;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    margin: 2rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: rgba(global.$light1, 0.3) solid 6px;
+    font-size: 1.4rem;
+
+    .icon {
+      position: absolute;
+      user-select: none;
+      height: 4rem;
+      width: 4rem;
+      opacity: 20%;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  h2 {
+    margin: 3rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5em;
+    width: 100%;
+    border-bottom: rgba(global.$light1, 0.3) solid 2px;
+    border-left: rgba(global.$light1, 0.3) solid 0.5em;
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    margin: 1.8rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    padding-left: 1.1em;
+    width: 100%;
+    border-bottom: rgba(global.$light1, 0.3) solid 1px;
+    font-size: 1.2rem;
+  }
+
+  li {
+    display: list-item;
+    line-height: 1.8;
+  }
+
+  ol {
+    list-style-type: decimal;
+    padding-inline-start: 2em;
+    margin: 1.2em 0;
+
+    li & {
+      margin: 0.6em 0 1.2em 0;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-inline-start: 2em;
+    margin: 1.2em 0;
+
+    li & {
+      margin: 0.6em 0 1.2em 0;
+    }
+
+    ul {
+      list-style-type: circle;
+
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+
+  p {
+    text-indent: 1em;
+    margin: 1em 0;
+  }
+
+  blockquote {
+    margin-inline-start: 1em;
+    padding-inline-start: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    border-left: rgba(global.$light1, 30%) solid 4px;
+  }
+
+  q {
+    background-color: rgba(global.$light1, 20%);
+    margin-inline: 0.4em;
+    padding-inline: 0.3em;
+  }
+
+  hr {
+    height: 1rem;
+  }
+
+  strong {
+    font-size: 1.2rem;
+    color: #eea;
+    font-weight: normal;
+    margin-inline: 0.3em;
+  }
+
+  u {
+    text-decoration: underline;
+  }
+
+  i {
+    font-style: italic;
+  }
+
+  b {
+    font-weight: bold;
+  }
+
+  del {
+    text-decoration: line-through;
+  }
+}
