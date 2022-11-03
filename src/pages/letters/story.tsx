@@ -10,7 +10,6 @@ import preludePic from "public/story/prelude.png";
 
 export const content: Letter = {
   id: "story",
-  index: 2,
   title: "あらすじ",
   image: presentPic,
   updatedAt: dayjs("2022-11-02 21:00:00").toDate(),

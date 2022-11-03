@@ -6,7 +6,6 @@ import thumbnailPic from "public/general/main.webp";
 
 export const content: Letter = {
   id: "declaration",
-  index: 1,
   title: "拠点完成宣言！",
   image: thumbnailPic,
   updatedAt: dayjs("2022-07-03 21:00:00").toDate(),

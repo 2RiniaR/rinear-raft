@@ -1,65 +1,74 @@
 @use "global";
 
 .container {
+  background: linear-gradient(transparent 0%, rgba(global.$light2, 40%) 2.4rem, rgba(global.$light2, 94%) 6rem);
+  padding: 8rem 1rem 2rem;
+}
+
+.band {
   width: 100%;
-  margin-top: 8rem;
   color: global.$light1;
-  z-index: 100;
-  padding: 2rem 0;
-  background: global.$dark1;
   @include global.design-font;
-}
 
-.back {
-  position: absolute;
-  opacity: 0.2;
-  width: 12rem;
-  left: max(1rem, calc(50% - 16rem));
-}
+  .content {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-.logo {
-  margin: 0 auto 1rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: global.$light1 solid 2px;
-  position: relative;
+    .logo {
+      width: 150px;
+      margin-left: 24px;
+      margin-right: 24px;
+      margin-bottom: 1rem;
+    }
 
-  .letter {
-    position: relative;
-    width: 12rem;
-    bottom: -1.2rem;
+    .info {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      .title {
+        border-bottom: global.$light1 solid 1px;
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+
+        .name {
+          font-size: 1.5rem;
+          margin-right: 16px;
+        }
+      }
+
+      .copyright {
+        margin-bottom: 0.25rem;
+        margin-left: 0.5rem;
+      }
+    }
   }
 }
 
 .links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  position: relative;
-  font-size: 1rem;
-  margin: 0 auto 2rem auto;
-  gap: 1rem;
 
   .element {
-    display: inline;
-    text-decoration: underline;
+    display: inline-block;
+    width: 100px;
+    @include global.design-font;
+    height: 32px;
+    line-height: 32px;
+    border: global.$light1 solid 1px;
+    color: global.$light1;
+    text-align: center;
+    margin: 0 0.25rem 0.5rem 0.25rem;
 
     &:hover {
-      text-decoration: underline;
+      background: global.$light1;
+      color: global.$light2;
     }
   }
-}
-
-.copyright {
-  text-align: center;
-  position: relative;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.version {
-  text-align: right;
-  position: relative;
-  padding-right: 1rem;
-  font-size: 1rem;
 }

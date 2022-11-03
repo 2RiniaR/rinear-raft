@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import styles from "./SideMenu.module.scss";
 import { InternalLink } from "functions";
 import backIconPic from "public/general/back-icon.png";
 import homeIconPic from "public/general/logo-icon.webp";

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/LoadingEffect.module.scss";
+import styles from "./LoadingWindow.module.scss";
 import Splash from "./Splash";
 import { mc } from "functions";
 

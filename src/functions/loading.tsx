@@ -76,5 +76,5 @@ export const LoadingWaiter = ({
 
 export const PreloadImage = ({ ...props }: ImageProps): JSX.Element => {
   const setCompleteLoading = useLoading();
-  return <Image {...props} onLoadingComplete={setCompleteLoading} loading="lazy" />;
+  return <Image {...props} onLoadingComplete={setCompleteLoading} loading="eager" />;
 };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "styles/Intro.module.scss";
+import styles from "./OpeningWindow.module.scss";
 import { mc } from "functions";
 
 type Props = {

@@ -30,10 +30,7 @@ import fix2Pic from "public/contents/materials/mage-simulator/fix-error-2.jpg";
 export const content: Material = {
   id: "mage-simulator",
   title: "メイジ・シミュレータ",
-  image1: titlePic,
-  image2: setup1Pic,
-  image3: readyPic,
-  image4: activatePic,
+  image: titlePic,
   updatedAt: dayjs("2022-07-29 12:50:00").toDate(),
   releasedAt: dayjs("2021-02-25").toDate(),
   description: "モーションセンサとマイクを使って、魔法を詠唱し発動できるアプリケーション。"

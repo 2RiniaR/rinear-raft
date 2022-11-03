@@ -1,0 +1,84 @@
+@use "global";
+
+.page {
+  @include global.page("~public/contents/background.webp");
+  padding-top: 4rem;
+}
+
+.article {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem 4rem;
+  background: rgba(global.$light2, 80%);
+  backdrop-filter: blur(4px);
+}
+
+.band {
+  max-width: 1000px;
+  margin: 0 auto;
+  @include global.design-font;
+  background: global.$light2;
+
+  .logo {
+    position: absolute;
+    height: 6rem;
+    width: 6rem;
+    opacity: 40%;
+  }
+
+  .display {
+    position: relative;
+    padding: 4rem 0 0 6%;
+    display: grid;
+    grid-template-rows: auto 1px auto;
+    grid-template-columns: 1fr auto auto;
+
+    &::after {
+      content: "";
+      display: block;
+      grid-column: 1 / 4;
+      grid-row: 2;
+      background-color: global.$light1;
+      height: 1px;
+    }
+
+    .title {
+      grid-column: 1;
+      grid-row: 1;
+      color: global.$light1;
+      font-size: 2rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.5rem;
+    }
+
+    .index {
+      grid-column: 3;
+      grid-row: 1;
+      color: global.$dark1;
+      background-color: global.$light1;
+      font-size: 1rem;
+      padding: 0.3rem 0.5rem;
+      margin-top: auto;
+      text-align: end;
+    }
+
+    .genre {
+      grid-column: 1;
+      grid-row: 3;
+      padding-top: 0.5rem;
+      letter-spacing: 1rem;
+      color: global.$light1;
+      font-size: 0.8rem;
+      padding-left: 1rem;
+    }
+
+    .updatedAt {
+      grid-column: 2 / 4;
+      grid-row: 3;
+      color: global.$light1;
+      opacity: 80%;
+      padding-top: 0.5rem;
+      text-align: right;
+    }
+  }
+}

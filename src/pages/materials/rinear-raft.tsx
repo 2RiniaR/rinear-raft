@@ -2,18 +2,12 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { MaterialTemplate } from "templates";
 import { Material } from "content";
-import thumbnailPic1 from "public/contents/materials/kimifeel/page1.webp";
-import thumbnailPic2 from "public/contents/materials/kimifeel/page2.webp";
-import thumbnailPic3 from "public/contents/materials/kimifeel/page3.webp";
-import thumbnailPic4 from "public/contents/materials/rinear-raft/material.webp";
+import thumbnailPic1 from "public/contents/materials/rinear-raft/top.webp";
 
 export const content: Material = {
   id: "rinear-raft",
   title: "RineaRの筏",
-  image1: thumbnailPic1,
-  image2: thumbnailPic2,
-  image3: thumbnailPic3,
-  image4: thumbnailPic4,
+  image: thumbnailPic1,
   updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
   releasedAt: dayjs("2022-07-03").toDate(),
   description: "『RineaR』の活動拠点であり、制作物や投稿を公開するホームページ。"

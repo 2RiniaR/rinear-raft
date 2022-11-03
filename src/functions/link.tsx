@@ -13,8 +13,8 @@ export const ExternalLink = ({ children, ...props }: ExternalLinkProps): JSX.Ele
 
 type InternalLinkProps = Parameters<typeof Link>[0];
 
-export const InternalLink = ({ children, ...props }: InternalLinkProps): JSX.Element => (
+export const InternalLink = ({ children, className, ...props }: InternalLinkProps): JSX.Element => (
   <Link {...props}>
-    <a>{children}</a>
+    <a className={className}>{children}</a>
   </Link>
 );

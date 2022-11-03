@@ -2,45 +2,43 @@
 
 .article {
   pre {
-    background-color: rgba(global.$dark1, 80%);
+    background-color: rgba(global.$light1, 0.3);
     padding: 0.5em;
-    line-height: 1.5;
+    line-height: 1.2;
+    margin-bottom: 0.7em;
   }
 
   code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    padding: 0 0.5em;
+    margin-bottom: 0.7em;
   }
 
   dt {
     line-height: 1.5;
-    margin-bottom: 0.2rem;
     text-decoration: underline;
+    margin-bottom: 0.7em;
   }
 
   dd {
     text-indent: 1em;
     margin-inline-start: 1em;
     line-height: 1.5;
+    margin-bottom: 0.7em;
   }
 
   dl {
     border-radius: 0.5rem;
-    border: global.$light1 solid 1px;
-    padding: 1.2rem;
+    background: rgba(global.$light1, 0.3);
+    padding: 1rem;
     margin: 1.2em 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
   }
 
   h1 {
-    position: relative;
-    padding-left: 3rem;
-    padding-top: 2rem;
-    margin: 2rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: rgba(global.$light1, 0.3) solid 6px;
-    font-size: 1.4rem;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    border-bottom: global.$dark1 solid 1px;
+    font-size: 1.2rem;
 
     .icon {
       position: absolute;
@@ -54,47 +52,33 @@
   }
 
   h2 {
-    margin: 3rem 0 1rem 0;
-    padding-bottom: 0.5rem;
-    padding-left: 0.5em;
-    width: 100%;
-    border-bottom: rgba(global.$light1, 0.3) solid 2px;
-    border-left: rgba(global.$light1, 0.3) solid 0.5em;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    border-bottom: global.$dark1 solid 1px;
     font-size: 1.2rem;
   }
 
   h3 {
-    margin: 1.8rem 0 1rem 0;
-    padding-bottom: 0.5rem;
-    padding-left: 1.1em;
-    width: 100%;
-    border-bottom: rgba(global.$light1, 0.3) solid 1px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    border-bottom: global.$dark1 solid 1px;
     font-size: 1.2rem;
   }
 
   li {
     display: list-item;
-    line-height: 1.8;
   }
 
   ol {
     list-style-type: decimal;
     padding-inline-start: 2em;
-    margin: 1.2em 0;
-
-    li & {
-      margin: 0.6em 0 1.2em 0;
-    }
+    margin-bottom: 0.7em;
   }
 
   ul {
     list-style-type: disc;
     padding-inline-start: 2em;
-    margin: 1.2em 0;
-
-    li & {
-      margin: 0.6em 0 1.2em 0;
-    }
+    margin-bottom: 0.7em;
 
     ul {
       list-style-type: circle;
@@ -107,7 +91,7 @@
 
   p {
     text-indent: 1em;
-    margin: 1em 0;
+    margin-bottom: 0.7em;
   }
 
   blockquote {
@@ -121,7 +105,7 @@
   }
 
   q {
-    background-color: rgba(global.$light1, 20%);
+    background: rgba(global.$light1, 0.3);
     margin-inline: 0.4em;
     padding-inline: 0.3em;
   }
@@ -131,9 +115,8 @@
   }
 
   strong {
-    font-size: 1.2rem;
-    color: #eea;
-    font-weight: normal;
+    color: #ba1317;
+    font-size: 1.1em;
     margin-inline: 0.3em;
   }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "styles/SplashAnimation.module.scss";
+import styles from "./Splash.module.scss";
 
 const Splash = () => (
   <div className={styles.aspectKeeper}>

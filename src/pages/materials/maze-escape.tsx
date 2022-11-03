@@ -2,20 +2,15 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import { MaterialTemplate } from "templates";
 import { ExternalLink } from "functions/link";
-import titlePic from "public/contents/materials/maze-escape/title.webp";
 import stage1Pic from "public/contents/materials/maze-escape/stage1.webp";
 import stage2Pic from "public/contents/materials/maze-escape/stage2.webp";
 import stage3Pic from "public/contents/materials/maze-escape/stage3.webp";
-import resultPic from "public/contents/materials/maze-escape/result.webp";
 import { Material } from "content";
 
 export const content: Material = {
   id: "maze-escape",
   title: "迷宮脱出",
-  image1: stage1Pic,
-  image2: titlePic,
-  image3: stage2Pic,
-  image4: resultPic,
+  image: stage1Pic,
   updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
   releasedAt: dayjs("2016-10-18").toDate(),
   description: "上下左右にプレイヤーを移動し、制限時間以内にゴールを目指す2Dアクション脱出ゲーム。"

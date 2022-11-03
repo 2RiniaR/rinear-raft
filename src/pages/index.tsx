@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StaticImageData } from "next/image";
-import landscape from "./Landscape.module.scss";
-import message from "./Message.module.scss";
-import menu from "./Menu.module.scss";
+import styles from "./index.module.scss";
 import { Footer, LoadingWindow, Meta, OpeningWindow, Phantom } from "parts";
 import { InternalLink, LoadingWaiter, mc, PreloadImage, useContentSwitch } from "functions";
 import landscapePic from "public/home/background.webp";
@@ -60,43 +58,43 @@ const Page = (): JSX.Element => {
       <OpeningWindow playing={playingIntro} setPlaying={setPlayingIntro} />
 
       <LoadingWaiter onCompleted={() => setLoadCompleted(true)} onProgressUpdated={setLoadProgress}>
-        <div className={landscape.landscape}>
-          <PreloadImage className={landscape.picture} src={landscapePic} alt="背景" />
-          <PreloadImage className={landscape.holeEffect} src={holeEffectPic} alt="背景" />
-          <PreloadImage className={mc(landscape.windEffect, landscape.layer1)} src={windEffectPic} alt="背景" />
-          <PreloadImage className={mc(landscape.windEffect, landscape.layer2)} src={windEffectPic} alt="背景" />
-          <div className={landscape.smogEffect} />
-          <div className={landscape.shadow}>
-            <PreloadImage className={landscape.frame1} src={shadow1Pic} alt="" layout="responsive" />
-            <PreloadImage className={landscape.frame2} src={shadow2Pic} alt="" layout="responsive" />
-            <PreloadImage className={landscape.frame3} src={shadow3Pic} alt="" layout="responsive" />
-            <PreloadImage className={landscape.frame4} src={shadow4Pic} alt="" layout="responsive" />
+        <div className={styles.landscape}>
+          <PreloadImage className={styles.picture} src={landscapePic} alt="背景" />
+          <PreloadImage className={styles.holeEffect} src={holeEffectPic} alt="背景" />
+          <PreloadImage className={mc(styles.windEffect, styles.layer1)} src={windEffectPic} alt="背景" />
+          <PreloadImage className={mc(styles.windEffect, styles.layer2)} src={windEffectPic} alt="背景" />
+          <div className={styles.smogEffect} />
+          <div className={styles.shadow}>
+            <PreloadImage className={styles.frame1} src={shadow1Pic} alt="" layout="responsive" />
+            <PreloadImage className={styles.frame2} src={shadow2Pic} alt="" layout="responsive" />
+            <PreloadImage className={styles.frame3} src={shadow3Pic} alt="" layout="responsive" />
+            <PreloadImage className={styles.frame4} src={shadow4Pic} alt="" layout="responsive" />
           </div>
         </div>
 
-        <section className={menu.container}>
+        <section className={styles.container}>
           <PreloadImage
-            className={mc(menu.masked, switching ? menu.switching : "")}
+            className={mc(styles.masked, switching ? styles.switching : "")}
             src={content.thumbnail}
             layout="responsive"
             alt={content.title}
           />
-          <div className={mc(menu.letters)}>
+          <div className={mc(styles.letters)}>
             <Phantom title="LETTERS" subtitle="制作状況" icon={letterIconPic} href="/letters" />
           </div>
-          <div className={mc(menu.materials)}>
+          <div className={mc(styles.materials)}>
             <Phantom title="MATERIALS" subtitle="企画／作品" icon={materialIconPic} href="/materials" />
           </div>
-          <PreloadImage className={menu.logo} src={logoPic} alt="" layout="responsive" />
+          <PreloadImage className={styles.logo} src={logoPic} alt="" layout="responsive" />
         </section>
 
-        <section className={message.message}>
-          <h1 className={message.title}>
-            <span className={message.text}>
-              <span className={message.first}>
-                この<span className={message.strong}>筏</span>は私を、
+        <section className={styles.message}>
+          <h1 className={styles.title}>
+            <span className={styles.text}>
+              <span className={styles.first}>
+                この<span className={styles.strong}>筏</span>は私を、
               </span>
-              <span className={message.last}>どこへ連れてゆくんだろう。</span>
+              <span className={styles.last}>どこへ連れてゆくんだろう。</span>
             </span>
           </h1>
           <p>

@@ -8,7 +8,6 @@ const dummyText = "これはダミーテキストです。".repeat(10);
 
 export const content: Letter = {
   id: "sample",
-  index: 0,
   title: "デザインサンプル",
   image: thumbnailPic,
   updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
@@ -83,12 +82,16 @@ const Page = () => (
     </dl>
     <h1>引用</h1>
     <h2>インライン引用</h2>
-    このとき、誰かが<q>引用文</q>と言いました。
+    <p>
+      このとき、誰かが<q>引用文</q>と言いました。
+    </p>
     <h2>ブロック引用</h2>
     <blockquote>{dummyText}</blockquote>
     <h1>コードブロック</h1>
     <h2>インラインコード</h2>
-    この時、関数<code>Hoge(fuga)</code>を実行します。
+    <p>
+      この時、関数<code>Hoge(fuga)</code>を実行します。
+    </p>
     <h2>ブロックコード</h2>
     <pre>
       <code>
@@ -103,11 +106,30 @@ const Page = () => (
       </code>
     </pre>
     <h1>テキスト装飾</h1>
-    絵文字
-    <span role="img" aria-label="拍手">
-      👏
-    </span>
-    , <u>下線</u>, <b>太字</b>, <i>斜体</i>, <del>打ち消し線</del>
+    <p>
+      これは絵文字
+      <span role="img" aria-label="拍手">
+        👏
+      </span>
+      です。
+    </p>
+    <p>
+      これは<u>下線</u>です。
+    </p>
+    <p>
+      これは<b>太字</b>です。
+    </p>
+    <p>
+      これは<i>斜体</i>です。
+    </p>
+    <p>
+      これは
+      <del>打ち消し線</del>
+      です。
+    </p>
+    <p>
+      これは<strong>強調</strong>です。
+    </p>
   </LetterTemplate>
 );
 

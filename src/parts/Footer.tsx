@@ -1,15 +1,29 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./Footer.module.scss";
-import { ExternalLink } from "functions";
-import logoLettersPic from "public/general/logo-letters.webp";
-import logoIconPic from "public/general/logo-icon.webp";
+import { ExternalLink, InternalLink } from "functions";
+import logoPic from "public/general/logo-full.webp";
 
 const Footer = () => (
   <footer className={styles.container}>
-    <Image className={styles.back} src={logoIconPic} alt="ロゴ1" layout="responsive" />
-    <Image className={styles.letter} src={logoLettersPic} alt="ロゴ2" layout="responsive" />
+    <div className={styles.band}>
+      <div className={styles.content}>
+        <div className={styles.logo}>
+          <Image src={logoPic} alt="ロゴ" width={150} height={(150 * logoPic.height) / logoPic.width} />
+        </div>
+        <div className={styles.info}>
+          <div className={styles.title}>
+            <span className={styles.name}>RineaRの筏</span>
+            <span className={styles.version}>version 1.1.0</span>
+          </div>
+          <div className={styles.copyright}>Copyright © 2022 RineaR All rights reserved.</div>
+        </div>
+      </div>
+    </div>
     <div className={styles.links}>
+      <InternalLink className={styles.element} href="/">
+        Home
+      </InternalLink>
       <ExternalLink className={styles.element} href="https://twitter.com/14RineaR">
         Twitter
       </ExternalLink>
@@ -19,9 +33,10 @@ const Footer = () => (
       <ExternalLink className={styles.element} href="https://www.youtube.com/channel/UCNqtSTjhp-dWL8dib3KECsQ">
         YouTube
       </ExternalLink>
+      <ExternalLink className={styles.element} href="https://www.youtube.com/channel/UCNqtSTjhp-dWL8dib3KECsQ">
+        YouTube
+      </ExternalLink>
     </div>
-    <div className={styles.copyright}>Copyright © 2022 RineaR All rights reserved.</div>
-    <div className={styles.version}>version 1.1.0</div>
   </footer>
 );
 

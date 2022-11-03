@@ -1,0 +1,116 @@
+@use "global";
+
+.page {
+  @include global.page("~public/contents/background.webp");
+  padding-top: 4rem;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background: rgba(global.$light2, 1);
+  padding: 1rem 0;
+  width: 100%;
+  gap: 2rem;
+  margin-bottom: 8rem;
+
+  .title {
+    color: global.$light1;
+    align-self: center;
+    @include global.design-font;
+    font-size: 2rem;
+    letter-spacing: 1rem;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 4rem auto 8rem auto;
+  gap: 4rem;
+
+  .item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background: rgba(global.$light2, 60%);
+    backdrop-filter: blur(4px);
+    filter: drop-shadow(0px 0px 8px rgba(global.$light1, 60%));
+    transition: background 500ms;
+
+    &:hover {
+      background: radial-gradient(ellipse at center, rgba(#fff1e0, 60%) 0%, rgba(global.$light2, 60%) 100%);
+    }
+
+    &:after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      bottom: 1rem;
+      right: 1rem;
+      background: url("~public/general/material-icon.png");
+      background-size: cover;
+      opacity: 0.6;
+    }
+
+    .image {
+      width: 400px;
+      filter: drop-shadow(12px 12px 0px rgba(global.$light1, 60%));
+      margin-right: 12px;
+    }
+
+    .info {
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+
+      .head {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border-bottom: global.$dark1 solid 1px;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
+        align-items: end;
+
+        .releasedAt {
+          @include global.design-font;
+          font-size: 1rem;
+          width: 160px;
+        }
+
+        .title {
+          color: global.$dark1;
+          @include global.design-font;
+          font-size: 1.5rem;
+          width: 100%;
+          text-align: right;
+        }
+      }
+
+      .description {
+        font-size: 1rem;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        text-indent: 1rem;
+      }
+
+      .updatedAt {
+        color: global.$light3;
+        margin-top: auto;
+        align-self: end;
+        text-align: right;
+        width: 200px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

@@ -1,56 +1,53 @@
 import React from "react";
 import Image from "next/image";
+import styles from "./index.module.scss";
+import { content as sample } from "./sample";
+import { content as declaration } from "./declaration";
+import { content as story } from "./story";
 import { Footer, Meta } from "parts";
-import materialIconPic from "public/general/material-icon.png";
-import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import { formatExceededTime, InternalLink } from "functions";
-import backgroundPic from "public/contents/background.webp";
 import { Letter } from "content";
+import letterIconPic from "public/general/letter-icon.png";
+import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
-const contents: Letter[] = [];
+const contents: Letter[] = [sample, declaration, story];
 
 const Page = () => (
-  <>
+  <div className={styles.page}>
     <Meta
-      pageTitle="Materials"
+      pageTitle="Letters"
       pageDescription="『RineaR（りにあ）』は、クリエイター『Rinia（りにあ）』による個人活動の総称です。見える抽象を辿るために、漂うように制作をしています。"
-      pagePath="/materials"
+      pagePath="/letters"
       pageImgPath="/img/main.webp"
       pageType="article"
     />
 
-    <Image className={styles.back} src={backgroundPic} alt="背景" layout="responsive" />
-
-    <header>
-      <Image className={styles.logo} src={materialIconPic} alt="MATERIALS" layout="responsive" />
-      <h1 className={styles.title}>MATERIALS</h1>
+    <header className={styles.header}>
+      <Image className={styles.logo} src={letterIconPic} alt="LETTERS" width={64} height={64} />
+      <h1 className={styles.title}>LETTERS</h1>
     </header>
 
-    <main>
+    <main className={styles.list}>
       {contents.map((content) => (
         <ContentView {...content} key={content.id} />
       ))}
     </main>
 
     <Footer />
-  </>
+  </div>
 );
 
 const ContentView = (content: Letter) => (
-  <InternalLink href={`/materials/${content.id}`} key={content.id}>
-    <article className={styles.container}>
-      <Image
-        src={content.image ?? defaultThumbnailPic}
-        alt={content.title}
-        className={styles.mainThumbnail}
-        layout="responsive"
-      />
-      <h2 className={styles.title}>{content.title}</h2>
-      <p className={styles.description}>{content.description}</p>
-      <p className={styles.updatedAt} suppressHydrationWarning={true}>
-        最終更新：{formatExceededTime(new Date(), content.updatedAt)}
-      </p>
-    </article>
+  <InternalLink href={`/letters/${content.id}`} className={styles.item}>
+    <div className={styles.image}>
+      <Image src={content.image ?? defaultThumbnailPic} alt={content.title} />
+    </div>
+    <div className={styles.info}>
+      <div className={styles.title}>{content.title}</div>
+      <div className={styles.updatedAt} suppressHydrationWarning={true}>
+        {formatExceededTime(new Date(), content.updatedAt)}
+      </div>
+    </div>
   </InternalLink>
 );
 

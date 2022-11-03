@@ -5,7 +5,6 @@ import { MaterialTemplate } from "templates";
 import { Material } from "content";
 import thumbnailPic1 from "public/contents/materials/marvelous/page1.webp";
 import exprPic from "public/contents/materials/marvelous/page2.webp";
-import thumbnailPic3 from "public/contents/materials/marvelous/page3.webp";
 import tutorialPic from "public/contents/materials/marvelous/tutorial1.webp";
 import tutorialPic2 from "public/contents/materials/marvelous/tutorial2.webp";
 import tutorialPic3 from "public/contents/materials/marvelous/tutorial3.webp";
@@ -18,10 +17,7 @@ import tutorialPic8 from "public/contents/materials/marvelous/tutorial8.webp";
 export const content: Material = {
   id: "marvelous",
   title: "エライさんbot",
-  image1: thumbnailPic1,
-  image2: exprPic,
-  image3: thumbnailPic3,
-  image4: undefined,
+  image: thumbnailPic1,
   updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
   releasedAt: dayjs("2021-04-30").toDate(),
   description: "みんなの「えらい！」をカウントしてくれるDiscord Bot。"

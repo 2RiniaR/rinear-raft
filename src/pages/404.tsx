@@ -11,7 +11,7 @@ const Page = (): JSX.Element => {
         pagePath="/"
         pageImgPath="/img/main.webp"
       />
-      <main className={styles.body}>
+      <main className={styles.page}>
         <h1 className={styles.title}>404 - Not Found</h1>
         <p className={styles.description}>お探しのページは存在しません。</p>
       </main>

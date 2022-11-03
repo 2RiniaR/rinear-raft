@@ -3,7 +3,6 @@ import Image from "next/image";
 import { MaterialTemplate } from "templates";
 import { ExternalLink } from "functions/link";
 import { Material } from "content";
-import titlePic from "public/contents/materials/busters-mission/title.webp";
 import stage1Pic from "public/contents/materials/busters-mission/stage1.webp";
 import stage2Pic from "public/contents/materials/busters-mission/stage2.webp";
 import stage3_1Pic from "public/contents/materials/busters-mission/stage3-1.webp";
@@ -14,10 +13,7 @@ import resultPic from "public/contents/materials/busters-mission/result.webp";
 export const content: Material = {
   id: "busters-mission",
   title: "Busters Mission",
-  image1: stage3_2Pic,
-  image2: titlePic,
-  image3: stage1Pic,
-  image4: stage2Pic,
+  image: stage3_2Pic,
   updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
   releasedAt: dayjs("2018-09-05").toDate(),
   description: "敵の攻撃を避けながら、ステージ内にいるすべての敵を倒していく2Dアクションゲーム。"

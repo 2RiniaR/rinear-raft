@@ -4,8 +4,6 @@ import { ExternalLink } from "../../functions";
 import { MaterialTemplate } from "templates";
 import { Material } from "content";
 import thumbnailPic1 from "public/contents/materials/kimifeel/page1.webp";
-import thumbnailPic2 from "public/contents/materials/kimifeel/page2.webp";
-import thumbnailPic3 from "public/contents/materials/kimifeel/page3.webp";
 import lobbyPic from "public/contents/materials/popcorn-chef/lobby.webp";
 import titlePic from "public/contents/materials/popcorn-chef/title.webp";
 import matchingPic from "public/contents/materials/popcorn-chef/matching.webp";
@@ -18,10 +16,7 @@ import rushPic from "public/contents/materials/popcorn-chef/rush.webp";
 export const content: Material = {
   id: "pon-bon-rush",
   title: "Pon! Bon! Rush",
-  image1: thumbnailPic1,
-  image2: thumbnailPic2,
-  image3: thumbnailPic3,
-  image4: lobbyPic,
+  image: thumbnailPic1,
   updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
   releasedAt: dayjs("2020-04-05").toDate(),
   description:

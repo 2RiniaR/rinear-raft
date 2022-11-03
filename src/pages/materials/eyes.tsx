@@ -6,10 +6,7 @@ import thumbnailPic from "public/contents/materials/eyes/eyes.webp";
 export const content: Material = {
   id: "eyes",
   title: "み　て　る　よ",
-  image1: thumbnailPic,
-  image2: thumbnailPic,
-  image3: thumbnailPic,
-  image4: thumbnailPic,
+  image: thumbnailPic,
   updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
   releasedAt: dayjs("2022-02-25").toDate(),
   description:
