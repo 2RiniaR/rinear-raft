@@ -1,9 +1,8 @@
 import React, { ReactNode } from "react";
-import Image from "next/image";
 import styles from "./MaterialTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
-import { Footer, Meta } from "parts";
-import { formatDisplayDate, formatExceededTime } from "functions";
+import { Footer, Meta, SideMenu } from "parts";
+import { formatDisplayDate, formatExceededTime, Image } from "functions";
 import { Material } from "content";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import materialIconPic from "public/general/material-icon.png";
@@ -23,17 +22,15 @@ const MaterialTemplate = ({ content, children }: Props) => (
       pageType="article"
     />
 
+    <SideMenu />
+
     <header className={styles.header}>
       <div className={styles.intro}>
-        <div className={styles.genreIcon}>
-          <Image src={materialIconPic} alt={"MATERIAL"} width={100} height={100} />
-        </div>
+        <Image className={styles.genreIcon} src={materialIconPic} alt={"MATERIAL"} width={100} />
         <span className={styles.title}>{content.title}</span>
       </div>
       <div className={styles.releasedAt}>{formatDisplayDate(content.releasedAt)}</div>
-      <div className={styles.image}>
-        <Image src={content.image ?? defaultThumbnailPic} alt={content.title} width={600} height={(600 * 9) / 16} />
-      </div>
+      <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={600} />
       <div className={styles.description}>{content.description}</div>
       <div className={styles.updatedAt} suppressHydrationWarning={true}>
         {formatExceededTime(new Date(), content.updatedAt)}

@@ -1,11 +1,10 @@
 import React from "react";
-import Image from "next/image";
 import styles from "./index.module.scss";
 import { content as sample } from "./sample";
 import { content as declaration } from "./declaration";
 import { content as story } from "./story";
-import { Footer, Meta } from "parts";
-import { formatExceededTime, InternalLink } from "functions";
+import { formatExceededTime, Image, InternalLink } from "functions";
+import { Footer, Meta, SideMenu } from "parts";
 import { Letter } from "content";
 import letterIconPic from "public/general/letter-icon.png";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
@@ -22,9 +21,12 @@ const Page = () => (
       pageType="article"
     />
 
+    <SideMenu />
+
     <header className={styles.header}>
-      <Image className={styles.logo} src={letterIconPic} alt="LETTERS" width={64} height={64} />
+      <Image className={styles.logo} src={letterIconPic} alt="LETTERS" width={100} />
       <h1 className={styles.title}>LETTERS</h1>
+      <p className={styles.description}>解釈の過程を記録しています。</p>
     </header>
 
     <main className={styles.list}>
@@ -39,9 +41,7 @@ const Page = () => (
 
 const ContentView = (content: Letter) => (
   <InternalLink href={`/letters/${content.id}`} className={styles.item}>
-    <div className={styles.image}>
-      <Image src={content.image ?? defaultThumbnailPic} alt={content.title} />
-    </div>
+    <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} />
     <div className={styles.info}>
       <div className={styles.title}>{content.title}</div>
       <div className={styles.updatedAt} suppressHydrationWarning={true}>

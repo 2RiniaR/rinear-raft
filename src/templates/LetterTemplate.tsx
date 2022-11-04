@@ -1,9 +1,8 @@
 import React, { ReactNode } from "react";
-import Image from "next/image";
 import styles from "./LetterTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
 import { Footer, Meta, SideMenu } from "parts";
-import { formatDisplayDate, formatExceededTime } from "functions";
+import { formatDisplayDate, formatExceededTime, Image } from "functions";
 import { Letter } from "content";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import letterIconPic from "public/general/letter-icon.png";
@@ -27,15 +26,11 @@ const LetterTemplate = ({ content, children }: Props) => (
 
     <header className={styles.header}>
       <div className={styles.intro}>
-        <div className={styles.genreIcon}>
-          <Image src={letterIconPic} alt={"LETTER"} width={100} height={100} />
-        </div>
+        <Image className={styles.genreIcon} src={letterIconPic} alt={"LETTER"} width={100} />
         <span className={styles.title}>{content.title}</span>
       </div>
       <div className={styles.releasedAt}>{formatDisplayDate(content.releasedAt)}</div>
-      <div className={styles.image}>
-        <Image src={content.image ?? defaultThumbnailPic} alt={content.title} width={600} height={(600 * 9) / 16} />
-      </div>
+      <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={600} />
       <div className={styles.description}>{content.description}</div>
       <div className={styles.updatedAt} suppressHydrationWarning={true}>
         {formatExceededTime(new Date(), content.updatedAt)}

@@ -45,3 +45,10 @@ $breakpoints: (
   background-position-y: top;
   background-attachment: fixed;
 }
+
+@mixin text($base-width: 750px) {
+  max-width: $base-width;
+  width: calc(100% - 32px);
+  margin-left: auto;
+  margin-right: auto;
+}

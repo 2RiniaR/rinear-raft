@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import Image from "next/image";
+import { Image } from "functions";
 import { MaterialTemplate } from "templates";
 import { ExternalLink } from "functions/link";
 import stage1Pic from "public/contents/materials/maze-escape/stage1.webp";

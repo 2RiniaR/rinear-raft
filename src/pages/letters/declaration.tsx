@@ -8,6 +8,7 @@ export const content: Letter = {
   id: "declaration",
   title: "拠点完成宣言！",
   image: thumbnailPic,
+  releasedAt: dayjs("2022-07-03").toDate(),
   updatedAt: dayjs("2022-07-03 21:00:00").toDate(),
   description: "RineaRのホームページ『RineaRの筏』が完成し、公開されました！"
 };

@@ -1,16 +1,13 @@
 import React from "react";
-import Image from "next/image";
 import styles from "./Footer.module.scss";
-import { ExternalLink, InternalLink } from "functions";
+import { ExternalLink, Image, InternalLink } from "functions";
 import logoPic from "public/general/logo-full.webp";
 
 const Footer = () => (
   <footer className={styles.container}>
     <div className={styles.band}>
       <div className={styles.content}>
-        <div className={styles.logo}>
-          <Image src={logoPic} alt="ロゴ" width={150} height={(150 * logoPic.height) / logoPic.width} />
-        </div>
+        <Image className={styles.logo} src={logoPic} alt="ロゴ" width={150} />
         <div className={styles.info}>
           <div className={styles.title}>
             <span className={styles.name}>RineaRの筏</span>

@@ -8,20 +8,20 @@ type Options = {
 
 export function useContentSwitch<T>(
   items: T[],
-  stop = false,
   options: Options = { switchingDuration: 500, displayDuration: 5000 }
-): [T, number, boolean] {
+): [T, number, boolean, (isPlaying: boolean) => void] {
+  const [isPlaying, setPlaying] = useState(true);
   const [contentIndex, setContentIndex] = useState(0);
-  const [switching, setSwitching] = useState(false);
+  const [isSwitching, setIsSwitching] = useState(false);
 
   useInterval(async () => {
-    if (stop) return;
-    setSwitching(true);
+    if (!isPlaying) return;
+    setIsSwitching(true);
     await new Promise((resolve) => setTimeout(resolve, options.switchingDuration));
     setContentIndex((current) => (current + 1) % items.length);
     await new Promise((resolve) => setTimeout(resolve, options.switchingDuration));
-    setSwitching(false);
+    setIsSwitching(false);
   }, options.displayDuration);
 
-  return [items[contentIndex], contentIndex, switching];
+  return [items[contentIndex], contentIndex, isSwitching, setPlaying];
 }

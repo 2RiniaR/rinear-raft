@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
-import Image from "next/image";
 import React from "react";
+import { Image } from "functions";
 import { MaterialTemplate } from "templates";
 import { Material } from "content";
 import thumbnailPic1 from "public/contents/materials/marvelous/page1.webp";

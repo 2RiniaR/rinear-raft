@@ -6,26 +6,40 @@
 }
 
 .header {
-  display: flex;
-  justify-content: center;
-  background: rgba(global.$light2, 1);
-  padding: 1rem 0;
+  background: rgba(global.$light2, 80%);
+  backdrop-filter: blur(4px);
+  padding: 2rem 0 1rem 0;
   width: 100%;
-  gap: 2rem;
   margin-bottom: 8rem;
+
+  .logo {
+    margin: 0 auto;
+    width: 100px;
+  }
 
   .title {
     color: global.$light1;
-    align-self: center;
+    text-align: center;
     @include global.design-font;
-    font-size: 2rem;
-    letter-spacing: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    color: global.$dark1;
+    text-align: center;
+    @include global.design-font;
+    @include global.text;
+    text-indent: 1em;
+    font-size: 1rem;
   }
 }
 
 .list {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
   max-width: 1000px;
   margin: 4rem auto 8rem auto;
   gap: 50px;

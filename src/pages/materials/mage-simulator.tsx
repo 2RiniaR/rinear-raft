@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
-import Image from "next/image";
-import { ExternalLink } from "../../functions";
+import { ExternalLink, Image } from "functions";
 import { MaterialTemplate } from "templates";
 import { Material } from "content";
 import titlePic from "public/contents/materials/mage-simulator/title.webp";

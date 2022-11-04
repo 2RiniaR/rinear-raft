@@ -1,9 +1,26 @@
 @use "global";
 
 .article {
-  padding-left: 16px;
+  color: global.$dark1;
+
+  iframe {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   pre {
+    @include global.text;
     background-color: rgba(global.$light1, 0.3);
     padding: 0.5em;
     line-height: 1.2;
@@ -30,22 +47,22 @@
   }
 
   dl {
+    @include global.text;
     border-radius: 0.5rem;
     background: rgba(global.$light1, 0.3);
     padding: 1rem;
-    margin: 1.2em 1rem;
   }
 
   h1 {
+    @include global.text;
     margin-top: 32px;
     margin-bottom: 32px;
     font-size: 1.2rem;
-    padding: 8px 16px;
-    margin-left: -16px;
+    padding: 8px;
     background: rgba(global.$light2, 80%);
     border-top: rgba(global.$light1, 40%) solid 2px;
     border-left: rgba(global.$light1, 40%) solid 2px;
-    filter: drop-shadow(8px 8px 0px rgba(global.$light1, 40%));
+    filter: drop-shadow(8px 8px 1px rgba(global.$light1, 40%));
 
     &:before {
       content: "";
@@ -58,27 +75,28 @@
   }
 
   h2 {
+    @include global.text;
     margin-top: 32px;
     margin-bottom: 32px;
     font-size: 1rem;
-    padding: 2px 16px;
-    margin-left: -16px;
+    padding: 2px 0 2px 8px;
     background: rgba(global.$light2, 80%);
     border-top: rgba(global.$light1, 40%) solid 1px;
     border-left: rgba(global.$light1, 40%) solid 1px;
-    filter: drop-shadow(4px 4px 0px rgba(global.$light1, 40%));
+    filter: drop-shadow(4px 4px 1px rgba(global.$light1, 40%));
   }
 
   h3 {
+    @include global.text;
     margin-top: 32px;
     margin-bottom: 32px;
+    padding-left: 8px;
     font-size: 1rem;
 
     &:after {
-      margin-left: -8px;
-      padding: 0 8px;
       content: "";
       width: 100%;
+      margin-left: -8px;
       height: 4px;
       background: linear-gradient(to right, rgba(global.$light1, 40%) 0%, transparent 100%);
       display: block;
@@ -90,12 +108,14 @@
   }
 
   ol {
+    @include global.text;
     list-style-type: decimal;
     padding-inline-start: 2em;
     margin-bottom: 0.7em;
   }
 
   ul {
+    @include global.text;
     list-style-type: disc;
     padding-inline-start: 2em;
     margin-bottom: 0.7em;
@@ -110,18 +130,19 @@
   }
 
   p {
+    @include global.text;
     text-indent: 1em;
     margin-bottom: 0.7em;
   }
 
   blockquote {
-    margin-inline-start: 1em;
     padding-inline-start: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-top: 1.2em;
     margin-bottom: 1.2em;
     border-left: rgba(global.$light1, 30%) solid 4px;
+    @include global.text;
   }
 
   q {

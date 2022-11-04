@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import Image from "next/image";
+import { Image } from "functions";
 import { MaterialTemplate } from "templates";
 import { ExternalLink } from "functions/link";
 import { Material } from "content";

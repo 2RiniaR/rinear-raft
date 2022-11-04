@@ -1,7 +1,6 @@
-import Image from "next/image";
 import React from "react";
 import styles from "./SideMenu.module.scss";
-import { InternalLink } from "functions";
+import { Image, InternalLink } from "functions";
 import homeIconPic from "public/general/logo-icon.webp";
 import letterIconPic from "public/general/letter-icon.png";
 import materialIconPic from "public/general/material-icon.png";

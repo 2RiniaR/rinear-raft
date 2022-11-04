@@ -1,35 +1,34 @@
 import React, { useEffect, useState } from "react";
-import styles from "./OpeningWindow.module.scss";
+import styles from "./OpeningAnimation.module.scss";
 import { mc } from "functions";
 
 type Props = {
-  playing: boolean;
-  setPlaying: (value: boolean) => void;
+  isPlaying: boolean;
+  onComplete: () => void;
 };
 
-const OpeningWindow = ({ playing, setPlaying }: Props) => {
+const OpeningAnimation = ({ isPlaying, onComplete }: Props) => {
   const [display, setDisplay] = useState(false);
   const switchingDuration = 1000; // [ms]
   const stayDuration = 2500; // [ms]
 
-  async function playAnimation() {
+  async function start() {
     setDisplay(true);
     await new Promise((resolve) => setTimeout(resolve, switchingDuration + stayDuration));
     setDisplay(false);
     await new Promise((resolve) => setTimeout(resolve, switchingDuration));
-    setPlaying(false);
+    onComplete();
   }
 
-  async function skipAnimation() {
+  async function skip() {
     setDisplay(false);
     await new Promise((resolve) => setTimeout(resolve, switchingDuration));
-    setPlaying(false);
+    onComplete();
   }
 
   useEffect(() => {
-    if (!playing) return;
-    void playAnimation();
-  }, [playing]);
+    if (isPlaying) start();
+  }, [isPlaying]);
 
   return (
     <div className={mc(styles.container, display ? styles.display : styles.hidden)}>
@@ -40,7 +39,7 @@ const OpeningWindow = ({ playing, setPlaying }: Props) => {
           </span>
           <span className={styles.last}>どこへ連れてゆくんだろう。</span>
         </span>
-        <button onClick={skipAnimation} className={styles.skipButton}>
+        <button onClick={skip} className={styles.skipButton}>
           SKIP
         </button>
       </div>
@@ -48,4 +47,4 @@ const OpeningWindow = ({ playing, setPlaying }: Props) => {
   );
 };
 
-export default OpeningWindow;
+export default OpeningAnimation;

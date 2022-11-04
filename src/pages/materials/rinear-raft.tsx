@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import Link from "next/link";
+import { InternalLink } from "functions";
 import { MaterialTemplate } from "templates";
 import { Material } from "content";
 import thumbnailPic1 from "public/contents/materials/rinear-raft/top.webp";
@@ -19,17 +19,17 @@ const Page = () => (
 
     <ul>
       <li>
-        <Link href={"/"}>HOME</Link>
+        <InternalLink href={"/"}>HOME</InternalLink>
         <p>
           当ホームページのトップページ。トップ及び背景の画像は、RineaRの活動方針である「漂流」と「観察」が表されている。
         </p>
       </li>
       <li>
-        <Link href={"/letters"}>LETTERS</Link>
+        <InternalLink href={"/letters"}>LETTERS</InternalLink>
         <p>制作の途中経過やアイデアなど、書き留めておきたいこと等を投稿する。</p>
       </li>
       <li>
-        <Link href={"/materials"}>MATERIALS</Link>
+        <InternalLink href={"/materials"}>MATERIALS</InternalLink>
         <p>制作物を投稿する。</p>
       </li>
     </ul>
