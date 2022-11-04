@@ -2,93 +2,84 @@
 
 .page {
   @include global.page("~public/contents/background.webp");
-  padding-top: 4rem;
 }
 
 .article {
   max-width: 1000px;
-  margin: 4rem auto;
-  padding: 2rem 4rem;
+  margin: 8rem auto;
+  padding: 4rem 8rem;
   background: rgba(global.$light2, 80%);
   backdrop-filter: blur(4px);
 }
 
 .header {
-  position: relative;
-  width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 8rem auto;
+  padding: 4rem 4rem 1rem 4rem;
   background: rgba(global.$light2, 80%);
   backdrop-filter: blur(4px);
-  transition: background 500ms;
 
-  &:after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    bottom: 1rem;
-    right: 1rem;
-    background: url("~public/general/material-icon.png");
-    background-size: cover;
-    opacity: 0.6;
+  .intro {
+    position: relative;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+
+    .genreIcon {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .title {
+      min-width: 200px;
+      @include global.design-font;
+      color: global.$dark1;
+      font-size: 1.5rem;
+      background: radial-gradient(closest-side, rgba(white, 100%) 0%, rgba(global.$light2, 80%) 50%, transparent 100%);
+      text-align: center;
+      padding: 32px 48px;
+    }
+  }
+
+  .releasedAt {
+    @include global.design-font;
+    color: global.$dark1;
+    text-align: center;
+    margin: 2rem auto 4rem auto;
+
+    &:before {
+      color: global.$light1;
+      content: "●";
+      margin: 0 32px;
+    }
+
+    &:after {
+      color: global.$light1;
+      content: "●";
+      margin: 0 32px;
+    }
   }
 
   .image {
-    width: 400px;
-    filter: drop-shadow(12px 12px 0px rgba(global.$light1, 60%));
-    margin-right: 12px;
+    max-width: 600px;
+    margin: 1rem auto;
   }
 
-  .info {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
+  .description {
+    max-width: 600px;
+    margin: 1rem auto 2rem auto;
+    text-indent: 1em;
+    color: global.$dark1;
+  }
 
-    .head {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      border-bottom: global.$dark1 solid 1px;
-      margin-bottom: 1rem;
-      padding-left: 1rem;
-      padding-bottom: 0.5rem;
-      align-items: end;
-
-      .releasedAt {
-        @include global.design-font;
-        font-size: 1rem;
-        width: 160px;
-      }
-
-      .title {
-        color: global.$dark1;
-        @include global.design-font;
-        font-size: 1.5rem;
-        width: 100%;
-        text-align: right;
-      }
-    }
-
-    .description {
-      font-size: 1rem;
-      margin-left: 1rem;
-      margin-bottom: 1rem;
-      text-indent: 1rem;
-    }
-
-    .updatedAt {
-      color: global.$light3;
-      margin-top: auto;
-      align-self: end;
-      text-align: right;
-      width: 200px;
-      font-size: 0.8rem;
-    }
+  .updatedAt {
+    color: global.$light3;
+    margin-top: auto;
+    text-align: right;
+    font-size: 0.8rem;
   }
 }

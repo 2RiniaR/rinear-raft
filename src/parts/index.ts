@@ -5,4 +5,3 @@ export { default as OpeningWindow } from "./OpeningWindow";
 export { default as Phantom } from "./Phantom";
 export { default as SideMenu } from "./SideMenu";
 export { default as SplashAnimation } from "./Splash";
-export { default as TopButton } from "./TopButton";

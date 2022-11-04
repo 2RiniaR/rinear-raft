@@ -2,10 +2,11 @@ import React, { ReactNode } from "react";
 import Image from "next/image";
 import styles from "./LetterTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
-import { Footer, Meta } from "parts";
-import { formatExceededTime } from "functions";
+import { Footer, Meta, SideMenu } from "parts";
+import { formatDisplayDate, formatExceededTime } from "functions";
 import { Letter } from "content";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
+import letterIconPic from "public/general/letter-icon.png";
 
 type Props = {
   content: Letter;
@@ -22,23 +23,22 @@ const LetterTemplate = ({ content, children }: Props) => (
       pageType="article"
     />
 
-    <header>
-      <div className={styles.band}>
-        <h1 className={styles.title}>{content.title}</h1>
-        <p className={styles.genre}>LETTER</p>
-        <p className={styles.updatedAt} suppressHydrationWarning={true}>
-          {formatExceededTime(new Date(), content.updatedAt)}
-        </p>
+    <SideMenu />
+
+    <header className={styles.header}>
+      <div className={styles.intro}>
+        <div className={styles.genreIcon}>
+          <Image src={letterIconPic} alt={"LETTER"} width={100} height={100} />
+        </div>
+        <span className={styles.title}>{content.title}</span>
       </div>
-      <div className={styles.layout}>
-        <p className={styles.description}>{content.description}</p>
-        <Image
-          src={content.image ?? defaultThumbnailPic}
-          alt="サムネイル"
-          className={styles.thumbnail}
-          width={400}
-          height={(400 * 9) / 16}
-        />
+      <div className={styles.releasedAt}>{formatDisplayDate(content.releasedAt)}</div>
+      <div className={styles.image}>
+        <Image src={content.image ?? defaultThumbnailPic} alt={content.title} width={600} height={(600 * 9) / 16} />
+      </div>
+      <div className={styles.description}>{content.description}</div>
+      <div className={styles.updatedAt} suppressHydrationWarning={true}>
+        {formatExceededTime(new Date(), content.updatedAt)}
       </div>
     </header>
 

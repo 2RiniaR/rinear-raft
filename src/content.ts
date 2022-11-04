@@ -6,6 +6,7 @@ export type Letter = {
   title: string;
   description: string;
   updatedAt: Date;
+  releasedAt: Date;
 };
 
 export type Material = {

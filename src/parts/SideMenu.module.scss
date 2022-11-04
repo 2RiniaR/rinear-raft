@@ -1,0 +1,22 @@
+@use "global";
+
+.layout {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 8px rgba(global.$light1, 80%));
+  gap: 24px;
+  bottom: 20%;
+  right: 32px;
+  width: 48px;
+  height: 240px;
+  background: rgba(global.$light2, 100%);
+  border-radius: 8px;
+
+  & > * {
+    width: 32px;
+    height: 32px;
+  }
+}
