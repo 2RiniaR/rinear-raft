@@ -1,21 +1,51 @@
 @use "global";
 
 .layout {
-  display: flex;
   z-index: 100;
   position: fixed;
+  bottom: 15%;
+  right: 16px;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  bottom: 15%;
-  right: 0;
-  width: 36px;
-  height: 180px;
-  background: rgba(global.$dark1, 50%);
+  padding: 8px;
+  height: 64px;
+  border-radius: 8px;
+  background-color: global.$light2;
+  filter: drop-shadow(0 0 8px global.$light1);
+  transition: height 300ms, width 300ms, gap 300ms;
 
-  & > * {
-    width: 24px;
-    height: 24px;
+  .toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .element {
+    width: 32px;
+    height: 32px;
+    transition: opacity 300ms, height 300ms;
+  }
+}
+
+.close {
+  height: 48px;
+  gap: 0;
+
+  .element {
+    opacity: 0;
+    height: 0;
+    //display: none;
+  }
+}
+
+.open {
+  height: 240px;
+  gap: 16px;
+
+  .element {
+    height: 32px;
+    opacity: 1;
+    display: block;
   }
 }

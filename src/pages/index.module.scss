@@ -1,11 +1,13 @@
 @use "global";
 @use "sass:math";
 
+$landscape-width: max(100vw, 100vh * 16 / 9);
+
 .landscape {
   position: absolute;
   overflow-x: hidden;
   overflow-y: hidden;
-  z-index: -1;
+  z-index: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -36,7 +38,7 @@
         transform: scale(1);
       }
       100% {
-        transform: scale(1.01);
+        transform: scale(1.02);
       }
     }
   }
@@ -67,18 +69,18 @@
   .wind {
     width: 100%;
     height: 100%;
+    animation-play-state: running;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-delay: 8s;
 
-    &.layer1 {
+    &.l1 {
       left: 0;
       transform: translateX(-100%);
       animation-name: wind1;
-      animation-play-state: running;
-      animation-timing-function: ease-out;
-      animation-iteration-count: infinite;
-      animation-duration: 16s;
-      animation-direction: normal;
-      animation-fill-mode: both;
-      animation-delay: 8s;
 
       @keyframes wind1 {
         0% {
@@ -98,17 +100,10 @@
       }
     }
 
-    &.layer2 {
+    &.l2 {
       right: 0;
       transform: translateX(100%);
       animation-name: wind2;
-      animation-play-state: running;
-      animation-timing-function: ease-out;
-      animation-iteration-count: infinite;
-      animation-duration: 16s;
-      animation-direction: normal;
-      animation-fill-mode: both;
-      animation-delay: 0s;
 
       @keyframes wind2 {
         0% {
@@ -130,34 +125,30 @@
   }
 
   .shadow {
-    width: 20%;
-    height: 30%;
+    width: calc(#{$landscape-width} * 0.2);
     left: 49%;
-    top: 450px;
+    top: calc(#{$landscape-width} * 0.25);
     transform: translateX(-40%);
+    position: absolute;
+    animation-name: shadow;
+    animation-iteration-count: infinite;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    animation-direction: normal;
 
-    & > * {
-      position: absolute !important;
-      animation-name: shadow;
-      animation-iteration-count: infinite;
-      animation-duration: 800ms;
-      animation-fill-mode: both;
-      animation-direction: normal;
-    }
-
-    *:nth-of-type(1) {
+    &.l1 {
       animation-delay: 0ms;
     }
 
-    *:nth-of-type(2) {
+    &.l2 {
       animation-delay: 200ms;
     }
 
-    *:nth-of-type(3) {
+    &.l3 {
       animation-delay: 400ms;
     }
 
-    *:nth-of-type(4) {
+    &.l4 {
       animation-delay: 600ms;
     }
 
@@ -179,45 +170,60 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  overflow-x: hidden;
 
   .pickup {
-    display: none;
+    display: block;
     position: absolute;
-    width: 50%;
-    height: 50%;
-    transition: opacity 500ms, transform 300ms;
-    opacity: 1;
-    filter: contrast(0.5);
+    background-image: url("~public/home/phantom.webp");
+    background-size: cover;
+    width: calc(#{$landscape-width} * 0.2);
+    aspect-ratio: 1;
+    right: calc(#{$landscape-width} * 0.1);
+    top: calc(#{$landscape-width} * 0.25);
+    transition: right 500ms, bottom 500ms, width 500ms, transform 500ms;
 
-    .hover & {
-      transform: scale(0.95);
+    &:hover {
+      transform: scale(1.05);
     }
 
-    &.switching {
-      opacity: 0;
+    .image {
+      mask-image: url(/home/phantom-mask.png);
+      mask-size: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      filter: contrast(0.5);
+      opacity: 1;
+      transition: opacity 500ms, transform 300ms;
+
+      &.switching {
+        opacity: 0;
+      }
     }
   }
 
   .logo {
     position: absolute;
-    top: 120px;
+    top: calc(#{$landscape-width} * 0.1);
     left: 50%;
     transform: translateX(-50%);
+    width: calc(100vw - 64px);
+    max-width: 400px;
 
     &:before {
       position: absolute;
       content: "";
-      max-width: 100vw;
       width: 250%;
       height: 150%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       background: radial-gradient(
-                      closest-side,
-                      rgba(global.$light2, 100%) 20%,
-                      rgba(global.$light2, 80%) 60%,
-                      rgba(global.$light2, 0%) 100%
+        closest-side,
+        rgba(global.$light2, 100%) 20%,
+        rgba(global.$light2, 80%) 60%,
+        rgba(global.$light2, 0%) 100%
       );
     }
   }
@@ -228,13 +234,13 @@
     filter: drop-shadow(0 0 8px rgba(global.$light1, 80%));
     background: global.$light2;
     color: global.$light1;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     @include global.design-font;
-    gap: 25px;
     justify-content: flex-end;
+    gap: 12px;
 
     .icon {
-      width: 64px;
+      width: 32px;
     }
 
     .name {
@@ -243,18 +249,20 @@
   }
 
   .letters {
-    top: 400px;
+    bottom: calc(#{$landscape-width} * 0.13);
     left: 0;
-    width: 300px;
-    height: 80px;
+    width: 50vw;
+    max-width: 300px;
+    height: 50px;
     padding: 8px 32px 8px 0;
   }
 
   .materials {
-    top: 520px;
+    bottom: calc(#{$landscape-width} * 0.07);
     left: 0;
-    width: 330px;
-    height: 80px;
+    width: calc(50vw + 30px);
+    max-width: 330px;
+    height: 50px;
     padding: 8px 32px 8px 0;
   }
 }
@@ -262,7 +270,248 @@
 .message {
   filter: drop-shadow(0 0 8px rgba(global.$dark1, 60%));
   position: relative;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  background: global.$light2;
-  min-height: 50rem;
+  min-height: 100vh;
+  padding-top: 256px;
+  padding-bottom: 256px;
+  background-color: global.$light2;
+
+  .background {
+    z-index: -1;
+    position: absolute;
+    min-width: 1500px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    mask: url(/story/mask.webp);
+    mask-size: 100% 100%;
+    mask-position: center;
+    opacity: 0.5;
+
+    .story {
+      position: absolute;
+      width: 600px;
+      mask: url(/story/mask.webp);
+      mask-size: cover;
+      mask-position: center;
+      animation-name: story;
+      animation-duration: 32s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+      animation-direction: normal;
+      animation-timing-function: linear;
+
+      &.l1 {
+        animation-delay: 0s;
+        top: 2rem;
+      }
+
+      &.l2 {
+        animation-delay: 8s;
+        top: 2rem;
+      }
+
+      &.l3 {
+        animation-delay: 16s;
+        top: 2rem;
+      }
+
+      &.l4 {
+        animation-delay: 24s;
+        top: 2rem;
+      }
+
+      &.l5 {
+        animation-delay: 0s;
+        animation-direction: reverse;
+        bottom: 2rem;
+      }
+
+      &.l6 {
+        animation-delay: 8s;
+        animation-direction: reverse;
+        bottom: 2rem;
+      }
+
+      &.l7 {
+        animation-delay: 16s;
+        animation-direction: reverse;
+        bottom: 2rem;
+      }
+
+      &.l8 {
+        animation-delay: 24s;
+        animation-direction: reverse;
+        bottom: 2rem;
+      }
+
+      @keyframes story {
+        0% {
+          left: 110%;
+        }
+        100% {
+          left: -100%;
+        }
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    .note {
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 50%;
+      width: 1000px;
+      height: calc(100% + 300px);
+      transform: translate(-50%, -50%);
+      mask: url(/story/mask.webp);
+      mask-size: 100% 100%;
+      mask-position: center;
+    }
+
+    h1 {
+      @include global.text;
+      width: calc(100% - 64px);
+      @include global.design-font;
+      color: global.$dark1;
+      border-left: global.$dark1 solid 2px;
+      padding-left: 0.5em;
+      margin-bottom: 4rem;
+      font-size: 1.2rem;
+
+      strong {
+        font-weight: normal;
+        font-size: 120%;
+        color: #ba1317;
+        margin-inline: 0.2em;
+      }
+    }
+
+    p {
+      @include global.text;
+      width: calc(100% - 64px);
+      @include global.design-font;
+      color: global.$dark1;
+      line-height: 1.7;
+      margin-bottom: 0.7em;
+      font-size: 1.1rem;
+      text-indent: 1em;
+    }
+  }
+}
+
+.contents {
+  background: linear-gradient(to bottom, #9aa4b4 0%, global.$light1 100%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+
+  .item {
+    width: calc(100vw - 4rem);
+    max-width: 400px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    filter: drop-shadow(0 0 8px rgba(global.$light2, 70%));
+
+    .icon {
+      width: 75px;
+      height: 75px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      @include global.design-font;
+      font-size: 1.2rem;
+      color: global.$light1;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      @include global.design-font;
+      font-size: 1rem;
+      color: global.$light1;
+      text-align: center;
+      margin-bottom: 2rem;
+
+      &:before {
+        content: "-";
+        margin-inline-end: 1rem;
+      }
+
+      &:after {
+        content: "-";
+        margin-inline-start: 1rem;
+      }
+    }
+
+    p {
+      @include global.design-font;
+      color: global.$dark1;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      margin-bottom: 0.7em;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      text-indent: 1em;
+    }
+
+    .images {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      margin-left: 8px;
+      margin-right: 8px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .image {
+        width: calc(50% - 4px);
+      }
+    }
+
+    .link {
+      @include global.design-font;
+      display: block;
+      font-size: 1.2rem;
+      color: global.$light2;
+      text-align: center;
+      text-decoration: underline;
+      background: rgba(global.$dark1, 65%);
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+    }
+  }
+
+  .letters {
+    background: url(/home/floor.png), linear-gradient(to bottom, rgba(global.$light2, 100%) 0%, rgba(global.$light2, 70%) 400px);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
+  }
+
+  .materials {
+    background: url(/home/top_pre.jpg), linear-gradient(to bottom, rgba(global.$light2, 100%) 0%, rgba(global.$light2, 70%) 400px);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
+  }
 }

@@ -5,4 +5,5 @@ export { useInterval } from "./interval";
 export { ExternalLink, InternalLink } from "./link";
 export { useLoading } from "./loading";
 export { useScrollPast, useScrollValue } from "./scroll";
-export { keepAspect, Image } from "./image";
+export { Image } from "./image";
+export { Ruby } from "./writing";

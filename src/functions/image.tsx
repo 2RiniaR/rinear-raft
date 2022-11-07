@@ -12,7 +12,7 @@ export const Image = ({ className, width, src, ...props }: Props) => (
   </div>
 );
 
-export function keepAspect(src: StaticImageData, width: number): Pick<ImageProps, "src" | "width" | "height"> {
+function keepAspect(src: StaticImageData, width: number): Pick<ImageProps, "src" | "width" | "height"> {
   return {
     src,
     width,

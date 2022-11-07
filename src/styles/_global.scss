@@ -20,9 +20,9 @@ $light3: #6c717a;
 $sizes: phone, tablet, desktop;
 
 $breakpoints: (
-        "phone": "screen and (max-width: 599px)",
-        "tablet": "screen and (min-width: 600px) and (max-width: 1024px)",
-        "desktop": "screen and (min-width: 1025px)"
+  "phone": "screen and (max-width: 599px)",
+  "tablet": "screen and (min-width: 600px) and (max-width: 1024px)",
+  "desktop": "screen and (min-width: 1025px)"
 ) !default;
 
 @mixin media($breakpoint: phone) {
