@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
-import { InternalLink } from "functions";
+import { getMarkdownStaticProps } from "../../server/markdown-static";
+import { MarkdownContent } from "functions";
 import { MaterialTemplate } from "templates";
 import { Material } from "content";
 import thumbnailPic1 from "public/contents/materials/rinear-raft/top.webp";
@@ -13,45 +14,10 @@ export const content: Material = {
   description: "『RineaR』の活動拠点であり、制作物や投稿を公開するホームページ。"
 };
 
-const Page = () => (
-  <MaterialTemplate content={content}>
-    <h1>ページ構成</h1>
+export function getStaticProps() {
+  return getMarkdownStaticProps("public/contents/materials/rinear-raft/index.md");
+}
 
-    <ul>
-      <li>
-        <InternalLink href={"/"}>HOME</InternalLink>
-        <p>
-          当ホームページのトップページ。トップ及び背景の画像は、RineaRの活動方針である「漂流」と「観察」が表されている。
-        </p>
-      </li>
-      <li>
-        <InternalLink href={"/letters"}>LETTERS</InternalLink>
-        <p>制作の途中経過やアイデアなど、書き留めておきたいこと等を投稿する。</p>
-      </li>
-      <li>
-        <InternalLink href={"/materials"}>MATERIALS</InternalLink>
-        <p>制作物を投稿する。</p>
-      </li>
-    </ul>
-
-    <h1>ツール</h1>
-
-    <h2>言語・ライブラリ等</h2>
-    <ul>
-      <li>React</li>
-      <li>Next.js</li>
-      <li>TypeScript</li>
-      <li>SCSS</li>
-    </ul>
-    <h2>デザインツール</h2>
-    <ul>
-      <li>Adobe Illustrator</li>
-      <li>Adobe Photoshop</li>
-      <li>Adobe XD</li>
-      <li>Blender</li>
-      <li>CLIP STUDIO PAINT</li>
-    </ul>
-  </MaterialTemplate>
-);
+const Page = MarkdownContent((md) => <MaterialTemplate content={content}>{md}</MaterialTemplate>);
 
 export default Page;

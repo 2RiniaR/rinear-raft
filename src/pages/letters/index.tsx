@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
 import { content as sample } from "./sample";
-import { content as declaration } from "./declaration";
 import { content as story } from "./story";
 import { formatExceededTime, Image, InternalLink } from "functions";
 import { Footer, Meta, SideMenu } from "parts";
@@ -9,7 +8,7 @@ import { Letter } from "content";
 import letterIconPic from "public/general/letter-icon.png";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 
-const contents: Letter[] = [sample, declaration, story];
+const contents: Letter[] = [sample, story];
 
 const Page = () => (
   <div className={styles.page}>

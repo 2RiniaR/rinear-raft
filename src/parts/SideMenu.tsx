@@ -18,19 +18,19 @@ const SideMenu = () => {
         name="トップへ"
         aria-label="トップへ"
       >
-        <Image className={styles.icon} src={upIconPic} alt="トップへ" />
+        <Image className={styles.icon} src={upIconPic} width={48} alt="トップへ" />
         <span className={styles.name}>一番上へ</span>
       </button>
       <InternalLink className={styles.element} href="/">
-        <Image className={styles.icon} src={homeIconPic} alt="HOME" />
+        <Image className={styles.icon} src={homeIconPic} width={48} alt="HOME" />
         <span className={styles.name}>HOME</span>
       </InternalLink>
       <InternalLink className={styles.element} href="/letters">
-        <Image className={styles.icon} src={letterIconPic} alt="LETTERS" />
+        <Image className={styles.icon} src={letterIconPic} width={48} alt="LETTERS" />
         <span className={styles.name}>LETTERS</span>
       </InternalLink>
       <InternalLink className={styles.element} href="/materials">
-        <Image className={styles.icon} src={materialIconPic} alt="MATERIALS" />
+        <Image className={styles.icon} src={materialIconPic} width={48} alt="MATERIALS" />
         <span className={styles.name}>MATERIALS</span>
       </InternalLink>
       <button
@@ -39,7 +39,7 @@ const SideMenu = () => {
         name="メニューを開く"
         aria-label="メニューを開く"
       >
-        <Image className={styles.icon} src={menuIconPic} alt="メニューを開く" />
+        <Image className={styles.icon} src={menuIconPic} width={48} alt="メニューを開く" />
       </button>
     </nav>
   );

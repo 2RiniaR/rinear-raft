@@ -99,16 +99,15 @@ const Page = (): JSX.Element => {
             {...landscapeFill}
           />
           <div className={styles.smog} />
-          <Image className={mc(styles.shadow, styles.l1)} src={shadow1Pic} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.shadow, styles.l2)} src={shadow2Pic} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.shadow, styles.l3)} src={shadow3Pic} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.shadow, styles.l4)} src={shadow4Pic} alt="背景" {...loadRequired} />
+          <Image className={mc(styles.shadow, styles.l1)} src={shadow1Pic} width={384} alt="背景" {...loadRequired} />
+          <Image className={mc(styles.shadow, styles.l2)} src={shadow2Pic} width={384} alt="背景" {...loadRequired} />
+          <Image className={mc(styles.shadow, styles.l3)} src={shadow3Pic} width={384} alt="背景" {...loadRequired} />
+          <Image className={mc(styles.shadow, styles.l4)} src={shadow4Pic} width={384} alt="背景" {...loadRequired} />
         </div>
 
         <InternalLink className={styles.pickup} href={content.href}>
           <Image
             src={content.thumbnail}
-            width={500}
             className={mc(styles.image, switching ? styles.switching : "")}
             alt={content.title}
             objectFit={"cover"}
