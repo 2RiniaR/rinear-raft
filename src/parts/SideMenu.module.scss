@@ -7,24 +7,50 @@
   right: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 8px;
   height: 64px;
-  border-radius: 8px;
-  background-color: global.$light2;
-  filter: drop-shadow(0 0 8px global.$light1);
   transition: height 300ms, width 300ms, gap 300ms;
 
   .toggle {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: global.$light2;
+    filter: drop-shadow(0 0 8px global.$light1);
+
+    .icon {
+      margin: auto;
+      width: 32px;
+      height: 32px;
+    }
   }
 
   .element {
-    width: 32px;
-    height: 32px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 8px;
+    background-color: global.$light2;
+    filter: drop-shadow(0 0 8px global.$light1);
+    width: 168px;
     transition: opacity 300ms, height 300ms;
+
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .name {
+      @include global.design-font;
+      font-size: 1.1rem;
+      color: global.$light1;
+      width: 100px;
+    }
   }
 }
 
@@ -35,17 +61,15 @@
   .element {
     opacity: 0;
     height: 0;
-    //display: none;
   }
 }
 
 .open {
-  height: 240px;
+  height: 48px * 5 + 16px * 4;
   gap: 16px;
 
   .element {
-    height: 32px;
+    height: 48px;
     opacity: 1;
-    display: block;
   }
 }

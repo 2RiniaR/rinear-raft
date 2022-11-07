@@ -18,16 +18,20 @@ const SideMenu = () => {
         name="トップへ"
         aria-label="トップへ"
       >
-        <Image src={upIconPic} alt="トップへ" />
+        <Image className={styles.icon} src={upIconPic} alt="トップへ" />
+        <span className={styles.name}>一番上へ</span>
       </button>
       <InternalLink className={styles.element} href="/">
-        <Image src={homeIconPic} alt="HOME" />
+        <Image className={styles.icon} src={homeIconPic} alt="HOME" />
+        <span className={styles.name}>HOME</span>
       </InternalLink>
       <InternalLink className={styles.element} href="/letters">
-        <Image src={letterIconPic} alt="LETTERS" />
+        <Image className={styles.icon} src={letterIconPic} alt="LETTERS" />
+        <span className={styles.name}>LETTERS</span>
       </InternalLink>
       <InternalLink className={styles.element} href="/materials">
-        <Image src={materialIconPic} alt="MATERIALS" />
+        <Image className={styles.icon} src={materialIconPic} alt="MATERIALS" />
+        <span className={styles.name}>MATERIALS</span>
       </InternalLink>
       <button
         className={styles.toggle}
@@ -35,7 +39,7 @@ const SideMenu = () => {
         name="メニューを開く"
         aria-label="メニューを開く"
       >
-        <Image src={menuIconPic} alt="メニューを開く" />
+        <Image className={styles.icon} src={menuIconPic} alt="メニューを開く" />
       </button>
     </nav>
   );

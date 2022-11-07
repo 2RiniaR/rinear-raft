@@ -41,7 +41,7 @@ const pickups: Pickup[] = [
 type Scene = "loading" | "opening" | "view";
 
 const Page = (): JSX.Element => {
-  const [onLoadingComplete, loadingProgress, hasLoadingCompleted] = useLoading(11);
+  const [onLoadingComplete, loadingProgress, hasLoadingCompleted] = useLoading(26);
   const [scene, setScene] = useState<Scene>("loading");
   const [content, contentIndex, switching, setPlaying] = useContentSwitch(pickups, {
     switchingDuration: 500,
@@ -172,12 +172,14 @@ const Page = (): JSX.Element => {
           <Image className={styles.icon} src={letterIconPic} width={75} alt="背景" {...loadRequired} />
           <h1>LETTERS</h1>
           <h2>解釈の破片を拾い集める</h2>
-          <p>
-            サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-          </p>
-          <p>
-            サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-          </p>
+          <div className={styles.description}>
+            <p>
+              サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+            </p>
+            <p>
+              サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+            </p>
+          </div>
           <div className={styles.images}>
             <Image className={styles.image} src={story2Pic} width={400} alt="背景" {...loadRequired} />
             <Image className={styles.image} src={story3Pic} width={400} alt="背景" {...loadRequired} />
@@ -190,12 +192,12 @@ const Page = (): JSX.Element => {
           <Image className={styles.icon} src={materialIconPic} width={75} alt="背景" {...loadRequired} />
           <h1>MATERIALS</h1>
           <h2>これまでの実体を観察する</h2>
-          <p>
-            サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-          </p>
-          <p>
-            サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-          </p>
+          <div className={styles.description}>
+            <p>
+              サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+            </p>
+            <p>サンプルテキストサンプルテキストサンプルテキスト</p>
+          </div>
           <div className={styles.images}>
             <Image className={styles.image} src={story2Pic} width={400} alt="背景" {...loadRequired} />
             <Image className={styles.image} src={story3Pic} width={400} alt="背景" {...loadRequired} />

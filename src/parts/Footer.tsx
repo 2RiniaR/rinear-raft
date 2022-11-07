@@ -11,7 +11,7 @@ const Footer = () => (
         <div className={styles.info}>
           <div className={styles.title}>
             <span className={styles.name}>RineaRの筏</span>
-            <span className={styles.version}>version 1.1.0</span>
+            <span className={styles.version}>version 2.0.0</span>
           </div>
           <div className={styles.copyright}>Copyright © 2022 RineaR All rights reserved.</div>
         </div>
@@ -30,9 +30,7 @@ const Footer = () => (
       <ExternalLink className={styles.element} href="https://www.youtube.com/channel/UCNqtSTjhp-dWL8dib3KECsQ">
         YouTube
       </ExternalLink>
-      <ExternalLink className={styles.element} href="https://www.youtube.com/channel/UCNqtSTjhp-dWL8dib3KECsQ">
-        YouTube
-      </ExternalLink>
+      <div className={styles.element}></div>
     </div>
   </footer>
 );

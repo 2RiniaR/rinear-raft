@@ -268,7 +268,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
 }
 
 .message {
-  filter: drop-shadow(0 0 8px rgba(global.$dark1, 60%));
+  filter: drop-shadow(0 0 0px rgba(global.$dark1, 60%));
   position: relative;
   overflow-x: hidden;
   display: flex;
@@ -308,45 +308,45 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       animation-timing-function: linear;
 
       &.l1 {
-        animation-delay: 0s;
+        animation-delay: -24s;
         top: 2rem;
       }
 
       &.l2 {
-        animation-delay: 8s;
+        animation-delay: -16s;
         top: 2rem;
       }
 
       &.l3 {
-        animation-delay: 16s;
+        animation-delay: -8s;
         top: 2rem;
       }
 
       &.l4 {
-        animation-delay: 24s;
+        animation-delay: 0s;
         top: 2rem;
       }
 
       &.l5 {
-        animation-delay: 0s;
+        animation-delay: -24s;
         animation-direction: reverse;
         bottom: 2rem;
       }
 
       &.l6 {
-        animation-delay: 8s;
+        animation-delay: -16s;
         animation-direction: reverse;
         bottom: 2rem;
       }
 
       &.l7 {
-        animation-delay: 16s;
+        animation-delay: -8s;
         animation-direction: reverse;
         bottom: 2rem;
       }
 
       &.l8 {
-        animation-delay: 24s;
+        animation-delay: 0s;
         animation-direction: reverse;
         bottom: 2rem;
       }
@@ -422,6 +422,8 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
   padding-bottom: 8rem;
 
   .item {
+    display: flex;
+    flex-direction: column;
     width: calc(100vw - 4rem);
     max-width: 400px;
     padding-top: 2rem;
@@ -434,6 +436,10 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 8px;
+    }
+
+    .description {
+      flex-grow: 1;
     }
 
     h1 {
