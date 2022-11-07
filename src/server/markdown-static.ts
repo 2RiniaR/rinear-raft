@@ -1,10 +1,10 @@
 import { URL } from "url";
 import path from "path";
 import { visit } from "unist-util-visit";
-import { GetStaticPropsResult } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import sizeOf from "image-size";
-import { MarkdownPageProps } from "../functions/markdown";
+// eslint-disable-next-line import/named
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 type Options = {
   dir?: string;
@@ -34,15 +34,10 @@ function rehypeImageSize(options: Options = {}) {
   };
 }
 
-export async function getMarkdownStaticProps(markdownPath: string): Promise<GetStaticPropsResult<MarkdownPageProps>> {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+export async function getMarkdownSource(markdownPath: string): Promise<MDXRemoteSerializeResult> {
   const fs = (await import("fs")).promises;
   const source = (await fs.readFile(markdownPath)).toString();
-  return {
-    props: {
-      source: await serialize(source, {
-        mdxOptions: { rehypePlugins: [[rehypeImageSize, { dir: path.dirname(markdownPath) }]] }
-      })
-    }
-  };
+  return await serialize(source, {
+    mdxOptions: { rehypePlugins: [[rehypeImageSize, { dir: path.dirname(markdownPath) }]] }
+  });
 }

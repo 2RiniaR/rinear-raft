@@ -1,5 +1,5 @@
+// eslint-disable-next-line import/named
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { ReactNode } from "react";
 import NextImage, { ImageProps } from "next/image";
 
 type MarkdownImageProps = ImageProps & {
@@ -24,12 +24,10 @@ const components = {
   img: (props: any) => <MarkdownImage {...props} />
 };
 
-export type MarkdownPageProps = {
+type MarkdownContentProps = {
   source: MDXRemoteSerializeResult;
 };
 
-export function MarkdownContent(
-  builder: (content: ReactNode) => JSX.Element
-): (pageProps: MarkdownPageProps) => JSX.Element {
-  return (pageProps: MarkdownPageProps) => builder(<MDXRemote {...pageProps.source} components={components} lazy />);
-}
+export const MarkdownContent = ({ source }: MarkdownContentProps) => (
+  <MDXRemote {...source} components={components} lazy />
+);

@@ -1,14 +1,11 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { content as sample } from "./sample";
-import { content as story } from "./story";
+import { letters } from "letters";
 import { formatExceededTime, Image, InternalLink } from "functions";
 import { Footer, Meta, SideMenu } from "parts";
-import { Letter } from "content";
+import { Letter } from "index";
 import letterIconPic from "public/general/letter-icon.png";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
-
-const contents: Letter[] = [sample, story];
 
 const Page = () => (
   <div className={styles.page}>
@@ -29,8 +26,8 @@ const Page = () => (
     </header>
 
     <main className={styles.list}>
-      {contents.map((content) => (
-        <ContentView {...content} key={content.id} />
+      {Object.keys(letters).map((id) => (
+        <ContentView {...letters[id]} key={id} />
       ))}
     </main>
 

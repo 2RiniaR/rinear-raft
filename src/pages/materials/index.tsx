@@ -1,29 +1,11 @@
 import React from "react";
-import { content as mazeEscape } from "./maze-escape";
-import { content as bustersMission } from "./busters-mission";
-import { content as eyes } from "./eyes";
-import { content as kimifeel } from "./kimifeel";
-import { content as mageSimulator } from "./mage-simulator";
-import { content as marvelous } from "./marvelous";
-import { content as ponBonRush } from "./pon-bon-rush";
-import { content as rinearRaft } from "./rinear-raft";
 import styles from "./index.module.scss";
+import { materials } from "materials";
 import { formatDisplayDate, formatExceededTime, Image, InternalLink } from "functions";
-import { Material } from "content";
+import { Material } from "index";
 import { Footer, Meta, SideMenu } from "parts";
 import materialIconPic from "public/general/material-icon.png";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
-
-const contents: Material[] = [
-  mazeEscape,
-  bustersMission,
-  ponBonRush,
-  mageSimulator,
-  marvelous,
-  kimifeel,
-  eyes,
-  rinearRaft
-];
 
 const Page = () => (
   <div className={styles.page}>
@@ -44,8 +26,8 @@ const Page = () => (
     </header>
 
     <main className={styles.list}>
-      {contents.map((content) => (
-        <ContentView {...content} key={content.id} />
+      {Object.keys(materials).map((id) => (
+        <ContentView {...materials[id]} key={id} />
       ))}
     </main>
 
