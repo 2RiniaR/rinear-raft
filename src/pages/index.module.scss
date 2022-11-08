@@ -3,6 +3,10 @@
 
 $landscape-width: max(100vw, 100vh * 16 / 9);
 
+.page {
+  user-select: none;
+}
+
 .landscape {
   position: absolute;
   overflow-x: hidden;
@@ -389,6 +393,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       padding-left: 0.5em;
       margin-bottom: 4rem;
       font-size: 1.2rem;
+      user-select: text;
 
       strong {
         font-weight: normal;
@@ -407,6 +412,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       margin-bottom: 0.7em;
       font-size: 1.1rem;
       text-indent: 1em;
+      user-select: text;
     }
   }
 }
@@ -448,6 +454,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       color: global.$light1;
       text-align: center;
       margin-bottom: 0.5rem;
+      user-select: text;
     }
 
     h2 {
@@ -456,6 +463,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       color: global.$light1;
       text-align: center;
       margin-bottom: 2rem;
+      user-select: text;
 
       &:before {
         content: "-";
@@ -477,6 +485,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       margin-left: 1rem;
       margin-right: 1rem;
       text-indent: 1em;
+      user-select: text;
     }
 
     .images {
@@ -504,6 +513,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       background: rgba(global.$dark1, 65%);
       padding-top: 0.7rem;
       padding-bottom: 0.7rem;
+      user-select: text;
     }
   }
 

@@ -3,7 +3,7 @@ import styles from "./MaterialTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
 import { Footer, Meta, SideMenu } from "parts";
 import { formatDisplayDate, formatExceededTime, Image } from "functions";
-import { Material } from "content";
+import { Material } from "index";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import materialIconPic from "public/general/material-icon.png";
 

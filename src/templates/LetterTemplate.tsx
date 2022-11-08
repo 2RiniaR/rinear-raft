@@ -3,7 +3,7 @@ import styles from "./LetterTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
 import { Footer, Meta, SideMenu } from "parts";
 import { formatDisplayDate, formatExceededTime, Image } from "functions";
-import { Letter } from "content";
+import { Letter } from "index";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import letterIconPic from "public/general/letter-icon.png";
 

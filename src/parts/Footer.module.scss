@@ -3,6 +3,7 @@
 .container {
   background: linear-gradient(transparent 0%, rgba(global.$light2, 40%) 2.4rem, rgba(global.$light2, 94%) 6rem);
   padding: 8rem 1rem 2rem;
+  user-select: text;
 }
 
 .band {

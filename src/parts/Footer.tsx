@@ -7,7 +7,9 @@ const Footer = () => (
   <footer className={styles.container}>
     <div className={styles.band}>
       <div className={styles.content}>
-        <Image className={styles.logo} src={logoPic} alt="ロゴ" width={150} />
+        <InternalLink href="/">
+          <Image className={styles.logo} src={logoPic} alt="ロゴ" width={150} />
+        </InternalLink>
         <div className={styles.info}>
           <div className={styles.title}>
             <span className={styles.name}>RineaRの筏</span>
