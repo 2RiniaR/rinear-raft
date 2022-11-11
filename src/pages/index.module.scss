@@ -4,6 +4,7 @@
 $landscape-width: max(100vw, 100vh * 16 / 9);
 
 .page {
+  position: relative;
   user-select: none;
   background-color: global.$light2;
 }
@@ -203,180 +204,43 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
 }
 
 .message {
-  background: linear-gradient(to bottom, transparent 0%, rgba(global.$light1, 20%) 250px, rgba(global.$light1, 20%) calc(100% - 250px), transparent 100%);
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 1;
   width: 100%;
-  min-height: 100vh;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  height: 100vh;
   margin-top: 150px;
   margin-bottom: 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
   .background {
-    z-index: 1;
+    z-index: -2;
     position: absolute;
-    min-width: 2000px;
-    top: 0;
     width: 100%;
     height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    aspect-ratio: 16 / 9;
     mask: url(/general/mask.webp);
     mask-size: 100% 100%;
     mask-position: center;
-    opacity: 0.3;
-    transition: opacity 2s 1.5s;
+    opacity: 0.1;
+  }
+
+  p {
+    @include global.text;
+    width: calc(100% - 64px);
+    @include global.design-font;
+    color: global.$dark1;
+    line-height: 1.7;
+    margin-bottom: 0.7em;
+    font-size: 1rem;
+    text-indent: 1em;
+    user-select: text;
+    transition: opacity 1s 0.5s, transform 1s 0.5s;
 
     &.invisible {
       opacity: 0;
-    }
-
-    .story {
-      $duration: 60s;
-      $content-count: 6;
-
-      @mixin delay-with($item-number) {
-        animation-delay: $duration * (-$content-count + $item-number) / $content-count;
-      }
-
-      position: absolute;
-      width: 600px;
-      mask: url(/general/mask.webp);
-      mask-size: cover;
-      mask-position: center;
-      animation-name: story;
-      animation-duration: $duration;
-      animation-iteration-count: infinite;
-      animation-fill-mode: both;
-      animation-direction: normal;
-      animation-timing-function: linear;
-
-      &.l1 {
-        @include delay-with(1);
-        bottom: calc(50% + 16px);
-      }
-
-      &.l2 {
-        @include delay-with(2);
-        bottom: calc(50% + 16px);
-      }
-
-      &.l3 {
-        @include delay-with(3);
-        bottom: calc(50% + 16px);
-      }
-
-      &.l4 {
-        @include delay-with(4);
-        bottom: calc(50% + 16px);
-      }
-
-      &.l5 {
-        @include delay-with(5);
-        bottom: calc(50% + 16px);
-      }
-
-      &.l6 {
-        @include delay-with(6);
-        bottom: calc(50% + 16px);
-      }
-
-      &.m1 {
-        @include delay-with(1);
-        animation-direction: reverse;
-        top: calc(50% + 16px);
-      }
-
-      &.m2 {
-        @include delay-with(2);
-        animation-direction: reverse;
-        top: calc(50% + 16px);
-      }
-
-      &.m3 {
-        @include delay-with(3);
-        animation-direction: reverse;
-        top: calc(50% + 16px);
-      }
-
-      &.m4 {
-        @include delay-with(4);
-        animation-direction: reverse;
-        top: calc(50% + 16px);
-      }
-
-      &.m5 {
-        @include delay-with(5);
-        animation-direction: reverse;
-        top: calc(50% + 16px);
-      }
-
-      &.m6 {
-        @include delay-with(6);
-        animation-direction: reverse;
-        top: calc(50% + 16px);
-      }
-
-      @keyframes story {
-        0% {
-          left: 110%;
-        }
-        100% {
-          left: -100%;
-        }
-      }
-    }
-  }
-
-  .content {
-    z-index: 2;
-    position: relative;
-    width: 300px;
-    text-align: center;
-
-    .note {
-      position: absolute;
-      z-index: -1;
-      left: 50%;
-      top: 50%;
-      width: 550px;
-      transform: translate(-50%, -50%);
-      transition: opacity 1s, transform 1s;
-    }
-
-    p {
-      @include global.text;
-      width: calc(100% - 64px);
-      @include global.design-font;
-      color: global.$dark1;
-      line-height: 1.7;
-      margin-bottom: 0.7em;
-      font-size: 1rem;
-      text-indent: 1em;
-      user-select: text;
-      transition: opacity 1s 0.5s, transform 1s 0.5s;
-    }
-
-    &.invisible {
-      .note {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-
-      h1 {
-        opacity: 0;
-        transform: translateX(5%);
-      }
-
-      p {
-        opacity: 0;
-        transform: translateX(5%);
-      }
+      transform: translateX(5%);
     }
   }
 }
@@ -425,22 +289,23 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       flex-grow: 1;
     }
 
-    h1 {
+    h1, h2, p {
       @include global.design-font;
-      font-size: 1.2rem;
-      color: global.$light1;
-      text-align: center;
-      margin-bottom: 0.5rem;
       user-select: text;
     }
 
-    h2 {
-      @include global.design-font;
-      font-size: 1rem;
+    h1 {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
       color: global.$light1;
+    }
+
+    h2 {
+      font-size: 1rem;
       text-align: center;
       margin-bottom: 2rem;
-      user-select: text;
+      color: global.$light1;
 
       &:before {
         content: "-";
@@ -454,7 +319,6 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
     }
 
     p {
-      @include global.design-font;
       color: global.$dark1;
       line-height: 1.7;
       font-size: 1rem;
@@ -462,7 +326,6 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       margin-left: 1rem;
       margin-right: 1rem;
       text-indent: 1em;
-      user-select: text;
     }
 
     .images {

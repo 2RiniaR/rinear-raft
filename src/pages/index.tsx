@@ -13,19 +13,10 @@ import shadow4Pic from "public/home/shadow4.webp";
 import letterIconPic from "public/general/letter-icon.png";
 import materialIconPic from "public/general/material-icon.png";
 import logoPic from "public/general/logo-full.webp";
-import storyL1Pic from "public/contents/letters/story/prologue.png";
 import storyL2Pic from "public/contents/letters/story/prototype.png";
 import storyL3Pic from "public/contents/letters/story/present.png";
-import storyL4Pic from "public/contents/letters/story/prelude.png";
-import storyL5Pic from "public/general/letters-background.png";
-import storyL6Pic from "public/general/materials-background.jpg";
-import storyM1Pic from "public/contents/materials/maze-escape/title.webp";
 import storyM2Pic from "public/contents/materials/busters-mission/title.webp";
 import storyM3Pic from "public/contents/materials/popcorn-chef/title.webp";
-import storyM4Pic from "public/contents/materials/mage-simulator/title.webp";
-import storyM5Pic from "public/contents/materials/marvelous/page1.webp";
-import storyM6Pic from "public/contents/materials/kimifeel/page1.webp";
-import notePic from "public/home/message-background.webp";
 
 type Scene = "loading" | "view";
 
@@ -91,34 +82,18 @@ const Page = (): JSX.Element => {
       </section>
 
       <section className={styles.message} ref={messageCheckpointRef}>
-        <div className={mc(styles.background, hasPassedMessage ? "" : styles.invisible)}>
-          <Image className={mc(styles.story, styles.l1)} src={storyL1Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.l2)} src={storyL2Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.l3)} src={storyL3Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.l4)} src={storyL4Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.l5)} src={storyL5Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.l6)} src={storyL6Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.m1)} src={storyM1Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.m2)} src={storyM2Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.m3)} src={storyM3Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.m4)} src={storyM4Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.m5)} src={storyM5Pic} width={600} alt="背景" {...loadRequired} />
-          <Image className={mc(styles.story, styles.m6)} src={storyM6Pic} width={600} alt="背景" {...loadRequired} />
-        </div>
-        <div className={mc(styles.content, hasPassedMessage ? "" : styles.invisible)}>
-          <Image className={mc(styles.note)} src={notePic} width={600} alt="背景" {...loadRequired} />
-          <p>
-            <Ruby writing="Rinia" reading="りにあ" />
-            と名付けた一個人と、
-          </p>
-          <p>その観察により見つけた解釈</p>
-          <p>
-            「<Ruby writing="RineaR" reading="りにある" />
-            」。
-          </p>
-          <p>ただ抽象が漂うこの情景は、</p>
-          <p>どこに行きつくんだろう。</p>
-        </div>
+        <Image className={mc(styles.background)} src={storyL3Pic} alt="背景" {...loadRequired} {...landscapeFill} />
+        <p>
+          <Ruby writing="Rinia" reading="りにあ" />
+          と名付けた一個人と、
+        </p>
+        <p>その観察により見つけた解釈</p>
+        <p>
+          「<Ruby writing="RineaR" reading="りにある" />
+          」。
+        </p>
+        <p>ただ抽象が漂うこの情景は、</p>
+        <p>どこに行きつくんだろう。</p>
       </section>
 
       <section className={styles.contents}>
