@@ -26,16 +26,18 @@ const Page = () => (
     </header>
 
     <main className={styles.list}>
-      {Object.keys(letters).map((id) => (
-        <ContentView {...letters[id]} key={id} />
-      ))}
+      {Object.keys(letters)
+        .reverse()
+        .map((id) => (
+          <ContentView {...letters[id]} id={id} key={id} />
+        ))}
     </main>
 
     <Footer />
   </div>
 );
 
-const ContentView = (content: Letter) => (
+const ContentView = (content: Letter & { id: string }) => (
   <InternalLink href={`/letters/${content.id}`} className={styles.item}>
     <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} />
     <div className={styles.info}>

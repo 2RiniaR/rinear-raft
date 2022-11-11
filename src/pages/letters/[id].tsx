@@ -5,7 +5,7 @@ import { MarkdownContent } from "functions";
 import { MaterialTemplate } from "templates";
 
 const Page = ({ source, id }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <MaterialTemplate content={letters[id]}>
+  <MaterialTemplate id={id} content={letters[id]}>
     <MarkdownContent source={source} />
   </MaterialTemplate>
 );

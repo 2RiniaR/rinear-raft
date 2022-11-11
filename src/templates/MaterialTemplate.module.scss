@@ -1,7 +1,7 @@
 @use "global";
 
 .page {
-  @include global.page("~public/contents/unified-16-9.webp");
+  @include global.page("~public/general/materials-background.jpg");
 }
 
 .article {

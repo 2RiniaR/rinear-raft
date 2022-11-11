@@ -1,6 +1,6 @@
 # 紹介動画
 
-<iframe src="https://www.youtube.com/embed/WWZ9mK9vg1M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe src="https://www.youtube.com/embed/WWZ9mK9vg1M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen=""></iframe>
 
 # ダウンロード
 

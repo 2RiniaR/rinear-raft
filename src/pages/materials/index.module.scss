@@ -1,7 +1,7 @@
 @use "global";
 
 .page {
-  @include global.page("~public/contents/unified-16-9.webp");
+  @include global.page("~public/general/materials-background.jpg");
   padding-top: 4rem;
 }
 
@@ -67,7 +67,7 @@
       height: 150px;
       bottom: 1rem;
       right: 1rem;
-      background: url("~public/general/material-icon.png");
+      background: url(/general/material-icon.png);
       background-size: cover;
       opacity: 0.6;
     }

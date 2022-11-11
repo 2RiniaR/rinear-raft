@@ -1,7 +1,6 @@
 import { StaticImageData } from "next/image";
 
 export type Letter = {
-  id: string;
   image?: StaticImageData;
   title: string;
   description: string;
@@ -10,7 +9,6 @@ export type Letter = {
 };
 
 export type Material = {
-  id: string;
   image?: StaticImageData;
   title: string;
   description: string;

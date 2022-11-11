@@ -8,16 +8,17 @@ import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import letterIconPic from "public/general/letter-icon.png";
 
 type Props = {
+  id: string;
   content: Letter;
   children?: ReactNode;
 };
 
-const LetterTemplate = ({ content, children }: Props) => (
+const LetterTemplate = ({ id, content, children }: Props) => (
   <div className={styles.page}>
     <Meta
       pageTitle={content.title}
       pageDescription={content.description}
-      pagePath={`/letters/${content.id}`}
+      pagePath={`/letters/${id}`}
       pageImgPath={content.image ? content.image.src : defaultThumbnailPic.src}
       pageType="article"
     />

@@ -8,16 +8,17 @@ import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import materialIconPic from "public/general/material-icon.png";
 
 type Props = {
+  id: string;
   content: Material;
   children?: ReactNode;
 };
 
-const MaterialTemplate = ({ content, children }: Props) => (
+const MaterialTemplate = ({ id, content, children }: Props) => (
   <div className={styles.page}>
     <Meta
       pageTitle={content.title}
       pageDescription={content.description}
-      pagePath={`/materials/${content.id}`}
+      pagePath={`/materials/${id}`}
       pageImgPath={content.image ? content.image.src : defaultThumbnailPic.src}
       pageType="article"
     />

@@ -8,3 +8,4 @@ export { useScrollPast, useScrollValue } from "./scroll";
 export { Image } from "./image";
 export { Ruby } from "./writing";
 export { MarkdownContent } from "./markdown";
+export { useCheckpoint } from "./checkpoint";
