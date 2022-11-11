@@ -8,7 +8,7 @@ type MetaProps = {
   pageImgPath?: string;
 };
 
-const Meta = ({ pageTitle, pageType, pageDescription, pagePath, pageImgPath }: MetaProps) => {
+export const Meta = ({ pageTitle, pageType, pageDescription, pagePath, pageImgPath }: MetaProps) => {
   const siteName = "RineaRの筏";
   const siteDomain = "rinear.net";
   const siteBaseUrl = "https://rinear.net";
@@ -42,5 +42,3 @@ const Meta = ({ pageTitle, pageType, pageDescription, pagePath, pageImgPath }: M
     </Head>
   );
 };
-
-export default Meta;

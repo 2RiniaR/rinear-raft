@@ -7,7 +7,7 @@ import letterIconPic from "public/general/letter-icon.png";
 import materialIconPic from "public/general/material-icon.png";
 import upIconPic from "public/general/up-icon.png";
 
-const SideMenu = () => {
+export const SideMenu = () => {
   const [isOpening, setOpening] = useState(false);
 
   return (
@@ -44,5 +44,3 @@ const SideMenu = () => {
     </nav>
   );
 };
-
-export default SideMenu;

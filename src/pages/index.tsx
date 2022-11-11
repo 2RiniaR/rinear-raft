@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ImageProps } from "next/image";
 import styles from "./index.module.scss";
 import { Image, InternalLink, mc, Ruby, useCheckpoint, useLoading } from "functions";
-import { Footer, LoadingWindow, Meta, OpeningAnimation, SideMenu } from "parts";
+import { Footer, LoadingWindow, Meta, SideMenu } from "parts";
 import landscapePic from "public/home/home-background-full.jpg";
 import holeEffectPic from "public/home/holes.png";
 import windEffectPic from "public/home/wind.png";
@@ -27,7 +27,7 @@ import storyM5Pic from "public/contents/materials/marvelous/page1.webp";
 import storyM6Pic from "public/contents/materials/kimifeel/page1.webp";
 import notePic from "public/home/message-background.webp";
 
-type Scene = "loading" | "opening" | "view";
+type Scene = "loading" | "view";
 
 const Page = (): JSX.Element => {
   const [onLoadingComplete, loadingProgress, hasLoadingCompleted] = useLoading(24);
@@ -49,12 +49,8 @@ const Page = (): JSX.Element => {
   };
 
   useEffect(() => {
-    if (hasLoadingCompleted) setScene("opening");
+    if (hasLoadingCompleted) setScene("view");
   }, [hasLoadingCompleted]);
-
-  function onOpeningAnimationComplete() {
-    setScene("view");
-  }
 
   return (
     <div className={styles.page}>
@@ -67,7 +63,6 @@ const Page = (): JSX.Element => {
 
       <SideMenu />
       <LoadingWindow loading={!hasLoadingCompleted} progress={loadingProgress} />
-      <OpeningAnimation isPlaying={scene === "opening"} onComplete={onOpeningAnimationComplete} />
 
       <section className={styles.concept} ref={conceptCheckpointRef}>
         <Image className={styles.background} src={landscapePic} alt="背景" {...loadRequired} {...landscapeFill} />
@@ -163,8 +158,8 @@ const Page = (): JSX.Element => {
             <p>サンプルテキストサンプルテキストサンプルテキスト</p>
           </div>
           <div className={styles.images}>
-            <Image className={styles.image} src={storyL2Pic} width={400} alt="背景" {...loadRequired} />
-            <Image className={styles.image} src={storyL3Pic} width={400} alt="背景" {...loadRequired} />
+            <Image className={styles.image} src={storyM2Pic} width={400} alt="背景" {...loadRequired} />
+            <Image className={styles.image} src={storyM3Pic} width={400} alt="背景" {...loadRequired} />
           </div>
         </InternalLink>
       </section>

@@ -1,5 +1,4 @@
-export { default as Footer } from "./Footer";
-export { default as LoadingWindow } from "./LoadingWindow";
-export { default as Meta } from "./Meta";
-export { default as OpeningAnimation } from "./OpeningAnimation";
-export { default as SideMenu } from "./SideMenu";
+export { Footer } from "./Footer";
+export { LoadingWindow } from "./LoadingWindow";
+export { Meta } from "./Meta";
+export { SideMenu } from "./SideMenu";

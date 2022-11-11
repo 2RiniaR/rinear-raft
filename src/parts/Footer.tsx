@@ -3,7 +3,7 @@ import styles from "./Footer.module.scss";
 import { ExternalLink, Image, InternalLink } from "functions";
 import logoPic from "public/general/logo-full.webp";
 
-const Footer = () => (
+export const Footer = () => (
   <footer className={styles.container}>
     <div className={styles.band}>
       <div className={styles.content}>
@@ -36,5 +36,3 @@ const Footer = () => (
     </div>
   </footer>
 );
-
-export default Footer;

@@ -7,7 +7,7 @@ type Props = {
   progress: number;
 };
 
-const LoadingWindow = ({ loading, progress }: Props): JSX.Element => (
+export const LoadingWindow = ({ loading, progress }: Props): JSX.Element => (
   <div className={mc(styles.screen, loading ? styles.loading : styles.completed)}>
     <div className={styles.animation}>
       <div className={styles.fall} />
@@ -21,5 +21,3 @@ const LoadingWindow = ({ loading, progress }: Props): JSX.Element => (
     </div>
   </div>
 );
-
-export default LoadingWindow;

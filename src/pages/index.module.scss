@@ -193,10 +193,10 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       left: 50%;
       transform: translate(-50%, -50%);
       background: radial-gradient(
-        closest-side,
-        rgba(global.$light2, 100%) 20%,
-        rgba(global.$light2, 80%) 60%,
-        rgba(global.$light2, 0%) 100%
+                      closest-side,
+                      rgba(global.$light2, 100%) 20%,
+                      rgba(global.$light2, 80%) 60%,
+                      rgba(global.$light2, 0%) 100%
       );
     }
   }
@@ -387,7 +387,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8rem;
+  gap: 4rem;
   padding-top: 8rem;
   padding-bottom: 8rem;
   margin-top: 8rem;
@@ -399,6 +399,8 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
     max-width: 400px;
     padding-top: 2rem;
     padding-bottom: 8px;
+    margin-left: 1rem;
+    margin-right: 1rem;
     filter: drop-shadow(0 0 16px rgba(global.$light1, 100%));
     transition: opacity 1s, transform 1s, filter 300ms;
 

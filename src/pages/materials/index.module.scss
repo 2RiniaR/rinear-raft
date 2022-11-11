@@ -89,7 +89,7 @@
         border-bottom: global.$dark1 solid 1px;
         margin-bottom: 1rem;
         padding-bottom: 0.5rem;
-        align-items: end;
+        align-items: flex-end;
         @include global.text;
 
         .releasedAt {
