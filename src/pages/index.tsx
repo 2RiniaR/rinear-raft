@@ -21,7 +21,7 @@ import storyM3Pic from "public/contents/materials/popcorn-chef/title.webp";
 type Scene = "loading" | "view";
 
 const Page = (): JSX.Element => {
-  const [onLoadingComplete, loadingProgress, hasLoadingCompleted] = useLoading(24);
+  const [onLoadingComplete, loadingProgress, hasLoadingCompleted] = useLoading(16);
   const [scene, setScene] = useState<Scene>("loading");
   const [conceptCheckpointRef, hasPassedConcept] = useCheckpoint();
   const [messageCheckpointRef, hasPassedMessage] = useCheckpoint();
@@ -81,8 +81,8 @@ const Page = (): JSX.Element => {
         <div className={styles.underSmog} />
       </section>
 
-      <section className={styles.message} ref={messageCheckpointRef}>
-        <Image className={mc(styles.background)} src={storyL3Pic} alt="背景" {...loadRequired} {...landscapeFill} />
+      <section className={mc(styles.message, hasPassedMessage ? "" : styles.invisible)} ref={messageCheckpointRef}>
+        <Image className={mc(styles.background)} src={storyL3Pic} alt="背景" width={750} {...loadRequired} />
         <p>
           <Ruby writing="Rinia" reading="りにあ" />
           と名付けた一個人と、
@@ -92,6 +92,7 @@ const Page = (): JSX.Element => {
           「<Ruby writing="RineaR" reading="りにある" />
           」。
         </p>
+        <br />
         <p>ただ抽象が漂うこの情景は、</p>
         <p>どこに行きつくんだろう。</p>
       </section>
