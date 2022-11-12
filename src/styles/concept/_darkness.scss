@@ -1,0 +1,21 @@
+@use "global";
+@use "sass:string";
+
+@mixin darkness {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: global.$dark1;
+  opacity: 0;
+
+  @keyframes darkness {
+    50% {
+      opacity: 1;
+    }
+    55% {
+      opacity: 0;
+    }
+  }
+
+  animation: darkness 10s both normal ease-in-out 1;
+}

@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/named
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import NextImage, { ImageProps } from "next/image";
+import articleStyle from "styles/article.module.scss";
 
 type MarkdownImageProps = ImageProps & {
   src: string;
@@ -17,6 +18,7 @@ const MarkdownImage = ({ width, height, src, ...props }: MarkdownImageProps) => 
     width={size}
     height={(size * height) / width}
     sizes={size ? `${size}px` : undefined}
+    className={articleStyle.image}
   />
 );
 

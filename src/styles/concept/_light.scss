@@ -1,0 +1,21 @@
+@use "global";
+
+@mixin light {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  background-color: global.$light2;
+  animation: entry 10s ease-in-out 1;
+
+  @keyframes entry {
+    40% {
+      width: 0;
+      height: 0;
+    }
+    60% {
+      width: 2000px;
+      height: 2000px;
+    }
+  }
+}

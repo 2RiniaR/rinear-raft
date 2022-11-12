@@ -1,7 +1,8 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./index.module.scss";
 import { materials } from "materials";
-import { formatDisplayDate, formatExceededTime, Image, InternalLink } from "functions";
+import { formatDisplayDate, formatExceededTime, InternalLink } from "functions";
 import { Material } from "index";
 import { Footer, Meta, SideMenu } from "parts";
 import materialIconPic from "public/general/material-icon.png";
@@ -18,18 +19,11 @@ const Page = () => (
       pageType="article"
     />
 
-    <Image
-      src={backgroundPic}
-      className={styles.background}
-      layout="fill"
-      objectPosition="top"
-      objectFit="cover"
-      alt="背景"
-    />
+    <Image src={backgroundPic} className={styles.background} alt="" />
     <SideMenu />
 
     <header className={styles.header}>
-      <Image className={styles.logo} src={materialIconPic} alt="MATERIALS" width={100} />
+      <Image className={styles.logo} src={materialIconPic} width={100} alt="MATERIALS" />
       <h1 className={styles.title}>MATERIALS</h1>
       <p className={styles.description}>アイデア・制作物などを記録しています。</p>
     </header>

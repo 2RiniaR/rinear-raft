@@ -1,0 +1,26 @@
+@mixin background($container-width) {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(#{$container-width} * 1.02);
+  height: auto;
+
+  animation-name: background;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+
+  @keyframes background {
+    0% {
+      transform: translate(calc(-50% + #{$container-width} * 0.01), 0);
+    }
+    50% {
+      transform: translate(calc(-50% + #{$container-width} * -0.01), 0);
+    }
+    100% {
+      transform: translate(calc(-50% + #{$container-width} * 0.01), 0);
+    }
+  }
+}

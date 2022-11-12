@@ -1,6 +1,7 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./Footer.module.scss";
-import { ExternalLink, Image, InternalLink } from "functions";
+import { ExternalLink, InternalLink } from "functions";
 import logoPic from "public/general/logo-full.webp";
 
 export const Footer = () => (
@@ -8,12 +9,12 @@ export const Footer = () => (
     <div className={styles.band}>
       <div className={styles.content}>
         <InternalLink href="/">
-          <Image className={styles.logo} src={logoPic} alt="ロゴ" width={150} />
+          <Image className={styles.logo} src={logoPic} alt="RineaR" />
         </InternalLink>
         <div className={styles.info}>
           <div className={styles.title}>
             <span className={styles.name}>RineaRの筏</span>
-            <span className={styles.version}>version 2.0.0</span>
+            <span className={styles.version}>chapter 2.0.0</span>
           </div>
           <div className={styles.copyright}>Copyright © 2022 RineaR All rights reserved.</div>
         </div>

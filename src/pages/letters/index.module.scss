@@ -17,8 +17,9 @@
   margin-bottom: 8rem;
 
   .logo {
-    margin: 0 auto;
+    margin: 0 auto 8px auto;
     width: 100px;
+    display: block;
   }
 
   .title {
@@ -79,6 +80,8 @@
 
     .image {
       width: 100%;
+      height: auto;
+      margin-bottom: 0.5rem;
     }
 
     .info {

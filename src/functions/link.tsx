@@ -15,10 +15,8 @@ type InternalLinkProps = Parameters<typeof Link>[0];
 
 export const InternalLink = forwardRef<HTMLAnchorElement, InternalLinkProps>(
   ({ children, className, ...props }: InternalLinkProps, ref): JSX.Element => (
-    <Link {...props}>
-      <a className={className} ref={ref}>
-        {children}
-      </a>
+    <Link {...props} ref={ref} className={className}>
+      {children}
     </Link>
   )
 );

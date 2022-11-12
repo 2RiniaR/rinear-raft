@@ -1,0 +1,41 @@
+@mixin shadow($container-width) {
+  position: absolute;
+  width: calc(#{$container-width} * 0.2);
+  height: auto;
+  left: 49%;
+  top: calc(#{$container-width} * 0.25);
+  transform: translateX(-40%);
+  animation-name: shadow;
+  animation-iteration-count: infinite;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+  animation-direction: normal;
+
+  &.l1 {
+    animation-delay: 0ms;
+  }
+
+  &.l2 {
+    animation-delay: 200ms;
+  }
+
+  &.l3 {
+    animation-delay: 400ms;
+  }
+
+  &.l4 {
+    animation-delay: 600ms;
+  }
+
+  @keyframes shadow {
+    0% {
+      visibility: visible;
+    }
+    25% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: hidden;
+    }
+  }
+}

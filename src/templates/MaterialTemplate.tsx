@@ -1,8 +1,9 @@
 import React, { ReactNode } from "react";
+import Image from "next/image";
 import styles from "./MaterialTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
 import { Footer, Meta, SideMenu } from "parts";
-import { formatDisplayDate, formatExceededTime, Image } from "functions";
+import { formatDisplayDate, formatExceededTime } from "functions";
 import { Material } from "index";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import materialIconPic from "public/general/material-icon.png";
@@ -24,14 +25,7 @@ const MaterialTemplate = ({ id, content, children }: Props) => (
       pageType="article"
     />
 
-    <Image
-      src={backgroundPic}
-      className={styles.background}
-      layout="fill"
-      objectPosition="top"
-      objectFit="cover"
-      alt="背景"
-    />
+    <Image src={backgroundPic} className={styles.background} alt="背景" />
     <SideMenu />
 
     <header className={styles.header}>

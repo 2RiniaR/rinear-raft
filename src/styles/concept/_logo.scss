@@ -1,0 +1,47 @@
+@use "global";
+
+@mixin logo($container-width) {
+  z-index: 1;
+  position: absolute;
+  top: calc(#{$container-width} * 0.16);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100vw - 16px);
+  max-width: 500px;
+
+  .cloud {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 250%;
+    height: 200%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      closest-side,
+      rgba(global.$light2, 50%) 20%,
+      rgba(global.$light2, 30%) 60%,
+      rgba(global.$light2, 0%) 100%
+    );
+  }
+
+  .main {
+    width: 100%;
+    height: auto;
+  }
+
+  animation: logo-entry 10s ease-in-out 1;
+
+  @keyframes logo-entry {
+    0% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

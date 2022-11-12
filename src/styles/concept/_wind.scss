@@ -1,0 +1,58 @@
+@mixin wind {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-duration: 16s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+
+  &.l1 {
+    left: 0;
+    transform: translateX(-100%);
+    animation-name: wind1;
+    animation-delay: -8s;
+
+    @keyframes wind1 {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0%);
+        opacity: 0;
+      }
+    }
+  }
+
+  &.l2 {
+    right: 0;
+    transform: translateX(100%);
+    animation-name: wind2;
+
+    @keyframes wind2 {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0%);
+        opacity: 0;
+      }
+    }
+  }
+}

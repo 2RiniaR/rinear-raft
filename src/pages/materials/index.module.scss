@@ -17,7 +17,8 @@
   margin-bottom: 8rem;
 
   .logo {
-    margin: 0 auto;
+    margin: 0 auto 8px auto;
+    display: block;
     width: 100px;
   }
 
@@ -81,7 +82,9 @@
     }
 
     .image {
-      width: 400px;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
       filter: drop-shadow(12px 12px 0px rgba(global.$light1, 60%));
     }
 

@@ -1,7 +1,7 @@
 @use "global";
 
 .page {
-  padding-top: 4rem;
+  padding-top: 8rem;
 }
 
 .background {
@@ -11,7 +11,7 @@
 .title {
   color: global.$dark1;
   @include global.design-font;
-  font-size: 3rem;
+  font-size: 1.2rem;
   text-align: center;
   margin-bottom: 1rem;
 }

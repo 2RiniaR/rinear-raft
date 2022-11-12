@@ -1,0 +1,66 @@
+@use "global";
+@use "background" as *;
+@use "phantom" as *;
+@use "wind" as *;
+@use "logo" as *;
+@use "smog" as *;
+@use "shadow" as *;
+@use "catch-phrase" as *;
+@use "darkness" as *;
+@use "light" as *;
+
+@mixin concept {
+  $landscape-width: max(100vw, 100vh * 16 / 9);
+  $landscape-height: calc(#{$landscape-width} * 9 / 16);
+  $entry-animation-duration: 10s;
+
+  position: relative;
+  width: 100%;
+  height: calc(100vh);
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .background {
+    @include background($landscape-width);
+  }
+
+  .phantom {
+    @include phantom($landscape-width);
+  }
+
+  .smog {
+    @include smog;
+  }
+
+  .underSmog {
+    position: absolute;
+    width: 100%;
+    height: calc(30vh);
+    bottom: 0;
+    background: linear-gradient(transparent 0%, rgba(global.$light2, 100%) 100%);
+  }
+
+  .wind {
+    @include wind;
+  }
+
+  .shadow {
+    @include shadow($landscape-width);
+  }
+
+  .logo {
+    @include logo($landscape-width);
+  }
+
+  .catchPhrase {
+    @include catch-phrase;
+  }
+
+  .darkness {
+    @include darkness;
+  }
+
+  .light {
+    @include light;
+  }
+}
