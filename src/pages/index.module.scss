@@ -12,14 +12,33 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
 .concept {
   position: relative;
   width: 100%;
-  height: calc(100vh + 100px);
+  height: calc(100vh);
   overflow-x: hidden;
   overflow-y: hidden;
 
   .background {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    height: 101%;
+
+    animation-name: background;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+
+    @keyframes background {
+      0% {
+        transform: translate(-0.2%, 0);
+      }
+      50% {
+        transform: translate(-0.8%, 0);
+      }
+      100% {
+        transform: translate(-0.2%, 0);
+      }
+    }
   }
 
   .phantom {
@@ -28,7 +47,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
     height: 100%;
     animation-delay: 0s;
     animation-direction: alternate;
-    animation-duration: 2s;
+    animation-duration: 6s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -40,7 +59,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
         transform: scale(1);
       }
       100% {
-        transform: scale(1.02);
+        transform: scale(1.05);
       }
     }
   }
@@ -72,7 +91,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
   .underSmog {
     position: absolute;
     width: 100%;
-    height: calc(100px + 20vh);
+    height: calc(30vh);
     bottom: 0;
     background: linear-gradient(transparent 0%, rgba(global.$light2, 100%) 100%);
   }
@@ -179,17 +198,17 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
 
   .logo {
     position: absolute;
-    top: calc(#{$landscape-width} * 0.1);
+    top: calc(#{$landscape-width} * 0.16);
     left: 50%;
-    transform: translateX(-50%);
-    width: calc(100vw - 64px);
-    max-width: 400px;
+    transform: translate(-50%, -50%);
+    width: calc(100vw - 16px);
+    max-width: 500px;
 
     &:before {
       position: absolute;
       content: "";
       width: 250%;
-      height: 150%;
+      height: 200%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -201,6 +220,45 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
       );
     }
   }
+
+  .catchPhrase {
+    position: absolute;
+    z-index: 1;
+    bottom: 8%;
+    width: 80%;
+    max-width: 750px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    strong {
+      font-weight: normal;
+      font-size: 24px;
+      color: #ba1317;
+    }
+
+    .l1 {
+      @include global.design-font;
+      color: global.$dark1;
+      font-size: 18px;
+      border-bottom: solid 1px global.$dark1;
+      padding-right: 1em;
+      margin-right: 32px;
+      margin-bottom: 16px;
+    }
+
+    .l2 {
+      @include global.design-font;
+      color: global.$dark1;
+      font-size: 18px;
+      border-bottom: solid 1px global.$dark1;
+      padding-right: 1em;
+      margin-bottom: 16px;
+      margin-left: 1em;
+    }
+  }
 }
 
 .message {
@@ -210,7 +268,7 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
   z-index: 1;
   width: 100%;
   height: 750px * 0.5625;
-  margin-top: 150px;
+  margin-top: 250px;
   margin-bottom: 150px;
   display: flex;
   justify-content: center;
@@ -227,6 +285,24 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
     mask-size: 100% 100%;
     mask-position: center;
     opacity: 0.2;
+    animation-name: messageBackground;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-direction: normal;
+
+    @keyframes messageBackground {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(2%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
   }
 
   p {
@@ -249,7 +325,6 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
 }
 
 .contents {
-  background: linear-gradient(to bottom, transparent 0%, rgba(global.$light1, 20%) 250px, rgba(global.$light1, 20%) calc(100% - 250px), transparent 100%);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -268,11 +343,15 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
     padding-bottom: 8px;
     margin-left: 1rem;
     margin-right: 1rem;
-    filter: drop-shadow(0 0 16px rgba(global.$light1, 100%));
+    filter: drop-shadow(0 0 8px rgba(global.$light1, 50%));
     transition: opacity 1s, transform 1s, filter 300ms;
 
     &:hover {
       filter: drop-shadow(0 0 32px rgba(#fff1e0, 100%));
+    }
+
+    & * {
+      pointer-events: none;
     }
 
     &.invisible {
@@ -351,7 +430,8 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
   }
 
   .letters {
-    background: url(/general/letters-background.png), linear-gradient(to bottom, rgba(global.$light2, 100%) 0%, rgba(global.$light2, 70%) 400px);
+    background: url(/general/letters-background.png),
+      linear-gradient(to bottom, rgba(global.$light2, 100%) 0%, rgba(global.$light2, 70%) 400px);
     background-position: center;
     background-size: cover;
     background-blend-mode: screen;
@@ -359,7 +439,8 @@ $landscape-width: max(100vw, 100vh * 16 / 9);
   }
 
   .materials {
-    background: url(/general/materials-background.jpg), linear-gradient(to bottom, rgba(global.$light2, 100%) 0%, rgba(global.$light2, 70%) 400px);
+    background: url(/general/materials-background.jpg),
+      linear-gradient(to bottom, rgba(global.$light2, 100%) 0%, rgba(global.$light2, 70%) 400px);
     background-position: center;
     background-size: cover;
     background-blend-mode: screen;

@@ -6,6 +6,7 @@ import { Footer, Meta, SideMenu } from "parts";
 import { Letter } from "index";
 import letterIconPic from "public/general/letter-icon.png";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
+import backgroundPic from "public/general/letters-background.png";
 
 const Page = () => (
   <div className={styles.page}>
@@ -17,6 +18,7 @@ const Page = () => (
       pageType="article"
     />
 
+    <Image src={backgroundPic} className={styles.background} layout="fill" objectPosition="top" objectFit="cover" />
     <SideMenu />
 
     <header className={styles.header}>

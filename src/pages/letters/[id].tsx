@@ -2,12 +2,12 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { letters } from "letters";
 import { getMarkdownSource } from "server/markdown-static";
 import { MarkdownContent } from "functions";
-import { MaterialTemplate } from "templates";
+import { LetterTemplate } from "templates";
 
 const Page = ({ source, id }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <MaterialTemplate id={id} content={letters[id]}>
+  <LetterTemplate id={id} content={letters[id]}>
     <MarkdownContent source={source} />
-  </MaterialTemplate>
+  </LetterTemplate>
 );
 
 export async function getStaticProps(context: GetStaticPropsContext) {

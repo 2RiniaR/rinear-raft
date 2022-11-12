@@ -1,7 +1,11 @@
 @use "global";
 
 .page {
-  @include global.page("~public/general/letters-background.png");
+  @include global.page;
+}
+
+.background {
+  @include global.background-image;
 }
 
 .article {

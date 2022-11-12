@@ -71,5 +71,9 @@
       background: global.$light1;
       color: global.$light2;
     }
+
+    & * {
+      pointer-events: none;
+    }
   }
 }

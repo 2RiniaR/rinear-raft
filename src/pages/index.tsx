@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ImageProps } from "next/image";
 import styles from "./index.module.scss";
 import { Image, InternalLink, mc, Ruby, useCheckpoint, useLoading } from "functions";
 import { Footer, LoadingWindow, Meta, SideMenu } from "parts";
-import landscapePic from "public/home/home-background-full.jpg";
+import landscapePic from "public/general/home-background.png";
 import holeEffectPic from "public/home/holes.png";
 import windEffectPic from "public/home/wind.png";
 import shadow1Pic from "public/home/shadow1.webp";
@@ -18,11 +18,8 @@ import storyL3Pic from "public/contents/letters/story/present.png";
 import storyM2Pic from "public/contents/materials/busters-mission/title.webp";
 import storyM3Pic from "public/contents/materials/popcorn-chef/title.webp";
 
-type Scene = "loading" | "view";
-
 const Page = (): JSX.Element => {
   const [onLoadingComplete, loadingProgress, hasLoadingCompleted] = useLoading(16);
-  const [scene, setScene] = useState<Scene>("loading");
   const [conceptCheckpointRef, hasPassedConcept] = useCheckpoint();
   const [messageCheckpointRef, hasPassedMessage] = useCheckpoint();
   const [lettersCheckpointRef, hasPassedLetters] = useCheckpoint<HTMLAnchorElement>();
@@ -39,10 +36,6 @@ const Page = (): JSX.Element => {
     objectPosition: "top"
   };
 
-  useEffect(() => {
-    if (hasLoadingCompleted) setScene("view");
-  }, [hasLoadingCompleted]);
-
   return (
     <div className={styles.page}>
       <Meta
@@ -55,7 +48,10 @@ const Page = (): JSX.Element => {
       <SideMenu />
       <LoadingWindow loading={!hasLoadingCompleted} progress={loadingProgress} />
 
-      <section className={styles.concept} ref={conceptCheckpointRef}>
+      <section
+        className={mc(styles.concept, hasLoadingCompleted && hasPassedConcept ? "" : styles.invisible)}
+        ref={conceptCheckpointRef}
+      >
         <Image className={styles.background} src={landscapePic} alt="背景" {...loadRequired} {...landscapeFill} />
         <Image className={styles.phantom} src={holeEffectPic} alt="背景" {...loadRequired} {...landscapeFill} />
         <Image
@@ -77,11 +73,22 @@ const Page = (): JSX.Element => {
         <Image className={mc(styles.shadow, styles.l3)} src={shadow3Pic} width={384} alt="背景" {...loadRequired} />
         <Image className={mc(styles.shadow, styles.l4)} src={shadow4Pic} width={384} alt="背景" {...loadRequired} />
         <Image className={styles.logo} src={logoPic} width={400} alt="背景" {...loadRequired} />
+        <div className={styles.catchPhrase}>
+          <span className={mc(styles.l1)}>
+            <strong>遠</strong>くへ行こう。
+          </span>
+          <span className={mc(styles.l2)}>
+            <strong>筏</strong>を放さないように。
+          </span>
+        </div>
         <div className={styles.smog} />
         <div className={styles.underSmog} />
       </section>
 
-      <section className={mc(styles.message, hasPassedMessage ? "" : styles.invisible)} ref={messageCheckpointRef}>
+      <section
+        className={mc(styles.message, hasLoadingCompleted && hasPassedMessage ? "" : styles.invisible)}
+        ref={messageCheckpointRef}
+      >
         <Image className={mc(styles.background)} src={storyL3Pic} alt="背景" width={750} {...loadRequired} />
         <p>
           <Ruby writing="Rinia" reading="りにあ" />
@@ -99,7 +106,7 @@ const Page = (): JSX.Element => {
 
       <section className={styles.contents}>
         <InternalLink
-          className={mc(styles.item, styles.letters, hasPassedLetters ? "" : styles.invisible)}
+          className={mc(styles.item, styles.letters, hasLoadingCompleted && hasPassedLetters ? "" : styles.invisible)}
           ref={lettersCheckpointRef}
           href="/letters"
         >
@@ -120,7 +127,11 @@ const Page = (): JSX.Element => {
           </div>
         </InternalLink>
         <InternalLink
-          className={mc(styles.item, styles.materials, hasPassedMaterials ? "" : styles.invisible)}
+          className={mc(
+            styles.item,
+            styles.materials,
+            hasLoadingCompleted && hasPassedMaterials ? "" : styles.invisible
+          )}
           ref={materialsCheckpointRef}
           href="/materials"
         >

@@ -6,6 +6,7 @@ import { formatDisplayDate, formatExceededTime, Image } from "functions";
 import { Material } from "index";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import materialIconPic from "public/general/material-icon.png";
+import backgroundPic from "public/general/materials-background.jpg";
 
 type Props = {
   id: string;
@@ -23,6 +24,7 @@ const MaterialTemplate = ({ id, content, children }: Props) => (
       pageType="article"
     />
 
+    <Image src={backgroundPic} className={styles.background} layout="fill" objectPosition="top" objectFit="cover" />
     <SideMenu />
 
     <header className={styles.header}>

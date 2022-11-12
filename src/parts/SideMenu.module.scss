@@ -25,10 +25,51 @@
       background: radial-gradient(ellipse at center, rgba(#fff1e0, 60%) 0%, rgba(global.$light2, 60%) 100%);
     }
 
+    & * {
+      pointer-events: none;
+    }
+
     .icon {
       margin: auto;
       width: 32px;
       height: 32px;
+    }
+  }
+
+  .element {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: rgba(global.$light2, 80%);
+    backdrop-filter: blur(4px);
+    filter: drop-shadow(0px 0px 8px rgba(global.$light1, 60%));
+    transition: background 500ms, opacity 300ms, height 300ms;
+    width: 168px;
+
+    @include global.media(desktop) {
+      &:hover {
+        background: radial-gradient(ellipse at center, rgba(#fff1e0, 60%) 0%, rgba(global.$light2, 60%) 100%);
+      }
+    }
+
+    & * {
+      pointer-events: none;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .name {
+      @include global.design-font;
+      font-size: 1.1rem;
+      color: global.$light1;
+      width: 100px;
     }
   }
 
@@ -49,37 +90,6 @@
     .element {
       height: 48px;
       opacity: 1;
-    }
-  }
-
-  .element {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    gap: 1rem;
-    align-items: center;
-    padding-left: 8px;
-    padding-right: 8px;
-    background: rgba(global.$light2, 80%);
-    backdrop-filter: blur(4px);
-    filter: drop-shadow(0px 0px 8px rgba(global.$light1, 60%));
-    transition: background 500ms, opacity 300ms, height 300ms;
-    width: 168px;
-
-    &:hover {
-      background: radial-gradient(ellipse at center, rgba(#fff1e0, 60%) 0%, rgba(global.$light2, 60%) 100%);
-    }
-
-    .icon {
-      width: 32px;
-      height: 32px;
-    }
-
-    .name {
-      @include global.design-font;
-      font-size: 1.1rem;
-      color: global.$light1;
-      width: 100px;
     }
   }
 }

@@ -18,7 +18,7 @@ export function useCheckpoint<T extends HTMLElement>(): [RefObject<T>, boolean] 
 
   useEffect(() => {
     if (!ref.current || hasEntry) return;
-    if (scroll > ref.current.offsetTop - window.innerHeight * 0.5) {
+    if (scroll > ref.current.offsetTop - window.innerHeight) {
       setHasEntry(true);
     }
   }, [scroll]);

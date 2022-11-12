@@ -1,21 +1,24 @@
 @use "global";
 
 .page {
-  @include global.page("~public/general/thumbnail-locked.webp");
   padding-top: 4rem;
+}
 
-  .title {
-    color: global.$dark1;
-    @include global.design-font;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
+.background {
+  @include global.background-image;
+}
 
-  .description {
-    color: global.$dark1;
-    @include global.design-font;
-    font-size: 1rem;
-    text-align: center;
-  }
+.title {
+  color: global.$dark1;
+  @include global.design-font;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: global.$dark1;
+  @include global.design-font;
+  font-size: 1rem;
+  text-align: center;
 }

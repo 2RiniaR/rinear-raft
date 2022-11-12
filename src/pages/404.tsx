@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./404.module.scss";
 import { Meta, SideMenu } from "parts";
+import { Image } from "functions";
+import backgroundPic from "public/general/thumbnail-locked.webp";
 
 const Page = (): JSX.Element => {
   return (
@@ -12,6 +14,7 @@ const Page = (): JSX.Element => {
         pageImgPath="/img/main.webp"
       />
 
+      <Image src={backgroundPic} className={styles.background} layout="fill" objectPosition="top" objectFit="cover" />
       <SideMenu />
 
       <main className={styles.page}>

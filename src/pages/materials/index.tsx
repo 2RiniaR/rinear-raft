@@ -6,6 +6,7 @@ import { Material } from "index";
 import { Footer, Meta, SideMenu } from "parts";
 import materialIconPic from "public/general/material-icon.png";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
+import backgroundPic from "public/general/materials-background.jpg";
 
 const Page = () => (
   <div className={styles.page}>
@@ -17,6 +18,7 @@ const Page = () => (
       pageType="article"
     />
 
+    <Image src={backgroundPic} className={styles.background} layout="fill" objectPosition="top" objectFit="cover" />
     <SideMenu />
 
     <header className={styles.header}>

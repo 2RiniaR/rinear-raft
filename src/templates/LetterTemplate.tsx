@@ -6,6 +6,7 @@ import { formatDisplayDate, formatExceededTime, Image } from "functions";
 import { Letter } from "index";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import letterIconPic from "public/general/letter-icon.png";
+import backgroundPic from "public/general/letters-background.png";
 
 type Props = {
   id: string;
@@ -23,6 +24,7 @@ const LetterTemplate = ({ id, content, children }: Props) => (
       pageType="article"
     />
 
+    <Image src={backgroundPic} className={styles.background} layout="fill" objectPosition="top" objectFit="cover" />
     <SideMenu />
 
     <header className={styles.header}>

@@ -1,8 +1,12 @@
 @use "global";
 
 .page {
-  @include global.page("~public/general/letters-background.png");
+  @include global.page;
   padding-top: 4rem;
+}
+
+.background {
+  @include global.background-image;
 }
 
 .header {
@@ -54,6 +58,10 @@
 
     &:hover {
       background: radial-gradient(ellipse at center, rgba(#fff1e0, 60%) 0%, rgba(global.$light2, 60%) 100%);
+    }
+
+    & * {
+      pointer-events: none;
     }
 
     &:after {
