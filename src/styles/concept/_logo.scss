@@ -1,4 +1,5 @@
 @use "global";
+@use "sass:string";
 
 @mixin logo($container-width) {
   z-index: 1;
@@ -6,7 +7,7 @@
   top: calc(#{$container-width} * 0.16);
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100vw - 16px);
+  width: min(calc(#{$container-width} * 0.45), calc(100vw - 16px));
   max-width: 500px;
 
   .cloud {
@@ -31,16 +32,17 @@
     height: auto;
   }
 
-  animation: logo-entry 10s ease-in-out 1;
+  $animation-name: string.unique-id();
+  animation: $animation-name 10s ease-in-out 1;
 
-  @keyframes logo-entry {
+  @keyframes #{$animation-name} {
     0% {
       opacity: 0;
     }
-    90% {
+    75% {
       opacity: 0;
     }
-    100% {
+    85% {
       opacity: 1;
     }
   }

@@ -16,7 +16,6 @@ export const LoadingWindow = ({ loading, progress }: Props): JSX.Element => (
       <div className={mc(styles.wave, styles.l3)} />
     </div>
     <div className={styles.content}>
-      <span className={styles.text}>読み込み中...</span>
       <div className={styles.progress} style={{ width: `${Math.min(progress, 1) * 100}%` }} />
     </div>
   </div>

@@ -52,16 +52,16 @@ const Page = (): JSX.Element => {
         <Image className={mc(styles.wind, styles.l2)} src={windEffectPic} alt="" {...loadRequired} />
         <div className={styles.smog} />
         <div className={styles.darkness} />
-        <div className={styles.light} />
         <Image className={mc(styles.shadow, styles.l1)} src={shadow1Pic} width={384} alt="" {...loadRequired} />
         <Image className={mc(styles.shadow, styles.l2)} src={shadow2Pic} width={384} alt="" {...loadRequired} />
         <Image className={mc(styles.shadow, styles.l3)} src={shadow3Pic} width={384} alt="" {...loadRequired} />
         <Image className={mc(styles.shadow, styles.l4)} src={shadow4Pic} width={384} alt="" {...loadRequired} />
+        <div className={styles.light} />
         <div className={styles.logo}>
           <div className={styles.cloud} />
           <Image className={styles.main} src={logoPic} alt="" width={400} {...loadRequired} />
         </div>
-        <div className={styles.underSmog} />
+        <div className={styles.border} />
         <div className={styles.catchPhrase}>
           <span className={mc(styles.l1)}>
             <strong>遠</strong>くへ行こう。

@@ -1,24 +1,23 @@
 @use "global";
 @use "sass:string";
 
-@mixin darkness {
+@mixin border {
   position: absolute;
   width: 100%;
-  height: 100%;
-  background-color: global.$dark1;
+  height: calc(30vh);
+  bottom: 0;
+  background: linear-gradient(transparent 0%, rgba(global.$light2, 100%) 100%);
   $animation-name: string.unique-id();
 
   @keyframes #{$animation-name} {
+    0% {
+      opacity: 0;
+    }
     50% {
+      opacity: 0;
+    }
+    70% {
       opacity: 1;
-    }
-    55% {
-      opacity: 0;
-      display: none;
-    }
-    100% {
-      opacity: 0;
-      display: none;
     }
   }
 

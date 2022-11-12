@@ -1,21 +1,65 @@
 @use "global";
+@use "sass:string";
 
-@mixin light {
+@mixin light($container-width) {
   position: absolute;
   left: 50%;
   top: 40%;
-  transform: translateX(-50%);
-  background-color: global.$light2;
-  animation: entry 10s ease-in-out 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    closest-side,
+    rgba(global.$light2, 100%) 96%,
+    rgba(global.$light2, 60%) 98%,
+    rgba(global.$light2, 0%) 100%
+  );
+  $animation-name: string.unique-id();
 
-  @keyframes entry {
-    40% {
+  @keyframes #{$animation-name} {
+    45% {
       width: 0;
       height: 0;
+      opacity: 1;
+    }
+    47% {
+      width: calc(#{$container-width} * 1.5 * 0.33 * 0.33 * 0.33 * 0.33);
+      height: calc(#{$container-width} * 1.5 * 0.33 * 0.33 * 0.33 * 0.33);
+    }
+    49% {
+      width: calc(#{$container-width} * 1.5 * 0.33 * 0.33 * 0.33);
+      height: calc(#{$container-width} * 1.5 * 0.33 * 0.33 * 0.33);
+    }
+    51% {
+      width: calc(#{$container-width} * 1.5 * 0.33 * 0.33);
+      height: calc(#{$container-width} * 1.5 * 0.33 * 0.33);
+    }
+    53% {
+      width: calc(#{$container-width} * 1.5 * 0.33);
+      height: calc(#{$container-width} * 1.5 * 0.33);
+    }
+    55% {
+      width: calc(#{$container-width} * 1.5 * 1);
+      height: calc(#{$container-width} * 1.5 * 1);
+      opacity: 1;
     }
     60% {
-      width: 2000px;
-      height: 2000px;
+      opacity: 1;
+    }
+    65% {
+      opacity: 0.9;
+    }
+    70% {
+      opacity: 0.3;
+    }
+    75% {
+      opacity: 0;
+      display: none;
     }
   }
+
+  animation-name: $animation-name;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 10s;
 }

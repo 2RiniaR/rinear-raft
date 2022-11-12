@@ -5,6 +5,7 @@
 @use "logo" as *;
 @use "smog" as *;
 @use "shadow" as *;
+@use "border" as *;
 @use "catch-phrase" as *;
 @use "darkness" as *;
 @use "light" as *;
@@ -32,12 +33,8 @@
     @include smog;
   }
 
-  .underSmog {
-    position: absolute;
-    width: 100%;
-    height: calc(30vh);
-    bottom: 0;
-    background: linear-gradient(transparent 0%, rgba(global.$light2, 100%) 100%);
+  .border {
+    @include border;
   }
 
   .wind {
@@ -53,7 +50,7 @@
   }
 
   .catchPhrase {
-    @include catch-phrase;
+    @include catch-phrase($landscape-width);
   }
 
   .darkness {
@@ -61,6 +58,6 @@
   }
 
   .light {
-    @include light;
+    @include light($landscape-width);
   }
 }
