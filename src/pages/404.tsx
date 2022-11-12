@@ -14,7 +14,14 @@ const Page = (): JSX.Element => {
         pageImgPath="/img/main.webp"
       />
 
-      <Image src={backgroundPic} className={styles.background} layout="fill" objectPosition="top" objectFit="cover" />
+      <Image
+        src={backgroundPic}
+        className={styles.background}
+        layout="fill"
+        objectPosition="top"
+        objectFit="cover"
+        alt="背景"
+      />
       <SideMenu />
 
       <main className={styles.page}>

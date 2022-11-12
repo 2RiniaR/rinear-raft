@@ -24,7 +24,14 @@ const MaterialTemplate = ({ id, content, children }: Props) => (
       pageType="article"
     />
 
-    <Image src={backgroundPic} className={styles.background} layout="fill" objectPosition="top" objectFit="cover" />
+    <Image
+      src={backgroundPic}
+      className={styles.background}
+      layout="fill"
+      objectPosition="top"
+      objectFit="cover"
+      alt="背景"
+    />
     <SideMenu />
 
     <header className={styles.header}>
