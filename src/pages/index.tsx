@@ -99,13 +99,17 @@ const Page = (): JSX.Element => {
         >
           <Image className={styles.icon} src={letterIconPic} alt="" width={75} {...loadRequired} />
           <h1>LETTERS</h1>
-          <h2>解釈の破片を拾い集める</h2>
+          <h2>解釈と発想のノート</h2>
           <div className={styles.description}>
             <p>
-              サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+              <Ruby writing="RineaR" reading="りにある" />
+              の世界や、作品の発想・制作状況について、思いついた内容をメモのように記録しています。
             </p>
             <p>
-              サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+              <Ruby writing="RineaR" reading="りにある" />
+              の抽象を捉え、新たな
+              <Ruby writing="Material" reading="マテリアル" />
+              を生み出していきます。
             </p>
           </div>
           <div className={styles.images}>
@@ -124,12 +128,18 @@ const Page = (): JSX.Element => {
         >
           <Image className={styles.icon} src={materialIconPic} alt="" width={75} {...loadRequired} />
           <h1>MATERIALS</h1>
-          <h2>これまでの実体を観察する</h2>
+          <h2>作品と記録のギャラリー</h2>
           <div className={styles.description}>
             <p>
-              サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+              <Ruby writing="RineaR" reading="りにある" />
+              に登場した作品やその背景について、過去の内容を資料のように記録しています。
             </p>
-            <p>サンプルテキストサンプルテキストサンプルテキスト</p>
+            <p>
+              <Ruby writing="RineaR" reading="りにある" />
+              に解釈を与え、次の
+              <Ruby writing="Letter" reading="レター" />
+              へと繋がっていきます。
+            </p>
           </div>
           <div className={styles.images}>
             <Image className={styles.image} src={storyM2Pic} alt="" width={400} {...loadRequired} />
