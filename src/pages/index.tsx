@@ -33,9 +33,9 @@ const Page = (): JSX.Element => {
   return (
     <div className={styles.page}>
       <Meta
-        pageDescription="『RineaR（りにあ）』は、クリエイター『Rinia（りにあ）』による個人活動の総称です。見える抽象を辿るために、漂うように制作をしています。"
+        pageDescription="「Rinia」と名付けた一個人と、その観察により見つけた解釈「RineaR」。ただ抽象が漂うこの情景は、どこに行きつくんだろう。"
         pagePath="/"
-        pageImgPath="/img/main.webp"
+        pageImgPath="/general/main.webp"
         pageType="website"
       />
 
@@ -43,26 +43,26 @@ const Page = (): JSX.Element => {
       <LoadingWindow loading={!hasLoadingCompleted} progress={loadingProgress} />
 
       <section
-        className={mc(styles.concept, hasLoadingCompleted && hasPassedConcept ? styles.invisible : styles.invisible)}
+        className={mc(styles.concept, hasLoadingCompleted && hasPassedConcept ? "" : styles.invisible)}
         ref={conceptCheckpointRef}
       >
-        <Image className={styles.background} src={landscapePic} alt="" {...loadRequired} />
-        <Image className={styles.phantom} src={holeEffectPic} alt="" {...loadRequired} />
+        <Image className={mc(styles.background)} src={landscapePic} alt="" {...loadRequired} />
+        <Image className={mc(styles.phantom)} src={holeEffectPic} alt="" {...loadRequired} />
         <Image className={mc(styles.wind, styles.l1)} src={windEffectPic} alt="" {...loadRequired} />
         <Image className={mc(styles.wind, styles.l2)} src={windEffectPic} alt="" {...loadRequired} />
         <div className={styles.smog} />
-        <div className={styles.darkness} />
+        <div className={mc(styles.darkness, hasLoadingCompleted && hasPassedConcept ? "" : styles.invisible)} />
         <Image className={mc(styles.shadow, styles.l1)} src={shadow1Pic} width={384} alt="" {...loadRequired} />
         <Image className={mc(styles.shadow, styles.l2)} src={shadow2Pic} width={384} alt="" {...loadRequired} />
         <Image className={mc(styles.shadow, styles.l3)} src={shadow3Pic} width={384} alt="" {...loadRequired} />
         <Image className={mc(styles.shadow, styles.l4)} src={shadow4Pic} width={384} alt="" {...loadRequired} />
-        <div className={styles.light} />
-        <div className={styles.logo}>
+        <div className={mc(styles.light, hasLoadingCompleted && hasPassedConcept ? "" : styles.invisible)} />
+        <div className={mc(styles.logo, hasLoadingCompleted && hasPassedConcept ? "" : styles.invisible)}>
           <div className={styles.cloud} />
           <Image className={styles.main} src={logoPic} alt="" width={400} {...loadRequired} />
         </div>
-        <div className={styles.border} />
-        <div className={styles.catchPhrase}>
+        <div className={mc(styles.border, hasLoadingCompleted && hasPassedConcept ? "" : styles.invisible)} />
+        <div className={mc(styles.catchPhrase, hasLoadingCompleted && hasPassedConcept ? "" : styles.invisible)}>
           <span className={mc(styles.l1)}>
             <strong>遠</strong>くへ行こう。
           </span>
@@ -78,12 +78,12 @@ const Page = (): JSX.Element => {
       >
         <Image className={styles.background} src={storyL3Pic} alt="" width={750} {...loadRequired} />
         <p>
-          <Ruby writing="Rinia" reading="りにあ" />
+          <Ruby writing="「Rinia」" reading="リニア" />
           と名付けた一個人と、
         </p>
         <p>その観察により見つけた解釈</p>
         <p>
-          「<Ruby writing="RineaR" reading="りにある" />
+          「<Ruby writing="RineaR" reading="リニアル" />
           」。
         </p>
         <br />
@@ -102,11 +102,11 @@ const Page = (): JSX.Element => {
           <h2>解釈と発想のノート</h2>
           <div className={styles.description}>
             <p>
-              <Ruby writing="RineaR" reading="りにある" />
+              <Ruby writing="RineaR" reading="リニアル" />
               の世界や、作品の発想・制作状況について、思いついた内容をメモのように記録しています。
             </p>
             <p>
-              <Ruby writing="RineaR" reading="りにある" />
+              <Ruby writing="RineaR" reading="リニアル" />
               の抽象を捉え、新たな
               <Ruby writing="Material" reading="マテリアル" />
               を生み出していきます。
@@ -131,11 +131,11 @@ const Page = (): JSX.Element => {
           <h2>作品と記録のギャラリー</h2>
           <div className={styles.description}>
             <p>
-              <Ruby writing="RineaR" reading="りにある" />
+              <Ruby writing="RineaR" reading="リニアル" />
               に登場した作品やその背景について、過去の内容を資料のように記録しています。
             </p>
             <p>
-              <Ruby writing="RineaR" reading="りにある" />
+              <Ruby writing="RineaR" reading="リニアル" />
               に解釈を与え、次の
               <Ruby writing="Letter" reading="レター" />
               へと繋がっていきます。

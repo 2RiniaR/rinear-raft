@@ -62,4 +62,8 @@
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-duration: 10s;
+
+  &.invisible {
+    animation-play-state: paused;
+  }
 }

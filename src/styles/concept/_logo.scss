@@ -46,4 +46,8 @@
       opacity: 1;
     }
   }
+
+  &.invisible {
+    animation-play-state: paused;
+  }
 }

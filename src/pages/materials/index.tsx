@@ -12,10 +12,10 @@ import backgroundPic from "public/general/materials-background.jpg";
 const Page = () => (
   <div className={styles.page}>
     <Meta
-      pageTitle="Materials"
-      pageDescription="『RineaR（りにあ）』は、クリエイター『Rinia（りにあ）』による個人活動の総称です。見える抽象を辿るために、漂うように制作をしています。"
+      pageTitle="MATERIALS"
+      pageDescription="「Rinia」と名付けた一個人と、その観察により見つけた解釈「RineaR」。ただ抽象が漂うこの情景は、どこに行きつくんだろう。"
       pagePath="/materials"
-      pageImgPath="/img/main.webp"
+      pageImgPath="/general/main.webp"
       pageType="article"
     />
 

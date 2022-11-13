@@ -144,4 +144,13 @@
     animation-timing-function: ease-in-out;
     animation-duration: 10s;
   }
+
+  &.invisible {
+    .l1 {
+      animation-play-state: paused;
+    }
+    .l2 {
+      animation-play-state: paused;
+    }
+  }
 }

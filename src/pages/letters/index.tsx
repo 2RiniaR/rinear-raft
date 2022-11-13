@@ -12,10 +12,10 @@ import backgroundPic from "public/general/letters-background.png";
 const Page = () => (
   <div className={styles.page}>
     <Meta
-      pageTitle="Letters"
-      pageDescription="『RineaR（りにあ）』は、クリエイター『Rinia（りにあ）』による個人活動の総称です。見える抽象を辿るために、漂うように制作をしています。"
+      pageTitle="LETTERS"
+      pageDescription="「Rinia」と名付けた一個人と、その観察により見つけた解釈「RineaR」。ただ抽象が漂うこの情景は、どこに行きつくんだろう。"
       pagePath="/letters"
-      pageImgPath="/img/main.webp"
+      pageImgPath="/general/main.webp"
       pageType="article"
     />
 
