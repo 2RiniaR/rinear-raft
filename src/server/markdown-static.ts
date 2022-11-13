@@ -20,6 +20,7 @@ const stringIsAValidUrl = (str: string) => {
 };
 
 function rehypeImageSize(options: Options = {}) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   return (tree: any, _: any) => {
     visit(tree, "element", (node) => {
       if (node.tagName !== "img") return;

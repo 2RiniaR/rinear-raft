@@ -25,7 +25,7 @@ const Page = () => (
     <header className={styles.header}>
       <Image className={styles.logo} src={materialIconPic} width={100} alt="MATERIALS" />
       <h1 className={styles.title}>MATERIALS</h1>
-      <p className={styles.description}>アイデア・制作物などを記録しています。</p>
+      <p className={styles.description}>作品と記録のギャラリー</p>
     </header>
 
     <main className={styles.list}>
