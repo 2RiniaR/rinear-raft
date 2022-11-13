@@ -9,10 +9,10 @@
   $animation-name: string.unique-id();
 
   @keyframes #{$animation-name} {
-    50% {
+    55% {
       opacity: 1;
     }
-    55% {
+    60% {
       opacity: 0;
       display: none;
     }
