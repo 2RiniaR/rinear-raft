@@ -5,7 +5,7 @@ export type Letter = {
   title: string;
   description: string;
   updatedAt: Date;
-  releasedAt: Date;
+  releasedAt: Date | undefined;
 };
 
 export type Material = {
@@ -13,5 +13,5 @@ export type Material = {
   title: string;
   description: string;
   updatedAt: Date;
-  releasedAt: Date;
+  releasedAt: Date | undefined;
 };

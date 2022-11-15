@@ -73,11 +73,12 @@
     margin-top: 32px;
     margin-bottom: 32px;
     font-size: 1.2rem;
-    padding: 8px;
+    padding: 16px 8px;
     background: rgba(global.$light2, 80%);
     border-top: rgba(global.$light1, 40%) solid 2px;
     border-left: rgba(global.$light1, 40%) solid 2px;
     filter: drop-shadow(8px 8px 1px rgba(global.$light1, 40%));
+    @include global.design-font;
 
     &:before {
       content: "";
@@ -93,12 +94,22 @@
     @include global.text;
     margin-top: 32px;
     margin-bottom: 32px;
-    font-size: 1rem;
-    padding: 2px 0 2px 8px;
+    font-size: 1.2rem;
+    padding: 12px 8px;
     background: rgba(global.$light2, 80%);
     border-top: rgba(global.$light1, 40%) solid 1px;
     border-left: rgba(global.$light1, 40%) solid 1px;
     filter: drop-shadow(4px 4px 1px rgba(global.$light1, 40%));
+    @include global.design-font;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 8px;
+      background: rgba(global.$light1, 40%);
+    }
   }
 
   h3 {
@@ -106,11 +117,22 @@
     margin-top: 32px;
     margin-bottom: 32px;
     padding-left: 8px;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    @include global.design-font;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+      background: rgba(global.$light1, 40%);
+    }
 
     &:after {
       content: "";
       width: 100%;
+      margin-top: 0.5rem;
       margin-left: -8px;
       height: 4px;
       background: linear-gradient(to right, rgba(global.$light1, 40%) 0%, transparent 100%);

@@ -39,8 +39,8 @@ const Page = (): JSX.Element => {
         pageType="website"
       />
 
-      <SideMenu />
       <LoadingWindow loading={!hasLoadingCompleted} progress={loadingProgress} />
+      <SideMenu />
 
       <section
         className={mc(styles.concept, hasLoadingCompleted && hasPassedConcept ? "" : styles.invisible)}
