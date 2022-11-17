@@ -9,7 +9,7 @@ type MarkdownImageProps = ImageProps & {
   height: number;
 };
 
-const size = 600;
+const size = 750;
 
 const MarkdownImage = ({ width, height, src, ...props }: MarkdownImageProps) => (
   <NextImage
@@ -23,7 +23,7 @@ const MarkdownImage = ({ width, height, src, ...props }: MarkdownImageProps) => 
 
 const components = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  img: (props: any) => <MarkdownImage {...props} />,
+  img: (props: any) => <MarkdownImage {...props} quality={100} />,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   a: ({ href, children, ...props }: any) => (
     <ExternalLink href={href} {...props}>

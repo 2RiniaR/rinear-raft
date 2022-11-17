@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./index.module.scss";
 import { materials } from "materials";
-import { formatDisplayDate, formatExceededTime, InternalLink } from "functions";
+import { formatDisplayDate, formatExceededTime, InternalLink, mc } from "functions";
 import { Material } from "index";
 import { Footer, Meta, SideMenu } from "parts";
 import materialIconPic from "public/general/material-icon.png";
@@ -41,7 +41,10 @@ const Page = () => (
 );
 
 const ContentView = (content: Material & { id: string }) => (
-  <InternalLink href={`/materials/${content.id}`} className={styles.item}>
+  <InternalLink
+    href={`/materials/${content.id}`}
+    className={mc(styles.item, content.id === "made-highlow" ? styles.important : "")}
+  >
     <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={400} />
     <div className={styles.info}>
       <div className={styles.head}>

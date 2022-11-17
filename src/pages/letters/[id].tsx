@@ -12,7 +12,8 @@ const Page = ({ source, id }: InferGetStaticPropsType<typeof getStaticProps>) =>
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   if (typeof context.params?.id !== "string") throw Error();
-  const markdownSource = await getMarkdownSource(`public/contents/letters/${context.params.id}/index.md`);
+  const dirname = letters[context.params.id].dirname ?? context.params.id;
+  const markdownSource = await getMarkdownSource(`public/contents/letters/${dirname}/index.md`);
   return {
     props: {
       source: markdownSource,

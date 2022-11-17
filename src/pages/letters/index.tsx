@@ -45,6 +45,7 @@ const ContentView = (content: Letter & { id: string }) => (
     <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={300} />
     <div className={styles.info}>
       <div className={styles.title}>{content.title}</div>
+      <div className={styles.description}>{content.description}</div>
       <div className={styles.updatedAt} suppressHydrationWarning={true}>
         {formatExceededTime(new Date(), content.updatedAt)}
       </div>

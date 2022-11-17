@@ -23,5 +23,5 @@ export function formatExceededTime(from: Date, to: Date): string {
 
 export function formatDisplayDate(date: Date | undefined): string {
   if (date === undefined) return "----.--.--";
-  return dayjs(date).format("YYYY.M.D");
+  return dayjs(date).format("YYYY.MM.DD");
 }
