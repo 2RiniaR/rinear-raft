@@ -7,6 +7,7 @@
 
 .background {
   @include global.background-image;
+  filter: contrast(80%);
 }
 
 .header {
@@ -59,6 +60,8 @@
   gap: 50px;
 
   .item {
+    display: flex;
+    flex-direction: column;
     width: 300px;
     padding: 1rem 1rem 0.5rem 1rem;
     background: rgba(global.$light2, 60%);
@@ -94,6 +97,9 @@
     }
 
     .info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
       width: 100%;
 
       .title {
@@ -103,6 +109,15 @@
         margin-bottom: 0.5rem;
         width: 100%;
         text-align: right;
+      }
+
+      .description {
+        color: global.$dark1;
+        @include global.readable-font;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        flex-grow: 1;
       }
 
       .updatedAt {

@@ -6,6 +6,7 @@
 
 .background {
   @include global.background-image;
+  filter: contrast(80%);
 }
 
 .article {
