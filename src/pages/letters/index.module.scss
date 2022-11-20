@@ -60,6 +60,7 @@
   gap: 50px;
 
   .item {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -77,16 +78,13 @@
       pointer-events: none;
     }
 
-    &:after {
-      content: "";
+    .icon {
       z-index: -1;
       position: absolute;
       width: 150px;
       height: 150px;
       bottom: 1rem;
       right: 1rem;
-      background: url(/general/letter-icon.png);
-      background-size: cover;
       opacity: 0.6;
     }
 

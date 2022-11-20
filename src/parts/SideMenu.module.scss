@@ -3,9 +3,36 @@
 .layout {
   user-select: none;
   position: fixed;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 16px;
   z-index: 600;
   bottom: 15%;
   right: 16px;
+}
+
+.pageTopScroller {
+  width: 48px;
+  height: 48px;
+  background: rgba(global.$light2, 80%);
+  backdrop-filter: blur(4px);
+  filter: drop-shadow(0px 0px 8px rgba(global.$light1, 60%));
+  transition: background 500ms;
+
+  &:hover {
+    background: radial-gradient(ellipse at center, rgba(#fff1e0, 60%) 0%, rgba(global.$light2, 60%) 100%);
+  }
+
+  .icon {
+    display: block;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.menuOpener {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -49,7 +76,7 @@
     backdrop-filter: blur(4px);
     filter: drop-shadow(0px 0px 8px rgba(global.$light1, 60%));
     transition: background 500ms, opacity 300ms, height 300ms;
-    width: 168px;
+    width: 238px;
 
     @include global.media(desktop) {
       &:hover {
@@ -63,20 +90,31 @@
 
     .icon {
       display: block;
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
     }
 
-    .name {
+    .label {
+      border-right: global.$light1 solid 1px;
+      padding-right: 1rem;
       @include global.design-font;
-      font-size: 1.1rem;
       color: global.$light1;
-      width: 100px;
+      width: 160px;
+      text-align: end;
+
+      .name {
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .description {
+        font-size: 0.8rem;
+      }
     }
   }
 
   &.close {
-    height: 48px;
+    height: 56px;
     gap: 0;
 
     .element {
@@ -86,11 +124,12 @@
   }
 
   &.open {
-    height: 48px * 5 + 16px * 4;
+    $item-count: 4;
+    height: 56px * ($item-count) + 16px * ($item-count - 1);
     gap: 16px;
 
     .element {
-      height: 48px;
+      height: 56px;
       opacity: 1;
     }
   }

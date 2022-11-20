@@ -86,16 +86,13 @@
       pointer-events: none;
     }
 
-    &:after {
-      content: "";
+    .icon {
       z-index: -1;
       position: absolute;
       width: 150px;
       height: 150px;
       bottom: 1rem;
       right: 1rem;
-      background: url(/general/material-icon.png);
-      background-size: cover;
       opacity: 0.6;
     }
 

@@ -42,6 +42,7 @@ const Page = () => (
 
 const ContentView = (content: Letter & { id: string }) => (
   <InternalLink href={`/letters/${content.id}`} className={styles.item}>
+    <Image className={styles.icon} src={letterIconPic} alt="" width={150} />
     <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={300} />
     <div className={styles.info}>
       <div className={styles.title}>{content.title}</div>

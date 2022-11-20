@@ -45,6 +45,7 @@ const ContentView = (content: Material & { id: string }) => (
     href={`/materials/${content.id}`}
     className={mc(styles.item, content.id === "made-highlow" ? styles.important : "")}
   >
+    <Image className={styles.icon} src={materialIconPic} alt="" width={150} />
     <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={400} />
     <div className={styles.info}>
       <div className={styles.head}>
