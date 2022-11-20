@@ -18,18 +18,33 @@ const MarkdownImage = ({ width, height, src, ...props }: MarkdownImageProps) => 
     width={size}
     height={(size * height) / width}
     sizes={size ? `${size}px` : undefined}
+    quality={100}
   />
 );
 
 const components = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  img: (props: any) => <MarkdownImage {...props} quality={100} />,
+  img: (props: any) => <MarkdownImage {...props} />,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  a: ({ href, children, ...props }: any) => (
-    <ExternalLink href={href} {...props}>
-      {children}
-    </ExternalLink>
-  )
+  a: ({ href, children, ...props }: any) => {
+    if (href.startsWith("#")) {
+      const scroll = () => {
+        const target = document.getElementById(href.slice("#".length));
+        target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+      return (
+        <a role="link" tabIndex={0} onClick={scroll} onKeyDown={scroll} {...props}>
+          {children}
+        </a>
+      );
+    }
+
+    return (
+      <ExternalLink href={href} {...props}>
+        {children}
+      </ExternalLink>
+    );
+  }
 };
 
 type MarkdownContentProps = {

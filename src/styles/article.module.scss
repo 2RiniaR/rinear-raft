@@ -77,15 +77,17 @@
 
   h1 {
     @include global.text;
-    margin-top: 6em;
+    @include global.design-font;
+    margin-top: 7em;
     margin-bottom: 32px;
     font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.5;
     padding: 16px 8px;
     background: rgba(global.$light2, 80%);
     border-top: rgba(global.$light1, 40%) solid 2px;
     border-left: rgba(global.$light1, 40%) solid 2px;
     filter: drop-shadow(8px 8px 1px rgba(global.$light1, 40%));
-    @include global.design-font;
 
     &:before {
       content: "";
@@ -99,15 +101,17 @@
 
   h2 {
     @include global.text;
-    margin-top: 3em;
+    @include global.design-font;
+    margin-top: 5em;
     margin-bottom: 32px;
     font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.5;
     padding: 12px 8px;
     background: rgba(global.$light2, 80%);
     border-top: rgba(global.$light1, 40%) solid 1px;
     border-left: rgba(global.$light1, 40%) solid 1px;
     filter: drop-shadow(4px 4px 1px rgba(global.$light1, 40%));
-    @include global.design-font;
 
     &:before {
       content: "";
@@ -121,11 +125,13 @@
 
   h3 {
     @include global.text;
-    margin-top: 2em;
+    @include global.design-font;
+    margin-top: 3em;
     margin-bottom: 32px;
     padding-left: 8px;
     font-size: 1.2rem;
-    @include global.design-font;
+    font-weight: 700;
+    line-height: 1.5;
 
     &:before {
       content: "";
@@ -147,6 +153,11 @@
     }
   }
 
+  h1 + h2,
+  h2 + h3 {
+    margin-top: 1.5em;
+  }
+
   li {
     display: list-item;
   }
@@ -155,14 +166,12 @@
     @include global.text;
     list-style-type: decimal;
     padding-inline-start: 2em;
-    margin-top: 0.7em;
   }
 
   ul {
     @include global.text;
     list-style-type: disc;
     padding-inline-start: 2em;
-    margin-top: 0.7em;
 
     ul {
       list-style-type: circle;
@@ -177,6 +186,7 @@
     @include global.text;
     text-indent: 1em;
     margin-top: 1.5em;
+    margin-bottom: 1.5em;
   }
 
   blockquote {
@@ -220,5 +230,24 @@
 
   del {
     text-decoration: line-through;
+  }
+
+  nav {
+    @include global.text;
+    border-left: rgba(global.$light1, 70%) solid 2px;
+    font-size: 0.8rem;
+
+    ul {
+      padding-inline-start: 0;
+      list-style-type: none;
+    }
+
+    li:has(ul) + li {
+      margin-top: 0.8rem;
+    }
+
+    a {
+      color: #626875;
+    }
   }
 }

@@ -5,6 +5,10 @@ import { serialize } from "next-mdx-remote/serialize";
 import sizeOf from "image-size";
 // eslint-disable-next-line import/named
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import rehypeToc from "@jsdevtools/rehype-toc";
+import rehypeSlug from "rehype-slug";
+import { Node } from "unist";
+import { HtmlElementNode } from "@jsdevtools/rehype-toc/lib/types";
 
 type Options = {
   dir?: string;
@@ -39,6 +43,37 @@ export async function getMarkdownSource(markdownPath: string): Promise<MDXRemote
   const fs = (await import("fs")).promises;
   const source = (await fs.readFile(markdownPath)).toString();
   return await serialize(source, {
-    mdxOptions: { rehypePlugins: [[rehypeImageSize, { dir: path.dirname(markdownPath) }]] }
+    mdxOptions: {
+      rehypePlugins: [
+        [rehypeImageSize, { dir: path.dirname(markdownPath) }],
+        rehypeSlug,
+        [
+          rehypeToc,
+          {
+            headings: ["h1", "h2", "h3"],
+            nav: true,
+            cssClasses: {
+              toc: "",
+              list: "",
+              listItem: "",
+              link: ""
+            },
+            customizeTOC: function (toc: HtmlElementNode) {
+              const isHTMLElementNode = (arg: Node): arg is HtmlElementNode => "tagName" in arg;
+
+              function replace<T extends Node>(children: T[]) {
+                for (const child of children) {
+                  if (!isHTMLElementNode(child)) continue;
+                  if (child.type === "element" && child.tagName === "ol") child.tagName = "ul";
+                  if (child.children) replace(child.children);
+                }
+              }
+
+              replace([toc]);
+            }
+          }
+        ]
+      ]
+    }
   });
 }

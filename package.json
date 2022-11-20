@@ -14,6 +14,7 @@
     "format": "prettier --write \"./**/*.ts\" \"./**/*.tsx\""
   },
   "dependencies": {
+    "@jsdevtools/rehype-toc": "^3.0.2",
     "dayjs": "^1.11.3",
     "destyle.css": "^4.0.0",
     "image-size": "^1.0.2",
@@ -22,6 +23,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.3.3",
+    "rehype-slug": "^5.1.0",
     "sass-loader": "^13.2.0",
     "sharp": "^0.31.2",
     "unist-util-visit": "^4.1.1"

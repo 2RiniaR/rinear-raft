@@ -20,7 +20,7 @@ export const materials: { [id: string]: Material } = {
     description: "敵の攻撃を避けながら、ステージ内にいるすべての敵を倒していく2Dアクションバトルゲーム。"
   },
   "popcorn-chef": {
-    title: "3. Pon! Bon! Rush",
+    title: "3. ポップコーン職人",
     dirname: "M003_popcorn-chef",
     image: require("public/contents/materials/M003_popcorn-chef/game1.webp"),
     updatedAt: dayjs("2022-11-13 21:00:00").toDate(),
@@ -76,23 +76,23 @@ export const materials: { [id: string]: Material } = {
     description:
       "いろんな「グラス」で敵の弾を吸引してエネルギーを溜め、攻撃や強化をしてモンスターを殲滅する2Dアクションバトルゲーム。"
   },
-  "beat-a-bit": {
-    title: "10. Beat a bit",
-    dirname: "M010_beat-a-bit",
-    image: require("public/contents/materials/M010_beat-a-bit/wip1.jpg"),
-    updatedAt: dayjs("2022-11-13 21:00:00").toDate(),
-    releasedAt: undefined,
-    description:
-      "【進行中】「何秒後にどの能力を使いたいか」を決めた後、キャラクターを操作してゴールを目指す『謎解き』×『リズム』×『アクション』ゲーム。"
-  },
   "rinear-raft-chap2": {
-    title: "11. RineaRの筏 - chap.2",
-    dirname: "M011_rinear-raft-chap2",
-    image: require("public/contents/materials/M011_rinear-raft-chap2/concept2.png"),
+    title: "10. RineaRの筏 - chap.2",
+    dirname: "M010_rinear-raft-chap2",
+    image: require("public/contents/materials/M010_rinear-raft-chap2/concept2.png"),
     updatedAt: dayjs("2022-11-13 21:00:00").toDate(),
     releasedAt: dayjs("2022-11-14").toDate(),
     description:
       "RineaRに関することを公開するホームページ。以前と比べて解釈が進み、RineaRの設定が変更された。また、デザインも大きく変更されており、全体的に明るくなっている。"
+  },
+  "beat-a-bit": {
+    title: "11. Beat a bit",
+    dirname: "M011_beat-a-bit",
+    image: require("public/contents/materials/M011_beat-a-bit/wip1.jpg"),
+    updatedAt: dayjs("2022-11-13 21:00:00").toDate(),
+    releasedAt: undefined,
+    description:
+      "【進行中】「何秒後にどの能力を使いたいか」を決めた後、キャラクターを操作してゴールを目指す『謎解き』×『リズム』×『アクション』ゲーム。"
   },
   "made-highlow": {
     title: "12. メイドハイロウ",

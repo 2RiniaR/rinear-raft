@@ -16,11 +16,11 @@ export const SideMenu = () => {
       <button
         className={styles.element}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        name="トップへ"
-        aria-label="トップへ"
+        name="PAGE TOP"
+        aria-label="PAGE TOP"
       >
-        <Image className={styles.icon} src={upIconPic} width={32} alt="トップへ" />
-        <span className={styles.name}>一番上へ</span>
+        <Image className={styles.icon} src={upIconPic} width={32} alt="PAGE TOP" />
+        <span className={styles.name}>PAGE TOP</span>
       </button>
       <InternalLink className={styles.element} href="/">
         <Image className={styles.icon} src={homeIconPic} width={32} alt="HOME" />
