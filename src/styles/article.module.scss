@@ -47,6 +47,7 @@
     padding: 0.5em;
     line-height: 1.2;
     margin-top: 0.7em;
+    overflow-x: scroll;
   }
 
   code {
@@ -239,7 +240,7 @@
 
     ul {
       padding-inline-start: 0;
-      list-style-type: none;
+      list-style-type: none !important;
     }
 
     li:has(ul) + li {
