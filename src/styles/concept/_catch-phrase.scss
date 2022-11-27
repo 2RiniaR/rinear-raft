@@ -1,0 +1,156 @@
+@use "global";
+@use "sass:string";
+
+@mixin catch-phrase($container-width) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  span {
+    position: absolute;
+    @include global.design-font;
+    font-size: 18px;
+    padding-bottom: 8px;
+    padding-right: 1em;
+  }
+
+  strong {
+    font-weight: normal;
+    font-size: 24px;
+    color: #ba1317;
+  }
+
+  .l1 {
+    color: global.$dark1;
+    border-bottom: solid 1px global.$dark1;
+    $animation-name: string.unique-id();
+    white-space: nowrap;
+
+    @keyframes #{$animation-name} {
+      0% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 0;
+        left: max(64px, calc(50% + -6rem + 16px));
+        top: calc(#{$container-width} * 0.16);
+        border-bottom: none;
+        color: global.$light2;
+      }
+      20% {
+        opacity: 1;
+        left: max(64px, calc(50% + -6rem));
+        top: calc(#{$container-width} * 0.16);
+        border-bottom: none;
+        color: global.$light2;
+      }
+      45% {
+        opacity: 1;
+        left: max(64px, calc(50% + -6rem));
+        top: calc(#{$container-width} * 0.16);
+        border-bottom: none;
+        color: global.$light2;
+      }
+      50% {
+        opacity: 0;
+        left: max(64px, calc(50% + -6rem));
+        top: calc(#{$container-width} * 0.16);
+        border-bottom: none;
+        color: global.$light2;
+      }
+      88% {
+        opacity: 0;
+        transform: translateX(16px);
+        left: max(32px, calc(50% - 350px));
+        bottom: calc(8% + 48px);
+      }
+      94% {
+        opacity: 1;
+        transform: translateX(0);
+        left: max(32px, calc(50% - 350px));
+        bottom: calc(8% + 48px);
+      }
+      100% {
+        left: max(32px, calc(50% - 350px));
+        bottom: calc(8% + 48px);
+      }
+    }
+
+    animation-name: $animation-name;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 10s;
+  }
+
+  .l2 {
+    color: global.$dark1;
+    border-bottom: solid 1px global.$dark1;
+    margin-left: 1em;
+    $animation-name: string.unique-id();
+    white-space: nowrap;
+
+    @keyframes #{$animation-name} {
+      0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: 0;
+        left: max(64px, calc(50% + -6rem + 16px));
+        top: calc(#{$container-width} * 0.16 + 48px);
+        border-bottom: none;
+        color: global.$light2;
+      }
+      35% {
+        opacity: 1;
+        left: max(64px, calc(50% + -6rem));
+        top: calc(#{$container-width} * 0.16 + 48px);
+        border-bottom: none;
+        color: global.$light2;
+      }
+      45% {
+        opacity: 1;
+        left: max(64px, calc(50% + -6rem));
+        top: calc(#{$container-width} * 0.16 + 48px);
+        border-bottom: none;
+        color: global.$light2;
+      }
+      50% {
+        left: max(64px, calc(50% + -6rem));
+        top: calc(#{$container-width} * 0.16 + 48px);
+        border-bottom: none;
+        opacity: 0;
+        color: global.$light2;
+      }
+      94% {
+        opacity: 0;
+        transform: translateX(16px);
+        left: max(32px, calc(50% - 350px));
+        bottom: 8%;
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        left: max(32px, calc(50% - 350px));
+        bottom: 8%;
+      }
+    }
+
+    animation-name: $animation-name;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 10s;
+  }
+
+  &.invisible {
+    .l1 {
+      animation-play-state: paused;
+    }
+    .l2 {
+      animation-play-state: paused;
+    }
+  }
+}

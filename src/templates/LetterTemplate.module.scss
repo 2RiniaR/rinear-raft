@@ -1,0 +1,97 @@
+@use "global";
+
+.page {
+  @include global.page;
+}
+
+.background {
+  @include global.background-image;
+  filter: contrast(80%);
+}
+
+.article {
+  max-width: 1000px;
+  margin: 8rem auto;
+  padding: 4rem 0;
+  background: rgba(global.$light2, 80%);
+  backdrop-filter: blur(4px);
+}
+
+.header {
+  max-width: 1000px;
+  margin: 0 auto 8rem auto;
+  padding: 4rem 0 1rem 0;
+  background: rgba(global.$light2, 80%);
+  backdrop-filter: blur(4px);
+
+  .intro {
+    position: relative;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+
+    .genreIcon {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: auto;
+    }
+
+    .title {
+      min-width: 200px;
+      @include global.design-font;
+      color: global.$dark1;
+      font-size: 1.5rem;
+      background: radial-gradient(closest-side, rgba(white, 100%) 0%, rgba(global.$light2, 80%) 50%, transparent 100%);
+      text-align: center;
+      padding: 32px 48px;
+    }
+  }
+
+  .releasedAt {
+    @include global.design-font;
+    color: global.$dark1;
+    text-align: center;
+    margin: 2rem auto 4rem auto;
+
+    &:before {
+      color: global.$light1;
+      content: "●";
+      margin: 0 32px;
+    }
+
+    &:after {
+      color: global.$light1;
+      content: "●";
+      margin: 0 32px;
+    }
+  }
+
+  .image {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+  }
+
+  .description {
+    max-width: 600px;
+    width: calc(100% - 32px);
+    margin: 1rem auto 2rem auto;
+    text-indent: 1em;
+    color: global.$dark1;
+  }
+
+  .updatedAt {
+    padding: 0 16px;
+    color: global.$light3;
+    margin-top: auto;
+    text-align: right;
+    font-size: 0.8rem;
+  }
+}

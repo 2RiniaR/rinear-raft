@@ -1,1 +1,0 @@
-export { ChaptersView } from "./ChaptersView";

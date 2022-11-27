@@ -1,0 +1,129 @@
+@use "global";
+
+.page {
+  @include global.page;
+  padding-top: 4rem;
+}
+
+.background {
+  @include global.background-image;
+  filter: contrast(80%);
+}
+
+.header {
+  background: rgba(global.$light2, 90%);
+  backdrop-filter: blur(4px);
+  padding: 2rem 0 1rem 0;
+  width: 100%;
+  margin-bottom: 8rem;
+
+  .logo {
+    margin: 0 auto 8px auto;
+    width: 100px;
+    display: block;
+  }
+
+  .title {
+    color: global.$light1;
+    text-align: center;
+    @include global.design-font;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    text-align: center;
+    @include global.design-font;
+    @include global.text;
+    font-size: 1rem;
+    color: global.$light1;
+
+    &:before {
+      content: "-";
+      margin-inline-end: 1rem;
+    }
+
+    &:after {
+      content: "-";
+      margin-inline-start: 1rem;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 4rem auto 8rem auto;
+  gap: 50px;
+
+  .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 1rem 1rem 0.5rem 1rem;
+    background: rgba(global.$light2, 60%);
+    backdrop-filter: blur(4px);
+    filter: drop-shadow(0px 0px 8px rgba(global.$light1, 60%));
+    transition: background 500ms;
+
+    &:hover {
+      background: radial-gradient(ellipse at center, rgba(#fff1e0, 60%) 0%, rgba(global.$light2, 60%) 100%);
+    }
+
+    & * {
+      pointer-events: none;
+    }
+
+    .icon {
+      z-index: -1;
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      bottom: 1rem;
+      right: 1rem;
+      opacity: 0.6;
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 100%;
+
+      .title {
+        color: global.$dark1;
+        @include global.design-font;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        text-align: right;
+      }
+
+      .description {
+        color: global.$dark1;
+        @include global.readable-font;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        flex-grow: 1;
+      }
+
+      .updatedAt {
+        color: global.$light3;
+        margin-top: auto;
+        text-align: right;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

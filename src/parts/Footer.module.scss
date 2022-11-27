@@ -1,0 +1,80 @@
+@use "global";
+
+.container {
+  background: linear-gradient(transparent 0%, rgba(global.$light2, 40%) 2.4rem, rgba(global.$light2, 94%) 6rem);
+  padding: 8rem 1rem 2rem;
+  user-select: text;
+}
+
+.band {
+  width: 100%;
+  color: global.$light1;
+  @include global.design-font;
+
+  .content {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .logo {
+      width: 150px;
+      height: auto;
+      margin-left: 24px;
+      margin-right: 24px;
+      margin-bottom: 1rem;
+    }
+
+    .info {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      .title {
+        border-bottom: global.$light1 solid 1px;
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+
+        .name {
+          font-size: 1.5rem;
+          margin-right: 16px;
+        }
+      }
+
+      .copyright {
+        margin-bottom: 0.25rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .element {
+    display: inline-block;
+    width: 100px;
+    @include global.design-font;
+    height: 32px;
+    line-height: 32px;
+    border: global.$light1 solid 1px;
+    color: global.$light1;
+    text-align: center;
+    margin: 0 0.25rem 0.5rem 0.25rem;
+
+    &:hover {
+      background: global.$light1;
+      color: global.$light2;
+    }
+
+    & * {
+      pointer-events: none;
+    }
+  }
+}

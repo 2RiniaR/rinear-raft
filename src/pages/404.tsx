@@ -1,26 +1,28 @@
-import { InferGetStaticPropsType } from "next";
-import { PageSettings } from "components/functions";
-import { fetchSite } from "repositories";
-import { NotFoundPage } from "components/templates";
+import React from "react";
+import Image from "next/image";
+import styles from "./404.module.scss";
+import { Meta, SideMenu } from "parts";
+import backgroundPic from "public/general/thumbnail-locked.webp";
 
-const Page = ({ site }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+const Page = (): JSX.Element => {
   return (
     <>
-      <PageSettings
-        pageTitle={"Not Found"}
-        pageDescription={site.description}
-        pagePath={"/"}
-        pageImgPath={"/img/main.webp"}
+      <Meta
+        pageTitle="Not Found"
+        pageDescription="ページが見つかりません。"
+        pagePath="/"
+        pageImgPath="/general/main.png"
       />
-      <NotFoundPage />
+
+      <Image src={backgroundPic} className={styles.background} alt="" />
+      <SideMenu />
+
+      <main className={styles.page}>
+        <h1 className={styles.title}>404 - Not Found</h1>
+        <p className={styles.description}>お探しのページは存在しません。</p>
+      </main>
     </>
   );
-};
-
-export const getStaticProps = async () => {
-  return {
-    props: { site: await fetchSite() }
-  };
 };
 
 export default Page;

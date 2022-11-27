@@ -1,0 +1,34 @@
+@use "global";
+@use "sass:string";
+
+@mixin border {
+  position: absolute;
+  width: 100%;
+  height: calc(30vh);
+  bottom: 0;
+  background: linear-gradient(transparent 0%, rgba(global.$light2, 100%) 100%);
+  $animation-name: string.unique-id();
+
+  @keyframes #{$animation-name} {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 1;
+    }
+  }
+
+  animation-name: $animation-name;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 10s;
+
+  &.invisible {
+    animation-play-state: paused;
+  }
+}

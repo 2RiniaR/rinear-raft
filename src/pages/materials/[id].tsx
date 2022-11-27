@@ -1,40 +1,32 @@
-import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import { PageSettings } from "components/functions";
-import { fetchAllMaterialsId, fetchMaterial, fetchSite } from "repositories";
-import { MaterialPage } from "components/templates";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import { materials } from "materials";
+import { getMarkdownSource } from "server/markdown-static";
+import { MarkdownContent } from "functions";
+import { MaterialTemplate } from "templates";
 
-const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const material = fetchMaterial(id);
-  return (
-    <>
-      <PageSettings
-        pageTitle={material.title}
-        pageDescription={material.description}
-        pagePath={`/materials/${id}`}
-        pageImgPath={material.thumbnail.src}
-        pageType="article"
-      />
-      <MaterialPage material={material} />
-    </>
-  );
-};
+const Page = ({ source, id }: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <MaterialTemplate id={id} content={materials[id]}>
+    <MarkdownContent source={source} />
+  </MaterialTemplate>
+);
 
-export const getStaticProps = async (context: GetStaticPropsContext) => {
+export async function getStaticProps(context: GetStaticPropsContext) {
   if (typeof context.params?.id !== "string") throw Error();
+  const dirname = materials[context.params.id].dirname ?? context.params.id;
+  const markdownSource = await getMarkdownSource(`public/contents/materials/${dirname}/index.md`);
   return {
     props: {
-      site: await fetchSite(),
+      source: markdownSource,
       id: context.params.id
     }
   };
-};
+}
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const contentsId = await fetchAllMaterialsId();
+export function getStaticPaths() {
   return {
-    paths: contentsId.map((id) => ({ params: { id } })),
+    paths: Object.keys(materials).map((id) => ({ params: { id } })),
     fallback: false
   };
-};
+}
 
 export default Page;

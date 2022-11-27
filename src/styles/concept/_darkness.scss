@@ -1,0 +1,35 @@
+@use "global";
+@use "sass:string";
+
+@mixin darkness {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: global.$dark1;
+  $animation-name: string.unique-id();
+
+  @keyframes #{$animation-name} {
+    55% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0;
+      display: none;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  animation-name: $animation-name;
+  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 10s;
+
+  &.invisible {
+    animation-play-state: paused;
+  }
+}

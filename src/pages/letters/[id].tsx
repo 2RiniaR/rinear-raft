@@ -1,40 +1,32 @@
-import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import { PageSettings } from "components/functions";
-import { fetchAllLettersId, fetchLetter, fetchSite } from "repositories";
-import { LetterPage } from "components/templates";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import { letters } from "letters";
+import { getMarkdownSource } from "server/markdown-static";
+import { MarkdownContent } from "functions";
+import { LetterTemplate } from "templates";
 
-const Page = ({ id }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const letter = fetchLetter(id);
-  return (
-    <>
-      <PageSettings
-        pageTitle={letter.title}
-        pageDescription={letter.description}
-        pagePath={`/letters/${id}`}
-        pageImgPath={letter.thumbnail.src}
-        pageType="article"
-      />
-      <LetterPage letter={letter} />
-    </>
-  );
-};
+const Page = ({ source, id }: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <LetterTemplate id={id} content={letters[id]}>
+    <MarkdownContent source={source} />
+  </LetterTemplate>
+);
 
-export const getStaticProps = async (context: GetStaticPropsContext) => {
+export async function getStaticProps(context: GetStaticPropsContext) {
   if (typeof context.params?.id !== "string") throw Error();
+  const dirname = letters[context.params.id].dirname ?? context.params.id;
+  const markdownSource = await getMarkdownSource(`public/contents/letters/${dirname}/index.md`);
   return {
     props: {
-      site: await fetchSite(),
+      source: markdownSource,
       id: context.params.id
     }
   };
-};
+}
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const contentsId = await fetchAllLettersId();
+export function getStaticPaths() {
   return {
-    paths: contentsId.map((id) => ({ params: { id } })),
+    paths: Object.keys(letters).map((id) => ({ params: { id } })),
     fallback: false
   };
-};
+}
 
 export default Page;
