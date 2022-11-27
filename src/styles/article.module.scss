@@ -193,6 +193,10 @@
     margin-bottom: 1.5em;
   }
 
+  p:has(img) {
+    background: #ddd;
+  }
+
   p:has(img),
   iframe {
     margin-bottom: 4rem;
