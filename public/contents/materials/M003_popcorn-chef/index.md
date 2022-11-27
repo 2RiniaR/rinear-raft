@@ -1,6 +1,6 @@
 # かつての形
 
-[ここ](https://unityroom.com/games/pon_bon_rush)からプレイ可能。
+[ここ](https://unityroom.com/games/pon-bon-rush)からプレイ可能。
 
 豆を**調理**して、弾けた**ポップコーンを食べる**と画面下の満腹ゲージが溜まっていく。**2人で同時に**調理を始め、満腹ゲージが先に満タンになったほうが勝ち。
 
