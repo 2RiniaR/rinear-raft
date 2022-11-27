@@ -1,13 +1,24 @@
 import dayjs from "dayjs";
 import { Material } from "./index";
 import lockedPic from "public/general/thumbnail-locked.webp";
+import M001Pic from "public/contents/materials/M001_maze-escape/stage1.webp";
+import M002Pic from "public/contents/materials/M002_busters-mission/stage3-2.webp";
+import M003Pic from "public/contents/materials/M003_popcorn-chef/game1.webp";
+import M004Pic from "public/contents/materials/M004_mage-simulator/title.webp";
+import M005Pic from "public/contents/materials/M005_marvelous/page1.webp";
+import M006Pic from "public/contents/materials/M006_kimifeel/page1.webp";
+import M007Pic from "public/contents/materials/M007_eyes/eyes.webp";
+import M008Pic from "public/contents/materials/M008_rinear-raft-chap1/top.webp";
+import M009Pic from "public/contents/materials/M009_glass-moze/play1.jpg";
+import M010Pic from "public/contents/materials/M010_rinear-raft-chap2/concept2.png";
+import M011Pic from "public/contents/materials/M011_beat-a-bit/wip1.jpg";
 
 export const materials: { [id: string]: Material } = {
   "maze-escape": {
     title: "1. 迷宮脱出",
     type: "important",
     dirname: "M001_maze-escape",
-    image: require("public/contents/materials/M001_maze-escape/stage1.webp"),
+    image: M001Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2016-10-18").toDate(),
     description: "上下左右にプレイヤーを移動し、制限時間以内にゴールを目指す2Dアクション脱出ゲーム。"
@@ -15,7 +26,7 @@ export const materials: { [id: string]: Material } = {
   "busters-mission": {
     title: "2. Busters Mission",
     dirname: "M002_busters-mission",
-    image: require("public/contents/materials/M002_busters-mission/stage3-2.webp"),
+    image: M002Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2018-09-05").toDate(),
     description: "敵の攻撃を避けながら、ステージ内にいるすべての敵を倒していく2Dアクションバトルゲーム。"
@@ -23,7 +34,7 @@ export const materials: { [id: string]: Material } = {
   "popcorn-chef": {
     title: "3. ポップコーン職人",
     dirname: "M003_popcorn-chef",
-    image: require("public/contents/materials/M003_popcorn-chef/game1.webp"),
+    image: M003Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2020-04-05").toDate(),
     description: "2人のプレイヤーがリアルタイムでポップコーンを調理し、食べた量で競うカジュアルゲーム。"
@@ -31,7 +42,7 @@ export const materials: { [id: string]: Material } = {
   "mage-simulator": {
     title: "4. メイジ・シミュレータ",
     dirname: "M004_mage-simulator",
-    image: require("public/contents/materials/M004_mage-simulator/title.webp"),
+    image: M004Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2021-02-25").toDate(),
     description: "モーションセンサとマイクを使って、魔法を詠唱し発動できるアプリケーション。"
@@ -39,7 +50,7 @@ export const materials: { [id: string]: Material } = {
   marvelous: {
     title: "5. エライさんbot",
     dirname: "M005_marvelous",
-    image: require("public/contents/materials/M005_marvelous/page1.webp"),
+    image: M005Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2021-04-30").toDate(),
     description: "みんなの「えらい！」をカウントしてくれるdiscord Bot。"
@@ -47,7 +58,7 @@ export const materials: { [id: string]: Material } = {
   kimifeel: {
     title: "6. キミフィール",
     dirname: "M006_kimifeel",
-    image: require("public/contents/materials/M006_kimifeel/page1.webp"),
+    image: M006Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2022-02-16").toDate(),
     description: "周りの人々に自分のプロフィールを書いてもらえるサービス。"
@@ -55,7 +66,7 @@ export const materials: { [id: string]: Material } = {
   eyes: {
     title: "7. み　て　る　よ",
     dirname: "M007_eyes",
-    image: require("public/contents/materials/M007_eyes/eyes.webp"),
+    image: M007Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2022-02-25").toDate(),
     description: "チャットでの『入力中...』が長時間続いていると、『👁👁』を送ってくるdiscord bot。"
@@ -63,7 +74,7 @@ export const materials: { [id: string]: Material } = {
   "rinear-raft-chap1": {
     title: "8. RineaRの筏 chap.1",
     dirname: "M008_rinear-raft-chap1",
-    image: require("public/contents/materials/M008_rinear-raft-chap1/top.webp"),
+    image: M008Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2022-07-03").toDate(),
     description: "RineaRに関することを公開するホームページ。"
@@ -71,7 +82,7 @@ export const materials: { [id: string]: Material } = {
   "glass-moze": {
     title: "9. グラスモーズ",
     dirname: "M009_glass-moze",
-    image: require("public/contents/materials/M009_glass-moze/play1.jpg"),
+    image: M009Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2022-09-13").toDate(),
     description:
@@ -80,7 +91,7 @@ export const materials: { [id: string]: Material } = {
   "rinear-raft-chap2": {
     title: "10. RineaRの筏 chap.2",
     dirname: "M010_rinear-raft-chap2",
-    image: require("public/contents/materials/M010_rinear-raft-chap2/concept2.png"),
+    image: M010Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: dayjs("2022-11-27").toDate(),
     description:
@@ -89,7 +100,7 @@ export const materials: { [id: string]: Material } = {
   "beat-a-bit": {
     title: "11. Beat a bit",
     dirname: "M011_beat-a-bit",
-    image: require("public/contents/materials/M011_beat-a-bit/wip1.jpg"),
+    image: M011Pic,
     updatedAt: dayjs("2022-11-27 21:00:00").toDate(),
     releasedAt: undefined,
     description:
