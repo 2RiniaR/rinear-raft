@@ -11,7 +11,7 @@ const Page = (): JSX.Element => {
         pageTitle="Not Found"
         pageDescription="ページが見つかりません。"
         pagePath="/"
-        pageImgPath="/img/main.webp"
+        pageImgPath="/general/main.png"
       />
 
       <Image src={backgroundPic} className={styles.background} alt="" />

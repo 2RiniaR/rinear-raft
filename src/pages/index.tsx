@@ -36,7 +36,7 @@ const Page = (): JSX.Element => {
       <Meta
         pageDescription="「Rinia」と名付けた一個人と、その観察により見つけた解釈「RineaR」。ただ抽象が漂うこの情景は、どこに行きつくんだろう。"
         pagePath="/"
-        pageImgPath="/general/main.webp"
+        pageImgPath="/general/main.png"
         pageType="website"
       />
 
