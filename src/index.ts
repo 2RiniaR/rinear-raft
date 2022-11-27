@@ -2,6 +2,7 @@ import { StaticImageData } from "next/image";
 
 export type Letter = {
   image?: StaticImageData;
+  type?: "important";
   dirname?: string;
   title: string;
   description: string;
@@ -11,6 +12,7 @@ export type Letter = {
 
 export type Material = {
   image?: StaticImageData;
+  type?: "important";
   dirname?: string;
   title: string;
   description: string;

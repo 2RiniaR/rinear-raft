@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/named
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import NextImage, { ImageProps } from "next/image";
+import Link from "next/link";
 import { ExternalLink } from "./link";
 
 type MarkdownImageProps = ImageProps & {
@@ -28,14 +29,10 @@ const components = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   a: ({ href, children, ...props }: any) => {
     if (href.startsWith("#")) {
-      const scroll = () => {
-        const target = document.getElementById(href.slice("#".length));
-        target?.scrollIntoView({ behavior: "smooth", block: "start" });
-      };
       return (
-        <a role="link" tabIndex={0} onClick={scroll} onKeyDown={scroll} {...props}>
+        <Link href={href} {...props} scroll={false}>
           {children}
-        </a>
+        </Link>
       );
     }
 

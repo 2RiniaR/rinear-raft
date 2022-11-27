@@ -1,16 +1,17 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Footer.module.scss";
-import { ExternalLink, InternalLink } from "functions";
+import { ExternalLink } from "functions";
 import logoPic from "public/general/logo-full.webp";
 
 export const Footer = () => (
   <footer className={styles.container}>
     <div className={styles.band}>
       <div className={styles.content}>
-        <InternalLink href="/">
+        <Link href="/">
           <Image className={styles.logo} src={logoPic} alt="RineaR" />
-        </InternalLink>
+        </Link>
         <div className={styles.info}>
           <div className={styles.title}>
             <span className={styles.name}>RineaRの筏</span>
@@ -21,9 +22,9 @@ export const Footer = () => (
       </div>
     </div>
     <div className={styles.links}>
-      <InternalLink className={styles.element} href="/">
+      <Link className={styles.element} href="/">
         Home
-      </InternalLink>
+      </Link>
       <ExternalLink className={styles.element} href="https://twitter.com/14RineaR">
         Twitter
       </ExternalLink>

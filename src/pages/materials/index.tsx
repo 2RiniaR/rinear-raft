@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./index.module.scss";
 import { materials } from "materials";
-import { formatDisplayDate, formatExceededTime, InternalLink, mc } from "functions";
+import { formatDisplayDate, formatExceededTime, mc } from "functions";
 import { Material } from "index";
 import { Footer, Meta, SideMenu } from "parts";
 import materialIconPic from "public/general/material-icon.png";
@@ -41,9 +42,9 @@ const Page = () => (
 );
 
 const ContentView = (content: Material & { id: string }) => (
-  <InternalLink
+  <Link
     href={`/materials/${content.id}`}
-    className={mc(styles.item, content.id === "made-highlow" ? styles.important : "")}
+    className={mc(styles.item, content.type === "important" ? styles.important : "")}
   >
     <Image className={styles.icon} src={materialIconPic} alt="" width={150} />
     <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={400} />
@@ -57,7 +58,7 @@ const ContentView = (content: Material & { id: string }) => (
         {formatExceededTime(new Date(), content.updatedAt)}
       </div>
     </div>
-  </InternalLink>
+  </Link>
 );
 
 export default Page;

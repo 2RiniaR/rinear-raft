@@ -167,10 +167,12 @@
     @include global.text;
     list-style-type: decimal;
     padding-inline-start: 2em;
+    line-height: 2;
   }
 
   ul {
     @include global.text;
+    line-height: 2;
     list-style-type: disc;
     padding-inline-start: 2em;
 
@@ -186,8 +188,19 @@
   p {
     @include global.text;
     text-indent: 1em;
+    line-height: 2;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
+  }
+
+  p:has(img),
+  iframe {
+    margin-bottom: 4rem;
+
+    & + p:has(img),
+    & + iframe {
+      margin-top: -2.5rem;
+    }
   }
 
   blockquote {
@@ -249,6 +262,10 @@
 
     a {
       color: #626875;
+
+      &:visited {
+        color: #626875;
+      }
     }
   }
 }

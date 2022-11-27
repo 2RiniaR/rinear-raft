@@ -1,7 +1,8 @@
 import React from "react";
 import Image, { ImageProps } from "next/image";
+import Link from "next/link";
 import styles from "./index.module.scss";
-import { InternalLink, mc, Ruby, useCheckpoint, useLoading } from "functions";
+import { mc, Ruby, useCheckpoint, useLoading } from "functions";
 import { Footer, LoadingWindow, Meta, SideMenu } from "parts";
 import landscapePic from "public/general/home-background.png";
 import holeEffectPic from "public/home/holes.png";
@@ -92,7 +93,7 @@ const Page = (): JSX.Element => {
       </section>
 
       <section className={styles.contents}>
-        <InternalLink
+        <Link
           className={mc(styles.item, styles.letters, hasLoadingCompleted && hasPassedLetters ? "" : styles.invisible)}
           ref={lettersCheckpointRef}
           href="/letters"
@@ -116,8 +117,8 @@ const Page = (): JSX.Element => {
             <Image className={styles.image} src={storyL2Pic} alt="" width={400} {...loadRequired} />
             <Image className={styles.image} src={storyL3Pic} alt="" width={400} {...loadRequired} />
           </div>
-        </InternalLink>
-        <InternalLink
+        </Link>
+        <Link
           className={mc(
             styles.item,
             styles.materials,
@@ -145,7 +146,7 @@ const Page = (): JSX.Element => {
             <Image className={styles.image} src={storyM2Pic} alt="" width={400} {...loadRequired} />
             <Image className={styles.image} src={storyM3Pic} alt="" width={400} {...loadRequired} />
           </div>
-        </InternalLink>
+        </Link>
       </section>
 
       <Footer />

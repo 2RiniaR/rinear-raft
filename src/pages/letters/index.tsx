@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./index.module.scss";
 import { letters } from "letters";
-import { formatExceededTime, InternalLink } from "functions";
+import { formatExceededTime } from "functions";
 import { Footer, Meta, SideMenu } from "parts";
 import { Letter } from "index";
 import letterIconPic from "public/general/letter-icon.png";
@@ -41,7 +42,7 @@ const Page = () => (
 );
 
 const ContentView = (content: Letter & { id: string }) => (
-  <InternalLink href={`/letters/${content.id}`} className={styles.item}>
+  <Link href={`/letters/${content.id}`} className={styles.item}>
     <Image className={styles.icon} src={letterIconPic} alt="" width={150} />
     <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={300} />
     <div className={styles.info}>
@@ -51,7 +52,7 @@ const ContentView = (content: Letter & { id: string }) => (
         {formatExceededTime(new Date(), content.updatedAt)}
       </div>
     </div>
-  </InternalLink>
+  </Link>
 );
 
 export default Page;

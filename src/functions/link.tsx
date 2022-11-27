@@ -1,5 +1,4 @@
-import React, { forwardRef } from "react";
-import Link from "next/link";
+import React from "react";
 
 type ExternalLinkProps = {
   children: React.ReactNode;
@@ -10,14 +9,3 @@ export const ExternalLink = ({ children, ...props }: ExternalLinkProps): JSX.Ele
     {children}
   </a>
 );
-
-type InternalLinkProps = Parameters<typeof Link>[0];
-
-export const InternalLink = forwardRef<HTMLAnchorElement, InternalLinkProps>(
-  ({ children, className, ...props }: InternalLinkProps, ref): JSX.Element => (
-    <Link {...props} ref={ref} className={className}>
-      {children}
-    </Link>
-  )
-);
-InternalLink.displayName = "InternalLink";

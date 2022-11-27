@@ -6,9 +6,28 @@ import sizeOf from "image-size";
 // eslint-disable-next-line import/named
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import rehypeToc from "@jsdevtools/rehype-toc";
-import rehypeSlug from "rehype-slug";
 import { Node } from "unist";
 import { HtmlElementNode } from "@jsdevtools/rehype-toc/lib/types";
+
+import Slugger from "github-slugger";
+import { hasProperty } from "hast-util-has-property";
+import { headingRank } from "hast-util-heading-rank";
+import { toString } from "hast-util-to-string";
+
+const slugs = new Slugger();
+
+function rehypeSlug() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+  return (tree: any) => {
+    slugs.reset();
+
+    visit(tree, "element", (node) => {
+      if (headingRank(node) && node.properties && !hasProperty(node, "id")) {
+        node.properties.id = encodeURI(slugs.slug(toString(node)));
+      }
+    });
+  };
+}
 
 type Options = {
   dir?: string;

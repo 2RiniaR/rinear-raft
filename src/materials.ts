@@ -5,6 +5,7 @@ import lockedPic from "public/general/thumbnail-locked.webp";
 export const materials: { [id: string]: Material } = {
   "maze-escape": {
     title: "1. 迷宮脱出",
+    type: "important",
     dirname: "M001_maze-escape",
     image: require("public/contents/materials/M001_maze-escape/stage1.webp"),
     updatedAt: dayjs("2022-11-13 21:00:00").toDate(),
@@ -60,7 +61,7 @@ export const materials: { [id: string]: Material } = {
     description: "チャットでの『入力中...』が長時間続いていると、『👁👁』を送ってくるdiscord bot。"
   },
   "rinear-raft-chap1": {
-    title: "8. RineaRの筏 - chap.1",
+    title: "8. RineaRの筏 chap.1",
     dirname: "M008_rinear-raft-chap1",
     image: require("public/contents/materials/M008_rinear-raft-chap1/top.webp"),
     updatedAt: dayjs("2022-11-13 21:00:00").toDate(),
@@ -77,13 +78,13 @@ export const materials: { [id: string]: Material } = {
       "いろんな「グラス」で敵の弾を吸引してエネルギーを溜め、攻撃や強化をしてモンスターを殲滅する2Dアクションバトルゲーム。"
   },
   "rinear-raft-chap2": {
-    title: "10. RineaRの筏 - chap.2",
+    title: "10. RineaRの筏 chap.2",
     dirname: "M010_rinear-raft-chap2",
     image: require("public/contents/materials/M010_rinear-raft-chap2/concept2.png"),
     updatedAt: dayjs("2022-11-13 21:00:00").toDate(),
     releasedAt: dayjs("2022-11-14").toDate(),
     description:
-      "RineaRに関することを公開するホームページ。以前と比べて解釈が進み、RineaRの設定が変更された。また、デザインも大きく変更されており、全体的に明るくなっている。"
+      "RineaRに関することを公開するホームページ。以前と比べて解釈が進み、RineaRの意味が変更された。また、デザインも大きく変更されており、全体的に明るくなっている。"
   },
   "beat-a-bit": {
     title: "11. Beat a bit",
@@ -96,6 +97,7 @@ export const materials: { [id: string]: Material } = {
   },
   "made-highlow": {
     title: "12. メイドハイロウ",
+    type: "important",
     dirname: "M012_made-highlow",
     image: lockedPic,
     updatedAt: dayjs("2022-11-13 21:00:00").toDate(),
