@@ -1,6 +1,6 @@
 import { createClient } from "microcms-js-sdk";
 
-const apiKeyName = "API_KEY";
+const apiKeyName = "MICROCMS_API_KEY";
 
 const apiKey = process.env[apiKeyName];
 if (typeof apiKey !== "string") {
