@@ -60,7 +60,12 @@ const ContentView = (content: LetterContent & MicroCMSContentId & MicroCMSDate) 
 );
 
 export const getStaticProps = async () => {
-  const data = await client.getList<LetterContent>({ endpoint: "letters" });
+  const data = await client.getList<LetterContent>({
+    endpoint: "letters",
+    queries: {
+      limit: 20
+    }
+  });
 
   return {
     props: {

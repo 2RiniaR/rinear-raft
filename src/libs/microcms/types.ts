@@ -1,4 +1,4 @@
-import { MicroCMSDate, MicroCMSImage } from "microcms-js-sdk";
+import { MicroCMSImage } from "microcms-js-sdk";
 
 export type LetterContent = {
   title: string;
@@ -10,7 +10,8 @@ export type LetterContent = {
 export type MaterialContent = {
   title: string;
   description: string;
+  attributes: ["important"];
   thumbnail?: MicroCMSImage;
   body: string;
-  releasedAt?: MicroCMSDate;
+  releasedAt?: string;
 };

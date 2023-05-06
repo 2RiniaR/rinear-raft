@@ -17,7 +17,12 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 };
 
 export const getStaticPaths = async () => {
-  const data = await client.getList<LetterContent>({ endpoint: "letters" });
+  const data = await client.getList<LetterContent>({
+    endpoint: "letters",
+    queries: {
+      limit: 20
+    }
+  });
 
   return {
     paths: data.contents.map((content) => ({ params: { id: content.id } })),
