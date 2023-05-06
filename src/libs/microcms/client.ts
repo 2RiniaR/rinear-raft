@@ -7,7 +7,7 @@ if (typeof apiKey !== "string") {
   throw TypeError(`環境変数 ${apiKeyName} が存在しません。`);
 }
 
-export const microcmsClient = createClient({
+export const client = createClient({
   serviceDomain: "rinear",
   apiKey: apiKey
 });

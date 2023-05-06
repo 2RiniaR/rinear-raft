@@ -1,4 +1,4 @@
-export { formatDisplayDate, formatExceededTime } from "./datetime";
+export { formatDisplayDate, formatExceededTime, formatExceededTimeFromString } from "./datetime";
 export { mc } from "./dom";
 export { ExternalLink } from "./link";
 export { useLoading } from "./loading";
