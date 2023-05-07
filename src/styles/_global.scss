@@ -4,10 +4,11 @@ $light2: #dddddd;
 $light3: #6c717a;
 
 @mixin readable-font {
-  font-family: -apple-system, "BlinkMacSystemFont", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif,
-    "Segoe UI Emoji";
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E",
+    "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif, "Segoe UI Emoji";
   letter-spacing: 1.5px;
   line-height: 1.75;
+  font-weight: auto;
 }
 
 @mixin design-font {
