@@ -1,32 +1,33 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import { letters } from "letters";
-import { getMarkdownSource } from "server/markdown-static";
-import { MarkdownContent } from "functions";
+import { client } from "../../libs/microcms/client";
+import { LetterContent } from "../../libs/microcms/types";
 import { LetterTemplate } from "templates";
 
-const Page = ({ source, id }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <LetterTemplate id={id} content={letters[id]}>
-    <MarkdownContent source={source} />
-  </LetterTemplate>
-);
+const Page = ({ content }: InferGetStaticPropsType<typeof getStaticProps>) => <LetterTemplate {...content} />;
 
-export async function getStaticProps(context: GetStaticPropsContext) {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   if (typeof context.params?.id !== "string") throw Error();
-  const dirname = letters[context.params.id].dirname ?? context.params.id;
-  const markdownSource = await getMarkdownSource(`public/contents/letters/${dirname}/index.md`);
+  const data = await client.getListDetail<LetterContent>({ endpoint: "letters", contentId: context.params.id });
+
   return {
     props: {
-      source: markdownSource,
-      id: context.params.id
+      content: data
     }
   };
-}
+};
 
-export function getStaticPaths() {
+export const getStaticPaths = async () => {
+  const data = await client.getList<LetterContent>({
+    endpoint: "letters",
+    queries: {
+      limit: 20
+    }
+  });
+
   return {
-    paths: Object.keys(letters).map((id) => ({ params: { id } })),
+    paths: data.contents.map((content) => ({ params: { id: content.id } })),
     fallback: false
   };
-}
+};
 
 export default Page;

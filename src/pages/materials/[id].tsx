@@ -1,32 +1,33 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import { materials } from "materials";
-import { getMarkdownSource } from "server/markdown-static";
-import { MarkdownContent } from "functions";
+import { client } from "../../libs/microcms/client";
+import { MaterialContent } from "../../libs/microcms/types";
 import { MaterialTemplate } from "templates";
 
-const Page = ({ source, id }: InferGetStaticPropsType<typeof getStaticProps>) => (
-  <MaterialTemplate id={id} content={materials[id]}>
-    <MarkdownContent source={source} />
-  </MaterialTemplate>
-);
+const Page = ({ content }: InferGetStaticPropsType<typeof getStaticProps>) => <MaterialTemplate {...content} />;
 
-export async function getStaticProps(context: GetStaticPropsContext) {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   if (typeof context.params?.id !== "string") throw Error();
-  const dirname = materials[context.params.id].dirname ?? context.params.id;
-  const markdownSource = await getMarkdownSource(`public/contents/materials/${dirname}/index.md`);
+  const data = await client.getListDetail<MaterialContent>({ endpoint: "materials", contentId: context.params.id });
+
   return {
     props: {
-      source: markdownSource,
-      id: context.params.id
+      content: data
     }
   };
-}
+};
 
-export function getStaticPaths() {
+export const getStaticPaths = async () => {
+  const data = await client.getList<MaterialContent>({
+    endpoint: "materials",
+    queries: {
+      limit: 20
+    }
+  });
+
   return {
-    paths: Object.keys(materials).map((id) => ({ params: { id } })),
+    paths: data.contents.map((content) => ({ params: { id: content.id } })),
     fallback: false
   };
-}
+};
 
 export default Page;

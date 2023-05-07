@@ -1,16 +1,23 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
+import { InferGetStaticPropsType } from "next";
+import { client } from "../../libs/microcms/client";
+import { MaterialContent } from "../../libs/microcms/types";
+import {
+  convertToNextImageProps,
+  formatDisplayDateFromString,
+  formatExceededTimeFromString
+} from "../../libs/microcms/helpers";
 import styles from "./index.module.scss";
-import { materials } from "materials";
-import { formatDisplayDate, formatExceededTime, mc } from "functions";
-import { Material } from "index";
+import { mc } from "functions";
 import { Footer, Meta, SideMenu } from "parts";
 import materialIconPic from "public/general/material-icon.png";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import backgroundPic from "public/general/materials-background.jpg";
 
-const Page = () => (
+const Page = ({ contents }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <div className={styles.page}>
     <Meta
       pageTitle="MATERIALS"
@@ -30,35 +37,52 @@ const Page = () => (
     </header>
 
     <main className={styles.list}>
-      {Object.keys(materials)
-        .reverse()
-        .map((id) => (
-          <ContentView {...materials[id]} id={id} key={id} />
-        ))}
+      {contents.map((content) => (
+        <ContentView {...content} key={content.id} />
+      ))}
     </main>
 
     <Footer />
   </div>
 );
 
-const ContentView = (content: Material & { id: string }) => (
+const ContentView = (content: MaterialContent & MicroCMSContentId & MicroCMSDate) => (
   <Link
     href={`/materials/${content.id}`}
-    className={mc(styles.item, content.type === "important" ? styles.important : "")}
+    className={mc(styles.item, content.attributes.includes("important") ? styles.important : "")}
   >
     <Image className={styles.icon} src={materialIconPic} alt="" width={150} />
-    <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={400} />
+    <Image
+      className={styles.image}
+      {...convertToNextImageProps(content.thumbnail, 400, defaultThumbnailPic)}
+      alt={content.title}
+    />
     <div className={styles.info}>
       <div className={styles.head}>
-        <div className={styles.releasedAt}>{formatDisplayDate(content.releasedAt)}</div>
+        <div className={styles.releasedAt}>{formatDisplayDateFromString(content.releasedAt)}</div>
         <div className={styles.title}>{content.title}</div>
       </div>
       <div className={styles.description}>{content.description}</div>
       <div className={styles.updatedAt} suppressHydrationWarning={true}>
-        {formatExceededTime(new Date(), content.updatedAt)}
+        {formatExceededTimeFromString(content.revisedAt)}
       </div>
     </div>
   </Link>
 );
+
+export const getStaticProps = async () => {
+  const data = await client.getList<MaterialContent>({
+    endpoint: "materials",
+    queries: {
+      limit: 20
+    }
+  });
+
+  return {
+    props: {
+      contents: data.contents
+    }
+  };
+};
 
 export default Page;

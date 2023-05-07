@@ -52,6 +52,7 @@ jobs:
         run: yarn build
         env:
           NEXT_PUBLIC_BASE_URL: ${{ secrets.BASE_URL }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2

@@ -17,18 +17,11 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
-    ecmaVersion: 2020,
     sourceType: "module"
   },
   plugins: ["@typescript-eslint", "react", "import"],
   settings: {
     "import/resolver": {
-      node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".json"]
-      },
       typescript: {
         config: "tsconfig.json",
         alwaysTryTypes: true

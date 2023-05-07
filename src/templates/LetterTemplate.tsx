@@ -1,27 +1,28 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import Image from "next/image";
+import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
+import { LetterContent } from "../libs/microcms/types";
+import {
+  convertToNextImageProps,
+  formatDisplayDateFromString,
+  formatExceededTimeFromString
+} from "../libs/microcms/helpers";
 import styles from "./LetterTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
 import { Footer, Meta, SideMenu } from "parts";
-import { formatDisplayDate, formatExceededTime } from "functions";
-import { Letter } from "index";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import letterIconPic from "public/general/letter-icon.png";
 import backgroundPic from "public/general/letters-background.png";
 
-type Props = {
-  id: string;
-  content: Letter;
-  children?: ReactNode;
-};
+type Props = LetterContent & MicroCMSContentId & MicroCMSDate;
 
-const LetterTemplate = ({ id, content, children }: Props) => (
+const LetterTemplate = ({ id, title, description, body, thumbnail, revisedAt, publishedAt }: Props) => (
   <div className={styles.page}>
     <Meta
-      pageTitle={content.title}
-      pageDescription={content.description}
+      pageTitle={title}
+      pageDescription={description}
       pagePath={`/letters/${id}`}
-      pageImgPath={content.image ? content.image.src : defaultThumbnailPic.src}
+      pageImgPath={thumbnail ? thumbnail.url : defaultThumbnailPic.src}
       pageType="article"
     />
 
@@ -31,18 +32,18 @@ const LetterTemplate = ({ id, content, children }: Props) => (
     <header className={styles.header}>
       <div className={styles.intro}>
         <Image className={styles.genreIcon} src={letterIconPic} alt={"LETTER"} width={100} />
-        <span className={styles.title}>{content.title}</span>
+        <span className={styles.title}>{title}</span>
       </div>
-      <div className={styles.releasedAt}>{formatDisplayDate(content.releasedAt)}</div>
-      <Image className={styles.image} src={content.image ?? defaultThumbnailPic} alt={content.title} width={600} />
-      <div className={styles.description}>{content.description}</div>
+      <div className={styles.releasedAt}>{formatDisplayDateFromString(publishedAt)}</div>
+      <Image className={styles.image} {...convertToNextImageProps(thumbnail, 600, defaultThumbnailPic)} alt={title} />
+      <div className={styles.description}>{description}</div>
       <div className={styles.updatedAt} suppressHydrationWarning={true}>
-        {formatExceededTime(new Date(), content.updatedAt)}
+        {formatExceededTimeFromString(revisedAt)}
       </div>
     </header>
 
     <div className={styles.article}>
-      <main className={articleStyles.article}>{children}</main>
+      <main className={articleStyles.article} dangerouslySetInnerHTML={{ __html: `${body}` }}></main>
     </div>
 
     <Footer />
