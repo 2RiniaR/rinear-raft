@@ -8,6 +8,21 @@ type MetaProps = {
   pageImgPath?: string;
 };
 
+function isFullUrl(url: string | undefined): boolean {
+  if (url === undefined) {
+    return false;
+  }
+
+  try {
+    new URL(url);
+  } catch (e: unknown) {
+    if (e instanceof TypeError) return false;
+    throw e;
+  }
+
+  return true;
+}
+
 export const Meta = ({ pageTitle, pageType, pageDescription, pagePath, pageImgPath }: MetaProps) => {
   const siteName = "RineaRの筏";
   const siteDomain = "rinear.net";
@@ -17,7 +32,8 @@ export const Meta = ({ pageTitle, pageType, pageDescription, pagePath, pageImgPa
   const description = pageDescription ? pageDescription : "";
   const url = siteBaseUrl + pagePath;
   const type = pageType ?? "website";
-  const imgUrl = siteBaseUrl + pageImgPath;
+
+  const imgUrl = isFullUrl(pageImgPath) ? pageImgPath : siteBaseUrl + pageImgPath;
   const imgWidth = 1280;
   const imgHeight = 640;
   const twitterId = "14RineaR";
