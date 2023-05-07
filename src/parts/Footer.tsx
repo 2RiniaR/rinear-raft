@@ -15,7 +15,7 @@ export const Footer = () => (
         <div className={styles.info}>
           <div className={styles.title}>
             <span className={styles.name}>RineaRの筏</span>
-            <span className={styles.version}>chapter 2.0.0</span>
+            <span className={styles.version}>chapter 2.1.0</span>
           </div>
           <div className={styles.copyright}>Copyright © 2022 RineaR All rights reserved.</div>
         </div>
