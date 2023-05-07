@@ -14,10 +14,10 @@ import shadow4Pic from "public/home/shadow4.webp";
 import letterIconPic from "public/general/letter-icon.png";
 import materialIconPic from "public/general/material-icon.png";
 import logoPic from "public/general/logo-full.webp";
-import storyL2Pic from "public/contents/letters/L001_prologue/prototype.png";
-import storyL3Pic from "public/contents/letters/L001_prologue/present.png";
-import storyM2Pic from "public/contents/materials/M002_busters-mission/title.webp";
-import storyM3Pic from "public/contents/materials/M003_popcorn-chef/title.webp";
+import storyL2Pic from "public/home/letter1.png";
+import storyL3Pic from "public/home/letter2.png";
+import storyM2Pic from "public/home/material1.webp";
+import storyM3Pic from "public/home/material2.webp";
 
 const Page = (): JSX.Element => {
   const [onLoadingComplete, loadingProgress, hasLoadingCompleted] = useLoading(16);
