@@ -7,8 +7,10 @@ import {
   formatDisplayDateFromString,
   formatExceededTimeFromString
 } from "../libs/microcms/helpers";
+import { mc } from "../functions";
 import styles from "./LetterTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
+import letterStyles from "styles/letter.module.scss";
 import { Footer, Meta, SideMenu } from "parts";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import letterIconPic from "public/general/letter-icon.png";
@@ -43,7 +45,10 @@ const LetterTemplate = ({ id, title, description, body, thumbnail, revisedAt, pu
     </header>
 
     <div className={styles.article}>
-      <main className={articleStyles.article} dangerouslySetInnerHTML={{ __html: `${body}` }}></main>
+      <main
+        className={mc(articleStyles.article, letterStyles.letter)}
+        dangerouslySetInnerHTML={{ __html: `${body}` }}
+      ></main>
     </div>
 
     <Footer />
