@@ -1,6 +1,8 @@
 @use "global";
 
 .letter {
+  letter-spacing: 0;
+
   h1 {
     @include global.design-font;
     display: block;

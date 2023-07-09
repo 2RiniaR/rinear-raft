@@ -21,6 +21,10 @@
     margin-bottom: 1rem;
   }
 
+  iframe + p {
+    display: none;
+  }
+
   img {
     display: block;
     width: 100%;
