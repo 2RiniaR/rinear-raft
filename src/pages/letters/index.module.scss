@@ -63,7 +63,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    min-width: 300px;
+    max-width: 450px;
     padding: 1rem 1rem 0.5rem 1rem;
     background: rgba(global.$light2, 60%);
     backdrop-filter: blur(4px);
