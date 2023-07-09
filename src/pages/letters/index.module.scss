@@ -63,7 +63,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    min-width: 300px;
+    max-width: 450px;
     padding: 1rem 1rem 0.5rem 1rem;
     background: rgba(global.$light2, 60%);
     backdrop-filter: blur(4px);
@@ -91,7 +92,7 @@
     .image {
       width: 100%;
       height: auto;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .info {
@@ -103,26 +104,30 @@
       .title {
         color: global.$dark1;
         @include global.design-font;
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
         width: 100%;
         text-align: right;
+        padding-bottom: 0.4rem;
+        border-bottom: global.$dark1 solid 1px;
       }
 
       .description {
         color: global.$dark1;
         @include global.readable-font;
-        font-size: 0.8rem;
+        font-size: 1rem;
         margin-bottom: 0.5rem;
         width: 100%;
         flex-grow: 1;
+        padding: 0 0.3rem;
       }
 
       .updatedAt {
-        color: global.$light3;
+        color: global.$dark1;
         margin-top: auto;
         text-align: right;
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
     }
   }

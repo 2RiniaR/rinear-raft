@@ -2,13 +2,17 @@
 
 .article {
   color: global.$dark1;
+  max-width: 750px;
+  width: calc(100% - 32px);
+  margin-left: auto;
+  margin-right: auto;
 
   *:first-child {
     margin-top: 0;
   }
 
   iframe {
-    @include global.text;
+    width: 100%;
     aspect-ratio: 16 / 9;
     margin-left: auto;
     margin-right: auto;
@@ -43,7 +47,7 @@
   }
 
   pre {
-    @include global.text;
+    width: 100%;
     background-color: rgba(global.$light1, 0.3);
     padding: 0.5em;
     line-height: 1.2;
@@ -71,88 +75,10 @@
   }
 
   dl {
-    @include global.text;
+    width: 100%;
     border-radius: 0.5rem;
     background: rgba(global.$light1, 0.3);
     padding: 1rem;
-  }
-
-  h1 {
-    @include global.text;
-    @include global.design-font;
-    margin-top: 7em;
-    margin-bottom: 32px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.5;
-    padding: 16px 8px;
-    background: rgba(global.$light2, 80%);
-    border-top: rgba(global.$light1, 40%) solid 2px;
-    border-left: rgba(global.$light1, 40%) solid 2px;
-    filter: drop-shadow(8px 8px 1px rgba(global.$light1, 40%));
-
-    &:before {
-      content: "";
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      margin-right: 8px;
-      background: rgba(global.$light1, 40%);
-    }
-  }
-
-  h2 {
-    @include global.text;
-    @include global.design-font;
-    margin-top: 5em;
-    margin-bottom: 32px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.5;
-    padding: 12px 8px;
-    background: rgba(global.$light2, 80%);
-    border-top: rgba(global.$light1, 40%) solid 1px;
-    border-left: rgba(global.$light1, 40%) solid 1px;
-    filter: drop-shadow(4px 4px 1px rgba(global.$light1, 40%));
-
-    &:before {
-      content: "";
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin-right: 8px;
-      background: rgba(global.$light1, 40%);
-    }
-  }
-
-  h3 {
-    @include global.text;
-    @include global.design-font;
-    margin-top: 3em;
-    margin-bottom: 32px;
-    padding-left: 8px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.5;
-
-    &:before {
-      content: "";
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin-right: 8px;
-      background: rgba(global.$light1, 40%);
-    }
-
-    &:after {
-      content: "";
-      width: 100%;
-      margin-top: 0.5rem;
-      margin-left: -8px;
-      height: 4px;
-      background: linear-gradient(to right, rgba(global.$light1, 40%) 0%, transparent 100%);
-      display: block;
-    }
   }
 
   h1 + h2,
@@ -162,20 +88,37 @@
 
   li {
     display: list-item;
+    list-style-position: inside;
   }
 
   ol {
-    @include global.text;
+    width: 100%;
     list-style-type: decimal;
     padding-inline-start: 2em;
     line-height: 2;
+
+    padding: 0.6em 2em 0.5em 1.2em;
+    background: linear-gradient(
+      to right,
+      rgba(global.$light2, 80%) 0%,
+      rgba(global.$light2, 80%) calc(100% - 4em),
+      transparent 100%
+    );
   }
 
   ul {
-    @include global.text;
+    width: 100%;
     line-height: 2;
     list-style-type: disc;
     padding-inline-start: 2em;
+
+    padding: 0.6em 2em 0.5em 1.2em;
+    background: linear-gradient(
+      to right,
+      rgba(global.$light2, 80%) 0%,
+      rgba(global.$light2, 80%) calc(100% - 4em),
+      transparent 100%
+    );
 
     ul {
       list-style-type: circle;
@@ -186,26 +129,8 @@
     }
   }
 
-  p {
-    @include global.text;
-    text-indent: 1em;
-    line-height: 2;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-  }
-
   p:has(img) {
     background: #ddd;
-  }
-
-  p:has(img),
-  iframe {
-    margin-bottom: 4rem;
-
-    & + p:has(img),
-    & + iframe {
-      margin-top: -2.5rem;
-    }
   }
 
   blockquote {
@@ -215,7 +140,7 @@
     margin-top: 1.2em;
     margin-bottom: 1.2em;
     border-left: rgba(global.$light1, 30%) solid 4px;
-    @include global.text;
+    width: 100%;
   }
 
   q {
@@ -252,7 +177,7 @@
   }
 
   nav {
-    @include global.text;
+    width: 100%;
     border-left: rgba(global.$light1, 70%) solid 2px;
     font-size: 0.8rem;
 

@@ -7,8 +7,10 @@ import {
   formatDisplayDateFromString,
   formatExceededTimeFromString
 } from "../libs/microcms/helpers";
+import { mc } from "../functions";
 import styles from "./MaterialTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
+import materialStyles from "styles/material.module.scss";
 import { Footer, Meta, SideMenu } from "parts";
 import defaultThumbnailPic from "public/general/thumbnail-default.webp";
 import materialIconPic from "public/general/material-icon.png";
@@ -43,7 +45,10 @@ const MaterialTemplate = ({ id, title, description, releasedAt, body, thumbnail,
     </header>
 
     <div className={styles.article}>
-      <main className={articleStyles.article} dangerouslySetInnerHTML={{ __html: `${body}` }}></main>
+      <main
+        className={mc(articleStyles.article, materialStyles.material)}
+        dangerouslySetInnerHTML={{ __html: `${body}` }}
+      ></main>
     </div>
 
     <Footer />
