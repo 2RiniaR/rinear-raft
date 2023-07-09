@@ -74,12 +74,7 @@
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     padding: 0.6em 1.2em 0.5em 1.2em;
-    background: linear-gradient(
-      to right,
-      rgba(global.$light2, 80%) 0%,
-      rgba(global.$light2, 80%) calc(100% - 4em),
-      transparent 100%
-    );
+    background: rgba(global.$light2, 80%);
   }
 
   p:has(img),
