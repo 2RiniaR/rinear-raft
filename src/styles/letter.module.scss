@@ -80,15 +80,10 @@
     width: fit-content;
     text-indent: 0;
     line-height: 1.8em;
-    padding: 0.4em 1.2em 0.3em 1.2em;
+    padding: 0.4em 1.2em 0.2em 1.2em;
     margin-top: 1em;
     margin-bottom: 1em;
-    background: linear-gradient(
-      to right,
-      rgba(global.$light2, 80%) 0%,
-      rgba(global.$light2, 80%) calc(100% - 4em),
-      transparent 100%
-    );
+    background: rgba(global.$light2, 80%);
   }
 
   p:has(img),

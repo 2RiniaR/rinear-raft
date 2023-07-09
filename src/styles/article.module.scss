@@ -101,13 +101,8 @@
     padding-inline-start: 2em;
     line-height: 2;
 
-    padding: 0.6em 2em 0.5em 1.2em;
-    background: linear-gradient(
-      to right,
-      rgba(global.$light2, 80%) 0%,
-      rgba(global.$light2, 80%) calc(100% - 4em),
-      transparent 100%
-    );
+    padding: 0.6em 1.2em 0.5em 1.2em;
+    background: rgba(global.$light2, 80%);
   }
 
   ul {
@@ -116,13 +111,8 @@
     list-style-type: disc;
     padding-inline-start: 2em;
 
-    padding: 0.6em 2em 0.5em 1.2em;
-    background: linear-gradient(
-      to right,
-      rgba(global.$light2, 80%) 0%,
-      rgba(global.$light2, 80%) calc(100% - 4em),
-      transparent 100%
-    );
+    padding: 0.6em 1.2em 0.5em 1.2em;
+    background: rgba(global.$light2, 80%);
 
     ul {
       list-style-type: circle;
