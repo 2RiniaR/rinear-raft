@@ -8,6 +8,7 @@ import {
   formatExceededTimeFromString
 } from "../libs/microcms/helpers";
 import { mc } from "../functions";
+import { preprocessCmsBody } from "../functions/cms";
 import styles from "./MaterialTemplate.module.scss";
 import articleStyles from "styles/article.module.scss";
 import materialStyles from "styles/material.module.scss";
@@ -47,7 +48,7 @@ const MaterialTemplate = ({ id, title, description, releasedAt, body, thumbnail,
     <div className={styles.article}>
       <main
         className={mc(articleStyles.article, materialStyles.material)}
-        dangerouslySetInnerHTML={{ __html: `${body}` }}
+        dangerouslySetInnerHTML={{ __html: `${preprocessCmsBody(body)}` }}
       ></main>
     </div>
 
