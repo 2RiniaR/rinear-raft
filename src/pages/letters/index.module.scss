@@ -57,14 +57,16 @@
   justify-content: center;
   max-width: 1000px;
   margin: 4rem auto 8rem auto;
-  gap: 50px;
+  gap: 1rem;
 
   .item {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 300px;
-    max-width: 450px;
+    width: 320px;
+    @include global.media(phone) {
+      width: 100%;
+    }
     padding: 1rem 1rem 0.5rem 1rem;
     background: rgba(global.$light2, 60%);
     backdrop-filter: blur(4px);
